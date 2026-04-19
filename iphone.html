@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaviBeat for iPhone — Coming soon</title>
+  <meta name="description" content="NaviBeat for iPhone: tab bar, full-screen Now Playing, CarPlay. A beautifully native Navidrome and Subsonic client for iOS. Coming soon — included in the $5.99 Universal Purchase.">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <meta property="og:title" content="NaviBeat for iPhone — Coming soon">
+  <meta property="og:description" content="Tab bar + full-screen Now Playing + CarPlay. The iPhone Subsonic client Apple Music users will recognize instantly.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__word">NaviBeat</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="index.html#explore" class="nav__link nav__link-hide-sm">Apps</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a class="btn btn--primary btn--compact" href="index.html#buy">Buy&nbsp;$5.99</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ========================================================== COMING-SOON HERO -->
+  <section class="cs-hero">
+    <div class="cs-hero__ambient" aria-hidden="true"></div>
+    <div class="wrap cs-hero__wrap">
+      <div class="cs-hero__copy reveal-stagger">
+        <p class="eyebrow eyebrow--accent">NaviBeat · iPhone</p>
+        <h1 class="cs-hero__h">Coming to iPhone.</h1>
+        <p class="cs-hero__sub">
+          Tab bar + stack + full-screen Now Playing + CarPlay. The iPhone Subsonic client Apple Music users will recognize instantly — with nothing between you and your server.
+        </p>
+
+        <form class="notify" action="mailto:support@navibeat.app?subject=Notify%20me%20when%20NaviBeat%20iPhone%20ships" method="post" enctype="text/plain" aria-label="Notify me when NaviBeat for iPhone ships">
+          <label class="visually-hidden" for="notify-email-iphone" style="position:absolute;left:-9999px;">Email address</label>
+          <input class="notify__field" id="notify-email-iphone" type="email" name="email" placeholder="you@domain.com" required>
+          <button class="btn btn--primary" type="submit">Notify me &rarr;</button>
+        </form>
+        <p class="notify__hint">No list. Straight email to <a href="mailto:support@navibeat.app" class="link-quiet">support@navibeat.app</a> — we reply when it ships.</p>
+      </div>
+
+      <div class="cs-hero__visual cs-hero__visual--tall reveal">
+        <img src="assets/devices/iphone.svg" alt="iPhone 15 Pro showing NaviBeat Now Playing full-screen with warm gradient album art." width="600" height="1200" loading="eager" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== MEANTIME -->
+  <section class="meantime">
+    <div class="wrap meantime__inner">
+      <div>
+        <h2 class="meantime__h">In the meantime.</h2>
+        <p class="meantime__sub">NaviBeat is already shipping on Apple TV and Mac — and it's the same $5.99 purchase.</p>
+      </div>
+      <div class="meantime__ctas">
+        <a class="btn btn--ghost" href="appletv.html">Apple TV &rarr;</a>
+        <a class="btn btn--ghost" href="macos.html">Mac &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================================================== FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="index.html">
+          <img src="assets/icon.svg" alt="">
+          <span>NaviBeat</span>
+        </a>
+        <p style="max-width: 32ch;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html#explore">Explore apps</a></li>
+          <li><a href="appletv.html">Apple TV</a></li>
+          <li><a href="macos.html">Mac</a></li>
+          <li><a href="iphone.html">iPhone</a></li>
+          <li><a href="ipad.html">iPad</a></li>
+          <li><a href="applewatch.html">Apple Watch</a></li>
+          <li><a href="index.html#buy">Buy $5.99</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic</span>
+      <span>v1.0 · macOS &amp; tvOS in App Store review · iPhone, iPad, Watch coming</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var hasIO = 'IntersectionObserver' in window;
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+    }
+    var secs = document.querySelectorAll('.reveal, .reveal-stagger');
+    if (hasIO) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -15% 0px', threshold: 0.12 });
+      secs.forEach(function (el) { sio.observe(el); });
+    } else { secs.forEach(function (el) { el.classList.add('is-in'); }); }
+  })();
+</script>
+
+</body>
+</html>

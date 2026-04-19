@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1600" role="img" aria-label="Screenshot placeholder: NaviBeat focus grid on a real TV, evening light.">
+  <defs>
+    <radialGradient id="room" cx="50%" cy="55%" r="70%">
+      <stop offset="0%" stop-color="#231912"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+  </defs>
+  <rect width="2400" height="1600" fill="url(#room)"/>
+  <rect x="280" y="220" width="1840" height="1040" rx="16" fill="#0a0a0a" stroke="#1c1c1c" stroke-width="18"/>
+  <rect x="320" y="260" width="1760" height="400" rx="10" fill="#141414"/>
+  <text x="360" y="320" font-family="JetBrains Mono, monospace" font-size="18" fill="#a8a39a" letter-spacing="2">FEATURED</text>
+  <g transform="translate(320,700)">
+    <rect width="300" height="300" rx="8" fill="#1c1c1c"/>
+    <rect x="340" width="300" height="300" rx="8" fill="#1c1c1c"/>
+    <rect x="680" width="300" height="300" rx="8" fill="#1c1c1c" stroke="#E39B56" stroke-width="6"/>
+    <rect x="1020" width="300" height="300" rx="8" fill="#1c1c1c"/>
+    <rect x="1360" width="300" height="300" rx="8" fill="#1c1c1c"/>
+  </g>
+  <rect x="580" y="1260" width="1240" height="60" rx="6" fill="#141414"/>
+  <text x="1200" y="1450" font-family="Inter Tight, sans-serif" font-size="22" fill="#a8a39a" text-anchor="middle">Screenshot placeholder: Apple TV focus grid (lifestyle, 2400x1600)</text>
+</svg>

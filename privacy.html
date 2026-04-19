@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaviBeat — Privacy Policy</title>
+  <meta name="description" content="NaviBeat's privacy policy: what is stored, what leaves your device, and what never does.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__word">NaviBeat</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="index.html#explore" class="nav__link nav__link-hide-sm">Apps</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a class="btn btn--primary btn--compact" href="index.html#buy">Buy&nbsp;$5.99</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="prose">
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: April 18, 2026</p>
+
+  <p>NaviBeat is a client application for Navidrome and OpenSubsonic-compatible music servers. This policy explains what data the app stores and what, if anything, leaves your device.</p>
+
+  <h2>What data NaviBeat stores on your device</h2>
+  <ul>
+    <li><strong>Server URL:</strong> stored in SwiftData (local device storage) to reconnect automatically at launch.</li>
+    <li><strong>Username:</strong> stored in SwiftData alongside the server URL.</li>
+    <li><strong>Password:</strong> stored in the iOS/tvOS Keychain with the <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code> protection class. It never leaves the device in plaintext.</li>
+    <li><strong>Playback history:</strong> a local log of which tracks you have played and when, stored in SwiftData. Used to power discovery shelves (Recently Played, On This Day, etc.). Not transmitted to any third party.</li>
+    <li><strong>Recent searches:</strong> the last 10 search queries, stored in UserDefaults. Cleared when you delete the app.</li>
+    <li><strong>Settings:</strong> playback preferences (scrobble toggle, gapless prefetch, bit rate, audio format), stored in UserDefaults.</li>
+  </ul>
+
+  <h2>What leaves your device</h2>
+  <ul>
+    <li><strong>Requests to your Navidrome server only.</strong> NaviBeat sends API requests (search, browse, stream) exclusively to the server URL you configure. Your server is under your control.</li>
+    <li><strong>Scrobbling (optional).</strong> If you enable the "Submit play history" setting, NaviBeat calls your Navidrome server's <code>scrobble</code> endpoint after each track. This data goes to your server, not to any third party.</li>
+    <li><strong>Nothing else.</strong> NaviBeat contains no analytics SDK, no crash reporter, no advertising framework, and no third-party network request. Zero data is sent to the developer or any external service.</li>
+  </ul>
+
+  <h2>Data retention</h2>
+  <p>All data NaviBeat stores lives on your device. Deleting the app deletes all NaviBeat data, including credentials, playback history, and settings. NaviBeat does not store anything server-side.</p>
+
+  <h2>Children</h2>
+  <p>NaviBeat does not knowingly collect data from children. The app has a 4+ age rating on the App Store.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be posted at this URL with a revised "Last updated" date.</p>
+
+  <h2>Contact</h2>
+  <p>Privacy questions: <a href="mailto:support@navibeat.app">support@navibeat.app</a></p>
+</div>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="index.html">
+          <img src="assets/icon.svg" alt="">
+          <span>NaviBeat</span>
+        </a>
+        <p style="max-width: 32ch;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html#explore">Apps</a></li>
+          <li><a href="index.html#platforms">Platforms</a></li>
+          <li><a href="index.html#buy">Buy $5.99</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic</span>
+      <span>v1.0 · macOS &amp; tvOS in App Store review · iPhone, iPad, Watch coming</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    var onScroll = function () {
+      if (window.scrollY > 24) nav.classList.add('is-scrolled');
+      else nav.classList.remove('is-scrolled');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
+
+</body>
+</html>

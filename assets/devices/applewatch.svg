@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="Apple Watch Ultra showing NaviBeat Now Playing">
+  <defs>
+    <linearGradient id="w-case" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/>
+      <stop offset="0.5" stop-color="#1e1e1e"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="w-band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1a1a"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="w-art" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a0a04"/>
+      <stop offset="0.5" stop-color="#8a3a0a"/>
+      <stop offset="1" stop-color="#E39B56"/>
+    </linearGradient>
+    <radialGradient id="w-glow" cx="0.5" cy="0.4" r="0.8">
+      <stop offset="0" stop-color="#E39B56" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#0a0a0a" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="w-screen"><rect x="130" y="220" width="340" height="420" rx="50"/></clipPath>
+  </defs>
+
+  <!-- Top band -->
+  <path d="M 180 60 L 420 60 L 436 220 L 164 220 Z" fill="url(#w-band)"/>
+  <rect x="180" y="60" width="240" height="4" rx="2" fill="#2a2a2a" opacity="0.6"/>
+  <!-- Band stitching detail -->
+  <g stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4 4" opacity="0.5" fill="none">
+    <line x1="198" y1="90" x2="402" y2="90"/>
+    <line x1="198" y1="180" x2="402" y2="180"/>
+  </g>
+
+  <!-- Case -->
+  <rect x="110" y="200" width="380" height="460" rx="70" fill="url(#w-case)"/>
+  <rect x="120" y="210" width="360" height="440" rx="62" fill="#050505"/>
+
+  <!-- Digital crown -->
+  <rect x="490" y="300" width="22" height="50" rx="6" fill="#2a2a2a"/>
+  <rect x="492" y="304" width="18" height="42" rx="5" fill="#1a1a1a"/>
+  <!-- Side button -->
+  <rect x="490" y="410" width="18" height="36" rx="4" fill="#1a1a1a"/>
+
+  <!-- Screen -->
+  <rect x="130" y="220" width="340" height="420" rx="50" fill="#0a0a0a"/>
+
+  <g clip-path="url(#w-screen)" font-family="'Inter Tight', system-ui, sans-serif">
+    <rect x="130" y="220" width="340" height="420" fill="#0a0a0a"/>
+    <rect x="130" y="220" width="340" height="420" fill="url(#w-glow)"/>
+
+    <!-- Status / time -->
+    <text x="156" y="258" fill="#E39B56" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" font-weight="600">9:41</text>
+    <circle cx="450" cy="252" r="4" fill="#E39B56"/>
+
+    <!-- Album art -->
+    <g transform="translate(156 284)">
+      <rect width="120" height="120" rx="12" fill="url(#w-art)"/>
+      <circle cx="60" cy="60" r="22" fill="#0a0a0a" fill-opacity="0.35"/>
+      <circle cx="60" cy="60" r="5" fill="#E39B56"/>
+    </g>
+
+    <!-- Track info -->
+    <g transform="translate(290 300)">
+      <text fill="#f2efe8" font-size="15" font-weight="600">Fade Into You</text>
+      <text y="22" fill="#a8a39a" font-size="12">Mazzy Star</text>
+      <text y="64" fill="#E39B56" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="1">1:54 / 4:46</text>
+    </g>
+
+    <!-- Progress -->
+    <rect x="156" y="430" width="288" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.15"/>
+    <rect x="156" y="430" width="116" height="3" rx="1.5" fill="#E39B56"/>
+
+    <!-- Transport controls -->
+    <g transform="translate(300 510)" fill="#f2efe8">
+      <!-- Prev -->
+      <g transform="translate(-90 0)">
+        <path d="M -4 -14 L 10 0 L -4 14 Z" transform="rotate(180)" opacity="0.9"/>
+        <rect x="-14" y="-14" width="3" height="28" opacity="0.9"/>
+      </g>
+      <!-- Play -->
+      <circle r="32" fill="#E39B56"/>
+      <path d="M -8 -11 L -8 11 L 12 0 Z" fill="#0a0a0a"/>
+      <!-- Next -->
+      <g transform="translate(90 0)">
+        <path d="M -4 -14 L 10 0 L -4 14 Z" opacity="0.9"/>
+        <rect x="12" y="-14" width="3" height="28" opacity="0.9"/>
+      </g>
+    </g>
+
+    <!-- Bottom row: airplay + volume hint -->
+    <g transform="translate(220 606)" fill="#a8a39a" opacity="0.7">
+      <rect width="20" height="14" rx="2" fill="none" stroke="#a8a39a" stroke-width="1.5"/>
+      <path d="M 4 20 L 10 14 L 16 20 Z" fill="#a8a39a"/>
+    </g>
+    <g transform="translate(330 608)">
+      <circle r="3" fill="#E39B56"/>
+      <text x="10" y="5" fill="#E39B56" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1">AIRPODS PRO</text>
+    </g>
+  </g>
+
+  <!-- Bottom band -->
+  <path d="M 164 640 L 436 640 L 420 800 L 180 800 Z" fill="url(#w-band)"/>
+  <g stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4 4" opacity="0.5" fill="none">
+    <line x1="198" y1="680" x2="402" y2="680"/>
+    <line x1="198" y1="770" x2="402" y2="770"/>
+  </g>
+</svg>

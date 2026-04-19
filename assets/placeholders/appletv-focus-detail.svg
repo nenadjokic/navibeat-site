@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1350" role="img" aria-label="Screenshot placeholder: Close-up: orange focus halo on album tile.">
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#E39B56" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#E39B56" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="2400" height="1350" fill="#0a0a0a"/>
+  <circle cx="1200" cy="675" r="700" fill="url(#halo)"/>
+  <rect x="420" y="280" width="420" height="420" rx="10" fill="#1c1c1c"/>
+  <rect x="900" y="280" width="420" height="420" rx="10" fill="#1c1c1c"/>
+  <rect x="1380" y="280" width="600" height="600" rx="14" fill="#2a1d12" stroke="#E39B56" stroke-width="10"/>
+  <text x="1680" y="600" font-family="JetBrains Mono, monospace" font-size="22" fill="#f2efe8" opacity="0.6" text-anchor="middle">FOCUSED</text>
+  <rect x="420" y="760" width="420" height="40" rx="6" fill="#1c1c1c"/>
+  <rect x="900" y="760" width="420" height="40" rx="6" fill="#1c1c1c"/>
+  <text x="1200" y="1260" font-family="Inter Tight, sans-serif" font-size="22" fill="#a8a39a" text-anchor="middle">Screenshot placeholder: Apple TV focus halo detail (2400x1350)</text>
+</svg>

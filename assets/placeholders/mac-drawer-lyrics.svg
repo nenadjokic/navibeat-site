@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="Screenshot placeholder: Frosted drawer open on Lyrics tab.">
+  <rect width="1400" height="900" rx="16" fill="#141414" stroke="rgba(255,255,255,0.08)"/>
+  <rect width="1400" height="48" fill="#1c1c1c"/>
+  <circle cx="26" cy="24" r="6" fill="#ff5f56"/>
+  <circle cx="46" cy="24" r="6" fill="#ffbd2e"/>
+  <circle cx="66" cy="24" r="6" fill="#27c93f"/>
+  <rect x="40" y="100" width="620" height="620" rx="10" fill="#3a2616"/>
+  <text x="350" y="420" font-family="JetBrains Mono, monospace" font-size="18" fill="#f2efe8" opacity="0.5" text-anchor="middle">ALBUM ART</text>
+  <rect x="720" y="100" width="640" height="740" rx="14" fill="#1c1c1c" opacity="0.85"/>
+  <g transform="translate(752,140)" font-family="Inter Tight, sans-serif" fill="#f2efe8">
+    <text font-size="13" fill="#a8a39a" letter-spacing="2" font-family="JetBrains Mono, monospace">LYRICS</text>
+    <text y="60" font-size="22">And the stars keep burning</text>
+    <text y="100" font-size="22" fill="#E39B56">when the morning's gone</text>
+    <text y="140" font-size="22">Every room still turning</text>
+    <text y="180" font-size="22">every radio still on</text>
+    <text y="260" font-size="22" opacity="0.4">No clock to catch, no call to make</text>
+    <text y="300" font-size="22" opacity="0.4">the record keeps the room awake</text>
+  </g>
+  <text x="700" y="870" font-family="Inter Tight, sans-serif" font-size="14" fill="#a8a39a" text-anchor="middle">Screenshot placeholder: Mac drawer Lyrics tab (1400x900)</text>
+</svg>

@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="Apple TV 4K with Siri Remote and television showing NaviBeat tvOS focus grid">
+  <defs>
+    <linearGradient id="tv-frame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f1f1f"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="tv-stand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2a2a"/>
+      <stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <linearGradient id="tv-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0a0a"/>
+      <stop offset="1" stop-color="#060606"/>
+    </linearGradient>
+    <linearGradient id="tv-hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a0a04"/>
+      <stop offset="0.6" stop-color="#8a3a0a"/>
+      <stop offset="1" stop-color="#E39B56"/>
+    </linearGradient>
+    <linearGradient id="tv-a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a0f0a"/><stop offset="1" stop-color="#c24a4a"/></linearGradient>
+    <linearGradient id="tv-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1a22"/><stop offset="1" stop-color="#2b7a78"/></linearGradient>
+    <linearGradient id="tv-c" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20102a"/><stop offset="1" stop-color="#7a4aa8"/></linearGradient>
+    <linearGradient id="tv-d" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1a08"/><stop offset="1" stop-color="#c9a03a"/></linearGradient>
+    <linearGradient id="tv-e" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08221a"/><stop offset="1" stop-color="#4a9a6a"/></linearGradient>
+    <linearGradient id="tv-f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a0a1a"/><stop offset="1" stop-color="#b24a8a"/></linearGradient>
+    <clipPath id="tv-screen"><rect x="110" y="68" width="1180" height="664" rx="12"/></clipPath>
+    <linearGradient id="remote-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2a2a"/>
+      <stop offset="0.5" stop-color="#1a1a1a"/>
+      <stop offset="1" stop-color="#0e0e0e"/>
+    </linearGradient>
+    <linearGradient id="box-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#151515"/>
+      <stop offset="1" stop-color="#060606"/>
+    </linearGradient>
+  </defs>
+
+  <!-- TV frame -->
+  <rect x="80" y="40" width="1240" height="720" rx="22" fill="url(#tv-frame)"/>
+  <rect x="92" y="52" width="1216" height="696" rx="18" fill="#050505"/>
+  <rect x="110" y="68" width="1180" height="664" rx="12" fill="#0a0a0a"/>
+
+  <g clip-path="url(#tv-screen)" font-family="'Inter Tight', system-ui, sans-serif">
+    <rect x="110" y="68" width="1180" height="664" fill="url(#tv-bg)"/>
+    <!-- Warm ambient backdrop behind hero -->
+    <ellipse cx="560" cy="260" rx="540" ry="240" fill="#E39B56" fill-opacity="0.14"/>
+
+    <!-- Top nav tabs -->
+    <g transform="translate(160 110)" fill="#a8a39a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="1.5">
+      <text fill="#f2efe8" font-weight="600">HOME</text>
+      <text x="110">BROWSE</text>
+      <text x="226">SEARCH</text>
+      <text x="334">SETTINGS</text>
+    </g>
+
+    <!-- Hero banner -->
+    <g transform="translate(140 150)">
+      <rect width="1120" height="240" rx="14" fill="url(#tv-hero)"/>
+      <rect width="1120" height="240" rx="14" fill="#000" fill-opacity="0.35"/>
+      <!-- Hero copy -->
+      <text x="44" y="60" fill="#E39B56" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" letter-spacing="1.5">MOST PLAYED</text>
+      <text x="44" y="130" fill="#f2efe8" font-family="'Fraunces', Georgia, serif" font-style="italic" font-weight="300" font-size="56" letter-spacing="-0.5">So Tonight That I Might See</text>
+      <text x="44" y="166" fill="#f2efe8" opacity="0.8" font-size="16">Mazzy Star · 1993 · 10 tracks</text>
+      <!-- Play button -->
+      <g transform="translate(44 186)">
+        <rect width="120" height="40" rx="20" fill="#f2efe8"/>
+        <path d="M 36 14 L 36 26 L 48 20 Z" fill="#0a0a0a"/>
+        <text x="60" y="26" fill="#0a0a0a" font-weight="600" font-size="14">Play</text>
+      </g>
+    </g>
+
+    <!-- Shelf label -->
+    <text x="160" y="428" fill="#E39B56" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" letter-spacing="1.5">RECENTLY PLAYED</text>
+
+    <!-- Tile shelf -->
+    <g transform="translate(140 448)">
+      <!-- Focused tile with halo -->
+      <g transform="translate(0 -6)">
+        <rect x="-10" y="-10" width="200" height="200" rx="18" fill="#E39B56" fill-opacity="0.18"/>
+        <rect x="-10" y="-10" width="200" height="200" rx="18" fill="none" stroke="#E39B56" stroke-width="3"/>
+        <rect width="180" height="180" rx="12" fill="url(#tv-a)"/>
+        <circle cx="90" cy="90" r="30" fill="#0a0a0a" fill-opacity="0.35"/>
+        <circle cx="90" cy="90" r="8" fill="#E39B56"/>
+      </g>
+      <text x="0" y="214" fill="#f2efe8" font-size="13" font-weight="500">Hounds of Love</text>
+      <text x="0" y="232" fill="#a8a39a" font-size="11">Kate Bush</text>
+
+      <g transform="translate(210 0)">
+        <rect width="180" height="180" rx="12" fill="url(#tv-b)"/>
+        <circle cx="90" cy="90" r="30" fill="#0a0a0a" fill-opacity="0.35"/>
+        <circle cx="90" cy="90" r="8" fill="#2b7a78"/>
+        <text y="206" fill="#a8a39a" font-size="13">A Moon Shaped Pool</text>
+      </g>
+      <g transform="translate(420 0)">
+        <rect width="180" height="180" rx="12" fill="url(#tv-c)"/>
+        <circle cx="90" cy="90" r="30" fill="#0a0a0a" fill-opacity="0.35"/>
+        <circle cx="90" cy="90" r="8" fill="#7a4aa8"/>
+        <text y="206" fill="#a8a39a" font-size="13">Disintegration</text>
+      </g>
+      <g transform="translate(630 0)">
+        <rect width="180" height="180" rx="12" fill="url(#tv-d)"/>
+        <circle cx="90" cy="90" r="30" fill="#0a0a0a" fill-opacity="0.35"/>
+        <circle cx="90" cy="90" r="8" fill="#c9a03a"/>
+        <text y="206" fill="#a8a39a" font-size="13">Rumours</text>
+      </g>
+      <g transform="translate(840 0)">
+        <rect width="180" height="180" rx="12" fill="url(#tv-e)"/>
+        <circle cx="90" cy="90" r="30" fill="#0a0a0a" fill-opacity="0.35"/>
+        <circle cx="90" cy="90" r="8" fill="#4a9a6a"/>
+        <text y="206" fill="#a8a39a" font-size="13">In Rainbows</text>
+      </g>
+      <g transform="translate(1050 0)">
+        <rect width="180" height="180" rx="12" fill="url(#tv-f)"/>
+        <circle cx="90" cy="90" r="30" fill="#0a0a0a" fill-opacity="0.35"/>
+        <circle cx="90" cy="90" r="8" fill="#b24a8a"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- TV stand -->
+  <path d="M 620 760 L 780 760 L 820 810 L 580 810 Z" fill="url(#tv-stand)"/>
+  <rect x="540" y="810" width="320" height="10" rx="4" fill="#0a0a0a"/>
+
+  <!-- Apple TV 4K box (far left, slightly forward) -->
+  <g transform="translate(50 720)">
+    <rect width="210" height="120" rx="16" fill="url(#box-body)" stroke="#1a1a1a"/>
+    <rect x="14" y="14" width="182" height="92" rx="8" fill="none" stroke="#222" stroke-width="0.5"/>
+    <!-- Apple TV logo -->
+    <g transform="translate(76 40)" fill="#f2efe8">
+      <path d="M 8 6 C 4 4 2 8 4 12 C 6 14 10 12 10 10 C 14 12 16 8 14 6 C 12 4 10 6 8 6 Z" opacity="0.85"/>
+      <text x="26" y="14" font-family="'Inter Tight', system-ui, sans-serif" font-weight="500" font-size="12" opacity="0.85">TV</text>
+    </g>
+    <text x="105" y="88" text-anchor="middle" fill="#444" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9" letter-spacing="1.5">4K</text>
+  </g>
+
+  <!-- Siri Remote (right side) -->
+  <g transform="translate(1200 680)">
+    <rect width="130" height="220" rx="22" fill="url(#remote-body)" stroke="#2a2a2a"/>
+    <!-- Touch ring -->
+    <circle cx="65" cy="72" r="42" fill="none" stroke="#3a3a3a" stroke-width="1"/>
+    <circle cx="65" cy="72" r="22" fill="#2a2a2a" stroke="#3a3a3a"/>
+    <!-- Menu/back -->
+    <rect x="22" y="136" width="36" height="14" rx="7" fill="#2a2a2a"/>
+    <!-- TV/home -->
+    <rect x="72" y="136" width="36" height="14" rx="7" fill="#2a2a2a"/>
+    <!-- Play/pause -->
+    <rect x="22" y="160" width="36" height="14" rx="7" fill="#2a2a2a"/>
+    <!-- Mic -->
+    <rect x="72" y="160" width="36" height="14" rx="7" fill="#2a2a2a"/>
+    <!-- Volume +/- -->
+    <rect x="46" y="186" width="38" height="20" rx="10" fill="#2a2a2a"/>
+    <text x="55" y="200" fill="#f2efe8" font-family="'JetBrains Mono', monospace" font-size="11" opacity="0.6">+</text>
+    <text x="71" y="200" fill="#f2efe8" font-family="'JetBrains Mono', monospace" font-size="11" opacity="0.6">−</text>
+  </g>
+</svg>

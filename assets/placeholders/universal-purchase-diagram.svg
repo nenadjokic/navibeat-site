@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Universal Purchase diagram: five device silhouettes connecting to one receipt badge.">
+  <rect width="1200" height="600" fill="transparent"/>
+  <g stroke="rgba(255,255,255,0.18)" stroke-width="1.5" fill="none">
+    <path d="M 150 160 Q 600 160 600 300"/>
+    <path d="M 320 140 Q 600 140 600 300"/>
+    <path d="M 600 120 L 600 300"/>
+    <path d="M 880 140 Q 600 140 600 300"/>
+    <path d="M 1050 160 Q 600 160 600 300"/>
+  </g>
+
+  <!-- Apple TV -->
+  <g transform="translate(90,70)" fill="none" stroke="#a8a39a" stroke-width="2">
+    <rect x="0" y="0" width="120" height="80" rx="8"/>
+    <line x1="30" y1="92" x2="90" y2="92"/>
+  </g>
+  <text x="150" y="180" font-family="JetBrains Mono, monospace" font-size="11" fill="#a8a39a" text-anchor="middle" letter-spacing="2">APPLE TV</text>
+
+  <!-- iPhone -->
+  <g transform="translate(290,60)" fill="none" stroke="#a8a39a" stroke-width="2">
+    <rect x="0" y="0" width="60" height="110" rx="12"/>
+    <line x1="24" y1="100" x2="36" y2="100"/>
+  </g>
+  <text x="320" y="200" font-family="JetBrains Mono, monospace" font-size="11" fill="#a8a39a" text-anchor="middle" letter-spacing="2">IPHONE</text>
+
+  <!-- iPad -->
+  <g transform="translate(530,50)" fill="none" stroke="#a8a39a" stroke-width="2">
+    <rect x="0" y="0" width="140" height="100" rx="10"/>
+  </g>
+  <text x="600" y="180" font-family="JetBrains Mono, monospace" font-size="11" fill="#a8a39a" text-anchor="middle" letter-spacing="2">IPAD</text>
+
+  <!-- Mac -->
+  <g transform="translate(820,60)" fill="none" stroke="#a8a39a" stroke-width="2">
+    <rect x="0" y="0" width="120" height="80" rx="4"/>
+    <path d="M -10 88 L 130 88 L 120 100 L 0 100 Z"/>
+  </g>
+  <text x="880" y="200" font-family="JetBrains Mono, monospace" font-size="11" fill="#a8a39a" text-anchor="middle" letter-spacing="2">MAC</text>
+
+  <!-- Watch -->
+  <g transform="translate(1020,70)" fill="none" stroke="#a8a39a" stroke-width="2">
+    <rect x="0" y="14" width="60" height="72" rx="12"/>
+    <line x1="20" y1="0" x2="40" y2="14"/>
+    <line x1="20" y1="100" x2="40" y2="86"/>
+  </g>
+  <text x="1050" y="180" font-family="JetBrains Mono, monospace" font-size="11" fill="#a8a39a" text-anchor="middle" letter-spacing="2">WATCH</text>
+
+  <!-- Receipt badge -->
+  <g transform="translate(440,320)">
+    <rect width="320" height="200" rx="14" fill="#141414" stroke="#E39B56" stroke-width="2"/>
+    <text x="160" y="50" font-family="JetBrains Mono, monospace" font-size="11" fill="#E39B56" text-anchor="middle" letter-spacing="3">UNIVERSAL PURCHASE</text>
+    <text x="160" y="120" font-family="Fraunces, Georgia, serif" font-size="54" font-weight="300" fill="#f2efe8" text-anchor="middle">$5.99</text>
+    <text x="160" y="160" font-family="Inter Tight, sans-serif" font-size="14" fill="#a8a39a" text-anchor="middle">One purchase. Every device. Forever.</text>
+  </g>
+</svg>

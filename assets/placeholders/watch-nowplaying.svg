@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Screenshot placeholder: Apple Watch Now Playing, coming soon.">
+  <rect width="800" height="1000" fill="#0a0a0a"/>
+  <rect x="140" y="140" width="520" height="720" rx="120" fill="#141414" stroke="#1c1c1c" stroke-width="12"/>
+  <rect x="170" y="170" width="460" height="660" rx="100" fill="#0f0f0f"/>
+  <rect x="210" y="220" width="380" height="280" rx="16" fill="#3a2616"/>
+  <text x="400" y="370" font-family="JetBrains Mono, monospace" font-size="16" fill="#f2efe8" opacity="0.5" text-anchor="middle">ALBUM ART</text>
+  <g transform="translate(210,540)" fill="#f2efe8" font-family="Inter Tight, sans-serif">
+    <text font-size="22" font-weight="600">Track Title</text>
+    <text y="28" font-size="16" fill="#a8a39a">Artist</text>
+  </g>
+  <g transform="translate(300,670)" fill="#f2efe8">
+    <circle cx="0" cy="0" r="16" fill="none" stroke="#f2efe8" stroke-width="3"/>
+    <circle cx="100" cy="0" r="22" fill="#E39B56"/>
+    <circle cx="200" cy="0" r="16" fill="none" stroke="#f2efe8" stroke-width="3"/>
+  </g>
+  <text x="400" y="920" font-family="JetBrains Mono, monospace" font-size="14" fill="#a8a39a" letter-spacing="3" text-anchor="middle">COMING SOON</text>
+  <text x="400" y="970" font-family="Inter Tight, sans-serif" font-size="14" fill="#a8a39a" text-anchor="middle">Apple Watch placeholder (800x1000)</text>
+</svg>

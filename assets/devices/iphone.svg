@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200" role="img" aria-label="iPhone 15 Pro showing NaviBeat Now Playing full screen">
+  <defs>
+    <linearGradient id="ip-shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/>
+      <stop offset="0.5" stop-color="#1e1e1e"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="ip-art" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a0f04"/>
+      <stop offset="0.4" stop-color="#8a3a0a"/>
+      <stop offset="0.75" stop-color="#E39B56"/>
+      <stop offset="1" stop-color="#F5B877"/>
+    </linearGradient>
+    <radialGradient id="ip-art-v" cx="0.25" cy="0.3" r="1">
+      <stop offset="0" stop-color="#F5B877" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#1a0a04" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="ip-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a0a04"/>
+      <stop offset="0.5" stop-color="#0f0603"/>
+      <stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <clipPath id="ip-screen"><rect x="34" y="34" width="532" height="1132" rx="62"/></clipPath>
+  </defs>
+
+  <!-- Shell -->
+  <rect x="14" y="14" width="572" height="1172" rx="82" fill="url(#ip-shell)"/>
+  <rect x="24" y="24" width="552" height="1152" rx="72" fill="#050505"/>
+  <rect x="34" y="34" width="532" height="1132" rx="62" fill="#0a0a0a"/>
+
+  <g clip-path="url(#ip-screen)" font-family="'Inter Tight', system-ui, sans-serif">
+    <!-- Background (ambient album glow) -->
+    <rect x="34" y="34" width="532" height="1132" fill="url(#ip-bg)"/>
+    <ellipse cx="200" cy="420" rx="340" ry="380" fill="#E39B56" fill-opacity="0.22"/>
+    <ellipse cx="420" cy="900" rx="260" ry="300" fill="#8a3a0a" fill-opacity="0.18"/>
+
+    <!-- Status bar -->
+    <text x="76" y="76" fill="#f2efe8" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="16" font-weight="600">9:41</text>
+    <g transform="translate(460 62)" fill="#f2efe8">
+      <rect width="24" height="14" rx="3" opacity="0.95"/>
+      <rect x="-30" y="2" width="22" height="10" rx="1" opacity="0.8"/>
+      <rect x="-60" y="1" width="24" height="12" rx="1.5" opacity="0.7"/>
+    </g>
+    <!-- Dynamic Island -->
+    <rect x="218" y="54" width="164" height="36" rx="18" fill="#000"/>
+
+    <!-- Top chrome: back / Now Playing / more -->
+    <g transform="translate(68 120)" fill="#f2efe8">
+      <g>
+        <path d="M 10 10 L 0 20 L 10 30" stroke="#f2efe8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="236" y="25" text-anchor="middle" fill="#a8a39a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" letter-spacing="1.5">NOW PLAYING</text>
+      <g transform="translate(458 15)" fill="#f2efe8">
+        <circle cx="0" cy="5" r="2"/><circle cx="8" cy="5" r="2"/><circle cx="16" cy="5" r="2"/>
+      </g>
+    </g>
+
+    <!-- Album art -->
+    <g transform="translate(70 200)">
+      <rect width="460" height="460" rx="18" fill="url(#ip-art)"/>
+      <rect width="460" height="460" rx="18" fill="url(#ip-art-v)" opacity="0.5"/>
+      <!-- Grooves -->
+      <g stroke="#ffffff" stroke-opacity="0.06" fill="none" transform="translate(230 230)">
+        <circle r="180"/><circle r="140"/><circle r="100"/><circle r="60"/>
+      </g>
+      <circle cx="230" cy="230" r="18" fill="#0a0a0a"/>
+      <circle cx="230" cy="230" r="6" fill="#E39B56"/>
+    </g>
+
+    <!-- Track info -->
+    <g transform="translate(70 712)">
+      <text fill="#f2efe8" font-family="'Fraunces', Georgia, serif" font-style="italic" font-weight="300" font-size="34">Fade Into You</text>
+      <text y="34" fill="#a8a39a" font-size="17">Mazzy Star · So Tonight That I Might See</text>
+    </g>
+
+    <!-- Progress bar -->
+    <g transform="translate(70 806)">
+      <rect width="460" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.15"/>
+      <rect width="184" height="3" rx="1.5" fill="#E39B56"/>
+      <circle cx="184" cy="1.5" r="6" fill="#E39B56"/>
+      <text x="0" y="28" fill="#a8a39a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11">1:54</text>
+      <text x="460" y="28" text-anchor="end" fill="#a8a39a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11">-2:52</text>
+    </g>
+
+    <!-- Transport controls -->
+    <g transform="translate(300 896)" fill="#f2efe8">
+      <!-- Prev -->
+      <g transform="translate(-140 0)">
+        <path d="M -4 -16 L 12 0 L -4 16 Z" transform="rotate(180)" opacity="0.9"/>
+        <rect x="-18" y="-16" width="3" height="32" opacity="0.9"/>
+      </g>
+      <!-- Play -->
+      <circle r="38" fill="#f2efe8"/>
+      <path d="M -10 -14 L -10 14 L 14 0 Z" fill="#0a0a0a"/>
+      <!-- Next -->
+      <g transform="translate(140 0)">
+        <path d="M -4 -16 L 12 0 L -4 16 Z" opacity="0.9"/>
+        <rect x="14" y="-16" width="3" height="32" opacity="0.9"/>
+      </g>
+    </g>
+
+    <!-- Volume / secondary row -->
+    <g transform="translate(70 1004)" fill="#f2efe8" opacity="0.8">
+      <!-- speaker -->
+      <path d="M 0 6 L 8 6 L 16 0 L 16 18 L 8 12 L 0 12 Z" opacity="0.7"/>
+      <rect x="26" y="8" width="380" height="3" rx="1.5" fill="#ffffff" fill-opacity="0.15"/>
+      <rect x="26" y="8" width="180" height="3" rx="1.5" fill="#f2efe8"/>
+      <circle cx="206" cy="9.5" r="5" fill="#f2efe8"/>
+      <!-- airplay -->
+      <g transform="translate(430 0)" fill="none" stroke="#f2efe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+        <rect x="0" y="0" width="20" height="14" rx="2"/>
+        <path d="M 4 20 L 10 14 L 16 20 Z" fill="#f2efe8"/>
+      </g>
+    </g>
+
+    <!-- Bottom tabs -->
+    <rect x="34" y="1100" width="532" height="66" fill="#0a0a0a" fill-opacity="0.6"/>
+    <rect x="34" y="1100" width="532" height="1" fill="#ffffff" fill-opacity="0.08"/>
+    <g transform="translate(120 1120)" fill="#E39B56">
+      <rect width="14" height="14" rx="2"/>
+      <text x="7" y="32" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9" letter-spacing="1" fill="#E39B56">HOME</text>
+    </g>
+    <g transform="translate(260 1120)" fill="#a8a39a">
+      <circle cx="7" cy="7" r="7"/>
+      <text x="7" y="32" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9" letter-spacing="1" fill="#a8a39a">BROWSE</text>
+    </g>
+    <g transform="translate(400 1120)" fill="#a8a39a">
+      <rect width="14" height="14" rx="2" fill="none" stroke="#a8a39a" stroke-width="2"/>
+      <text x="7" y="32" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9" letter-spacing="1" fill="#a8a39a">SEARCH</text>
+    </g>
+
+    <!-- Home indicator -->
+    <rect x="220" y="1148" width="160" height="5" rx="2.5" fill="#f2efe8" opacity="0.7"/>
+  </g>
+</svg>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaviBeat for Mac — Native Navidrome &amp; Subsonic Client for macOS</title>
+  <meta name="description" content="NaviBeat is a native SwiftUI Navidrome, Airsonic, Gonic, and OpenSubsonic client for macOS 15+. Mini Player with pin-on-top, time-synced lyrics, Up Next drawer, AutoMix, sleep timer, directory browsing, and internet radio. $5.99 Universal Purchase.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="keywords" content="Navidrome Mac app, Subsonic macOS client, OpenSubsonic Mac, native Mac music player, Airsonic Mac, Gonic Mac, NaviBeat macOS, Subsonic desktop client, self-hosted music Mac, Navidrome desktop">
+  <link rel="canonical" href="https://navibeat.app/macos.html">
+
+  <meta property="og:title" content="NaviBeat for Mac — Native Navidrome &amp; Subsonic client for macOS">
+  <meta property="og:description" content="Native SwiftUI Subsonic client for macOS 15+. Mini Player with pin-on-top, time-synced lyrics, AutoMix, sleep timer, directory browsing, and internet radio.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/macos.html">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="platform.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "NaviBeat for Mac",
+    "operatingSystem": "macOS 15",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "Music Streaming Client",
+    "description": "Native SwiftUI Mac client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. Mini Player with pin-on-top, time-synced lyrics, AutoMix, sleep timer, directory browsing, and internet radio.",
+    "offers": {
+      "@type": "Offer",
+      "price": "5.99",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Navidrome support",
+      "OpenSubsonic API compatibility",
+      "Airsonic and Gonic compatibility",
+      "Native SwiftUI (no Electron, no Catalyst)",
+      "Mini Player with pin-on-top",
+      "Time-synced lyrics panel",
+      "AutoMix endless playback",
+      "Sleep timer with fade",
+      "Directory file browser",
+      "Internet radio streaming",
+      "Hi-Res badges",
+      "Universal Purchase"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__word">NaviBeat</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="index.html#explore" class="nav__link nav__link-hide-sm">Apps</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a class="btn btn--primary btn--compact" href="#buy">Buy&nbsp;$5.99</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ========================================================== HERO -->
+  <section class="p-hero">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+
+    <div class="wrap">
+      <div class="crumb" aria-label="Breadcrumb">
+        <a href="index.html">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span>Platforms</span>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">Mac</span>
+      </div>
+
+      <div class="p-hero__wrap">
+        <div class="p-hero__copy">
+          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat &nbsp;·&nbsp; macOS 15+</p>
+          <h1 aria-label="The native Navidrome client for Mac.">
+            <span class="word" style="animation-delay:0ms">The</span>
+            <span class="word" style="animation-delay:60ms">native</span>
+            <span class="word" style="animation-delay:120ms">Navidrome</span>
+            <span class="word" style="animation-delay:180ms">client</span>
+            <span class="word" style="animation-delay:260ms">for</span>
+            <span class="word" style="animation-delay:320ms">Mac.</span>
+          </h1>
+          <p class="p-hero__sub">
+            Stream your self-hosted music library from Navidrome, Airsonic, Gonic, or any OpenSubsonic-compatible server &mdash; in a real native SwiftUI app. Mini Player with pin-on-top, time-synced lyrics, AutoMix, sleep timer, and a directory browser. No Electron, no Catalyst, no web wrapper. One $5.99 Universal Purchase covers every Apple device.
+          </p>
+          <div class="p-hero__ctas">
+            <a class="btn btn--primary" href="#buy">
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+              </svg>
+              Buy on the Mac App Store — $5.99
+            </a>
+            <a class="link-quiet" href="#features">See every feature&nbsp;&rarr;</a>
+          </div>
+        </div>
+
+        <div class="p-hero__shot">
+          <img src="assets/screenshots/macos/navibeat-mac-home.png"
+               alt="NaviBeat for Mac main window: sidebar with Search, Home, Library (Artists, Albums, Recently Played, Newest, Songs, Favorite Songs, Genres, Playlists, Radios, Directories, Settings) and a Home view showing a Featured Album hero, Quick Play tiles, and a Most Played shelf."
+               width="1240" height="724" loading="eager" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== STATS STRIP -->
+  <section style="padding-block: clamp(32px, 5vh, 56px);">
+    <div class="wrap">
+      <ul class="p-stats reveal" role="list" aria-label="NaviBeat for Mac at a glance">
+        <li class="p-stat">
+          <p class="p-stat__num">Native <span class="accent">SwiftUI</span></p>
+          <p class="p-stat__label">No Electron. No Catalyst. No web shell.</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">0 <span class="accent">SDKs</span></p>
+          <p class="p-stat__label">No analytics. No trackers.</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">macOS <span class="accent">15+</span></p>
+          <p class="p-stat__label">Sequoia, Tahoe</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num"><span class="accent">$5.99</span> once</p>
+          <p class="p-stat__label">Universal Purchase · all Apple devices</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================== FEATURE GRID -->
+  <section id="features" aria-labelledby="mac-features-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">The full Mac experience</p>
+        <h2 id="mac-features-title" class="h2">Everything Navidrome can do, in a real native Mac app.</h2>
+        <p>Artists. Albums. Recently Played. Newest Albums. Songs. Favorite Songs. Genres. Playlists. Internet Radio. A Directories browser &mdash; the only Subsonic client that lets you navigate your library the way it's actually stored on disk. Search with history. And two players: a full-window Standard Player and a compact Mini Player you can pin on top of everything else.</p>
+      </div>
+
+      <div class="p-shots" role="list">
+
+        <article class="p-shot" role="listitem">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/macos/navibeat-mac-home.png"
+                 alt="NaviBeat Mac Home view with a Featured Album hero, four Quick Play tiles (Shuffle Mix, Random Album, Favorites, Random Artist), and a Most Played shelf."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">01 / Home</p>
+            <h3>Featured album, Quick Play, Most Played shelf.</h3>
+            <p>Home opens on a rotating Featured Album hero with a Play button and an Open Album shortcut, followed by a Quick Play row &mdash; Shuffle Mix, Random Album, Favorites, Random Artist &mdash; and your Most Played shelf pulled from your server's play counts.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse" role="listitem">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/macos/navibeat-mac-albums.png"
+                 alt="NaviBeat Mac Albums view with a scrolling grid of cover art, New badges on newest additions, sidebar filter, and a persistent player bar at the bottom."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">02 / Albums</p>
+            <h3>Grid of every album, New badges, persistent player bar.</h3>
+            <p>Every album on your Navidrome server in a fluid grid. Orange "New" badges on the freshest additions. Hover for Play. The player bar stays pinned at the bottom with cover art, track info, transport, Hi-Res/bit-depth badges, volume, heart, lyrics button, and queue button.</p>
+          </div>
+        </article>
+
+        <article class="p-shot" role="listitem">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/macos/navibeat-mac-artists.png"
+                 alt="NaviBeat Mac Artists list: searchable table of every artist with album counts, keyboard-navigable, with a Filter field at the top-right."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">03 / Artists</p>
+            <h3>Every artist, live-filtered, keyboard-navigable.</h3>
+            <p>Artists as a proper searchable table with album counts. Type to filter. Arrow keys to scroll. <code>⌘F</code> to jump into the Filter field. Everything the macOS Finder does, NaviBeat does too &mdash; because it's a real native app.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse" role="listitem">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/macos/navibeat-mac-genres.png"
+                 alt="NaviBeat Mac Genres view: color-gradient mood cards for Music, Rock, Metal, Hard Rock, Alternative, Dance, Electronic, Reggae, each with a song count."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">04 / Genres</p>
+            <h3>Color-coded mood cards for every genre.</h3>
+            <p>Genre browsing reimagined as color-gradient mood cards. Each card shows the genre name and a live song count. Click through to a filtered album view. Every genre tag your server has returned is represented &mdash; Rock, Metal, Hard Rock, Alternative, Dance, Electronic, Reggae, and everything else.</p>
+          </div>
+        </article>
+
+        <article class="p-shot" role="listitem">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/macos/navibeat-mac-playlists.png"
+                 alt="NaviBeat Mac Playlists view with a grid of user-made and server-synced playlists, each with a 4-up collage cover and song count."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">05 / Playlists</p>
+            <h3>Every playlist from your server, visually grouped.</h3>
+            <p>All your Navidrome playlists surfaced in a clean grid &mdash; yours, shared ones, and smart playlists if your server supports them. Auto-generated 4-up collage covers drawn from the first four tracks. Live song counts. Two-way sync with the server: create on the Mac, play on the TV.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse" role="listitem">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/macos/navibeat-mac-radios.png"
+                 alt="NaviBeat Mac Radios view: a list of internet radio stations with stream URLs visible — Beograd 202, Hit FM, Karolina, Naxi 80-e, Naxi Evergreen, Naxi Radio, Naxi Rock, Play, Radio Beograd 1."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">06 / Internet Radio</p>
+            <h3>Every radio station, with stream URLs shown.</h3>
+            <p>The Radio tab lists every internet radio station stored in your Navidrome server with its stream URL exposed &mdash; useful for debugging, and honest about where the audio comes from. MP3, AAC, OGG, and anything else your server streams. One click to play in the bottom bar.</p>
+          </div>
+        </article>
+
+        <article class="p-shot" role="listitem">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/macos/navibeat-mac-directories.png"
+                 alt="NaviBeat Mac Directories browser: a Finder-style list navigating into Music / Music Library with artist folders (1200 Micrograms, 1991, 4am Kru, 96 Zeus, Đorđe Balašević, 刘允文) and breadcrumb navigation."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">07 / Directories</p>
+            <h3>The only Subsonic client with a real folder browser.</h3>
+            <p>NaviBeat exposes the Directories API most other clients hide. Browse your music library the way it's actually stored on disk &mdash; artist folders, year folders, compilation folders, whatever structure you've chosen. Breadcrumbs at the top, arrow keys to navigate, Finder-level familiarity.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse" role="listitem">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/macos/navibeat-mac-search.png"
+                 alt="NaviBeat Mac Search: full-window search field with Recent Searches (red hot chili peppers, system of a down, red hot chil, red) and a Clear button."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">08 / Search</p>
+            <h3>Full-window search with Recent Searches.</h3>
+            <p>Search is its own dedicated tab with a full-width input, Recent Searches cached locally, and a Clear All button. Results unify artists, albums, tracks, and playlists in a single view. Jump back to last week's search with one arrow press.</p>
+          </div>
+        </article>
+
+        <article class="p-shot" role="listitem">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/macos/navibeat-mac-recently-played.png"
+                 alt="NaviBeat Mac Recently Played Albums view: grid of recently listened albums including Meteora Deluxe Edition, By the Way Deluxe, O&M (Live), Warm Nights, System of a Down."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">09 / Recently Played &amp; Newest</p>
+            <h3>Two shelves Navidrome power users will recognize.</h3>
+            <p>Recently Played Albums uses your server's play-count data to surface what you've actually been listening to. Newest Albums uses the <code>getAlbumList2?type=newest</code> endpoint so fresh imports surface immediately. Both are dedicated sidebar entries &mdash; no menu hunting.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== DEEP DIVE — Mini Player, Lyrics, Up Next -->
+  <section id="deep" aria-labelledby="mac-deep-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Mini Player &amp; craft</p>
+        <h2 id="mac-deep-title" class="h2">A compact player you can pin on top of everything.</h2>
+        <p>NaviBeat's Mini Player is a dedicated always-on-top window with the same feature depth as the main window &mdash; time-synced lyrics, Up Next queue, and a sleep timer &mdash; in a footprint small enough to share screen space with your code editor, browser, or Logic Pro session.</p>
+      </div>
+
+      <div class="p-deep" role="list">
+
+        <article class="p-deep__row" role="listitem">
+          <figure class="p-deep__media p-deep__media--portrait">
+            <img src="assets/screenshots/macos/navibeat-mac-mini-player.png"
+                 alt="NaviBeat Mini Player: compact window with edge-to-edge cover art of Linkin Park's Meteora, track title Lying from You, HI-RES and 24/44 badges, scrubbing slider at 0:58 of 1:56, shuffle/prev/play/next/repeat transport, and AirPlay / queue / volume / lyrics buttons."
+                 width="412" height="564" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-deep__copy">
+            <p class="eyebrow">Mini Player</p>
+            <h3>Edge-to-edge album art. Always on top.</h3>
+            <p>Compact window with cover art filling the header, title/artist/album underneath, Hi-Res and bit-depth/sample-rate badges, and a full transport row. Right-click to open the context menu: <strong>Pin Window On Top</strong> keeps NaviBeat floating over every other window on your Mac.</p>
+            <ul class="p-deep__list">
+              <li>Pin on top via context menu</li>
+              <li>Hi-Res, bit-depth, and sample-rate badges</li>
+              <li>AirPlay output picker inline</li>
+              <li>Heart to favorite, AutoMix toggle, sleep timer</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="p-deep__row p-deep__row--reverse" role="listitem">
+          <figure class="p-deep__media p-deep__media--portrait">
+            <img src="assets/screenshots/macos/navibeat-mac-mini-up-next.png"
+                 alt="NaviBeat Mini Player with the Up Next drawer expanded: AutoPlay toggle, Continue Playing list showing Hit the Floor, Easier to Run, Faint, Figure.09, Breaking the Habit, From the Inside — all from Linkin Park's Meteora."
+                 width="412" height="944" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-deep__copy">
+            <p class="eyebrow">Up Next drawer</p>
+            <h3>The queue, without leaving the Mini Player.</h3>
+            <p>Tap the queue icon and a frosted drawer slides down from the bottom of the Mini Player. AutoPlay toggle at the top. "Continue Playing" list showing the next tracks with thumbnails and album context. Tap any row to jump straight to it. Clear button wipes the queue without stopping playback.</p>
+            <ul class="p-deep__list">
+              <li>Frosted-glass drawer, native AppKit rendering</li>
+              <li>AutoPlay toggle for endless playback</li>
+              <li>Per-row thumbnails and album names</li>
+              <li>Drag to reorder &mdash; server syncs on release</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="p-deep__row" role="listitem">
+          <figure class="p-deep__media p-deep__media--portrait">
+            <img src="assets/screenshots/macos/navibeat-mac-mini-lyrics.png"
+                 alt="NaviBeat Mini Player with the Lyrics drawer expanded: time-synced lyrics for Linkin Park's Lying from You with past lines faded, current line 'Anywhere on my own ‘cause I can see' highlighted in white, upcoming lines dim."
+                 width="412" height="944" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-deep__copy">
+            <p class="eyebrow">Lyrics drawer</p>
+            <h3>Time-synced lyrics under the Mini Player.</h3>
+            <p>Lyrics button opens a second frosted drawer. When your server has LRC lyrics attached, lines scroll in sync with the audio &mdash; current line highlighted, past lines fade, upcoming lines wait. Embedded, sidecar, and Subsonic <code>getLyricsBySongId</code> responses all work. Falls back to plain text when no timings exist.</p>
+            <ul class="p-deep__list">
+              <li>LRC, SRT, and embedded lyrics supported</li>
+              <li>Auto-scroll tied to the track position</li>
+              <li>Large, readable Fraunces-family typography</li>
+              <li>Gracefully hides when no lyrics exist</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="p-deep__row p-deep__row--reverse" role="listitem">
+          <figure class="p-deep__media p-deep__media--portrait">
+            <img src="assets/screenshots/macos/navibeat-mac-mini-sleep-timer.png"
+                 alt="NaviBeat Mini Player right-click context menu open: Pin Window On Top, Show Album, Show Artist, AutoMix Off, and a Sleep Timer submenu with 5, 10, 15, 30, 45 minutes, 1, 2, 4 hours options."
+                 width="513" height="706" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-deep__copy">
+            <p class="eyebrow">AutoMix &amp; Sleep Timer</p>
+            <h3>Endless playback, graceful shutdown.</h3>
+            <p>Right-click the Mini Player for Pin Window On Top, Show Album, Show Artist, AutoMix toggle, and the Sleep Timer submenu &mdash; 5 minutes through 4 hours. AutoMix keeps the queue flowing with related tracks so music never just stops mid-session. Sleep Timer fades audio gently at zero; the window doesn't blink out.</p>
+            <ul class="p-deep__list">
+              <li>AutoMix pulls similar tracks from your library</li>
+              <li>Sleep Timer: 5/10/15/30/45 min, 1/2/4 hours</li>
+              <li>Audio fade, not hard cut, at timer expiry</li>
+              <li>Pin On Top persists across window reopen</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== STANDARD PLAYER LYRICS + QUEUE -->
+  <section class="apple-tv-flagship" aria-labelledby="mac-std-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Standard Player</p>
+        <h2 id="mac-std-title" class="h2">Lyrics panel and queue panel, side-by-side with the library.</h2>
+      </div>
+
+      <div class="p-deep" role="list">
+        <article class="p-deep__row" role="listitem">
+          <figure class="p-deep__media">
+            <img src="assets/screenshots/macos/navibeat-mac-lyrics-panel.png"
+                 alt="NaviBeat Mac Standard Player with the lyrics panel docked to the right side showing time-synced lyrics for By the Way by Red Hot Chili Peppers, while the main library browser stays visible."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-deep__copy">
+            <p class="eyebrow">Lyrics panel</p>
+            <h3>Keep browsing. Lyrics scroll on the side.</h3>
+            <p>The Standard Player mounts the lyrics panel on the right edge of the window so you can keep browsing Albums, Playlists, or Directories while the lyrics scroll. Toggle it on and off with a single button in the player bar.</p>
+          </div>
+        </article>
+
+        <article class="p-deep__row p-deep__row--reverse" role="listitem">
+          <figure class="p-deep__media">
+            <img src="assets/screenshots/macos/navibeat-mac-up-next-panel.png"
+                 alt="NaviBeat Mac Standard Player with the Up Next queue panel docked to the right side listing upcoming tracks from By the Way by Red Hot Chili Peppers while the main library browser stays visible."
+                 width="1240" height="724" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-deep__copy">
+            <p class="eyebrow">Up Next panel</p>
+            <h3>Queue management without losing your place.</h3>
+            <p>Same edge, same behavior: the Up Next queue opens in a right-side panel with draggable reordering. Jump to any track, remove an item, or clear the whole queue &mdash; all without leaving whatever view you were in.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== COMPATIBILITY STRIP -->
+  <section class="p-compat" aria-labelledby="mac-compat-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Servers &amp; hardware</p>
+        <h2 id="mac-compat-title" class="h2">Works with every major self-hosted music server.</h2>
+      </div>
+      <div class="p-compat__grid">
+        <div class="p-compat__cell">
+          <h4>Servers</h4>
+          <ul>
+            <li>Navidrome (0.49+)</li>
+            <li>Airsonic-Advanced</li>
+            <li>Gonic</li>
+            <li>Any OpenSubsonic server</li>
+            <li>Classic Subsonic (legacy)</li>
+          </ul>
+        </div>
+        <div class="p-compat__cell">
+          <h4>macOS</h4>
+          <ul>
+            <li>macOS 15 Sequoia</li>
+            <li>macOS 16 Tahoe</li>
+            <li>Apple Silicon native</li>
+            <li>Intel Mac compatible</li>
+            <li>AirPlay 2 output</li>
+          </ul>
+        </div>
+        <div class="p-compat__cell">
+          <h4>Audio</h4>
+          <ul>
+            <li>MP3 / AAC / OGG</li>
+            <li>FLAC and ALAC (Hi-Res badge)</li>
+            <li>Opus, WAV, AIFF</li>
+            <li>Server-side transcoding</li>
+            <li>Gapless playback</li>
+          </ul>
+        </div>
+        <div class="p-compat__cell">
+          <h4>Privacy</h4>
+          <ul>
+            <li>Zero third-party SDKs</li>
+            <li>Zero analytics</li>
+            <li>Only talks to your server</li>
+            <li>Credentials in macOS Keychain</li>
+            <li>Open-source client contract</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== PLATFORM PICKER -->
+  <section class="p-picker" aria-labelledby="mac-picker-title">
+    <div class="wrap">
+      <div class="p-picker__head">
+        <p class="eyebrow eyebrow--accent">Also on</p>
+        <h2 id="mac-picker-title">One purchase. Every Apple device.</h2>
+      </div>
+      <ul class="p-lozenges" role="list">
+        <li>
+          <a class="p-loz" href="appletv.html">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">Apple TV</span>
+            <span class="p-loz__tag">Review pending</span>
+          </a>
+        </li>
+        <li>
+          <span class="p-loz is-current" aria-current="page">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
+                <path d="M9 21h6M10 17l-.5 4M14 17l.5 4"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">Mac</span>
+            <span class="p-loz__tag">You're here</span>
+          </span>
+        </li>
+        <li>
+          <span class="p-loz is-soon" aria-disabled="true">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="2.5" width="10" height="19" rx="2.5"/>
+                <path d="M10 5.5h4M11 19h2"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">iPhone</span>
+            <span class="p-loz__tag">Coming soon</span>
+          </span>
+        </li>
+        <li>
+          <span class="p-loz is-soon" aria-disabled="true">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2.5" width="16" height="19" rx="2"/>
+                <path d="M11 19h2"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">iPad</span>
+            <span class="p-loz__tag">Coming soon</span>
+          </span>
+        </li>
+        <li>
+          <span class="p-loz is-soon" aria-disabled="true">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="6" width="10" height="12" rx="2.5"/>
+                <path d="M9 6l.7-3h4.6L15 6M9 18l.7 3h4.6L15 18M19 11v2"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">Apple Watch</span>
+            <span class="p-loz__tag">Coming soon</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================== BUY BAND -->
+  <section class="price" id="buy" aria-labelledby="mac-price-title">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">Price</p>
+      <p class="price__h" id="mac-price-title">A native Navidrome client for every Apple device.</p>
+      <div class="price__num">$5.99</div>
+      <p class="price__sub">One purchase. Mac, Apple TV, iPhone, iPad, and Apple Watch. Forever.</p>
+      <div class="price__ctas">
+        <a class="btn btn--primary" href="#" aria-label="Buy NaviBeat on the Mac App Store for $5.99">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          Buy on Mac App Store — $5.99
+        </a>
+        <a class="link-quiet" href="https://www.navidrome.org" target="_blank" rel="noopener">Set up your Navidrome server &nbsp;&rarr;</a>
+      </div>
+      <p class="price__trial">Awaiting Mac App Store review &mdash; launch imminent.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================================================== FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="index.html">
+          <img src="assets/icon.svg" alt="">
+          <span>NaviBeat</span>
+        </a>
+        <p style="max-width: 32ch;">A native Apple-ecosystem client for Navidrome and OpenSubsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html#explore">All apps</a></li>
+          <li><a href="appletv.html">Apple TV</a></li>
+          <li><a href="macos.html">Mac</a></li>
+          <li><a href="iphone.html">iPhone</a></li>
+          <li><a href="ipad.html">iPad</a></li>
+          <li><a href="applewatch.html">Apple Watch</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic</span>
+      <span>v1.0 · macOS &amp; tvOS in App Store review · iPhone, iPad, Watch coming</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var hasIO = 'IntersectionObserver' in window;
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+    }
+    var secs = document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .p-shots, .p-deep, .price');
+    if (hasIO) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
+      secs.forEach(function (el) { sio.observe(el); });
+    } else { secs.forEach(function (el) { el.classList.add('is-in'); }); }
+  })();
+</script>
+
+</body>
+</html>

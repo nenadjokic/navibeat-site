@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaviBeat — Support</title>
+  <meta name="description" content="NaviBeat support: server setup, playback troubleshooting, privacy, and account FAQ.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__word">NaviBeat</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="index.html#explore" class="nav__link nav__link-hide-sm">Apps</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a class="btn btn--primary btn--compact" href="index.html#buy">Buy&nbsp;$5.99</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="prose">
+  <h1>Support</h1>
+  <p class="meta">Get help with NaviBeat</p>
+
+  <div class="contact-box">
+    <p>Email <a href="mailto:support@navibeat.app">support@navibeat.app</a> and we will get back to you within 48 hours.</p>
+  </div>
+
+  <h2>What server does NaviBeat require?</h2>
+  <p>NaviBeat works with any Navidrome server (v0.50 or later) or any OpenSubsonic-compatible server. Navidrome is free and open source. See <a href="https://www.navidrome.org" target="_blank" rel="noopener">navidrome.org</a> for installation instructions.</p>
+
+  <h2>The app says "Cannot reach server". What do I do?</h2>
+  <ul>
+    <li>Check that your Navidrome server is running.</li>
+    <li>Check that the URL you entered is correct, including the port number (e.g., <code>http://192.168.0.110:4533</code>).</li>
+    <li>If you are away from home, make sure your server is accessible from outside your home network (via a reverse proxy, Tailscale, or similar).</li>
+    <li>If your server uses a self-signed TLS certificate, NaviBeat may reject the connection. Use a trusted certificate (Let's Encrypt is free) or reach out to us for help.</li>
+  </ul>
+
+  <h2>Playback cuts out or stutters. How do I fix it?</h2>
+  <ul>
+    <li>Try lowering the max bit rate in Settings &gt; Audio to 192 kbps or 128 kbps.</li>
+    <li>Check your home network. A wired connection for the Apple TV improves stability significantly.</li>
+    <li>Check your server's CPU and disk usage. If Navidrome is transcoding on a slow machine, playback can lag.</li>
+  </ul>
+
+  <h2>Where is my data stored?</h2>
+  <p>Everything is on your device or your own server. NaviBeat does not send any data to us or any third party. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+  <h2>Can I use NaviBeat with multiple servers?</h2>
+  <p>v1 supports one server per install. Multi-server support is on the roadmap.</p>
+
+  <h2>How do I disconnect from my server?</h2>
+  <p>Open the Settings tab, scroll to the Server section, and tap Disconnect. This clears your credentials from the device.</p>
+</div>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="index.html">
+          <img src="assets/icon.svg" alt="">
+          <span>NaviBeat</span>
+        </a>
+        <p style="max-width: 32ch;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html#explore">Apps</a></li>
+          <li><a href="index.html#platforms">Platforms</a></li>
+          <li><a href="index.html#buy">Buy $5.99</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic</span>
+      <span>v1.0 · macOS &amp; tvOS in App Store review · iPhone, iPad, Watch coming</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    var onScroll = function () {
+      if (window.scrollY > 24) nav.classList.add('is-scrolled');
+      else nav.classList.remove('is-scrolled');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
+
+</body>
+</html>

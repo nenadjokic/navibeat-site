@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="iPad Pro 13 inch in landscape showing NaviBeat Home with sidebar and album grid">
+  <defs>
+    <linearGradient id="ipad-shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2a2a"/>
+      <stop offset="0.5" stop-color="#1e1e1e"/>
+      <stop offset="1" stop-color="#121212"/>
+    </linearGradient>
+    <linearGradient id="ipad-art1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a1d08"/><stop offset="1" stop-color="#E39B56"/>
+    </linearGradient>
+    <linearGradient id="ipad-art2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#132a2a"/><stop offset="1" stop-color="#2b7a78"/>
+    </linearGradient>
+    <linearGradient id="ipad-art3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a0f2a"/><stop offset="1" stop-color="#b24a8a"/>
+    </linearGradient>
+    <linearGradient id="ipad-art4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1a2e"/><stop offset="1" stop-color="#5960a8"/>
+    </linearGradient>
+    <linearGradient id="ipad-art5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a1a08"/><stop offset="1" stop-color="#c97a3a"/>
+    </linearGradient>
+    <linearGradient id="ipad-art6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08221a"/><stop offset="1" stop-color="#4a9a6a"/>
+    </linearGradient>
+    <linearGradient id="ipad-art7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b1212"/><stop offset="1" stop-color="#c24a4a"/>
+    </linearGradient>
+    <linearGradient id="ipad-art8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1208"/><stop offset="1" stop-color="#8a6a3a"/>
+    </linearGradient>
+    <clipPath id="ipad-screen"><rect x="68" y="68" width="1264" height="764" rx="14"/></clipPath>
+  </defs>
+
+  <!-- Device shell -->
+  <rect x="40" y="40" width="1320" height="820" rx="44" fill="url(#ipad-shell)"/>
+  <rect x="48" y="48" width="1304" height="804" rx="38" fill="#050505"/>
+  <rect x="68" y="68" width="1264" height="764" rx="14" fill="#0a0a0a"/>
+
+  <g clip-path="url(#ipad-screen)" font-family="'Inter Tight', system-ui, sans-serif">
+    <!-- Subtle ambient glow at top-left -->
+    <ellipse cx="240" cy="160" rx="340" ry="220" fill="#E39B56" fill-opacity="0.08"/>
+
+    <!-- Status bar -->
+    <text x="96" y="96" fill="#f2efe8" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="12" font-weight="500">9:41</text>
+    <g transform="translate(1240 88)" fill="#f2efe8">
+      <rect width="18" height="10" rx="2" opacity="0.9"/>
+      <rect x="-26" y="2" width="18" height="8" rx="1" opacity="0.75"/>
+      <rect x="-52" y="1" width="20" height="10" rx="1" opacity="0.7"/>
+    </g>
+
+    <!-- Sidebar -->
+    <rect x="68" y="114" width="260" height="718" fill="#111111"/>
+    <rect x="327" y="114" width="1" height="718" fill="#ffffff" fill-opacity="0.06"/>
+
+    <g transform="translate(96 150)">
+      <text fill="#E39B56" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" letter-spacing="1.2">NAVIBEAT</text>
+      <text y="18" fill="#f2efe8" font-family="'Fraunces', Georgia, serif" font-style="italic" font-weight="300" font-size="22">Library</text>
+    </g>
+
+    <!-- Sidebar items -->
+    <g transform="translate(84 222)" font-size="14">
+      <!-- Active row -->
+      <rect width="228" height="40" rx="10" fill="#E39B56" fill-opacity="0.14"/>
+      <circle cx="22" cy="20" r="4" fill="#E39B56"/>
+      <text x="44" y="25" fill="#f2efe8" font-weight="500">Home</text>
+
+      <g transform="translate(0 50)">
+        <circle cx="22" cy="20" r="4" fill="#f2efe8" fill-opacity="0.5"/>
+        <text x="44" y="25" fill="#a8a39a">Albums</text>
+      </g>
+      <g transform="translate(0 90)">
+        <circle cx="22" cy="20" r="4" fill="#f2efe8" fill-opacity="0.5"/>
+        <text x="44" y="25" fill="#a8a39a">Artists</text>
+      </g>
+      <g transform="translate(0 130)">
+        <circle cx="22" cy="20" r="4" fill="#f2efe8" fill-opacity="0.5"/>
+        <text x="44" y="25" fill="#a8a39a">Songs</text>
+      </g>
+      <g transform="translate(0 170)">
+        <circle cx="22" cy="20" r="4" fill="#f2efe8" fill-opacity="0.5"/>
+        <text x="44" y="25" fill="#a8a39a">Playlists</text>
+      </g>
+      <g transform="translate(0 210)">
+        <circle cx="22" cy="20" r="4" fill="#f2efe8" fill-opacity="0.5"/>
+        <text x="44" y="25" fill="#a8a39a">Downloaded</text>
+      </g>
+
+      <!-- Section header -->
+      <text y="282" fill="#a8a39a" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" letter-spacing="1.2">PLAYLISTS</text>
+      <g transform="translate(0 300)">
+        <circle cx="22" cy="20" r="4" fill="#f2efe8" fill-opacity="0.4"/>
+        <text x="44" y="25" fill="#a8a39a" font-size="13">Late Night Drive</text>
+      </g>
+      <g transform="translate(0 336)">
+        <circle cx="22" cy="20" r="4" fill="#f2efe8" fill-opacity="0.4"/>
+        <text x="44" y="25" fill="#a8a39a" font-size="13">Focus Deep</text>
+      </g>
+      <g transform="translate(0 372)">
+        <circle cx="22" cy="20" r="4" fill="#f2efe8" fill-opacity="0.4"/>
+        <text x="44" y="25" fill="#a8a39a" font-size="13">Sunday Mornings</text>
+      </g>
+    </g>
+
+    <!-- Main content -->
+    <g transform="translate(360 150)">
+      <text fill="#E39B56" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" letter-spacing="1.2">MOST PLAYED</text>
+      <text y="36" fill="#f2efe8" font-family="'Fraunces', Georgia, serif" font-weight="400" font-size="32" letter-spacing="-0.5">Good evening, Nenad.</text>
+
+      <!-- Album grid row 1 -->
+      <g transform="translate(0 80)">
+        <g>
+          <rect width="210" height="210" rx="10" fill="url(#ipad-art1)"/>
+          <circle cx="105" cy="105" r="44" fill="#0a0a0a" fill-opacity="0.35"/>
+          <circle cx="105" cy="105" r="10" fill="#E39B56"/>
+          <text y="234" fill="#f2efe8" font-size="14" font-weight="500">So Tonight That I Might See</text>
+          <text y="254" fill="#a8a39a" font-size="12">Mazzy Star</text>
+        </g>
+        <g transform="translate(232 0)">
+          <rect width="210" height="210" rx="10" fill="url(#ipad-art2)"/>
+          <circle cx="105" cy="105" r="44" fill="#0a0a0a" fill-opacity="0.35"/>
+          <circle cx="105" cy="105" r="10" fill="#2b7a78"/>
+          <text y="234" fill="#f2efe8" font-size="14" font-weight="500">A Moon Shaped Pool</text>
+          <text y="254" fill="#a8a39a" font-size="12">Radiohead</text>
+        </g>
+        <g transform="translate(464 0)">
+          <rect width="210" height="210" rx="10" fill="url(#ipad-art3)"/>
+          <circle cx="105" cy="105" r="44" fill="#0a0a0a" fill-opacity="0.35"/>
+          <circle cx="105" cy="105" r="10" fill="#b24a8a"/>
+          <text y="234" fill="#f2efe8" font-size="14" font-weight="500">Hounds of Love</text>
+          <text y="254" fill="#a8a39a" font-size="12">Kate Bush</text>
+        </g>
+        <g transform="translate(696 0)">
+          <rect width="210" height="210" rx="10" fill="url(#ipad-art4)"/>
+          <circle cx="105" cy="105" r="44" fill="#0a0a0a" fill-opacity="0.35"/>
+          <circle cx="105" cy="105" r="10" fill="#5960a8"/>
+          <text y="234" fill="#f2efe8" font-size="14" font-weight="500">In Rainbows</text>
+          <text y="254" fill="#a8a39a" font-size="12">Radiohead</text>
+        </g>
+      </g>
+
+      <!-- Section 2 -->
+      <g transform="translate(0 376)">
+        <text fill="#E39B56" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" letter-spacing="1.2">RECENTLY ADDED</text>
+        <g transform="translate(0 20)">
+          <rect width="210" height="210" rx="10" fill="url(#ipad-art5)"/>
+          <circle cx="105" cy="105" r="44" fill="#0a0a0a" fill-opacity="0.3"/>
+          <circle cx="105" cy="105" r="10" fill="#c97a3a"/>
+        </g>
+        <g transform="translate(232 20)">
+          <rect width="210" height="210" rx="10" fill="url(#ipad-art6)"/>
+          <circle cx="105" cy="105" r="44" fill="#0a0a0a" fill-opacity="0.3"/>
+          <circle cx="105" cy="105" r="10" fill="#4a9a6a"/>
+        </g>
+        <g transform="translate(464 20)">
+          <rect width="210" height="210" rx="10" fill="url(#ipad-art7)"/>
+          <circle cx="105" cy="105" r="44" fill="#0a0a0a" fill-opacity="0.3"/>
+          <circle cx="105" cy="105" r="10" fill="#c24a4a"/>
+        </g>
+        <g transform="translate(696 20)">
+          <rect width="210" height="210" rx="10" fill="url(#ipad-art8)"/>
+          <circle cx="105" cy="105" r="44" fill="#0a0a0a" fill-opacity="0.3"/>
+          <circle cx="105" cy="105" r="10" fill="#8a6a3a"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Mini transport bar at bottom -->
+    <rect x="68" y="770" width="1264" height="62" fill="#0a0a0a"/>
+    <rect x="68" y="770" width="1264" height="1" fill="#ffffff" fill-opacity="0.08"/>
+    <rect x="96" y="788" width="36" height="36" rx="6" fill="url(#ipad-art1)"/>
+    <text x="148" y="804" fill="#f2efe8" font-size="13" font-weight="500">Fade Into You</text>
+    <text x="148" y="820" fill="#a8a39a" font-size="11">Mazzy Star</text>
+    <g transform="translate(1260 806)" fill="#f2efe8">
+      <circle r="14" fill="#f2efe8"/>
+      <path d="M -4 -5 L -4 5 L 4 0 Z" fill="#0a0a0a"/>
+    </g>
+    <g transform="translate(1214 806)" fill="#f2efe8" opacity="0.7">
+      <path d="M 0 0 L -8 -5 L -8 5 Z" transform="rotate(180)"/>
+    </g>
+    <g transform="translate(1176 806)" fill="#f2efe8" opacity="0.7">
+      <path d="M 0 0 L 8 -5 L 8 5 Z"/>
+    </g>
+  </g>
+
+  <!-- Camera -->
+  <circle cx="700" cy="54" r="4" fill="#0a0a0a" stroke="#1a1a1a"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2400" role="img" aria-label="Screenshot placeholder: iPhone Now Playing, coming soon.">
+  <rect width="1200" height="2400" fill="#0a0a0a"/>
+  <rect x="80" y="80" width="1040" height="2240" rx="160" fill="#141414" stroke="#1c1c1c" stroke-width="16"/>
+  <rect x="120" y="120" width="960" height="2160" rx="128" fill="#0f0f0f"/>
+  <rect x="460" y="150" width="280" height="28" rx="14" fill="#0a0a0a"/>
+  <rect x="200" y="320" width="800" height="800" rx="24" fill="#3a2616"/>
+  <text x="600" y="740" font-family="JetBrains Mono, monospace" font-size="28" fill="#f2efe8" opacity="0.45" text-anchor="middle">ALBUM ART</text>
+  <g transform="translate(200,1200)" fill="#f2efe8" font-family="Inter Tight, sans-serif">
+    <text font-size="44" font-weight="600">Track Title</text>
+    <text y="56" font-size="30" fill="#a8a39a">Artist — Album</text>
+  </g>
+  <rect x="200" y="1340" width="800" height="6" rx="3" fill="#1c1c1c"/>
+  <rect x="200" y="1340" width="300" height="6" rx="3" fill="#E39B56"/>
+  <g transform="translate(460,1460)" fill="#f2efe8">
+    <circle cx="0" cy="0" r="36" fill="none" stroke="#f2efe8" stroke-width="4"/>
+    <circle cx="140" cy="0" r="56" fill="#E39B56"/>
+    <circle cx="280" cy="0" r="36" fill="none" stroke="#f2efe8" stroke-width="4"/>
+  </g>
+  <text x="600" y="2000" font-family="JetBrains Mono, monospace" font-size="22" fill="#a8a39a" letter-spacing="3" text-anchor="middle">COMING SOON</text>
+  <text x="600" y="2360" font-family="Inter Tight, sans-serif" font-size="24" fill="#a8a39a" text-anchor="middle">iPhone placeholder (1200x2400)</text>
+</svg>

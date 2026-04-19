@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Screenshot placeholder: Mac mini player with drawer open, album art dominant.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="art" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a2616"/>
+      <stop offset="100%" stop-color="#E39B56" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="20" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1600" height="56" fill="#1c1c1c"/>
+  <circle cx="28" cy="28" r="7" fill="#ff5f56"/>
+  <circle cx="52" cy="28" r="7" fill="#ffbd2e"/>
+  <circle cx="76" cy="28" r="7" fill="#27c93f"/>
+  <rect x="80" y="140" width="700" height="700" rx="12" fill="url(#art)"/>
+  <text x="430" y="500" font-family="JetBrains Mono, monospace" font-size="22" fill="#f2efe8" opacity="0.55" text-anchor="middle">ALBUM ART</text>
+  <rect x="840" y="140" width="680" height="700" rx="12" fill="#141414" stroke="rgba(255,255,255,0.08)"/>
+  <text x="880" y="200" font-family="JetBrains Mono, monospace" font-size="13" fill="#a8a39a" letter-spacing="2">UP NEXT / LYRICS DRAWER</text>
+  <g transform="translate(880,240)">
+    <rect width="600" height="48" rx="8" fill="#1c1c1c"/>
+    <rect y="64" width="600" height="48" rx="8" fill="#1c1c1c"/>
+    <rect y="128" width="600" height="48" rx="8" fill="#1c1c1c"/>
+    <rect y="192" width="600" height="48" rx="8" fill="#1c1c1c"/>
+    <rect y="256" width="600" height="48" rx="8" fill="#1c1c1c"/>
+  </g>
+  <rect x="80" y="880" width="1440" height="60" rx="10" fill="#1c1c1c"/>
+  <circle cx="800" cy="910" r="16" fill="#E39B56"/>
+  <text x="800" y="980" font-family="Inter Tight, sans-serif" font-size="14" fill="#a8a39a" text-anchor="middle">Screenshot placeholder: Mac mini player (1600x1000) — drawer open, album art dominant</text>
+</svg>

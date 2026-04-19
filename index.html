@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaviBeat — Native Navidrome &amp; Subsonic Client for Apple TV, Mac, iPhone, iPad, Apple Watch</title>
+  <meta name="description" content="NaviBeat is the native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and any OpenSubsonic server. Apple TV, Mac, iPhone, iPad, and Apple Watch — one $5.99 Universal Purchase. Time-synced lyrics, internet radio, Mini Player, directory browsing, AutoMix, sleep timer.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="keywords" content="Navidrome client, Subsonic client, OpenSubsonic, Airsonic, Gonic, self-hosted music player, Navidrome Apple TV, Navidrome Mac, Subsonic iOS, native music app, OpenSubsonic tvOS, OpenSubsonic macOS">
+  <link rel="canonical" href="https://navibeat.app/">
+
+  <meta property="og:title" content="NaviBeat — Native Navidrome &amp; Subsonic client for every Apple device">
+  <meta property="og:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. Native SwiftUI Navidrome client with time-synced lyrics, internet radio, Mini Player, AutoMix, and sleep timer. One $5.99 Universal Purchase.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "NaviBeat",
+    "operatingSystem": "macOS, tvOS, iOS, iPadOS, watchOS",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "Music Streaming Client",
+    "description": "Native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. Ships on Apple TV, Mac, iPhone, iPad, and Apple Watch as a single Universal Purchase.",
+    "offers": {
+      "@type": "Offer",
+      "price": "5.99",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Navidrome support",
+      "OpenSubsonic API compatibility",
+      "Airsonic and Gonic compatibility",
+      "Time-synced lyrics (LRC)",
+      "Internet radio streaming",
+      "Mini Player with pin-on-top",
+      "AutoMix endless playback",
+      "Sleep timer with fade",
+      "Directory folder browser",
+      "Universal Purchase"
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#top" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__word">NaviBeat</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="#explore" class="nav__link nav__link-hide-sm">Apps</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a class="btn btn--primary btn--compact" href="#buy">Buy&nbsp;$5.99</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ========================================================== HERO -->
+  <section class="hero">
+    <div class="hero__ambient" aria-hidden="true">
+      <span class="hero__ambient-glow hero__ambient-glow--a"></span>
+      <span class="hero__ambient-glow hero__ambient-glow--b"></span>
+      <span class="hero__grid-lines"></span>
+    </div>
+
+    <div class="wrap hero__wrap">
+      <div class="hero__copy">
+        <p class="eyebrow hero__eyebrow">
+          <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+          NaviBeat v1.0 &nbsp;·&nbsp; Universal Purchase
+        </p>
+        <h1 class="display hero__h1" aria-label="Your music. Your server. Every screen you own.">
+          <span class="word" style="animation-delay:0ms">Your</span>
+          <span class="word" style="animation-delay:40ms">music.</span>
+          <span class="word" style="animation-delay:80ms">Your</span>
+          <span class="word" style="animation-delay:120ms">server.</span>
+          <span class="word" style="animation-delay:200ms">Every</span>
+          <span class="word" style="animation-delay:240ms">screen</span>
+          <span class="word" style="animation-delay:280ms">you</span>
+          <span class="word" style="animation-delay:320ms">own.</span>
+        </h1>
+        <p class="lede hero__sub">
+          A beautifully native Navidrome and Subsonic player for Apple TV, Mac, iPhone, iPad, and Apple Watch. One purchase&nbsp;—&nbsp;$5.99&nbsp;—&nbsp;covers every device, forever.
+        </p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#buy" id="hero-buy">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+            </svg>
+            Buy on App Store — $5.99
+          </a>
+          <a class="link-quiet" href="https://www.navidrome.org" target="_blank" rel="noopener">Set up your Navidrome server&nbsp;&rarr;</a>
+        </div>
+      </div>
+
+      <div class="lineup" aria-label="NaviBeat running on Apple TV, MacBook Pro, iPad Pro, iPhone, Apple Watch">
+        <div class="lineup__stage">
+          <span class="lineup__glow" aria-hidden="true"></span>
+          <span class="lineup__floor" aria-hidden="true"></span>
+
+          <figure class="lineup__device lineup__device--tv" style="--stagger: 0ms;">
+            <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg" alt="NaviBeat running on Apple TV 4K: Home screen with Featured Album hero, Quick Play shelf (Favourites, Shuffle Mix, Random Album, Random Artist) and Recently Added row — a native Navidrome and Subsonic client for tvOS." width="2400" height="1350" loading="eager" decoding="async" fetchpriority="high">
+          </figure>
+
+          <figure class="lineup__device lineup__device--mac" style="--stagger: 160ms;">
+            <img src="assets/screenshots/macos/navibeat-mac-home.png" alt="NaviBeat running on Mac: native SwiftUI Navidrome and Subsonic client for macOS with sidebar Home, Artists, Albums, Playlists, Radio, Directories and a Featured Album hero." width="1240" height="724" loading="eager" decoding="async" fetchpriority="high">
+          </figure>
+
+          <figure class="lineup__device lineup__device--ipad" style="--stagger: 320ms;">
+            <img src="assets/devices/ipad.svg" alt="NaviBeat Home on iPad Pro with a sidebar and album grid." width="1400" height="900" loading="eager" decoding="async">
+          </figure>
+
+          <figure class="lineup__device lineup__device--iphone" style="--stagger: 480ms;">
+            <img src="assets/devices/iphone.svg" alt="NaviBeat Now Playing full-screen on iPhone 15 Pro." width="600" height="1200" loading="eager" decoding="async">
+          </figure>
+
+          <figure class="lineup__device lineup__device--watch" style="--stagger: 640ms;">
+            <img src="assets/devices/applewatch.svg" alt="NaviBeat Now Playing on Apple Watch Ultra with cover art and transport." width="600" height="800" loading="eager" decoding="async">
+          </figure>
+        </div>
+
+        <p class="lineup__caption"><span>One purchase.</span> <span>Every screen.</span> <span>Forever.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== PLATFORMS BAND (clickable lozenges) -->
+  <section class="platforms" id="platforms" aria-labelledby="platforms-title">
+    <div class="wrap">
+      <div class="platforms__eyebrow">
+        <p class="eyebrow eyebrow--accent">One purchase, five devices</p>
+        <h2 id="platforms-title" class="platforms__title">Every screen Apple makes. One receipt.</h2>
+      </div>
+
+      <ul class="plat-band" role="list">
+        <li>
+          <a class="plat plat--link is-live" href="appletv.html">
+            <span class="plat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </span>
+            <span class="plat__meta">
+              <span class="plat__name">Apple TV <span class="plat__arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="plat__status"><span class="plat__dot"></span>Review pending</span>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="plat plat--link is-live" href="macos.html">
+            <span class="plat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
+                <path d="M9 21h6M10 17l-.5 4M14 17l.5 4"/>
+              </svg>
+            </span>
+            <span class="plat__meta">
+              <span class="plat__name">Mac <span class="plat__arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="plat__status"><span class="plat__dot"></span>Review pending</span>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="plat plat--link" href="iphone.html">
+            <span class="plat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="2.5" width="10" height="19" rx="2.5"/>
+                <path d="M10 5.5h4M11 19h2"/>
+              </svg>
+            </span>
+            <span class="plat__meta">
+              <span class="plat__name">iPhone <span class="plat__arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="plat__status is-coming"><span class="plat__dot"></span>Coming soon</span>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="plat plat--link" href="ipad.html">
+            <span class="plat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2.5" width="16" height="19" rx="2"/>
+                <path d="M11 19h2"/>
+              </svg>
+            </span>
+            <span class="plat__meta">
+              <span class="plat__name">iPad <span class="plat__arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="plat__status is-coming"><span class="plat__dot"></span>Coming soon</span>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="plat plat--link" href="applewatch.html">
+            <span class="plat__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="6" width="10" height="12" rx="2.5"/>
+                <path d="M9 6l.7-3h4.6L15 6M9 18l.7 3h4.6L15 18M19 11v2"/>
+              </svg>
+            </span>
+            <span class="plat__meta">
+              <span class="plat__name">Apple Watch <span class="plat__arrow" aria-hidden="true">&rarr;</span></span>
+              <span class="plat__status is-coming"><span class="plat__dot"></span>Coming soon</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="plat plat--carplay">
+          <span class="plat__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 14l1.5-5.5A2 2 0 017.5 7h9a2 2 0 012 1.5L20 14"/>
+              <rect x="3" y="14" width="18" height="5" rx="1.5"/>
+              <circle cx="7" cy="16.5" r="0.8" fill="currentColor"/>
+              <circle cx="17" cy="16.5" r="0.8" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="plat__meta">
+            <span class="plat__name">CarPlay</span>
+            <span class="plat__status is-coming"><span class="plat__dot"></span>Coming soon</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================== EXPLORE EACH APP -->
+  <section id="explore" aria-labelledby="explore-title">
+    <div class="wrap">
+      <div class="reveal-stagger" style="margin-bottom:56px; max-width:56ch;">
+        <p class="eyebrow eyebrow--accent">Explore each app</p>
+        <h2 id="explore-title" class="h2">Five apps plus CarPlay. One design language. Each built for the screen it runs on.</h2>
+      </div>
+
+      <div class="explore-grid reveal-stagger" role="list">
+
+        <a class="xcard" href="appletv.html" role="listitem" aria-label="Explore NaviBeat for Apple TV — Navidrome client for tvOS">
+          <p class="xcard__eyebrow">Apple TV</p>
+          <h3 class="xcard__h">A full Navidrome client for tvOS 18+.</h3>
+          <p class="xcard__tag">Featured Album hero, Library (Albums, Artists, Genres, Favorites), Playlists, Internet Radio, time-synced lyrics, full Siri Remote support on Apple TV 4K.</p>
+          <div class="xcard__foot">
+            <span class="xcard__badge xcard__badge--live" aria-label="Live"><span class="xcard__dot"></span>Live</span>
+            <span class="xcard__cta">Explore &rarr;</span>
+          </div>
+          <div class="xcard__art" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="8" y="14" width="56" height="36" rx="4"/>
+              <path d="M28 58h16M36 50v8"/>
+              <rect x="14" y="20" width="14" height="10" rx="1.5" opacity="0.55"/>
+              <rect x="30" y="20" width="14" height="10" rx="1.5" opacity="0.55"/>
+              <rect x="46" y="20" width="14" height="10" rx="1.5" opacity="0.55"/>
+              <rect x="14" y="34" width="14" height="10" rx="1.5" opacity="0.25"/>
+              <rect x="30" y="34" width="14" height="10" rx="1.5" opacity="0.25"/>
+              <rect x="46" y="34" width="14" height="10" rx="1.5" opacity="0.25"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="xcard" href="macos.html" role="listitem" aria-label="Explore NaviBeat for Mac — native Navidrome client for macOS">
+          <p class="xcard__eyebrow">Mac</p>
+          <h3 class="xcard__h">Native SwiftUI Navidrome client.</h3>
+          <p class="xcard__tag">Mini Player with pin-on-top, time-synced lyrics, AutoMix, sleep timer, directory browser, internet radio, Hi-Res badges. No Electron, no Catalyst.</p>
+          <div class="xcard__foot">
+            <span class="xcard__badge xcard__badge--live" aria-label="Live"><span class="xcard__dot"></span>Live</span>
+            <span class="xcard__cta">Explore &rarr;</span>
+          </div>
+          <div class="xcard__art" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="8" y="16" width="56" height="36" rx="2.5"/>
+              <rect x="12" y="20" width="48" height="28" rx="1.5" opacity="0.55"/>
+              <path d="M26 58h20M34 52v6M38 52v6"/>
+              <circle cx="13" cy="20" r="0.8" fill="currentColor"/>
+              <circle cx="16" cy="20" r="0.8" fill="currentColor"/>
+              <circle cx="19" cy="20" r="0.8" fill="currentColor"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="xcard" href="iphone.html" role="listitem" aria-label="Peek at NaviBeat for iPhone (coming soon)">
+          <p class="xcard__eyebrow">iPhone</p>
+          <h3 class="xcard__h">Your library in a pocket.</h3>
+          <p class="xcard__tag">Tab bar, full-screen Now Playing, CarPlay. Instantly familiar to Apple Music users.</p>
+          <div class="xcard__foot">
+            <span class="xcard__badge xcard__badge--coming" aria-label="Coming soon"><span class="xcard__dot"></span>Coming soon</span>
+            <span class="xcard__cta">Peek &rarr;</span>
+          </div>
+          <div class="xcard__art" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="26" y="8" width="20" height="56" rx="3.5"/>
+              <rect x="29" y="14" width="14" height="36" rx="1.5" opacity="0.55"/>
+              <path d="M32 54h8M32 57h8M32 60h8"/>
+              <rect x="34" y="10" width="4" height="1" rx="0.5" opacity="0.5"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="xcard" href="ipad.html" role="listitem" aria-label="Peek at NaviBeat for iPad (coming soon)">
+          <p class="xcard__eyebrow">iPad</p>
+          <h3 class="xcard__h">The same NaviBeat, with room to breathe.</h3>
+          <p class="xcard__tag">Sidebar + detail, drag-and-drop, keyboard shortcuts.</p>
+          <div class="xcard__foot">
+            <span class="xcard__badge xcard__badge--coming" aria-label="Coming soon"><span class="xcard__dot"></span>Coming soon</span>
+            <span class="xcard__cta">Peek &rarr;</span>
+          </div>
+          <div class="xcard__art" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="10" width="52" height="52" rx="3"/>
+              <path d="M16 14v44" opacity="0.4"/>
+              <rect x="18" y="14" width="42" height="44" rx="1.5" opacity="0.4"/>
+              <circle cx="13" cy="36" r="0.8" fill="currentColor" opacity="0.6"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="xcard" href="applewatch.html" role="listitem" aria-label="Peek at NaviBeat for Apple Watch (coming soon)">
+          <p class="xcard__eyebrow">Apple Watch</p>
+          <h3 class="xcard__h">Offline playback from your wrist.</h3>
+          <p class="xcard__tag">Run trails without your phone. Skip the Bluetooth dance.</p>
+          <div class="xcard__foot">
+            <span class="xcard__badge xcard__badge--coming" aria-label="Coming soon"><span class="xcard__dot"></span>Coming soon</span>
+            <span class="xcard__cta">Peek &rarr;</span>
+          </div>
+          <div class="xcard__art" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="24" y="20" width="24" height="32" rx="5.5"/>
+              <path d="M26 20l1.5-6h13l1.5 6M26 52l1.5 6h13l1.5-6M50 32v8"/>
+              <circle cx="36" cy="36" r="5" opacity="0.55"/>
+              <circle cx="36" cy="36" r="1.4" fill="currentColor" opacity="0.8"/>
+            </svg>
+          </div>
+        </a>
+
+        <div class="xcard xcard--pipeline" role="listitem" aria-label="CarPlay shipping as a free update after launch">
+          <p class="xcard__eyebrow">CarPlay</p>
+          <h3 class="xcard__h">In the car, soon.</h3>
+          <p class="xcard__tag">Entitlement requested. Shipping as a free v1.0.1 update after the main launch.</p>
+          <div class="xcard__foot">
+            <span class="xcard__badge xcard__badge--pipeline" aria-label="In the pipeline"><span class="xcard__dot"></span>v1.0.1 free update</span>
+            <span class="xcard__label">In the pipeline</span>
+          </div>
+          <div class="xcard__art" aria-hidden="true">
+            <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="14" width="52" height="36" rx="3"/>
+              <rect x="14" y="18" width="44" height="28" rx="1.5" opacity="0.4"/>
+              <path d="M20 56c3 4 8 6 16 6s13-2 16-6" opacity="0.55"/>
+              <circle cx="24" cy="58" r="3" opacity="0.55"/>
+              <circle cx="48" cy="58" r="3" opacity="0.55"/>
+              <path d="M18 26h8M18 30h12M18 34h8" opacity="0.45"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== SELLING POINTS — 4 CARDS -->
+  <section id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="reveal-stagger" style="margin-bottom:56px; max-width:56ch;">
+        <p class="eyebrow eyebrow--accent">What you get</p>
+        <h2 id="features-title" class="h2">Four things no other Subsonic client does all at once.</h2>
+      </div>
+      <div class="features">
+
+        <article class="f-card f-card--wide">
+          <span class="f-card__idx">01 / Universal Purchase</span>
+          <h3 class="h3">One purchase. Every device. Forever.</h3>
+          <p>Buy NaviBeat once on any Apple device. It installs on the other four at no extra cost. $5.99, one time — no subscription, no per-platform fee, no "Pro" tier behind a paywall.</p>
+          <p class="f-card__kicker">Pay once.</p>
+        </article>
+
+        <article class="f-card f-card--wide">
+          <span class="f-card__idx">02 / Self-hosted &amp; private</span>
+          <h3 class="h3">Your Navidrome. No cloud in between.</h3>
+          <p>NaviBeat talks to your server and nothing else. Zero analytics SDKs, zero crash reporters, zero third-party requests. Your library never leaves your house.</p>
+          <p class="f-card__kicker">Your server, your rules.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">03 / Beautiful everywhere</span>
+          <h3 class="h3">Native SwiftUI, one design language.</h3>
+          <p>Not an Electron shell. Not a web wrapper. Each app is tuned for its screen — focus on tvOS, mouse on macOS, touch on iOS, crown on watchOS.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">04 / Offline when you need it</span>
+          <h3 class="h3">Pin anything. Listen anywhere.</h3>
+          <p>Pin albums, playlists, or whole artists. LRU cache with a size you set. Flights, subways, trails, spotty hotel Wi-Fi — the music keeps going.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== MANIFESTO / PRIVACY -->
+  <section class="manifesto" aria-labelledby="manifesto-title">
+    <div class="wrap manifesto__inner">
+      <div class="reveal-stagger">
+        <p class="eyebrow eyebrow--accent">No cloud. No account. No telemetry.</p>
+        <h2 id="manifesto-title" class="manifesto__nos">
+          Your server. <span>Your library.</span> Your rules.
+        </h2>
+        <p class="lede">
+          NaviBeat is a client. Your music lives where it already does — a Raspberry Pi, a Synology, a home server under someone's desk. We never see your library, your credentials, or a single play event. We couldn't if we wanted to: the app has no backend.
+        </p>
+      </div>
+      <div class="manifesto__diagram" role="img" aria-label="Diagram: your server connects to NaviBeat, which connects to your devices.">
+        <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="privacyLineGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#E39B56" stop-opacity="0.25"/>
+              <stop offset="50%" stop-color="#E39B56" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#E39B56" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+
+          <line class="privacy-line" x1="120" y1="130" x2="280" y2="130"
+                stroke="url(#privacyLineGrad)" stroke-width="2" stroke-linecap="round"/>
+          <line class="privacy-line" x1="360" y1="130" x2="520" y2="130"
+                stroke="url(#privacyLineGrad)" stroke-width="2" stroke-linecap="round"/>
+
+          <g class="privacy-node">
+            <rect x="20" y="80" width="100" height="100" rx="14"
+                  fill="rgba(227,155,86,0.06)" stroke="rgba(227,155,86,0.4)" stroke-width="1.5"/>
+            <circle cx="70" cy="120" r="5" fill="#E39B56"/>
+            <rect x="42" y="138" width="56" height="4" rx="2" fill="rgba(242,239,232,0.35)"/>
+            <rect x="42" y="150" width="40" height="4" rx="2" fill="rgba(242,239,232,0.22)"/>
+            <text x="70" y="200" text-anchor="middle"
+                  font-family="JetBrains Mono, monospace" font-size="11"
+                  fill="#a8a39a" letter-spacing="1">YOUR SERVER</text>
+          </g>
+
+          <g class="privacy-node">
+            <rect x="280" y="80" width="80" height="100" rx="14"
+                  fill="rgba(227,155,86,0.12)" stroke="#E39B56" stroke-width="1.5"/>
+            <circle cx="320" cy="120" r="14" fill="none" stroke="#F5B877" stroke-width="1.5"/>
+            <circle cx="320" cy="120" r="4" fill="#F5B877"/>
+            <rect x="292" y="148" width="56" height="4" rx="2" fill="rgba(242,239,232,0.45)"/>
+            <text x="320" y="200" text-anchor="middle"
+                  font-family="JetBrains Mono, monospace" font-size="11"
+                  fill="#E39B56" letter-spacing="1">NAVIBEAT</text>
+          </g>
+
+          <g class="privacy-node">
+            <rect x="520" y="80" width="100" height="100" rx="14"
+                  fill="rgba(227,155,86,0.06)" stroke="rgba(227,155,86,0.4)" stroke-width="1.5"/>
+            <rect x="538" y="98" width="28" height="20" rx="3" fill="none" stroke="rgba(242,239,232,0.5)" stroke-width="1.2"/>
+            <rect x="574" y="98" width="28" height="20" rx="3" fill="none" stroke="rgba(242,239,232,0.5)" stroke-width="1.2"/>
+            <rect x="538" y="124" width="28" height="20" rx="3" fill="none" stroke="rgba(242,239,232,0.5)" stroke-width="1.2"/>
+            <rect x="574" y="124" width="28" height="20" rx="3" fill="none" stroke="rgba(242,239,232,0.5)" stroke-width="1.2"/>
+            <circle cx="570" cy="160" r="5" fill="none" stroke="rgba(242,239,232,0.5)" stroke-width="1.2"/>
+            <text x="570" y="200" text-anchor="middle"
+                  font-family="JetBrains Mono, monospace" font-size="11"
+                  fill="#a8a39a" letter-spacing="1">YOUR DEVICES</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== PRICE BAND -->
+  <section class="price" id="buy" aria-labelledby="price-title">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">Price</p>
+      <p class="price__h" id="price-title">One purchase. Every device.</p>
+      <div class="price__num">$5.99</div>
+      <p class="price__sub">One purchase. Every device. Forever.</p>
+      <div class="price__ctas">
+        <a class="btn btn--primary" href="#" aria-label="Buy NaviBeat on the App Store for $5.99">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          Buy on App Store — $5.99
+        </a>
+        <a class="link-quiet" href="https://www.navidrome.org" target="_blank" rel="noopener">Set up your Navidrome server &nbsp;&rarr;</a>
+      </div>
+      <p class="price__trial">7-day free trial on the Mac App Store — no card required.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================== FAQ (4 questions) -->
+  <section class="faq" aria-labelledby="faq-title">
+    <div class="wrap faq__inner">
+      <div class="reveal-stagger">
+        <p class="eyebrow eyebrow--accent">FAQ</p>
+        <h2 id="faq-title" class="h2" style="margin-bottom:48px;">Questions you were going to ask anyway.</h2>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-panel-1">
+          <span>Do I need a Navidrome server?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__panel" id="faq-panel-1" role="region">
+          <div class="faq__panel-inner">
+            <div class="faq__a">
+              Yes. NaviBeat is a client — it plays music from a server you run. Navidrome is free, open source, and runs on anything from a Raspberry Pi to a NAS. Any OpenSubsonic-compatible server works too (Gonic, Airsonic-Advanced). If you haven't set one up, <a href="https://www.navidrome.org" target="_blank" rel="noopener">navidrome.org</a> takes about 15 minutes with Docker.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-panel-2">
+          <span>Do I get all platforms for $5.99?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__panel" id="faq-panel-2" role="region">
+          <div class="faq__panel-inner">
+            <div class="faq__a">
+              Yes. NaviBeat is a Universal Purchase. Buy once on any Apple device and it installs on the other four — Mac, Apple TV, iPhone, iPad, Apple Watch — at no extra cost. Currently Mac and Apple TV are shipping; iPhone, iPad, and Watch are queued for release and are included in the same $5.99 purchase, forever.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-panel-3">
+          <span>Does it work offline?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__panel" id="faq-panel-3" role="region">
+          <div class="faq__panel-inner">
+            <div class="faq__a">
+              Yes. Pin individual albums, playlists, or whole artists for offline playback. NaviBeat keeps an LRU cache with a size limit you set in Settings — so flights, subways, and spotty hotel Wi-Fi don't stop the music. Downloads sync across devices via your server, not our cloud.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-panel-4">
+          <span>What's the refund policy?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq__panel" id="faq-panel-4" role="region">
+          <div class="faq__panel-inner">
+            <div class="faq__a">
+              Apple handles refunds directly — their standard window is 90 days from purchase, no questions asked, through reportaproblem.apple.com. On the Mac App Store you can also try NaviBeat free for 7 days before you pay. If something doesn't work for you, we'd rather hear about it at <a href="mailto:support@navibeat.app">support@navibeat.app</a> than lose you quietly — but the refund door is always open.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:56px; text-align:center;">
+        <a class="btn btn--primary" href="#buy">Buy on App Store — $5.99</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================================================== FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="#top">
+          <img src="assets/icon.svg" alt="">
+          <span>NaviBeat</span>
+        </a>
+        <p style="max-width: 32ch;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#explore">Explore apps</a></li>
+          <li><a href="appletv.html">Apple TV</a></li>
+          <li><a href="macos.html">Mac</a></li>
+          <li><a href="iphone.html">iPhone</a></li>
+          <li><a href="ipad.html">iPad</a></li>
+          <li><a href="applewatch.html">Apple Watch</a></li>
+          <li><a href="#buy">Buy $5.99</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic</span>
+      <span>v1.0 · macOS &amp; tvOS in App Store review · iPhone, iPad, Watch coming</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Graceful degradation: CSS targets are visible by default; JS re-hides then reveals on scroll.
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var hasIO = 'IntersectionObserver' in window;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+    }
+    // Section-enter reveals
+    var secs = document.querySelectorAll('.reveal, .reveal-stagger, .features, .manifesto__diagram, .price, .explore-grid');
+    if (hasIO) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -15% 0px', threshold: 0.12 });
+      secs.forEach(function (el) { sio.observe(el); });
+    } else { secs.forEach(function (el) { el.classList.add('is-in'); }); }
+    // Hero lineup parallax
+    var heroSec = document.querySelector('.hero');
+    if (heroSec && !reduce) {
+      var hTicking = false;
+      var hUpd = function () {
+        var sy = window.scrollY || document.documentElement.scrollTop;
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        var p = Math.max(0, Math.min(1, sy / (vh * 0.9)));
+        heroSec.style.setProperty('--lineup-parallax', (p * -40) + 'px');
+        hTicking = false;
+      };
+      var hOnS = function () { if (!hTicking) { hTicking = true; requestAnimationFrame(hUpd); } };
+      hUpd(); window.addEventListener('scroll', hOnS, { passive: true }); window.addEventListener('resize', hOnS, { passive: true });
+    }
+    // FAQ accordion
+    var faq = document.querySelectorAll('.faq__item');
+    faq.forEach(function (item) {
+      var btn = item.querySelector('.faq__q');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var willOpen = !item.classList.contains('is-open');
+        faq.forEach(function (o) {
+          o.classList.remove('is-open');
+          var b = o.querySelector('.faq__q'); if (b) b.setAttribute('aria-expanded', 'false');
+        });
+        if (willOpen) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

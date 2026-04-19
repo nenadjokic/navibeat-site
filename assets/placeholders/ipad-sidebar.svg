@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2400 1800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <rect x="0" y="0" width="2400" height="1800" style="fill:rgb(10,10,10);"/>
+    <path d="M2300,140L2300,1660C2300,1693.115 2273.115,1720 2240,1720L160,1720C126.885,1720 100,1693.115 100,1660L100,140C100,106.885 126.885,80 160,80L2240,80C2273.115,80 2300,106.885 2300,140Z" style="fill:rgb(20,20,20);stroke:rgb(28,28,28);stroke-width:16px;"/>
+    <path d="M2260,160L2260,1640C2260,1662.077 2242.077,1680 2220,1680L180,1680C157.923,1680 140,1662.077 140,1640L140,160C140,137.923 157.923,120 180,120L2220,120C2242.077,120 2260,137.923 2260,160Z" style="fill:rgb(15,15,15);"/>
+    <rect x="140" y="120" width="420" height="1560" style="fill:rgb(10,10,10);"/>
+    <g>
+        <g transform="matrix(1,0,0,1,180,220)">
+            <text x="0px" y="0px" style="font-family:'Helvetica';font-size:24px;fill:rgb(168,163,154);">Library</text>
+        </g>
+        <g transform="matrix(1,0,0,1,180,280)">
+            <text x="0px" y="0px" style="font-family:'Helvetica';font-size:24px;fill:rgb(242,239,232);">Albums</text>
+        </g>
+        <g transform="matrix(1,0,0,1,180,340)">
+            <text x="0px" y="0px" style="font-family:'Helvetica';font-size:24px;fill:rgb(168,163,154);">Artists</text>
+        </g>
+        <g transform="matrix(1,0,0,1,180,400)">
+            <text x="0px" y="0px" style="font-family:'Helvetica';font-size:24px;fill:rgb(168,163,154);">Songs</text>
+        </g>
+        <g transform="matrix(1,0,0,1,180,460)">
+            <text x="0px" y="0px" style="font-family:'Helvetica';font-size:24px;fill:rgb(168,163,154);">Playlists</text>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,620,200)">
+        <path d="M380,10L380,370C380,375.519 375.519,380 370,380L10,380C4.481,380 0,375.519 0,370L0,10C0,4.481 4.481,0 10,0L370,0C375.519,0 380,4.481 380,10Z" style="fill:rgb(28,28,28);"/>
+        <path d="M800,10L800,370C800,375.519 795.519,380 790,380L430,380C424.481,380 420,375.519 420,370L420,10C420,4.481 424.481,0 430,0L790,0C795.519,0 800,4.481 800,10Z" style="fill:rgb(28,28,28);"/>
+        <path d="M1220,10L1220,370C1220,375.519 1215.519,380 1210,380L850,380C844.481,380 840,375.519 840,370L840,10C840,4.481 844.481,0 850,0L1210,0C1215.519,0 1220,4.481 1220,10Z" style="fill:rgb(28,28,28);"/>
+        <path d="M1640,10L1640,370C1640,375.519 1635.519,380 1630,380L1270,380C1264.481,380 1260,375.519 1260,370L1260,10C1260,4.481 1264.481,0 1270,0L1630,0C1635.519,0 1640,4.481 1640,10Z" style="fill:rgb(28,28,28);"/>
+        <path d="M380,430L380,790C380,795.519 375.519,800 370,800L10,800C4.481,800 0,795.519 0,790L0,430C0,424.481 4.481,420 10,420L370,420C375.519,420 380,424.481 380,430Z" style="fill:rgb(28,28,28);"/>
+        <path d="M800,430L800,790C800,795.519 795.519,800 790,800L430,800C424.481,800 420,795.519 420,790L420,430C420,424.481 424.481,420 430,420L790,420C795.519,420 800,424.481 800,430Z" style="fill:rgb(28,28,28);"/>
+        <path d="M1220,430L1220,790C1220,795.519 1215.519,800 1210,800L850,800C844.481,800 840,795.519 840,790L840,430C840,424.481 844.481,420 850,420L1210,420C1215.519,420 1220,424.481 1220,430Z" style="fill:rgb(28,28,28);"/>
+        <path d="M1640,430L1640,790C1640,795.519 1635.519,800 1630,800L1270,800C1264.481,800 1260,795.519 1260,790L1260,430C1260,424.481 1264.481,420 1270,420L1630,420C1635.519,420 1640,424.481 1640,430Z" style="fill:rgb(28,28,28);"/>
+    </g>
+    <g transform="matrix(2.871711,0,0,2.871711,1239.393232,1221.434728)">
+        <text x="-201.294px" y="0px" style="font-family:'Menlo-Regular', 'Menlo', monospace;font-size:22px;fill:rgb(168,163,154);">I<tspan x="-187.389px -173.484px -159.579px -145.674px -131.769px -117.863px -103.958px -90.053px -76.148px -62.243px -48.338px -34.433px -20.528px -6.623px 7.283px 21.188px 35.093px 48.998px 62.903px 76.808px 90.713px 104.618px 118.523px 132.429px 146.334px 160.239px 174.144px 188.049px " y="0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px ">n Developement - COMING SOON</tspan></text>
+    </g>
+    <g transform="matrix(1,0,0,1,1200,1760)">
+        <text x="-133.428px" y="0px" style="font-family:'Helvetica';font-size:20px;fill:rgb(168,163,154);">iPad placeholder (2400x1800)</text>
+    </g>
+</svg>

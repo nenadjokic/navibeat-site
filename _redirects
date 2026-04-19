@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects
+# Format: /source  /destination  status_code
+
+# Extensionless URL support (so /privacy works alongside privacy.html)
+/privacy   /privacy.html  200
+/support   /support.html  200
+
+# www -> apex redirect (configure in Cloudflare dashboard, but document here)
+# https://www.navibeat.app/*  https://navibeat.app/:splat  301
