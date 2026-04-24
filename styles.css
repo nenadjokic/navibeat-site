@@ -712,14 +712,11 @@ section { padding-block: var(--rhythm); }
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  white-space: nowrap;
-}
-/* Narrow-column fallback: let long status wrap cleanly below dot */
-@media (max-width: 1140px) {
-  .plat__status { white-space: normal; line-height: 1.3; }
+  white-space: normal;
+  line-height: 1.3;
 }
 .plat__dot {
   width: 6px; height: 6px;
@@ -848,11 +845,10 @@ section { padding-block: var(--rhythm); }
 
 .features {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-@media (max-width: 1080px) { .features { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px)  { .features { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .features { grid-template-columns: 1fr; } }
 
 .f-card {
   border: 1px solid var(--border);
