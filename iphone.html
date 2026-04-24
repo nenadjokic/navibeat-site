@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NaviBeat for iPhone — TestFlight beta</title>
-  <meta name="description" content="NaviBeat for iPhone: tab bar, full-screen Now Playing, CarPlay. A beautifully native Navidrome and Subsonic client for iOS. In TestFlight beta — included in the $5.99 Universal Purchase.">
+  <title>NaviBeat for iPhone — Native Navidrome &amp; Subsonic Client for iOS</title>
+  <meta name="description" content="NaviBeat for iPhone: tab bar, full-screen Now Playing, time-synced lyrics, Up Next queue, long-press sleep timer. A beautifully native Navidrome and Subsonic client for iOS. In TestFlight beta — included in the $5.99 Universal Purchase.">
   <meta name="theme-color" content="#0a0a0a">
+  <meta name="keywords" content="Navidrome iPhone, Subsonic iOS client, OpenSubsonic iPhone, Airsonic iPhone, Gonic iPhone, NaviBeat iOS, self-hosted music iPhone, native Subsonic iPhone">
+  <link rel="canonical" href="https://navibeat.app/iphone.html">
 
-  <meta property="og:title" content="NaviBeat for iPhone — TestFlight beta">
-  <meta property="og:description" content="Tab bar + full-screen Now Playing + CarPlay. The iPhone Subsonic client Apple Music users will recognize instantly.">
+  <meta property="og:title" content="NaviBeat for iPhone — Native Navidrome &amp; Subsonic client for iOS">
+  <meta property="og:description" content="Tab bar + full-screen Now Playing + time-synced lyrics + Up Next. The iPhone Subsonic client Apple Music users will recognize instantly.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/iphone.html">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-now-playing.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-now-playing.jpg">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 
@@ -18,6 +24,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="platform.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "NaviBeat for iPhone",
+    "operatingSystem": "iOS 18",
+    "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "Music Streaming Client",
+    "description": "Native iPhone client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. Tab bar, full-screen Now Playing, time-synced lyrics, Up Next queue, long-press sleep timer and AutoMix.",
+    "offers": {
+      "@type": "Offer",
+      "price": "5.99",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Navidrome support",
+      "OpenSubsonic API compatibility",
+      "Airsonic and Gonic compatibility",
+      "Full-screen Now Playing",
+      "Time-synced lyrics",
+      "Up Next queue with AutoPlay",
+      "Sleep timer with fade",
+      "Internet radio streaming",
+      "Hi-Res audio badges",
+      "Universal Purchase"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -48,45 +84,313 @@
 
 <main id="top">
 
-  <!-- ========================================================== COMING-SOON HERO -->
-  <section class="cs-hero">
-    <div class="cs-hero__ambient" aria-hidden="true"></div>
-    <div class="wrap cs-hero__wrap">
-      <div class="cs-hero__copy reveal-stagger">
-        <p class="eyebrow eyebrow--accent">NaviBeat · iPhone</p>
-        <h1 class="cs-hero__h">Now in TestFlight on iPhone.</h1>
-        <p class="cs-hero__sub">
-          Tab bar + stack + full-screen Now Playing + CarPlay. The iPhone Subsonic client Apple Music users will recognize instantly — with nothing between you and your server.
-        </p>
+  <!-- ========================================================== HERO -->
+  <section class="p-hero">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
 
-        <div class="cs-hero__cta" style="margin-top: 24px;">
-          <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&amp;body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20">
-            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-            </svg>
-            Request TestFlight Access
-          </a>
-        </div>
-        <p class="notify__hint" style="margin-top: 14px;">Email <a href="mailto:support@navibeat.app" class="link-quiet">support@navibeat.app</a> with your Apple ID — we'll add you to the TestFlight group.</p>
+    <div class="wrap">
+      <div class="crumb" aria-label="Breadcrumb">
+        <a href="index.html">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span>Platforms</span>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">iPhone</span>
       </div>
 
-      <div class="cs-hero__visual cs-hero__visual--tall reveal">
-        <img src="assets/devices/iphone.svg" alt="iPhone 15 Pro showing NaviBeat Now Playing full-screen with warm gradient album art." width="600" height="1200" loading="eager" decoding="async">
+      <div class="p-hero__wrap">
+        <div class="p-hero__copy">
+          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat &nbsp;·&nbsp; iOS 18+</p>
+          <h1 aria-label="The Navidrome client for iPhone.">
+            <span class="word" style="animation-delay:0ms">The</span>
+            <span class="word" style="animation-delay:60ms">Navidrome</span>
+            <span class="word" style="animation-delay:160ms">client</span>
+            <span class="word" style="animation-delay:210ms">for</span>
+            <span class="word" style="animation-delay:260ms">iPhone.</span>
+          </h1>
+          <p class="p-hero__sub">
+            Stream your self-hosted music library from Navidrome, Airsonic, Gonic, or any OpenSubsonic-compatible server &mdash; on the phone in your pocket. Tab bar, full-screen Now Playing, time-synced lyrics, Up Next queue, long-press sleep timer and AutoMix. One $5.99 Universal Purchase covers every Apple device.
+          </p>
+          <div class="p-hero__ctas">
+            <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&amp;body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20">
+              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+              </svg>
+              Request TestFlight Access
+            </a>
+            <a class="link-quiet" href="#features">See every feature&nbsp;&rarr;</a>
+          </div>
+        </div>
+
+        <div class="p-hero__shot p-hero__shot--portrait">
+          <img src="assets/screenshots/iphone/navibeat-iphone-now-playing.jpg"
+               alt="NaviBeat Now Playing on iPhone: full-screen Audioslave album art, track title Show Me How to Live, Hi-Res / 24/44 badges, scrub bar, shuffle/prev/play/next/repeat transport and AirPlay / queue / lyrics buttons beneath."
+               width="644" height="1400" loading="eager" decoding="async" fetchpriority="high">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================== MEANTIME -->
-  <section class="meantime">
-    <div class="wrap meantime__inner">
-      <div>
-        <h2 class="meantime__h">In the meantime.</h2>
-        <p class="meantime__sub">NaviBeat for Mac and Apple TV are also in TestFlight — same beta, same future $5.99 Universal Purchase.</p>
+  <!-- ========================================================== STATS STRIP -->
+  <section style="padding-block: clamp(32px, 5vh, 56px);">
+    <div class="wrap">
+      <ul class="p-stats reveal" role="list" aria-label="NaviBeat for iPhone at a glance">
+        <li class="p-stat">
+          <p class="p-stat__num">iOS <span class="accent">18+</span></p>
+          <p class="p-stat__label">iPhone XR and newer</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">0 <span class="accent">SDKs</span></p>
+          <p class="p-stat__label">No analytics. No trackers.</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">4 <span class="accent">tabs</span></p>
+          <p class="p-stat__label">Home · Search · Library · Settings</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num"><span class="accent">$5.99</span> once</p>
+          <p class="p-stat__label">Universal Purchase · all Apple devices</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================== FEATURE GRID — real app screenshots -->
+  <section id="features" aria-labelledby="phone-features-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Every tab, every screen</p>
+        <h2 id="phone-features-title" class="h2">A full Navidrome client in your pocket &mdash; not a scaled-down desktop app.</h2>
+        <p>Home with Pick Up Where You Left Off, Shuffle Mix, Recently Added. A full Library with Artists, Albums, Songs, Favorite Songs, Genres, Playlists, Radios, Directories and Downloads. Full-screen Now Playing with time-synced lyrics and an Up Next queue. A long-press menu that unlocks the sleep timer, AutoMix, and Show Artist / Album jumps &mdash; all in thumb reach.</p>
       </div>
-      <div class="meantime__ctas">
-        <a class="btn btn--ghost" href="appletv.html">Apple TV &rarr;</a>
-        <a class="btn btn--ghost" href="macos.html">Mac &rarr;</a>
+
+      <div class="p-shots" role="list">
+
+        <article class="p-shot" role="listitem">
+          <figure class="p-shot__media p-shot__media--portrait">
+            <img src="assets/screenshots/iphone/navibeat-iphone-home.jpg"
+                 alt="NaviBeat Home tab on iPhone: Pick Up Where You Left Off hero with Linkin Park's From Zero (Deluxe Edition), Shuffle Mix / Random Album quick-play tiles, a Most Played shelf and a Recently Added row, with the mini player docked above the tab bar."
+                 width="644" height="1400" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">01 / Home</p>
+            <h3>Pick up where you left off. Every single time.</h3>
+            <p>The Home tab opens on a large <em>Pick Up Where You Left Off</em> card &mdash; the last album you were listening to, one tap from Play. Below: a Quick Play row (Shuffle Mix, Random Album), your Most Played shelf, and a Recently Added stream. The mini player stays pinned above the tab bar so playback is always one glance away.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse" role="listitem">
+          <figure class="p-shot__media p-shot__media--portrait">
+            <img src="assets/screenshots/iphone/navibeat-iphone-library.png"
+                 alt="NaviBeat Library tab on iPhone: a single-column list of Artists, Albums, Recently Added, Recently Played, Songs, Favorite Songs, Genres, Playlists, Radios, Directories and Downloads with the mini player visible at the bottom."
+                 width="644" height="1400" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">02 / Library</p>
+            <h3>Every browse mode Navidrome exposes, in one list.</h3>
+            <p>Artists. Albums. Recently Added. Recently Played. Songs. Favorite Songs. Genres. Playlists. Radios. Directories. Downloads. The Library tab mirrors the Navidrome web UI one-for-one &mdash; no features hidden in menus, no "Pro" tier gating folder browsing. Every row has a disclosure indicator and its own themed accent icon.</p>
+          </div>
+        </article>
+
+        <article class="p-shot" role="listitem">
+          <figure class="p-shot__media p-shot__media--portrait">
+            <img src="assets/screenshots/iphone/navibeat-iphone-now-playing.jpg"
+                 alt="NaviBeat Now Playing full-screen on iPhone with Audioslave cover art dominating the top half, Show Me How to Live title with HI-RES and 24/44 badges, a scrubbing slider at 8:30 / -3:58 and shuffle/prev/play/next/repeat transport beneath."
+                 width="644" height="1400" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">03 / Now Playing</p>
+            <h3>Full-screen album art. Hi-Res badges. One-thumb transport.</h3>
+            <p>The Now Playing view fills the entire screen with cover art. Track title, artist and album underneath, Hi-Res and bit-depth / sample-rate badges rendered directly against the artwork. Scrub bar with live elapsed / remaining, shuffle, prev, play/pause, next, repeat, and a second row for AirPlay, queue, favorite, lyrics and more &mdash; all tuned for thumb reach on large iPhones.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse" role="listitem">
+          <figure class="p-shot__media p-shot__media--portrait">
+            <img src="assets/screenshots/iphone/navibeat-iphone-queue.jpg"
+                 alt="NaviBeat Up Next queue on iPhone: translucent sheet sliding over the Audioslave Now Playing view, showing Psychosocial by Slipknot, I Disappear by Metallica, Rollin' by Limp Bizkit, Stiff Upper Lip by AC/DC and Numb — each row with album thumbnail, title, artist, duration and reorder grip."
+                 width="644" height="1400" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">04 / Up Next</p>
+            <h3>A queue you can actually see, with AutoPlay at the top.</h3>
+            <p>Tap the queue icon and a translucent sheet slides up over Now Playing. AutoPlay toggle pinned at the top. Scrollable list of upcoming tracks, each with a thumbnail, title, artist, duration and a drag grip. Reorder with a long-press, swipe to remove, Clear All to wipe the queue without stopping playback. The server syncs the new order in the background.</p>
+          </div>
+        </article>
+
+        <article class="p-shot" role="listitem">
+          <figure class="p-shot__media p-shot__media--portrait">
+            <img src="assets/screenshots/iphone/navibeat-iphone-lyrics.jpg"
+                 alt="NaviBeat time-synced lyrics on iPhone: Audioslave album art compressed to the top, then LRC lyrics scrolling on a dark panel below — past lines dimmed, current line 'I couldn't buy an eyeful of sleep' highlighted in the accent orange, upcoming lines waiting."
+                 width="644" height="1400" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">05 / Time-synced lyrics</p>
+            <h3>LRC lyrics that scroll with the audio.</h3>
+            <p>When your Navidrome server has LRC lyrics attached, the Lyrics sheet scrolls them in sync with the music. Current line highlighted in accent orange, past lines fade out, upcoming lines wait in muted type. Supports embedded lyrics, sidecar LRC files, and the Subsonic <code>getLyricsBySongId</code> endpoint. Falls back to plain scrollable text when no timings exist.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse" role="listitem">
+          <figure class="p-shot__media p-shot__media--portrait">
+            <img src="assets/screenshots/iphone/navibeat-iphone-sleep-timer.jpg"
+                 alt="NaviBeat long-press context menu on the iPhone Now Playing view: popup menu with Sleep Timer options (5, 10, 15, 30, 45 minutes, 1 hour), Show Artist, Show Album, Rate submenu, Favorite heart and AutoMix toggle stacked vertically over the dimmed Audioslave artwork."
+                 width="644" height="1400" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">06 / Long-press menu</p>
+            <h3>Sleep timer, AutoMix, Show Artist &mdash; one gesture away.</h3>
+            <p>Long-press anywhere on the Now Playing artwork and a stacked context menu appears. Sleep Timer with 5 / 10 / 15 / 30 / 45 minute and 1 hour presets (audio fades, not a hard cut). Show Artist / Show Album jumps straight into the detail pages. Rate submenu with stars. Favorite toggle. AutoMix on/off for endless playback. Fits in one thumb stroke from anywhere on the screen.</p>
+          </div>
+        </article>
+
       </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== COMPATIBILITY STRIP -->
+  <section class="p-compat" aria-labelledby="phone-compat-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Servers &amp; hardware</p>
+        <h2 id="phone-compat-title" class="h2">Works with every major self-hosted music server.</h2>
+      </div>
+      <div class="p-compat__grid">
+        <div class="p-compat__cell">
+          <h4>Servers</h4>
+          <ul>
+            <li>Navidrome (0.49+)</li>
+            <li>Airsonic-Advanced</li>
+            <li>Gonic</li>
+            <li>Any OpenSubsonic server</li>
+            <li>Classic Subsonic (legacy)</li>
+          </ul>
+        </div>
+        <div class="p-compat__cell">
+          <h4>iOS</h4>
+          <ul>
+            <li>iOS 18 &amp; 19</li>
+            <li>iPhone XR and newer</li>
+            <li>Dynamic Island aware</li>
+            <li>CarPlay (v1.0.1 free update)</li>
+            <li>AirPlay 2 output</li>
+          </ul>
+        </div>
+        <div class="p-compat__cell">
+          <h4>Audio</h4>
+          <ul>
+            <li>MP3 / AAC / OGG</li>
+            <li>FLAC and ALAC (Hi-Res badge)</li>
+            <li>Opus, WAV, AIFF</li>
+            <li>Server-side transcoding</li>
+            <li>Gapless playback</li>
+          </ul>
+        </div>
+        <div class="p-compat__cell">
+          <h4>Privacy</h4>
+          <ul>
+            <li>Zero third-party SDKs</li>
+            <li>Zero analytics</li>
+            <li>Only talks to your server</li>
+            <li>Credentials in iOS Keychain</li>
+            <li>Open-source client contract</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== PLATFORM PICKER -->
+  <section class="p-picker" aria-labelledby="phone-picker-title">
+    <div class="wrap">
+      <div class="p-picker__head">
+        <p class="eyebrow eyebrow--accent">Also on</p>
+        <h2 id="phone-picker-title">One purchase. Every Apple device.</h2>
+      </div>
+      <ul class="p-lozenges" role="list">
+        <li>
+          <a class="p-loz" href="appletv.html">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">Apple TV</span>
+            <span class="p-loz__tag">TestFlight beta</span>
+          </a>
+        </li>
+        <li>
+          <a class="p-loz" href="macos.html">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
+                <path d="M9 21h6M10 17l-.5 4M14 17l.5 4"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">Mac</span>
+            <span class="p-loz__tag">TestFlight beta</span>
+          </a>
+        </li>
+        <li>
+          <span class="p-loz is-current" aria-current="page">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="2.5" width="10" height="19" rx="2.5"/>
+                <path d="M10 5.5h4M11 19h2"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">iPhone</span>
+            <span class="p-loz__tag">You're here</span>
+          </span>
+        </li>
+        <li>
+          <a class="p-loz" href="ipad.html">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2.5" width="16" height="19" rx="2"/>
+                <path d="M11 19h2"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">iPad</span>
+            <span class="p-loz__tag">TestFlight beta</span>
+          </a>
+        </li>
+        <li>
+          <a class="p-loz" href="applewatch.html">
+            <span class="p-loz__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="6" width="10" height="12" rx="2.5"/>
+                <path d="M9 6l.7-3h4.6L15 6M9 18l.7 3h4.6L15 18M19 11v2"/>
+              </svg>
+            </span>
+            <span class="p-loz__name">Apple Watch</span>
+            <span class="p-loz__tag">TestFlight beta</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================== BUY BAND -->
+  <section class="price" id="buy" aria-labelledby="phone-price-title">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">Price</p>
+      <p class="price__h" id="phone-price-title">A native Navidrome client for every Apple device.</p>
+      <div class="price__num">$5.99</div>
+      <p class="price__sub">One purchase. iPhone, iPad, Mac, Apple TV and Apple Watch. Forever.</p>
+      <div class="price__ctas">
+        <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&amp;body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20" aria-label="Request TestFlight beta access">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          Request TestFlight Access
+        </a>
+        <a class="link-quiet" href="https://www.navidrome.org" target="_blank" rel="noopener">Set up your Navidrome server &nbsp;&rarr;</a>
+      </div>
+      <p class="price__trial">Currently in private TestFlight beta — free during the beta period. Launching to the App Store at $5.99.</p>
     </div>
   </section>
 
@@ -147,11 +451,11 @@
       var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
       navS(); window.addEventListener('scroll', navS, { passive: true });
     }
-    var secs = document.querySelectorAll('.reveal, .reveal-stagger');
+    var secs = document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .p-shots, .p-deep, .price');
     if (hasIO) {
       var sio = new IntersectionObserver(function (es) {
         es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
-      }, { rootMargin: '0px 0px -15% 0px', threshold: 0.12 });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
       secs.forEach(function (el) { sio.observe(el); });
     } else { secs.forEach(function (el) { el.classList.add('is-in'); }); }
   })();

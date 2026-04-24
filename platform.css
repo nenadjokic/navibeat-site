@@ -126,13 +126,63 @@
   position: relative;
   opacity: 0;
   animation: wordIn 0.8s var(--ease) 0.35s forwards;
-  filter: drop-shadow(0 50px 80px rgba(0, 0, 0, 0.6)) drop-shadow(0 14px 30px rgba(0, 0, 0, 0.45));
+  filter:
+    drop-shadow(0 50px 80px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 14px 30px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 4px 16px rgba(227, 155, 86, 0.12));
   transform-origin: center center;
+  isolation: isolate;
 }
 .p-hero__shot img {
   width: 100%;
   height: auto;
   display: block;
+  position: relative;
+  z-index: 1;
+}
+/* Winamp-style ambient halo behind the platform hero screenshot. Larger
+   + warmer than the gallery halos because this is the biggest device on the page. */
+.p-hero__shot::before {
+  content: "";
+  position: absolute;
+  inset: -14% -18%;
+  background:
+    radial-gradient(ellipse 60% 65% at 50% 55%, rgba(227, 155, 86, 0.38) 0%, rgba(227, 155, 86, 0.08) 45%, transparent 75%),
+    radial-gradient(ellipse 35% 50% at 50% 70%, rgba(245, 184, 119, 0.22) 0%, transparent 65%);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.95;
+  animation: heroPulse 9s var(--ease) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .p-hero__shot::before { animation: none !important; }
+}
+
+/* Portrait hero variant — for iPhone / Watch pages where the hero shot
+   is tall-and-narrow. Center the device on its column so it reads as a
+   product, not a stretched rectangle. */
+.p-hero__shot--portrait {
+  max-width: 380px;
+  margin-inline: auto;
+}
+.p-hero__shot--portrait img {
+  border-radius: 36px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    0 14px 30px rgba(0, 0, 0, 0.45);
+}
+.p-hero__shot--watch {
+  max-width: 320px;
+  margin-inline: auto;
+}
+.p-hero__shot--watch img {
+  border-radius: 48px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
 /* ---- Feature card grid (5–7) ---------------------------------------- */
@@ -780,25 +830,55 @@ a.p-loz:hover .p-loz__ico {
 }
 
 .p-shot__media {
+  position: relative;
   margin: 0;
   /* No background, border, or forced aspect — let the screenshot's native
      window shadow (transparent PNG) render on the page background. */
   transform: translateY(20px);
   opacity: 0;
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  isolation: isolate;
 }
 .p-shots.is-in .p-shot__media { opacity: 1; transform: translateY(0); }
 .p-shot__media img {
   width: 100%;
   height: auto;
   display: block;
+  position: relative;
+  z-index: 1;
 }
-/* tvOS JPGs have no transparent shadow — add a soft frame + glow */
+/* Winamp-style ambient halo behind each gallery image — warm orange bloom
+   that implies the album art color is spilling off the screen. */
+.p-shot__media::before {
+  content: "";
+  position: absolute;
+  inset: -8% -12%;
+  background:
+    radial-gradient(ellipse 55% 60% at 50% 55%, rgba(227, 155, 86, 0.28) 0%, rgba(227, 155, 86, 0.06) 45%, transparent 75%),
+    radial-gradient(ellipse 30% 45% at 50% 75%, rgba(245, 184, 119, 0.16) 0%, transparent 65%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.85;
+}
+/* JPG screenshots (tvOS, new iPhone/iPad) need their own device bezel + shadow;
+   transparent PNGs (macOS) already ship their own window chrome. */
 .p-shot__media img[src$=".jpg"] {
-  border-radius: 14px;
+  border-radius: 16px;
   box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.45),
-    0 10px 24px rgba(0, 0, 0, 0.35);
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 40px 80px rgba(0, 0, 0, 0.55),
+    0 14px 34px rgba(0, 0, 0, 0.4);
+}
+/* Portrait raster screenshots (iPhone 644×1400) — constrain to a sensible
+   reading column so they don't swallow a 1.15fr grid cell. */
+.p-shot__media--portrait {
+  max-width: 360px;
+  margin-inline: auto;
+}
+.p-shot__media--portrait img[src$=".jpg"],
+.p-shot__media--portrait img[src$=".png"] {
+  border-radius: 32px;
 }
 
 .p-shot__copy .eyebrow {
@@ -860,9 +940,42 @@ a.p-loz:hover .p-loz__ico {
   .p-deep__row--reverse .p-deep__copy { order: initial; }
 }
 .p-deep__media {
+  position: relative;
   margin: 0;
   /* No background, border, or forced aspect — preserve PNG transparency
      so the macOS window shadow blends naturally into the page. */
+  isolation: isolate;
+}
+.p-deep__media img {
+  position: relative;
+  z-index: 1;
+}
+/* Winamp-style ambient halo behind each deep-dive image. Slightly larger
+   + softer than the .p-shot variant because deep rows are the cinematic ones. */
+.p-deep__media::before {
+  content: "";
+  position: absolute;
+  inset: -10% -14%;
+  background:
+    radial-gradient(ellipse 55% 60% at 50% 55%, rgba(227, 155, 86, 0.32) 0%, rgba(227, 155, 86, 0.06) 45%, transparent 75%),
+    radial-gradient(ellipse 30% 45% at 50% 75%, rgba(245, 184, 119, 0.18) 0%, transparent 65%);
+  filter: blur(72px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+/* Watch screenshots are tiny (410×502) — center on the cinematic canvas so
+   they read as "watch face", not stretched-out rectangle. */
+.p-deep__media--watch {
+  max-width: 300px;
+  margin-inline: auto;
+}
+.p-deep__media--watch img {
+  border-radius: 40px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 30px 60px rgba(0, 0, 0, 0.55),
+    0 12px 30px rgba(0, 0, 0, 0.4);
 }
 /* Portrait modifier for tall Mini Player screenshots (412x944, 513x706).
    Constrain column width, center in cell, let PNG show at natural height. */
@@ -878,6 +991,17 @@ a.p-loz:hover .p-loz__ico {
 .p-deep__media img[src$=".jpg"] {
   border-radius: 16px;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+/* iPad screenshots that saved as PNG (directories/radios — UI-heavy, no
+   transparency) still need a rounded frame. macOS PNGs ship their own
+   chrome, so scope the bezel to the iPad path only. */
+.p-deep__media img[src*="/ipad/"][src$=".png"],
+.p-shot__media img[src*="/ipad/"][src$=".png"] {
+  border-radius: 16px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 40px 80px rgba(0, 0, 0, 0.55),
+    0 14px 34px rgba(0, 0, 0, 0.4);
 }
 .p-deep__copy .eyebrow {
   font-family: var(--font-mono);
