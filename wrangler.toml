@@ -1,8 +1,0 @@
-name = "navibeat-site"
-compatibility_date = "2026-04-19"
-
-# Pure static site — no Worker code, just serve the HTML/CSS/assets
-# directly from the repo root as static assets.
-[assets]
-directory = "./"
-not_found_handling = "404-page"

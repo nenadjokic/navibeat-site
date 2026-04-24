@@ -2173,3 +2173,57 @@ a.p-loz:focus-visible {
   .lineup__caption span { opacity: 1 !important; }
 }
 
+/* ---- 22. TestFlight beta banner (top of every page, pre-launch) -------- */
+.beta-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg, #e39b56 0%, #d47d3a 100%);
+  color: #0a0a0a;
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.002em;
+  padding: 10px 16px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+.beta-banner__inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 940px;
+  line-height: 1.45;
+  flex-wrap: wrap;
+}
+.beta-banner__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  animation: beta-pulse 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.beta-banner strong { font-weight: 700; }
+.beta-banner a {
+  color: #0a0a0a;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+  white-space: nowrap;
+}
+.beta-banner a:hover { text-decoration-thickness: 2.5px; }
+@keyframes beta-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+@media (max-width: 640px) {
+  .beta-banner { font-size: 13px; padding: 9px 14px; }
+  .beta-banner__inner { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .beta-banner__dot { animation: none !important; }
+}
+
