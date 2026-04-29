@@ -2193,3 +2193,54 @@ section { padding-block: var(--rhythm); }
   .act__caption { transition: none; opacity: 1; transform: none; }
   .act { transition: none; }
 }
+
+/* =============================================================================
+   MOBILE EMERGENCY FIXES — 2026-04-29 night
+   The 5-act theater (480vh sticky scroll) is a desktop-only experience.
+   Below 720px every act fails to lay out: stages shrink to ~190px tall,
+   captions overlap the device, and you're left scrolling through ~4000px
+   of empty dark backdrop. Hide the theater entirely on phones; the
+   platforms band immediately below already does the "all five Apple
+   screens" job in a 6-up grid.
+   Also tighten the hero-area things that crammed at narrow widths:
+   nav button text shortens, hero CTAs stack vertically, banner copy
+   wraps so the link isn't cropped off the right edge.
+   ============================================================================= */
+@media (max-width: 720px) {
+  /* The cinematic theater is a desktop showcase; on phones the platforms
+     band right after it carries the "every Apple screen" message in a clean
+     6-up grid. Skip the 480vh dead-air block entirely. */
+  .theater { display: none; }
+
+  /* Nav: shorten the always-visible CTA so the right edge stops cropping. */
+  .nav__inner .btn--compact { padding-left: 12px; padding-right: 12px; font-size: 12px; }
+
+  /* Hero CTAs: stack vertically + full-width buttons. Two CTAs side-by-side
+     never fit at iPhone widths (390px content area). */
+  .hero__ctas { flex-direction: column; align-items: stretch; gap: 12px; }
+  .hero__ctas .btn { width: 100%; justify-content: center; }
+  .hero__ctas .link-quiet { text-align: center; }
+
+  /* Beta banner: allow the copy + link to wrap onto a second line so the
+     "Join TestFlight →" link is never cropped. */
+  .beta-banner__inner { flex-direction: column; align-items: center; gap: 6px; padding: 10px 16px; text-align: center; }
+
+  /* Hero ambient rings: reposition + shrink so they don't push content
+     off the right edge on a narrow viewport. */
+  .hero__rings { width: 320px; height: 320px; right: -25%; top: 2%; }
+
+  /* Lineup: keep the existing 600px / 960px placements; just constrain the
+     stage so taller-than-wide phones don't end up with a flat sliver. */
+  .lineup__stage { aspect-ratio: 1.05 / 1; max-width: 100%; }
+  .lineup { margin-top: 32px; }
+  .lineup__caption { margin-top: 36px; font-size: 22px; }
+}
+
+/* Even tighter at iPhone-mini-class widths (≤390px). */
+@media (max-width: 400px) {
+  .hero__h1 { font-size: clamp(36px, 11vw, 52px); }
+  .hero__sub { font-size: 14.5px; }
+  .nav__brand { font-size: 14px; gap: 8px; }
+  .nav__mark { width: 24px; height: 24px; }
+  .nav__inner .btn--compact { font-size: 11px; padding: 6px 10px; }
+}
