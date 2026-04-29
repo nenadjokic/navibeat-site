@@ -1516,6 +1516,14 @@ section { padding-block: var(--rhythm); }
   box-shadow: 0 40px 88px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(232, 154, 83, 0.07);
 }
 
+/* macOS screenshots have built-in OS window shadow — skip ours to avoid
+   double-shadow / picture-frame effect (matches .p-shot__media img rule below) */
+.p-hero__shot img[src*="/macos/"] {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 /* Tall portrait hero shot (iPhone, Watch) */
 .p-hero__shot--portrait {
   max-width: 340px;
@@ -1595,6 +1603,94 @@ section { padding-block: var(--rhythm); }
 .p-shot__media img[src*="/macos/"] {
   box-shadow: none;
   border-radius: 0;
+}
+
+/* =========================================================================
+   Lightbox — click any platform-page screenshot to open full-screen
+   ========================================================================= */
+.lightbox-trigger {
+  cursor: zoom-in;
+  transition: filter 0.2s var(--ease);
+}
+.lightbox-trigger:hover {
+  filter: brightness(1.04);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 6, 4, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 4vw;
+  cursor: zoom-out;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease);
+}
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
+  transform: scale(0.96);
+  transition: transform 0.3s var(--ease-spring);
+}
+.lightbox.is-open .lightbox__img { transform: scale(1); }
+
+.lightbox__caption {
+  position: absolute;
+  bottom: max(20px, 3vh);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  color: var(--text-1);
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: rgba(14, 11, 8, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.lightbox__close {
+  position: absolute;
+  top: max(16px, 2vh);
+  right: max(16px, 2vw);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(14, 11, 8, 0.6);
+  backdrop-filter: blur(10px);
+  color: var(--text-0);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.lightbox__close:hover {
+  background: rgba(232, 154, 83, 0.15);
+  border-color: rgba(232, 154, 83, 0.40);
+}
+
+/* Disable lightbox below 720px (touch users zoom natively) */
+@media (max-width: 720px) {
+  .lightbox-trigger { cursor: default; }
 }
 
 .p-shot__copy .eyebrow { margin-bottom: 14px; color: var(--accent); }
