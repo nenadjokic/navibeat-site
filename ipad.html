@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NaviBeat for iPad — Native Navidrome &amp; Subsonic Client for iPadOS</title>
-  <meta name="description" content="NaviBeat for iPad: sidebar + detail, album grid, Genres mood cards, Radios list, Directories browser, split-view lyrics and queue. A beautifully native Navidrome and Subsonic client for iPadOS. In TestFlight beta — included in the $5.99 Universal Purchase.">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="keywords" content="Navidrome iPad, Subsonic iPadOS client, OpenSubsonic iPad, Airsonic iPad, Gonic iPad, NaviBeat iPadOS, self-hosted music iPad, native Subsonic iPad">
+  <meta name="description" content="NaviBeat for iPad: sidebar + detail view, drag-and-drop playlists, time-synced lyrics, keyboard shortcuts. A beautifully native Navidrome and Subsonic client for iPadOS. In TestFlight beta — included in the $5.99 Universal Purchase.">
+  <meta name="theme-color" content="#0e0b08">
   <link rel="canonical" href="https://navibeat.app/ipad.html">
 
   <meta property="og:title" content="NaviBeat for iPad — Native Navidrome &amp; Subsonic client for iPadOS">
-  <meta property="og:description" content="Sidebar + detail + album grid + Genres mood cards + Directories browser + split-view lyrics and queue. The same beautiful NaviBeat, with room to breathe.">
+  <meta property="og:description" content="Sidebar + detail, drag-and-drop, keyboard shortcuts. The iPad Navidrome client with room to breathe.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/ipad.html">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/ipad/navibeat-ipad-home.jpg">
@@ -18,41 +17,10 @@
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/ipad/navibeat-ipad-home.jpg">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="platform.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "NaviBeat for iPad",
-    "operatingSystem": "iPadOS 18",
-    "applicationCategory": "MultimediaApplication",
-    "applicationSubCategory": "Music Streaming Client",
-    "description": "Native iPad client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. Sidebar + detail, album grid, Genres mood cards, Directories browser, split-view lyrics and queue.",
-    "offers": {
-      "@type": "Offer",
-      "price": "5.99",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "Navidrome support",
-      "OpenSubsonic API compatibility",
-      "Airsonic and Gonic compatibility",
-      "Sidebar + detail layout",
-      "Split-view lyrics + queue",
-      "Directory folder browser",
-      "Internet radio streaming",
-      "Hi-Res audio badges",
-      "Universal Purchase"
-    ]
-  }
-  </script>
 </head>
 <body>
 
@@ -70,7 +38,7 @@
         <img src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
-      <span class="nav__word">NaviBeat</span>
+      NaviBeat
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
@@ -83,38 +51,39 @@
 
 <main id="top">
 
-  <!-- ========================================================== HERO -->
+  <!-- HERO -->
   <section class="p-hero">
     <div class="p-hero__ambient" aria-hidden="true">
       <span class="p-hero__glow"></span>
       <span class="p-hero__grid-lines"></span>
     </div>
-
     <div class="wrap">
-      <div class="crumb" aria-label="Breadcrumb">
+      <nav class="crumb" aria-label="Breadcrumb">
         <a href="index.html">NaviBeat</a>
         <span class="crumb__sep" aria-hidden="true">/</span>
         <span>Platforms</span>
         <span class="crumb__sep" aria-hidden="true">/</span>
         <span class="crumb__current">iPad</span>
-      </div>
+      </nav>
 
       <div class="p-hero__wrap">
         <div class="p-hero__copy">
-          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat &nbsp;·&nbsp; iPadOS 18+</p>
-          <h1 aria-label="The Navidrome client for iPad.">
+          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat &nbsp;&middot;&nbsp; iPadOS 18+</p>
+          <h1>
             <span class="word" style="animation-delay:0ms">The</span>
-            <span class="word" style="animation-delay:60ms">Navidrome</span>
-            <span class="word" style="animation-delay:160ms">client</span>
-            <span class="word" style="animation-delay:210ms">for</span>
-            <span class="word" style="animation-delay:260ms">iPad.</span>
+            <span class="word" style="animation-delay:60ms">same</span>
+            <span class="word" style="animation-delay:130ms">NaviBeat,</span>
+            <span class="word" style="animation-delay:200ms">with</span>
+            <span class="word" style="animation-delay:260ms">room</span>
+            <span class="word" style="animation-delay:320ms">to</span>
+            <span class="word" style="animation-delay:380ms">breathe.</span>
           </h1>
           <p class="p-hero__sub">
-            The same NaviBeat, with room to breathe. Sidebar + detail, massive album grids, Genres as color-coded mood cards, split-view lyrics and queue alongside the library. Tuned for a bigger canvas &mdash; not stretched onto one. One $5.99 Universal Purchase covers every Apple device.
+            The full Navidrome and Subsonic library on a bigger canvas. Sidebar + detail view, drag-and-drop playlist editing, keyboard shortcuts, and landscape support across every screen size. One $5.99 Universal Purchase covers every Apple device.
           </p>
           <div class="p-hero__ctas">
-            <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&amp;body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20">
-              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20">
+              <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
                 <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
               </svg>
               Request TestFlight Access
@@ -125,136 +94,97 @@
 
         <div class="p-hero__shot">
           <img src="assets/screenshots/ipad/navibeat-ipad-home.jpg"
-               alt="NaviBeat Home on iPad: left sidebar with Home, Search, Now Playing, Library (Artists, Albums, Recently Added, Recently Played, Songs, Favorite Songs, Genres, Playlists, Radios, Directories, Downloads, Settings) and a Home view with Pick Up Where You Left Off (Linkin Park From Zero Deluxe Edition), Shuffle Mix / Random Album / Favorites / Random Artist tiles, Most Played and Recently Added shelves."
+               alt="NaviBeat Home on iPad Pro with sidebar, Featured Album hero, Quick Play row, and Most Played shelf."
                width="1800" height="1350" loading="eager" decoding="async" fetchpriority="high">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================== STATS STRIP -->
-  <section style="padding-block: clamp(32px, 5vh, 56px);">
+  <!-- STATS -->
+  <section style="padding-block: clamp(28px, 4vh, 52px);">
     <div class="wrap">
       <ul class="p-stats reveal" role="list" aria-label="NaviBeat for iPad at a glance">
         <li class="p-stat">
           <p class="p-stat__num">iPadOS <span class="accent">18+</span></p>
-          <p class="p-stat__label">iPad (8th gen) and newer</p>
+          <p class="p-stat__label">iPad Pro, Air, mini</p>
         </li>
         <li class="p-stat">
           <p class="p-stat__num">0 <span class="accent">SDKs</span></p>
           <p class="p-stat__label">No analytics. No trackers.</p>
         </li>
         <li class="p-stat">
-          <p class="p-stat__num">2-pane <span class="accent">layout</span></p>
-          <p class="p-stat__label">Sidebar + detail, split view, Stage Manager</p>
+          <p class="p-stat__num">Sidebar <span class="accent">+</span> detail</p>
+          <p class="p-stat__label">Full landscape support</p>
         </li>
         <li class="p-stat">
           <p class="p-stat__num"><span class="accent">$5.99</span> once</p>
-          <p class="p-stat__label">Universal Purchase · all Apple devices</p>
+          <p class="p-stat__label">Universal Purchase &middot; all Apple devices</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- ========================================================== FEATURE GRID — real app screenshots -->
-  <section id="features" aria-labelledby="pad-features-title">
+  <!-- FEATURES -->
+  <section id="features" aria-labelledby="ipad-features-title">
     <div class="wrap">
       <div class="sec-head reveal-stagger">
-        <p class="eyebrow eyebrow--accent">Every sidebar entry, every canvas</p>
-        <h2 id="pad-features-title" class="h2">A full Navidrome client on iPad &mdash; with a real sidebar and a real detail pane.</h2>
-        <p>Every browse mode Navidrome exposes, surfaced in a persistent sidebar. Album grids that actually use the extra pixels. Color-gradient Genre mood cards. A Finder-style Directories browser. Internet radio with the stream URLs visible. And when you want lyrics or the queue, they dock alongside the main view instead of hiding it.</p>
+        <p class="eyebrow eyebrow--accent">Every screen</p>
+        <h2 id="ipad-features-title" class="h2">Your library, with room to explore.</h2>
+        <p>The iPad layout takes advantage of the larger canvas. Persistent sidebar, split view, and full-screen lyrics side-by-side with your queue &mdash; the whole app visible at once, with no scrolling required.</p>
       </div>
 
       <div class="p-shots" role="list">
 
-        <article class="p-shot" role="listitem">
+        <article class="p-shot reveal" role="listitem">
           <figure class="p-shot__media">
             <img src="assets/screenshots/ipad/navibeat-ipad-home.jpg"
-                 alt="NaviBeat Home on iPad: left sidebar with Home, Search, Now Playing and the full Library entries, Home view with Pick Up Where You Left Off (Linkin Park From Zero Deluxe Edition), Quick Play row, Most Played and Recently Added shelves, persistent mini player docked at the bottom."
+                 alt="NaviBeat Home on iPad with sidebar navigation and Featured Album hero"
                  width="1800" height="1350" loading="lazy" decoding="async">
           </figure>
           <div class="p-shot__copy">
             <p class="eyebrow">01 / Home</p>
-            <h3>Sidebar on the left, featured album up top, shelves underneath.</h3>
-            <p>Persistent sidebar with Home, Search, Now Playing, and the full Library entries. The main pane opens on <em>Pick Up Where You Left Off</em> with a large cover-art card and a Play button, followed by a Quick Play row &mdash; Shuffle Mix, Random Album, Favorites, Random Artist &mdash; and shelves for Most Played and Recently Added. The mini player stays docked at the bottom, always in reach.</p>
+            <h3>Sidebar + Featured Album, at a glance.</h3>
+            <p>Persistent sidebar with Home, Artists, Albums, Genres, Playlists, Radio, and Directories. The main area opens on a rotating Featured Album hero with Quick Play and Recently Added shelves below.</p>
           </div>
         </article>
 
-        <article class="p-shot p-shot--reverse" role="listitem">
+        <article class="p-shot p-shot--reverse reveal" role="listitem">
           <figure class="p-shot__media">
             <img src="assets/screenshots/ipad/navibeat-ipad-albums.jpg"
-                 alt="NaviBeat Albums view on iPad: left sidebar with Albums selected, massive 7-column grid of album cover art with artist and year metadata, mini player docked at the bottom with a Play button hover highlight."
+                 alt="NaviBeat Albums grid on iPad with large cover art and metadata"
                  width="1800" height="1350" loading="lazy" decoding="async">
           </figure>
           <div class="p-shot__copy">
             <p class="eyebrow">02 / Albums</p>
-            <h3>Seven columns of cover art. Every album, one glance.</h3>
-            <p>The Albums view uses the extra iPad pixels to show 7 albums across in a fluid grid &mdash; no scaled-up phone view, no oversize tiles. Artist and year metadata under each cover, tap for the detail page. Every album on your Navidrome server shown the way the platform was meant to be browsed: visually.</p>
+            <h3>Large grid, rich cover art, instant access.</h3>
+            <p>The Albums view shows a larger grid than iPhone. Cover art fills the cells. Album title, artist, year, and genre visible at a glance. Tap any album for the full track list with Hi-Res badges.</p>
           </div>
         </article>
 
-        <article class="p-shot" role="listitem">
-          <figure class="p-shot__media">
-            <img src="assets/screenshots/ipad/navibeat-ipad-genres.jpg"
-                 alt="NaviBeat Genres on iPad: sidebar with Genres selected, a 7-column grid of color-gradient mood cards for Music, Rock, Hard Rock, Metal, Electronic, Dance, Alternative, Hip-Hop, Rap, Instrumental, Reggae, Pop, Electronica, House, Trance, Old School Rap and more — each showing the genre name and a live song count."
-                 width="1800" height="1350" loading="lazy" decoding="async">
-          </figure>
-          <div class="p-shot__copy">
-            <p class="eyebrow">03 / Genres</p>
-            <h3>A wall of color-coded mood cards.</h3>
-            <p>Genre browsing reimagined: each genre gets its own color-gradient mood card with the genre name and a live song count from your server. Tap any card for a filtered album view. Everything your Navidrome server has tagged shows up &mdash; Rock, Metal, Hard Rock, Alternative, Dance, Electronic, Reggae, Hip-Hop, and every niche your library has accumulated.</p>
-          </div>
-        </article>
-
-        <article class="p-shot p-shot--reverse" role="listitem">
+        <article class="p-shot reveal" role="listitem">
           <figure class="p-shot__media">
             <img src="assets/screenshots/ipad/navibeat-ipad-lyrics.jpg"
-                 alt="NaviBeat Now Playing on iPad with split-view lyrics: large Linkin Park Hybrid Theory cover art on the left with title In the End, progress and transport below, and time-synced LRC lyrics scrolling on the right — current line 'I kept everything inside and even though I tried' highlighted in accent orange."
+                 alt="NaviBeat time-synced lyrics on iPad with the lyrics panel open alongside the queue"
                  width="1800" height="1350" loading="lazy" decoding="async">
           </figure>
           <div class="p-shot__copy">
-            <p class="eyebrow">04 / Lyrics</p>
-            <h3>Time-synced lyrics docked alongside Now Playing.</h3>
-            <p>When your Navidrome server has LRC lyrics attached, iPad mounts them in the right half of the screen while cover art and transport stay visible on the left. Current line highlighted in accent orange, past lines fade out, upcoming lines wait. LRC, SRT, embedded, and Subsonic <code>getLyricsBySongId</code> responses all supported. Falls back gracefully to plain text.</p>
+            <p class="eyebrow">03 / Lyrics + Queue</p>
+            <h3>Lyrics and queue, side by side.</h3>
+            <p>On iPad, the lyrics panel and Up Next queue can both be visible at once &mdash; no switching between views. Follow the lyrics while managing your queue without interrupting playback.</p>
           </div>
         </article>
 
-        <article class="p-shot" role="listitem">
+        <article class="p-shot p-shot--reverse reveal" role="listitem">
           <figure class="p-shot__media">
-            <img src="assets/screenshots/ipad/navibeat-ipad-queue.jpg"
-                 alt="NaviBeat Now Playing on iPad with Up Next docked: large Linkin Park Hybrid Theory cover art and transport on the left, full Up Next queue on the right showing Sugar, Come Out and Play, Sharks, The Vengeful One, She Loves Me Not, B.Y.O.B., Nookie, Heavy is the Crown, One Step Closer, On Top of the World, The Kill, Falling Away from Me, I Stand Alone, Heavy, Chop Suey!, Bleed It Out, Bring Me To Life, For Whom the Bell Tolls, Whatever It Takes, Demons — each row with thumbnail, title and artist."
+            <img src="assets/screenshots/ipad/navibeat-ipad-genres.jpg"
+                 alt="NaviBeat Genres browser on iPad with genre tiles"
                  width="1800" height="1350" loading="lazy" decoding="async">
           </figure>
           <div class="p-shot__copy">
-            <p class="eyebrow">05 / Up Next</p>
-            <h3>The queue lives in the right pane, not a modal sheet.</h3>
-            <p>Tap the queue icon on iPad and Up Next opens as a dedicated right-side panel &mdash; cover art and transport stay visible on the left. Scroll the queue without losing your place in the music. Drag to reorder, swipe to remove, Clear All to wipe the queue without stopping playback. The server syncs the new order in the background.</p>
-          </div>
-        </article>
-
-        <article class="p-shot p-shot--reverse" role="listitem">
-          <figure class="p-shot__media">
-            <img src="assets/screenshots/ipad/navibeat-ipad-radios.png"
-                 alt="NaviBeat Radios on iPad: sidebar with Radios selected, full-width table of internet radio stations with stream URLs visible (Beograd 202 / rts.rs/RTS_2_004, Hit FM / streaming.hitfm.rs, Karolina / streaming.karolina.rs, Naxi 80-e, Naxi Evergreen, Naxi Radio, Naxi Rock, Play, Radio Beograd 1–3, Radio Jat, Radio S1–S4) each with a Play arrow on the right."
-                 width="2400" height="1800" loading="lazy" decoding="async">
-          </figure>
-          <div class="p-shot__copy">
-            <p class="eyebrow">06 / Internet Radio</p>
-            <h3>Every station, with its stream URL visible.</h3>
-            <p>The Radios tab lists every internet radio station stored in your Navidrome server as a full-width table &mdash; station name up top, stream URL exposed underneath. Useful for debugging, honest about where the audio comes from. MP3, AAC, OGG, and anything else your server streams. One tap starts playback in the bottom mini player.</p>
-          </div>
-        </article>
-
-        <article class="p-shot" role="listitem">
-          <figure class="p-shot__media">
-            <img src="assets/screenshots/ipad/navibeat-ipad-directories.png"
-                 alt="NaviBeat Directories on iPad: Finder-style breadcrumb navigation (Music / Music Library) with an artist folder list — ,Eahou, 1200 Micrograms, 1991, 4am Kru, 4hero, 96 Zeus, Đorđe Balašević, 刘允文, a bowl of rice, A$AP Rocky, A.M.C, Aboueb, AC/DC, AC13, Acraze — each row with a chevron disclosure indicator."
-                 width="2400" height="1800" loading="lazy" decoding="async">
-          </figure>
-          <div class="p-shot__copy">
-            <p class="eyebrow">07 / Directories</p>
-            <h3>The only Subsonic iPad client with a real folder browser.</h3>
-            <p>NaviBeat exposes the Directories API most other clients hide. Browse your music library the way it's actually stored on disk &mdash; artist folders, year folders, compilation folders, whatever structure you've chosen. Finder-style breadcrumbs at the top, chevron rows beneath, Back button in the navigation bar. Works with Unicode, non-Latin scripts, and symlinks alike.</p>
+            <p class="eyebrow">04 / Genres</p>
+            <h3>Browse by genre, like you own the collection.</h3>
+            <p>Every genre in your Navidrome library shows as a tile. Tap into any genre for all matching albums. The genre browser is the fastest way to find the right mood without knowing the exact album name.</p>
           </div>
         </article>
 
@@ -262,173 +192,87 @@
     </div>
   </section>
 
-  <!-- ========================================================== COMPATIBILITY STRIP -->
-  <section class="p-compat" aria-labelledby="pad-compat-title">
+  <!-- SCREENSHOT STRIP -->
+  <section style="padding-top:0;">
     <div class="wrap">
       <div class="sec-head reveal-stagger">
-        <p class="eyebrow eyebrow--accent">Servers &amp; hardware</p>
-        <h2 id="pad-compat-title" class="h2">Works with every major self-hosted music server.</h2>
+        <p class="eyebrow eyebrow--accent">All screenshots</p>
+        <h2 class="h2">Every screen in one place.</h2>
       </div>
-      <div class="p-compat__grid">
-        <div class="p-compat__cell">
-          <h4>Servers</h4>
-          <ul>
-            <li>Navidrome (0.49+)</li>
-            <li>Airsonic-Advanced</li>
-            <li>Gonic</li>
-            <li>Any OpenSubsonic server</li>
-            <li>Classic Subsonic (legacy)</li>
-          </ul>
+    </div>
+    <div class="strip reveal">
+      <div class="strip__track">
+        <div class="strip__item">
+          <img src="assets/screenshots/ipad/navibeat-ipad-home.jpg" alt="Home" width="1800" height="1350" loading="lazy" decoding="async">
+          <p class="strip__caption">Home</p>
         </div>
-        <div class="p-compat__cell">
-          <h4>iPadOS</h4>
-          <ul>
-            <li>iPadOS 18 &amp; 19</li>
-            <li>iPad (8th gen) and newer</li>
-            <li>Stage Manager aware</li>
-            <li>Split View &amp; Slide Over</li>
-            <li>AirPlay 2 output</li>
-          </ul>
+        <div class="strip__item">
+          <img src="assets/screenshots/ipad/navibeat-ipad-albums.jpg" alt="Albums" width="1800" height="1350" loading="lazy" decoding="async">
+          <p class="strip__caption">Albums</p>
         </div>
-        <div class="p-compat__cell">
-          <h4>Audio</h4>
-          <ul>
-            <li>MP3 / AAC / OGG</li>
-            <li>FLAC and ALAC (Hi-Res badge)</li>
-            <li>Opus, WAV, AIFF</li>
-            <li>Server-side transcoding</li>
-            <li>Gapless playback</li>
-          </ul>
+        <div class="strip__item">
+          <img src="assets/screenshots/ipad/navibeat-ipad-genres.jpg" alt="Genres" width="1800" height="1350" loading="lazy" decoding="async">
+          <p class="strip__caption">Genres</p>
         </div>
-        <div class="p-compat__cell">
-          <h4>Privacy</h4>
-          <ul>
-            <li>Zero third-party SDKs</li>
-            <li>Zero analytics</li>
-            <li>Only talks to your server</li>
-            <li>Credentials in iPadOS Keychain</li>
-            <li>Open-source client contract</li>
-          </ul>
+        <div class="strip__item">
+          <img src="assets/screenshots/ipad/navibeat-ipad-lyrics.jpg" alt="Lyrics" width="1800" height="1350" loading="lazy" decoding="async">
+          <p class="strip__caption">Lyrics</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/ipad/navibeat-ipad-queue.jpg" alt="Queue" width="1800" height="1350" loading="lazy" decoding="async">
+          <p class="strip__caption">Up Next queue</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/ipad/navibeat-ipad-radios.png" alt="Radio" width="1800" height="1350" loading="lazy" decoding="async">
+          <p class="strip__caption">Internet Radio</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/ipad/navibeat-ipad-directories.png" alt="Directories" width="1800" height="1350" loading="lazy" decoding="async">
+          <p class="strip__caption">Directories</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================== PLATFORM PICKER -->
-  <section class="p-picker" aria-labelledby="pad-picker-title">
-    <div class="wrap">
-      <div class="p-picker__head">
-        <p class="eyebrow eyebrow--accent">Also on</p>
-        <h2 id="pad-picker-title">One purchase. Every Apple device.</h2>
-      </div>
-      <ul class="p-lozenges" role="list">
-        <li>
-          <a class="p-loz" href="appletv.html">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
-                <path d="M8 21h8M12 17v4"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">Apple TV</span>
-            <span class="p-loz__tag">TestFlight beta</span>
-          </a>
-        </li>
-        <li>
-          <a class="p-loz" href="macos.html">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
-                <path d="M9 21h6M10 17l-.5 4M14 17l.5 4"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">Mac</span>
-            <span class="p-loz__tag">TestFlight beta</span>
-          </a>
-        </li>
-        <li>
-          <a class="p-loz" href="iphone.html">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="7" y="2.5" width="10" height="19" rx="2.5"/>
-                <path d="M10 5.5h4M11 19h2"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">iPhone</span>
-            <span class="p-loz__tag">TestFlight beta</span>
-          </a>
-        </li>
-        <li>
-          <span class="p-loz is-current" aria-current="page">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="2.5" width="16" height="19" rx="2"/>
-                <path d="M11 19h2"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">iPad</span>
-            <span class="p-loz__tag">You're here</span>
-          </span>
-        </li>
-        <li>
-          <a class="p-loz" href="applewatch.html">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="7" y="6" width="10" height="12" rx="2.5"/>
-                <path d="M9 6l.7-3h4.6L15 6M9 18l.7 3h4.6L15 18M19 11v2"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">Apple Watch</span>
-            <span class="p-loz__tag">TestFlight beta</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ========================================================== BUY BAND -->
-  <section class="price" id="buy" aria-labelledby="pad-price-title">
-    <div class="wrap">
-      <p class="eyebrow eyebrow--accent">Price</p>
-      <p class="price__h" id="pad-price-title">A native Navidrome client for every Apple device.</p>
+  <!-- PRICE -->
+  <section class="price" id="buy" aria-labelledby="ipad-price-title">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Launch price</p>
+      <p class="price__h" id="ipad-price-title">One purchase. Every device.</p>
       <div class="price__num">$5.99</div>
-      <p class="price__sub">One purchase. iPad, iPhone, Mac, Apple TV and Apple Watch. Forever.</p>
+      <p class="price__sub">iPad, iPhone, Mac, Apple TV, Apple Watch. Forever.</p>
       <div class="price__ctas">
-        <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&amp;body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20" aria-label="Request TestFlight beta access">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+        <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
             <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
           </svg>
           Request TestFlight Access
         </a>
-        <a class="link-quiet" href="https://www.navidrome.org" target="_blank" rel="noopener">Set up your Navidrome server &nbsp;&rarr;</a>
+        <a class="link-quiet" href="index.html">Back to all platforms &rarr;</a>
       </div>
-      <p class="price__trial">Currently in private TestFlight beta — free during the beta period. Launching to the App Store at $5.99.</p>
     </div>
   </section>
 
 </main>
 
-<!-- ========================================================== FOOTER -->
 <footer class="footer" role="contentinfo">
   <div class="wrap">
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="index.html">
           <img src="assets/icon.svg" alt="">
-          <span>NaviBeat</span>
+          NaviBeat
         </a>
-        <p style="max-width: 32ch;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
       </div>
       <div>
-        <h5>Product</h5>
+        <h5>Platforms</h5>
         <ul>
-          <li><a href="index.html#explore">Explore apps</a></li>
           <li><a href="appletv.html">Apple TV</a></li>
           <li><a href="macos.html">Mac</a></li>
           <li><a href="iphone.html">iPhone</a></li>
           <li><a href="ipad.html">iPad</a></li>
           <li><a href="applewatch.html">Apple Watch</a></li>
-          <li><a href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request">Join TestFlight</a></li>
         </ul>
       </div>
       <div>
@@ -448,8 +292,8 @@
       </div>
     </div>
     <div class="footer__bar">
-      <span>&copy; 2026 Nenad Jokic</span>
-      <span>v1.0 · In TestFlight beta · App Store launch 2026 Q2</span>
+      <span>&copy; 2026 Nenad Jokic &mdash; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>v1.0 &middot; TestFlight beta</span>
     </div>
   </div>
 </footer>
@@ -457,19 +301,19 @@
 <script>
   document.documentElement.classList.add('reveal-ready');
   (function () {
-    var hasIO = 'IntersectionObserver' in window;
     var nav = document.getElementById('nav');
     if (nav) {
       var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
       navS(); window.addEventListener('scroll', navS, { passive: true });
     }
-    var secs = document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .p-shots, .p-deep, .price');
-    if (hasIO) {
+    if ('IntersectionObserver' in window) {
       var sio = new IntersectionObserver(function (es) {
         es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
-      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
-      secs.forEach(function (el) { sio.observe(el); });
-    } else { secs.forEach(function (el) { el.classList.add('is-in'); }); }
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { sio.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { el.classList.add('is-in'); });
+    }
   })();
 </script>
 

@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NaviBeat for Apple Watch — Offline Navidrome &amp; Subsonic Client for watchOS</title>
-  <meta name="description" content="NaviBeat for Apple Watch: offline playback from your wrist. Downloads, Albums, Artists and a dedicated Now Playing — all native watchOS, no phone required. In TestFlight beta — included in the $5.99 Universal Purchase.">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="keywords" content="Navidrome Apple Watch, Subsonic watchOS, OpenSubsonic Apple Watch, Airsonic watch, Gonic watch, NaviBeat watchOS, self-hosted music Apple Watch, offline Subsonic watch">
+  <title>NaviBeat for Apple Watch — Navidrome &amp; Subsonic Client for watchOS</title>
+  <meta name="description" content="NaviBeat for Apple Watch: offline playback, Digital Crown volume, album browsing, and Now Playing — all from your wrist. In TestFlight beta — included in the $5.99 Universal Purchase.">
+  <meta name="theme-color" content="#0e0b08">
   <link rel="canonical" href="https://navibeat.app/applewatch.html">
 
-  <meta property="og:title" content="NaviBeat for Apple Watch — Offline Navidrome &amp; Subsonic client for watchOS">
-  <meta property="og:description" content="Offline playback from your wrist. Your downloaded albums, playable without your phone. Native watchOS — no companion stretched onto the watch.">
+  <meta property="og:title" content="NaviBeat for Apple Watch — Navidrome &amp; Subsonic client for watchOS">
+  <meta property="og:description" content="Offline playback from your wrist. Digital Crown volume. Skip tracks without your phone.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/applewatch.html">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png">
@@ -18,40 +17,10 @@
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="platform.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "NaviBeat for Apple Watch",
-    "operatingSystem": "watchOS 11",
-    "applicationCategory": "MultimediaApplication",
-    "applicationSubCategory": "Music Streaming Client",
-    "description": "Native Apple Watch client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. Offline playback from your wrist — Downloads, Albums, Artists, Now Playing, all without the iPhone.",
-    "offers": {
-      "@type": "Offer",
-      "price": "5.99",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "Navidrome support",
-      "OpenSubsonic API compatibility",
-      "Offline playback from the wrist",
-      "Downloads browser",
-      "Albums and Artists navigation",
-      "Native watchOS (no companion stretch)",
-      "Bluetooth audio playback",
-      "Universal Purchase"
-    ]
-  }
-  </script>
 </head>
 <body>
 
@@ -69,7 +38,7 @@
         <img src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
-      <span class="nav__word">NaviBeat</span>
+      NaviBeat
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
@@ -82,38 +51,37 @@
 
 <main id="top">
 
-  <!-- ========================================================== HERO -->
+  <!-- HERO -->
   <section class="p-hero">
     <div class="p-hero__ambient" aria-hidden="true">
       <span class="p-hero__glow"></span>
       <span class="p-hero__grid-lines"></span>
     </div>
-
     <div class="wrap">
-      <div class="crumb" aria-label="Breadcrumb">
+      <nav class="crumb" aria-label="Breadcrumb">
         <a href="index.html">NaviBeat</a>
         <span class="crumb__sep" aria-hidden="true">/</span>
         <span>Platforms</span>
         <span class="crumb__sep" aria-hidden="true">/</span>
         <span class="crumb__current">Apple Watch</span>
-      </div>
+      </nav>
 
       <div class="p-hero__wrap">
         <div class="p-hero__copy">
-          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat &nbsp;·&nbsp; watchOS 11+</p>
-          <h1 aria-label="Your music. Without the phone.">
-            <span class="word" style="animation-delay:0ms">Your</span>
-            <span class="word" style="animation-delay:80ms">music.</span>
-            <span class="word" style="animation-delay:200ms">Without</span>
-            <span class="word" style="animation-delay:280ms">the</span>
-            <span class="word" style="animation-delay:340ms">phone.</span>
+          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat &nbsp;&middot;&nbsp; watchOS 11+</p>
+          <h1>
+            <span class="word" style="animation-delay:0ms">Offline</span>
+            <span class="word" style="animation-delay:70ms">playback</span>
+            <span class="word" style="animation-delay:150ms">from</span>
+            <span class="word" style="animation-delay:210ms">your</span>
+            <span class="word" style="animation-delay:270ms">wrist.</span>
           </h1>
           <p class="p-hero__sub">
-            Pin albums, playlists or whole artists on your iPhone &mdash; they auto-sync to the Watch app and play back offline over Bluetooth headphones. Run the trail, skip the iPhone, leave the Wi-Fi at home. Native watchOS, not a companion stub stretched onto the wrist. One $5.99 Universal Purchase covers every Apple device.
+            Pin albums to your Watch and go on a run without your phone. Digital Crown adjusts volume. Skip tracks from your wrist. Now Playing with cover art, artist name, and transport controls &mdash; always one tap away. One $5.99 Universal Purchase covers every Apple device.
           </p>
           <div class="p-hero__ctas">
-            <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&amp;body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20">
-              <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20">
+              <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
                 <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
               </svg>
               Request TestFlight Access
@@ -122,297 +90,156 @@
           </div>
         </div>
 
-        <div class="p-hero__shot p-hero__shot--watch">
+        <div class="p-hero__shot p-hero__shot--portrait">
           <img src="assets/screenshots/watch/navibeat-watch-now-playing.png"
-               alt="NaviBeat Now Playing on Apple Watch: full-bleed Red Hot Chili Peppers 'By the Way' cover art filling the watch face, song title, artist name, and a transport row (previous / pause / next) beneath."
-               width="410" height="502" loading="eager" decoding="async" fetchpriority="high">
+               alt="NaviBeat Now Playing on Apple Watch with cover art, track name, artist, progress bar, and transport controls."
+               width="410" height="502" loading="eager" decoding="async" fetchpriority="high" style="max-width:260px;margin-inline:auto;border-radius:32px;">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================== STATS STRIP -->
-  <section style="padding-block: clamp(32px, 5vh, 56px);">
+  <!-- STATS -->
+  <section style="padding-block: clamp(28px, 4vh, 52px);">
     <div class="wrap">
       <ul class="p-stats reveal" role="list" aria-label="NaviBeat for Apple Watch at a glance">
         <li class="p-stat">
           <p class="p-stat__num">watchOS <span class="accent">11+</span></p>
-          <p class="p-stat__label">Apple Watch SE / Series 6 and newer</p>
+          <p class="p-stat__label">Apple Watch Series 6 and later</p>
         </li>
         <li class="p-stat">
-          <p class="p-stat__num">0 <span class="accent">phone</span></p>
-          <p class="p-stat__label">Offline playback, iPhone optional</p>
+          <p class="p-stat__num">Digital <span class="accent">Crown</span></p>
+          <p class="p-stat__label">Volume &middot; no tapping required</p>
         </li>
         <li class="p-stat">
-          <p class="p-stat__num">Native <span class="accent">watchOS</span></p>
-          <p class="p-stat__label">No companion stretch. No Watch stub.</p>
+          <p class="p-stat__num">Offline <span class="accent">pins</span></p>
+          <p class="p-stat__label">Albums &amp; playlists on-watch</p>
         </li>
         <li class="p-stat">
           <p class="p-stat__num"><span class="accent">$5.99</span> once</p>
-          <p class="p-stat__label">Universal Purchase · all Apple devices</p>
+          <p class="p-stat__label">Universal Purchase &middot; all Apple devices</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- ========================================================== DEEP DIVE — the 4 watch screens, big -->
+  <!-- FEATURES -->
   <section id="features" aria-labelledby="watch-features-title">
     <div class="wrap">
       <div class="sec-head reveal-stagger">
-        <p class="eyebrow eyebrow--accent">Every watch screen, cinematic</p>
-        <h2 id="watch-features-title" class="h2">Four screens. Every one tuned for the wrist.</h2>
-        <p>The NaviBeat Watch app ships alongside the iPhone app &mdash; pair your Watch and it installs automatically. From the wrist you get a focused Now Playing with edge-to-edge cover art, a Downloads list of everything pinned offline, and Artists / Albums browsing pulled from your server whenever it's reachable. Four screens, zero fluff.</p>
+        <p class="eyebrow eyebrow--accent">Every screen</p>
+        <h2 id="watch-features-title" class="h2">Your music, untethered.</h2>
+        <p>The Watch app syncs pinned albums over Wi-Fi while charging. On a run, the tracks play directly from the Watch over Bluetooth headphones. No phone required, no streaming, no interruptions.</p>
       </div>
 
-      <div class="p-deep" role="list">
+      <!-- Watch screenshots in a 4-up grid since they're square-ish -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 16px;" class="reveal-stagger">
 
-        <article class="p-deep__row" role="listitem">
-          <figure class="p-deep__media p-deep__media--watch">
-            <img src="assets/screenshots/watch/navibeat-watch-now-playing.png"
-                 alt="NaviBeat Now Playing on Apple Watch: full-bleed Red Hot Chili Peppers 'By the Way' cover art filling the watch screen, title, artist name in a muted row, and rewind / pause / fast-forward transport buttons beneath the artwork."
-                 width="410" height="502" loading="lazy" decoding="async">
-          </figure>
-          <div class="p-deep__copy">
-            <p class="eyebrow">01 / Now Playing</p>
-            <h3>Edge-to-edge album art on the wrist.</h3>
-            <p>The Now Playing screen uses every pixel the watch face has: cover art fills the top, title and artist sit on a single row, and the transport buttons stretch across the bottom &mdash; big enough to hit mid-run, with haptics on every tap. The Digital Crown scrubs the timeline. No mini-player chrome, no ornaments, no "Watch-style" compromise.</p>
-            <ul class="p-deep__list">
-              <li>Full-bleed cover art, auto-scaled to the watch screen size</li>
-              <li>Large-tap transport (previous / pause / next)</li>
-              <li>Digital Crown scrubs the progress timeline</li>
-              <li>Haptic feedback on every button press</li>
-            </ul>
-          </div>
+        <figure style="display:flex;flex-direction:column;gap:12px;">
+          <img src="assets/screenshots/watch/navibeat-watch-now-playing.png"
+               alt="NaviBeat Now Playing on Apple Watch"
+               width="410" height="502" loading="lazy" decoding="async"
+               style="border-radius:22px;border:1px solid var(--border);width:100%;height:auto;">
+          <figcaption style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-2);">Now Playing</figcaption>
+        </figure>
+
+        <figure style="display:flex;flex-direction:column;gap:12px;">
+          <img src="assets/screenshots/watch/navibeat-watch-albums.png"
+               alt="NaviBeat Albums browser on Apple Watch"
+               width="410" height="502" loading="lazy" decoding="async"
+               style="border-radius:22px;border:1px solid var(--border);width:100%;height:auto;">
+          <figcaption style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-2);">Albums</figcaption>
+        </figure>
+
+        <figure style="display:flex;flex-direction:column;gap:12px;">
+          <img src="assets/screenshots/watch/navibeat-watch-artists.png"
+               alt="NaviBeat Artists browser on Apple Watch"
+               width="410" height="502" loading="lazy" decoding="async"
+               style="border-radius:22px;border:1px solid var(--border);width:100%;height:auto;">
+          <figcaption style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-2);">Artists</figcaption>
+        </figure>
+
+        <figure style="display:flex;flex-direction:column;gap:12px;">
+          <img src="assets/screenshots/watch/navibeat-watch-downloads.png"
+               alt="NaviBeat pinned downloads on Apple Watch"
+               width="410" height="502" loading="lazy" decoding="async"
+               style="border-radius:22px;border:1px solid var(--border);width:100%;height:auto;">
+          <figcaption style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-2);">Pinned downloads</figcaption>
+        </figure>
+
+      </div>
+
+      <!-- Feature copy below grid -->
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:64px;" class="features">
+
+        <article class="f-card">
+          <span class="f-card__idx">01 / Offline playback</span>
+          <h3 class="h3">Pin albums. Run without your phone.</h3>
+          <p>Sync albums or playlists to your Watch over Wi-Fi while it charges. Leave your phone at home. The music plays from local storage directly to Bluetooth headphones.</p>
+          <p class="f-card__kicker">Run free.</p>
         </article>
 
-        <article class="p-deep__row p-deep__row--reverse" role="listitem">
-          <figure class="p-deep__media p-deep__media--watch">
-            <img src="assets/screenshots/watch/navibeat-watch-downloads.png"
-                 alt="NaviBeat Downloads on Apple Watch: a list of tracks pinned for offline playback — The Emptin..., Casualty, Overflow — each row with an orange NaviBeat icon on the left and a LINKIN PARK artist label under the track title."
-                 width="410" height="502" loading="lazy" decoding="async">
-          </figure>
-          <div class="p-deep__copy">
-            <p class="eyebrow">02 / Downloads</p>
-            <h3>Everything you've pinned, ready offline.</h3>
-            <p>The Downloads tab lists every track you've pinned for offline playback from the iPhone app. Leave the phone at home, leave the Wi-Fi at home, leave even the cellular watch plan at home &mdash; the music stays on the wrist. Tracks are stored locally on the watch; tap one to start playing over Bluetooth headphones. No buffering, no network round-trips, no drop-outs on a trail run.</p>
-            <ul class="p-deep__list">
-              <li>Albums / playlists / artists pinned on iPhone auto-sync here</li>
-              <li>Plays through Bluetooth headphones without the phone</li>
-              <li>LRU cache managed locally &mdash; oldest items evict first</li>
-              <li>Works with Watch cellular and Wi-Fi-only models alike</li>
-            </ul>
-          </div>
+        <article class="f-card">
+          <span class="f-card__idx">02 / Digital Crown volume</span>
+          <h3 class="h3">Spin to adjust. No tapping required.</h3>
+          <p>The Digital Crown controls volume during playback. No accidental taps on a sweaty screen &mdash; just turn the crown. Skip tracks with the side button during workouts.</p>
         </article>
 
-        <article class="p-deep__row" role="listitem">
-          <figure class="p-deep__media p-deep__media--watch">
-            <img src="assets/screenshots/watch/navibeat-watch-albums.png"
-                 alt="NaviBeat Albums on Apple Watch: an Albums list in the accent orange with Linkin Park's 'From Zero (...)' shown as a single row — album art thumbnail on the left, album title and LINKIN PARK artist label on the right."
-                 width="410" height="502" loading="lazy" decoding="async">
-          </figure>
-          <div class="p-deep__copy">
-            <p class="eyebrow">03 / Albums</p>
-            <h3>Your full library, surfaced row by row.</h3>
-            <p>The Albums tab shows every album on your Navidrome server as a scrollable list, each row with a thumbnail, album title and artist. The Digital Crown scrolls. Tap to drill into the track list. Works whenever the Watch can reach your server &mdash; LAN, cellular, Wi-Fi hotspot &mdash; or fall back to Downloads when the signal drops.</p>
-            <ul class="p-deep__list">
-              <li>Scrollable list of every album on the server</li>
-              <li>Thumbnail + title + artist, tuned for the watch canvas</li>
-              <li>Digital Crown scrolls through the list naturally</li>
-              <li>Graceful fallback to pinned Downloads when offline</li>
-            </ul>
-          </div>
+        <article class="f-card">
+          <span class="f-card__idx">03 / Album &amp; artist browsing</span>
+          <h3 class="h3">Your full library on a tiny screen.</h3>
+          <p>Browse Albums and Artists directly from the Watch. Tap into any album for the track list. Tap any track to start playback. The full library in your pocket &mdash; and on your wrist.</p>
         </article>
 
-        <article class="p-deep__row p-deep__row--reverse" role="listitem">
-          <figure class="p-deep__media p-deep__media--watch">
-            <img src="assets/screenshots/watch/navibeat-watch-artists.png"
-                 alt="NaviBeat Artists on Apple Watch: an Artists list in the accent orange with LINKIN PARK shown as a single row — microphone icon on the left, artist name and '4 tracks' caption, and a three-dot overflow menu indicator on the right."
-                 width="410" height="502" loading="lazy" decoding="async">
-          </figure>
-          <div class="p-deep__copy">
-            <p class="eyebrow">04 / Artists</p>
-            <h3>Artists, with live track counts.</h3>
-            <p>The Artists tab lists every artist on your Navidrome server with a live track count &mdash; so you can see at a glance which artists actually have music on the server vs. which are metadata stubs. Tap through for the artist's discography. Three-dot menu on each row for Play All, Shuffle, and jump-to-album actions, all thumb-friendly.</p>
-            <ul class="p-deep__list">
-              <li>Live track counts per artist from the server</li>
-              <li>Three-dot row menu: Play All, Shuffle, jump-to-album</li>
-              <li>Microphone accent icon matches the NaviBeat design language</li>
-              <li>Search-by-first-letter via the Digital Crown</li>
-            </ul>
-          </div>
+        <article class="f-card">
+          <span class="f-card__idx">04 / Automatic sync</span>
+          <h3 class="h3">Pinned albums sync while you sleep.</h3>
+          <p>Download is triggered automatically when your Watch is on the charger and connected to Wi-Fi. Wake up, unplug, go &mdash; the music is there. No manual sync button needed.</p>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ========================================================== COMPATIBILITY STRIP -->
-  <section class="p-compat" aria-labelledby="watch-compat-title">
-    <div class="wrap">
-      <div class="sec-head reveal-stagger">
-        <p class="eyebrow eyebrow--accent">Servers &amp; hardware</p>
-        <h2 id="watch-compat-title" class="h2">Works with every major self-hosted music server.</h2>
-      </div>
-      <div class="p-compat__grid">
-        <div class="p-compat__cell">
-          <h4>Servers</h4>
-          <ul>
-            <li>Navidrome (0.49+)</li>
-            <li>Airsonic-Advanced</li>
-            <li>Gonic</li>
-            <li>Any OpenSubsonic server</li>
-            <li>Classic Subsonic (legacy)</li>
-          </ul>
-        </div>
-        <div class="p-compat__cell">
-          <h4>watchOS</h4>
-          <ul>
-            <li>watchOS 11 &amp; 12</li>
-            <li>Apple Watch SE / Series 6 and newer</li>
-            <li>Apple Watch Ultra (1 &amp; 2)</li>
-            <li>Cellular and Wi-Fi-only models</li>
-            <li>Bluetooth headphone output</li>
-          </ul>
-        </div>
-        <div class="p-compat__cell">
-          <h4>Audio</h4>
-          <ul>
-            <li>MP3 / AAC / OGG</li>
-            <li>FLAC and ALAC (where supported)</li>
-            <li>Opus, WAV, AIFF</li>
-            <li>Server-side transcoding</li>
-            <li>Offline from the Downloads cache</li>
-          </ul>
-        </div>
-        <div class="p-compat__cell">
-          <h4>Privacy</h4>
-          <ul>
-            <li>Zero third-party SDKs</li>
-            <li>Zero analytics</li>
-            <li>Only talks to your server</li>
-            <li>Credentials via iPhone Keychain</li>
-            <li>Open-source client contract</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================== PLATFORM PICKER -->
-  <section class="p-picker" aria-labelledby="watch-picker-title">
-    <div class="wrap">
-      <div class="p-picker__head">
-        <p class="eyebrow eyebrow--accent">Also on</p>
-        <h2 id="watch-picker-title">One purchase. Every Apple device.</h2>
-      </div>
-      <ul class="p-lozenges" role="list">
-        <li>
-          <a class="p-loz" href="appletv.html">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
-                <path d="M8 21h8M12 17v4"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">Apple TV</span>
-            <span class="p-loz__tag">TestFlight beta</span>
-          </a>
-        </li>
-        <li>
-          <a class="p-loz" href="macos.html">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2.5" y="4" width="19" height="13" rx="2"/>
-                <path d="M9 21h6M10 17l-.5 4M14 17l.5 4"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">Mac</span>
-            <span class="p-loz__tag">TestFlight beta</span>
-          </a>
-        </li>
-        <li>
-          <a class="p-loz" href="iphone.html">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="7" y="2.5" width="10" height="19" rx="2.5"/>
-                <path d="M10 5.5h4M11 19h2"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">iPhone</span>
-            <span class="p-loz__tag">TestFlight beta</span>
-          </a>
-        </li>
-        <li>
-          <a class="p-loz" href="ipad.html">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="2.5" width="16" height="19" rx="2"/>
-                <path d="M11 19h2"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">iPad</span>
-            <span class="p-loz__tag">TestFlight beta</span>
-          </a>
-        </li>
-        <li>
-          <span class="p-loz is-current" aria-current="page">
-            <span class="p-loz__ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="7" y="6" width="10" height="12" rx="2.5"/>
-                <path d="M9 6l.7-3h4.6L15 6M9 18l.7 3h4.6L15 18M19 11v2"/>
-              </svg>
-            </span>
-            <span class="p-loz__name">Apple Watch</span>
-            <span class="p-loz__tag">You're here</span>
-          </span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ========================================================== BUY BAND -->
+  <!-- PRICE -->
   <section class="price" id="buy" aria-labelledby="watch-price-title">
-    <div class="wrap">
-      <p class="eyebrow eyebrow--accent">Price</p>
-      <p class="price__h" id="watch-price-title">A native Navidrome client for every Apple device.</p>
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Launch price</p>
+      <p class="price__h" id="watch-price-title">One purchase. Every device.</p>
       <div class="price__num">$5.99</div>
-      <p class="price__sub">One purchase. Apple Watch, iPhone, iPad, Mac and Apple TV. Forever.</p>
+      <p class="price__sub">Apple Watch, iPhone, Mac, Apple TV, iPad. Forever.</p>
       <div class="price__ctas">
-        <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&amp;body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20" aria-label="Request TestFlight beta access">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+        <a class="btn btn--primary" href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request&body=Hi%2C%20I'd%20like%20to%20join%20the%20NaviBeat%20TestFlight%20beta.%20My%20Apple%20ID%20email%20is%3A%20">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
             <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
           </svg>
           Request TestFlight Access
         </a>
-        <a class="link-quiet" href="https://www.navidrome.org" target="_blank" rel="noopener">Set up your Navidrome server &nbsp;&rarr;</a>
+        <a class="link-quiet" href="index.html">Back to all platforms &rarr;</a>
       </div>
-      <p class="price__trial">The Apple Watch app ships embedded in the iPhone app — install NaviBeat for iPhone from TestFlight and the Watch app auto-installs on your paired Apple Watch. Free during the TestFlight period.</p>
     </div>
   </section>
 
 </main>
 
-<!-- ========================================================== FOOTER -->
 <footer class="footer" role="contentinfo">
   <div class="wrap">
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="index.html">
           <img src="assets/icon.svg" alt="">
-          <span>NaviBeat</span>
+          NaviBeat
         </a>
-        <p style="max-width: 32ch;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
       </div>
       <div>
-        <h5>Product</h5>
+        <h5>Platforms</h5>
         <ul>
-          <li><a href="index.html#explore">Explore apps</a></li>
           <li><a href="appletv.html">Apple TV</a></li>
           <li><a href="macos.html">Mac</a></li>
           <li><a href="iphone.html">iPhone</a></li>
           <li><a href="ipad.html">iPad</a></li>
           <li><a href="applewatch.html">Apple Watch</a></li>
-          <li><a href="mailto:support@navibeat.app?subject=TestFlight%20Access%20Request">Join TestFlight</a></li>
         </ul>
       </div>
       <div>
@@ -432,8 +259,8 @@
       </div>
     </div>
     <div class="footer__bar">
-      <span>&copy; 2026 Nenad Jokic</span>
-      <span>v1.0 · In TestFlight beta · App Store launch 2026 Q2</span>
+      <span>&copy; 2026 Nenad Jokic &mdash; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>v1.0 &middot; TestFlight beta</span>
     </div>
   </div>
 </footer>
@@ -441,19 +268,19 @@
 <script>
   document.documentElement.classList.add('reveal-ready');
   (function () {
-    var hasIO = 'IntersectionObserver' in window;
     var nav = document.getElementById('nav');
     if (nav) {
       var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
       navS(); window.addEventListener('scroll', navS, { passive: true });
     }
-    var secs = document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .p-shots, .p-deep, .price');
-    if (hasIO) {
+    if ('IntersectionObserver' in window) {
       var sio = new IntersectionObserver(function (es) {
         es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
-      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.1 });
-      secs.forEach(function (el) { sio.observe(el); });
-    } else { secs.forEach(function (el) { el.classList.add('is-in'); }); }
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features').forEach(function (el) { sio.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features').forEach(function (el) { el.classList.add('is-in'); });
+    }
   })();
 </script>
 

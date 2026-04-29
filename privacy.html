@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NaviBeat — Privacy Policy</title>
   <meta name="description" content="NaviBeat's privacy policy: what is stored, what leaves your device, and what never does.">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#0e0b08">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
         <img src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
-      <span class="nav__word">NaviBeat</span>
+      NaviBeat
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
@@ -59,7 +59,7 @@
   <h2>What leaves your device</h2>
   <ul>
     <li><strong>Requests to your Navidrome server only.</strong> NaviBeat sends API requests (search, browse, stream) exclusively to the server URL you configure. Your server is under your control.</li>
-    <li><strong>Scrobbling (optional).</strong> If you enable the "Submit play history" setting, NaviBeat calls your Navidrome server's <code>scrobble</code> endpoint after each track. This data goes to your server, not to any third party.</li>
+    <li><strong>Scrobbling (optional).</strong> If you enable the &ldquo;Submit play history&rdquo; setting, NaviBeat calls your Navidrome server&rsquo;s <code>scrobble</code> endpoint after each track. This data goes to your server, not to any third party.</li>
     <li><strong>Nothing else.</strong> NaviBeat contains no analytics SDK, no crash reporter, no advertising framework, and no third-party network request. Zero data is sent to the developer or any external service.</li>
   </ul>
 
@@ -70,7 +70,7 @@
   <p>NaviBeat does not knowingly collect data from children. The app has a 4+ age rating on the App Store.</p>
 
   <h2>Changes to this policy</h2>
-  <p>If this policy changes, the updated version will be posted at this URL with a revised "Last updated" date.</p>
+  <p>If this policy changes, the updated version will be posted at this URL with a revised &ldquo;Last updated&rdquo; date.</p>
 
   <h2>Contact</h2>
   <p>Privacy questions: <a href="mailto:support@navibeat.app">support@navibeat.app</a></p>
@@ -83,9 +83,9 @@
       <div>
         <a class="footer__brand" href="index.html">
           <img src="assets/icon.svg" alt="">
-          <span>NaviBeat</span>
+          NaviBeat
         </a>
-        <p style="max-width: 32ch;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
       </div>
       <div>
         <h5>Product</h5>
@@ -112,8 +112,8 @@
       </div>
     </div>
     <div class="footer__bar">
-      <span>&copy; 2026 Nenad Jokic</span>
-      <span>v1.0 · In TestFlight beta · App Store launch 2026 Q2</span>
+      <span>&copy; 2026 Nenad Jokic &mdash; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>v1.0 &middot; TestFlight beta &middot; App Store launch 2026 Q2</span>
     </div>
   </div>
 </footer>
@@ -122,10 +122,7 @@
   (function () {
     var nav = document.getElementById('nav');
     if (!nav) return;
-    var onScroll = function () {
-      if (window.scrollY > 24) nav.classList.add('is-scrolled');
-      else nav.classList.remove('is-scrolled');
-    };
+    var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
   })();
