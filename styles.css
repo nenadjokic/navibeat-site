@@ -764,6 +764,13 @@ section { padding-block: var(--rhythm); }
   display: block;
   transition: transform 0.4s var(--ease-spring);
 }
+
+/* Watch screenshot is portrait — center it in the 16:10 thumb (avoid grid overflow) */
+.plat-card__thumb--watch img {
+  object-fit: contain;
+  object-position: center;
+  background: var(--bg-0);
+}
 .plat-card:hover .plat-card__thumb img { transform: scale(1.04); }
 
 /* Thumbnail overlay gradient — fades into card body */
@@ -1580,7 +1587,6 @@ section { padding-block: var(--rhythm); }
   height: auto;
   display: block;
   border-radius: 12px;
-  border: 1px solid var(--border);
   box-shadow: 0 32px 72px rgba(0, 0, 0, 0.52);
 }
 
@@ -1597,36 +1603,27 @@ section { padding-block: var(--rhythm); }
   color: var(--text-0);
 }
 
-/* Screenshot gallery — horizontal scroll strip */
+/* Screenshot gallery — responsive grid, wraps naturally */
 .strip {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-strong) transparent;
   padding-block: 16px 32px;
-  margin-inline: calc(-1 * var(--gutter));
-  padding-inline: var(--gutter);
 }
-.strip::-webkit-scrollbar { height: 5px; }
-.strip::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
 
 .strip__track {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;
 }
 .strip__item {
-  scroll-snap-align: start;
-  flex: 0 0 auto;
-  width: clamp(260px, 42vw, 520px);
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
   background: var(--bg-1);
-  transition: border-color 0.25s var(--ease);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
 }
-.strip__item:hover { border-color: rgba(232, 154, 83, 0.3); }
-.strip__item--tall { width: clamp(200px, 26vw, 300px); }
+.strip__item:hover {
+  border-color: rgba(232, 154, 83, 0.3);
+  transform: translateY(-2px);
+}
 .strip__item img { display: block; width: 100%; height: auto; }
 .strip__caption {
   padding: 12px 16px;
