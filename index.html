@@ -153,6 +153,162 @@
     </div>
   </section>
 
+  <!-- ======================================================= THEATER — 5-act scroll-driven cinematic showcase -->
+  <section class="theater" id="theater" aria-label="NaviBeat across the Apple ecosystem">
+    <div class="theater__sticky">
+      <div class="theater__backdrop" aria-hidden="true"></div>
+
+      <!-- Act title overlay -->
+      <div class="theater__title" id="theater-title" aria-hidden="true">
+        <span class="theater__title-eyebrow" id="theater-act-label">Act 01 · Apple TV</span>
+        <h2 class="theater__title-h" id="theater-act-title">The big screen, in <em>full focus.</em></h2>
+      </div>
+
+      <!-- Act 1: Apple TV -->
+      <div class="act act--tv is-active" data-act="0" data-label="Act 01 · Apple TV" data-title="The big screen, in &lt;em&gt;full focus.&lt;/em&gt;">
+        <div class="act__stage">
+          <figure class="dev-tv" aria-hidden="true">
+            <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg"
+                 alt="NaviBeat on Apple TV: Featured Album hero with Recently Added shelf"
+                 width="2400" height="1350" loading="eager" decoding="async" fetchpriority="high">
+            <span class="dev-tv__stand" aria-hidden="true"></span>
+          </figure>
+        </div>
+        <div class="act__caption">
+          <span class="act__caption-eyebrow"><span class="act__dot"></span>tvOS · 4K</span>
+          <h3 class="act__caption-h">Living-room <em>worthy.</em></h3>
+          <p class="act__caption-p">Featured Album hero, Quick Play shelves, full Siri Remote support — tuned for focus, not the cursor.</p>
+        </div>
+      </div>
+
+      <!-- Act 2: Mac — main + mini player floater -->
+      <div class="act act--mac" data-act="1" data-label="Act 02 · Mac" data-title="Native SwiftUI. &lt;em&gt;No Electron.&lt;/em&gt;">
+        <div class="act__stage">
+          <div class="act-mac__group">
+            <figure class="dev-mac" aria-hidden="true">
+              <img src="assets/screenshots/macos/navibeat-mac-home.png"
+                   alt="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero"
+                   width="1240" height="724" loading="lazy" decoding="async">
+            </figure>
+            <figure class="dev-mac__floater" aria-label="Mini Player floating above main window">
+              <img src="assets/screenshots/macos/navibeat-mac-mini-player.png"
+                   alt="NaviBeat Mac Mini Player — pin on top of any window"
+                   width="412" height="564" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </div>
+        <div class="act__caption">
+          <span class="act__caption-eyebrow"><span class="act__dot"></span>macOS · SwiftUI</span>
+          <h3 class="act__caption-h">A real Mac app. <em>With a real Mini&nbsp;Player.</em></h3>
+          <p class="act__caption-p">Pin-on-top, time-synced lyrics, Up Next queue, sleep timer, directories. Not Electron, not Catalyst.</p>
+        </div>
+      </div>
+
+      <!-- Act 3: iPad — large with macro lyric zoom -->
+      <div class="act act--ipad" data-act="2" data-label="Act 03 · iPad" data-title="Time-synced lyrics, &lt;em&gt;up close.&lt;/em&gt;">
+        <div class="act__stage">
+          <div class="act-ipad__group">
+            <figure class="dev-ipad" aria-hidden="true">
+              <img src="assets/screenshots/ipad/navibeat-ipad-lyrics.jpg"
+                   alt="NaviBeat iPad lyrics view with time-synced LRC"
+                   width="1800" height="1350" loading="lazy" decoding="async">
+            </figure>
+            <div class="dev-ipad__zoom" aria-hidden="true">
+              <span class="dev-ipad__zoom-tag"><span class="act__dot"></span>LRC zoom · 3×</span>
+              <div class="dev-ipad__zoom-img"></div>
+            </div>
+            <div class="dev-ipad__line" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="act__caption">
+          <span class="act__caption-eyebrow"><span class="act__dot"></span>iPadOS · LRC</span>
+          <h3 class="act__caption-h">Lyrics that <em>follow the song.</em></h3>
+          <p class="act__caption-p">Word-perfect time-sync. Smooth scroll. Tap any line to seek. Reads .lrc straight from your Navidrome.</p>
+        </div>
+      </div>
+
+      <!-- Act 4: iPhone — three phones in arc + watch -->
+      <div class="act act--iphone" data-act="3" data-label="Act 04 · iPhone &amp; Watch" data-title="In your &lt;em&gt;pocket&lt;/em&gt; — and on your &lt;em&gt;wrist.&lt;/em&gt;">
+        <div class="act__stage">
+          <div class="act-iphone__group">
+            <figure class="dev-iphone dev-iphone--lyrics" aria-hidden="true">
+              <img src="assets/screenshots/iphone/navibeat-iphone-lyrics.jpg"
+                   alt="NaviBeat iPhone lyrics view" width="644" height="1400" loading="lazy">
+            </figure>
+            <figure class="dev-iphone dev-iphone--np" aria-hidden="true">
+              <img src="assets/screenshots/iphone/navibeat-iphone-now-playing.jpg"
+                   alt="NaviBeat iPhone Now Playing" width="644" height="1400" loading="lazy">
+            </figure>
+            <figure class="dev-iphone dev-iphone--queue" aria-hidden="true">
+              <img src="assets/screenshots/iphone/navibeat-iphone-queue.jpg"
+                   alt="NaviBeat iPhone Up Next queue" width="644" height="1400" loading="lazy">
+            </figure>
+            <figure class="dev-watch" aria-label="Apple Watch Now Playing">
+              <span class="dev-watch__crown" aria-hidden="true"></span>
+              <img src="assets/screenshots/watch/navibeat-watch-now-playing.png"
+                   alt="NaviBeat Apple Watch Now Playing" width="410" height="502" loading="lazy">
+            </figure>
+          </div>
+        </div>
+        <div class="act__caption">
+          <span class="act__caption-eyebrow"><span class="act__dot"></span>iOS · watchOS</span>
+          <h3 class="act__caption-h">Now Playing, <em>everywhere you go.</em></h3>
+          <p class="act__caption-p">Full-screen Now Playing on iPhone. Offline pinned playback on Watch. Run trails without the phone.</p>
+        </div>
+      </div>
+
+      <!-- Act 5: Family shot + receipt -->
+      <div class="act act--family" data-act="4" data-label="Act 05 · One purchase" data-title="One purchase. &lt;em&gt;Every device.&lt;/em&gt; Forever.">
+        <div class="act__stage">
+          <div class="family" aria-label="All five NaviBeat devices together">
+            <figure class="family__device family__tv" aria-hidden="true">
+              <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg" alt="" loading="lazy">
+            </figure>
+            <figure class="family__device family__mac" aria-hidden="true">
+              <img src="assets/screenshots/macos/navibeat-mac-home.png" alt="" loading="lazy">
+            </figure>
+            <figure class="family__device family__ipad" aria-hidden="true">
+              <img src="assets/screenshots/ipad/navibeat-ipad-home.jpg" alt="" loading="lazy">
+            </figure>
+            <figure class="family__device family__iphone" aria-hidden="true">
+              <img src="assets/screenshots/iphone/navibeat-iphone-now-playing.jpg" alt="" loading="lazy">
+            </figure>
+            <figure class="family__device family__watch" aria-hidden="true">
+              <img src="assets/screenshots/watch/navibeat-watch-now-playing.png" alt="" loading="lazy">
+            </figure>
+            <aside class="family__receipt" aria-label="Universal Purchase receipt">
+              <div class="family__receipt-h">// receipt.txt</div>
+              <div class="family__receipt-row"><span>Apple TV</span><b>incl.</b></div>
+              <div class="family__receipt-row"><span>Mac</span><b>incl.</b></div>
+              <div class="family__receipt-row"><span>iPhone</span><b>incl.</b></div>
+              <div class="family__receipt-row"><span>iPad</span><b>incl.</b></div>
+              <div class="family__receipt-row"><span>Apple Watch</span><b>incl.</b></div>
+              <div class="family__receipt-rule"></div>
+              <div class="family__receipt-row family__receipt-total"><span>Total · once</span><b>$5.99</b></div>
+            </aside>
+          </div>
+        </div>
+        <div class="act__caption">
+          <span class="act__caption-eyebrow"><span class="act__dot"></span>Universal Purchase</span>
+          <h3 class="act__caption-h">Five apps. <em>One receipt.</em></h3>
+          <p class="act__caption-p">Buy NaviBeat once on any Apple device. It installs on the other four for free. No subscription, no per-platform fee.</p>
+        </div>
+      </div>
+
+      <!-- Progress rail -->
+      <div class="theater__rail" role="tablist" aria-label="Jump to platform">
+        <span class="theater__rail-dots">
+          <button type="button" class="theater__rail-dot is-active" data-act="0" aria-label="Apple TV"></button>
+          <button type="button" class="theater__rail-dot" data-act="1" aria-label="Mac"></button>
+          <button type="button" class="theater__rail-dot" data-act="2" aria-label="iPad"></button>
+          <button type="button" class="theater__rail-dot" data-act="3" aria-label="iPhone and Apple Watch"></button>
+          <button type="button" class="theater__rail-dot" data-act="4" aria-label="All five devices, one purchase"></button>
+        </span>
+        <span class="theater__rail-label" id="theater-rail-label">01 / 05</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ======================================================= PLATFORMS BAND — real screenshot thumbnails -->
   <section class="platforms" id="platforms" aria-labelledby="platforms-title">
     <div class="wrap">
@@ -249,6 +405,7 @@
     </div>
   </section>
 
+  <!-- ======================================================= FEATURES — 4 selling points -->
   <section id="features" aria-labelledby="features-title">
     <div class="wrap">
       <div class="sec-head reveal-stagger">
@@ -509,6 +666,74 @@
         if (willOpen) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
       });
     });
+
+    // ---- Theater: scroll-driven act switcher ----
+    // Respects prefers-reduced-motion (layout stays; only JS switching is skipped)
+    (function () {
+      var theater = document.getElementById('theater');
+      if (!theater) return;
+
+      // Skip JS activation on mobile where sticky layout is disabled
+      if (window.matchMedia('(max-width:720px)').matches) return;
+
+      var acts    = Array.from(theater.querySelectorAll('.act'));
+      var dots    = Array.from(theater.querySelectorAll('.theater__rail-dot'));
+      var labelEl = document.getElementById('theater-act-label');
+      var titleEl = document.getElementById('theater-act-title');
+      var railEl  = document.getElementById('theater-rail-label');
+      var current = -1;
+
+      function setAct(i) {
+        if (i === current) return;
+        current = i;
+        acts.forEach(function (a, idx) { a.classList.toggle('is-active', idx === i); });
+        dots.forEach(function (d, idx) { d.classList.toggle('is-active', idx === i); });
+        var act = acts[i];
+        if (!act) return;
+        if (labelEl) labelEl.textContent = act.dataset.label;
+        if (titleEl) titleEl.innerHTML   = act.dataset.title;
+        if (railEl)  railEl.textContent  = String(i + 1).padStart(2, '0') + ' / ' + String(acts.length).padStart(2, '0');
+      }
+
+      // Click handler: scroll to the position where the targeted act becomes active
+      dots.forEach(function (dot, idx) {
+        dot.addEventListener('click', function () {
+          var rect = theater.getBoundingClientRect();
+          var theaterTop = window.scrollY + rect.top;
+          var total = theater.offsetHeight - window.innerHeight;
+          var n = acts.length;
+          // Target a position ~15% into the act's segment (past the entrance animation)
+          var targetP = (idx + 0.15) / n;
+          var targetY = theaterTop + targetP * total;
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+        });
+      });
+
+      function update() {
+        var rect  = theater.getBoundingClientRect();
+        var total = theater.offsetHeight - window.innerHeight;
+        if (total <= 0) { setAct(0); return; }
+        var p   = Math.max(0, Math.min(1, -rect.top / total));
+        var n   = acts.length;
+        var idx = Math.min(n - 1, Math.floor(p * n));
+        // small bias: switch acts a little after the midpoint of each segment
+        var inSeg = (p * n) - Math.floor(p * n);
+        if (idx < n - 1 && inSeg > 0.60) idx = idx + 1;
+        setAct(idx);
+      }
+
+      var ticking = false;
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () { update(); ticking = false; });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
   })();
 </script>
 

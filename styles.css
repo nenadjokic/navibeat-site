@@ -1798,3 +1798,398 @@ section { padding-block: var(--rhythm); }
   margin-top: 12px;
 }
 .prose .contact-box p { margin: 0; color: var(--text-0); font-size: 16px; }
+
+/* =========================================================
+   THEATER — cinematic sticky-scroll showcase
+   5 acts · ~100vh each · height:480vh total
+   ========================================================= */
+
+/* --- Container + sticky stage --- */
+.theater {
+  position: relative;
+  height: 480vh;
+  margin-top: 30px;
+}
+.theater__sticky {
+  position: sticky; top: 0;
+  height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+
+/* --- Stage backdrop: warm rings + vinyl spin --- */
+.theater__backdrop {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 55%, rgba(232,154,83,.18), transparent 65%),
+    radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,106,60,.10), transparent 70%);
+}
+.theater__backdrop::before {
+  content: ""; position: absolute; left: 50%; top: 55%;
+  width: 1400px; height: 1400px; transform: translate(-50%,-50%);
+  border-radius: 50%; opacity: .5;
+  background:
+    radial-gradient(circle, transparent 38%, rgba(232,154,83,.05) 38.4%, transparent 39%),
+    radial-gradient(circle, transparent 50%, rgba(232,154,83,.04) 50.4%, transparent 51%),
+    radial-gradient(circle, transparent 62%, rgba(232,154,83,.03) 62.4%, transparent 63%);
+  animation: vinylSpin 220s linear infinite;
+}
+@keyframes vinylSpin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+/* --- Progress rail --- */
+.theater__rail {
+  position: absolute; left: 50%; bottom: 38px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 18px; border-radius: 999px;
+  background: rgba(14,11,8,.55); backdrop-filter: blur(14px);
+  border: 1px solid var(--border); z-index: 30;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--text-2);
+}
+.theater__rail-dots { display: flex; gap: 7px; align-items: center; }
+.theater__rail-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--text-2); opacity: .45;
+  transition: all .35s var(--ease), box-shadow .2s var(--ease);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  outline-offset: 4px;
+}
+.theater__rail-dot:hover {
+  opacity: 0.85;
+  background: var(--accent);
+  box-shadow: 0 0 6px rgba(232, 154, 83, 0.6);
+}
+.theater__rail-dot.is-active {
+  background: var(--accent); opacity: 1;
+  box-shadow: 0 0 10px var(--accent);
+  width: 22px; border-radius: 3px;
+  cursor: default;
+}
+.theater__rail-label { color: var(--accent); min-width: 9ch; }
+
+/* --- Stage title (centred, above acts) --- */
+.theater__title {
+  position: absolute; top: 8vh; left: 0; right: 0;
+  text-align: center; z-index: 20; pointer-events: none;
+}
+.theater__title-eyebrow {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+  display: block;
+}
+.theater__title-h {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: clamp(28px,3.6vw,44px); line-height: 1.08;
+  letter-spacing: -.02em; color: var(--text-0);
+  font-variation-settings: "opsz" 96;
+  max-width: 24ch; margin-inline: auto;
+}
+.theater__title-h em { font-style: italic; color: var(--accent); }
+
+/* --- Keyboard hint --- */
+.theater__hint {
+  position: absolute; right: 24px; top: 24px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--text-2);
+  display: flex; align-items: center; gap: 8px;
+  z-index: 30;
+}
+.theater__hint kbd {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 20px; height: 20px; padding: 0 5px;
+  background: rgba(28,21,16,.7); border: 1px solid var(--border);
+  border-radius: 4px; color: var(--text-1); font-family: var(--font-mono); font-size: 10px;
+}
+
+/* --- Act base: absolute, cross-fades via opacity --- */
+.act {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity .8s var(--ease);
+  z-index: 10;
+}
+.act.is-active { opacity: 1; pointer-events: auto; z-index: 11; }
+
+.act__stage {
+  position: relative;
+  width: min(1180px, 92vw);
+  aspect-ratio: 1180/620;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* --- Caption block (with backdrop glass — user tweak a) --- */
+.act__caption {
+  position: absolute; right: max(40px, 5vw); bottom: 14vh;
+  max-width: 380px; z-index: 25;
+  transform: translateY(20px); opacity: 0;
+  transition: opacity .7s var(--ease) .15s, transform .7s var(--ease) .15s;
+  text-align: right;
+  padding: 22px 26px;
+  background: linear-gradient(135deg, rgba(14,11,8,.78), rgba(14,11,8,.62));
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  box-shadow: 0 24px 48px rgba(0,0,0,.5);
+}
+.act.is-active .act__caption { opacity: 1; transform: none; }
+.act__caption-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--accent);
+  padding: 6px 12px; border: 1px solid rgba(232,154,83,.3);
+  border-radius: 999px; background: rgba(232,154,83,.08);
+  margin-bottom: 14px;
+}
+.act__caption-eyebrow .dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 6px var(--accent);
+}
+.act__caption-h {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(24px,2.6vw,34px); line-height: 1.15;
+  letter-spacing: -.018em; color: var(--text-0); margin-bottom: 10px;
+  font-variation-settings: "opsz" 72;
+  text-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+.act__caption-h em { font-style: italic; color: var(--accent); }
+.act__caption-p {
+  font-size: 14.5px; line-height: 1.65; color: var(--text-0); opacity: .92;
+}
+@media (max-width: 900px) {
+  .act__caption { right: 24px; left: 24px; bottom: 18vh; max-width: none; text-align: center; }
+}
+
+/* ---- Act 1: Apple TV (wide hero) ---- */
+.dev-tv {
+  position: relative; width: 78%;
+  border-radius: 14px; overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 60px 120px rgba(0,0,0,.7),
+    0 18px 40px rgba(0,0,0,.5),
+    0 0 80px rgba(232,154,83,.18);
+  transform: scale(.96); opacity: 0;
+  transition: transform 1s var(--ease-spring), opacity .8s var(--ease);
+}
+.act.is-active .dev-tv { transform: scale(1); opacity: 1; }
+.dev-tv img { width: 100%; height: auto; display: block; }
+.dev-tv__stand {
+  position: absolute; left: 50%; bottom: -22px; transform: translateX(-50%);
+  width: 18%; height: 14px;
+  background: linear-gradient(180deg,#1f1812,#0a0805);
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 18px 30px rgba(0,0,0,.6);
+}
+
+/* ---- Act 2: Mac (main window + mini-player floater — user tweak c: floater on LEFT) ---- */
+.act-mac__group { position: relative; width: 90%; }
+.dev-mac {
+  position: relative; width: 100%;
+  border-radius: 14px; overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 60px 110px rgba(0,0,0,.7),
+    0 0 90px rgba(232,154,83,.16);
+  transform: scale(.94) translateY(20px); opacity: 0;
+  transition: transform 1.1s var(--ease-spring), opacity .8s var(--ease);
+}
+.act.is-active .dev-mac { transform: scale(1) translateY(0); opacity: 1; }
+.dev-mac img { width: 100%; height: auto; display: block; }
+/* Floater moved to LEFT side (user tweak c) */
+.dev-mac__floater {
+  position: absolute; left: -3%; bottom: -12%;
+  width: 32%;
+  filter:
+    drop-shadow(0 40px 60px rgba(0,0,0,.75))
+    drop-shadow(0 12px 24px rgba(0,0,0,.5))
+    drop-shadow(0 0 50px rgba(232,154,83,.28));
+  transform: translate(-40px, 40px) rotate(-4deg) scale(.9); opacity: 0;
+  transition: transform 1.1s var(--ease-spring) .25s, opacity .9s var(--ease) .2s;
+  background: transparent;
+}
+.act.is-active .dev-mac__floater { transform: translate(0, 0) rotate(2deg) scale(1); opacity: 1; }
+.dev-mac__floater img { width: 100%; height: auto; display: block; background: transparent; }
+
+/* ---- Act 3: iPad (large + lyric zoom + connector) ---- */
+.act-ipad__group { position: relative; width: 78%; }
+.dev-ipad {
+  position: relative; width: 100%; aspect-ratio: 1800/1350;
+  border-radius: 18px; overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 60px 110px rgba(0,0,0,.7),
+    0 0 100px rgba(232,154,83,.18);
+  transform: scale(.95); opacity: 0;
+  transition: transform 1.1s var(--ease-spring), opacity .8s var(--ease);
+}
+.act.is-active .dev-ipad { transform: scale(1); opacity: 1; }
+.dev-ipad img { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+/* Lyric macro zoom overlay */
+.dev-ipad__zoom {
+  position: absolute; left: -8%; top: -12%;
+  width: 46%; aspect-ratio: 1/1.1;
+  border-radius: 14px; overflow: hidden;
+  border: 1px solid rgba(232,154,83,.35);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.6),
+    0 0 0 6px rgba(14,11,8,.92),
+    0 0 80px rgba(232,154,83,.30);
+  transform: translate(-30px,30px) scale(.85); opacity: 0;
+  transition: transform 1.1s var(--ease-spring) .3s, opacity .9s var(--ease) .25s;
+  background: var(--bg-1);
+}
+.act.is-active .dev-ipad__zoom { transform: translate(0,0) scale(1); opacity: 1; }
+.dev-ipad__zoom-img {
+  position: absolute; inset: 0;
+  background-image: url("assets/screenshots/ipad/navibeat-ipad-lyrics.jpg");
+  background-size: 300%;
+  background-position: 35% 38%;
+  animation: theaterZoomDrift 14s var(--ease) infinite alternate;
+}
+@keyframes theaterZoomDrift {
+  0%   { background-position: 30% 35%; transform: scale(1); }
+  100% { background-position: 42% 48%; transform: scale(1.05); }
+}
+.dev-ipad__zoom-tag {
+  position: absolute; left: 14px; top: 14px; z-index: 2;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--accent);
+  padding: 5px 10px; border-radius: 999px;
+  background: rgba(14,11,8,.85); border: 1px solid rgba(232,154,83,.4);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.dev-ipad__zoom-tag .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+
+/* connector line from main iPad shot to zoom overlay */
+.dev-ipad__line {
+  position: absolute; left: 36%; top: 35%;
+  width: 1px; height: 1px; pointer-events: none; z-index: 1;
+}
+.dev-ipad__line::before {
+  content: ""; position: absolute; left: 0; top: 0;
+  width: 90px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,154,83,.6), transparent);
+  transform: rotate(-30deg) translate(-90px,-30px);
+}
+
+/* ---- Act 4: iPhone + Watch ---- */
+.act-iphone__group {
+  position: relative; width: 90%;
+  display: flex; align-items: flex-end; justify-content: center; gap: 6%;
+}
+.dev-iphone {
+  position: relative; width: 22%; aspect-ratio: 644/1400;
+  border-radius: 38px; overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06) inset,
+    0 0 0 8px #0a0907,
+    0 50px 90px rgba(0,0,0,.7),
+    0 0 80px rgba(232,154,83,.22);
+  transform: translateY(40px) scale(.95); opacity: 0;
+  transition: transform 1.1s var(--ease-spring), opacity .8s var(--ease);
+  background: #000;
+}
+.act.is-active .dev-iphone { transform: none; opacity: 1; }
+.dev-iphone img { width: 100%; height: 100%; object-fit: cover; }
+.dev-iphone--lyrics { --d: .15s; transform: translateY(40px) scale(.92) rotate(-3deg); }
+.dev-iphone--np    { --d: 0s;   transform: translateY(60px) scale(.94); }
+.dev-iphone--queue { --d: .3s;  transform: translateY(40px) scale(.92) rotate(3deg); }
+.act.is-active .dev-iphone--lyrics { transform: translateY(-12px) scale(1) rotate(-4deg); }
+.act.is-active .dev-iphone--queue  { transform: translateY(-12px) scale(1) rotate(4deg); }
+.dev-iphone { transition-delay: var(--d); }
+
+/* Apple Watch — hovers top-right near phones */
+.dev-watch {
+  position: absolute; right: 6%; top: 8%;
+  width: 13%; aspect-ratio: 410/502;
+  border-radius: 36px; overflow: hidden;
+  border: 5px solid #1a1410;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.7),
+    0 0 0 1px rgba(232,154,83,.25) inset,
+    0 0 70px rgba(232,154,83,.30);
+  background: #000;
+  transform: translate(20px,-20px) scale(.85) rotate(8deg); opacity: 0;
+  transition: transform 1.2s var(--ease-spring) .35s, opacity .9s var(--ease) .3s;
+}
+.act.is-active .dev-watch { transform: translate(0,0) scale(1) rotate(-3deg); opacity: 1; }
+.dev-watch img { width: 100%; height: 100%; object-fit: cover; }
+.dev-watch__crown {
+  position: absolute; right: -7px; top: 35%;
+  width: 5px; height: 14%;
+  background: linear-gradient(180deg,#3a2a1f,#1a120c);
+  border-radius: 2px;
+}
+
+/* ---- Act 5: Family — all five devices together ---- */
+.family {
+  position: relative; width: min(1280px, 95vw);
+  aspect-ratio: 1280/680;
+}
+.family__device {
+  position: absolute; opacity: 0; transform: translateY(40px) scale(.96);
+  transition: opacity 1s var(--ease) var(--d,0s), transform 1.2s var(--ease-spring) var(--d,0s);
+  filter: drop-shadow(0 50px 90px rgba(0,0,0,.7)) drop-shadow(0 0 60px rgba(232,154,83,.12));
+}
+.act.is-active .family__device { opacity: 1; transform: none; }
+.family__device img { width: 100%; height: auto; display: block; border-radius: 8px; }
+.family__tv    { left: 0;   bottom: 6%;  width: 30%; --d: 0s; }
+.family__mac   { left: 50%; bottom: 10%; width: 56%; transform: translate(-50%,40px) scale(.96); --d: .15s; }
+.act.is-active .family__mac { transform: translateX(-50%); }
+.family__ipad  { right: 8%; bottom: 14%; width: 40%; --d: .30s; z-index: 3; }
+.family__ipad img  { border-radius: 14px; box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset; }
+.family__iphone { right: 4%; bottom: 0; width: 14%; --d: .45s; z-index: 5; }
+.family__iphone img { border-radius: 24px; box-shadow: 0 0 0 1px rgba(232,154,83,.08) inset, 0 0 0 5px #0a0907; }
+/* Watch repositioned to top-right, more visible (user tweak b) */
+.family__watch { right: 6%; top: 14%; width: 14%; --d: .60s; z-index: 7; }
+.family__watch img { border-radius: 22px; box-shadow: 0 0 0 1px rgba(232,154,83,.12) inset, 0 0 0 4px #1a1410; }
+
+/* Family — receipt overlay (Universal Purchase) */
+.family__receipt {
+  position: absolute; left: 6%; top: 14%;
+  background: rgba(14,11,8,.86); backdrop-filter: blur(12px);
+  border: 1px solid var(--border-strong); border-radius: 14px;
+  padding: 18px 22px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em;
+  color: var(--text-1); line-height: 2;
+  min-width: 240px;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .7s var(--ease) .8s, transform .7s var(--ease) .8s;
+  box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+.act.is-active .family__receipt { opacity: 1; transform: none; }
+.family__receipt-h { color: var(--accent); text-transform: uppercase; font-size: 9px; letter-spacing: .2em; margin-bottom: 8px; }
+.family__receipt-row { display: flex; justify-content: space-between; gap: 24px; }
+.family__receipt-row b { color: var(--text-0); font-weight: 500; }
+.family__receipt-rule { height: 1px; background: var(--border); margin: 8px 0; }
+.family__receipt-total { color: var(--accent); font-size: 13px; }
+
+/* ---- Mobile fallback (≤ 720px): static stacked layout ---- */
+@media (max-width: 720px) {
+  .theater { height: auto; }
+  .theater__sticky { position: relative; height: auto; padding-block: 48px; flex-direction: column; }
+  .theater__rail, .theater__hint { display: none; }
+  .theater__title { position: relative; top: 0; margin-bottom: 24px; }
+  .act { position: relative; opacity: 1; pointer-events: auto; padding: 32px 0; }
+  .act__caption { position: relative; right: auto; bottom: auto; margin-top: 16px; max-width: none; text-align: center; }
+}
+
+/* ---- Reduced-motion: disable all theater keyframes + transitions ---- */
+@media (prefers-reduced-motion: reduce) {
+  .theater__backdrop::before { animation: none; }
+  .dev-ipad__zoom-img { animation: none; }
+  .dev-tv, .dev-mac, .dev-mac__floater,
+  .dev-ipad, .dev-ipad__zoom,
+  .dev-iphone, .dev-watch,
+  .family__device, .family__receipt,
+  .act__caption { transition: none; opacity: 1; transform: none; }
+  .act { transition: none; }
+}
