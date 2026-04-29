@@ -1590,6 +1590,13 @@ section { padding-block: var(--rhythm); }
   box-shadow: 0 32px 72px rgba(0, 0, 0, 0.52);
 }
 
+/* macOS screenshots ship with built-in OS window shadow — skip our box-shadow
+   on macOS images to avoid double-shadow / picture-frame effect */
+.p-shot__media img[src*="/macos/"] {
+  box-shadow: none;
+  border-radius: 0;
+}
+
 .p-shot__copy .eyebrow { margin-bottom: 14px; color: var(--accent); }
 .p-shot__copy h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2.5vw, 30px); margin-bottom: 14px; letter-spacing: -0.012em; }
 .p-shot__copy p { color: var(--text-1); font-size: 16px; line-height: 1.68; }
