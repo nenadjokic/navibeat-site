@@ -253,7 +253,7 @@
             <tr><td>Server-side scrobbling via Navidrome</td><td class="cell-yes">&#10003;</td><td class="cell-yes">&#10003; common</td></tr>
             <tr><td>Listener counts on Now Playing</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
             <tr><td>Top tags on Artist header</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare / partial</td></tr>
-            <tr><td>Bidirectional Loved &harr; Starred sync</td><td class="cell-yes">&#10003;</td><td class="cell-partial">desktop-only / one-way</td></tr>
+            <tr><td>Bidirectional Loved &harr; Starred sync (incl. instant push + pending-intent persistence)</td><td class="cell-yes">&#10003;</td><td class="cell-partial">desktop-only / one-way</td></tr>
             <tr><td>Similar Tracks rail (album detail)</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare / via API only</td></tr>
             <tr><td>&ldquo;Because You Listened&rdquo; Home rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
             <tr><td>&ldquo;On This Day&rdquo; rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
@@ -292,30 +292,30 @@
           <p class="lfm-step__desc">Every play in NaviBeat hits your Navidrome server&rsquo;s <code>/scrobble</code> endpoint. If you&rsquo;ve configured Navidrome to forward to Last.fm, plays land in your Last.fm history. NaviBeat itself never scrobbles directly &mdash; this is the architecture for every feature below.</p>
         </li>
 
+        <li class="lfm-step lfm-step--done">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Done &middot; Build 41 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Connect Last.fm Account</h3>
+          <p class="lfm-step__desc">Settings &rarr; Connect Last.fm. One tap, web auth flow, session token saved to iCloud Keychain so iPhone, iPad, Mac, Apple TV, and Apple Watch all share the connection. Apple TV scans a QR code with any phone&rsquo;s camera if iCloud Keychain isn&rsquo;t propagating. Without this no other Last.fm feature can run.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--done">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Done &middot; Build 41 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Listener counts &amp; top tags</h3>
+          <p class="lfm-step__desc">Now Playing detail picks up a small pill: &ldquo;1.2M listeners on Last.fm.&rdquo; Artist header gets three top-tag chips: &ldquo;post-rock &middot; shoegaze &middot; 2000s&rdquo;. macOS Mini Player and the bottom transport pill render a tighter HI-RES-style LAST.FM badge inline next to the quality chip. Couch-readable typography on Apple TV. One direct read call per track change, with per-feature opt-out toggles in Settings.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--done">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Done &middot; Build 41 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Bidirectional Loved &harr; Starred sync</h3>
+          <p class="lfm-step__desc">Heart a track in NaviBeat &rarr; loved on Last.fm <em>instantly</em> (no batching, no &ldquo;next sync&rdquo;). Loved on Last.fm &rarr; starred in your Navidrome library on the next playback or manual &ldquo;Sync now.&rdquo; <strong>Tracks not yet in your library are remembered:</strong> if you wipe your Navidrome music and rebuild it from a fresh download, the moment a matching file appears the star is auto-applied. One-time opt-in import on first connect imports every Loved track at once. Continuous push wired across iOS, iPad, macOS, Apple TV, and CarPlay; auto 24h pull on cold launch keeps everything fresh.</p>
+        </li>
+
         <li class="lfm-step lfm-step--active">
           <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">In progress &middot; Now</p>
-          <h3 class="lfm-step__title">Connect Last.fm Account</h3>
-          <p class="lfm-step__desc">Settings &rarr; Connect Last.fm. One tap, web auth flow, session token saved to iCloud Keychain so iPhone, iPad, Mac, Apple TV, and Apple Watch all share the connection. Without this no other Last.fm feature can run.</p>
-        </li>
-
-        <li class="lfm-step lfm-step--planned">
-          <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Planned</p>
-          <h3 class="lfm-step__title">Listener counts &amp; top tags</h3>
-          <p class="lfm-step__desc">Now Playing detail sheet picks up a small pill: &ldquo;1.2M listeners on Last.fm.&rdquo; Artist header gets three top-tag chips: &ldquo;post-rock &middot; shoegaze &middot; 2000s&rdquo;. Tags route through your Navidrome server; listener count is one direct read call per track change.</p>
-        </li>
-
-        <li class="lfm-step lfm-step--planned">
-          <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Planned</p>
-          <h3 class="lfm-step__title">Bidirectional Loved &harr; Starred sync</h3>
-          <p class="lfm-step__desc">Heart a track in NaviBeat &rarr; loved on Last.fm. Loved on Last.fm &rarr; starred in your Navidrome library. One-time historical import on first connect: every track you&rsquo;ve ever loved on Last.fm becomes starred. No other iOS Subsonic client does this.</p>
-        </li>
-
-        <li class="lfm-step lfm-step--planned">
-          <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Planned</p>
+          <p class="lfm-step__status">In progress &middot; Next</p>
           <h3 class="lfm-step__title">Similar Tracks rail</h3>
           <p class="lfm-step__desc">Bottom of every album detail screen: a horizontal rail of eight tracks Last.fm thinks are similar to the album&rsquo;s top track, resolved against your own library. Tap any to play. Routed through your Navidrome server&rsquo;s <code>getSimilarSongs2</code> endpoint &mdash; no direct device-to-Last.fm call needed.</p>
         </li>
