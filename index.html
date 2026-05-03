@@ -59,7 +59,7 @@
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
-      <a href="#features" class="nav__link nav__link-hide-sm">Features</a>
+      <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
       <a class="btn btn--primary btn--compact" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join&nbsp;TestFlight</a>
     </nav>
@@ -385,18 +385,18 @@
         </li>
 
         <li>
-          <div class="plat-card plat-card--pipeline" aria-label="CarPlay — coming in v1.0.1">
+          <div class="plat-card" aria-label="NaviBeat for CarPlay — in TestFlight">
             <div class="plat-card__thumb" style="background:var(--bg-1); display:flex; align-items:center; justify-content:center;">
-              <svg width="56" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(122,110,92,0.5)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg width="56" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 14l1.5-5.5A2 2 0 017.5 7h9a2 2 0 012 1.5L20 14"/>
                 <rect x="3" y="14" width="18" height="5" rx="1.5"/>
-                <circle cx="7" cy="16.5" r="0.8" fill="rgba(122,110,92,0.5)"/>
-                <circle cx="17" cy="16.5" r="0.8" fill="rgba(122,110,92,0.5)"/>
+                <circle cx="7" cy="16.5" r="0.8" fill="var(--accent)"/>
+                <circle cx="17" cy="16.5" r="0.8" fill="var(--accent)"/>
               </svg>
             </div>
             <div class="plat-card__body">
               <div class="plat-card__name">CarPlay</div>
-              <div class="plat-card__status plat-card__status--muted"><span class="plat-card__dot"></span>v1.0.1 free update</div>
+              <div class="plat-card__status"><span class="plat-card__dot"></span>In TestFlight</div>
             </div>
           </div>
         </li>
@@ -424,7 +424,7 @@
         <article class="f-card">
           <span class="f-card__idx">02 / Self-hosted &amp; private</span>
           <h3 class="h3">Your Navidrome. No cloud in between.</h3>
-          <p>NaviBeat talks to your server and nothing else. Zero analytics SDKs, zero crash reporters, zero third-party requests. Your library never leaves your house.</p>
+          <p>Zero analytics. Zero tracking. Zero hidden services. NaviBeat doesn&rsquo;t talk to anyone you didn&rsquo;t sign in to. Optional <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm integration</a> is opt-in and you&rsquo;re in control.</p>
           <p class="f-card__kicker">Your server, your rules.</p>
         </article>
 
@@ -453,18 +453,18 @@
           Your server. <em>Your library.</em> Your rules.
         </h2>
         <p class="body-copy" style="font-size:18px;">
-          NaviBeat is a client. Your music lives where it already does &mdash; a Raspberry Pi, a Synology, a home server under someone&rsquo;s desk. We never see your library, your credentials, or a single play event. We couldn&rsquo;t if we wanted to: the app has no backend.
+          NaviBeat is a client. Your music lives where it already does &mdash; a Raspberry Pi, a Synology, a home server under someone&rsquo;s desk. We never see your library, your credentials, or a single play event. We couldn&rsquo;t if we wanted to: the app has no backend. The only services NaviBeat ever talks to are the ones <em>you</em> sign in to &mdash; your Navidrome server, and optionally <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm</a>.
         </p>
       </div>
       <div class="manifesto__trace reveal">
         <div class="manifesto__trace-label">network.trace</div>
-        <div><span style="color:var(--text-2)">&rarr;</span> 10.0.0.14:4533 <span class="manifesto__trace-ok" style="float:right">navidrome</span></div>
-        <div><span style="color:var(--text-2)">&rarr;</span> 10.0.0.14:4533 <span class="manifesto__trace-ok" style="float:right">navidrome</span></div>
-        <div><span style="color:var(--text-2)">&rarr;</span> 10.0.0.14:4533 <span class="manifesto__trace-ok" style="float:right">navidrome</span></div>
+        <div><span style="color:var(--text-2)">&rarr;</span> 10.0.0.14:4533 <span class="manifesto__trace-ok" style="float:right">your navidrome</span></div>
+        <div><span style="color:var(--text-2)">&rarr;</span> 10.0.0.14:4533 <span class="manifesto__trace-ok" style="float:right">your navidrome</span></div>
+        <div><span style="color:var(--text-2)">&rarr;</span> ws.audioscrobbler.com <span class="manifesto__trace-ok" style="float:right">last.fm &middot; opt-in</span></div>
         <div class="manifesto__trace-rule">analytics.google.com <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
         <div style="color:var(--text-2)">telemetry.apple.com <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
         <div style="color:var(--text-2)">crashlytics.io <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
-        <div class="manifesto__trace-comment">// 3 hosts &middot; 1 destination &middot; 0 third parties</div>
+        <div class="manifesto__trace-comment">// only services you authenticated with &middot; 0 hidden third parties</div>
       </div>
     </div>
   </section>

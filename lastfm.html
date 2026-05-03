@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaviBeat &times; Last.fm — Optional Taste-Intelligence Integration</title>
+  <meta name="description" content="NaviBeat&rsquo;s Last.fm integration: optional, opt-in, and built to give you the deepest taste-intelligence features of any Subsonic / Navidrome client. Listener counts, similar tracks, year-in-review, time-machine playlists. Roadmap inside.">
+  <meta name="theme-color" content="#0e0b08">
+  <link rel="canonical" href="https://navibeat.app/lastfm.html">
+
+  <meta property="og:title" content="NaviBeat &times; Last.fm — Optional Taste-Intelligence Integration">
+  <meta property="og:description" content="The deepest Last.fm integration of any Subsonic client. Listener counts, similar tracks, year-in-review, time-machine playlists. Roadmap with live status inside.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/lastfm.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ====== Last.fm page — local styles (timeline + comparison) ====== */
+    .lfm-hero { padding: 96px 0 48px; position: relative; overflow: hidden; }
+    .lfm-hero__inner { max-width: 760px; }
+    .lfm-hero h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: -0.02em; margin: 14px 0 22px; }
+    .lfm-hero h1 em { font-style: italic; color: var(--accent); }
+    .lfm-hero p.lfm-sub { color: var(--text-1); font-size: 19px; line-height: 1.6; max-width: 60ch; }
+
+    /* Trust banner */
+    .lfm-trust { background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 0; }
+    .lfm-trust__grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+    @media (max-width: 720px) { .lfm-trust__grid { grid-template-columns: 1fr; } }
+    .lfm-trust__cell h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 8px; font-family: 'Inter Tight', sans-serif; font-weight: 600; }
+    .lfm-trust__cell p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0; }
+
+    /* Comparison section */
+    .lfm-vs { padding: 88px 0 40px; }
+    .lfm-vs h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 20px; }
+    .lfm-vs__sub { color: var(--text-1); font-size: 17px; max-width: 56ch; line-height: 1.6; margin: 0 0 36px; }
+    .lfm-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
+    .lfm-table th, .lfm-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .lfm-table th { font-family: 'Inter Tight', sans-serif; font-weight: 600; color: var(--text-2); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .lfm-table td.cell-yes { color: var(--accent-hi); font-weight: 500; }
+    .lfm-table td.cell-no { color: var(--text-2); }
+    .lfm-table td.cell-partial { color: var(--text-1); }
+    .lfm-table tr:hover td { background: var(--bg-1); }
+    .lfm-table .col-app { color: var(--text-0); font-weight: 500; }
+    .lfm-table .col-app em { font-style: normal; color: var(--accent); font-weight: 600; }
+
+    /* ROADMAP TIMELINE */
+    .lfm-roadmap { padding: 96px 0 96px; background: var(--bg-1); border-top: 1px solid var(--border); }
+    .lfm-roadmap__head { max-width: 700px; margin-bottom: 64px; }
+    .lfm-roadmap__head h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(32px, 4vw, 50px); line-height: 1.1; margin: 14px 0 16px; }
+    .lfm-roadmap__head p { color: var(--text-1); font-size: 17px; line-height: 1.6; max-width: 60ch; }
+
+    .lfm-legend { display: flex; gap: 28px; margin: 22px 0 0; flex-wrap: wrap; font-size: 13px; color: var(--text-2); }
+    .lfm-legend__item { display: flex; align-items: center; gap: 8px; }
+    .lfm-legend__dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .lfm-legend__dot--done { background: var(--text-0); box-shadow: 0 0 0 2px var(--text-0), 0 0 8px rgba(243,235,220,0.4); }
+    .lfm-legend__dot--active { background: var(--accent); box-shadow: 0 0 0 2px var(--accent), 0 0 12px var(--accent-glow); }
+    .lfm-legend__dot--planned { background: transparent; border: 1.5px solid var(--text-2); }
+
+    /* The vertical timeline */
+    .lfm-timeline { position: relative; max-width: 760px; padding-left: 56px; }
+    .lfm-timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(180deg,
+        var(--text-0) 0%,
+        var(--text-0) 8%,
+        var(--accent) 14%,
+        var(--accent) 22%,
+        var(--border-strong) 28%,
+        var(--border-strong) 100%
+      );
+    }
+    .lfm-step { position: relative; padding: 0 0 38px; }
+    .lfm-step:last-child { padding-bottom: 0; }
+    .lfm-step__dot {
+      position: absolute;
+      left: -52px;
+      top: 4px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--bg-1);
+      border: 2px solid var(--text-2);
+      display: grid;
+      place-items: center;
+      z-index: 2;
+      transition: transform 0.2s var(--ease);
+    }
+    .lfm-step__dot::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: transparent;
+    }
+    .lfm-step--done .lfm-step__dot { border-color: var(--text-0); background: var(--bg-1); }
+    .lfm-step--done .lfm-step__dot::after { background: var(--text-0); box-shadow: 0 0 8px rgba(243,235,220,0.5); }
+    .lfm-step--active .lfm-step__dot {
+      border-color: var(--accent);
+      background: var(--bg-1);
+      animation: lfm-pulse 2.4s ease-in-out infinite;
+    }
+    .lfm-step--active .lfm-step__dot::after { background: var(--accent); box-shadow: 0 0 12px var(--accent-glow); }
+    .lfm-step--planned .lfm-step__dot { border-color: var(--text-2); }
+    .lfm-step--planned .lfm-step__dot::after { background: transparent; }
+
+    @keyframes lfm-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+      50% { box-shadow: 0 0 0 8px transparent; }
+    }
+
+    .lfm-step__status {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin: 0 0 6px;
+    }
+    .lfm-step--done .lfm-step__status { color: var(--text-0); }
+    .lfm-step--active .lfm-step__status { color: var(--accent); }
+    .lfm-step--planned .lfm-step__status { color: var(--text-2); }
+
+    .lfm-step__title {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin: 0 0 8px;
+      color: var(--text-0);
+    }
+    .lfm-step--planned .lfm-step__title { color: var(--text-1); }
+
+    .lfm-step__desc {
+      color: var(--text-1);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 56ch;
+    }
+    .lfm-step--planned .lfm-step__desc { color: var(--text-2); }
+
+    /* CTA */
+    .lfm-cta { padding: 80px 0; text-align: center; }
+    .lfm-cta h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px, 3.5vw, 42px); margin: 0 0 14px; }
+    .lfm-cta p { color: var(--text-1); margin: 0 0 28px; font-size: 17px; }
+  </style>
+</head>
+<body>
+
+<div class="beta-banner" role="status">
+  <div class="beta-banner__inner">
+    <span class="beta-banner__dot" aria-hidden="true"></span>
+    <span><strong>Public TestFlight is open on all five Apple platforms.</strong> Free for ~30 days, then $5.99 on the App Store. <a href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join TestFlight &rarr;</a></span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+        <span class="nav__pulse"></span>
+      </span>
+      NaviBeat
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a class="btn btn--primary btn--compact" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join&nbsp;TestFlight</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="lfm-hero">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="index.html">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">Last.fm</span>
+      </nav>
+      <div class="lfm-hero__inner">
+        <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">Optional &middot; Opt-in &middot; You&rsquo;re in control</p>
+        <h1>The deepest <em>Last.fm integration</em> of any Subsonic client.</h1>
+        <p class="lfm-sub">
+          Listener counts on Now Playing. Year-in-Review you actually own. Time Machine playlists from any year you scrobbled. Loved tracks synced both ways. <strong>NaviBeat never scrobbles directly to Last.fm</strong> &mdash; that always goes through your Navidrome server. Last.fm is only for reading <em>your</em> data back into the player.
+        </p>
+        <div class="p-hero__ctas" style="margin-top: 28px;">
+          <a class="btn btn--primary" href="#roadmap">See the roadmap &darr;</a>
+          <a class="link-quiet" href="#vs">Compared to other Subsonic clients&nbsp;&rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BANNER -->
+  <section class="lfm-trust">
+    <div class="wrap">
+      <div class="lfm-trust__grid">
+        <div class="lfm-trust__cell">
+          <h4>Read-only by design</h4>
+          <p>NaviBeat reads your Last.fm history to surface insights inside the player. It never writes scrobbles directly &mdash; those always go through your Navidrome server, which you already control.</p>
+        </div>
+        <div class="lfm-trust__cell">
+          <h4>Fully optional</h4>
+          <p>Don&rsquo;t want Last.fm? Don&rsquo;t connect it. NaviBeat works completely without it &mdash; same player, same library, zero external requests. Connecting Last.fm is one tap in Settings.</p>
+        </div>
+        <div class="lfm-trust__cell">
+          <h4>Sign in once, sync everywhere</h4>
+          <p>Connect Last.fm on iPhone &mdash; iPad, Mac, Apple TV, and Apple Watch all pick up the session via iCloud Keychain. One sign-in covers your whole Apple ecosystem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="lfm-vs" id="vs">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">The taste-intelligence gap</p>
+      <h2>What no other Subsonic client surfaces today.</h2>
+      <p class="lfm-vs__sub">
+        Most clients in this space stop at scrobbling &mdash; sending plays to Last.fm and not reading anything back. NaviBeat reads <em>your</em> Last.fm history into the player so the data you&rsquo;ve been generating for years finally pays off as features.
+      </p>
+      <div style="overflow-x: auto;">
+        <table class="lfm-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="col-app"><em>NaviBeat</em></th>
+              <th>Other Subsonic clients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Server-side scrobbling via Navidrome</td><td class="cell-yes">&#10003;</td><td class="cell-yes">&#10003; common</td></tr>
+            <tr><td>Listener counts on Now Playing</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Top tags on Artist header</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare / partial</td></tr>
+            <tr><td>Bidirectional Loved &harr; Starred sync</td><td class="cell-yes">&#10003;</td><td class="cell-partial">desktop-only / one-way</td></tr>
+            <tr><td>Similar Tracks rail (album detail)</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare / via API only</td></tr>
+            <tr><td>&ldquo;Because You Listened&rdquo; Home rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>&ldquo;On This Day&rdquo; rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Library &rarr; Stats (Listening Clock + Heatmap)</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare</td></tr>
+            <tr><td>Time Machine playlist generator</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Year-in-Review (Wrapped) with archive + share cards</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:24px;color:var(--text-2);font-size:13px;">
+        Based on a survey of notable Subsonic / Navidrome / OpenSubsonic clients across iOS, macOS, tvOS, Android, and the web (May 2026). Some clients in the space have one or two of these features in isolation; none ship the full layer in the player itself.
+      </p>
+    </div>
+  </section>
+
+  <!-- ROADMAP TIMELINE -->
+  <section class="lfm-roadmap" id="roadmap">
+    <div class="wrap">
+      <div class="lfm-roadmap__head">
+        <p class="eyebrow eyebrow--accent">Live roadmap</p>
+        <h2>Shipping order, transparently.</h2>
+        <p>Every Last.fm feature, in the order we&rsquo;re building them. Updated as work lands. White means done and on TestFlight; orange means actively in development; gray means planned and queued. No vapor.</p>
+        <div class="lfm-legend">
+          <span class="lfm-legend__item"><span class="lfm-legend__dot lfm-legend__dot--done"></span> Done</span>
+          <span class="lfm-legend__item"><span class="lfm-legend__dot lfm-legend__dot--active"></span> In progress</span>
+          <span class="lfm-legend__item"><span class="lfm-legend__dot lfm-legend__dot--planned"></span> Planned</span>
+        </div>
+      </div>
+
+      <ol class="lfm-timeline">
+
+        <li class="lfm-step lfm-step--done">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Done &middot; Build 28 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Server-side scrobbling via Navidrome</h3>
+          <p class="lfm-step__desc">Every play in NaviBeat hits your Navidrome server&rsquo;s <code>/scrobble</code> endpoint. If you&rsquo;ve configured Navidrome to forward to Last.fm, plays land in your Last.fm history. NaviBeat itself never scrobbles directly &mdash; this is the architecture for every feature below.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--active">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">In progress &middot; Now</p>
+          <h3 class="lfm-step__title">Connect Last.fm Account</h3>
+          <p class="lfm-step__desc">Settings &rarr; Connect Last.fm. One tap, web auth flow, session token saved to iCloud Keychain so iPhone, iPad, Mac, Apple TV, and Apple Watch all share the connection. Without this no other Last.fm feature can run.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">Listener counts &amp; top tags</h3>
+          <p class="lfm-step__desc">Now Playing detail sheet picks up a small pill: &ldquo;1.2M listeners on Last.fm.&rdquo; Artist header gets three top-tag chips: &ldquo;post-rock &middot; shoegaze &middot; 2000s&rdquo;. Tags route through your Navidrome server; listener count is one direct read call per track change.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">Bidirectional Loved &harr; Starred sync</h3>
+          <p class="lfm-step__desc">Heart a track in NaviBeat &rarr; loved on Last.fm. Loved on Last.fm &rarr; starred in your Navidrome library. One-time historical import on first connect: every track you&rsquo;ve ever loved on Last.fm becomes starred. No other iOS Subsonic client does this.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">Similar Tracks rail</h3>
+          <p class="lfm-step__desc">Bottom of every album detail screen: a horizontal rail of eight tracks Last.fm thinks are similar to the album&rsquo;s top track, resolved against your own library. Tap any to play. Routed through your Navidrome server&rsquo;s <code>getSimilarSongs2</code> endpoint &mdash; no direct device-to-Last.fm call needed.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">Similar Artists rail</h3>
+          <p class="lfm-step__desc">Bottom of every artist detail: a &ldquo;Fans also like&rdquo; rail. Resolved against your library so the suggestions are tracks you actually own.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">&ldquo;Because You Listened&rdquo; Home rail</h3>
+          <p class="lfm-step__desc">Home tab gets a rail seeded from your last 5&ndash;10 plays. Chained similar-track lookups, deduped, resolved against your library. The &ldquo;you might also like, but it&rsquo;s already in your collection&rdquo; surface.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">&ldquo;On This Day&rdquo; rail</h3>
+          <p class="lfm-step__desc">Home tab rail: the songs you played on this calendar day across past years. &ldquo;Three years ago today: a heavy Sigur R&oacute;s afternoon.&rdquo; Pure scrobble-history magic.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">Library &rarr; Stats sub-section</h3>
+          <p class="lfm-step__desc">Library tab gets a Stats entry. Listening Clock (24-hour radial), Weekday Heatmap, Top 10 Artists / Albums / Tracks per period (week / month / year / all-time). All from your Last.fm history &mdash; sometimes spanning 20+ years if you&rsquo;ve scrobbled since the early days.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">Time Machine playlists</h3>
+          <p class="lfm-step__desc">Pick a date range &mdash; &ldquo;May 2024&rdquo;, &ldquo;Five years ago this week&rdquo;, &ldquo;the month I moved to Belgrade&rdquo; &mdash; and NaviBeat builds a playlist from your scrobbles in that window, resolved against your library. Save as a real playlist on your server. Time travel for music.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">Mood &amp; Context mixes</h3>
+          <p class="lfm-step__desc">Auto-built mixes from scrobble timestamp patterns: &ldquo;Sunday Morning&rdquo; (tracks you historically played Sundays before 11 AM), &ldquo;Late Night&rdquo; (after 11 PM weekdays), &ldquo;Commute&rdquo; (8&ndash;9 AM weekdays). Your taste, your context.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned</p>
+          <h3 class="lfm-step__title">NaviBeat Wrapped</h3>
+          <p class="lfm-step__desc">Year-in-review done right. Hero card on Home tab during December&ndash;February, off-season tile the rest of the year. Permanent archive that scrolls back to 2003 (the earliest Last.fm scrobbles). SwiftUI Canvas-rendered share cards exportable as PNG. tvOS Top Shelf rotator during the season. watchOS push &rarr; five-card vertical scroll. Spotify Wrapped expires every January &mdash; this one stays forever.</p>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lfm-cta">
+    <div class="wrap">
+      <h2>Ready to listen smarter?</h2>
+      <p>Join the public TestFlight on every Apple device. Last.fm features land progressively over the coming weeks.</p>
+      <div class="p-hero__ctas">
+        <a class="btn btn--primary" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join TestFlight &mdash; Free</a>
+        <a class="link-quiet" href="index.html">&larr; Back to NaviBeat</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================= FOOTER -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__cols">
+      <div>
+        <a class="nav__brand" href="index.html" style="margin-bottom:14px;">
+          <span class="nav__mark" aria-hidden="true">
+            <img src="assets/icon.svg" alt="">
+          </span>
+          NaviBeat
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="lastfm.html">Last.fm</a></li>
+          <li><a href="appletv.html">Apple TV</a></li>
+          <li><a href="macos.html">Mac</a></li>
+          <li><a href="iphone.html">iPhone</a></li>
+          <li><a href="ipad.html">iPad</a></li>
+          <li><a href="applewatch.html">Apple Watch</a></li>
+          <li><a href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join TestFlight</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &mdash; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>v1.0 &middot; Public TestFlight &middot; App Store launch ~30 days</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS();
+      window.addEventListener('scroll', navS, { passive: true });
+    }
+  })();
+</script>
+
+</body>
+</html>

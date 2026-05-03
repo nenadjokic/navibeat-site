@@ -32,7 +32,7 @@
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
-      <a href="index.html#explore" class="nav__link nav__link-hide-sm">Apps</a>
+      <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
       <a class="btn btn--primary btn--compact" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join&nbsp;TestFlight</a>
     </nav>
@@ -59,8 +59,9 @@
   <h2>What leaves your device</h2>
   <ul>
     <li><strong>Requests to your Navidrome server only.</strong> NaviBeat sends API requests (search, browse, stream) exclusively to the server URL you configure. Your server is under your control.</li>
-    <li><strong>Scrobbling (optional).</strong> If you enable the &ldquo;Submit play history&rdquo; setting, NaviBeat calls your Navidrome server&rsquo;s <code>scrobble</code> endpoint after each track. This data goes to your server, not to any third party.</li>
-    <li><strong>Nothing else.</strong> NaviBeat contains no analytics SDK, no crash reporter, no advertising framework, and no third-party network request. Zero data is sent to the developer or any external service.</li>
+    <li><strong>Scrobbling (optional).</strong> If you enable the &ldquo;Submit play history&rdquo; setting, NaviBeat calls your Navidrome server&rsquo;s <code>scrobble</code> endpoint after each track. NaviBeat itself never scrobbles directly to any external service &mdash; if your Navidrome server forwards scrobbles to Last.fm or ListenBrainz, that&rsquo;s a server-side configuration entirely under your control.</li>
+    <li><strong>Last.fm integration (optional, opt-in).</strong> If you connect your Last.fm account in Settings &rarr; Last.fm, NaviBeat reads from the Last.fm API on your behalf to surface listener counts, similar artists, your listening stats, year-in-review, and other taste-intelligence features. NaviBeat never writes scrobbles directly to Last.fm. Connecting Last.fm is fully optional &mdash; the app works completely without it. <a href="lastfm.html">See the Last.fm page for the full feature list.</a></li>
+    <li><strong>Nothing else.</strong> NaviBeat contains no analytics SDK, no crash reporter, no advertising framework, and no telemetry. Zero data is sent to the developer. The only services NaviBeat ever talks to are the ones <em>you</em> sign in to.</li>
   </ul>
 
   <h2>Data retention</h2>
