@@ -313,18 +313,39 @@
           <p class="lfm-step__desc">Heart a track in NaviBeat &rarr; loved on Last.fm <em>instantly</em> (no batching, no &ldquo;next sync&rdquo;). Loved on Last.fm &rarr; starred in your Navidrome library on the next playback or manual &ldquo;Sync now.&rdquo; <strong>Tracks not yet in your library are remembered:</strong> if you wipe your Navidrome music and rebuild it from a fresh download, the moment a matching file appears the star is auto-applied. One-time opt-in import on first connect imports every Loved track at once. Continuous push wired across iOS, iPad, macOS, Apple TV, and CarPlay; auto 24h pull on cold launch keeps everything fresh.</p>
         </li>
 
-        <li class="lfm-step lfm-step--active">
+        <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">In progress &middot; Next</p>
-          <h3 class="lfm-step__title">Similar Tracks rail</h3>
-          <p class="lfm-step__desc">Bottom of every album detail screen: a horizontal rail of eight tracks Last.fm thinks are similar to the album&rsquo;s top track, resolved against your own library. Tap any to play. Routed through your Navidrome server&rsquo;s <code>getSimilarSongs2</code> endpoint &mdash; no direct device-to-Last.fm call needed.</p>
+          <p class="lfm-step__status">Done &middot; Build 44 + 46 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Similar Albums &amp; Similar Tracks rails</h3>
+          <p class="lfm-step__desc">Album Detail ends with a &ldquo;Similar Albums &middot; Last.fm&rdquo; horizontal rail derived from <code>track.getSimilar</code> grouped by parent album, resolved against your library. Apple TV gets the same rail with focus-card visuals. The deeper Similar Tracks rail data path is reserved for a future Now Playing surface.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--done">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Done &middot; Build 44 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Similar Artists rail</h3>
+          <p class="lfm-step__desc">Artist Detail ends with a &ldquo;Similar Artists &middot; Last.fm&rdquo; rail. Tap an in-library artist tile &rarr; opens that artist. Out-of-library artists dim and offer Show on Last.fm. Apple TV-friendly focus visuals across iPhone, iPad, Mac, Apple TV.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--done">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Done &middot; Build 44 + 46 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Show on Last.fm context menu</h3>
+          <p class="lfm-step__desc">Long-press any track / album / artist anywhere &mdash; Library, Now Playing, Search, the rails &mdash; for an instant link out to the page on Last.fm. Apple TV has no browser, so it shows a QR code you scan with your phone. Three new toggles in Settings &rarr; Last.fm let you hide each Last.fm surface independently.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--done">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Done &middot; Build 46 &middot; May 2026</p>
+          <h3 class="lfm-step__title">AutoMix &middot; Last.fm</h3>
+          <p class="lfm-step__desc">When the Up Next queue runs dry and AutoMix is on, NaviBeat fetches Last.fm-similar tracks for the current song, resolves them against your library, and queues them up. If your library doesn&rsquo;t have enough matches, AutoMix transparently falls back to your Navidrome server&rsquo;s recommendations &mdash; never breaks. The Up Next panel shows an &ldquo;AutoMix &middot; Last.fm&rdquo; pill when Last.fm is connected so the source is unmistakable.</p>
         </li>
 
         <li class="lfm-step lfm-step--planned">
           <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Planned</p>
-          <h3 class="lfm-step__title">Similar Artists rail</h3>
-          <p class="lfm-step__desc">Bottom of every artist detail: a &ldquo;Fans also like&rdquo; rail. Resolved against your library so the suggestions are tracks you actually own.</p>
+          <p class="lfm-step__status">Next</p>
+          <h3 class="lfm-step__title">Library &rarr; Stats sub-section</h3>
+          <p class="lfm-step__desc">Library tab gets a Stats entry. Listening Clock (24-hour radial), Weekday Heatmap, Top 10 Artists / Albums / Tracks per period (week / month / year / all-time). All from your Last.fm history &mdash; sometimes spanning 20+ years if you&rsquo;ve scrobbled since the early days.</p>
         </li>
 
         <li class="lfm-step lfm-step--planned">
@@ -339,13 +360,6 @@
           <p class="lfm-step__status">Planned</p>
           <h3 class="lfm-step__title">&ldquo;On This Day&rdquo; rail</h3>
           <p class="lfm-step__desc">Home tab rail: the songs you played on this calendar day across past years. &ldquo;Three years ago today: a heavy Sigur R&oacute;s afternoon.&rdquo; Pure scrobble-history magic.</p>
-        </li>
-
-        <li class="lfm-step lfm-step--planned">
-          <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Planned</p>
-          <h3 class="lfm-step__title">Library &rarr; Stats sub-section</h3>
-          <p class="lfm-step__desc">Library tab gets a Stats entry. Listening Clock (24-hour radial), Weekday Heatmap, Top 10 Artists / Albums / Tracks per period (week / month / year / all-time). All from your Last.fm history &mdash; sometimes spanning 20+ years if you&rsquo;ve scrobbled since the early days.</p>
         </li>
 
         <li class="lfm-step lfm-step--planned">
