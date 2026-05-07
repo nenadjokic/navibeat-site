@@ -30,10 +30,59 @@
 
     /* Trust banner */
     .lfm-trust { background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 0; }
-    .lfm-trust__grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+    .lfm-trust__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (min-width: 960px) { .lfm-trust__grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
     @media (max-width: 720px) { .lfm-trust__grid { grid-template-columns: 1fr; } }
     .lfm-trust__cell h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 8px; font-family: 'Inter Tight', sans-serif; font-weight: 600; }
     .lfm-trust__cell p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0; }
+
+    /* Sync coverage section */
+    .lfm-sync { padding: 88px 0 40px; }
+    .lfm-sync h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 20px; }
+    .lfm-sync__sub { color: var(--text-1); font-size: 17px; max-width: 60ch; line-height: 1.6; margin: 0 0 36px; }
+    .lfm-sync__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 720px) { .lfm-sync__grid { grid-template-columns: 1fr; } }
+    .lfm-sync__card {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 26px;
+    }
+    .lfm-sync__card--syncs { border-left: 3px solid var(--accent); }
+    .lfm-sync__card--server { border-left: 3px solid var(--text-2); }
+    .lfm-sync__card h3 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0 0 16px;
+    }
+    .lfm-sync__card--syncs h3 { color: var(--accent); }
+    .lfm-sync__card--server h3 { color: var(--text-2); }
+    .lfm-sync__card ul { list-style: none; padding: 0; margin: 0; }
+    .lfm-sync__card li {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-1);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .lfm-sync__card li:last-child { border-bottom: none; }
+    .lfm-sync__card li strong { color: var(--text-0); font-weight: 500; }
+    .lfm-sync__mark {
+      flex-shrink: 0;
+      width: 22px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .lfm-sync__card--syncs .lfm-sync__mark { color: var(--accent); }
+    .lfm-sync__card--server .lfm-sync__mark { color: var(--text-2); }
+    .lfm-sync__note { color: var(--text-2); font-size: 13px; line-height: 1.6; margin: 24px 0 0; max-width: 60ch; }
 
     /* Comparison section */
     .lfm-vs { padding: 88px 0 40px; }
@@ -202,7 +251,7 @@
         <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">Optional &middot; Opt-in &middot; You&rsquo;re in control</p>
         <h1>The deepest <em>Last.fm integration</em> of any Subsonic client.</h1>
         <p class="lfm-sub">
-          Listener counts on Now Playing. Year-in-Review you actually own. Time Machine playlists from any year you scrobbled. Loved tracks synced both ways. <strong>NaviBeat never scrobbles directly to Last.fm</strong> &mdash; that always goes through your Navidrome server. Last.fm is only for reading <em>your</em> data back into the player.
+          Listener counts on Now Playing. Year-in-Review you actually own &mdash; with the same totals on every Apple device. Time Machine playlists from any year you scrobbled. Discover Mix every Monday. Loved tracks synced both ways. <strong>NaviBeat never scrobbles directly to Last.fm</strong> &mdash; that always goes through your Navidrome server. Last.fm is only for reading <em>your</em> data back into the player.
         </p>
         <div class="p-hero__ctas" style="margin-top: 28px;">
           <a class="btn btn--primary" href="#roadmap">See the roadmap &darr;</a>
@@ -228,7 +277,57 @@
           <h4>Sign in once, sync everywhere</h4>
           <p>Connect Last.fm on iPhone &mdash; iPad, Mac, Apple TV, and Apple Watch all pick up the session via iCloud Keychain. One sign-in covers your whole Apple ecosystem.</p>
         </div>
+        <div class="lfm-trust__cell">
+          <h4>Same numbers on every device</h4>
+          <p>Year in Review, Discover Mix, Replay, Time Machine &mdash; all derived from your Last.fm history, not from each device&rsquo;s local play count. iPhone, iPad, Mac and Apple TV show identical totals. As of Build 51, no local fallback &mdash; if Last.fm isn&rsquo;t connected the Made for You shelf simply doesn&rsquo;t appear.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SYNC COVERAGE -->
+  <section class="lfm-sync" id="sync">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">What syncs &middot; What doesn&rsquo;t</p>
+      <h2>Last.fm sync coverage, in plain terms.</h2>
+      <p class="lfm-sync__sub">
+        Last.fm only models one kind of favourite: <em>Loved tracks</em>. There&rsquo;s no Last.fm concept of a loved album, loved artist, or loved playlist &mdash; and no concept of star ratings. NaviBeat&rsquo;s favouriting surface is therefore deliberately scoped to per-song hearts and per-song ratings, the only signals that round-trip cleanly. Album-, artist-, and playlist-level favouriting isn&rsquo;t a NaviBeat feature &mdash; if you want it, the Navidrome web UI already handles it on the server.
+      </p>
+      <div class="lfm-sync__grid">
+        <div class="lfm-sync__card lfm-sync__card--syncs">
+          <h3>Per-song, in NaviBeat</h3>
+          <ul>
+            <li>
+              <span class="lfm-sync__mark" aria-hidden="true">&#10003;</span>
+              <span><strong>Track hearts</strong> &mdash; bidirectional sync since Build 41. Heart a song in NaviBeat, it shows as Loved on Last.fm instantly &mdash; the request goes through your Navidrome server, never direct from the app. Love a track on Last.fm, it&rsquo;s starred in your Navidrome library on the next playback or manual sync.</span>
+            </li>
+            <li>
+              <span class="lfm-sync__mark" aria-hidden="true">&#10003;</span>
+              <span><strong>5-star ratings</strong> &mdash; per-song, stored on your Navidrome server via the Subsonic <code>setRating</code> endpoint. Last.fm has no rating concept, so this stays server-only by design.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="lfm-sync__card lfm-sync__card--server">
+          <h3>Not a NaviBeat feature</h3>
+          <ul>
+            <li>
+              <span class="lfm-sync__mark" aria-hidden="true">&oslash;</span>
+              <span><strong>Album favouriting</strong> &mdash; not surfaced in NaviBeat. Last.fm has no album-Loved concept, and no per-song signal can stand in for one. Use Navidrome&rsquo;s web UI if you want album favourites.</span>
+            </li>
+            <li>
+              <span class="lfm-sync__mark" aria-hidden="true">&oslash;</span>
+              <span><strong>Artist favouriting</strong> &mdash; not surfaced in NaviBeat. Last.fm has no artist-Loved concept. Navidrome web UI handles this on the server.</span>
+            </li>
+            <li>
+              <span class="lfm-sync__mark" aria-hidden="true">&oslash;</span>
+              <span><strong>Playlist favouriting</strong> &mdash; not surfaced in NaviBeat. Last.fm doesn&rsquo;t track playlist favourites either. Manage these in Navidrome&rsquo;s web UI.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="lfm-sync__note">
+        Heart and star icons in NaviBeat appear at the per-song level only &mdash; on track rows, in Now Playing, and in the queue. Album, artist, and playlist headers don&rsquo;t carry a heart in NaviBeat, because there&rsquo;s no Last.fm signal to round-trip and we&rsquo;d rather draw a clean scope line than ship a half-feature. Every platform (iPhone, iPad, Mac, Apple TV, Apple Watch) follows the same rule. As of Build 51 &mdash; 2026-05-07.
+      </p>
     </div>
   </section>
 
@@ -254,12 +353,16 @@
             <tr><td>Listener counts on Now Playing</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
             <tr><td>Top tags on Artist header</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare / partial</td></tr>
             <tr><td>Bidirectional Loved &harr; Starred sync (incl. instant push + pending-intent persistence)</td><td class="cell-yes">&#10003;</td><td class="cell-partial">desktop-only / one-way</td></tr>
-            <tr><td>Similar Tracks rail (album detail)</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare / via API only</td></tr>
+            <tr><td>Similar Tracks &amp; Similar Artists rails</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare / via API only</td></tr>
+            <tr><td>AutoMix &middot; Last.fm continuation when Up Next runs dry</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Discover Mix &mdash; Last.fm-seeded weekly playlist</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Replay 2026 &mdash; <code>user.getTopTracks(12month)</code></td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Time Machine &mdash; date-range playlist from <code>user.getRecentTracks</code></td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Year-in-Review (Wrapped) with permanent archive + share cards</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
             <tr><td>&ldquo;Because You Listened&rdquo; Home rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
             <tr><td>&ldquo;On This Day&rdquo; rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>Library &rarr; Stats (Listening Clock + Heatmap)</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare</td></tr>
-            <tr><td>Time Machine playlist generator</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>Year-in-Review (Wrapped) with archive + share cards</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Cross-device-consistent stats (same totals on iPhone / iPad / Mac / TV)</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Made for You shelf on Apple TV</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
           </tbody>
         </table>
       </div>
@@ -341,32 +444,81 @@
           <p class="lfm-step__desc">When the Up Next queue runs dry and AutoMix is on, NaviBeat fetches Last.fm-similar tracks for the current song, resolves them against your library, and queues them up. If your library doesn&rsquo;t have enough matches, AutoMix transparently falls back to your Navidrome server&rsquo;s recommendations &mdash; never breaks. The Up Next panel shows an &ldquo;AutoMix &middot; Last.fm&rdquo; pill when Last.fm is connected so the source is unmistakable.</p>
         </li>
 
-        <li class="lfm-step lfm-step--planned">
+        <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Next</p>
-          <h3 class="lfm-step__title">Library &rarr; Stats sub-section</h3>
-          <p class="lfm-step__desc">Library tab gets a Stats entry. Listening Clock (24-hour radial), Weekday Heatmap, Top 10 Artists / Albums / Tracks per period (week / month / year / all-time). All from your Last.fm history &mdash; sometimes spanning 20+ years if you&rsquo;ve scrobbled since the early days.</p>
+          <p class="lfm-step__status">Done &middot; Build 49 &rarr; 51 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Replay 2026 &mdash; your top tracks of the year</h3>
+          <p class="lfm-step__desc">Per-period replays on Home: &ldquo;Replay 2026&rdquo; &mdash; your top-played tracks from the last 12 months, sourced directly from <code>user.getTopTracks(period: 12month)</code> on Last.fm and resolved against your library. <strong>As of Build 51 this is strictly Last.fm-driven</strong> &mdash; no silent local fallback, so the same Replay shows the same songs in the same order on every device. iPhone, iPad, Mac, Apple TV.</p>
         </li>
 
-        <li class="lfm-step lfm-step--planned">
+        <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Planned</p>
-          <h3 class="lfm-step__title">&ldquo;Because You Listened&rdquo; Home rail</h3>
-          <p class="lfm-step__desc">Home tab gets a rail seeded from your last 5&ndash;10 plays. Chained similar-track lookups, deduped, resolved against your library. The &ldquo;you might also like, but it&rsquo;s already in your collection&rdquo; surface.</p>
+          <p class="lfm-step__status">Done &middot; Build 49 &rarr; 51 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Year in Review</h3>
+          <p class="lfm-step__desc">Year-in-review done right. Wrapped-style 5-slide vertical scroll: top tracks, top artists, top albums, total plays / minutes, top genres. Top Artist and Top Track slides paint their cover art as a blurred full-bleed background. PNG share via SwiftUI <code>ShareLink</code> on macOS, native share sheet on iOS. Hero banner card on Home during December&ndash;February, Settings entry the rest of the year. <strong>Permanent archive</strong> &mdash; every prior calendar year stays accessible, scrolling back to 2003 if you&rsquo;ve scrobbled that long. Spotify Wrapped expires every January; this one stays forever. <strong>Build 51 fix:</strong> totals and top picks now come from <code>user.getTopTracks(12month)</code> overlay, so iPhone, iPad, Mac, and Apple TV all show identical numbers. iPhone, iPad, Mac, Apple TV (no Share on Apple TV); watchOS surface in v1.1.</p>
         </li>
 
-        <li class="lfm-step lfm-step--planned">
+        <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Planned</p>
-          <h3 class="lfm-step__title">&ldquo;On This Day&rdquo; rail</h3>
-          <p class="lfm-step__desc">Home tab rail: the songs you played on this calendar day across past years. &ldquo;Three years ago today: a heavy Sigur R&oacute;s afternoon.&rdquo; Pure scrobble-history magic.</p>
+          <p class="lfm-step__status">Done &middot; Build 49 &rarr; 51 &middot; May 2026</p>
+          <h3 class="lfm-step__title">Discover Mix &mdash; weekly Monday rotation</h3>
+          <p class="lfm-step__desc">A fresh playlist every Monday, built from your Last.fm top-tracks seeds &rarr; <code>track.getSimilar</code> &rarr; resolved through your library. The &ldquo;new music you&rsquo;d actually like, hidden in your own collection&rdquo; surface. <strong>Build 51 makes this strictly Last.fm-only</strong> &mdash; no local seed fallback, no &ldquo;not enough plays&rdquo; dead-ends on freshly-installed devices. iPhone, iPad, Mac, Apple TV.</p>
         </li>
 
-        <li class="lfm-step lfm-step--planned">
+        <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Planned</p>
+          <p class="lfm-step__status">Done &middot; Build 49 &rarr; 51 &middot; May 2026</p>
           <h3 class="lfm-step__title">Time Machine playlists</h3>
-          <p class="lfm-step__desc">Pick a date range &mdash; &ldquo;May 2024&rdquo;, &ldquo;Five years ago this week&rdquo;, &ldquo;the month I moved to Belgrade&rdquo; &mdash; and NaviBeat builds a playlist from your scrobbles in that window, resolved against your library. Save as a real playlist on your server. Time travel for music.</p>
+          <p class="lfm-step__desc">Pick a date range &mdash; &ldquo;May 2024&rdquo;, &ldquo;Five years ago this week&rdquo;, &ldquo;the month I moved to Belgrade&rdquo; &mdash; NaviBeat pulls your scrobbles in that window via the new <code>user.getRecentTracks(from:to:)</code> path, dedupes, and resolves them against your library. Save as a real playlist on your server. Apple TV gets a focus-friendly preset sheet (30 days / 3 months / 6 months / 12 months) since it has no keyboard for free-form date pickers. iPhone, iPad, Mac, Apple TV.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--done">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Done &middot; Build 49 &middot; May 2026</p>
+          <h3 class="lfm-step__title">&ldquo;On This Day&rdquo; rail</h3>
+          <p class="lfm-step__desc">Home tab rail: the songs you played on this calendar day across past years. &ldquo;Three years ago today: a heavy Sigur R&oacute;s afternoon.&rdquo; Pure scrobble-history magic. iPhone, iPad, Mac.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--done">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Done &middot; Build 49 &middot; May 2026</p>
+          <h3 class="lfm-step__title">&ldquo;Because You Listened&rdquo; rail</h3>
+          <p class="lfm-step__desc">Home tab rail seeded from your last 5&ndash;10 plays. Artist-anchored similar-track lookups, deduped, resolved against your library. The &ldquo;you might also like, but it&rsquo;s already in your collection&rdquo; surface. iPhone, iPad, Mac.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned &middot; v1.1</p>
+          <h3 class="lfm-step__title">Library &rarr; Stats sub-section (Listening Clock + Heatmap)</h3>
+          <p class="lfm-step__desc">Library tab gets a dedicated Stats entry. Listening Clock (24-hour radial), Weekday Heatmap, Top 10 Artists / Albums / Tracks per period (week / month / year / all-time). The Top Tracks aggregator shipped in Build 49 and was extended in Build 51; the visual Stats surfaces (Clock, Heatmap, period switcher) come in v1.1.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned &middot; v1.1</p>
+          <h3 class="lfm-step__title">Made for You on Apple Watch</h3>
+          <p class="lfm-step__desc">Year in Review, Discover Mix, Time Machine, On This Day, Because You Listened landed on iPhone, iPad, Mac in Build 49 and on Apple TV in Build 51. The watchOS five-card vertical scroll ships in v1.1 once the watch player&rsquo;s glanceable design language is finalised.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned &middot; v1.1</p>
+          <h3 class="lfm-step__title">ListenBrainz dual integration</h3>
+          <p class="lfm-step__desc">For listeners who scrobble to <a href="https://listenbrainz.org" target="_blank" rel="noopener">ListenBrainz</a> instead of (or alongside) Last.fm. Same surfaces &mdash; Discover Mix, Time Machine, Year in Review &mdash; backed by the MetaBrainz open dataset. Read-only, opt-in, never written from the app directly.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned &middot; v1.1</p>
+          <h3 class="lfm-step__title">Songkick concerts feed</h3>
+          <p class="lfm-step__desc">Library &rarr; Concerts: upcoming shows for artists you actually listen to, pulled from Songkick. Filtered to your home metro and the next six months. The &ldquo;your scrobbles tell us who&rsquo;s touring near you&rdquo; surface.</p>
+        </li>
+
+        <li class="lfm-step lfm-step--planned">
+          <span class="lfm-step__dot" aria-hidden="true"></span>
+          <p class="lfm-step__status">Planned &middot; v1.1</p>
+          <h3 class="lfm-step__title">Friends activity sidebar</h3>
+          <p class="lfm-step__desc">A sidebar (Mac) / sheet (iOS) that shows what your Last.fm friends are listening to right now, with one-tap &ldquo;play this for me too&rdquo; from your library. The original Last.fm social signal, brought into the player.</p>
         </li>
 
         <li class="lfm-step lfm-step--planned">
@@ -374,13 +526,6 @@
           <p class="lfm-step__status">Planned</p>
           <h3 class="lfm-step__title">Mood &amp; Context mixes</h3>
           <p class="lfm-step__desc">Auto-built mixes from scrobble timestamp patterns: &ldquo;Sunday Morning&rdquo; (tracks you historically played Sundays before 11 AM), &ldquo;Late Night&rdquo; (after 11 PM weekdays), &ldquo;Commute&rdquo; (8&ndash;9 AM weekdays). Your taste, your context.</p>
-        </li>
-
-        <li class="lfm-step lfm-step--planned">
-          <span class="lfm-step__dot" aria-hidden="true"></span>
-          <p class="lfm-step__status">Planned</p>
-          <h3 class="lfm-step__title">NaviBeat Wrapped</h3>
-          <p class="lfm-step__desc">Year-in-review done right. Hero card on Home tab during December&ndash;February, off-season tile the rest of the year. Permanent archive that scrolls back to 2003 (the earliest Last.fm scrobbles). SwiftUI Canvas-rendered share cards exportable as PNG. tvOS Top Shelf rotator during the season. watchOS push &rarr; five-card vertical scroll. Spotify Wrapped expires every January &mdash; this one stays forever.</p>
         </li>
 
       </ol>
