@@ -30,9 +30,6 @@
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-library-artists.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-playlists.jpg</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-radio-stations.jpg</image:loc>
     </image:image>
     <image:image>
@@ -78,9 +75,6 @@
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-directories.png</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-search.png</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-lyrics-panel.png</image:loc>
     </image:image>
     <image:image>
@@ -88,9 +82,6 @@
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-mini-lyrics.png</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-mini-sleep-timer.png</image:loc>
     </image:image>
   </url>
 
