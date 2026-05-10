@@ -59,6 +59,18 @@
     <li>If your server uses a self-signed TLS certificate, NaviBeat may reject the connection. Use a trusted certificate (Let&rsquo;s Encrypt is free) or reach out to us for help.</li>
   </ul>
 
+  <h2>NaviBeat says "connected" but no library loads on my iPhone, while my iPad on the same WiFi works fine.</h2>
+  <p>Three iOS-side network filters can block local-server connections on one device while another device on the same network is unaffected. Check these on the device that's failing:</p>
+  <ol>
+    <li><strong>Local Network permission.</strong> Open <em>Settings &rarr; NaviBeat &rarr; Local Network</em> and turn it ON. iOS 14+ silently denies private-IP connections (your home server&rsquo;s 192.168.x.x or 10.x.x.x address) for any app that hasn&rsquo;t been granted this permission.</li>
+    <li><strong>iCloud Private Relay.</strong> Open <em>Settings &rarr; Apple Account &rarr; iCloud &rarr; Private Relay</em>. If your server is on a private IP (LAN, .local hostname, Tailscale CGNAT range), Private Relay can hijack the request through Apple&rsquo;s relay and fail to reach it. Turn Private Relay OFF temporarily; if the library now loads, that was the cause.</li>
+    <li><strong>Active VPN profile.</strong> Open <em>Settings &rarr; General &rarr; VPN &amp; Device Management</em>. A VPN that routes <em>all</em> traffic (rather than splitting LAN traffic) blocks local-network destinations. Disconnect the VPN and try again.</li>
+  </ol>
+  <p>The same checks apply to Mac (System Settings &rarr; Privacy &amp; Security &rarr; Local Network), and to Apple TV in a more limited way (no Local Network toggle exists, but a configuration-profile VPN can block server access &mdash; check Settings &rarr; General &rarr; VPN &amp; Device Management on tvOS).</p>
+
+  <h2>How do I tell whether NaviBeat lost network access vs. my server being unreachable?</h2>
+  <p>Open NaviBeat on a different device on the same network. If a second device works, the issue is local to the failing device (most often the three filters above). If <em>no</em> device can reach it, the server itself is the problem &mdash; check that Navidrome is running, the right port is open, and your URL hasn&rsquo;t changed.</p>
+
   <h2>Playback cuts out or stutters. How do I fix it?</h2>
   <ul>
     <li>Try lowering the max bit rate in Settings &gt; Audio to 192 kbps or 128 kbps.</li>
