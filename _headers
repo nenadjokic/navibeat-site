@@ -1,0 +1,18 @@
+# Cloudflare Pages / Workers Static Assets headers.
+# Applied to every response served from this site.
+
+/*
+  X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  X-Frame-Options: SAMEORIGIN
+  Cross-Origin-Opener-Policy: same-origin
+
+# Long-lived caching for static asset folders.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML responses kept fresh.
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate

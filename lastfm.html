@@ -3,22 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>NaviBeat &times; Last.fm — Optional Taste-Intelligence Integration</title>
-  <meta name="description" content="NaviBeat&rsquo;s Last.fm integration: optional, opt-in, and built to give you the deepest taste-intelligence features of any Subsonic / Navidrome client. Listener counts, similar tracks, year-in-review, time-machine playlists. Roadmap inside.">
+  <meta name="description" content="NaviBeat's Last.fm integration: opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review, time-machine playlists. Roadmap with live status.">
   <meta name="theme-color" content="#0e0b08">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
   <link rel="canonical" href="https://navibeat.app/lastfm.html">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/lastfm.html">
 
   <meta property="og:title" content="NaviBeat &times; Last.fm — Optional Taste-Intelligence Integration">
-  <meta property="og:description" content="The deepest Last.fm integration of any Subsonic client. Listener counts, similar tracks, year-in-review, time-machine playlists. Roadmap with live status inside.">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="The deepest Last.fm integration of any Subsonic client. Listener counts, similar tracks, Year-in-Review, time-machine playlists. Roadmap with live status inside.">
+  <meta property="og:type" content="article">
   <meta property="og:url" content="https://navibeat.app/lastfm.html">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta property="og:image:alt" content="NaviBeat on Mac — native SwiftUI sidebar with Featured Album hero.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat &times; Last.fm — Optional Taste-Intelligence Integration">
+  <meta name="twitter:description" content="Opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review, time-machine playlists.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+        "sameAs": [
+          "https://www.navidrome.org/apps/",
+          "https://testflight.apple.com/join/N7Fa1NtG"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navibeat.app/#website",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat",
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Article",
+        "@id": "https://navibeat.app/lastfm.html#article",
+        "headline": "NaviBeat × Last.fm — Optional Taste-Intelligence Integration",
+        "name": "NaviBeat × Last.fm — Optional Taste-Intelligence Integration",
+        "description": "NaviBeat's Last.fm integration: opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review, time-machine playlists. Roadmap with live status.",
+        "url": "https://navibeat.app/lastfm.html",
+        "datePublished": "2026-05-03",
+        "dateModified": "2026-05-13",
+        "inLanguage": "en",
+        "author": { "@id": "https://navibeat.app/#org" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "about": { "@id": "https://navibeat.app/#app" },
+        "mentions": [
+          { "@type": "Organization", "name": "Last.fm", "url": "https://www.last.fm" },
+          { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://navibeat.app/lastfm.html#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Last.fm", "item": "https://navibeat.app/lastfm.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     /* ====== Last.fm page — local styles (timeline + comparison) ====== */
@@ -249,7 +324,12 @@
       </nav>
       <div class="lfm-hero__inner">
         <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">Optional &middot; Opt-in &middot; You&rsquo;re in control</p>
-        <h1>The deepest <em>Last.fm integration</em> of any Subsonic client.</h1>
+        <h1 id="lastfm">The deepest <em>Last.fm integration</em> of any Subsonic client.</h1>
+
+        <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
+          <strong style="color: var(--text-0);">TL;DR.</strong> The Last.fm integration is opt-in and read-only inside NaviBeat. Scrobbles never go from the app directly to Last.fm &mdash; they route through your Navidrome server (which already holds your Last.fm credentials). NaviBeat <em>reads</em> Last.fm data to surface listener counts, similar tracks, Year-in-Review, and time-machine playlists inside the player.
+        </aside>
+
         <p class="lfm-sub">
           Listener counts on Now Playing. Year-in-Review you actually own &mdash; with the same totals on every Apple device. Time Machine playlists from any year you scrobbled. Discover Mix every Monday. Loved tracks synced both ways. <strong>NaviBeat never scrobbles directly to Last.fm</strong> &mdash; that always goes through your Navidrome server. Last.fm is only for reading <em>your</em> data back into the player.
         </p>
@@ -289,7 +369,7 @@
   <section class="lfm-sync" id="sync">
     <div class="wrap">
       <p class="eyebrow eyebrow--accent">What syncs &middot; What doesn&rsquo;t</p>
-      <h2>Last.fm sync coverage, in plain terms.</h2>
+      <h2 id="sync-coverage">Last.fm sync coverage, in plain terms.</h2>
       <p class="lfm-sync__sub">
         Last.fm only models one kind of favourite: <em>Loved tracks</em>. There&rsquo;s no Last.fm concept of a loved album, loved artist, or loved playlist &mdash; and no concept of star ratings. NaviBeat&rsquo;s favouriting surface is therefore deliberately scoped to per-song hearts and per-song ratings, the only signals that round-trip cleanly. Album-, artist-, and playlist-level favouriting isn&rsquo;t a NaviBeat feature &mdash; if you want it, the Navidrome web UI already handles it on the server.
       </p>
@@ -335,7 +415,7 @@
   <section class="lfm-vs" id="vs">
     <div class="wrap">
       <p class="eyebrow eyebrow--accent">The taste-intelligence gap</p>
-      <h2>What no other Subsonic client surfaces today.</h2>
+      <h2 id="vs">What no other Subsonic client surfaces today.</h2>
       <p class="lfm-vs__sub">
         Most clients in this space stop at scrobbling &mdash; sending plays to Last.fm and not reading anything back. NaviBeat reads <em>your</em> Last.fm history into the player so the data you&rsquo;ve been generating for years finally pays off as features.
       </p>
@@ -377,7 +457,7 @@
     <div class="wrap">
       <div class="lfm-roadmap__head">
         <p class="eyebrow eyebrow--accent">Live roadmap</p>
-        <h2>Shipping order, transparently.</h2>
+        <h2 id="roadmap">Shipping order, transparently.</h2>
         <p>Every Last.fm feature, in the order we&rsquo;re building them. Updated as work lands. White means done and on TestFlight; orange means actively in development; gray means planned and queued. No vapor.</p>
         <div class="lfm-legend">
           <span class="lfm-legend__item"><span class="lfm-legend__dot lfm-legend__dot--done"></span> Done</span>
@@ -535,7 +615,7 @@
   <!-- CTA -->
   <section class="lfm-cta">
     <div class="wrap">
-      <h2>Ready to listen smarter?</h2>
+      <h2 id="cta">Ready to listen smarter?</h2>
       <p>Join the public TestFlight on every Apple device. Last.fm features land progressively over the coming weeks.</p>
       <div class="p-hero__ctas">
         <a class="btn btn--primary" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join TestFlight &mdash; Free</a>

@@ -3,41 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>NaviBeat — Native Navidrome &amp; Subsonic Client for Apple TV, Mac, iPhone, iPad, Apple Watch</title>
-  <meta name="description" content="NaviBeat is the native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and any OpenSubsonic server. Apple TV, Mac, iPhone, iPad, and Apple Watch — one $5.99 Universal Purchase. Time-synced lyrics, internet radio, Mini Player, directory browsing, AutoMix, sleep timer.">
+  <meta name="description" content="Native SwiftUI Navidrome &amp; OpenSubsonic client for Apple TV, Mac, iPhone, iPad &amp; Apple Watch. One $5.99 Universal Purchase. Time-synced lyrics, AutoMix, offline pinning.">
   <meta name="theme-color" content="#0e0b08">
-  <meta name="keywords" content="Navidrome client, Subsonic client, OpenSubsonic, Airsonic, Gonic, self-hosted music player, Navidrome Apple TV, Navidrome Mac, Subsonic iOS, native music app">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
   <link rel="canonical" href="https://navibeat.app/">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/">
+  <link rel="alternate" hreflang="x-default" href="https://navibeat.app/">
 
   <meta property="og:title" content="NaviBeat — Native Navidrome &amp; Subsonic client for every Apple device">
   <meta property="og:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. Native SwiftUI Navidrome client with time-synced lyrics, internet radio, Mini Player, AutoMix, and sleep timer. One $5.99 Universal Purchase.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg">
+  <meta property="og:image:alt" content="NaviBeat on Apple TV 4K — Featured Album hero on the home screen.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat — Native Navidrome client for every Apple device">
+  <meta name="twitter:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. One $5.99 Universal Purchase. In public TestFlight now.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg">
+  <meta name="twitter:image:alt" content="NaviBeat on Apple TV 4K — Featured Album hero on the home screen.">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+
+  <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "NaviBeat",
-    "operatingSystem": "macOS, tvOS, iOS, iPadOS, watchOS",
-    "applicationCategory": "MultimediaApplication",
-    "applicationSubCategory": "Music Streaming Client",
-    "description": "Native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers.",
-    "offers": { "@type": "Offer", "price": "5.99", "priceCurrency": "USD" },
-    "featureList": ["Navidrome support","OpenSubsonic API compatibility","Time-synced lyrics (LRC)","Internet radio streaming","Mini Player with pin-on-top","AutoMix endless playback","Sleep timer with fade","Universal Purchase"]
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+        "sameAs": [
+          "https://www.navidrome.org/apps/",
+          "https://testflight.apple.com/join/N7Fa1NtG"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navibeat.app/#website",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat",
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://navibeat.app/#webpage",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat — Native Navidrome & Subsonic Client",
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "about": { "@id": "https://navibeat.app/#app" },
+        "primaryImageOfPage": "https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg",
+        "inLanguage": "en",
+        "datePublished": "2026-04-18",
+        "dateModified": "2026-05-13"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://navibeat.app/#app",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "image": "https://navibeat.app/assets/icon-512.png",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Music Streaming Client",
+        "operatingSystem": "macOS 15+, tvOS 18+, iOS 18+, iPadOS 18+, watchOS 11+",
+        "softwareVersion": "1.0",
+        "datePublished": "2026-04-18",
+        "downloadUrl": "https://testflight.apple.com/join/N7Fa1NtG",
+        "installUrl": "https://testflight.apple.com/join/N7Fa1NtG",
+        "description": "Native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. One $5.99 Universal Purchase covers Apple TV, Mac, iPhone, iPad, and Apple Watch.",
+        "author": { "@id": "https://navibeat.app/#org" },
+        "creator": { "@id": "https://navibeat.app/#org" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "offers": {
+          "@type": "Offer",
+          "price": "5.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/PreOrder",
+          "priceValidUntil": "2027-05-13",
+          "url": "https://testflight.apple.com/join/N7Fa1NtG"
+        },
+        "featureList": [
+          "Navidrome and OpenSubsonic compatibility",
+          "Universal Purchase across Apple TV, Mac, iPhone, iPad, Apple Watch",
+          "Time-synced LRC lyrics",
+          "Internet radio streaming",
+          "Mini Player with pin-on-top (macOS)",
+          "AutoMix endless playback",
+          "Sleep timer with fade-out",
+          "Offline downloads with LRU cache",
+          "Optional Last.fm integration",
+          "Zero analytics, zero trackers"
+        ],
+        "screenshot": [
+          "https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg",
+          "https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png",
+          "https://navibeat.app/assets/screenshots/ipad/navibeat-ipad-home.jpg",
+          "https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-now-playing.jpg",
+          "https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png"
+        ],
+        "mentions": [
+          { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
+          { "@type": "SoftwareApplication", "name": "Airsonic-Advanced", "url": "https://github.com/airsonic-advanced/airsonic-advanced" },
+          { "@type": "SoftwareApplication", "name": "Gonic", "url": "https://github.com/sentriz/gonic" },
+          { "@type": "Thing", "name": "OpenSubsonic API" },
+          { "@type": "Organization", "name": "Last.fm", "url": "https://www.last.fm" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://navibeat.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need a Navidrome server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. NaviBeat is a client — it plays music from a server you run. Navidrome is free, open source, and runs on anything from a Raspberry Pi to a NAS. Any OpenSubsonic-compatible server works too (Gonic, Airsonic-Advanced). NaviBeat is officially listed on navidrome.org/apps with the OpenSubsonic indicator."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I get all platforms for $5.99?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. NaviBeat is a Universal Purchase. Buy once on any Apple device and it installs on the other four — Mac, Apple TV, iPhone, iPad, Apple Watch — at no extra cost. The Apple Watch app ships embedded in the iPhone app, so it installs automatically when you pair your Watch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When does NaviBeat launch on the App Store?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NaviBeat is in public TestFlight right now on all five Apple platforms — iPhone, iPad, Mac, Apple TV, and Apple Watch. The beta is free and stays open for roughly 30 days. Public App Store launch is targeted for late May or early June 2026 at $5.99."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does NaviBeat work offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Pin individual albums, playlists, or whole artists for offline playback. NaviBeat keeps an LRU cache with a size limit you set in Settings. Flights, subways, and spotty hotel Wi-Fi don't stop the music. Downloads sync across devices via your server, not our cloud."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is NaviBeat's refund policy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Apple handles refunds directly — their standard window is 90 days through reportaproblem.apple.com. On the Mac App Store you can try NaviBeat free for 7 days first. If something doesn't work, reach support@navibeat.app."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://navibeat.app/#platforms",
+        "name": "NaviBeat — Apple platform variants",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 5,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://navibeat.app/appletv.html", "name": "NaviBeat for Apple TV" },
+          { "@type": "ListItem", "position": 2, "url": "https://navibeat.app/macos.html", "name": "NaviBeat for Mac" },
+          { "@type": "ListItem", "position": 3, "url": "https://navibeat.app/iphone.html", "name": "NaviBeat for iPhone" },
+          { "@type": "ListItem", "position": 4, "url": "https://navibeat.app/ipad.html", "name": "NaviBeat for iPad" },
+          { "@type": "ListItem", "position": 5, "url": "https://navibeat.app/applewatch.html", "name": "NaviBeat for Apple Watch" }
+        ]
+      }
+    ]
   }
   </script>
-
-  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 

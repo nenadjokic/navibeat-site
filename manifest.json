@@ -1,0 +1,18 @@
+{
+  "name": "NaviBeat — Navidrome & Subsonic client for Apple devices",
+  "short_name": "NaviBeat",
+  "description": "Native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. Apple TV, Mac, iPhone, iPad, Apple Watch — one Universal Purchase.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0e0b08",
+  "theme_color": "#0e0b08",
+  "lang": "en",
+  "categories": ["music", "entertainment", "utilities"],
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

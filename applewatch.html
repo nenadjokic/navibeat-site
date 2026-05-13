@@ -3,24 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>NaviBeat for Apple Watch — Navidrome &amp; Subsonic Client for watchOS</title>
-  <meta name="description" content="NaviBeat for Apple Watch: offline playback, Digital Crown volume, album browsing, and Now Playing — all from your wrist. In public TestFlight (free for ~30 days) — included in the $5.99 Universal Purchase.">
+  <meta name="description" content="Native Apple Watch client for Navidrome &amp; OpenSubsonic. Offline playback from your wrist, Digital Crown volume, album browsing, Now Playing. $5.99 Universal Purchase.">
   <meta name="theme-color" content="#0e0b08">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
   <link rel="canonical" href="https://navibeat.app/applewatch.html">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/applewatch.html">
 
   <meta property="og:title" content="NaviBeat for Apple Watch — Navidrome &amp; Subsonic client for watchOS">
   <meta property="og:description" content="Offline playback from your wrist. Digital Crown volume. Skip tracks without your phone.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/applewatch.html">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png">
+  <meta property="og:image:alt" content="NaviBeat Now Playing on Apple Watch with album art and transport controls.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat for Apple Watch — Navidrome client for watchOS">
+  <meta name="twitter:description" content="Offline playback from your wrist. Digital Crown volume. Skip tracks without your phone.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png">
+  <meta name="twitter:image:alt" content="NaviBeat Now Playing on Apple Watch.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+        "sameAs": [
+          "https://www.navidrome.org/apps/",
+          "https://testflight.apple.com/join/N7Fa1NtG"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navibeat.app/#website",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat",
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://navibeat.app/applewatch.html#webpage",
+        "url": "https://navibeat.app/applewatch.html",
+        "name": "NaviBeat for Apple Watch",
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "about": { "@id": "https://navibeat.app/applewatch.html#app" },
+        "primaryImageOfPage": "https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png",
+        "inLanguage": "en",
+        "datePublished": "2026-04-18",
+        "dateModified": "2026-05-13"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://navibeat.app/applewatch.html#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Platforms", "item": "https://navibeat.app/#platforms" },
+          { "@type": "ListItem", "position": 3, "name": "Apple Watch", "item": "https://navibeat.app/applewatch.html" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://navibeat.app/applewatch.html#app",
+        "name": "NaviBeat for Apple Watch",
+        "url": "https://navibeat.app/applewatch.html",
+        "image": "https://navibeat.app/assets/icon-512.png",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Music Streaming Client",
+        "operatingSystem": "watchOS 11+",
+        "softwareVersion": "1.0",
+        "datePublished": "2026-04-18",
+        "downloadUrl": "https://testflight.apple.com/join/N7Fa1NtG",
+        "installUrl": "https://testflight.apple.com/join/N7Fa1NtG",
+        "description": "Native Apple Watch (watchOS 11+) client for Navidrome and OpenSubsonic servers. Offline playback from your wrist, Digital Crown volume, album browsing, Now Playing with cover art.",
+        "author": { "@id": "https://navibeat.app/#org" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "offers": {
+          "@type": "Offer",
+          "price": "5.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/PreOrder",
+          "priceValidUntil": "2027-05-13",
+          "url": "https://testflight.apple.com/join/N7Fa1NtG"
+        },
+        "featureList": [
+          "Offline pinned playback from your wrist",
+          "Digital Crown volume control",
+          "Album, artist and playlist browsing",
+          "Now Playing with cover art and transport",
+          "Run without your iPhone",
+          "Direct-from-server downloads",
+          "Universal Purchase across all Apple devices",
+          "Zero analytics, zero trackers"
+        ],
+        "screenshot": [
+          "https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png"
+        ],
+        "mentions": [
+          { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
+          { "@type": "Thing", "name": "OpenSubsonic API" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -88,6 +198,19 @@
             </a>
             <a class="link-quiet" href="#features">See every feature&nbsp;&rarr;</a>
           </div>
+
+          <dl class="key-facts" aria-label="NaviBeat for Apple Watch — key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; column-gap: 24px; row-gap: 6px; font-size: 14px; line-height: 1.5; max-width: 60ch;">
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Platform</dt>
+            <dd style="margin: 0; color: var(--text-1);">Apple Watch &mdash; watchOS 11+ (Series 7+, Ultra, SE 2nd gen)</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Price</dt>
+            <dd style="margin: 0; color: var(--text-1);">$5.99 USD &middot; one-time &middot; Universal Purchase</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Server</dt>
+            <dd style="margin: 0; color: var(--text-1);">Navidrome v0.50+, OpenSubsonic, Airsonic-Advanced, Gonic</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Distribution</dt>
+            <dd style="margin: 0; color: var(--text-1);">Embedded in iPhone app &middot; installs with Watch pairing</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Version</dt>
+            <dd style="margin: 0; color: var(--text-1);">1.0 &middot; <time datetime="2026-05-13">updated May 13, 2026</time></dd>
+          </dl>
         </div>
 
         <div class="p-hero__shot p-hero__shot--portrait">
