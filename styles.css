@@ -1781,6 +1781,16 @@ section { padding-block: var(--rhythm); }
 .prose ul { padding-left: 20px; }
 .prose a { color: var(--accent); border-bottom: 1px solid rgba(232, 154, 83, 0.28); padding-bottom: 1px; }
 .prose a:hover { color: var(--accent-hi); border-bottom-color: var(--accent-hi); }
+/* Beta program (and any future inline CTA inside .prose) — the generic
+   `.prose a` rule above paints anchor text in `--accent` and adds a faux
+   underline border, which would override `.btn--primary`'s dark text +
+   bright orange fill and produce a barely-readable cream-on-tan button.
+   These resets restore the button's intended colours when it lives
+   inside a long-form .prose page. */
+.prose a.btn { color: #1a0e06; border-bottom: none; padding-bottom: 0; }
+.prose a.btn:hover { color: #1a0e06; border-bottom: none; }
+.prose a.btn--ghost { color: var(--text-0); }
+.prose a.btn--ghost:hover { color: var(--accent-hi); }
 .prose code {
   font-family: var(--font-mono);
   font-size: 13px;
