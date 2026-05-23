@@ -73,7 +73,7 @@
         "datePublished": "2026-05-03",
         "dateModified": "2026-05-13",
         "inLanguage": "en",
-        "author": { "@id": "https://navibeat.app/#org" },
+        "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "url": "https://navibeat.app/#maker" },
         "publisher": { "@id": "https://navibeat.app/#org" },
         "isPartOf": { "@id": "https://navibeat.app/#website" },
         "about": { "@id": "https://navibeat.app/#app" },
@@ -281,6 +281,7 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to content</a>
 
 <div class="beta-banner" role="status">
   <div class="beta-banner__inner">
@@ -341,23 +342,24 @@
   </section>
 
   <!-- TRUST BANNER -->
-  <section class="lfm-trust">
+  <section class="lfm-trust" aria-labelledby="lfm-trust-title">
     <div class="wrap">
+      <h2 id="lfm-trust-title" class="visually-hidden">Last.fm with NaviBeat: four guardrails</h2>
       <div class="lfm-trust__grid">
         <div class="lfm-trust__cell">
-          <h4>Read-only by design</h4>
+          <h3>Read-only by design</h3>
           <p>NaviBeat reads your Last.fm history to surface insights inside the player. It never writes scrobbles directly: those always go through your Navidrome server, which you already control.</p>
         </div>
         <div class="lfm-trust__cell">
-          <h4>Fully optional</h4>
+          <h3>Fully optional</h3>
           <p>Don&rsquo;t want Last.fm? Don&rsquo;t connect it. NaviBeat works completely without it: same player, same library, zero external requests. Connecting Last.fm is one tap in Settings.</p>
         </div>
         <div class="lfm-trust__cell">
-          <h4>Sign in once, sync everywhere</h4>
+          <h3>Sign in once, sync everywhere</h3>
           <p>Connect Last.fm on iPhone, and iPad, Mac, Apple TV, and Apple Watch all pick up the session via iCloud Keychain. One sign-in covers your whole Apple ecosystem.</p>
         </div>
         <div class="lfm-trust__cell">
-          <h4>Same numbers on every device</h4>
+          <h3>Same numbers on every device</h3>
           <p>Year in Review, Discover Mix, Replay, Time Machine: all derived from your Last.fm history, not from each device&rsquo;s local play count. iPhone, iPad, Mac and Apple TV show identical totals. As of Build 51, no local fallback: if Last.fm isn&rsquo;t connected the Made for You shelf simply doesn&rsquo;t appear.</p>
         </div>
       </div>

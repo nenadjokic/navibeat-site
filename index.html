@@ -46,13 +46,26 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Person",
+        "@id": "https://navibeat.app/#nenad",
+        "name": "Nenad Jokic",
+        "url": "https://navibeat.app/#maker",
+        "jobTitle": "Founder & Developer",
+        "worksFor": { "@id": "https://navibeat.app/#org" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Belgrade",
+          "addressCountry": "RS"
+        }
+      },
+      {
         "@type": "Organization",
         "@id": "https://navibeat.app/#org",
         "name": "NaviBeat",
         "url": "https://navibeat.app/",
         "logo": "https://navibeat.app/assets/icon-512.png",
         "email": "support@navibeat.app",
-        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "founder": { "@id": "https://navibeat.app/#nenad" },
         "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
         "sameAs": [
           "https://www.navidrome.org/apps/"
@@ -92,8 +105,8 @@
         "downloadUrl": "https://apps.apple.com/app/navibeat/id6763518834",
         "installUrl": "https://apps.apple.com/app/navibeat/id6763518834",
         "description": "Native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. One $5.99 Universal Purchase covers Apple TV, Mac, iPhone, iPad, and Apple Watch.",
-        "author": { "@id": "https://navibeat.app/#org" },
-        "creator": { "@id": "https://navibeat.app/#org" },
+        "author": { "@id": "https://navibeat.app/#nenad" },
+        "creator": { "@id": "https://navibeat.app/#nenad" },
         "publisher": { "@id": "https://navibeat.app/#org" },
         "offers": {
           "@type": "Offer",
@@ -201,6 +214,7 @@
   </script>
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to content</a>
 
 <div class="beta-banner" role="status">
   <div class="beta-banner__inner">
@@ -255,7 +269,7 @@
           <span class="word" style="animation-delay:390ms">own.</span>
         </h1>
         <p class="hero__sub">
-          A beautifully native Navidrome and Subsonic player for Apple TV, Mac, iPhone, iPad, and Apple Watch. Now <strong style="color:var(--text-1);font-weight:600;">live on the App Store across all five platforms</strong> at <span style="color:var(--accent);font-style:normal;">$5.99</span>, one purchase covers every device, forever.
+          NaviBeat is a native Navidrome and OpenSubsonic player for Apple TV, Mac, iPhone, iPad, and Apple Watch. Now <strong style="color:var(--text-1);font-weight:600;">live on the App Store across all five platforms</strong> at <span style="color:var(--accent);font-style:normal;">$5.99</span>, one purchase covers every device, forever.
         </p>
         <div class="hero__ctas">
           <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener" id="hero-buy">
@@ -746,6 +760,7 @@
         </button>
         <div class="faq__panel" id="faq-3" role="region">
           <div class="faq__a">
+            Yes. NaviBeat is live on the App Store on all five Apple platforms: iPhone, iPad, Mac, Apple TV, and Apple Watch. One $5.99 Universal Purchase covers every device, with no subscription. <a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Open the App Store listing&nbsp;&rarr;</a>
           </div>
         </div>
       </div>

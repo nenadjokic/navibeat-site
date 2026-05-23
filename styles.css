@@ -18,7 +18,7 @@
 
   --text-0: #f3ebdc;       /* warm off-white — primary text */
   --text-1: #a89881;       /* warm muted — secondary text */
-  --text-2: #7a6e5c;       /* quiet — labels, captions */
+  --text-2: #94866f;       /* quiet — labels, captions (WCAG AA on bg-0: 5.1:1) */
 
   --accent:   #e89a53;     /* copper amber */
   --accent-2: #c96a3c;     /* burnt terracotta */
@@ -74,6 +74,47 @@ a:hover { color: var(--accent-hi); }
   outline: 2px solid var(--accent-hi);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* Visually-hidden utility — keeps heading semantics for screen readers
+   and SEO crawlers without painting it on the page. WCAG 1.3.1 friendly. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip-to-content link — visually hidden until keyboard focus brings it
+   in. WCAG 2.4.1 (Bypass Blocks). Every page provides `<main id="top">`
+   as the target. */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-150%);
+  z-index: 10000;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #1a0e06;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+  transition: transform 0.18s var(--ease);
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #1a0e06;
+  outline-offset: 2px;
+  color: #1a0e06;
 }
 
 /* Reduced motion */
