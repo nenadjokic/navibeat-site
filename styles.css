@@ -1189,12 +1189,9 @@ section { padding-block: var(--rhythm); }
 }
 .works-with__pill {
   display: inline-flex;
-  flex-direction: column;
-  gap: 4px;
   background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 14px 18px;
   font-family: var(--font-sans);
   transition: border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease);
 }
@@ -1203,6 +1200,24 @@ section { padding-block: var(--rhythm); }
   background: rgba(232, 154, 83, 0.04);
   transform: translateY(-1px);
 }
+/* Each pill's content is a full-bleed anchor: the whole tile is the
+   click target, the system arrow appears on hover (visited indicator),
+   and color stays inherited so .prose a or :visited overrides do not
+   wash the name out the way the early build 67 beta CTAs did. */
+.works-with__link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 18px;
+  width: 100%;
+  color: var(--text-0);
+  text-decoration: none;
+  border-bottom: 0 !important;
+}
+.works-with__link:hover,
+.works-with__link:visited { color: inherit; }
+.works-with__pill--primary .works-with__link { color: var(--accent-hi); }
+.works-with__pill--any .works-with__link { color: var(--text-1); }
 .works-with__pill--primary {
   background:
     linear-gradient(180deg, rgba(232, 154, 83, 0.08), rgba(232, 154, 83, 0.03)),
