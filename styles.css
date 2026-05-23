@@ -1442,7 +1442,7 @@ section { padding-block: var(--rhythm); }
 }
 .footer__brand img { width: 26px; height: 26px; border-radius: 7px; }
 
-.footer h5 {
+.footer h3 {
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 500;
