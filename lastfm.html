@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>NaviBeat &times; Last.fm — Optional Taste-Intelligence Integration</title>
+  <title>NaviBeat &times; Last.fm: Optional Taste-Intelligence Integration</title>
   <meta name="description" content="NaviBeat's Last.fm integration: opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review, time-machine playlists. Roadmap with live status.">
   <meta name="theme-color" content="#0e0b08">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -12,17 +12,17 @@
   <link rel="canonical" href="https://navibeat.app/lastfm.html">
   <link rel="alternate" hreflang="en" href="https://navibeat.app/lastfm.html">
 
-  <meta property="og:title" content="NaviBeat &times; Last.fm — Optional Taste-Intelligence Integration">
+  <meta property="og:title" content="NaviBeat &times; Last.fm: Optional Taste-Intelligence Integration">
   <meta property="og:description" content="The deepest Last.fm integration of any Subsonic client. Listener counts, similar tracks, Year-in-Review, time-machine playlists. Roadmap with live status inside.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://navibeat.app/lastfm.html">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
-  <meta property="og:image:alt" content="NaviBeat on Mac — native SwiftUI sidebar with Featured Album hero.">
+  <meta property="og:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero.">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="NaviBeat">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NaviBeat &times; Last.fm — Optional Taste-Intelligence Integration">
+  <meta name="twitter:title" content="NaviBeat &times; Last.fm: Optional Taste-Intelligence Integration">
   <meta name="twitter:description" content="Opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review, time-machine playlists.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
 
@@ -67,8 +67,8 @@
       {
         "@type": "Article",
         "@id": "https://navibeat.app/lastfm.html#article",
-        "headline": "NaviBeat × Last.fm — Optional Taste-Intelligence Integration",
-        "name": "NaviBeat × Last.fm — Optional Taste-Intelligence Integration",
+        "headline": "NaviBeat × Last.fm: Optional Taste-Intelligence Integration",
+        "name": "NaviBeat × Last.fm: Optional Taste-Intelligence Integration",
         "description": "NaviBeat's Last.fm integration: opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review, time-machine playlists. Roadmap with live status.",
         "url": "https://navibeat.app/lastfm.html",
         "datePublished": "2026-05-03",
@@ -96,7 +96,7 @@
   </script>
 
   <style>
-    /* ====== Last.fm page — local styles (timeline + comparison) ====== */
+    /* ====== Last.fm page, local styles (timeline + comparison) ====== */
     .lfm-hero { padding: 96px 0 48px; position: relative; overflow: hidden; }
     .lfm-hero__inner { max-width: 760px; }
     .lfm-hero h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: -0.02em; margin: 14px 0 22px; }
@@ -286,7 +286,7 @@
 <div class="beta-banner" role="status">
   <div class="beta-banner__inner">
     <span class="beta-banner__dot" aria-hidden="true"></span>
-    <span><strong>Public TestFlight is open on all five Apple platforms.</strong> Free for ~30 days, then $5.99 on the App Store. <a href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join TestFlight &rarr;</a></span>
+    <span><strong>NaviBeat is live on the App Store.</strong> One $5.99 Universal Purchase for iPhone, iPad, Mac, Apple TV, and Apple Watch. <a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Buy on the App Store &rarr;</a></span>
   </div>
 </div>
 
@@ -303,7 +303,7 @@
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
-      <a class="btn btn--primary btn--compact" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join&nbsp;TestFlight</a>
+      <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
   </div>
 </header>
@@ -327,11 +327,11 @@
         <h1 id="lastfm">The deepest <em>Last.fm integration</em> of any Subsonic client.</h1>
 
         <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
-          <strong style="color: var(--text-0);">TL;DR.</strong> The Last.fm integration is opt-in and read-only inside NaviBeat. Scrobbles never go from the app directly to Last.fm &mdash; they route through your Navidrome server (which already holds your Last.fm credentials). NaviBeat <em>reads</em> Last.fm data to surface listener counts, similar tracks, Year-in-Review, and time-machine playlists inside the player.
+          <strong style="color: var(--text-0);">TL;DR.</strong> The Last.fm integration is opt-in and read-only inside NaviBeat. Scrobbles never go from the app directly to Last.fm: they route through your Navidrome server (which already holds your Last.fm credentials). NaviBeat <em>reads</em> Last.fm data to surface listener counts, similar tracks, Year-in-Review, and time-machine playlists inside the player.
         </aside>
 
         <p class="lfm-sub">
-          Listener counts on Now Playing. Year-in-Review you actually own &mdash; with the same totals on every Apple device. Time Machine playlists from any year you scrobbled. Discover Mix every Monday. Loved tracks synced both ways. <strong>NaviBeat never scrobbles directly to Last.fm</strong> &mdash; that always goes through your Navidrome server. Last.fm is only for reading <em>your</em> data back into the player.
+          Listener counts on Now Playing. Year-in-Review you actually own, with the same totals on every Apple device. Time Machine playlists from any year you scrobbled. Discover Mix every Monday. Loved tracks synced both ways. <strong>NaviBeat never scrobbles directly to Last.fm</strong>, that always goes through your Navidrome server. Last.fm is only for reading <em>your</em> data back into the player.
         </p>
         <div class="p-hero__ctas" style="margin-top: 28px;">
           <a class="btn btn--primary" href="#roadmap">See the roadmap &darr;</a>
@@ -347,19 +347,19 @@
       <div class="lfm-trust__grid">
         <div class="lfm-trust__cell">
           <h4>Read-only by design</h4>
-          <p>NaviBeat reads your Last.fm history to surface insights inside the player. It never writes scrobbles directly &mdash; those always go through your Navidrome server, which you already control.</p>
+          <p>NaviBeat reads your Last.fm history to surface insights inside the player. It never writes scrobbles directly: those always go through your Navidrome server, which you already control.</p>
         </div>
         <div class="lfm-trust__cell">
           <h4>Fully optional</h4>
-          <p>Don&rsquo;t want Last.fm? Don&rsquo;t connect it. NaviBeat works completely without it &mdash; same player, same library, zero external requests. Connecting Last.fm is one tap in Settings.</p>
+          <p>Don&rsquo;t want Last.fm? Don&rsquo;t connect it. NaviBeat works completely without it: same player, same library, zero external requests. Connecting Last.fm is one tap in Settings.</p>
         </div>
         <div class="lfm-trust__cell">
           <h4>Sign in once, sync everywhere</h4>
-          <p>Connect Last.fm on iPhone &mdash; iPad, Mac, Apple TV, and Apple Watch all pick up the session via iCloud Keychain. One sign-in covers your whole Apple ecosystem.</p>
+          <p>Connect Last.fm on iPhone, and iPad, Mac, Apple TV, and Apple Watch all pick up the session via iCloud Keychain. One sign-in covers your whole Apple ecosystem.</p>
         </div>
         <div class="lfm-trust__cell">
           <h4>Same numbers on every device</h4>
-          <p>Year in Review, Discover Mix, Replay, Time Machine &mdash; all derived from your Last.fm history, not from each device&rsquo;s local play count. iPhone, iPad, Mac and Apple TV show identical totals. As of Build 51, no local fallback &mdash; if Last.fm isn&rsquo;t connected the Made for You shelf simply doesn&rsquo;t appear.</p>
+          <p>Year in Review, Discover Mix, Replay, Time Machine: all derived from your Last.fm history, not from each device&rsquo;s local play count. iPhone, iPad, Mac and Apple TV show identical totals. As of Build 51, no local fallback: if Last.fm isn&rsquo;t connected the Made for You shelf simply doesn&rsquo;t appear.</p>
         </div>
       </div>
     </div>
@@ -371,7 +371,7 @@
       <p class="eyebrow eyebrow--accent">What syncs &middot; What doesn&rsquo;t</p>
       <h2 id="sync-coverage">Last.fm sync coverage, in plain terms.</h2>
       <p class="lfm-sync__sub">
-        Last.fm only models one kind of favourite: <em>Loved tracks</em>. There&rsquo;s no Last.fm concept of a loved album, loved artist, or loved playlist &mdash; and no concept of star ratings. NaviBeat&rsquo;s favouriting surface is therefore deliberately scoped to per-song hearts and per-song ratings, the only signals that round-trip cleanly. Album-, artist-, and playlist-level favouriting isn&rsquo;t a NaviBeat feature &mdash; if you want it, the Navidrome web UI already handles it on the server.
+        Last.fm only models one kind of favourite: <em>Loved tracks</em>. There&rsquo;s no Last.fm concept of a loved album, loved artist, or loved playlist, and no concept of star ratings. NaviBeat&rsquo;s favouriting surface is therefore deliberately scoped to per-song hearts and per-song ratings, the only signals that round-trip cleanly. Album-, artist-, and playlist-level favouriting isn&rsquo;t a NaviBeat feature: if you want it, the Navidrome web UI already handles it on the server.
       </p>
       <div class="lfm-sync__grid">
         <div class="lfm-sync__card lfm-sync__card--syncs">
@@ -379,11 +379,11 @@
           <ul>
             <li>
               <span class="lfm-sync__mark" aria-hidden="true">&#10003;</span>
-              <span><strong>Track hearts</strong> &mdash; bidirectional sync since Build 41. Heart a song in NaviBeat, it shows as Loved on Last.fm instantly &mdash; the request goes through your Navidrome server, never direct from the app. Love a track on Last.fm, it&rsquo;s starred in your Navidrome library on the next playback or manual sync.</span>
+              <span><strong>Track hearts</strong>: bidirectional sync since Build 41. Heart a song in NaviBeat, it shows as Loved on Last.fm instantly, the request goes through your Navidrome server, never direct from the app. Love a track on Last.fm, it&rsquo;s starred in your Navidrome library on the next playback or manual sync.</span>
             </li>
             <li>
               <span class="lfm-sync__mark" aria-hidden="true">&#10003;</span>
-              <span><strong>5-star ratings</strong> &mdash; per-song, stored on your Navidrome server via the Subsonic <code>setRating</code> endpoint. Last.fm has no rating concept, so this stays server-only by design.</span>
+              <span><strong>5-star ratings</strong>: per-song, stored on your Navidrome server via the Subsonic <code>setRating</code> endpoint. Last.fm has no rating concept, so this stays server-only by design.</span>
             </li>
           </ul>
         </div>
@@ -392,21 +392,21 @@
           <ul>
             <li>
               <span class="lfm-sync__mark" aria-hidden="true">&oslash;</span>
-              <span><strong>Album favouriting</strong> &mdash; not surfaced in NaviBeat. Last.fm has no album-Loved concept, and no per-song signal can stand in for one. Use Navidrome&rsquo;s web UI if you want album favourites.</span>
+              <span><strong>Album favouriting</strong>: not surfaced in NaviBeat. Last.fm has no album-Loved concept, and no per-song signal can stand in for one. Use Navidrome&rsquo;s web UI if you want album favourites.</span>
             </li>
             <li>
               <span class="lfm-sync__mark" aria-hidden="true">&oslash;</span>
-              <span><strong>Artist favouriting</strong> &mdash; not surfaced in NaviBeat. Last.fm has no artist-Loved concept. Navidrome web UI handles this on the server.</span>
+              <span><strong>Artist favouriting</strong>: not surfaced in NaviBeat. Last.fm has no artist-Loved concept. Navidrome web UI handles this on the server.</span>
             </li>
             <li>
               <span class="lfm-sync__mark" aria-hidden="true">&oslash;</span>
-              <span><strong>Playlist favouriting</strong> &mdash; not surfaced in NaviBeat. Last.fm doesn&rsquo;t track playlist favourites either. Manage these in Navidrome&rsquo;s web UI.</span>
+              <span><strong>Playlist favouriting</strong>: not surfaced in NaviBeat. Last.fm doesn&rsquo;t track playlist favourites either. Manage these in Navidrome&rsquo;s web UI.</span>
             </li>
           </ul>
         </div>
       </div>
       <p class="lfm-sync__note">
-        Heart and star icons in NaviBeat appear at the per-song level only &mdash; on track rows, in Now Playing, and in the queue. Album, artist, and playlist headers don&rsquo;t carry a heart in NaviBeat, because there&rsquo;s no Last.fm signal to round-trip and we&rsquo;d rather draw a clean scope line than ship a half-feature. Every platform (iPhone, iPad, Mac, Apple TV, Apple Watch) follows the same rule. As of Build 51 &mdash; 2026-05-07.
+        Heart and star icons in NaviBeat appear at the per-song level only: on track rows, in Now Playing, and in the queue. Album, artist, and playlist headers don&rsquo;t carry a heart in NaviBeat, because there&rsquo;s no Last.fm signal to round-trip and we&rsquo;d rather draw a clean scope line than ship a half-feature. Every platform (iPhone, iPad, Mac, Apple TV, Apple Watch) follows the same rule. As of Build 51, 2026-05-07.
       </p>
     </div>
   </section>
@@ -417,7 +417,7 @@
       <p class="eyebrow eyebrow--accent">The taste-intelligence gap</p>
       <h2 id="vs">What no other Subsonic client surfaces today.</h2>
       <p class="lfm-vs__sub">
-        Most clients in this space stop at scrobbling &mdash; sending plays to Last.fm and not reading anything back. NaviBeat reads <em>your</em> Last.fm history into the player so the data you&rsquo;ve been generating for years finally pays off as features.
+        Most clients in this space stop at scrobbling: sending plays to Last.fm and not reading anything back. NaviBeat reads <em>your</em> Last.fm history into the player so the data you&rsquo;ve been generating for years finally pays off as features.
       </p>
       <div style="overflow-x: auto;">
         <table class="lfm-table">
@@ -430,19 +430,19 @@
           </thead>
           <tbody>
             <tr><td>Server-side scrobbling via Navidrome</td><td class="cell-yes">&#10003;</td><td class="cell-yes">&#10003; common</td></tr>
-            <tr><td>Listener counts on Now Playing</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>Listener counts on Now Playing</td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
             <tr><td>Top tags on Artist header</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare / partial</td></tr>
             <tr><td>Bidirectional Loved &harr; Starred sync (incl. instant push + pending-intent persistence)</td><td class="cell-yes">&#10003;</td><td class="cell-partial">desktop-only / one-way</td></tr>
             <tr><td>Similar Tracks &amp; Similar Artists rails</td><td class="cell-yes">&#10003;</td><td class="cell-partial">rare / via API only</td></tr>
-            <tr><td>AutoMix &middot; Last.fm continuation when Up Next runs dry</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>Discover Mix &mdash; Last.fm-seeded weekly playlist</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>Replay 2026 &mdash; <code>user.getTopTracks(12month)</code></td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>Time Machine &mdash; date-range playlist from <code>user.getRecentTracks</code></td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>Year-in-Review (Wrapped) with permanent archive + share cards</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>&ldquo;Because You Listened&rdquo; Home rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>&ldquo;On This Day&rdquo; rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>Cross-device-consistent stats (same totals on iPhone / iPad / Mac / TV)</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
-            <tr><td>Made for You shelf on Apple TV</td><td class="cell-yes">&#10003;</td><td class="cell-no">&mdash;</td></tr>
+            <tr><td>AutoMix &middot; Last.fm continuation when Up Next runs dry</td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
+            <tr><td>Discover Mix: Last.fm-seeded weekly playlist</td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
+            <tr><td>Replay 2026: <code>user.getTopTracks(12month)</code></td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
+            <tr><td>Time Machine: date-range playlist from <code>user.getRecentTracks</code></td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
+            <tr><td>Year-in-Review (Wrapped) with permanent archive + share cards</td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
+            <tr><td>&ldquo;Because You Listened&rdquo; Home rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
+            <tr><td>&ldquo;On This Day&rdquo; rail</td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
+            <tr><td>Cross-device-consistent stats (same totals on iPhone / iPad / Mac / TV)</td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
+            <tr><td>Made for You shelf on Apple TV</td><td class="cell-yes">&#10003;</td><td class="cell-no">&times;</td></tr>
           </tbody>
         </table>
       </div>
@@ -472,7 +472,7 @@
           <span class="lfm-step__dot" aria-hidden="true"></span>
           <p class="lfm-step__status">Done &middot; Build 28 &middot; May 2026</p>
           <h3 class="lfm-step__title">Server-side scrobbling via Navidrome</h3>
-          <p class="lfm-step__desc">Every play in NaviBeat hits your Navidrome server&rsquo;s <code>/scrobble</code> endpoint. If you&rsquo;ve configured Navidrome to forward to Last.fm, plays land in your Last.fm history. NaviBeat itself never scrobbles directly &mdash; this is the architecture for every feature below.</p>
+          <p class="lfm-step__desc">Every play in NaviBeat hits your Navidrome server&rsquo;s <code>/scrobble</code> endpoint. If you&rsquo;ve configured Navidrome to forward to Last.fm, plays land in your Last.fm history. NaviBeat itself never scrobbles directly: this is the architecture for every feature below.</p>
         </li>
 
         <li class="lfm-step lfm-step--done">
@@ -514,42 +514,42 @@
           <span class="lfm-step__dot" aria-hidden="true"></span>
           <p class="lfm-step__status">Done &middot; Build 44 + 46 &middot; May 2026</p>
           <h3 class="lfm-step__title">Show on Last.fm context menu</h3>
-          <p class="lfm-step__desc">Long-press any track / album / artist anywhere &mdash; Library, Now Playing, Search, the rails &mdash; for an instant link out to the page on Last.fm. Apple TV has no browser, so it shows a QR code you scan with your phone. Three new toggles in Settings &rarr; Last.fm let you hide each Last.fm surface independently.</p>
+          <p class="lfm-step__desc">Long-press any track / album / artist anywhere (Library, Now Playing, Search, the rails) for an instant link out to the page on Last.fm. Apple TV has no browser, so it shows a QR code you scan with your phone. Three new toggles in Settings &rarr; Last.fm let you hide each Last.fm surface independently.</p>
         </li>
 
         <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
           <p class="lfm-step__status">Done &middot; Build 46 &middot; May 2026</p>
           <h3 class="lfm-step__title">AutoMix &middot; Last.fm</h3>
-          <p class="lfm-step__desc">When the Up Next queue runs dry and AutoMix is on, NaviBeat fetches Last.fm-similar tracks for the current song, resolves them against your library, and queues them up. If your library doesn&rsquo;t have enough matches, AutoMix transparently falls back to your Navidrome server&rsquo;s recommendations &mdash; never breaks. The Up Next panel shows an &ldquo;AutoMix &middot; Last.fm&rdquo; pill when Last.fm is connected so the source is unmistakable.</p>
+          <p class="lfm-step__desc">When the Up Next queue runs dry and AutoMix is on, NaviBeat fetches Last.fm-similar tracks for the current song, resolves them against your library, and queues them up. If your library doesn&rsquo;t have enough matches, AutoMix transparently falls back to your Navidrome server&rsquo;s recommendations, never breaks. The Up Next panel shows an &ldquo;AutoMix &middot; Last.fm&rdquo; pill when Last.fm is connected so the source is unmistakable.</p>
         </li>
 
         <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
           <p class="lfm-step__status">Done &middot; Build 49 &rarr; 51 &middot; May 2026</p>
-          <h3 class="lfm-step__title">Replay 2026 &mdash; your top tracks of the year</h3>
-          <p class="lfm-step__desc">Per-period replays on Home: &ldquo;Replay 2026&rdquo; &mdash; your top-played tracks from the last 12 months, sourced directly from <code>user.getTopTracks(period: 12month)</code> on Last.fm and resolved against your library. <strong>As of Build 51 this is strictly Last.fm-driven</strong> &mdash; no silent local fallback, so the same Replay shows the same songs in the same order on every device. iPhone, iPad, Mac, Apple TV.</p>
+          <h3 class="lfm-step__title">Replay 2026: your top tracks of the year</h3>
+          <p class="lfm-step__desc">Per-period replays on Home: &ldquo;Replay 2026&rdquo;, your top-played tracks from the last 12 months, sourced directly from <code>user.getTopTracks(period: 12month)</code> on Last.fm and resolved against your library. <strong>As of Build 51 this is strictly Last.fm-driven</strong>: no silent local fallback, so the same Replay shows the same songs in the same order on every device. iPhone, iPad, Mac, Apple TV.</p>
         </li>
 
         <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
           <p class="lfm-step__status">Done &middot; Build 49 &rarr; 51 &middot; May 2026</p>
           <h3 class="lfm-step__title">Year in Review</h3>
-          <p class="lfm-step__desc">Year-in-review done right. Wrapped-style 5-slide vertical scroll: top tracks, top artists, top albums, total plays / minutes, top genres. Top Artist and Top Track slides paint their cover art as a blurred full-bleed background. PNG share via SwiftUI <code>ShareLink</code> on macOS, native share sheet on iOS. Hero banner card on Home during December&ndash;February, Settings entry the rest of the year. <strong>Permanent archive</strong> &mdash; every prior calendar year stays accessible, scrolling back to 2003 if you&rsquo;ve scrobbled that long. Spotify Wrapped expires every January; this one stays forever. <strong>Build 51 fix:</strong> totals and top picks now come from <code>user.getTopTracks(12month)</code> overlay, so iPhone, iPad, Mac, and Apple TV all show identical numbers. iPhone, iPad, Mac, Apple TV (no Share on Apple TV); watchOS surface in v1.1.</p>
+          <p class="lfm-step__desc">Year-in-review done right. Wrapped-style 5-slide vertical scroll: top tracks, top artists, top albums, total plays / minutes, top genres. Top Artist and Top Track slides paint their cover art as a blurred full-bleed background. PNG share via SwiftUI <code>ShareLink</code> on macOS, native share sheet on iOS. Hero banner card on Home during December&ndash;February, Settings entry the rest of the year. <strong>Permanent archive</strong>: every prior calendar year stays accessible, scrolling back to 2003 if you&rsquo;ve scrobbled that long. Spotify Wrapped expires every January; this one stays forever. <strong>Build 51 fix:</strong> totals and top picks now come from <code>user.getTopTracks(12month)</code> overlay, so iPhone, iPad, Mac, and Apple TV all show identical numbers. iPhone, iPad, Mac, Apple TV (no Share on Apple TV); watchOS surface in v1.1.</p>
         </li>
 
         <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
           <p class="lfm-step__status">Done &middot; Build 49 &rarr; 51 &middot; May 2026</p>
-          <h3 class="lfm-step__title">Discover Mix &mdash; weekly Monday rotation</h3>
-          <p class="lfm-step__desc">A fresh playlist every Monday, built from your Last.fm top-tracks seeds &rarr; <code>track.getSimilar</code> &rarr; resolved through your library. The &ldquo;new music you&rsquo;d actually like, hidden in your own collection&rdquo; surface. <strong>Build 51 makes this strictly Last.fm-only</strong> &mdash; no local seed fallback, no &ldquo;not enough plays&rdquo; dead-ends on freshly-installed devices. iPhone, iPad, Mac, Apple TV.</p>
+          <h3 class="lfm-step__title">Discover Mix: weekly Monday rotation</h3>
+          <p class="lfm-step__desc">A fresh playlist every Monday, built from your Last.fm top-tracks seeds &rarr; <code>track.getSimilar</code> &rarr; resolved through your library. The &ldquo;new music you&rsquo;d actually like, hidden in your own collection&rdquo; surface. <strong>Build 51 makes this strictly Last.fm-only</strong>: no local seed fallback, no &ldquo;not enough plays&rdquo; dead-ends on freshly-installed devices. iPhone, iPad, Mac, Apple TV.</p>
         </li>
 
         <li class="lfm-step lfm-step--done">
           <span class="lfm-step__dot" aria-hidden="true"></span>
           <p class="lfm-step__status">Done &middot; Build 49 &rarr; 51 &middot; May 2026</p>
           <h3 class="lfm-step__title">Time Machine playlists</h3>
-          <p class="lfm-step__desc">Pick a date range &mdash; &ldquo;May 2024&rdquo;, &ldquo;Five years ago this week&rdquo;, &ldquo;the month I moved to Belgrade&rdquo; &mdash; NaviBeat pulls your scrobbles in that window via the new <code>user.getRecentTracks(from:to:)</code> path, dedupes, and resolves them against your library. Save as a real playlist on your server. Apple TV gets a focus-friendly preset sheet (30 days / 3 months / 6 months / 12 months) since it has no keyboard for free-form date pickers. iPhone, iPad, Mac, Apple TV.</p>
+          <p class="lfm-step__desc">Pick a date range (&ldquo;May 2024&rdquo;, &ldquo;Five years ago this week&rdquo;, &ldquo;the month I moved to Belgrade&rdquo;) and NaviBeat pulls your scrobbles in that window via the new <code>user.getRecentTracks(from:to:)</code> path, dedupes, and resolves them against your library. Save as a real playlist on your server. Apple TV gets a focus-friendly preset sheet (30 days / 3 months / 6 months / 12 months) since it has no keyboard for free-form date pickers. iPhone, iPad, Mac, Apple TV.</p>
         </li>
 
         <li class="lfm-step lfm-step--done">
@@ -584,7 +584,7 @@
           <span class="lfm-step__dot" aria-hidden="true"></span>
           <p class="lfm-step__status">Planned &middot; v1.1</p>
           <h3 class="lfm-step__title">ListenBrainz dual integration</h3>
-          <p class="lfm-step__desc">For listeners who scrobble to <a href="https://listenbrainz.org" target="_blank" rel="noopener">ListenBrainz</a> instead of (or alongside) Last.fm. Same surfaces &mdash; Discover Mix, Time Machine, Year in Review &mdash; backed by the MetaBrainz open dataset. Read-only, opt-in, never written from the app directly.</p>
+          <p class="lfm-step__desc">For listeners who scrobble to <a href="https://listenbrainz.org" target="_blank" rel="noopener">ListenBrainz</a> instead of (or alongside) Last.fm. Same surfaces (Discover Mix, Time Machine, Year in Review) backed by the MetaBrainz open dataset. Read-only, opt-in, never written from the app directly.</p>
         </li>
 
         <li class="lfm-step lfm-step--planned">
@@ -616,11 +616,12 @@
   <section class="lfm-cta">
     <div class="wrap">
       <h2 id="cta">Ready to listen smarter?</h2>
-      <p>Join the public TestFlight on every Apple device. Last.fm features land progressively over the coming weeks.</p>
+      <p>NaviBeat is on the App Store for every Apple device. Last.fm features land progressively in ongoing updates.</p>
       <div class="p-hero__ctas">
-        <a class="btn btn--primary" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join TestFlight &mdash; Free</a>
+        <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Get it on the App Store, $5.99</a>
         <a class="link-quiet" href="index.html">&larr; Back to NaviBeat</a>
       </div>
+      <p style="margin: 14px 0 0; font-size: 13px; color: var(--text-2);">Prefer pre-release builds? <a href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join the TestFlight beta</a>.</p>
     </div>
   </section>
 
@@ -649,7 +650,7 @@
           <li><a href="iphone.html">iPhone</a></li>
           <li><a href="ipad.html">iPad</a></li>
           <li><a href="applewatch.html">Apple Watch</a></li>
-          <li><a href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join TestFlight</a></li>
+          <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </div>
       <div>
@@ -669,8 +670,8 @@
       </div>
     </div>
     <div class="footer__bar">
-      <span>&copy; 2026 Nenad Jokic &mdash; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>v1.0 &middot; Public TestFlight &middot; App Store launch ~30 days</span>
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>v1.0 &middot; On the App Store</span>
     </div>
   </div>
 </footer>

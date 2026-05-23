@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>NaviBeat Support — Server Setup, Playback &amp; Privacy FAQ</title>
+  <title>NaviBeat Support: Server Setup, Playback &amp; Privacy FAQ</title>
   <meta name="description" content="NaviBeat support &amp; FAQ: Navidrome / OpenSubsonic server requirements, &ldquo;Cannot reach server&rdquo; troubleshooting, iPhone Local Network &amp; Private Relay fixes, playback tuning.">
   <meta name="theme-color" content="#0e0b08">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -12,20 +12,20 @@
   <link rel="canonical" href="https://navibeat.app/support.html">
   <link rel="alternate" hreflang="en" href="https://navibeat.app/support.html">
 
-  <meta property="og:title" content="NaviBeat Support — Server setup, playback &amp; privacy FAQ">
+  <meta property="og:title" content="NaviBeat Support: Server setup, playback &amp; privacy FAQ">
   <meta property="og:description" content="Server setup, &ldquo;Cannot reach server&rdquo; troubleshooting, iPhone Local Network &amp; Private Relay triage, playback tuning. Email support@navibeat.app for help.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/support.html">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
-  <meta property="og:image:alt" content="NaviBeat on Mac — native SwiftUI sidebar with Featured Album hero.">
+  <meta property="og:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero.">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="NaviBeat">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NaviBeat Support — Server setup, playback &amp; privacy FAQ">
+  <meta name="twitter:title" content="NaviBeat Support: Server setup, playback &amp; privacy FAQ">
   <meta name="twitter:description" content="Server setup, troubleshooting, privacy FAQ. Email support@navibeat.app for help.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
-  <meta name="twitter:image:alt" content="NaviBeat on Mac — native SwiftUI sidebar.">
+  <meta name="twitter:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -100,7 +100,7 @@
             "name": "The app says \"Cannot reach server\". What do I do?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Check that your Navidrome server is running. Verify the URL you entered including the port number (for example http://192.168.0.110:4533). If you're away from home, make sure the server is reachable from outside your home network (reverse proxy, Tailscale, or similar). If the server uses a self-signed TLS certificate, NaviBeat may reject the connection — use a trusted certificate (Let's Encrypt is free) or contact support."
+              "text": "Check that your Navidrome server is running. Verify the URL you entered including the port number (for example http://192.168.0.110:4533). If you're away from home, make sure the server is reachable from outside your home network (reverse proxy, Tailscale, or similar). If the server uses a self-signed TLS certificate, NaviBeat may reject the connection: use a trusted certificate (Let's Encrypt is free) or contact support."
             }
           },
           {
@@ -116,7 +116,7 @@
             "name": "How do I tell whether NaviBeat lost network access vs. my server being unreachable?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Open NaviBeat on a different device on the same network. If a second device works, the issue is local to the failing device — most often the three iOS network filters (Local Network permission, iCloud Private Relay, VPN profile). If no device can reach it, the server itself is the problem — verify Navidrome is running, the right port is open, and your URL hasn't changed."
+              "text": "Open NaviBeat on a different device on the same network. If a second device works, the issue is local to the failing device, most often the three iOS network filters (Local Network permission, iCloud Private Relay, VPN profile). If no device can reach it, the server itself is the problem: verify Navidrome is running, the right port is open, and your URL hasn't changed."
             }
           },
           {
@@ -124,7 +124,7 @@
             "name": "Playback cuts out or stutters. How do I fix it?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Lower the max bit rate in Settings → Audio to 192 kbps or 128 kbps. Use a wired connection for Apple TV to improve stability. Check your server's CPU and disk usage — if Navidrome is transcoding on a slow machine, playback can lag."
+              "text": "Lower the max bit rate in Settings → Audio to 192 kbps or 128 kbps. Use a wired connection for Apple TV to improve stability. Check your server's CPU and disk usage: if Navidrome is transcoding on a slow machine, playback can lag."
             }
           },
           {
@@ -197,8 +197,8 @@
           { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-universal-purchase", "name": "Universal Purchase", "description": "Apple mechanism where one $5.99 NaviBeat purchase covers iOS, iPadOS, macOS, tvOS, and watchOS." },
           { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-lrc", "name": "LRC lyrics", "description": "Lyrics file format with per-line time stamps. NaviBeat reads LRC from Navidrome and renders them time-synced." },
           { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-automix", "name": "AutoMix", "description": "NaviBeat's endless-playback mode. Uses server similar-track data (optionally Last.fm-enriched)." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-scrobble", "name": "Scrobble", "description": "Reporting a play event to Last.fm. NaviBeat never scrobbles directly — scrobbles route through Navidrome." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-carplay", "name": "CarPlay", "description": "Apple's in-car experience. NaviBeat ships full CarPlay support — library, search, Now Playing." }
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-scrobble", "name": "Scrobble", "description": "Reporting a play event to Last.fm. NaviBeat never scrobbles directly: scrobbles route through Navidrome." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-carplay", "name": "CarPlay", "description": "Apple's in-car experience. NaviBeat ships full CarPlay support: library, search, Now Playing." }
         ]
       }
     ]
@@ -210,7 +210,7 @@
 <div class="beta-banner" role="status">
   <div class="beta-banner__inner">
     <span class="beta-banner__dot" aria-hidden="true"></span>
-    <span><strong>Public TestFlight is open on all five Apple platforms.</strong> Free for ~30 days, then $5.99 on the App Store. <a href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join TestFlight &rarr;</a></span>
+    <span><strong>NaviBeat is live on the App Store.</strong> One $5.99 Universal Purchase for iPhone, iPad, Mac, Apple TV, and Apple Watch. <a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Buy on the App Store &rarr;</a></span>
   </div>
 </div>
 
@@ -227,7 +227,7 @@
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
-      <a class="btn btn--primary btn--compact" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join&nbsp;TestFlight</a>
+      <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
   </div>
 </header>
@@ -238,13 +238,13 @@
   <p class="meta">Get help with NaviBeat</p>
 
   <aside class="tldr" role="doc-tip" aria-label="Quick answer">
-    <p><strong>TL;DR.</strong> NaviBeat is a client &mdash; it needs your own
+    <p><strong>TL;DR.</strong> NaviBeat is a client: it needs your own
        Navidrome (v0.50+) or OpenSubsonic-compatible server. On iPhone, the
        most common &ldquo;connected but no library loads&rdquo; cause is one of
        three iOS network filters: <a href="#local-network">Local Network
        permission</a>, <a href="#private-relay">iCloud Private Relay</a>, or
        <a href="#vpn-profile">an active VPN profile</a>. All data lives on
-       your device or your own server &mdash; nothing is sent to us. Anything
+       your device or your own server, nothing is sent to us. Anything
        not covered below: email
        <a href="mailto:support@navibeat.app">support@navibeat.app</a>.</p>
   </aside>
@@ -272,10 +272,10 @@
     <li id="private-relay"><strong>iCloud Private Relay.</strong> Open <em>Settings &rarr; Apple Account &rarr; iCloud &rarr; Private Relay</em>. If your server is on a private IP (LAN, .local hostname, Tailscale CGNAT range), Private Relay can hijack the request through Apple&rsquo;s relay and fail to reach it. Turn Private Relay OFF temporarily; if the library now loads, that was the cause.</li>
     <li id="vpn-profile"><strong>Active VPN profile.</strong> Open <em>Settings &rarr; General &rarr; VPN &amp; Device Management</em>. A VPN that routes <em>all</em> traffic (rather than splitting LAN traffic) blocks local-network destinations. Disconnect the VPN and try again.</li>
   </ol>
-  <p>The same checks apply to Mac (System Settings &rarr; Privacy &amp; Security &rarr; Local Network), and to Apple TV in a more limited way (no Local Network toggle exists, but a configuration-profile VPN can block server access &mdash; check Settings &rarr; General &rarr; VPN &amp; Device Management on tvOS).</p>
+  <p>The same checks apply to Mac (System Settings &rarr; Privacy &amp; Security &rarr; Local Network), and to Apple TV in a more limited way (no Local Network toggle exists, but a configuration-profile VPN can block server access, check Settings &rarr; General &rarr; VPN &amp; Device Management on tvOS).</p>
 
   <h2 id="lost-network-vs-server-down">How do I tell whether NaviBeat lost network access vs. my server being unreachable?</h2>
-  <p>Open NaviBeat on a different device on the same network. If a second device works, the issue is local to the failing device (most often the three filters above). If <em>no</em> device can reach it, the server itself is the problem &mdash; check that Navidrome is running, the right port is open, and your URL hasn&rsquo;t changed.</p>
+  <p>Open NaviBeat on a different device on the same network. If a second device works, the issue is local to the failing device (most often the three filters above). If <em>no</em> device can reach it, the server itself is the problem: check that Navidrome is running, the right port is open, and your URL hasn&rsquo;t changed.</p>
 
   <h2 id="playback-stutters">Playback cuts out or stutters. How do I fix it?</h2>
   <ul>
@@ -315,16 +315,16 @@
     <dd>Apple's mechanism where one $5.99 purchase covers the iOS, iPadOS, macOS, tvOS, and watchOS apps. Buy NaviBeat once on any Apple device and it installs on the other four for free.</dd>
 
     <dt id="def-lrc">LRC lyrics</dt>
-    <dd>A lyrics file format with per-line time stamps (<code>[mm:ss.xx]</code>). NaviBeat reads LRC straight from your Navidrome and renders them time-synced &mdash; tap any line to seek.</dd>
+    <dd>A lyrics file format with per-line time stamps (<code>[mm:ss.xx]</code>). NaviBeat reads LRC straight from your Navidrome and renders them time-synced: tap any line to seek.</dd>
 
     <dt id="def-automix">AutoMix</dt>
     <dd>NaviBeat's endless-playback mode. When the queue runs out, AutoMix uses your server's similar-track / similar-artist data (optionally enriched via Last.fm) to keep music going without manually building a queue.</dd>
 
     <dt id="def-scrobble">Scrobble</dt>
-    <dd>Reporting a play event to Last.fm so it's recorded in your listening history. NaviBeat <em>never</em> scrobbles directly to Last.fm &mdash; scrobbles route through your Navidrome server (which already holds your Last.fm credentials), keeping the trust boundary on your side.</dd>
+    <dd>Reporting a play event to Last.fm so it's recorded in your listening history. NaviBeat <em>never</em> scrobbles directly to Last.fm: scrobbles route through your Navidrome server (which already holds your Last.fm credentials), keeping the trust boundary on your side.</dd>
 
     <dt id="def-carplay">CarPlay</dt>
-    <dd>Apple's in-car experience that mirrors a subset of an iPhone app on the head-unit display. NaviBeat ships full CarPlay support &mdash; library, search, Now Playing, and continuous-push playback.</dd>
+    <dd>Apple's in-car experience that mirrors a subset of an iPhone app on the head-unit display. NaviBeat ships full CarPlay support: library, search, Now Playing, and continuous-push playback.</dd>
   </dl>
 </div>
 </main>
@@ -344,7 +344,7 @@
         <ul>
           <li><a href="index.html#explore">Apps</a></li>
           <li><a href="index.html#platforms">Platforms</a></li>
-          <li><a href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener">Join TestFlight</a></li>
+          <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </div>
       <div>
@@ -364,8 +364,8 @@
       </div>
     </div>
     <div class="footer__bar">
-      <span>&copy; 2026 Nenad Jokic &mdash; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>v1.0 &middot; Public TestFlight &middot; App Store launch ~30 days</span>
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>v1.0 &middot; On the App Store</span>
     </div>
   </div>
 </footer>
