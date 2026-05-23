@@ -126,6 +126,12 @@
           { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
           { "@type": "SoftwareApplication", "name": "Airsonic-Advanced", "url": "https://github.com/airsonic-advanced/airsonic-advanced" },
           { "@type": "SoftwareApplication", "name": "Gonic", "url": "https://github.com/sentriz/gonic" },
+          { "@type": "SoftwareApplication", "name": "Subsonic", "url": "http://www.subsonic.org/" },
+          { "@type": "SoftwareApplication", "name": "Lyrion Music Server", "url": "https://lyrion.org" },
+          { "@type": "SoftwareApplication", "name": "Astiga", "url": "https://asti.ga" },
+          { "@type": "SoftwareApplication", "name": "Funkwhale", "url": "https://funkwhale.audio" },
+          { "@type": "SoftwareApplication", "name": "Supysonic", "url": "https://github.com/spl0k/supysonic" },
+          { "@type": "SoftwareApplication", "name": "Madsonic", "url": "https://www.madsonic.org" },
           { "@type": "Thing", "name": "OpenSubsonic API" },
           { "@type": "Organization", "name": "Last.fm", "url": "https://www.last.fm" }
         ]
@@ -464,6 +470,33 @@
     </div>
   </section>
 
+  <!-- ============================================ Server compatibility -->
+  <section class="works-with" id="works-with" aria-labelledby="works-with-title">
+    <div class="wrap reveal">
+      <div class="works-with__head">
+        <p class="eyebrow eyebrow--accent">Bring your own server</p>
+        <h2 id="works-with-title" class="h2 works-with__title">Works with the servers you already trust.</h2>
+        <p class="works-with__lede">NaviBeat speaks the OpenSubsonic API. Any server that does the same will pair: drop in your URL and credentials, that is the whole setup.</p>
+      </div>
+      <ul class="works-with__grid" aria-label="Compatible self-hosted music servers">
+        <li class="works-with__pill works-with__pill--primary">
+          <span class="works-with__name">Navidrome</span>
+          <span class="works-with__note">Primary target. v0.50+</span>
+        </li>
+        <li class="works-with__pill"><span class="works-with__name">Airsonic-Advanced</span></li>
+        <li class="works-with__pill"><span class="works-with__name">Gonic</span></li>
+        <li class="works-with__pill"><span class="works-with__name">Subsonic</span></li>
+        <li class="works-with__pill"><span class="works-with__name">Lyrion (LMS)</span></li>
+        <li class="works-with__pill"><span class="works-with__name">Astiga</span></li>
+        <li class="works-with__pill"><span class="works-with__name">Funkwhale</span></li>
+        <li class="works-with__pill"><span class="works-with__name">Supysonic</span></li>
+        <li class="works-with__pill"><span class="works-with__name">Madsonic</span></li>
+        <li class="works-with__pill works-with__pill--any"><span class="works-with__name">Any OpenSubsonic server</span></li>
+      </ul>
+      <p class="works-with__foot">Self-hosted, on a Raspberry Pi, NAS, VPS, or anywhere else. Your library never leaves the box you put it on. New to self-hosting? <a href="https://www.navidrome.org" target="_blank" rel="noopener">Start with Navidrome.</a></p>
+    </div>
+  </section>
+
   <!-- ======================================================= PLATFORMS BAND: real screenshot thumbnails -->
   <section class="platforms" id="platforms" aria-labelledby="platforms-title">
     <div class="wrap">
@@ -620,6 +653,24 @@
         <div style="color:var(--text-2)">telemetry.apple.com <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
         <div style="color:var(--text-2)">crashlytics.io <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
         <div class="manifesto__trace-comment">// only services you authenticated with &middot; 0 hidden third parties</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== About the maker -->
+  <section class="maker" id="maker" aria-labelledby="maker-title">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">About the maker</p>
+      <h2 id="maker-title" class="h2 maker__title">A one-person app, built in the open about what I want to use.</h2>
+      <p class="maker__copy">
+        NaviBeat is built and maintained by <strong>Nenad Jokic</strong>, one person in Belgrade. No team behind a wall, no investors to please, no analytics dashboard somewhere telling me what you listened to last night. The roadmap is shaped by what self-hosters actually ask for: AirPlay routing, Cloudflare Access headers, sleep timer, time-synced lyrics, the things that came in through TestFlight and email.
+      </p>
+      <p class="maker__copy">
+        If something is broken, you can write directly to me. I usually reply within a day.
+      </p>
+      <div class="maker__ctas">
+        <a class="btn btn--ghost btn--compact" href="mailto:nenad.jokic@gmail.com?subject=NaviBeat">Email me</a>
+        <a class="link-quiet" href="beta.html">Join the beta program&nbsp;&rarr;</a>
       </div>
     </div>
   </section>

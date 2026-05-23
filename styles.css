@@ -1122,6 +1122,123 @@ section { padding-block: var(--rhythm); }
 }
 
 /* =============================================================================
+   Works-with band: compatible Subsonic / OpenSubsonic servers
+   ============================================================================= */
+
+.works-with {
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-0), var(--bg-1));
+}
+.works-with__head { max-width: 720px; margin-bottom: 48px; }
+.works-with__title { margin-top: 8px; }
+.works-with__lede {
+  color: var(--text-1);
+  font-size: 17px;
+  line-height: 1.65;
+  margin-top: 16px;
+  font-family: var(--font-sans);
+}
+.works-with__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.works-with__pill {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-family: var(--font-sans);
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.works-with__pill:hover {
+  border-color: rgba(232, 154, 83, 0.35);
+  background: rgba(232, 154, 83, 0.04);
+  transform: translateY(-1px);
+}
+.works-with__pill--primary {
+  background:
+    linear-gradient(180deg, rgba(232, 154, 83, 0.08), rgba(232, 154, 83, 0.03)),
+    var(--bg-2);
+  border-color: rgba(232, 154, 83, 0.32);
+}
+.works-with__pill--any {
+  border-style: dashed;
+  color: var(--text-1);
+}
+.works-with__name {
+  color: var(--text-0);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+}
+.works-with__pill--primary .works-with__name { color: var(--accent-hi); }
+.works-with__note {
+  color: var(--text-2);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.works-with__foot {
+  margin-top: 36px;
+  max-width: 64ch;
+  color: var(--text-1);
+  font-size: 15px;
+  line-height: 1.7;
+  font-family: var(--font-sans);
+}
+.works-with__foot a {
+  color: var(--accent);
+  border-bottom: 1px solid rgba(232, 154, 83, 0.28);
+}
+.works-with__foot a:hover {
+  color: var(--accent-hi);
+  border-bottom-color: var(--accent-hi);
+}
+
+/* =============================================================================
+   About the maker
+   ============================================================================= */
+
+.maker {
+  border-top: 1px solid var(--border);
+  background: var(--bg-0);
+}
+.maker .wrap { max-width: 760px; }
+.maker__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.18;
+  letter-spacing: -0.012em;
+  margin: 12px 0 24px;
+  font-variation-settings: "opsz" 96;
+}
+.maker__copy {
+  color: var(--text-1);
+  font-size: 17px;
+  line-height: 1.72;
+  font-family: var(--font-sans);
+  margin-bottom: 18px;
+  max-width: 64ch;
+}
+.maker__copy strong { color: var(--text-0); font-weight: 600; }
+.maker__ctas {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+/* =============================================================================
    Price band
    ============================================================================= */
 
