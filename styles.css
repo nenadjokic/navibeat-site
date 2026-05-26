@@ -1960,7 +1960,7 @@ section { padding-block: var(--rhythm); }
    bright orange fill and produce a barely-readable cream-on-tan button.
    These resets restore the button's intended colours when it lives
    inside a long-form .prose page. */
-.prose a.btn { color: #1a0e06; border-bottom: none; padding-bottom: 0; }
+.prose a.btn { color: #1a0e06; border-bottom: none; padding-bottom: 13px; }
 .prose a.btn:hover { color: #1a0e06; border-bottom: none; }
 .prose a.btn--ghost { color: var(--text-0); }
 .prose a.btn--ghost:hover { color: var(--accent-hi); }
