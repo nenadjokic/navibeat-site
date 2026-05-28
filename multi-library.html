@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Multi-Library Support for Navidrome and Subsonic | NaviBeat</title>
+  <meta name="description" content="NaviBeat is the only native Apple-ecosystem player with full Navidrome multi-library support: pick one library, all libraries, or any subset on iPhone, iPad, Mac, Apple TV, and Apple Watch.">
+  <meta name="theme-color" content="#0e0b08">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="keywords" content="Navidrome multi-library, Navidrome multiple music folders, Subsonic multi library client, OpenSubsonic music folders, getMusicFolders, musicFolderId, iOS Navidrome client, macOS Navidrome client, Apple TV Navidrome client, multi-library music app">
+
+  <link rel="canonical" href="https://navibeat.app/multi-library.html">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/multi-library.html">
+  <link rel="alternate" hreflang="x-default" href="https://navibeat.app/multi-library.html">
+
+  <meta property="og:title" content="Multi-Library Support for Navidrome and Subsonic | NaviBeat">
+  <meta property="og:description" content="Run multiple Navidrome libraries side by side and switch between them on every Apple device. Picker on iPhone, iPad, Mac, Apple TV. Server-side IN-filter, no client merge. Per-device persistence.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://navibeat.app/multi-library.html">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta property="og:image:alt" content="NaviBeat on Mac with the multi-library picker selected at the top of the sidebar.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Multi-Library Support for Navidrome and Subsonic | NaviBeat">
+  <meta name="twitter:description" content="Run multiple Navidrome libraries side by side on every Apple device. Pick one, all, or any subset. Server-side filter via getMusicFolders + musicFolderId.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+        "sameAs": [
+          "https://www.navidrome.org/apps/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navibeat.app/#website",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat",
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://navibeat.app/multi-library.html#article",
+        "headline": "Multi-Library Support for Navidrome and Subsonic",
+        "name": "Multi-Library Support for Navidrome and Subsonic",
+        "description": "How NaviBeat implements Navidrome's multi-library feature across iPhone, iPad, Mac, Apple TV, and Apple Watch with a server-side musicFolderId filter, getMusicFolders permissions, per-device persistence, and one-tap All / single / subset switching.",
+        "url": "https://navibeat.app/multi-library.html",
+        "datePublished": "2026-05-26",
+        "dateModified": "2026-05-26",
+        "inLanguage": "en",
+        "proficiencyLevel": "Beginner",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Self-hosted music enthusiasts running Navidrome or OpenSubsonic-compatible servers"
+        },
+        "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "url": "https://navibeat.app/#maker" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "about": { "@id": "https://navibeat.app/#app" },
+        "mentions": [
+          { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
+          { "@type": "SoftwareApplication", "name": "OpenSubsonic", "url": "https://opensubsonic.netlify.app" },
+          { "@type": "SoftwareApplication", "name": "Airsonic-Advanced", "url": "https://github.com/airsonic-advanced/airsonic-advanced" },
+          { "@type": "SoftwareApplication", "name": "Gonic", "url": "https://github.com/sentriz/gonic" },
+          { "@type": "Thing", "name": "Subsonic API" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://navibeat.app/multi-library.html#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Multi-Library Support", "item": "https://navibeat.app/multi-library.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://navibeat.app/multi-library.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Navidrome multi-library?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Navidrome 0.55 introduced support for multiple music folders on a single server. Each folder is its own library with its own browse, search, scan schedule, and per-user access rules. Multi-library lets you keep your main collection separate from imported playlists, archival rips, or shared collections without polluting one library's metadata with another."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does NaviBeat support multiple Navidrome libraries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. NaviBeat detects multi-library servers automatically on pair via getMusicFolders, then surfaces a picker at the top of the Library tab on iPhone, at the top of the sidebar on iPad and Mac, and as a pill row above the Library tab strip on Apple TV. Pick All Libraries, a single library, or any subset (N of M). The picker is hidden on single-library servers so it never adds chrome you don't need."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does multi-library filtering work on the network?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Server-side, not client-side. NaviBeat passes the selected library IDs as repeated musicFolderId query parameters on every read API call (getAlbumList2, getArtists, search3, etc.). Navidrome's SQL layer compiles that into an IN-filter and returns only matching rows. There is no client merge step, so pagination, ranking, and Last.fm enrichment all happen exactly as they would on a single-library server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the library selection sync across my Apple devices?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The selection is intentionally per-device, keyed on server + username. Your iPhone can show only your Personal library while your Apple TV shows All Libraries for the family room. If you re-pair, NaviBeat resets the selection so you don't carry a stale subset over to a different account."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens to playback when I change the library selection?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Now Playing queue is its own scope. A track already playing keeps playing even if its source library is deselected; AutoMix continues; Up Next stays intact. The selection only affects browse and search going forward. This matches how the Navidrome web UI handles the same case."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are libraries permission-aware?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. getMusicFolders is permission-scoped on Navidrome, so the picker only ever lists the libraries your authenticated user has access to. If a server admin restricts a user to two of five libraries, NaviBeat shows two."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which servers does this work with?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Navidrome 0.55 and later is the primary target. Any OpenSubsonic-compatible server that implements getMusicFolders with permission scoping and accepts repeated musicFolderId on browse calls will work the same way: Airsonic-Advanced, Gonic, and Subsonic itself. Servers that only return a single folder degrade cleanly: NaviBeat hides the picker and runs as a single-library client."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .ml-hero { padding: 96px 0 48px; position: relative; overflow: hidden; }
+    .ml-hero__inner { max-width: 760px; }
+    .ml-hero h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: -0.02em; margin: 14px 0 22px; }
+    .ml-hero h1 em { font-style: italic; color: var(--accent); }
+    .ml-hero p.ml-sub { color: var(--text-1); font-size: 19px; line-height: 1.6; max-width: 60ch; }
+
+    .ml-pillrow { background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 0; }
+    .ml-pillrow__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (min-width: 960px) { .ml-pillrow__grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
+    @media (max-width: 720px) { .ml-pillrow__grid { grid-template-columns: 1fr; } }
+    .ml-pillrow__cell h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 8px; font-family: 'Inter Tight', sans-serif; font-weight: 600; }
+    .ml-pillrow__cell p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0; }
+
+    .ml-section { padding: 80px 0 40px; }
+    .ml-section h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 0 0 20px; }
+    .ml-section__sub { color: var(--text-1); font-size: 17px; max-width: 64ch; line-height: 1.6; margin: 0 0 36px; }
+
+    .ml-platform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    @media (min-width: 960px) { .ml-platform-grid { grid-template-columns: repeat(5, 1fr); } }
+    @media (max-width: 600px) { .ml-platform-grid { grid-template-columns: 1fr; } }
+    .ml-platform {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 22px 24px;
+    }
+    .ml-platform h3 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+    .ml-platform p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0; }
+    .ml-platform p strong { color: var(--text-0); font-weight: 500; }
+
+    .ml-how { padding: 24px 0 88px; }
+    .ml-how__grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 880px) { .ml-how__grid { grid-template-columns: 1fr 1fr; } }
+    .ml-how__step {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 26px;
+    }
+    .ml-how__num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .ml-how__step h3 { font-family: 'Inter Tight', sans-serif; font-size: 18px; margin: 6px 0 10px; color: var(--text-0); font-weight: 500; }
+    .ml-how__step p { color: var(--text-1); font-size: 14px; line-height: 1.6; margin: 0; }
+    .ml-how__step code {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .ml-quote {
+      background: var(--bg-1);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 0 0 20px;
+    }
+    .ml-quote p { color: var(--text-1); font-size: 15px; line-height: 1.7; margin: 0; font-style: italic; }
+    .ml-quote cite { display: block; margin-top: 10px; color: var(--text-2); font-size: 13px; font-style: normal; }
+
+    .ml-cta { text-align: center; padding: 56px 0 80px; }
+    .ml-cta h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px, 4vw, 44px); margin: 0 0 18px; }
+    .ml-cta p { color: var(--text-1); max-width: 56ch; margin: 0 auto 28px; line-height: 1.6; }
+
+    .ml-faq { padding: 64px 0; background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .ml-faq h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px, 4vw, 44px); margin: 0 0 24px; }
+    .ml-faq__item { border-top: 1px solid var(--border); padding: 18px 0; }
+    .ml-faq__item:last-child { border-bottom: 1px solid var(--border); }
+    .ml-faq__item summary { cursor: pointer; font-family: 'Inter Tight', sans-serif; font-weight: 500; color: var(--text-0); font-size: 17px; padding: 4px 0; }
+    .ml-faq__item summary::-webkit-details-marker { display: none; }
+    .ml-faq__item p { color: var(--text-1); line-height: 1.65; margin: 12px 0 0; font-size: 15px; }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+        <span class="nav__pulse"></span>
+      </span>
+      NaviBeat
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
+      <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
+      <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="ml-hero">
+    <div class="wrap ml-hero__inner">
+      <p class="eyebrow eyebrow--accent">Shipped in v1.0.2 &middot; build 68</p>
+      <h1>One app, every <em>Navidrome library</em> you run.</h1>
+      <p class="ml-sub">
+        NaviBeat is the first native Apple-ecosystem player to fully support Navidrome's multi-library feature. Pick All Libraries, a single library, or any subset, and switch in one tap from iPhone, iPad, Mac, Apple TV, or Apple Watch. The picker only appears when your server actually has more than one library, so single-library setups stay uncluttered.
+      </p>
+    </div>
+  </section>
+
+  <section class="ml-pillrow">
+    <div class="wrap">
+      <div class="ml-pillrow__grid">
+        <div class="ml-pillrow__cell">
+          <h3>Server-side filter</h3>
+          <p>NaviBeat passes the selected library IDs to Navidrome and the server returns only matching rows. No client merge, no double pagination, no broken rankings.</p>
+        </div>
+        <div class="ml-pillrow__cell">
+          <h3>Permission-aware</h3>
+          <p>The picker shows only the libraries your Navidrome user can actually access. Admins keep control; clients stay honest.</p>
+        </div>
+        <div class="ml-pillrow__cell">
+          <h3>Per-device persistence</h3>
+          <p>Your iPhone can show one library while the family-room Apple TV shows them all. Selection is keyed per server + username + device.</p>
+        </div>
+        <div class="ml-pillrow__cell">
+          <h3>Hidden on single libraries</h3>
+          <p>If your server has one folder, the picker never appears. No extra chrome to learn for users who don't need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ml-section">
+    <div class="wrap">
+      <h2>Why multi-library matters</h2>
+      <p class="ml-section__sub">
+        Self-hosted libraries grow into more than one shape over time. A clean main collection, an archival rip set, a 2,500 song migration playlist from a previous service, a shared family folder. In a single-library world, those all merge into one artist tree and one search index, dragging stray tags into your tidy library and disorganizing the artist directory. Multi-library on the server side fixes that. Multi-library in the client is what makes it actually usable on the couch.
+      </p>
+
+      <div class="ml-quote">
+        <p>"My issue with a single library was a ~2500 song playlist with about 1000 different artist tags that were not in my library, adding it to my existing library would disorganize my artist directory. I tried using .ndignore configs and keeping a single library but that made the playlist pointing to the files not populate with the songs."</p>
+        <cite>NaviBeat TestFlight beta tester, May 2026</cite>
+      </div>
+
+      <p class="ml-section__sub" style="margin-top:24px;">
+        That exact use case is what put multi-library in NaviBeat 1.0.2. The pattern shows up everywhere: live-set bootlegs you do not want in your scrobble history, the family's shared Christmas folder, a collection of audiobooks tagged in a way that would otherwise pollute Artists. Each gets its own library on Navidrome and NaviBeat respects the boundary.
+      </p>
+    </div>
+  </section>
+
+  <section class="ml-section" style="padding-top: 24px;">
+    <div class="wrap">
+      <h2>Same feature, every Apple device</h2>
+      <p class="ml-section__sub">
+        Picker wording is identical across platforms: "All Libraries", a single library name, or "N of M libraries". The control adapts to the device's native shape, never feels bolted on.
+      </p>
+
+      <div class="ml-platform-grid">
+        <div class="ml-platform">
+          <h3>iPhone</h3>
+          <p><strong>Top of the Library tab.</strong> Compact picker that expands into a sheet with toggles per library + an "All Libraries" reset row.</p>
+        </div>
+        <div class="ml-platform">
+          <h3>iPad</h3>
+          <p><strong>Top of the sidebar.</strong> Same picker as the Mac, hit-targets sized for touch. Persistent while you browse.</p>
+        </div>
+        <div class="ml-platform">
+          <h3>Mac</h3>
+          <p><strong>Top of the sidebar.</strong> Standard macOS popup with checkmark per library. Matches the Navidrome web UI dropdown semantics.</p>
+        </div>
+        <div class="ml-platform">
+          <h3>Apple TV</h3>
+          <p><strong>Pill row above the Library tab strip.</strong> Focus-driven, remote-friendly. Switches the shelves in place without leaving the screen.</p>
+        </div>
+        <div class="ml-platform">
+          <h3>Apple Watch</h3>
+          <p><strong>Inherits the iPhone selection.</strong> The Watch is a remote for what the phone is set to, so the subset stays consistent on the wrist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ml-how">
+    <div class="wrap">
+      <div class="ml-how__grid">
+        <div class="ml-how__step">
+          <span class="ml-how__num">01 / Detect</span>
+          <h3>getMusicFolders on pair</h3>
+          <p>When you pair a server, NaviBeat calls <code>getMusicFolders</code> and caches the result keyed on server + username. The response is permission-scoped, so users on a restricted account see only their libraries.</p>
+        </div>
+        <div class="ml-how__step">
+          <span class="ml-how__num">02 / Decide</span>
+          <h3>Show or hide the picker</h3>
+          <p>If the response contains more than one library, the picker appears. One library? The picker stays hidden and NaviBeat runs in single-library mode with no UI difference from before.</p>
+        </div>
+        <div class="ml-how__step">
+          <span class="ml-how__num">03 / Filter</span>
+          <h3>Repeated <code>musicFolderId</code> on every read</h3>
+          <p>Every shelf-level call (<code>getAlbumList2</code>, <code>getArtists</code>, <code>search3</code>, <code>getStarred2</code>, <code>getRandomSongs</code>, the per-artist endpoint, the per-playlist endpoint) repeats <code>musicFolderId=...</code> for each selected library. Navidrome's SQL layer compiles this into an IN-filter; ranking and pagination happen server-side.</p>
+        </div>
+        <div class="ml-how__step">
+          <span class="ml-how__num">04 / Persist</span>
+          <h3>Selection stays where it lives</h3>
+          <p>Selected IDs are persisted in <code>UserDefaults</code> keyed by server + username. Re-pair clears the selection on purpose, so a new account starts from "All Libraries". The Now Playing queue is its own scope: the queue keeps its source library identity, so a deselect mid-song never cuts your music.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ml-faq">
+    <div class="wrap">
+      <h2>FAQ</h2>
+
+      <details class="ml-faq__item">
+        <summary>Does this work on Subsonic, Airsonic, Gonic, or only Navidrome?</summary>
+        <p>Any OpenSubsonic-compatible server that implements <code>getMusicFolders</code> with permission scoping and accepts a repeated <code>musicFolderId</code> on browse calls works the same way. Navidrome 0.55+ is the primary target; Airsonic-Advanced and Gonic also work. Servers that only ever return a single folder degrade cleanly: NaviBeat hides the picker and runs as a single-library client.</p>
+      </details>
+
+      <details class="ml-faq__item">
+        <summary>Why is the selection per-device and not synced via iCloud?</summary>
+        <p>Two reasons. First, a typical use case is "phone shows my private library, Apple TV shows the shared family library", and forcing iCloud sync would defeat that. Second, NaviBeat stores nothing in iCloud or any backend: the only services NaviBeat talks to are the ones you signed in to. Per-device selection respects that boundary.</p>
+      </details>
+
+      <details class="ml-faq__item">
+        <summary>Can I scrobble only from one library and ignore another?</summary>
+        <p>Scrobbling is per-track, not per-library, today. If you want to skip scrobbling for a specific library (a podcast archive, an audiobook folder), the cleanest split is to scope that library to a Navidrome user who has Last.fm sync disabled at the server level. We are watching whether per-library scrobble settings show up as a real feature request before adding the surface.</p>
+      </details>
+
+      <details class="ml-faq__item">
+        <summary>Does playback get cut when I deselect a library mid-song?</summary>
+        <p>No. The Now Playing queue is its own scope. A track already playing keeps playing, AutoMix continues, and Up Next stays intact. The selection only affects browse and search going forward. This is the same behavior the Navidrome web UI ships.</p>
+      </details>
+
+      <details class="ml-faq__item">
+        <summary>Does the Last.fm integration respect the library selection?</summary>
+        <p>Listener counts and similar-tracks lookups are driven by individual track metadata, so they always work regardless of library scope. The <a href="lastfm.html">Last.fm features</a> on shelves use whatever you have in front of you: pick All Libraries and the shelf samples from everything; pick one and the shelf draws from that subset.</p>
+      </details>
+
+      <details class="ml-faq__item">
+        <summary>What if a server admin adds a new library after I paired?</summary>
+        <p>The picker re-fetches on every cold start. If a new library appears, it shows up in the picker on next launch and defaults to deselected so your existing scope does not silently widen. You opt in to the new library on your own.</p>
+      </details>
+
+      <details class="ml-faq__item">
+        <summary>Is this a paid add-on?</summary>
+        <p>No. Multi-library is part of NaviBeat 1.0.2 at no extra cost. NaviBeat is a one-time $5.99 Universal Purchase that covers iPhone, iPad, Mac, Apple TV, and Apple Watch.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="ml-cta">
+    <div class="wrap">
+      <h2>Run more than one library? Stop pretending you only have one.</h2>
+      <p>NaviBeat 1.0.2 is the first native Apple-ecosystem player to honor Navidrome's multi-library shape end to end. Buy once, play across all your devices, keep your collections cleanly separated.</p>
+      <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Get NaviBeat on the App Store</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__cols">
+      <div>
+        <a class="nav__brand" href="index.html" style="margin-bottom:14px;">
+          <span class="nav__mark" aria-hidden="true">
+            <img src="assets/icon.svg" alt="">
+          </span>
+          NaviBeat
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="multi-library.html">Multi-Library</a></li>
+          <li><a href="lastfm.html">Last.fm</a></li>
+          <li><a href="appletv.html">Apple TV</a></li>
+          <li><a href="macos.html">Mac</a></li>
+          <li><a href="iphone.html">iPhone</a></li>
+          <li><a href="ipad.html">iPad</a></li>
+          <li><a href="applewatch.html">Apple Watch</a></li>
+          <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+          <li><a href="beta.html">Beta program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>v1.0.2 &middot; On the App Store</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
