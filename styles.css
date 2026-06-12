@@ -405,6 +405,27 @@ section { padding-block: var(--rhythm); }
 .nav__link:hover { color: var(--text-0); }
 .nav__link:hover::after { transform: scaleX(1); }
 
+/* NaviFin cross-promo nav item: gradient icon + gradient label (Jellyfin purple -> blue) */
+.nav__link--navifin {
+  gap: 7px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #c98fe0 0%, #2bb6e6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  transition: filter 0.2s var(--ease);
+}
+.nav__link--navifin:hover { filter: brightness(1.12) saturate(1.1); }
+.nav__link--navifin::after { background: linear-gradient(135deg, #aa5cc3 0%, #00a4dc 100%); }
+.nav__navifin-ic {
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  flex: 0 0 auto;
+  box-shadow: 0 1px 5px rgba(0, 164, 220, 0.40);
+}
+
 @media (max-width: 720px) {
   .nav__links a.nav__link-hide-sm { display: none; }
 }
