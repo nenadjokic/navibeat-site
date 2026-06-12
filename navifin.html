@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaviFin: A Native Jellyfin Client for Apple, From the Makers of NaviBeat</title>
+  <meta name="description" content="NaviFin is the sister app to NaviBeat: a premium native Jellyfin player for Apple TV, Mac, iPad, and iPhone. A hybrid AVPlayer + VLC engine plays anything. In development now, open beta on TestFlight, coming soon to the App Store.">
+  <meta name="theme-color" content="#000b25">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+  <link rel="canonical" href="https://navibeat.app/navifin.html">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/navifin.html">
+
+  <meta property="og:title" content="NaviFin: Native Jellyfin Client for Apple, from the makers of NaviBeat">
+  <meta property="og:description" content="Movies, TV, music, Live TV from your own Jellyfin server, native on Apple TV, Mac, iPad, and iPhone. In development, open beta on TestFlight now.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/navifin.html">
+  <meta property="og:image" content="https://navibeat.app/assets/navifin/tvos-home-demo.png">
+  <meta property="og:image:alt" content="NaviFin running on Apple TV.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviFin: Native Jellyfin Client for Apple">
+  <meta name="twitter:description" content="The sister app to NaviBeat. In development, open beta on TestFlight now.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/navifin/tvos-home-demo.png">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- NaviFin teaser: scoped palette override (Jellyfin navy + purple/blue) on top of the shared NaviBeat stylesheet. -->
+  <style>
+    :root {
+      --bg-0:   #000b25;
+      --bg-1:   #04102e;
+      --bg-2:   #081a3d;
+      --bg-3:   #0c2249;
+      --border:        rgba(159, 176, 208, 0.09);
+      --border-strong: rgba(159, 176, 208, 0.20);
+      --text-0: #eaf0ff;
+      --text-1: #9fb0d0;
+      --text-2: #8295b8;
+      --accent:    #aa5cc3;
+      --accent-2:  #00a4dc;
+      --accent-hi: #c98fe0;
+      --accent-dim: rgba(106, 123, 216, 0.13);
+      --accent-glow: rgba(0, 164, 220, 0.22);
+      --nf-grad: linear-gradient(135deg, #aa5cc3 0%, #00a4dc 100%);
+    }
+
+    .nf-hero {
+      position: relative;
+      padding: 140px 0 96px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .nf-hero::before {
+      content: "";
+      position: absolute;
+      inset: -20% 0 auto;
+      height: 620px;
+      background:
+        radial-gradient(620px 420px at 30% 0%, rgba(170,92,195,0.22), transparent 70%),
+        radial-gradient(620px 420px at 78% 12%, rgba(0,164,220,0.20), transparent 72%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .nf-hero .wrap { position: relative; z-index: 1; }
+
+    .nf-mark {
+      width: 108px; height: 108px;
+      border-radius: 26px;
+      display: inline-block;
+      box-shadow: 0 18px 60px rgba(0,164,220,0.28), 0 4px 14px rgba(0,0,0,0.5);
+      margin-bottom: 28px;
+    }
+
+    .nf-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-1);
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      padding: 7px 16px;
+      margin-bottom: 30px;
+    }
+    .nf-kicker .nf-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #00a4dc;
+      box-shadow: 0 0 0 0 rgba(0,164,220,0.6);
+      animation: nfpulse 2.2s var(--ease) infinite;
+    }
+    @keyframes nfpulse {
+      0%   { box-shadow: 0 0 0 0 rgba(0,164,220,0.55); }
+      70%  { box-shadow: 0 0 0 10px rgba(0,164,220,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,164,220,0); }
+    }
+
+    .nf-wordmark {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(56px, 9vw, 104px);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px;
+    }
+    .nf-wordmark .nf-grad {
+      background: var(--nf-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .nf-lede {
+      max-width: 38ch;
+      margin: 0 auto 14px;
+      font-size: clamp(18px, 2.2vw, 22px);
+      line-height: 1.55;
+      color: var(--text-0);
+    }
+    .nf-sub {
+      max-width: 52ch;
+      margin: 0 auto 40px;
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--text-1);
+    }
+
+    .nf-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn--nf {
+      background: var(--nf-grad);
+      color: #fff;
+      border: none;
+    }
+    .btn--nf:hover { color: #fff; transform: translateY(-2px); filter: brightness(1.06); }
+    .nf-soon-pill {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--text-2);
+      border: 1px dashed var(--border-strong);
+      border-radius: 999px;
+      padding: 9px 16px;
+    }
+
+    .nf-section { padding: 0 0 var(--rhythm); }
+    .nf-section-pad { padding: var(--rhythm) 0; }
+
+    .nf-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 760px) { .nf-cards { grid-template-columns: 1fr; } }
+    .nf-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 26px 28px;
+    }
+    .nf-card h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 21px;
+      margin: 0 0 10px;
+      color: var(--text-0);
+    }
+    .nf-card p { margin: 0; color: var(--text-1); font-size: 15px; line-height: 1.65; }
+    .nf-card .nf-ic {
+      display: inline-grid; place-items: center;
+      width: 40px; height: 40px; border-radius: 11px;
+      background: var(--accent-dim);
+      margin-bottom: 16px;
+      font-size: 19px;
+    }
+
+    .nf-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin: 0 0 14px;
+      text-align: center;
+    }
+    .nf-h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      text-align: center;
+      margin: 0 auto 16px;
+      max-width: 18ch;
+      color: var(--text-0);
+    }
+    .nf-h2-sub {
+      text-align: center;
+      max-width: 56ch;
+      margin: 0 auto;
+      color: var(--text-1);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .nf-shots {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 18px;
+      margin-top: 44px;
+    }
+    @media (max-width: 760px) { .nf-shots { grid-template-columns: 1fr; } }
+    .nf-shot {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg-1);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.45);
+    }
+    .nf-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    .nf-soon {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 48px 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .nf-soon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 36px;
+      text-align: left;
+    }
+    @media (max-width: 760px) { .nf-soon-grid { grid-template-columns: 1fr; } }
+    .nf-soon-item { padding: 18px 20px; border-left: 2px solid; border-image: var(--nf-grad) 1; }
+    .nf-soon-item .s-label { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-2); }
+    .nf-soon-item .s-title { font-family: var(--font-display); font-size: 19px; color: var(--text-0); margin: 6px 0 6px; }
+    .nf-soon-item p { margin: 0; color: var(--text-1); font-size: 14px; line-height: 1.6; }
+
+    .nf-disclaimer {
+      max-width: 60ch;
+      margin: 56px auto 0;
+      text-align: center;
+      color: var(--text-2);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://navibeat.app/navifin.html#webpage",
+        "url": "https://navibeat.app/navifin.html",
+        "name": "NaviFin: A Native Jellyfin Client for Apple",
+        "description": "NaviFin is the sister app to NaviBeat: a native Jellyfin player for Apple TV, Mac, iPad, and iPhone. In development, open beta on TestFlight, coming soon to the App Store.",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "author": { "@type": "Person", "name": "Nenad Jokic" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "NaviFin",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Jellyfin Media Client",
+        "operatingSystem": "iOS, iPadOS, macOS, tvOS",
+        "description": "Native Apple-ecosystem client for Jellyfin media servers. Hybrid AVPlayer + VLC playback engine plays anything: movies, TV, music, and Live TV. In open beta.",
+        "softwareVersion": "Beta",
+        "author": { "@type": "Person", "name": "Nenad Jokic" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://navibeat.app/navifin.html#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://navibeat.app/" },
+          { "@type": "ListItem", "position": 2, "name": "NaviFin", "item": "https://navibeat.app/navifin.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+        <span class="nav__pulse"></span>
+      </span>
+      NaviBeat
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
+      <a href="navifin.html" class="nav__link" aria-current="page">NaviFin</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a class="btn btn--primary btn--compact" href="https://testflight.apple.com/join/jqZHddJn" target="_blank" rel="noopener">Join&nbsp;Beta</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="nf-hero">
+    <div class="wrap">
+      <img class="nf-mark" src="assets/navifin/navifin-icon.svg" alt="NaviFin app icon" width="108" height="108">
+      <div>
+        <span class="nf-kicker"><span class="nf-dot" aria-hidden="true"></span>From the makers of NaviBeat &middot; In development</span>
+      </div>
+      <h1 class="nf-wordmark"><span class="nf-grad">NaviFin</span></h1>
+      <p class="nf-lede">Your Jellyfin library, native on every Apple screen.</p>
+      <p class="nf-sub">If NaviBeat is how you own your music, NaviFin is how you own your movies, TV, music, and Live TV. A premium native Jellyfin player for Apple&nbsp;TV, Mac, iPad, and iPhone, with a hybrid AVPlayer&nbsp;+&nbsp;VLC engine that plays anything you throw at it.</p>
+      <div class="nf-cta">
+        <a class="btn btn--nf" href="https://testflight.apple.com/join/jqZHddJn" target="_blank" rel="noopener">Try the beta on TestFlight</a>
+        <span class="nf-soon-pill">App Store &middot; coming soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT IT IS ===== -->
+  <section class="nf-section">
+    <div class="wrap" style="max-width: 980px;">
+      <p class="nf-eyebrow">A sister app, same DNA</p>
+      <h2 class="nf-h2">Same maker. Same principles. A different server.</h2>
+      <p class="nf-h2-sub">NaviFin is built by the same person, in the same city, with the same rule: your media lives on your server, and the app has no backend of its own. NaviBeat speaks Subsonic to Navidrome; NaviFin speaks the Jellyfin API to your Jellyfin server. Both stay out of your way.</p>
+
+      <div class="nf-cards">
+        <div class="nf-card">
+          <span class="nf-ic" aria-hidden="true">&#9654;</span>
+          <h3>It just plays</h3>
+          <p>A hybrid AVPlayer&nbsp;+&nbsp;VLC engine handles whatever AVPlayer alone cannot: every codec, every container, every odd file in your library. No transcoding gymnastics on the server.</p>
+        </div>
+        <div class="nf-card">
+          <span class="nf-ic" aria-hidden="true">&#128274;</span>
+          <h3>Your Jellyfin, no cloud in between</h3>
+          <p>NaviFin connects only to the server you sign in to. No analytics, no tracking, no hidden services. Credentials stay in the device Keychain. We never see your library.</p>
+        </div>
+        <div class="nf-card">
+          <span class="nf-ic" aria-hidden="true">&#127916;</span>
+          <h3>Movies, TV, music, Live TV</h3>
+          <p>Your whole Jellyfin library, native: cinematic Apple&nbsp;TV browsing, resume points that sync back to the server, downloads for the plane on iPhone and iPad.</p>
+        </div>
+        <div class="nf-card">
+          <span class="nf-ic" aria-hidden="true">&#127968;</span>
+          <h3>One purchase, every device</h3>
+          <p>Like NaviBeat, NaviFin is planned as a single Universal Purchase that covers Apple&nbsp;TV, Mac, iPad, and iPhone. Buy once, own it on every screen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PEEK ===== -->
+  <section class="nf-section">
+    <div class="wrap" style="max-width: 1080px;">
+      <p class="nf-eyebrow">An early look</p>
+      <h2 class="nf-h2">Coming together now</h2>
+      <p class="nf-h2-sub">These are real builds in active development. Things are still moving, which is exactly why the beta exists, so testers can shape it before it ships.</p>
+      <div class="nf-shots">
+        <div class="nf-shot"><img src="assets/navifin/tvos-home-demo.png" alt="NaviFin home on Apple TV" loading="lazy"></div>
+        <div class="nf-shot"><img src="assets/navifin/iphone-home.png" alt="NaviFin home on iPhone" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMING SOON ===== -->
+  <section class="nf-section">
+    <div class="wrap" style="max-width: 980px;">
+      <div class="nf-soon">
+        <p class="nf-eyebrow" style="color: var(--text-2);">Where things stand</p>
+        <h2 class="nf-h2" style="margin-bottom: 10px;">In development. Beta open today.</h2>
+        <p class="nf-h2-sub">NaviFin is not on the App Store yet, and it does not have its own website yet. Both are on the way. For now, this is the place to find it, and TestFlight is the way in.</p>
+
+        <div class="nf-soon-grid">
+          <div class="nf-soon-item">
+            <div class="s-label">Now</div>
+            <div class="s-title">Open beta</div>
+            <p>Join on TestFlight and try early builds across Apple TV, Mac, iPad, and iPhone. Your feedback shapes the first release.</p>
+          </div>
+          <div class="nf-soon-item">
+            <div class="s-label">Soon</div>
+            <div class="s-title">On the App Store</div>
+            <p>NaviFin is heading to the App Store as a Universal Purchase, the same way NaviBeat ships across the Apple ecosystem.</p>
+          </div>
+          <div class="nf-soon-item">
+            <div class="s-label">Soon</div>
+            <div class="s-title">Its own website</div>
+            <p>A dedicated NaviFin marketing site is in the works. Until it lands, this teaser is home base.</p>
+          </div>
+        </div>
+
+        <div class="nf-cta" style="margin-top: 40px;">
+          <a class="btn btn--nf" href="https://testflight.apple.com/join/jqZHddJn" target="_blank" rel="noopener">Join the NaviFin beta</a>
+          <a class="btn btn--ghost" href="index.html">Back to NaviBeat</a>
+        </div>
+      </div>
+
+      <p class="nf-disclaimer">NaviFin is an independent client, not affiliated with or endorsed by the Jellyfin project. A Jellyfin server is required. NaviFin connects only to the server you point it at. New to Jellyfin? Start at <a href="https://jellyfin.org" target="_blank" rel="noopener">jellyfin.org</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="index.html">
+          <img src="assets/icon.svg" alt="">
+          NaviBeat
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="index.html#explore">Apps</a></li>
+          <li><a href="index.html#platforms">Platforms</a></li>
+          <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
+          <li><a href="navifin.html">NaviFin (Jellyfin)</a></li>
+          <li><a href="beta.html">Beta program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>NaviFin &middot; In beta</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    var apply = function () {
+      if (window.scrollY > 8) { nav.classList.add('is-scrolled'); }
+      else { nav.classList.remove('is-scrolled'); }
+    };
+    apply();
+    window.addEventListener('scroll', apply, { passive: true });
+  })();
+</script>
+
+</body>
+</html>
