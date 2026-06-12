@@ -212,8 +212,8 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/navifin.html" />
     <image:image>
-      <image:loc>https://navibeat.app/assets/navifin/tvos-home-demo.png</image:loc>
-      <image:title>NaviFin on Apple TV — native Jellyfin client home</image:title>
+      <image:loc>https://navibeat.app/assets/navifin/macos-gladiator.jpg</image:loc>
+      <image:title>NaviFin movie detail on Mac — native Jellyfin client</image:title>
     </image:image>
   </url>
 

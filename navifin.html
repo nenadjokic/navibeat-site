@@ -16,15 +16,15 @@
   <meta property="og:description" content="Movies, TV, music, Live TV from your own Jellyfin server, native on Apple TV, Mac, iPad, and iPhone. In development, open beta on TestFlight now.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/navifin.html">
-  <meta property="og:image" content="https://navibeat.app/assets/navifin/tvos-home-demo.png">
-  <meta property="og:image:alt" content="NaviFin running on Apple TV.">
+  <meta property="og:image" content="https://navibeat.app/assets/navifin/macos-gladiator.jpg">
+  <meta property="og:image:alt" content="NaviFin movie detail page running on Mac.">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="NaviBeat">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NaviFin: Native Jellyfin Client for Apple">
   <meta name="twitter:description" content="The sister app to NaviBeat. In development, open beta on TestFlight now.">
-  <meta name="twitter:image" content="https://navibeat.app/assets/navifin/tvos-home-demo.png">
+  <meta name="twitter:image" content="https://navibeat.app/assets/navifin/macos-gladiator.jpg">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -226,21 +226,26 @@
       line-height: 1.7;
     }
 
-    .nf-shots {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: 18px;
-      margin-top: 44px;
-    }
-    @media (max-width: 760px) { .nf-shots { grid-template-columns: 1fr; } }
-    .nf-shot {
+    .nf-gallery { margin-top: 44px; display: grid; gap: 18px; }
+    .nf-gallery__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    @media (max-width: 760px) { .nf-gallery__grid { grid-template-columns: 1fr; } }
+    .nf-figure { margin: 0; }
+    .nf-frame {
       border: 1px solid var(--border);
       border-radius: 16px;
       overflow: hidden;
       background: var(--bg-1);
       box-shadow: 0 16px 50px rgba(0,0,0,0.45);
     }
-    .nf-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .nf-frame img { display: block; width: 100%; height: auto; }
+    .nf-cap {
+      margin: 12px 4px 0;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-2);
+    }
 
     .nf-soon {
       background: var(--bg-1);
@@ -387,10 +392,30 @@
     <div class="wrap" style="max-width: 1080px;">
       <p class="nf-eyebrow">An early look</p>
       <h2 class="nf-h2">Coming together now</h2>
-      <p class="nf-h2-sub">These are real builds in active development. Things are still moving, which is exactly why the beta exists, so testers can shape it before it ships.</p>
-      <div class="nf-shots">
-        <div class="nf-shot"><img src="assets/navifin/tvos-home-demo.png" alt="NaviFin home on Apple TV" loading="lazy"></div>
-        <div class="nf-shot"><img src="assets/navifin/iphone-home.png" alt="NaviFin home on iPhone" loading="lazy"></div>
+      <p class="nf-h2-sub">These are real builds in active development, here on the Mac. Things are still moving, which is exactly why the beta exists, so testers can shape it before it ships.</p>
+      <div class="nf-gallery">
+        <figure class="nf-figure">
+          <div class="nf-frame"><img src="assets/navifin/macos-gladiator.jpg" alt="NaviFin movie detail page on Mac, showing a film with cast, ratings, and a resume button" loading="lazy" width="1800" height="1391"></div>
+          <figcaption class="nf-cap">Movie detail &middot; Mac</figcaption>
+        </figure>
+        <div class="nf-gallery__grid">
+          <figure class="nf-figure">
+            <div class="nf-frame"><img src="assets/navifin/macos-starwars.jpg" alt="NaviFin cinematic movie detail page on Mac" loading="lazy" width="1800" height="1391"></div>
+            <figcaption class="nf-cap">Cinematic browsing</figcaption>
+          </figure>
+          <figure class="nf-figure">
+            <div class="nf-frame"><img src="assets/navifin/macos-actor.png" alt="NaviFin actor page on Mac, browsing a performer's filmography" loading="lazy" width="1800" height="1391"></div>
+            <figcaption class="nf-cap">People &amp; filmographies</figcaption>
+          </figure>
+          <figure class="nf-figure">
+            <div class="nf-frame"><img src="assets/navifin/macos-livetv-channels.png" alt="NaviFin Live TV channel list on Mac" loading="lazy" width="1800" height="1391"></div>
+            <figcaption class="nf-cap">Live TV &middot; Channels</figcaption>
+          </figure>
+          <figure class="nf-figure">
+            <div class="nf-frame"><img src="assets/navifin/macos-livetv-guide.png" alt="NaviFin Live TV program guide on Mac" loading="lazy" width="1800" height="1391"></div>
+            <figcaption class="nf-cap">Live TV &middot; Guide</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
