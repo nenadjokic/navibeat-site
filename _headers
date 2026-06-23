@@ -13,6 +13,14 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Root-level unhashed assets: cache a day, revalidate in the background.
+/styles.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/lightbox.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/manifest.json
+  Cache-Control: public, max-age=86400
+
 # HTML responses kept fresh.
 /*.html
   Cache-Control: public, max-age=300, must-revalidate

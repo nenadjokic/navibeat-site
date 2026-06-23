@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>NaviFin: A Native Jellyfin Client for Apple, From the Makers of NaviBeat</title>
-  <meta name="description" content="NaviFin is the sister app to NaviBeat: a premium native Jellyfin player for Apple TV, Mac, iPad, and iPhone. A hybrid AVPlayer + VLC engine plays anything. In development now, open beta on TestFlight, coming soon to the App Store.">
+  <meta name="description" content="NaviFin, the sister app to NaviBeat: a native Jellyfin player for Apple TV, Mac, iPad, and iPhone. Hybrid AVPlayer + VLC plays anything. Open beta on TestFlight now.">
   <meta name="theme-color" content="#000b25">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
@@ -25,6 +25,7 @@
   <meta name="twitter:title" content="NaviFin: Native Jellyfin Client for Apple">
   <meta name="twitter:description" content="The sister app to NaviBeat. In development, open beta on TestFlight now.">
   <meta name="twitter:image" content="https://navibeat.app/assets/navifin/macos-gladiator.png">
+  <meta name="twitter:image:alt" content="NaviFin movie detail page running on Mac.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -277,6 +278,25 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+        "sameAs": [ "https://www.navidrome.org/apps/" ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navibeat.app/#website",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat",
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
         "@type": "WebPage",
         "@id": "https://navibeat.app/navifin.html#webpage",
         "url": "https://navibeat.app/navifin.html",
@@ -284,16 +304,21 @@
         "description": "NaviFin is the sister app to NaviBeat: a native Jellyfin player for Apple TV, Mac, iPad, and iPhone. In development, open beta on TestFlight, coming soon to the App Store.",
         "inLanguage": "en",
         "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "about": { "@id": "https://navibeat.app/navifin.html#app" },
         "author": { "@type": "Person", "name": "Nenad Jokic" }
       },
       {
         "@type": "SoftwareApplication",
+        "@id": "https://navibeat.app/navifin.html#app",
+        "url": "https://navibeat.app/navifin.html",
         "name": "NaviFin",
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Jellyfin Media Client",
         "operatingSystem": "iOS, iPadOS, macOS, tvOS",
         "description": "Native Apple-ecosystem client for Jellyfin media servers. Hybrid AVPlayer + VLC playback engine plays anything: movies, TV, music, and Live TV. In open beta.",
         "softwareVersion": "Beta",
+        "image": "https://navibeat.app/assets/navifin/navifin-icon.svg",
         "author": { "@type": "Person", "name": "Nenad Jokic" }
       },
       {
@@ -320,11 +345,14 @@
       </span>
       NaviBeat
     </a>
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <a href="navifin.html" class="nav__link nav__link--navifin" aria-current="page"><img src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
       <a class="btn btn--primary btn--compact" href="https://testflight.apple.com/join/jqZHddJn" target="_blank" rel="noopener">Join&nbsp;Beta</a>
     </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -503,6 +531,17 @@
     };
     apply();
     window.addEventListener('scroll', apply, { passive: true });
+    var navToggle = nav.querySelector('.nav__toggle');
+    if (navToggle) {
+      var setNav = function (open) {
+        nav.classList.toggle('nav--open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+      nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+    }
   })();
 </script>
 

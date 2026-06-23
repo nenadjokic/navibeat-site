@@ -5,176 +5,176 @@
 
   <url>
     <loc>https://navibeat.app/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://navibeat.app/" />
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg</image:loc>
-      <image:title>NaviBeat on Apple TV — Navidrome client home screen</image:title>
+      <image:title>NaviBeat on Apple TV: Navidrome client home screen</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png</image:loc>
-      <image:title>NaviBeat on Mac — native Navidrome client home</image:title>
+      <image:title>NaviBeat on Mac: native Navidrome client home</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/ipad/navibeat-ipad-home.jpg</image:loc>
-      <image:title>NaviBeat on iPad Pro — sidebar Navidrome library</image:title>
+      <image:title>NaviBeat on iPad Pro: sidebar Navidrome library</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-now-playing.jpg</image:loc>
-      <image:title>NaviBeat on iPhone — full-screen Now Playing</image:title>
+      <image:title>NaviBeat on iPhone: full-screen Now Playing</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png</image:loc>
-      <image:title>NaviBeat on Apple Watch — wrist Now Playing</image:title>
+      <image:title>NaviBeat on Apple Watch: wrist Now Playing</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://navibeat.app/appletv.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/appletv.html" />
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg</image:loc>
-      <image:title>NaviBeat Apple TV — Featured Album hero on tvOS 18+</image:title>
+      <image:title>NaviBeat Apple TV: Featured Album hero on tvOS 18+</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-library-albums.jpg</image:loc>
-      <image:title>NaviBeat Apple TV — focus-driven Albums grid</image:title>
+      <image:title>NaviBeat Apple TV: focus-driven Albums grid</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-library-artists.jpg</image:loc>
-      <image:title>NaviBeat Apple TV — Artists shelf</image:title>
+      <image:title>NaviBeat Apple TV: Artists shelf</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-radio-stations.jpg</image:loc>
-      <image:title>NaviBeat Apple TV — internet radio stations</image:title>
+      <image:title>NaviBeat Apple TV: internet radio stations</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-search.jpg</image:loc>
-      <image:title>NaviBeat Apple TV — search across the Navidrome library</image:title>
+      <image:title>NaviBeat Apple TV: search across the Navidrome library</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-artist-bio.jpg</image:loc>
-      <image:title>NaviBeat Apple TV — artist bio + top tracks</image:title>
+      <image:title>NaviBeat Apple TV: artist bio + top tracks</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-album-tracks.jpg</image:loc>
-      <image:title>NaviBeat Apple TV — album tracks view</image:title>
+      <image:title>NaviBeat Apple TV: album tracks view</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-now-playing-queue.jpg</image:loc>
-      <image:title>NaviBeat Apple TV — Now Playing with Up Next queue</image:title>
+      <image:title>NaviBeat Apple TV: Now Playing with Up Next queue</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-lyrics-synced.jpg</image:loc>
-      <image:title>NaviBeat Apple TV — time-synced LRC lyrics</image:title>
+      <image:title>NaviBeat Apple TV: time-synced LRC lyrics</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://navibeat.app/macos.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/macos.html" />
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png</image:loc>
-      <image:title>NaviBeat Mac — native SwiftUI sidebar home</image:title>
+      <image:title>NaviBeat Mac: native SwiftUI sidebar home</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-albums.png</image:loc>
-      <image:title>NaviBeat Mac — Albums grid</image:title>
+      <image:title>NaviBeat Mac: Albums grid</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-artists.png</image:loc>
-      <image:title>NaviBeat Mac — Artists list</image:title>
+      <image:title>NaviBeat Mac: Artists list</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-genres.png</image:loc>
-      <image:title>NaviBeat Mac — Genres browser</image:title>
+      <image:title>NaviBeat Mac: Genres browser</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-playlists.png</image:loc>
-      <image:title>NaviBeat Mac — Playlists list</image:title>
+      <image:title>NaviBeat Mac: Playlists list</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-radios.png</image:loc>
-      <image:title>NaviBeat Mac — internet radios</image:title>
+      <image:title>NaviBeat Mac: internet radios</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-directories.png</image:loc>
-      <image:title>NaviBeat Mac — directory browser</image:title>
+      <image:title>NaviBeat Mac: directory browser</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-lyrics-panel.png</image:loc>
-      <image:title>NaviBeat Mac — time-synced lyrics panel</image:title>
+      <image:title>NaviBeat Mac: time-synced lyrics panel</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-mini-player.png</image:loc>
-      <image:title>NaviBeat Mac — Mini Player pin-on-top</image:title>
+      <image:title>NaviBeat Mac: Mini Player pin-on-top</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-mini-lyrics.png</image:loc>
-      <image:title>NaviBeat Mac — Mini Player with lyrics</image:title>
+      <image:title>NaviBeat Mac: Mini Player with lyrics</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://navibeat.app/iphone.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/iphone.html" />
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-now-playing.jpg</image:loc>
-      <image:title>NaviBeat iPhone — full-screen Now Playing on iOS 18+</image:title>
+      <image:title>NaviBeat iPhone: full-screen Now Playing on iOS 18+</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-lyrics.jpg</image:loc>
-      <image:title>NaviBeat iPhone — time-synced LRC lyrics</image:title>
+      <image:title>NaviBeat iPhone: time-synced LRC lyrics</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-queue.jpg</image:loc>
-      <image:title>NaviBeat iPhone — Up Next queue</image:title>
+      <image:title>NaviBeat iPhone: Up Next queue</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://navibeat.app/ipad.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/ipad.html" />
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/ipad/navibeat-ipad-home.jpg</image:loc>
-      <image:title>NaviBeat iPad Pro — sidebar + detail home on iPadOS 18+</image:title>
+      <image:title>NaviBeat iPad Pro: sidebar + detail home on iPadOS 18+</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/ipad/navibeat-ipad-lyrics.jpg</image:loc>
-      <image:title>NaviBeat iPad — time-synced LRC lyrics</image:title>
+      <image:title>NaviBeat iPad: time-synced LRC lyrics</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://navibeat.app/applewatch.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/applewatch.html" />
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png</image:loc>
-      <image:title>NaviBeat Apple Watch — wrist Now Playing on watchOS 11+</image:title>
+      <image:title>NaviBeat Apple Watch: wrist Now Playing on watchOS 11+</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://navibeat.app/lastfm.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/lastfm.html" />
@@ -182,7 +182,7 @@
 
   <url>
     <loc>https://navibeat.app/multi-library.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/multi-library.html" />
@@ -191,7 +191,7 @@
 
   <url>
     <loc>https://navibeat.app/support.html</loc>
-    <lastmod>2026-05-13</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/support.html" />
@@ -199,7 +199,7 @@
 
   <url>
     <loc>https://navibeat.app/privacy.html</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/privacy.html" />
@@ -207,14 +207,30 @@
 
   <url>
     <loc>https://navibeat.app/navifin.html</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/navifin.html" />
     <image:image>
       <image:loc>https://navibeat.app/assets/navifin/macos-gladiator.png</image:loc>
-      <image:title>NaviFin movie detail on Mac — native Jellyfin client</image:title>
+      <image:title>NaviFin movie detail on Mac: native Jellyfin client</image:title>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://navibeat.app/widgets.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/widgets.html" />
+  </url>
+
+  <url>
+    <loc>https://navibeat.app/beta.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/beta.html" />
   </url>
 
 </urlset>

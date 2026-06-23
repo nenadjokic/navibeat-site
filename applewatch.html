@@ -7,6 +7,7 @@
   <title>NaviBeat for Apple Watch: Navidrome Client for watchOS</title>
   <meta name="description" content="Native Apple Watch client for Navidrome and OpenSubsonic. Offline playback from your wrist, Digital Crown volume, Now Playing. $5.99 Universal Purchase.">
   <meta name="theme-color" content="#0e0b08">
+  <meta name="apple-itunes-app" content="app-id=6763518834">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <link rel="canonical" href="https://navibeat.app/applewatch.html">
@@ -74,7 +75,7 @@
         "primaryImageOfPage": "https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png",
         "inLanguage": "en",
         "datePublished": "2026-04-18",
-        "dateModified": "2026-05-13"
+        "dateModified": "2026-06-23"
       },
       {
         "@type": "BreadcrumbList",
@@ -94,7 +95,7 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music Streaming Client",
         "operatingSystem": "watchOS 11+",
-        "softwareVersion": "1.0",
+        "softwareVersion": "1.1.3",
         "datePublished": "2026-04-18",
         "downloadUrl": "https://apps.apple.com/app/navibeat/id6763518834",
         "installUrl": "https://apps.apple.com/app/navibeat/id6763518834",
@@ -150,7 +151,7 @@
       </span>
       NaviBeat
     </a>
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
       <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
@@ -160,6 +161,9 @@
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -213,12 +217,12 @@
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Distribution</dt>
             <dd style="margin: 0; color: var(--text-1);">Embedded in iPhone app &middot; installs with Watch pairing</dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Version</dt>
-            <dd style="margin: 0; color: var(--text-1);">1.0 &middot; <time datetime="2026-05-13">updated May 13, 2026</time></dd>
+            <dd style="margin: 0; color: var(--text-1);">1.1.3 &middot; <time datetime="2026-06-23">updated June 23, 2026</time></dd>
           </dl>
         </div>
 
         <div class="p-hero__shot p-hero__shot--portrait">
-          <img src="assets/screenshots/watch/navibeat-watch-now-playing.png"
+          <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp"
                alt="NaviBeat Now Playing on Apple Watch with cover art, track name, artist, progress bar, and transport controls."
                width="410" height="502" loading="eager" decoding="async" fetchpriority="high" style="max-width:260px;margin-inline:auto;border-radius:32px;">
         </div>
@@ -263,7 +267,7 @@
       <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 16px;" class="reveal-stagger">
 
         <figure style="display:flex;flex-direction:column;gap:12px;">
-          <img src="assets/screenshots/watch/navibeat-watch-now-playing.png"
+          <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp"
                alt="NaviBeat Now Playing on Apple Watch"
                width="410" height="502" loading="lazy" decoding="async"
                style="border-radius:22px;border:1px solid var(--border);width:100%;height:auto;">
@@ -271,7 +275,7 @@
         </figure>
 
         <figure style="display:flex;flex-direction:column;gap:12px;">
-          <img src="assets/screenshots/watch/navibeat-watch-downloads.png"
+          <img src="assets/screenshots/watch/navibeat-watch-downloads.webp"
                alt="NaviBeat downloads on Apple Watch"
                width="410" height="502" loading="lazy" decoding="async"
                style="border-radius:22px;border:1px solid var(--border);width:100%;height:auto;">
@@ -372,7 +376,7 @@
     </div>
     <div class="footer__bar">
       <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>v1.0 &middot; On the App Store</span>
+      <span>v1.1.3 &middot; Live on the App Store</span>
     </div>
   </div>
 </footer>
@@ -384,6 +388,17 @@
     if (nav) {
       var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
       navS(); window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
     }
     if ('IntersectionObserver' in window) {
       var sio = new IntersectionObserver(function (es) {

@@ -1,0 +1,56 @@
+# NaviBeat
+
+> NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch (plus CarPlay) and is sold as one $5.99 USD one-time Universal Purchase on the App Store. NaviBeat is a client only: it has no backend, no analytics, and no tracking, and it connects solely to the server you run (and optionally Last.fm).
+
+## Key facts
+
+- Name: NaviBeat
+- Category: Self-hosted music streaming client (Navidrome / Subsonic / OpenSubsonic)
+- Platforms: iPhone (iOS 18+), iPad (iPadOS 18+), Mac (macOS 15+), Apple TV (tvOS 18+), Apple Watch (watchOS 11+), plus CarPlay
+- Price: $5.99 USD, one-time, one Universal Purchase covers all five platforms. No subscription.
+- Current version: 1.1.3 (2026-06-23)
+- Availability: Live on the Apple App Store. https://apps.apple.com/app/navibeat/id6763518834
+- Compatible servers: Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. Subsonic-API servers generally work.
+- NOT compatible with: Plex, Jellyfin (for Jellyfin, see NaviFin), Spotify, Apple Music, or other proprietary streaming services. NaviBeat needs your own server.
+- Privacy: No backend, no analytics, no third-party tracking, no telemetry. Connects only to your server and (optionally) Last.fm.
+- Maker: Nenad Jokic (Belgrade, Serbia). Support: support@navibeat.app
+- Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
+
+## Features
+
+- Multi-library Navidrome support: pick All Libraries, a single library, or any subset; server-side filtering
+- Time-synced LRC lyrics on every platform
+- Internet radio streaming
+- Offline downloads with an LRU cache and cached metadata for fully-offline browsing
+- AutoMix endless playback and a sleep timer with fade-out
+- Mini Player with pin-on-top (macOS)
+- Home Screen, Lock Screen, and Live Activity widgets; macOS desktop widgets
+- Star ratings synced to your server
+- Server Health diagnostics (server type, version, OpenSubsonic extensions, scan status)
+- Optional Last.fm integration (scrobbles route through your Navidrome, never directly)
+- Secure remote access: custom HTTP headers for Cloudflare Access and Authelia, mTLS client certificates, Tailscale, no third-party relay
+
+## Pages
+
+- [Home / overview](https://navibeat.app/): What NaviBeat is, all platforms, pricing, FAQ
+- [Apple TV](https://navibeat.app/appletv.html): tvOS feature page
+- [Mac](https://navibeat.app/macos.html): macOS feature page
+- [iPhone](https://navibeat.app/iphone.html): iOS feature page
+- [iPad](https://navibeat.app/ipad.html): iPadOS feature page
+- [Apple Watch](https://navibeat.app/applewatch.html): watchOS feature page
+- [Multi-library](https://navibeat.app/multi-library.html): Navidrome multi-library support
+- [Widgets](https://navibeat.app/widgets.html): Home Screen, Lock Screen, Live Activity, desktop widgets
+- [Last.fm](https://navibeat.app/lastfm.html): Last.fm integration, scrobbling, Year in Review
+- [Support / FAQ](https://navibeat.app/support.html): Setup, troubleshooting, glossary
+- [Privacy](https://navibeat.app/privacy.html): Privacy policy (no data collection)
+- [NaviFin](https://navibeat.app/navifin.html): Sister app, native Jellyfin client for Apple
+
+## Canonical answers
+
+- Do I need my own server? Yes. NaviBeat is a client. You run Navidrome (free, open source, sets up in about 15 minutes with Docker on a Raspberry Pi, NAS, or any server) or another OpenSubsonic server, and NaviBeat plays from it.
+- Do I get all platforms for $5.99? Yes. One Universal Purchase installs on iPhone, iPad, Mac, Apple TV, and Apple Watch at no extra cost. No subscription.
+- Does it work offline? Yes. Pin albums, playlists, or artists; an LRU cache with a size limit you set keeps them on device.
+- Does it track me? No. NaviBeat has no backend and no analytics. It talks only to your server and, if you enable it, Last.fm.
+- Is it on the App Store? Yes, live on all five Apple platforms.
+
+Canonical site: https://navibeat.app/

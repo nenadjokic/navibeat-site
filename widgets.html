@@ -8,6 +8,7 @@
   <meta name="description" content="NaviBeat ships native widgets across iPhone Home Screen, Lock Screen, Dynamic Island Live Activity, and Mac Desktop. Built-in transport. Zero analytics.">
   <meta name="theme-color" content="#0e0b08">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="apple-itunes-app" content="app-id=6763518834">
 
   <link rel="canonical" href="https://navibeat.app/widgets.html">
   <link rel="alternate" hreflang="en" href="https://navibeat.app/widgets.html">
@@ -25,6 +26,7 @@
   <meta name="twitter:title" content="NaviBeat Widgets: Home Screen, Lock Screen, Live Activity, Desktop">
   <meta name="twitter:description" content="Native widgets across iPhone Home Screen, Lock Screen, Dynamic Island, and Mac Desktop. Built-in transport, zero analytics.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:image:alt" content="NaviBeat native widgets on iPhone and Mac.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -60,10 +62,18 @@
         "description": "Native widgets on every Apple platform. Glance at what's playing, tap to transport, deep-link to the album. App Group only, zero analytics.",
         "url": "https://navibeat.app/widgets.html",
         "datePublished": "2026-05-28",
-        "dateModified": "2026-05-28",
+        "dateModified": "2026-06-23",
         "inLanguage": "en",
         "author": { "@type": "Person", "name": "Nenad Jokic" },
         "publisher": { "@id": "https://navibeat.app/#org" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://navibeat.app/widgets.html#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Widgets", "item": "https://navibeat.app/widgets.html" }
+        ]
       }
     ]
   }
@@ -88,16 +98,19 @@
       </span>
       NaviBeat
     </a>
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
-      <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
+      <a href="widgets.html" class="nav__link nav__link-hide-sm" aria-current="page">Widgets</a>
       <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
       <a href="navifin.html" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -253,9 +266,16 @@
 
 <footer class="footer">
   <div class="wrap">
-    <div class="footer__cols">
-      <div class="footer__col">
-        <h4>NaviBeat</h4>
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="index.html">
+          <img src="assets/icon.svg" alt="">
+          NaviBeat
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
         <ul>
           <li><a href="index.html#platforms">Platforms</a></li>
           <li><a href="widgets.html">Widgets</a></li>
@@ -263,16 +283,16 @@
           <li><a href="multi-library.html">Multi-library</a></li>
         </ul>
       </div>
-      <div class="footer__col">
-        <h4>Support</h4>
+      <div>
+        <h3>Support</h3>
         <ul>
           <li><a href="support.html">Help &amp; contact</a></li>
           <li><a href="privacy.html">Privacy</a></li>
           <li><a href="beta.html">Beta program</a></li>
         </ul>
       </div>
-      <div class="footer__col">
-        <h4>Get NaviBeat</h4>
+      <div>
+        <h3>Get NaviBeat</h3>
         <ul>
           <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
         </ul>
@@ -283,6 +303,24 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  if (!nav) return;
+  var navToggle = nav.querySelector('.nav__toggle');
+  if (navToggle) {
+    var setNav = function (open) {
+      nav.classList.toggle('nav--open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+    nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+  }
+})();
+</script>
 
 </body>
 </html>

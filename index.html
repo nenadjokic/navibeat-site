@@ -8,6 +8,7 @@
   <meta name="description" content="Native SwiftUI Navidrome client for Apple TV, Mac, iPhone, iPad and Apple Watch. One $5.99 Universal Purchase. Time-synced lyrics, AutoMix, offline pinning.">
   <meta name="theme-color" content="#0e0b08">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="apple-itunes-app" content="app-id=6763518834">
 
   <link rel="canonical" href="https://navibeat.app/">
   <link rel="alternate" hreflang="en" href="https://navibeat.app/">
@@ -18,13 +19,15 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg">
+  <meta property="og:image:width" content="3840">
+  <meta property="og:image:height" content="2160">
   <meta property="og:image:alt" content="NaviBeat on Apple TV 4K, Featured Album hero on the home screen.">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="NaviBeat">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NaviBeat: Native Navidrome client for every Apple device">
-  <meta name="twitter:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. One $5.99 Universal Purchase. Now on the App Store.">
+  <meta name="twitter:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. One $5.99 Universal Purchase. Live on the App Store.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg">
   <meta name="twitter:image:alt" content="NaviBeat on Apple TV 4K, Featured Album hero on the home screen.">
 
@@ -89,7 +92,7 @@
         "primaryImageOfPage": "https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg",
         "inLanguage": "en",
         "datePublished": "2026-04-18",
-        "dateModified": "2026-05-26"
+        "dateModified": "2026-06-23"
       },
       {
         "@type": "SoftwareApplication",
@@ -100,13 +103,13 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music Streaming Client",
         "operatingSystem": "macOS 15+, tvOS 18+, iOS 18+, iPadOS 18+, watchOS 11+",
-        "softwareVersion": "1.0",
+        "softwareVersion": "1.1.3",
         "datePublished": "2026-05-22",
         "downloadUrl": "https://apps.apple.com/app/navibeat/id6763518834",
         "installUrl": "https://apps.apple.com/app/navibeat/id6763518834",
         "description": "Native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. One $5.99 Universal Purchase covers Apple TV, Mac, iPhone, iPad, and Apple Watch.",
-        "author": { "@id": "https://navibeat.app/#nenad" },
-        "creator": { "@id": "https://navibeat.app/#nenad" },
+        "author": { "@id": "https://navibeat.app/#org" },
+        "creator": { "@id": "https://navibeat.app/#org" },
         "publisher": { "@id": "https://navibeat.app/#org" },
         "offers": {
           "@type": "Offer",
@@ -125,8 +128,11 @@
           "Mini Player with pin-on-top (macOS)",
           "AutoMix endless playback",
           "Sleep timer with fade-out",
-          "Offline downloads with LRU cache",
+          "Offline downloads with LRU cache and cached metadata for fully-offline browsing",
+          "Star ratings synced to your server",
+          "Server Health diagnostics: server type, version, OpenSubsonic extensions, library scan status",
           "Optional Last.fm integration",
+          "Secure remote access: custom HTTP headers for Cloudflare Access and Authelia, mTLS client certificates, Tailscale, no third-party relay",
           "Zero analytics, zero trackers"
         ],
         "screenshot": [
@@ -156,6 +162,22 @@
         "mainEntity": [
           {
             "@type": "Question",
+            "name": "What is NaviBeat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and OpenSubsonic servers. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, and is one $5.99 one-time Universal Purchase. It is a client only: it has no backend, no analytics, and no tracking, and connects solely to the server you run."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is NaviBeat different from other Navidrome and Subsonic clients?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NaviBeat is a single native app that spans all five Apple platforms, iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, for one $5.99 Universal Purchase. It is built in SwiftUI for each device rather than a wrapped web view, supports Navidrome multi-library switching server-side, ships time-synced lyrics, internet radio, offline pinning, and Server Health diagnostics, and has no backend, no analytics, and no tracking. It works with Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic server."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Do I need a Navidrome server?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -180,10 +202,26 @@
           },
           {
             "@type": "Question",
-            "name": "Does NaviBeat work offline?",
+            "name": "Does it work offline?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes. Pin individual albums, playlists, or whole artists for offline playback. NaviBeat keeps an LRU cache with a size limit you set in Settings. Flights, subways, and spotty hotel Wi-Fi don't stop the music. Downloads sync across devices via your server, not our cloud."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work with Cloudflare Access, Tailscale, or a reverse proxy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for Cloudflare Access (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an mTLS client certificate, or reach your server over Tailscale. It all works on every platform, with no third-party relay in between."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Server Health?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A diagnostics screen for self-hosters. It shows your server type and version, the OpenSubsonic extensions it advertises, the library scan status and track count, and whether artist images, lyrics and album covers are resolving. A quick way to confirm your Navidrome is set up the way you expect."
             }
           },
           {
@@ -196,7 +234,7 @@
           },
           {
             "@type": "Question",
-            "name": "What is NaviBeat's refund policy?",
+            "name": "What’s the refund policy?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Apple handles refunds directly: their standard window is 90 days through reportaproblem.apple.com. On the Mac App Store you can try NaviBeat free for 7 days first. If something doesn't work, reach support@navibeat.app."
@@ -241,7 +279,7 @@
       </span>
       NaviBeat
     </a>
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <a href="#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
       <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
@@ -251,6 +289,9 @@
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -269,7 +310,7 @@
       <div class="hero__copy">
         <p class="eyebrow hero__eyebrow">
           <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-          NaviBeat v1.0 &nbsp;&middot;&nbsp; Now on the App Store
+          NaviBeat v1.1.3 &nbsp;&middot;&nbsp; Live on the App Store
         </p>
         <h1 class="hero__h1" aria-label="Your music. Your server. Every screen you own.">
           <span class="word" style="animation-delay:0ms">Your</span>
@@ -296,21 +337,21 @@
       </div>
 
       <!-- Device lineup: real screenshots, NO wireframe SVGs -->
-      <div class="lineup" aria-label="NaviBeat running on Apple TV, MacBook Pro, iPad Pro, iPhone, Apple Watch">
+      <div class="lineup">
         <div class="lineup__stage">
           <span class="lineup__glow" aria-hidden="true"></span>
           <span class="lineup__floor" aria-hidden="true"></span>
 
           <figure class="lineup__device lineup__device--tv" style="--stagger: 0ms;">
-            <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg"
+            <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp"
                  alt="NaviBeat on Apple TV 4K: Home screen with Featured Album hero, Quick Play shelf, and Recently Added row."
                  width="2400" height="1350" loading="eager" decoding="async" fetchpriority="high">
           </figure>
 
           <figure class="lineup__device lineup__device--mac" style="--stagger: 160ms;">
-            <img src="assets/screenshots/macos/navibeat-mac-home.png"
+            <img src="assets/screenshots/macos/navibeat-mac-home.webp"
                  alt="NaviBeat on Mac: native SwiftUI sidebar with Home, Artists, Albums, Playlists, Radio, Directories and Featured Album hero."
-                 width="1240" height="724" loading="eager" decoding="async" fetchpriority="high">
+                 width="1240" height="724" loading="eager" decoding="async">
           </figure>
 
           <figure class="lineup__device lineup__device--ipad" style="--stagger: 320ms;">
@@ -326,7 +367,7 @@
           </figure>
 
           <figure class="lineup__device lineup__device--watch" style="--stagger: 640ms;">
-            <img src="assets/screenshots/watch/navibeat-watch-now-playing.png"
+            <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp"
                  alt="NaviBeat Now Playing on Apple Watch."
                  width="410" height="502" loading="eager" decoding="async">
           </figure>
@@ -340,6 +381,16 @@
       </div>
     </div>
   </section>
+
+  <!-- ===================================================== PROOF BAR: at-a-glance trust + credential -->
+  <div class="proofbar" role="group" aria-label="At a glance">
+    <div class="wrap proofbar__inner">
+      <a class="proofbar__item" href="https://www.navidrome.org/apps/" target="_blank" rel="noopener">Listed on navidrome.org/apps</a>
+      <span class="proofbar__item">OpenSubsonic verified</span>
+      <span class="proofbar__item">5 Apple platforms, one $5.99 purchase</span>
+      <span class="proofbar__item">Zero analytics</span>
+    </div>
+  </div>
 
   <!-- ======================================================= THEATER: 5-act scroll-driven cinematic showcase -->
   <section class="theater" id="theater" aria-label="NaviBeat across the Apple ecosystem">
@@ -356,9 +407,9 @@
       <div class="act act--tv is-active" data-act="0" data-label="Act 01 · Apple TV" data-title="The big screen, in &lt;em&gt;full focus.&lt;/em&gt;">
         <div class="act__stage">
           <figure class="dev-tv" aria-hidden="true">
-            <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg"
+            <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp"
                  alt="NaviBeat on Apple TV: Featured Album hero with Recently Added shelf"
-                 width="2400" height="1350" loading="eager" decoding="async" fetchpriority="high">
+                 width="2400" height="1350" loading="lazy" decoding="async">
             <span class="dev-tv__stand" aria-hidden="true"></span>
           </figure>
         </div>
@@ -374,12 +425,12 @@
         <div class="act__stage">
           <div class="act-mac__group">
             <figure class="dev-mac" aria-hidden="true">
-              <img src="assets/screenshots/macos/navibeat-mac-home.png"
+              <img src="assets/screenshots/macos/navibeat-mac-home.webp"
                    alt="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero"
                    width="1240" height="724" loading="lazy" decoding="async">
             </figure>
             <figure class="dev-mac__floater" aria-label="Mini Player floating above main window">
-              <img src="assets/screenshots/macos/navibeat-mac-mini-player.png"
+              <img src="assets/screenshots/macos/navibeat-mac-mini-player.webp"
                    alt="NaviBeat Mac Mini Player, pin on top of any window"
                    width="412" height="564" loading="lazy" decoding="async">
             </figure>
@@ -433,7 +484,7 @@
             </figure>
             <figure class="dev-watch" aria-label="Apple Watch Now Playing">
               <span class="dev-watch__crown" aria-hidden="true"></span>
-              <img src="assets/screenshots/watch/navibeat-watch-now-playing.png"
+              <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp"
                    alt="NaviBeat Apple Watch Now Playing" width="410" height="502" loading="lazy">
             </figure>
           </div>
@@ -450,10 +501,10 @@
         <div class="act__stage">
           <div class="family" aria-label="All five NaviBeat devices together">
             <figure class="family__device family__tv" aria-hidden="true">
-              <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg" alt="" loading="lazy">
+              <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp" alt="" loading="lazy">
             </figure>
             <figure class="family__device family__mac" aria-hidden="true">
-              <img src="assets/screenshots/macos/navibeat-mac-home.png" alt="" loading="lazy">
+              <img src="assets/screenshots/macos/navibeat-mac-home.webp" alt="" loading="lazy">
             </figure>
             <figure class="family__device family__ipad" aria-hidden="true">
               <img src="assets/screenshots/ipad/navibeat-ipad-home.jpg" alt="" loading="lazy">
@@ -462,7 +513,7 @@
               <img src="assets/screenshots/iphone/navibeat-iphone-now-playing.jpg" alt="" loading="lazy">
             </figure>
             <figure class="family__device family__watch" aria-hidden="true">
-              <img src="assets/screenshots/watch/navibeat-watch-now-playing.png" alt="" loading="lazy">
+              <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp" alt="" loading="lazy">
             </figure>
             <aside class="family__receipt" aria-label="Universal Purchase receipt">
               <div class="family__receipt-h">// receipt.txt</div>
@@ -484,7 +535,7 @@
       </div>
 
       <!-- Progress rail -->
-      <div class="theater__rail" role="tablist" aria-label="Jump to platform">
+      <div class="theater__rail" role="group" aria-label="Jump to platform">
         <span class="theater__rail-dots">
           <button type="button" class="theater__rail-dot is-active" data-act="0" aria-label="Apple TV"></button>
           <button type="button" class="theater__rail-dot" data-act="1" aria-label="Mac"></button>
@@ -539,7 +590,7 @@
         <li>
           <a class="plat-card" href="appletv.html" aria-label="NaviBeat for Apple TV, on the App Store">
             <div class="plat-card__thumb">
-              <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg"
+              <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp"
                    alt="NaviBeat Apple TV home screen" width="2400" height="1350" loading="lazy" decoding="async">
             </div>
             <div class="plat-card__body">
@@ -552,7 +603,7 @@
         <li>
           <a class="plat-card" href="macos.html" aria-label="NaviBeat for Mac, on the App Store">
             <div class="plat-card__thumb">
-              <img src="assets/screenshots/macos/navibeat-mac-home.png"
+              <img src="assets/screenshots/macos/navibeat-mac-home.webp"
                    alt="NaviBeat Mac home screen" width="1240" height="724" loading="lazy" decoding="async">
             </div>
             <div class="plat-card__body">
@@ -591,7 +642,7 @@
         <li>
           <a class="plat-card" href="applewatch.html" aria-label="NaviBeat for Apple Watch, on the App Store">
             <div class="plat-card__thumb plat-card__thumb--watch">
-              <img src="assets/screenshots/watch/navibeat-watch-now-playing.png"
+              <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp"
                    alt="NaviBeat Apple Watch Now Playing" width="410" height="502" loading="lazy" decoding="async">
             </div>
             <div class="plat-card__body">
@@ -602,7 +653,7 @@
         </li>
 
         <li>
-          <div class="plat-card" aria-label="NaviBeat for CarPlay, included with the iPhone app">
+          <div class="plat-card">
             <div class="plat-card__thumb" style="background:var(--bg-1); display:flex; align-items:center; justify-content:center;">
               <svg width="56" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 14l1.5-5.5A2 2 0 017.5 7h9a2 2 0 012 1.5L20 14"/>
@@ -627,7 +678,7 @@
     <div class="wrap">
       <div class="sec-head reveal-stagger">
         <p class="eyebrow eyebrow--accent">What you get</p>
-        <h2 id="features-title" class="h2">Four things no other Subsonic client does all at once.</h2>
+        <h2 id="features-title" class="h2">Five things no other Subsonic client does all at once.</h2>
       </div>
       <div class="features">
 
@@ -649,12 +700,21 @@
           <span class="f-card__idx">03 / Beautiful everywhere</span>
           <h3 class="h3">Native SwiftUI, one design language.</h3>
           <p>Not an Electron shell. Not a web wrapper. Each app is tuned for its screen: focus on tvOS, mouse on macOS, touch on iOS, crown on watchOS.</p>
+          <p class="f-card__kicker">Tuned per screen.</p>
         </article>
 
         <article class="f-card">
           <span class="f-card__idx">04 / Offline when you need it</span>
           <h3 class="h3">Pin anything. Listen anywhere.</h3>
-          <p>Pin albums, playlists, or whole artists. LRU cache with a size you set. Flights, subways, trails, spotty hotel Wi-Fi, the music keeps going.</p>
+          <p>Pin albums, playlists, or whole artists with their artwork and details, so you can browse and play fully offline. LRU cache with a size you set. Flights, subways, trails, spotty hotel Wi-Fi, the music keeps going.</p>
+          <p class="f-card__kicker">Built for the road.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">05 / Reach it anywhere, securely</span>
+          <h3 class="h3">Behind your tunnel, on every device.</h3>
+          <p>Custom HTTP headers for <strong style="color:var(--text-1);font-weight:600;">Cloudflare Access</strong> and Authelia, plus <strong style="color:var(--text-1);font-weight:600;">mTLS client certificates</strong> and Tailscale, all work out of the box. Your server stays private and reachable from anywhere, with no third-party relay, ever.</p>
+          <p class="f-card__kicker">Your tunnel, covered.</p>
         </article>
 
       </div>
@@ -670,7 +730,7 @@
           Your server. <em>Your library.</em> Your rules.
         </h2>
         <p class="body-copy" style="font-size:18px;">
-          NaviBeat is a client. Your music lives where it already does: a Raspberry Pi, a Synology, a home server under someone&rsquo;s desk. We never see your library, your credentials, or a single play event. We couldn&rsquo;t if we wanted to: the app has no backend. The only services NaviBeat ever talks to are the ones <em>you</em> sign in to: your Navidrome server, and optionally <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm</a>.
+          NaviBeat is a client. Your music lives where it already does: a Raspberry Pi, a Synology, a home server under someone&rsquo;s desk. We never see your library, your credentials, or a single play event. We couldn&rsquo;t if we wanted to: the app has no backend. The only services NaviBeat ever talks to are the ones <em>you</em> sign in to: your Navidrome server, and optionally <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm</a>. <a href="privacy.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Read the privacy policy.</a>
         </p>
       </div>
       <div class="manifesto__trace reveal">
@@ -690,12 +750,12 @@
   <section class="maker" id="maker" aria-labelledby="maker-title">
     <div class="wrap reveal">
       <p class="eyebrow eyebrow--accent">About the maker</p>
-      <h2 id="maker-title" class="h2 maker__title">A one-person app, built in the open about what I want to use.</h2>
+      <h2 id="maker-title" class="h2 maker__title">A one-person app, built for the way I want to listen.</h2>
       <p class="maker__copy">
-        NaviBeat is built and maintained by <strong>Nenad Jokic</strong>, one person in Belgrade. No team behind a wall, no investors to please, no analytics dashboard somewhere telling me what you listened to last night. The roadmap is shaped by what self-hosters actually ask for: AirPlay routing, Cloudflare Access headers, sleep timer, time-synced lyrics, the things that came in through TestFlight and email.
+        NaviBeat is built and maintained by <strong>Nenad Jokic</strong>, one person in Belgrade. No team behind a wall, no investors to please, no analytics dashboard somewhere telling me what you listened to last night. The roadmap is shaped in the open by what self-hosters actually ask for: AirPlay routing, Cloudflare Access headers, sleep timer, time-synced lyrics, the things that came in through TestFlight and email.
       </p>
       <p class="maker__copy">
-        If something is broken, you can write directly to me. I usually reply within a day.
+        It is also updated often: I ship fixes most weeks, the roadmap moves fast because it is just me and the people who use it, and you can get every improvement early through <a href="beta.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">TestFlight</a>. If something is broken, you can write directly to me. I usually reply within a day.
       </p>
       <div class="maker__ctas">
         <a class="btn btn--ghost btn--compact" href="mailto:nenad.dev@icloud.com?subject=NaviBeat">Email me</a>
@@ -727,10 +787,10 @@
   <section class="price" aria-labelledby="beta-cta-title">
     <div class="wrap reveal">
       <p class="eyebrow eyebrow--accent">Beta program</p>
-      <p class="price__h" id="beta-cta-title">Do you want to help test NaviBeat?</p>
+      <h2 class="h2" id="beta-cta-title" style="margin-bottom:14px;">Do you want to help test NaviBeat?</h2>
       <p class="price__sub">If you are willing to share what you find, we would love to have you on the TestFlight group. iPhone, iPad, Mac, Apple TV, Apple Watch.</p>
       <div class="price__ctas">
-        <a class="btn btn--primary" href="beta.html" aria-label="Join the NaviBeat beta program">I want to be a beta tester</a>
+        <a class="btn btn--ghost" href="beta.html" aria-label="Join the NaviBeat beta program">I want to be a beta tester</a>
         <a class="link-quiet" href="beta.html">How the program works&nbsp;&rarr;</a>
       </div>
     </div>
@@ -745,11 +805,35 @@
       </div>
 
       <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-intro">
+          <span>What is NaviBeat?</span>
+          <span class="faq__plus" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__panel" id="faq-intro" inert>
+          <div class="faq__a">
+            NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and OpenSubsonic servers. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, and is one $5.99 one-time Universal Purchase. It is a client only: it has no backend, no analytics, and no tracking, and connects solely to the server you run.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-diff">
+          <span>How is NaviBeat different from other Navidrome and Subsonic clients?</span>
+          <span class="faq__plus" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__panel" id="faq-diff" inert>
+          <div class="faq__a">
+            NaviBeat is a single native app that spans all five Apple platforms, iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, for one $5.99 Universal Purchase. It is built in SwiftUI for each device rather than a wrapped web view, supports Navidrome multi-library switching server-side, ships time-synced lyrics, internet radio, offline pinning, and Server Health diagnostics, and has no backend, no analytics, and no tracking. It works with Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic server.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
         <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-1">
           <span>Do I need a Navidrome server?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
         </button>
-        <div class="faq__panel" id="faq-1" role="region">
+        <div class="faq__panel" id="faq-1" inert>
           <div class="faq__a">
             Yes. NaviBeat is a client: it plays music from a server you run. Navidrome is free, open source, and runs on anything from a Raspberry Pi to a NAS. Any OpenSubsonic-compatible server works too (Gonic, Airsonic-Advanced). <a href="https://www.navidrome.org" target="_blank" rel="noopener">navidrome.org</a> takes about 15 minutes with Docker. NaviBeat is also officially listed on the <a href="https://www.navidrome.org/apps/" target="_blank" rel="noopener">navidrome.org/apps</a> directory with the OpenSubsonic indicator.
           </div>
@@ -761,7 +845,7 @@
           <span>Do I get all platforms for $5.99?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
         </button>
-        <div class="faq__panel" id="faq-2" role="region">
+        <div class="faq__panel" id="faq-2" inert>
           <div class="faq__a">
             Yes. NaviBeat is a Universal Purchase. Buy once on any Apple device and it installs on the other four (Mac, Apple TV, iPhone, iPad, Apple Watch) at no extra cost. The Apple Watch app ships embedded in the iPhone app, so it installs automatically when you pair your Watch.
           </div>
@@ -773,7 +857,7 @@
           <span>Is NaviBeat on the App Store?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
         </button>
-        <div class="faq__panel" id="faq-3" role="region">
+        <div class="faq__panel" id="faq-3" inert>
           <div class="faq__a">
             Yes. NaviBeat is live on the App Store on all five Apple platforms: iPhone, iPad, Mac, Apple TV, and Apple Watch. One $5.99 Universal Purchase covers every device, with no subscription. <a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Open the App Store listing&nbsp;&rarr;</a>
           </div>
@@ -785,9 +869,45 @@
           <span>Does it work offline?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
         </button>
-        <div class="faq__panel" id="faq-4" role="region">
+        <div class="faq__panel" id="faq-4" inert>
           <div class="faq__a">
             Yes. Pin individual albums, playlists, or whole artists for offline playback. NaviBeat keeps an LRU cache with a size limit you set in Settings. Flights, subways, and spotty hotel Wi-Fi don&rsquo;t stop the music. Downloads sync across devices via your server, not our cloud.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-6">
+          <span>Does it work with Cloudflare Access, Tailscale, or a reverse proxy?</span>
+          <span class="faq__plus" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__panel" id="faq-6" inert>
+          <div class="faq__a">
+            Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for <strong>Cloudflare Access</strong> (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an <strong>mTLS client certificate</strong>, or simply reach your server over <strong>Tailscale</strong>. It all works on every platform, with no third-party relay in between.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-8">
+          <span>What is Server Health?</span>
+          <span class="faq__plus" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__panel" id="faq-8" inert>
+          <div class="faq__a">
+            A diagnostics screen for self-hosters. It shows your server type and version, the OpenSubsonic extensions it advertises, the library scan status and track count, and whether artist images, lyrics and album covers are resolving, so you can confirm your Navidrome is set up exactly the way you expect.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-9">
+          <span>Does NaviBeat support multiple Navidrome libraries?</span>
+          <span class="faq__plus" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__panel" id="faq-9" inert>
+          <div class="faq__a">
+            Yes. NaviBeat detects multi-library servers automatically and surfaces a picker: at the top of the Library tab on iPhone, in the sidebar on iPad and Mac, and as a pill row on Apple TV. Pick All Libraries, a single library, or any subset. Filtering is server-side, so pagination and ranking stay intact, and the picker is hidden on single-library servers. See the <a href="multi-library.html">multi-library page</a> for the full story.
           </div>
         </div>
       </div>
@@ -797,7 +917,7 @@
           <span>What&rsquo;s the refund policy?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
         </button>
-        <div class="faq__panel" id="faq-5" role="region">
+        <div class="faq__panel" id="faq-5" inert>
           <div class="faq__a">
             Apple handles refunds directly: their standard window is 90 days, no questions asked, through reportaproblem.apple.com. On the Mac App Store you can try NaviBeat free for 7 days first. If something doesn&rsquo;t work, reach us at <a href="mailto:support@navibeat.app">support@navibeat.app</a>.
           </div>
@@ -867,7 +987,7 @@
     </div>
     <div class="footer__bar">
       <span>&copy; 2026 Nenad Jokic, Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>v1.0 &middot; Live on the App Store</span>
+      <span>v1.1.3 &middot; Live on the App Store</span>
     </div>
   </div>
 </footer>
@@ -885,13 +1005,14 @@
       var grid = document.getElementById('reviews-grid');
       var esc = function (s) { var p = document.createElement('p'); p.textContent = s || ''; return p.innerHTML; };
       stat.textContent = '★ ' + d.average.toFixed(1) + ' from ' + d.count + ' App Store reviews';
+      stat.setAttribute('aria-label', 'Average rating ' + d.average.toFixed(1) + ' out of 5 from ' + d.count + ' App Store reviews');
       var featured = d.reviews.filter(function (x) { return x.rating >= 4; }).slice(0, 6);
       grid.innerHTML = featured.map(function (x) {
         var raw = x.body || '';
         var body = raw.slice(0, 240) + (raw.length > 240 ? '…' : '');
         var when = x.date ? new Date(x.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : '';
         return '<blockquote style="margin:0;padding:22px;border:1px solid var(--border-strong);border-radius:14px;">' +
-          '<div style="color:var(--accent);font-size:14px;letter-spacing:2px;">' + new Array(x.rating + 1).join('★') + '</div>' +
+          '<div role="img" aria-label="Rated ' + x.rating + ' out of 5" style="color:var(--accent);font-size:14px;letter-spacing:2px;">' + new Array(x.rating + 1).join('★') + '</div>' +
           (x.title ? '<p style="font-weight:600;margin:10px 0 6px;">' + esc(x.title) + '</p>' : '') +
           '<p style="color:var(--text-1);line-height:1.6;margin:0 0 12px;">' + esc(body) + '</p>' +
           '<cite style="color:var(--text-2);font-style:normal;font-size:13px;">' + esc(x.author) + ' · ' + when + '</cite>' +
@@ -910,6 +1031,21 @@
     if (nav) {
       var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
       navS(); window.addEventListener('scroll', navS, { passive: true });
+
+      // Mobile disclosure menu
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) {
+          a.addEventListener('click', function () { setNav(false); });
+        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
     }
 
     // Scroll-reveal via IntersectionObserver
@@ -953,8 +1089,12 @@
         document.querySelectorAll('.faq__item').forEach(function (o) {
           o.classList.remove('is-open');
           var b = o.querySelector('.faq__q'); if (b) b.setAttribute('aria-expanded', 'false');
+          var op = o.querySelector('.faq__panel'); if (op) op.setAttribute('inert', '');
         });
-        if (willOpen) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+        if (willOpen) {
+          item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true');
+          var panel = item.querySelector('.faq__panel'); if (panel) panel.removeAttribute('inert');
+        }
       });
     });
 
@@ -978,7 +1118,10 @@
         if (i === current) return;
         current = i;
         acts.forEach(function (a, idx) { a.classList.toggle('is-active', idx === i); });
-        dots.forEach(function (d, idx) { d.classList.toggle('is-active', idx === i); });
+        dots.forEach(function (d, idx) {
+          d.classList.toggle('is-active', idx === i);
+          d.setAttribute('aria-current', idx === i ? 'true' : 'false');
+        });
         var act = acts[i];
         if (!act) return;
         if (labelEl) labelEl.textContent = act.dataset.label;
