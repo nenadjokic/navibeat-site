@@ -1,0 +1,11 @@
+# Files Wrangler must NOT upload as Worker static assets.
+# The Cloudflare build clones the repo, and `wrangler deploy` reads assets
+# from the repo root ("."), so without this it tries to upload the repo's
+# own .git directory. The .git/objects packfile exceeds the 25 MiB per-asset
+# limit and fails the whole deploy. Exclude .git and other non-served cruft.
+.git
+.gitignore
+.assetsignore
+node_modules
+.DS_Store
+*.md
