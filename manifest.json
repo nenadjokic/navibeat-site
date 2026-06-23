@@ -1,7 +1,7 @@
 {
-  "name": "NaviBeat — Navidrome & Subsonic client for Apple devices",
+  "name": "NaviBeat: Navidrome & Subsonic client for Apple devices",
   "short_name": "NaviBeat",
-  "description": "Native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. Apple TV, Mac, iPhone, iPad, Apple Watch — one Universal Purchase.",
+  "description": "Native Apple-ecosystem client for Navidrome, Airsonic, Gonic, and OpenSubsonic music servers. Apple TV, Mac, iPhone, iPad, Apple Watch: one Universal Purchase.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

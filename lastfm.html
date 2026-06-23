@@ -7,6 +7,7 @@
   <title>NaviBeat &times; Last.fm: Optional Taste-Intelligence Integration</title>
   <meta name="description" content="NaviBeat's Last.fm integration: opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review. Live roadmap.">
   <meta name="theme-color" content="#0e0b08">
+  <meta name="apple-itunes-app" content="app-id=6763518834">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <link rel="canonical" href="https://navibeat.app/lastfm.html">
@@ -25,6 +26,7 @@
   <meta name="twitter:title" content="NaviBeat &times; Last.fm: Optional Taste-Intelligence Integration">
   <meta name="twitter:description" content="Opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review, time-machine playlists.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:image:alt" content="NaviBeat with Last.fm taste-intelligence panels.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -71,7 +73,7 @@
         "description": "NaviBeat's Last.fm integration: opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review, time-machine playlists. Roadmap with live status.",
         "url": "https://navibeat.app/lastfm.html",
         "datePublished": "2026-05-03",
-        "dateModified": "2026-05-13",
+        "dateModified": "2026-06-23",
         "inLanguage": "en",
         "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "url": "https://navibeat.app/#maker" },
         "publisher": { "@id": "https://navibeat.app/#org" },
@@ -299,16 +301,19 @@
       </span>
       NaviBeat
     </a>
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
       <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
-      <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="lastfm.html" class="nav__link nav__link-hide-sm" aria-current="page">Last.fm</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
       <a href="navifin.html" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -633,13 +638,11 @@
 
 <!-- ======================================================= FOOTER -->
 <footer class="footer">
-  <div class="wrap footer__inner">
-    <div class="footer__cols">
+  <div class="wrap">
+    <div class="footer__grid">
       <div>
-        <a class="nav__brand" href="index.html" style="margin-bottom:14px;">
-          <span class="nav__mark" aria-hidden="true">
-            <img src="assets/icon.svg" alt="">
-          </span>
+        <a class="footer__brand" href="index.html">
+          <img src="assets/icon.svg" alt="">
           NaviBeat
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
@@ -676,7 +679,7 @@
     </div>
     <div class="footer__bar">
       <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>v1.0 &middot; On the App Store</span>
+      <span>v1.1.3 &middot; Live on the App Store</span>
     </div>
   </div>
 </footer>
@@ -689,6 +692,17 @@
       var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
       navS();
       window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
     }
   })();
 </script>

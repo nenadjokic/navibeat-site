@@ -25,6 +25,7 @@
   <meta name="twitter:title" content="NaviBeat Privacy Policy: Local-only, zero telemetry">
   <meta name="twitter:description" content="What data is stored on your device, what leaves it, and what never does.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:image:alt" content="NaviBeat on Mac, a privacy-first Navidrome client.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -71,7 +72,7 @@
         "description": "What data NaviBeat stores on your device, what leaves your device, and what never does.",
         "url": "https://navibeat.app/privacy.html",
         "datePublished": "2026-04-18",
-        "dateModified": "2026-04-18",
+        "dateModified": "2026-06-23",
         "inLanguage": "en",
         "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "url": "https://navibeat.app/#maker" },
         "publisher": { "@id": "https://navibeat.app/#org" },
@@ -109,7 +110,7 @@
       </span>
       NaviBeat
     </a>
-    <nav class="nav__links" aria-label="Primary">
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
       <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
@@ -119,6 +120,9 @@
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -209,7 +213,7 @@
     </div>
     <div class="footer__bar">
       <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>v1.0 &middot; On the App Store</span>
+      <span>v1.1.3 &middot; Live on the App Store</span>
     </div>
   </div>
 </footer>
@@ -221,6 +225,17 @@
     var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+    var navToggle = nav.querySelector('.nav__toggle');
+    if (navToggle) {
+      var setNav = function (open) {
+        nav.classList.toggle('nav--open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+      nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+    }
   })();
 </script>
 

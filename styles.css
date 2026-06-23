@@ -426,8 +426,48 @@ section { padding-block: var(--rhythm); }
   box-shadow: 0 1px 5px rgba(0, 164, 220, 0.40);
 }
 
+/* Mobile disclosure toggle (hamburger). Hidden on desktop. */
+.nav__toggle { display: none; }
+
 @media (max-width: 720px) {
-  .nav__links a.nav__link-hide-sm { display: none; }
+  .nav__inner { position: relative; }
+
+  /* Closed bar: hide product links + NaviFin cross-promo; keep only the App Store CTA + the toggle. */
+  .nav__links a.nav__link-hide-sm,
+  .nav__links .nav__link--navifin { display: none; }
+  .nav__links { gap: 12px; margin-left: auto; }
+
+  .nav__toggle {
+    display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 40px; height: 40px; margin-left: 4px; padding: 0;
+    background: transparent; border: 0; cursor: pointer; flex: 0 0 auto;
+  }
+  .nav__toggle span {
+    display: block; width: 20px; height: 2px; margin: 0 auto;
+    background: var(--text-0); border-radius: 2px;
+    transition: transform 0.2s var(--ease), opacity 0.2s var(--ease);
+  }
+  .nav--open .nav__toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav--open .nav__toggle span:nth-child(2) { opacity: 0; }
+  .nav--open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Open: the whole link cluster drops into a full-width panel in the nav's blur/border voice. */
+  .nav--open .nav__links {
+    position: absolute; top: calc(100% + 1px); left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0; margin: 0;
+    background: rgba(14, 11, 8, 0.97);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.42);
+    padding: 6px 22px 18px;
+  }
+  .nav--open .nav__links a.nav__link-hide-sm,
+  .nav--open .nav__links .nav__link--navifin {
+    display: flex; align-items: center; padding: 14px 0;
+    border-bottom: 1px solid var(--border); font-size: 13px;
+  }
+  .nav--open .nav__links .btn { margin-top: 14px; align-self: flex-start; }
 }
 
 /* =============================================================================
@@ -1170,7 +1210,20 @@ section { padding-block: var(--rhythm); }
   margin-bottom: 18px;
 }
 .manifesto__trace-ok   { color: var(--accent); }
-.manifesto__trace-bad  { color: rgba(180, 60, 60, 0.9); }
+.manifesto__trace-bad  { color: #d97757; } /* terracotta-red, lifted to clear AA text contrast on bg-2 while staying in palette */
+
+/* #proofbar — at-a-glance trust row under the hero. Reuses the mono/eyebrow
+   voice + the warm surface; no new visual language. */
+.proofbar { background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.proofbar__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 0; padding: 15px 0; }
+.proofbar__item { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-2); white-space: nowrap; }
+.proofbar__item + .proofbar__item::before { content: "·"; color: var(--text-2); opacity: .5; margin: 0 18px; }
+a.proofbar__item { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
+a.proofbar__item:hover { color: var(--accent-hi); }
+@media (max-width: 720px) {
+  .proofbar__inner { flex-direction: column; gap: 8px; padding: 14px 0; }
+  .proofbar__item + .proofbar__item::before { content: none; }
+}
 .manifesto__trace-rule {
   margin-top: 14px;
   padding-top: 14px;
