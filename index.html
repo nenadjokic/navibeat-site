@@ -930,7 +930,7 @@
     </div>
   </section>
 
-  <!-- ===================================================== APP STORE REVIEWS (auto-reveals once >=5 real reviews exist; safe to ship empty) -->
+  <!-- ===================================================== APP STORE REVIEWS (transparent: auto-reveals once any review exists, shows EVERY rating incl. critical) -->
   <section class="reviews" id="reviews" aria-labelledby="reviews-title" hidden>
     <div class="wrap reveal">
       <div class="sec-head" style="text-align:center;margin-bottom:40px;">
@@ -994,22 +994,26 @@
 
 <script>
   /* App Store reviews: live customer reviews from Apple's public RSS, served by /api/reviews
-     (Cloudflare Pages Function + KV). ASMG compliant: body shown verbatim, author + date visible,
-     the headline average is the true mean across all reviews. Stays hidden until at least 5 real
-     reviews exist, so an empty review section never ships. See docs/reviews-integration-setup.md. */
+     (Cloudflare Pages Function + KV). Transparent (2026-06-24): body shown verbatim, author + date
+     visible, EVERY rating shown (incl. critical reviews, not just 4-5 star), and the headline
+     average is the true mean across all reviews. Reveals as soon as one review exists.
+     See docs/reviews-integration-setup.md. */
   (function () {
     fetch('/api/reviews').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (!d || !d.reviews || d.count < 5) return;
+      if (!d || !d.reviews || d.count < 1) return;
       var sec = document.getElementById('reviews');
       var stat = document.getElementById('reviews-stat');
       var grid = document.getElementById('reviews-grid');
       var esc = function (s) { var p = document.createElement('p'); p.textContent = s || ''; return p.innerHTML; };
       stat.textContent = '★ ' + d.average.toFixed(1) + ' from ' + d.count + ' App Store reviews';
       stat.setAttribute('aria-label', 'Average rating ' + d.average.toFixed(1) + ' out of 5 from ' + d.count + ' App Store reviews');
-      var featured = d.reviews.filter(function (x) { return x.rating >= 4; }).slice(0, 6);
-      grid.innerHTML = featured.map(function (x) {
+      // Transparency: show EVERY review (all ratings), most-recent first. No
+      // rating filter - critical reviews appear alongside the rest. Capped at
+      // 24 cards so the page stays sane as the review count grows.
+      var shown = d.reviews.slice(0, 24);
+      grid.innerHTML = shown.map(function (x) {
         var raw = x.body || '';
-        var body = raw.slice(0, 240) + (raw.length > 240 ? '…' : '');
+        var body = raw.slice(0, 600) + (raw.length > 600 ? '…' : '');
         var when = x.date ? new Date(x.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : '';
         return '<blockquote style="margin:0;padding:22px;border:1px solid var(--border-strong);border-radius:14px;">' +
           '<div role="img" aria-label="Rated ' + x.rating + ' out of 5" style="color:var(--accent);font-size:14px;letter-spacing:2px;">' + new Array(x.rating + 1).join('★') + '</div>' +

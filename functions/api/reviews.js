@@ -13,16 +13,29 @@
  *   - KV namespace binding  REVIEWS_KV    (optional: without it, no caching, just a live fetch)
  *   - Environment variable  APP_STORE_ID  (optional: defaults to NaviBeat's real id below)
  *
- * The frontend (#reviews in index.html) stays hidden until count >= 5, so it is safe
- * to deploy this before any reviews exist. See docs/reviews-integration-setup.md.
+ * The frontend (#reviews in index.html) reveals as soon as there is at least one
+ * review and shows EVERY rating (transparency, 2026-06-24), so critical reviews
+ * are not hidden. See docs/reviews-integration-setup.md.
  *
- * ASMG note: bodies are returned verbatim (only client-side trimmed with an ellipsis),
- * author and date travel with every review, and `average` is the true mean across ALL
- * fetched reviews (never just the featured ones).
+ * ASMG note: bodies are returned verbatim, author and date travel with every
+ * review, every rating is included, and `average` is the true mean across ALL
+ * fetched reviews.
  */
 
 const APP_STORE_ID_DEFAULT = '6763518834';
-const COUNTRIES = ['us', 'gb', 'de', 'rs'];
+// Transparency (2026-06-24, Nenad): aggregate a broad set of storefronts so
+// EVERY real review shows on the site, not just a few markets. Apple's RSS is
+// per-territory, so a review only appears if we query that territory's feed
+// (e.g. our 2-star reviews live in `pl` and `ch`, which the old us/gb/de/rs
+// list missed entirely). 33 storefronts covers all current review territories
+// plus the major markets; stays under the Pages-Function subrequest cap.
+const COUNTRIES = [
+  'us', 'gb', 'ca', 'au', 'ie', 'nz',
+  'de', 'fr', 'nl', 'be', 'ch', 'at', 'it', 'es', 'pt',
+  'se', 'no', 'dk', 'fi',
+  'pl', 'cz', 'rs', 'hr', 'si', 'gr', 'hu', 'ro',
+  'br', 'mx', 'tr', 'jp', 'kr', 'in',
+];
 const CACHE_KEY = 'reviews';
 const TTL_SECONDS = 3600;
 
