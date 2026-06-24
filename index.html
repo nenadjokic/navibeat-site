@@ -999,8 +999,8 @@
      average is the true mean across all reviews. Reveals as soon as one review exists.
      See docs/reviews-integration-setup.md. */
   (function () {
-    fetch('/api/reviews').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (!d || !d.reviews || d.count < 1) return;
+    function render(d) {
+      if (!d || !d.reviews || d.count < 1) return false;
       var sec = document.getElementById('reviews');
       var stat = document.getElementById('reviews-stat');
       var grid = document.getElementById('reviews-grid');
@@ -1023,7 +1023,18 @@
         '</blockquote>';
       }).join('');
       sec.hidden = false;
-    }).catch(function () {});
+      return true;
+    }
+    // Prefer the live function (auto-updates from Apple's RSS); fall back to the
+    // committed snapshot (reviews.json), which is always served even where the
+    // host does not route Pages Functions. Regenerate the snapshot with
+    // scripts/gen-reviews-snapshot.py.
+    function load(url, fallback) {
+      fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+        if (!render(d) && fallback) load(fallback, null);
+      }).catch(function () { if (fallback) load(fallback, null); });
+    }
+    load('/api/reviews', '/reviews.json');
   })();
 </script>
 

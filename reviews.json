@@ -1,0 +1,72 @@
+{
+ "count": 8,
+ "average": 3.75,
+ "fetchedAt": 1782322057706,
+ "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
+ "reviews": [
+  {
+   "author": "kazigk",
+   "rating": 2,
+   "title": "Terrible experience on tvOS and CarPlay",
+   "body": "iOS app works ok. tvOS version is absolutely terrible - feels like the UI was not adjusted at all for tvOS, there’s no way to refresh the library without closing the app through the App Switcher and opening it again. It also incorrectly handles albums with multiple CDs. When connected via CarPlay, it skips songs whenever there are any connectivity issues, or stops working altogether. I mostly listen to my music in my car or in my living room, so unfortunately this app doesn’t really work for me.",
+   "territory": "POL",
+   "date": "2026-06-22T15:06:16-07:00"
+  },
+  {
+   "author": "AghaSLM",
+   "rating": 4,
+   "title": "İyi ama geliştirilmesi gerek",
+   "body": "Apple tv için satın aldım. Apple tv için en iyi uygulama.  Satın almışken iphondada test edelim dedim. Mobil versiyasının geliştirilmeye ihtiyacı var. Play ve shuffle butonları doğru gözükmüyor. Ümumilikde tasarım sorunları var. Tasarım iyileşse çox iyi olur",
+   "territory": "TUR",
+   "date": "2026-06-22T11:06:24-07:00"
+  },
+  {
+   "author": "Bruger001",
+   "rating": 4,
+   "title": "Awesome App",
+   "body": "Awesome app with great features. Only thing missing would be an equalizer.",
+   "territory": "DNK",
+   "date": "2026-06-20T02:08:04-07:00"
+  },
+  {
+   "author": "aribnch",
+   "rating": 4,
+   "title": "Un bon début",
+   "body": "Bonne application dans l’ensemble mais qui souffre de quelques lacunes par rapport à la concurrence. Certaines choses dans l’interface peuvent être contre intuitives, l’absence d’une option de téléchargement automatique pour des playlists (à chaque fois qu’une playlist est mise à jour, les titres ajoutés ne sont pas téléchargés automatiquement, il faut aller dans la playlist et le demander à chaque fois). C’est dommage car il y a des fonctionnalités intéressantes sinon.",
+   "territory": "FRA",
+   "date": "2026-06-16T01:44:28-07:00"
+  },
+  {
+   "author": "Chancherito",
+   "rating": 5,
+   "title": "It’s perfect",
+   "body": "Everything works perfectly, UI is slick. Love it!",
+   "territory": "USA",
+   "date": "2026-06-06T16:53:18-07:00"
+  },
+  {
+   "author": "Gilzuma",
+   "rating": 5,
+   "title": "Connects perfectly",
+   "body": "Works exactly as it should. I can’t believe how long it took to find the app in the App Store. Apple seems to be burying one of the best apps for Navidrome. Works on each device perfectly, I’m able to easily use it with TailScale as well. Definite purchase in my book!  Thank you!",
+   "territory": "CAN",
+   "date": "2026-05-29T01:41:37-07:00"
+  },
+  {
+   "author": "gru3zi",
+   "rating": 2,
+   "title": "No Zoom",
+   "body": "With a large screen its almost impossible to use as the text is too small and I can’t zoom in and out with a simple mouse scroll",
+   "territory": "CHE",
+   "date": "2026-05-27T12:15:55-07:00"
+  },
+  {
+   "author": "Benicchio",
+   "rating": 4,
+   "title": "Promising, but needs a couple of features",
+   "body": "The integration with Last.FM is very interesting and the availability in every device with one purchase is great. But the app misses a couple of key features IMO: more customization options (at least for the Home tab items), connecting to more than one server and cache options on mobile devices.",
+   "territory": "BRA",
+   "date": "2026-05-27T06:42:26-07:00"
+  }
+ ]
+}
