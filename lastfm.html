@@ -6,7 +6,7 @@
 
   <title>NaviBeat &times; Last.fm: Optional Taste-Intelligence Integration</title>
   <meta name="description" content="NaviBeat's Last.fm integration: opt-in, server-side scrobbling, listener counts, similar tracks, Year-in-Review. Live roadmap.">
-  <meta name="theme-color" content="#0e0b08">
+  <meta name="theme-color" content="#0C0C0E">
   <meta name="apple-itunes-app" content="app-id=6763518834">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
@@ -36,8 +36,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
@@ -100,7 +100,7 @@
     /* ====== Last.fm page, local styles (timeline + comparison) ====== */
     .lfm-hero { padding: 96px 0 48px; position: relative; overflow: hidden; }
     .lfm-hero__inner { max-width: 760px; }
-    .lfm-hero h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: -0.02em; margin: 14px 0 22px; }
+    .lfm-hero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: 0.01em; margin: 14px 0 22px; }
     .lfm-hero h1 em { font-style: italic; color: var(--accent); }
     .lfm-hero p.lfm-sub { color: var(--text-1); font-size: 19px; line-height: 1.6; max-width: 60ch; }
 
@@ -109,12 +109,12 @@
     .lfm-trust__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     @media (min-width: 960px) { .lfm-trust__grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
     @media (max-width: 720px) { .lfm-trust__grid { grid-template-columns: 1fr; } }
-    .lfm-trust__cell h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 8px; font-family: 'Inter Tight', sans-serif; font-weight: 600; }
+    .lfm-trust__cell h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 8px; font-family: var(--font-sans); font-weight: 600; }
     .lfm-trust__cell p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0; }
 
     /* Sync coverage section */
     .lfm-sync { padding: 88px 0 40px; }
-    .lfm-sync h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 20px; }
+    .lfm-sync h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 20px; }
     .lfm-sync__sub { color: var(--text-1); font-size: 17px; max-width: 60ch; line-height: 1.6; margin: 0 0 36px; }
     .lfm-sync__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     @media (max-width: 720px) { .lfm-sync__grid { grid-template-columns: 1fr; } }
@@ -127,7 +127,7 @@
     .lfm-sync__card--syncs { border-left: 3px solid var(--accent); }
     .lfm-sync__card--server { border-left: 3px solid var(--text-2); }
     .lfm-sync__card h3 {
-      font-family: 'Inter Tight', sans-serif;
+      font-family: var(--font-sans);
       font-size: 13px;
       font-weight: 600;
       text-transform: uppercase;
@@ -151,7 +151,7 @@
     .lfm-sync__mark {
       flex-shrink: 0;
       width: 22px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-mono);
       font-weight: 500;
       font-size: 16px;
       line-height: 1.5;
@@ -162,11 +162,11 @@
 
     /* Comparison section */
     .lfm-vs { padding: 88px 0 40px; }
-    .lfm-vs h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 20px; }
+    .lfm-vs h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 20px; }
     .lfm-vs__sub { color: var(--text-1); font-size: 17px; max-width: 56ch; line-height: 1.6; margin: 0 0 36px; }
     .lfm-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
     .lfm-table th, .lfm-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
-    .lfm-table th { font-family: 'Inter Tight', sans-serif; font-weight: 600; color: var(--text-2); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .lfm-table th { font-family: var(--font-sans); font-weight: 600; color: var(--text-2); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
     .lfm-table td.cell-yes { color: var(--accent-hi); font-weight: 500; }
     .lfm-table td.cell-no { color: var(--text-2); }
     .lfm-table td.cell-partial { color: var(--text-1); }
@@ -177,13 +177,13 @@
     /* ROADMAP TIMELINE */
     .lfm-roadmap { padding: 96px 0 96px; background: var(--bg-1); border-top: 1px solid var(--border); }
     .lfm-roadmap__head { max-width: 700px; margin-bottom: 64px; }
-    .lfm-roadmap__head h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(32px, 4vw, 50px); line-height: 1.1; margin: 14px 0 16px; }
+    .lfm-roadmap__head h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 4vw, 50px); line-height: 1.1; margin: 14px 0 16px; }
     .lfm-roadmap__head p { color: var(--text-1); font-size: 17px; line-height: 1.6; max-width: 60ch; }
 
     .lfm-legend { display: flex; gap: 28px; margin: 22px 0 0; flex-wrap: wrap; font-size: 13px; color: var(--text-2); }
     .lfm-legend__item { display: flex; align-items: center; gap: 8px; }
     .lfm-legend__dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
-    .lfm-legend__dot--done { background: var(--text-0); box-shadow: 0 0 0 2px var(--text-0), 0 0 8px rgba(243,235,220,0.4); }
+    .lfm-legend__dot--done { background: var(--text-0); box-shadow: 0 0 0 2px var(--text-0), 0 0 8px rgba(237,237,240,0.4); }
     .lfm-legend__dot--active { background: var(--accent); box-shadow: 0 0 0 2px var(--accent), 0 0 12px var(--accent-glow); }
     .lfm-legend__dot--planned { background: transparent; border: 1.5px solid var(--text-2); }
 
@@ -229,7 +229,7 @@
       background: transparent;
     }
     .lfm-step--done .lfm-step__dot { border-color: var(--text-0); background: var(--bg-1); }
-    .lfm-step--done .lfm-step__dot::after { background: var(--text-0); box-shadow: 0 0 8px rgba(243,235,220,0.5); }
+    .lfm-step--done .lfm-step__dot::after { background: var(--text-0); box-shadow: 0 0 8px rgba(237,237,240,0.5); }
     .lfm-step--active .lfm-step__dot {
       border-color: var(--accent);
       background: var(--bg-1);
@@ -245,7 +245,7 @@
     }
 
     .lfm-step__status {
-      font-family: 'Inter Tight', sans-serif;
+      font-family: var(--font-sans);
       font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
@@ -257,11 +257,11 @@
     .lfm-step--planned .lfm-step__status { color: var(--text-2); }
 
     .lfm-step__title {
-      font-family: 'Fraunces', serif;
+      font-family: var(--font-display);
       font-weight: 400;
       font-size: 22px;
       line-height: 1.25;
-      letter-spacing: -0.01em;
+      letter-spacing: 0.01em;
       margin: 0 0 8px;
       color: var(--text-0);
     }
@@ -278,7 +278,7 @@
 
     /* CTA */
     .lfm-cta { padding: 80px 0; text-align: center; }
-    .lfm-cta h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px, 3.5vw, 42px); margin: 0 0 14px; }
+    .lfm-cta h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 3.5vw, 42px); margin: 0 0 14px; }
     .lfm-cta p { color: var(--text-1); margin: 0 0 28px; font-size: 17px; }
   </style>
 </head>
@@ -594,7 +594,7 @@
           <span class="lfm-step__dot" aria-hidden="true"></span>
           <p class="lfm-step__status">Planned &middot; v1.1</p>
           <h3 class="lfm-step__title">ListenBrainz dual integration</h3>
-          <p class="lfm-step__desc">For listeners who scrobble to <a href="https://listenbrainz.org" target="_blank" rel="noopener">ListenBrainz</a> instead of (or alongside) Last.fm. Same surfaces (Discover Mix, Time Machine, Year in Review) backed by the MetaBrainz open dataset. Read-only, opt-in, never written from the app directly.</p>
+          <p class="lfm-step__desc">For listeners who scrobble to <a href="https://listenbrainz.org" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:2px;">ListenBrainz</a> instead of (or alongside) Last.fm. Same surfaces (Discover Mix, Time Machine, Year in Review) backed by the MetaBrainz open dataset. Read-only, opt-in, never written from the app directly.</p>
         </li>
 
         <li class="lfm-step lfm-step--planned">
