@@ -1256,6 +1256,8 @@ section { padding-block: var(--rhythm); }
 .proofbar__item + .proofbar__item::before { content: "·"; color: var(--text-2); opacity: .5; margin: 0 18px; }
 a.proofbar__item { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
 a.proofbar__item:hover { color: var(--accent-hi); }
+.proofbar__item--accent { color: var(--accent); }
+.proofbar__item--accent::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); vertical-align: middle; animation: vb-pulse 2.4s ease-out infinite; }
 @media (max-width: 720px) {
   .proofbar__inner { flex-direction: column; gap: 8px; padding: 14px 0; }
   .proofbar__item + .proofbar__item::before { content: none; }
