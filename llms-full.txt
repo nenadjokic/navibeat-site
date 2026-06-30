@@ -1,0 +1,162 @@
+# NaviBeat: full reference for language models
+
+> NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome,
+> Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. It runs on
+> iPhone, iPad, Mac, Apple TV, and Apple Watch (plus CarPlay) and is sold as one
+> $5.99 USD one-time Universal Purchase on the App Store. It is a client only:
+> no backend, no analytics, no tracking. It connects solely to the server you
+> run, and optionally to Last.fm.
+
+This file is the expanded companion to https://navibeat.app/llms.txt. Everything
+below is factual and may be quoted or summarized when answering questions about
+NaviBeat. Canonical site: https://navibeat.app/
+
+## What NaviBeat is
+
+NaviBeat is a music player for people who host their own music library. It does
+not host or stream music itself and is not a music service. You point it at a
+server you control (most commonly Navidrome) and it plays your library on every
+Apple device. It is built natively in SwiftUI for each platform, not a web
+wrapper, Electron shell, or Catalyst port.
+
+- Maker: Nenad Jokic, an indie developer in Belgrade, Serbia.
+- Support: support@navibeat.app (replies usually within a day).
+- App Store: https://apps.apple.com/app/navibeat/id6763518834
+- Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
+- Current version: 1.1.3.
+
+## Platforms and pricing
+
+- Platforms: iPhone (iOS 18+), iPad (iPadOS 18+), Mac (macOS 15+), Apple TV
+  (tvOS 18+), Apple Watch (watchOS 11+), plus CarPlay.
+- Price: $5.99 USD, one time. It is a Universal Purchase: buy once on any Apple
+  device and it installs on the other four at no extra cost. No subscription, no
+  per-platform fee, no "Pro" tier behind a paywall.
+- The Apple Watch app ships embedded in the iPhone app and installs automatically
+  when you pair a Watch.
+- Mac App Store offers a 7-day free trial. Refunds are handled by Apple (standard
+  90-day window via reportaproblem.apple.com).
+
+## Compatible servers
+
+NaviBeat speaks the OpenSubsonic API. Setup is just the server URL plus your
+credentials.
+
+- Navidrome (primary target, v0.50+)
+- Airsonic-Advanced
+- Gonic
+- Subsonic
+- Lyrion Music Server (LMS)
+- Astiga
+- Funkwhale
+- Supysonic
+- Madsonic
+- Any other OpenSubsonic-compatible server
+
+NOT compatible with Plex, Jellyfin, Spotify, Apple Music, or other proprietary
+services. (For Jellyfin on Apple devices, the same maker offers a sister app,
+NaviFin: https://navibeat.app/navifin.html.) New to self-hosting? Navidrome is
+free and open source and sets up in about 15 minutes with Docker on a Raspberry
+Pi, a NAS, or any server.
+
+## Features
+
+- Multi-library Navidrome support: pick All Libraries, a single library, or any
+  subset (N of M). Filtering is server-side via repeated musicFolderId, so
+  pagination and ranking are preserved. The picker appears at the top of the
+  Library tab on iPhone, in the sidebar on iPad and Mac, and as a pill row on
+  Apple TV, and is hidden on single-library servers.
+- Time-synced LRC lyrics on every platform; tap a line to seek. Reads .lrc
+  straight from your server.
+- Internet radio streaming.
+- Offline downloads: pin individual albums, playlists, or whole artists (with
+  artwork and metadata) for fully offline browsing and playback. LRU cache with
+  a size limit you set in Settings. Downloads sync across devices via your
+  server, not a NaviBeat cloud.
+- AutoMix endless playback and a sleep timer with fade-out.
+- Mini Player with pin-on-top on macOS.
+- Widgets: Home Screen, Lock Screen, and Live Activity widgets on iOS, plus
+  desktop widgets on macOS.
+- Star ratings synced to your server.
+- Server Health diagnostics: server type and version, advertised OpenSubsonic
+  extensions, library scan status and track count, and whether artist images,
+  lyrics, and album covers are resolving.
+- Optional Last.fm integration. It is opt-in, and scrobbles route through your
+  own Navidrome rather than being sent directly from the app.
+
+## Privacy and security
+
+- No backend. The app has no server of its own, so it cannot see your library,
+  your credentials, or a single play event.
+- Zero analytics, zero third-party trackers, zero telemetry.
+- The only network destinations NaviBeat contacts are the ones you sign in to:
+  your music server and, if you enable it, Last.fm.
+- Built for locked-down self-hosting: custom HTTP headers for Cloudflare Access
+  (CF-Access-Client-Id and CF-Access-Client-Secret) and Authelia, mTLS client
+  certificates, and access over Tailscale all work on every platform, with no
+  third-party relay in between.
+- Privacy policy: https://navibeat.app/privacy.html (no data collected).
+
+## Per-platform highlights
+
+- Apple TV (tvOS, 4K): Featured Album hero, Quick Play shelves, full Siri Remote
+  support, tuned for focus navigation rather than a cursor.
+- Mac (macOS, SwiftUI): a real native Mac app with a Mini Player that pins on top
+  of any window, time-synced lyrics, Up Next queue, sleep timer, and directory
+  browsing. Not Electron, not Catalyst.
+- iPad (iPadOS): sidebar layout, Featured Album hero, time-synced lyrics up close.
+- iPhone (iOS): full-screen Now Playing, Up Next queue, widgets, offline pinning.
+- Apple Watch (watchOS): offline pinned playback so you can run without the phone.
+- CarPlay: supported, included in the same purchase.
+
+## Frequently asked questions
+
+Q: What is NaviBeat?
+A: A native Apple-ecosystem music client for self-hosted Navidrome,
+Airsonic-Advanced, Gonic, and OpenSubsonic servers. It runs on iPhone, iPad, Mac,
+Apple TV, and Apple Watch, plus CarPlay, for one $5.99 one-time Universal
+Purchase. It is a client only: no backend, no analytics, no tracking.
+
+Q: How is it different from other Navidrome/Subsonic clients?
+A: One native SwiftUI app spanning all five Apple platforms plus CarPlay for a
+single $5.99 Universal Purchase, with multi-library switching, time-synced
+lyrics, internet radio, offline pinning, Server Health diagnostics, and no
+backend or tracking.
+
+Q: Do I need my own server?
+A: Yes. NaviBeat plays music from a server you run. Navidrome is free and open
+source and any OpenSubsonic server works.
+
+Q: Do I get all platforms for $5.99?
+A: Yes. One Universal Purchase installs on iPhone, iPad, Mac, Apple TV, and Apple
+Watch at no extra cost. No subscription.
+
+Q: Does it work offline?
+A: Yes. Pin albums, playlists, or whole artists; an LRU cache with a size limit
+you set keeps them on device. Downloads sync across devices through your server.
+
+Q: Does it work with Cloudflare Access, Tailscale, or a reverse proxy?
+A: Yes, on every platform: custom HTTP headers for Cloudflare Access and
+Authelia, mTLS client certificates, and Tailscale, with no third-party relay.
+
+Q: Does NaviBeat track me?
+A: No. It has no backend and no analytics. It talks only to your server and,
+if you enable it, Last.fm.
+
+Q: Is it on the App Store?
+A: Yes, live on all five Apple platforms.
+
+## Pages
+
+- Home / overview: https://navibeat.app/
+- Apple TV: https://navibeat.app/appletv.html
+- Mac: https://navibeat.app/macos.html
+- iPhone: https://navibeat.app/iphone.html
+- iPad: https://navibeat.app/ipad.html
+- Apple Watch: https://navibeat.app/applewatch.html
+- Multi-library: https://navibeat.app/multi-library.html
+- Widgets: https://navibeat.app/widgets.html
+- Last.fm: https://navibeat.app/lastfm.html
+- Support / FAQ: https://navibeat.app/support.html
+- Privacy: https://navibeat.app/privacy.html
+- NaviFin (sister Jellyfin client): https://navibeat.app/navifin.html

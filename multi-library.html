@@ -6,7 +6,7 @@
 
   <title>Multi-Library Support for Navidrome and Subsonic | NaviBeat</title>
   <meta name="description" content="The only native Apple player with full Navidrome multi-library support: pick one library, all of them, or any subset on iPhone, iPad, Mac, Apple TV, and Watch.">
-  <meta name="theme-color" content="#0e0b08">
+  <meta name="theme-color" content="#0C0C0E">
   <meta name="apple-itunes-app" content="app-id=6763518834">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="keywords" content="Navidrome multi-library, Navidrome multiple music folders, Subsonic multi library client, OpenSubsonic music folders, getMusicFolders, musicFolderId, iOS Navidrome client, macOS Navidrome client, Apple TV Navidrome client, multi-library music app">
@@ -38,8 +38,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,200;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
@@ -171,7 +171,7 @@
   <style>
     .ml-hero { padding: 96px 0 48px; position: relative; overflow: hidden; }
     .ml-hero__inner { max-width: 760px; }
-    .ml-hero h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: -0.02em; margin: 14px 0 22px; }
+    .ml-hero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: 0.01em; margin: 14px 0 22px; }
     .ml-hero h1 em { font-style: italic; color: var(--accent); }
     .ml-hero p.ml-sub { color: var(--text-1); font-size: 19px; line-height: 1.6; max-width: 60ch; }
 
@@ -179,11 +179,11 @@
     .ml-pillrow__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     @media (min-width: 960px) { .ml-pillrow__grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
     @media (max-width: 720px) { .ml-pillrow__grid { grid-template-columns: 1fr; } }
-    .ml-pillrow__cell h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 8px; font-family: 'Inter Tight', sans-serif; font-weight: 600; }
+    .ml-pillrow__cell h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 8px; font-family: var(--font-sans); font-weight: 600; }
     .ml-pillrow__cell p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0; }
 
     .ml-section { padding: 80px 0 40px; }
-    .ml-section h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 0 0 20px; }
+    .ml-section h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 0 0 20px; }
     .ml-section__sub { color: var(--text-1); font-size: 17px; max-width: 64ch; line-height: 1.6; margin: 0 0 36px; }
 
     .ml-platform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -196,7 +196,7 @@
       padding: 22px 22px 24px;
     }
     .ml-platform h3 {
-      font-family: 'Inter Tight', sans-serif;
+      font-family: var(--font-sans);
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
@@ -217,19 +217,19 @@
       padding: 22px 26px;
     }
     .ml-how__num {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       color: var(--accent);
       letter-spacing: 0.05em;
     }
-    .ml-how__step h3 { font-family: 'Inter Tight', sans-serif; font-size: 18px; margin: 6px 0 10px; color: var(--text-0); font-weight: 500; }
+    .ml-how__step h3 { font-family: var(--font-sans); font-size: 18px; margin: 6px 0 10px; color: var(--text-0); font-weight: 500; }
     .ml-how__step p { color: var(--text-1); font-size: 14px; line-height: 1.6; margin: 0; }
     .ml-how__step code {
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--border);
       padding: 1px 6px;
       border-radius: 4px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       color: var(--accent);
     }
@@ -245,14 +245,14 @@
     .ml-quote cite { display: block; margin-top: 10px; color: var(--text-2); font-size: 13px; font-style: normal; }
 
     .ml-cta { text-align: center; padding: 56px 0 80px; }
-    .ml-cta h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px, 4vw, 44px); margin: 0 0 18px; }
+    .ml-cta h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 4vw, 44px); margin: 0 0 18px; }
     .ml-cta p { color: var(--text-1); max-width: 56ch; margin: 0 auto 28px; line-height: 1.6; }
 
     .ml-faq { padding: 64px 0; background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .ml-faq h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px, 4vw, 44px); margin: 0 0 24px; }
+    .ml-faq h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 4vw, 44px); margin: 0 0 24px; }
     .ml-faq__item { border-top: 1px solid var(--border); padding: 18px 0; }
     .ml-faq__item:last-child { border-bottom: 1px solid var(--border); }
-    .ml-faq__item summary { cursor: pointer; font-family: 'Inter Tight', sans-serif; font-weight: 500; color: var(--text-0); font-size: 17px; padding: 4px 0; }
+    .ml-faq__item summary { cursor: pointer; font-family: var(--font-sans); font-weight: 500; color: var(--text-0); font-size: 17px; padding: 4px 0; }
     .ml-faq__item summary::-webkit-details-marker { display: none; }
     .ml-faq__item p { color: var(--text-1); line-height: 1.65; margin: 12px 0 0; font-size: 15px; }
   </style>
