@@ -2215,7 +2215,12 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 
 .act__stage {
   position: relative;
-  width: min(1180px, 92vw);
+  /* Height-aware width cap: on short viewports the centred stage must not rise
+     into the .theater__title overlay (top:8vh + ~2 title lines). Bounding width
+     by a vh-derived term keeps the device clear of the title at every height;
+     the term only binds on short screens, so tall screens are unchanged.
+     max() floor guards against a negative width on pathologically short windows. */
+  width: min(1180px, 92vw, max(380px, 160vh - 571px));
   aspect-ratio: 1180/620;
   display: flex; align-items: center; justify-content: center;
 }
@@ -2315,6 +2320,10 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .dev-mac__floater img { width: 100%; height: auto; display: block; background: transparent; }
 
 /* ---- Act 3: iPad (large + lyric zoom + connector) ---- */
+/* The iPad group is 4:3, so it's taller than the shared 1180/620 stage aspect and
+   makes this stage grow past its siblings (top rises into the title on short/mid
+   viewports). Cap it on the iPad's real effective aspect so it clears like the rest. */
+.act--ipad .act__stage { width: min(1180px, 92vw, max(360px, 144vh - 513px)); }
 .act-ipad__group { position: relative; width: 78%; }
 .dev-ipad {
   position: relative; width: 100%; aspect-ratio: 1800/1350;
@@ -2329,9 +2338,11 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .act.is-active .dev-ipad { transform: scale(1); opacity: 1; }
 .dev-ipad img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
-/* Lyric macro zoom overlay */
+/* Lyric macro zoom overlay — pops out to the LEFT of the iPad. Kept below the
+   iPad's top edge (was top:-12%, which poked up into the centred .theater__title
+   across a wide band of viewport heights). */
 .dev-ipad__zoom {
-  position: absolute; left: -8%; top: -12%;
+  position: absolute; left: -8%; top: 6%;
   width: 46%; aspect-ratio: 1/1.1;
   border-radius: 14px; overflow: hidden;
   border: 1px solid rgba(244, 123, 32,.35);
@@ -2428,7 +2439,9 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 
 /* ---- Act 5: Family — all five devices together ---- */
 .family {
-  position: relative; width: min(1280px, 95vw);
+  /* Family act sets its own width (ignores the .act__stage cap), so it gets the
+     same height-aware clearance term to stay below the title on short viewports. */
+  position: relative; width: min(1280px, 95vw, max(400px, 158vh - 565px));
   aspect-ratio: 1280/680;
 }
 .family__device {
