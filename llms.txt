@@ -41,6 +41,7 @@
 - [Multi-library](https://navibeat.app/multi-library.html): Navidrome multi-library support
 - [Widgets](https://navibeat.app/widgets.html): Home Screen, Lock Screen, Live Activity, desktop widgets
 - [Last.fm](https://navibeat.app/lastfm.html): Last.fm integration, scrobbling, Year in Review
+- [Rockbox](https://navibeat.app/rockbox.html): Send your Navidrome library to a Rockbox iPod (macOS feature in active development, not yet shipped)
 - [Support / FAQ](https://navibeat.app/support.html): Setup, troubleshooting, glossary
 - [Privacy](https://navibeat.app/privacy.html): Privacy policy (no data collection)
 - [NaviFin](https://navibeat.app/navifin.html): Sister app, native Jellyfin client for Apple

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaviBeat &times; RockBox: Send Your Library to a Rockbox iPod</title>
+  <meta name="description" content="A NaviBeat feature coming to macOS: send music from your own Navidrome library onto a Rockbox iPod, transcoded and with album art re-encoded so it just plays. Send-to, not sync. In active development.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="apple-itunes-app" content="app-id=6763518834">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/rockbox.html">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/rockbox.html">
+
+  <meta property="og:title" content="NaviBeat &times; RockBox: Send Your Library to a Rockbox iPod">
+  <meta property="og:description" content="Send music from your own Navidrome library onto a Rockbox iPod. Transcoded, art re-encoded, correct on-device paths, a free NaviBeat theme. A macOS feature in active development.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://navibeat.app/rockbox.html">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta property="og:image:alt" content="NaviBeat running as a native macOS app, where the Rockbox feature lives.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat &times; RockBox: Send Your Library to a Rockbox iPod">
+  <meta name="twitter:description" content="A macOS feature in active development: send your Navidrome library to a Rockbox iPod, transcoded and art-optimized. Send-to, not sync. Nothing leaves your own server.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:image:alt" content="NaviBeat's native macOS app, home view.">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="styles.css?v=20260701a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+        "sameAs": [
+          "https://www.navidrome.org/apps/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navibeat.app/#website",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat",
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Article",
+        "@id": "https://navibeat.app/rockbox.html#article",
+        "headline": "NaviBeat × RockBox: Send Your Library to a Rockbox iPod",
+        "name": "NaviBeat × RockBox: Send Your Library to a Rockbox iPod",
+        "description": "A macOS feature in active development. Send music from your own Navidrome library onto a Rockbox iPod, transcoded and with album art re-encoded so Rockbox can read it. Send-to, not sync. A free NaviBeat theme on first connect. Phase 2 reads plays and ratings back through your Navidrome, never directly to Last.fm.",
+        "url": "https://navibeat.app/rockbox.html",
+        "datePublished": "2026-07-01",
+        "dateModified": "2026-07-01",
+        "inLanguage": "en",
+        "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "url": "https://navibeat.app/#maker" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "about": { "@id": "https://navibeat.app/#app" },
+        "mentions": [
+          { "@type": "SoftwareApplication", "name": "Rockbox", "url": "https://www.rockbox.org" },
+          { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://navibeat.app/rockbox.html#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Rockbox", "item": "https://navibeat.app/rockbox.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ====== Rockbox page, local styles. Mirrors the Last.fm page system:
+            reuses the global design tokens + classes, adds .rbx-* components. ====== */
+
+    /* HERO */
+    .rbx-hero { padding: 96px 0 48px; position: relative; overflow: hidden; }
+    .rbx-hero__inner { max-width: 780px; }
+    .rbx-hero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: 0.01em; margin: 14px 0 22px; }
+    .rbx-hero h1 em { font-style: italic; color: var(--accent); }
+    .rbx-hero p.rbx-sub { color: var(--text-1); font-size: 19px; line-height: 1.6; max-width: 62ch; }
+
+    /* Status chip in the eyebrow row */
+    .rbx-chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-sans); font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--accent); background: var(--accent-dim);
+      border: 1px solid var(--border-strong); border-radius: 999px;
+      padding: 7px 14px; margin-bottom: 18px;
+    }
+    .rbx-chip__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); flex-shrink: 0; }
+
+    /* TRUST BANNER */
+    .rbx-trust { background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 32px 0; }
+    .rbx-trust__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (min-width: 960px) { .rbx-trust__grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
+    @media (max-width: 720px) { .rbx-trust__grid { grid-template-columns: 1fr; } }
+    .rbx-trust__cell h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 8px; font-family: var(--font-sans); font-weight: 600; }
+    .rbx-trust__cell p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0; }
+
+    /* HOW IT WORKS, numbered step cards */
+    .rbx-how { padding: 88px 0 40px; }
+    .rbx-how h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 20px; }
+    .rbx-how__sub { color: var(--text-1); font-size: 17px; max-width: 62ch; line-height: 1.6; margin: 0 0 40px; }
+    .rbx-steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    @media (max-width: 880px) { .rbx-steps { grid-template-columns: 1fr; } }
+    .rbx-step-card {
+      background: var(--bg-1);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 24px 26px;
+      position: relative;
+    }
+    .rbx-step-card__n {
+      font-family: var(--font-display); font-weight: 700; font-size: 15px;
+      color: var(--accent); letter-spacing: 0.08em;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--accent-dim); border: 1px solid var(--border-strong);
+      margin-bottom: 16px;
+    }
+    .rbx-step-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 21px; line-height: 1.2; margin: 0 0 10px; color: var(--text-0); }
+    .rbx-step-card p { color: var(--text-1); font-size: 15px; line-height: 1.6; margin: 0; }
+    .rbx-step-card code { font-family: var(--font-mono); font-size: 13px; color: var(--accent-hi); background: var(--bg-3); padding: 1px 6px; border-radius: 5px; }
+
+    /* DOES / DOESN'T split, mirrors the Last.fm sync card */
+    .rbx-split { padding: 88px 0 40px; }
+    .rbx-split h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 20px; }
+    .rbx-split__sub { color: var(--text-1); font-size: 17px; max-width: 62ch; line-height: 1.6; margin: 0 0 36px; }
+    .rbx-split__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 720px) { .rbx-split__grid { grid-template-columns: 1fr; } }
+    .rbx-split__card { background: var(--bg-1); border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; }
+    .rbx-split__card--yes { border-left: 3px solid var(--accent); }
+    .rbx-split__card--no { border-left: 3px solid var(--text-2); }
+    .rbx-split__card h3 { font-family: var(--font-sans); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 16px; }
+    .rbx-split__card--yes h3 { color: var(--accent); }
+    .rbx-split__card--no h3 { color: var(--text-2); }
+    .rbx-split__card ul { list-style: none; padding: 0; margin: 0; }
+    .rbx-split__card li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--text-1); font-size: 15px; line-height: 1.5; }
+    .rbx-split__card li:last-child { border-bottom: none; }
+    .rbx-split__card li strong { color: var(--text-0); font-weight: 500; }
+    .rbx-split__mark { flex-shrink: 0; width: 22px; font-family: var(--font-mono); font-weight: 500; font-size: 16px; line-height: 1.5; }
+    .rbx-split__card--yes .rbx-split__mark { color: var(--accent); }
+    .rbx-split__card--no .rbx-split__mark { color: var(--text-2); }
+
+    /* BONUS THEME + WPS mock (pure tokens, no new colors) */
+    .rbx-theme { padding: 96px 0; background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .rbx-theme__grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+    @media (min-width: 920px) { .rbx-theme__grid { grid-template-columns: 1.1fr 0.9fr; } }
+    .rbx-theme h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 18px; }
+    .rbx-theme p { color: var(--text-1); font-size: 16px; line-height: 1.65; margin: 0 0 16px; max-width: 56ch; }
+    .rbx-theme ul { list-style: none; padding: 0; margin: 18px 0 0; }
+    .rbx-theme li { display: flex; gap: 12px; padding: 9px 0; color: var(--text-1); font-size: 15px; line-height: 1.5; }
+    .rbx-theme li span.rbx-theme__b { color: var(--accent); font-family: var(--font-mono); flex-shrink: 0; }
+    .rbx-theme li strong { color: var(--text-0); font-weight: 600; }
+
+    /* The fake iPod WPS screen, built from tokens only */
+    .rbx-wps-wrap { display: flex; justify-content: center; }
+    .rbx-wps {
+      width: 100%; max-width: 340px;
+      aspect-ratio: 320 / 240;
+      background: #0C0C0E; /* pure carbon black, = --bg-0 */
+      border: 1px solid var(--border-strong);
+      border-radius: 14px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.55), inset 0 0 0 1px rgba(0,0,0,0.6);
+      padding: 16px 18px;
+      display: flex; flex-direction: column;
+      font-family: var(--font-mono);
+      position: relative; overflow: hidden;
+    }
+    .rbx-wps__status { display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--text-2); letter-spacing: 0.06em; }
+    .rbx-wps__status strong { color: var(--accent); font-weight: 600; }
+    .rbx-wps__body { flex: 1; display: flex; gap: 16px; align-items: center; padding: 14px 0; }
+    .rbx-wps__art {
+      width: 88px; height: 88px; border-radius: 8px; flex-shrink: 0;
+      background: linear-gradient(145deg, var(--accent) 0%, var(--accent-2) 100%);
+      display: grid; place-items: center;
+    }
+    .rbx-wps__art img { width: 40px; height: 40px; opacity: 0.92; }
+    .rbx-wps__meta { min-width: 0; }
+    .rbx-wps__title { font-family: var(--font-display); font-weight: 600; font-size: 20px; color: var(--text-0); line-height: 1.1; margin: 0 0 6px; letter-spacing: 0.01em; }
+    .rbx-wps__artist { font-size: 13px; color: var(--accent-hi); margin: 0 0 3px; }
+    .rbx-wps__album { font-size: 12px; color: var(--text-2); margin: 0; }
+    .rbx-wps__foot { margin-top: auto; }
+    .rbx-wps__bar { height: 6px; border-radius: 3px; background: var(--bg-3); overflow: hidden; margin-bottom: 7px; }
+    .rbx-wps__fill { height: 100%; width: 38%; background: var(--accent); border-radius: 3px; }
+    .rbx-wps__times { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-2); }
+    .rbx-wps__cap { text-align: center; font-family: var(--font-sans); font-size: 12px; color: var(--text-2); margin-top: 14px; letter-spacing: 0.04em; }
+
+    /* ROADMAP TIMELINE, reuses the Last.fm timeline visual */
+    .rbx-roadmap { padding: 96px 0 96px; }
+    .rbx-roadmap__head { max-width: 720px; margin-bottom: 56px; }
+    .rbx-roadmap__head h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 4vw, 50px); line-height: 1.1; margin: 14px 0 16px; }
+    .rbx-roadmap__head p { color: var(--text-1); font-size: 17px; line-height: 1.6; max-width: 64ch; }
+    .rbx-legend { display: flex; gap: 28px; margin: 22px 0 0; flex-wrap: wrap; font-size: 13px; color: var(--text-2); }
+    .rbx-legend__item { display: flex; align-items: center; gap: 8px; }
+    .rbx-legend__dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .rbx-legend__dot--active { background: var(--accent); box-shadow: 0 0 0 2px var(--accent), 0 0 12px var(--accent-glow); }
+    .rbx-legend__dot--planned { background: transparent; border: 1.5px solid var(--text-2); }
+
+    .rbx-phase { font-family: var(--font-sans); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-2); margin: 0 0 26px; padding-left: 56px; }
+    .rbx-phase--two { margin-top: 18px; }
+
+    .rbx-timeline { position: relative; max-width: 780px; padding-left: 56px; }
+    .rbx-timeline::before {
+      content: '';
+      position: absolute; left: 14px; top: 12px; bottom: 12px; width: 2px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent) 42%, var(--border-strong) 56%, var(--border-strong) 100%);
+    }
+    .rbx-step { position: relative; padding: 0 0 38px; }
+    .rbx-step:last-child { padding-bottom: 0; }
+    .rbx-step__dot {
+      position: absolute; left: -52px; top: 4px;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--bg-0); border: 2px solid var(--text-2);
+      display: grid; place-items: center; z-index: 2;
+    }
+    .rbx-step__dot::after { content: ''; width: 12px; height: 12px; border-radius: 50%; background: transparent; }
+    .rbx-step--active .rbx-step__dot { border-color: var(--accent); background: var(--bg-0); animation: rbx-pulse 2.4s ease-in-out infinite; }
+    .rbx-step--active .rbx-step__dot::after { background: var(--accent); box-shadow: 0 0 12px var(--accent-glow); }
+    .rbx-step--planned .rbx-step__dot { border-color: var(--text-2); }
+    @keyframes rbx-pulse { 0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); } 50% { box-shadow: 0 0 0 8px transparent; } }
+
+    .rbx-step__status { font-family: var(--font-sans); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; margin: 0 0 6px; }
+    .rbx-step--active .rbx-step__status { color: var(--accent); }
+    .rbx-step--planned .rbx-step__status { color: var(--text-2); }
+    .rbx-step__title { font-family: var(--font-display); font-weight: 400; font-size: 22px; line-height: 1.25; letter-spacing: 0.01em; margin: 0 0 8px; color: var(--text-0); }
+    .rbx-step--planned .rbx-step__title { color: var(--text-1); }
+    .rbx-step__desc { color: var(--text-1); font-size: 15px; line-height: 1.6; margin: 0; max-width: 58ch; }
+    .rbx-step--planned .rbx-step__desc { color: var(--text-2); }
+    .rbx-step__desc code { font-family: var(--font-mono); font-size: 13px; color: var(--accent-hi); }
+
+    /* WHY band */
+    .rbx-why { padding: 0 0 16px; }
+    .rbx-why__card { background: var(--bg-1); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 12px; padding: 30px 32px; max-width: 860px; }
+    .rbx-why__card h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 3vw, 34px); margin: 0 0 14px; }
+    .rbx-why__card p { color: var(--text-1); font-size: 16px; line-height: 1.7; margin: 0 0 14px; }
+    .rbx-why__card p:last-child { margin-bottom: 0; }
+    .rbx-why__card strong { color: var(--text-0); font-weight: 600; }
+
+    /* CTA */
+    .rbx-cta { padding: 88px 0; text-align: center; }
+    .rbx-cta h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 3.5vw, 42px); margin: 0 0 14px; }
+    .rbx-cta p { color: var(--text-1); margin: 0 auto 28px; font-size: 17px; max-width: 60ch; }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<div class="beta-banner" role="status">
+  <div class="beta-banner__inner">
+    <span class="beta-banner__dot" aria-hidden="true"></span>
+    <span><strong>NaviBeat is live on the App Store.</strong> One $5.99 Universal Purchase for iPhone, iPad, Mac, Apple TV, and Apple Watch. <a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Buy on the App Store &rarr;</a></span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+        <span class="nav__pulse"></span>
+      </span>
+      NaviBeat
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
+      <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
+      <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="navifin.html" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+
+      <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="rbx-hero">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="index.html">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">Rockbox</span>
+      </nav>
+      <div class="rbx-hero__inner">
+        <span class="rbx-chip"><span class="rbx-chip__dot" aria-hidden="true"></span>macOS &middot; In active development</span>
+        <h1 id="rockbox">Send your library to a real <em>Rockbox iPod</em>.</h1>
+
+        <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
+          <strong style="color: var(--text-0);">TL;DR.</strong> NaviBeat for Mac is getting a way to push music from your own Navidrome library onto a Rockbox iPod (or any Rockbox player that mounts as USB mass storage). It transcodes to an iPod-friendly format and re-encodes album art so Rockbox can actually read it. It is <strong>send-to, not sync</strong>: right-click, Send to RockBox, done. This is a paid in-app unlock (around $5, separate from the base app) that is <strong>coming to macOS in a future update</strong>, not available to download yet.
+        </aside>
+
+        <p class="rbx-sub">
+          Your Navidrome, your iPod, your files. NaviBeat asks <strong>your own server</strong> to transcode the tracks and resize the cover art, lays the files out in folders Rockbox understands, and writes proper <code style="font-family:var(--font-mono);font-size:0.92em;color:var(--accent-hi);">.m3u8</code> playlists with correct on-device paths. Nothing leaves your own server. A free NaviBeat theme is installed on first connect as a bonus.
+        </p>
+        <div class="p-hero__ctas" style="margin-top: 28px;">
+          <a class="btn btn--primary" href="#roadmap">See the build roadmap &darr;</a>
+          <a class="link-quiet" href="#how">How it works&nbsp;&rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BANNER -->
+  <section class="rbx-trust" aria-labelledby="rbx-trust-title">
+    <div class="wrap">
+      <h2 id="rbx-trust-title" class="visually-hidden">Four things to know about Rockbox Bridge</h2>
+      <div class="rbx-trust__grid">
+        <div class="rbx-trust__cell">
+          <h3>Your server, your files</h3>
+          <p>The music comes from your own Navidrome. Your server does the transcoding and art resizing. Nothing is uploaded anywhere, and no third-party service is involved.</p>
+        </div>
+        <div class="rbx-trust__cell">
+          <h3>Send-to, not sync</h3>
+          <p>No background sync, no conflict resolution, no surprises. You right-click a song, album, artist, or playlist and choose Send to RockBox. It copies exactly what you picked.</p>
+        </div>
+        <div class="rbx-trust__cell">
+          <h3>Art that actually renders</h3>
+          <p>Cover art is re-encoded to a baseline JPEG that Rockbox can read, sized for the iPod screen. This fixes the classic "big art will not show" problem on old hardware.</p>
+        </div>
+        <div class="rbx-trust__cell">
+          <h3>Read-back through Navidrome</h3>
+          <p>Phase 2 reads plays and ratings back into your Navidrome, which forwards them per your own server config. NaviBeat never scrobbles directly to Last.fm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="rbx-how" id="how">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">How it works</p>
+      <h2 id="how-heading">Plug it in, right-click, done.</h2>
+      <p class="rbx-how__sub">
+        Rockbox does not use the proprietary iTunes database. It plays files straight from the filesystem and builds its own tag database on the device. So this is an honest "transcode, re-encode art, copy into the right folders, write playlists" pipeline, not a reverse-engineered sync protocol.
+      </p>
+      <div class="rbx-steps">
+        <div class="rbx-step-card">
+          <span class="rbx-step-card__n" aria-hidden="true">1</span>
+          <h3>Connect over USB</h3>
+          <p>Plug in the Rockbox device. It mounts as a normal USB drive. One time, you grant NaviBeat access to it with a single click. After that, reconnecting is automatic, and a "RockBox Player" entry appears in the sidebar.</p>
+        </div>
+        <div class="rbx-step-card">
+          <span class="rbx-step-card__n" aria-hidden="true">2</span>
+          <h3>Right-click, Send to RockBox</h3>
+          <p>On any song, album, artist, or playlist in your library, choose Send to RockBox. A progress sheet shows each track and can be cancelled at any time.</p>
+        </div>
+        <div class="rbx-step-card">
+          <span class="rbx-step-card__n" aria-hidden="true">3</span>
+          <h3>Your server transcodes</h3>
+          <p>NaviBeat asks your own Navidrome to produce the audio in your chosen format and bitrate (MP3, AAC, Opus, or Vorbis) and to resize the cover art to a baseline JPEG the iPod can read.</p>
+        </div>
+        <div class="rbx-step-card">
+          <span class="rbx-step-card__n" aria-hidden="true">4</span>
+          <h3>Correct on-device paths</h3>
+          <p>Files land as <code>/Music/Artist/Album/Track</code> with sanitized names, a <code>cover.jpg</code> per album, and playlists written as <code>.m3u8</code> using paths from the device root, the way Rockbox expects.</p>
+        </div>
+        <div class="rbx-step-card">
+          <span class="rbx-step-card__n" aria-hidden="true">5</span>
+          <h3>Pick your quality</h3>
+          <p>A dedicated Rockbox section in macOS Settings lets you choose format, bitrate, and cover-art size, plus what to do on duplicates: skip or overwrite. Set it once and forget it.</p>
+        </div>
+        <div class="rbx-step-card">
+          <span class="rbx-step-card__n" aria-hidden="true">6</span>
+          <h3>Browse and remove</h3>
+          <p>Click the device to see what is on it, grouped All, Albums, Artists, and Playlists, in the same grid you already know. Remove anything you no longer want directly from there.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOES / DOESN'T -->
+  <section class="rbx-split" id="scope">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">What it does &middot; What it does not</p>
+      <h2 id="scope-heading">A clean scope line, drawn on purpose.</h2>
+      <p class="rbx-split__sub">
+        Rockbox Bridge is deliberately a one-way push of your own music, plus an optional metadata read-back in Phase 2. It is not a two-way sync engine, and it never touches anything but your own server and your own device.
+      </p>
+      <div class="rbx-split__grid">
+        <div class="rbx-split__card rbx-split__card--yes">
+          <h3>What it does</h3>
+          <ul>
+            <li>
+              <span class="rbx-split__mark" aria-hidden="true">&#10003;</span>
+              <span><strong>Sends music to the device</strong>, transcoded to MP3, AAC, Opus, or Vorbis at the bitrate you choose, with album art re-encoded so it renders.</span>
+            </li>
+            <li>
+              <span class="rbx-split__mark" aria-hidden="true">&#10003;</span>
+              <span><strong>Writes correct on-device paths</strong> and proper <code>.m3u8</code> playlists, so browsing and playback just work.</span>
+            </li>
+            <li>
+              <span class="rbx-split__mark" aria-hidden="true">&#10003;</span>
+              <span><strong>Lets you browse and remove</strong> what is on the device, grouped All, Albums, Artists, Playlists.</span>
+            </li>
+            <li>
+              <span class="rbx-split__mark" aria-hidden="true">&#10003;</span>
+              <span><strong>Reads plays and ratings back (Phase 2)</strong> into your Navidrome, which forwards them per your own server config.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rbx-split__card rbx-split__card--no">
+          <h3>What it does not do</h3>
+          <ul>
+            <li>
+              <span class="rbx-split__mark" aria-hidden="true">&oslash;</span>
+              <span><strong>No two-way sync</strong> or conflict resolution. Send-to is intentional and predictable, not a background mirror.</span>
+            </li>
+            <li>
+              <span class="rbx-split__mark" aria-hidden="true">&oslash;</span>
+              <span><strong>No direct scrobbling</strong> to Last.fm or ListenBrainz. All read-back goes through your Navidrome, honoring NaviBeat's standing policy.</span>
+            </li>
+            <li>
+              <span class="rbx-split__mark" aria-hidden="true">&oslash;</span>
+              <span><strong>No firmware work</strong>. NaviBeat does not install or update Rockbox itself. Your device already runs Rockbox.</span>
+            </li>
+            <li>
+              <span class="rbx-split__mark" aria-hidden="true">&oslash;</span>
+              <span><strong>Audio transfer stays one-way</strong>. Phase 2 reads back only metadata: plays, ratings, and playlist definitions, never audio files.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUS THEME -->
+  <section class="rbx-theme" id="theme">
+    <div class="wrap">
+      <div class="rbx-theme__grid">
+        <div>
+          <p class="eyebrow eyebrow--accent">Bonus, free</p>
+          <h2 id="theme-heading">A NaviBeat theme for your iPod.</h2>
+          <p>
+            On first connect, NaviBeat can install a free Rockbox theme that matches the app: pure black and copper, big readable type, album art, and the NaviBeat mark. No statusbar clutter, just the music.
+          </p>
+          <p>
+            It ships as two skins over one shared core, so you can keep it clean or go deep.
+          </p>
+          <ul>
+            <li><span class="rbx-theme__b" aria-hidden="true">A</span><span><strong>NaviBeat</strong>: the clean skin. Track, artist, album, a single thicker scrubber that also shows volume the classic iPod way, play mode, and battery.</span></li>
+            <li><span class="rbx-theme__b" aria-hidden="true">B</span><span><strong>NaviBeat Audiophile</strong>: a mono variant that adds kHz, bit depth, lossless and bitrate readouts, channels, ReplayGain, and a left-right VU.</span></li>
+          </ul>
+          <p style="margin-top:18px;color:var(--text-2);font-size:14px;">
+            Installing the theme is opt-in, and you can switch it on or off in the device's own Theme Settings at any time.
+          </p>
+        </div>
+        <div class="rbx-wps-wrap">
+          <figure style="margin:0;width:100%;max-width:340px;">
+            <div class="rbx-wps" role="img" aria-label="A concept of the NaviBeat Rockbox theme: pure black screen with copper accents, album art on the left, track and artist on the right, and a copper scrubber with elapsed and total time.">
+              <div class="rbx-wps__status">
+                <span><strong>3 OF 18</strong></span>
+                <span>SHUFFLE &middot; 87%</span>
+              </div>
+              <div class="rbx-wps__body">
+                <div class="rbx-wps__art" aria-hidden="true">
+                  <img src="assets/icon.svg" alt="">
+                </div>
+                <div class="rbx-wps__meta">
+                  <p class="rbx-wps__title">Midnight Drive</p>
+                  <p class="rbx-wps__artist">The Carbon Sessions</p>
+                  <p class="rbx-wps__album">Copper &amp; Vinyl</p>
+                </div>
+              </div>
+              <div class="rbx-wps__foot" aria-hidden="true">
+                <div class="rbx-wps__bar"><div class="rbx-wps__fill"></div></div>
+                <div class="rbx-wps__times"><span>1:24</span><span>3:42</span></div>
+              </div>
+            </div>
+            <figcaption class="rbx-wps__cap">Concept of the NaviBeat theme. Rendered on this page in CSS.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP TIMELINE -->
+  <section class="rbx-roadmap" id="roadmap">
+    <div class="wrap">
+      <div class="rbx-roadmap__head">
+        <p class="eyebrow eyebrow--accent">Build roadmap</p>
+        <h2 id="roadmap-heading">What is being built, transparently.</h2>
+        <p>Rockbox Bridge is a macOS feature in active development. It is not in the App Store build yet. Here is the order things are being built, with honest status. Orange means actively in development. Gray means planned and queued. No vapor.</p>
+        <div class="rbx-legend">
+          <span class="rbx-legend__item"><span class="rbx-legend__dot rbx-legend__dot--active"></span> In development</span>
+          <span class="rbx-legend__item"><span class="rbx-legend__dot rbx-legend__dot--planned"></span> Planned</span>
+        </div>
+      </div>
+
+      <p class="rbx-phase">Phase 1 &middot; The one-way push</p>
+      <ol class="rbx-timeline">
+
+        <li class="rbx-step rbx-step--active">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">In development &middot; Phase 1</p>
+          <h3 class="rbx-step__title">Paid unlock + Rockbox settings</h3>
+          <p class="rbx-step__desc">A one-time in-app unlock (around $5, separate from the base app) opens a dedicated Rockbox section in macOS Settings: format, bitrate, cover-art size, and what to do on duplicates. Includes Restore Purchases.</p>
+        </li>
+
+        <li class="rbx-step rbx-step--active">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">In development &middot; Phase 1</p>
+          <h3 class="rbx-step__title">Connect over USB</h3>
+          <p class="rbx-step__desc">NaviBeat detects the mounted device, grants access with a single click, confirms it is really a Rockbox device, and shows a "RockBox Player" entry in the sidebar. Reconnecting later is automatic, no repeated prompts.</p>
+        </li>
+
+        <li class="rbx-step rbx-step--active">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">In development &middot; Phase 1</p>
+          <h3 class="rbx-step__title">Server-side transcode + art re-encode</h3>
+          <p class="rbx-step__desc">Your own Navidrome produces the audio in the format and bitrate you chose, and resizes the cover art to a baseline JPEG that Rockbox can read. No third-party service, no uploads.</p>
+        </li>
+
+        <li class="rbx-step rbx-step--active">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">In development &middot; Phase 1</p>
+          <h3 class="rbx-step__title">Send to RockBox</h3>
+          <p class="rbx-step__desc">Right-click a song, album, artist, or playlist to send it, with a cancelable progress sheet. Files are laid out as <code>/Music/Artist/Album/Track</code> with a <code>cover.jpg</code> per album, and playlists are written as <code>.m3u8</code> with device-root paths.</p>
+        </li>
+
+        <li class="rbx-step rbx-step--active">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">In development &middot; Phase 1</p>
+          <h3 class="rbx-step__title">Browse and remove on device</h3>
+          <p class="rbx-step__desc">Click the device to browse its contents grouped All, Albums, Artists, and Playlists, mirroring the library grid you already use. Remove items you no longer want, and affected playlists update.</p>
+        </li>
+
+        <li class="rbx-step rbx-step--active">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">In development &middot; Bonus</p>
+          <h3 class="rbx-step__title">NaviBeat Rockbox theme</h3>
+          <p class="rbx-step__desc">A free theme installed on first connect: two skins (clean and Audiophile) over one shared core, drawn for the iPod screen in pure black and copper. Opt-in, switchable on the device at any time.</p>
+        </li>
+
+      </ol>
+
+      <p class="rbx-phase rbx-phase--two">Phase 2 &middot; Read-back, through your Navidrome</p>
+      <ol class="rbx-timeline">
+
+        <li class="rbx-step rbx-step--planned">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">Planned &middot; Phase 2</p>
+          <h3 class="rbx-step__title">Plays back into Navidrome</h3>
+          <p class="rbx-step__desc">When you reconnect, NaviBeat reads the plays Rockbox logged on the device and, after you review and confirm, submits them to your Navidrome. Navidrome updates your play counts and forwards to Last.fm or ListenBrainz per your own server config. Nothing is submitted silently, and NaviBeat never scrobbles directly.</p>
+        </li>
+
+        <li class="rbx-step rbx-step--planned">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">Planned &middot; Phase 2</p>
+          <h3 class="rbx-step__title">Ratings back into Navidrome</h3>
+          <p class="rbx-step__desc">Star ratings you set on the iPod can be read back and written to your Navidrome, with a conflict policy you control: device wins, server wins, or only fill in the blanks. Reviewed and confirmed before anything is written.</p>
+        </li>
+
+        <li class="rbx-step rbx-step--planned">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">Planned &middot; Phase 2</p>
+          <h3 class="rbx-step__title">Device-made playlists back into Navidrome</h3>
+          <p class="rbx-step__desc">Playlists you built on the device can be resolved against your library and recreated in Navidrome, with any unmatched tracks listed plainly rather than guessed.</p>
+        </li>
+
+      </ol>
+
+      <p style="margin:48px 0 0;color:var(--text-2);font-size:13px;max-width:64ch;">
+        Phase 1 is the one-way push and ships first. Phase 2 is the metadata read-back and can follow in a later update without holding up Phase 1. The theme is independent and lands whenever its on-device export is finished. Final format and price details are still being set.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="rbx-why">
+    <div class="wrap">
+      <div class="rbx-why__card">
+        <h2 id="why-heading">Why build this at all?</h2>
+        <p>
+          Because you should be able to own your music on real hardware. A Rockbox iPod is a beautiful, single-purpose player with physical buttons and long battery life. The only annoying part is getting your library onto it in a format and art layout it likes.
+        </p>
+        <p>
+          That is the gap NaviBeat closes on the Mac you already use. <strong>Your Navidrome, your iPod, your files.</strong> The transcoding happens on your own server, the files land in folders Rockbox understands, and the playlists carry the right paths. Privacy is the default, not a setting: nothing leaves your own server, and there is no third-party service in the loop.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="rbx-cta">
+    <div class="wrap">
+      <h2 id="cta">Get NaviBeat now, Rockbox Bridge is on the way.</h2>
+      <p>NaviBeat is on the App Store today as one $5.99 Universal Purchase for every Apple device. Rockbox Bridge is a macOS feature in active development and will arrive as a separate paid unlock (around $5) in a future update. It is not available to download yet.</p>
+      <div class="p-hero__ctas">
+        <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Get NaviBeat on the App Store, $5.99</a>
+        <a class="link-quiet" href="index.html">&larr; Back to NaviBeat</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================= FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="index.html">
+          <img src="assets/icon.svg" alt="">
+          NaviBeat
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="lastfm.html">Last.fm</a></li>
+          <li><a href="appletv.html">Apple TV</a></li>
+          <li><a href="macos.html">Mac</a></li>
+          <li><a href="rockbox.html">Rockbox</a></li>
+          <li><a href="iphone.html">iPhone</a></li>
+          <li><a href="ipad.html">iPad</a></li>
+          <li><a href="applewatch.html">Apple Watch</a></li>
+          <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+          <li><a href="beta.html">Beta program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>v1.1.3 &middot; Live on the App Store</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS();
+      window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
+    }
+  })();
+</script>
+
+</body>
+</html>

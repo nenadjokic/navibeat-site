@@ -157,6 +157,7 @@ A: Yes, live on all five Apple platforms.
 - Multi-library: https://navibeat.app/multi-library.html
 - Widgets: https://navibeat.app/widgets.html
 - Last.fm: https://navibeat.app/lastfm.html
+- Rockbox (macOS feature in active development, not yet shipped): https://navibeat.app/rockbox.html
 - Support / FAQ: https://navibeat.app/support.html
 - Privacy: https://navibeat.app/privacy.html
 - NaviFin (sister Jellyfin client): https://navibeat.app/navifin.html
