@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>NaviBeat &times; RockBox: Send Your Library to a Rockbox iPod</title>
-  <meta name="description" content="A NaviBeat feature coming to macOS: send music from your own Navidrome library onto a Rockbox iPod, transcoded and with album art re-encoded so it just plays. Send-to, not sync. In active development.">
+  <title>Sync Navidrome to a Rockbox iPod: NaviSyncRock (Mac, no terminal)</title>
+  <meta name="description" content="Sync your Navidrome library to a Rockbox iPod from a real Mac app. One click, no terminal, no scripts. NaviSyncRock transcodes the audio, fixes album art so it renders, writes correct playlists, and installs two custom iPod themes. In active development.">
+  <meta name="keywords" content="sync navidrome to rockbox, navidrome rockbox, navidrome ipod, sync navidrome and rockbox, rockbox navidrome sync, put navidrome music on ipod, subsonic rockbox, navidrome ipod classic, rockbox ipod music transfer gui">
   <meta name="theme-color" content="#0C0C0E">
   <meta name="apple-itunes-app" content="app-id=6763518834">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -13,20 +14,20 @@
   <link rel="canonical" href="https://navibeat.app/rockbox.html">
   <link rel="alternate" hreflang="en" href="https://navibeat.app/rockbox.html">
 
-  <meta property="og:title" content="NaviBeat &times; RockBox: Send Your Library to a Rockbox iPod">
-  <meta property="og:description" content="Send music from your own Navidrome library onto a Rockbox iPod. Transcoded, art re-encoded, correct on-device paths, a free NaviBeat theme. A macOS feature in active development.">
+  <meta property="og:title" content="Sync Navidrome to a Rockbox iPod, no terminal, no scripts">
+  <meta property="og:description" content="NaviSyncRock: sync your Navidrome library to a Rockbox iPod from a real Mac app. One click transcodes the audio, fixes album art, writes playlists, and installs two custom iPod themes. In active development.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://navibeat.app/rockbox.html">
-  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
-  <meta property="og:image:alt" content="NaviBeat running as a native macOS app, where the Rockbox feature lives.">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/rockbox/wps-clean.png">
+  <meta property="og:image:alt" content="A Rockbox iPod running the NaviBeat theme, synced from Navidrome via NaviSyncRock.">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="NaviBeat">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NaviBeat &times; RockBox: Send Your Library to a Rockbox iPod">
-  <meta name="twitter:description" content="A macOS feature in active development: send your Navidrome library to a Rockbox iPod, transcoded and art-optimized. Send-to, not sync. Nothing leaves your own server.">
-  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
-  <meta name="twitter:image:alt" content="NaviBeat's native macOS app, home view.">
+  <meta name="twitter:title" content="Sync Navidrome to a Rockbox iPod, no terminal, no scripts">
+  <meta name="twitter:description" content="NaviSyncRock syncs your Navidrome library to a Rockbox iPod from a real Mac app: transcode, fix art, write playlists, install two iPod themes. In active development.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/rockbox/wps-clean.png">
+  <meta name="twitter:image:alt" content="A Rockbox iPod running the NaviBeat theme, synced from a Navidrome library.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -68,13 +69,14 @@
       {
         "@type": "Article",
         "@id": "https://navibeat.app/rockbox.html#article",
-        "headline": "NaviBeat × RockBox: Send Your Library to a Rockbox iPod",
-        "name": "NaviBeat × RockBox: Send Your Library to a Rockbox iPod",
-        "description": "A macOS feature in active development. Send music from your own Navidrome library onto a Rockbox iPod, transcoded and with album art re-encoded so Rockbox can read it. Send-to, not sync. A free NaviBeat theme on first connect. Phase 2 reads plays and ratings back through your Navidrome, never directly to Last.fm.",
+        "headline": "Sync Navidrome to a Rockbox iPod: NaviSyncRock, a Mac app with no terminal",
+        "name": "Sync Navidrome to a Rockbox iPod with NaviSyncRock",
+        "description": "How to sync your Navidrome library to a Rockbox iPod from a real Mac app instead of terminal scripts. NaviSyncRock transcodes the audio on your own server, re-encodes album art so Rockbox renders it, writes correct .m3u8 playlists, and installs two custom iPod themes. Send-to, not two-way sync. In active development.",
         "url": "https://navibeat.app/rockbox.html",
         "datePublished": "2026-07-01",
         "dateModified": "2026-07-01",
         "inLanguage": "en",
+        "keywords": "sync navidrome to rockbox, navidrome rockbox sync, navidrome ipod, put navidrome music on a rockbox ipod, gui alternative to terminal scripts",
         "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "url": "https://navibeat.app/#maker" },
         "publisher": { "@id": "https://navibeat.app/#org" },
         "isPartOf": { "@id": "https://navibeat.app/#website" },
@@ -82,6 +84,52 @@
         "mentions": [
           { "@type": "SoftwareApplication", "name": "Rockbox", "url": "https://www.rockbox.org" },
           { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://navibeat.app/rockbox.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can you sync a Navidrome library to a Rockbox iPod?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. NaviSyncRock, a paid feature of the NaviBeat macOS app, sends music from your own Navidrome server onto a Rockbox iPod. It asks your server to transcode each track to an iPod-friendly format and to resize the album art to a baseline JPEG Rockbox can read, then lays the files out in /Music/Artist/Album folders with a cover.jpg per album and writes .m3u8 playlists with correct on-device paths. It is a one-way send-to, not a two-way sync, and nothing leaves your own server." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a GUI app to put Navidrome music on a Rockbox iPod, without the terminal?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most ways to move a Navidrome or Subsonic library onto a Rockbox iPod are command-line scripts or small homelab projects. NaviSyncRock is a native Mac app feature: you plug in the iPod, right-click a song, album, artist, or playlist, and choose Send to RockBox. No terminal, no scripts, no config files. It is part of NaviBeat on the Mac App Store." }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does NaviSyncRock cost?",
+            "acceptedAnswer": { "@type": "Answer", "text": "NaviSyncRock is a one-time in-app unlock inside NaviBeat, with a planned launch price of $4.99, separate from the base NaviBeat app (a $5.99 Universal Purchase). The unlock also installs two custom NaviBeat iPod themes. It is in active development and not downloadable yet." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does NaviSyncRock upload my music to a third party?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. The music comes from your own Navidrome server, your own server does the transcoding and art resizing, and the files are written directly to your iPod over USB. Nothing is uploaded to any third-party service, and NaviBeat never scrobbles directly to Last.fm. Any metadata read-back in a later phase goes through your Navidrome only." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is album art so hard to get onto a Rockbox iPod, and does NaviSyncRock fix it?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Old Rockbox hardware cannot read progressive or oversized JPEGs, which is why album art often does not show. NaviSyncRock re-encodes each cover to a baseline JPEG sized for the iPod screen and names it cover.jpg per album folder, which is the format Rockbox actually renders. It ships with NaviBeat themes tuned so the art displays correctly." }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://navibeat.app/rockbox.html#howto",
+        "name": "How to sync a Navidrome library to a Rockbox iPod",
+        "description": "Send music from your own Navidrome server onto a Rockbox iPod from the NaviBeat Mac app, without the terminal.",
+        "totalTime": "PT2M",
+        "tool": [ { "@type": "HowToTool", "name": "NaviBeat for Mac with the NaviSyncRock unlock" }, { "@type": "HowToTool", "name": "A Rockbox iPod that mounts as USB mass storage" } ],
+        "step": [
+          { "@type": "HowToStep", "name": "Connect over USB", "text": "Plug the Rockbox iPod into your Mac. It mounts as a normal USB drive; grant NaviBeat access once with a single click." },
+          { "@type": "HowToStep", "name": "Right-click, Send to RockBox", "text": "In your NaviBeat library, right-click a song, album, artist, or playlist and choose Send to RockBox." },
+          { "@type": "HowToStep", "name": "Your server transcodes", "text": "NaviBeat asks your own Navidrome to produce the audio in your chosen format and bitrate and to resize the cover art to a baseline JPEG the iPod can read." },
+          { "@type": "HowToStep", "name": "Files land in the right folders", "text": "Tracks are written as /Music/Artist/Album/Track with a cover.jpg per album, and playlists are written as .m3u8 with device-root paths." },
+          { "@type": "HowToStep", "name": "Unplug and play", "text": "Eject, unplug, and play from the iPod. The bundled NaviBeat theme shows the album art, track info, and your library stats." }
         ]
       },
       {
@@ -270,6 +318,54 @@
     .rbx-cta { padding: 88px 0; text-align: center; }
     .rbx-cta h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 3.5vw, 42px); margin: 0 0 14px; }
     .rbx-cta p { color: var(--text-1); margin: 0 auto 28px; font-size: 17px; max-width: 60ch; }
+
+    /* Price chip (hero + cta) */
+    .rbx-price { display: inline-flex; align-items: baseline; gap: 8px; margin-top: 22px; padding: 10px 18px; background: var(--bg-1); border: 1px solid var(--border-strong); border-left: 3px solid var(--accent); border-radius: 10px; }
+    .rbx-price b { font-family: var(--font-display); font-weight: 700; font-size: 26px; color: var(--accent); }
+    .rbx-price span { color: var(--text-2); font-size: 13px; letter-spacing: 0.04em; }
+
+    /* Real screenshot showcase (sim renders) */
+    .rbx-shots { padding: 96px 0; background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .rbx-shots h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 16px; }
+    .rbx-shots__sub { color: var(--text-1); font-size: 17px; max-width: 64ch; line-height: 1.6; margin: 0 0 44px; }
+    .rbx-shots__grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+    @media (min-width: 820px) { .rbx-shots__grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .rbx-shot { text-align: center; }
+    .rbx-shot img { width: 100%; max-width: 300px; margin: 0 auto 16px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .rbx-shot h3 { font-family: var(--font-display); font-weight: 500; font-size: 20px; margin: 0 0 6px; color: var(--text-0); }
+    .rbx-shot p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0 auto; max-width: 34ch; }
+    .rbx-shots__note { text-align: center; color: var(--text-2); font-size: 13px; margin: 40px 0 0; }
+
+    /* Done state in the roadmap timeline */
+    .rbx-timeline--done::before { background: var(--accent) !important; }
+    .rbx-step--done .rbx-step__dot { border-color: var(--accent); background: var(--bg-0); }
+    .rbx-step--done .rbx-step__dot::after { content: '\2713'; background: transparent !important; color: var(--accent); font-family: var(--font-mono); font-size: 15px; font-weight: 700; width: auto; height: auto; }
+    .rbx-step--done .rbx-step__status { color: var(--accent); }
+    .rbx-legend__dot--done { background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+
+    /* vs terminal comparison */
+    .rbx-vs { padding: 88px 0 40px; }
+    .rbx-vs h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 18px; }
+    .rbx-vs__sub { color: var(--text-1); font-size: 17px; max-width: 66ch; line-height: 1.6; margin: 0 0 36px; }
+    .rbx-vs__table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .rbx-vs__table th, .rbx-vs__table td { text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--border); font-size: 15px; vertical-align: top; }
+    .rbx-vs__table thead th { background: var(--bg-1); font-family: var(--font-sans); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-2); }
+    .rbx-vs__table thead th:nth-child(2) { color: var(--accent); }
+    .rbx-vs__table tbody th { font-weight: 600; color: var(--text-0); font-family: var(--font-sans); width: 34%; }
+    .rbx-vs__table td { color: var(--text-1); }
+    .rbx-vs__table td.rbx-vs__us { color: var(--text-0); background: var(--accent-dim); }
+    .rbx-vs__table tr:last-child th, .rbx-vs__table tr:last-child td { border-bottom: none; }
+    @media (max-width: 680px) { .rbx-vs__table, .rbx-vs__table tbody, .rbx-vs__table tr, .rbx-vs__table th, .rbx-vs__table td { display: block; width: auto; } .rbx-vs__table thead { display: none; } .rbx-vs__table tbody th { border-bottom: none; padding-bottom: 4px; } .rbx-vs__table td::before { content: attr(data-l) ": "; color: var(--text-2); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; } }
+
+    /* FAQ */
+    .rbx-faq { padding: 40px 0 88px; }
+    .rbx-faq h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 3.5vw, 44px); margin: 14px 0 28px; }
+    .rbx-faq__item { border-bottom: 1px solid var(--border); }
+    .rbx-faq__item > summary { cursor: pointer; list-style: none; padding: 20px 0; font-family: var(--font-display); font-weight: 500; font-size: 20px; color: var(--text-0); display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+    .rbx-faq__item > summary::-webkit-details-marker { display: none; }
+    .rbx-faq__item > summary::after { content: '+'; color: var(--accent); font-size: 24px; flex-shrink: 0; transition: transform 0.2s var(--ease); }
+    .rbx-faq__item[open] > summary::after { transform: rotate(45deg); }
+    .rbx-faq__item p { color: var(--text-1); font-size: 15.5px; line-height: 1.7; margin: 0 0 20px; max-width: 74ch; }
   </style>
 </head>
 <body>
@@ -322,19 +418,20 @@
         <span class="crumb__current">Rockbox</span>
       </nav>
       <div class="rbx-hero__inner">
-        <span class="rbx-chip"><span class="rbx-chip__dot" aria-hidden="true"></span>macOS &middot; In active development</span>
-        <h1 id="rockbox">Send your library to a real <em>Rockbox iPod</em>.</h1>
+        <span class="rbx-chip"><span class="rbx-chip__dot" aria-hidden="true"></span>NaviSyncRock &middot; macOS &middot; In active development</span>
+        <h1 id="rockbox">Sync your library to a real <em>Rockbox iPod</em>.</h1>
 
         <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
-          <strong style="color: var(--text-0);">TL;DR.</strong> NaviBeat for Mac is getting a way to push music from your own Navidrome library onto a Rockbox iPod (or any Rockbox player that mounts as USB mass storage). It transcodes to an iPod-friendly format and re-encodes album art so Rockbox can actually read it. It is <strong>send-to, not sync</strong>: right-click, Send to RockBox, done. This is a paid in-app unlock (around $5, separate from the base app) that is <strong>coming to macOS in a future update</strong>, not available to download yet.
+          <strong style="color: var(--text-0);">TL;DR.</strong> <strong style="color:var(--accent);">NaviSyncRock</strong> is a paid unlock coming to NaviBeat for Mac that pushes music from your own Navidrome onto a Rockbox iPod, transcoded and with album art re-encoded so it just plays, and installs <strong>two NaviBeat themes</strong> on the device (a clean skin and an Audiophile skin). It is <strong>send-to, not two-way sync</strong>: right-click, send, done. One-time in-app unlock, separate from the base app, arriving in a future macOS update. Not downloadable yet.
         </aside>
 
         <p class="rbx-sub">
-          Your Navidrome, your iPod, your files. NaviBeat asks <strong>your own server</strong> to transcode the tracks and resize the cover art, lays the files out in folders Rockbox understands, and writes proper <code style="font-family:var(--font-mono);font-size:0.92em;color:var(--accent-hi);">.m3u8</code> playlists with correct on-device paths. Nothing leaves your own server. A free NaviBeat theme is installed on first connect as a bonus.
+          Your Navidrome, your iPod, your files. NaviBeat asks <strong>your own server</strong> to transcode the tracks and resize the cover art, lays the files out in folders Rockbox understands, and writes proper <code style="font-family:var(--font-mono);font-size:0.92em;color:var(--accent-hi);">.m3u8</code> playlists with correct on-device paths. Nothing leaves your own server. Unlocking <strong>NaviSyncRock</strong> also installs the two NaviBeat themes below.
         </p>
+        <div class="rbx-price"><b>$4.99</b><span>one-time unlock &middot; planned launch price</span></div>
         <div class="p-hero__ctas" style="margin-top: 28px;">
-          <a class="btn btn--primary" href="#roadmap">See the build roadmap &darr;</a>
-          <a class="link-quiet" href="#how">How it works&nbsp;&rarr;</a>
+          <a class="btn btn--primary" href="#roadmap">See the roadmap &amp; progress &darr;</a>
+          <a class="link-quiet" href="#shots">See the themes&nbsp;&rarr;</a>
         </div>
       </div>
     </div>
@@ -343,7 +440,7 @@
   <!-- TRUST BANNER -->
   <section class="rbx-trust" aria-labelledby="rbx-trust-title">
     <div class="wrap">
-      <h2 id="rbx-trust-title" class="visually-hidden">Four things to know about Rockbox Bridge</h2>
+      <h2 id="rbx-trust-title" class="visually-hidden">Four things to know about NaviSyncRock</h2>
       <div class="rbx-trust__grid">
         <div class="rbx-trust__cell">
           <h3>Your server, your files</h3>
@@ -414,7 +511,7 @@
       <p class="eyebrow eyebrow--accent">What it does &middot; What it does not</p>
       <h2 id="scope-heading">A clean scope line, drawn on purpose.</h2>
       <p class="rbx-split__sub">
-        Rockbox Bridge is deliberately a one-way push of your own music, plus an optional metadata read-back in Phase 2. It is not a two-way sync engine, and it never touches anything but your own server and your own device.
+        NaviSyncRock is deliberately a one-way push of your own music, plus an optional metadata read-back in Phase 2. It is not a two-way sync engine, and it never touches anything but your own server and your own device.
       </p>
       <div class="rbx-split__grid">
         <div class="rbx-split__card rbx-split__card--yes">
@@ -463,53 +560,32 @@
     </div>
   </section>
 
-  <!-- BONUS THEME -->
-  <section class="rbx-theme" id="theme">
+  <!-- THEMES (real screenshots) -->
+  <section class="rbx-shots" id="shots">
     <div class="wrap">
-      <div class="rbx-theme__grid">
-        <div>
-          <p class="eyebrow eyebrow--accent">Bonus, free</p>
-          <h2 id="theme-heading">A NaviBeat theme for your iPod.</h2>
-          <p>
-            On first connect, NaviBeat can install a free Rockbox theme that matches the app: pure black and copper, big readable type, album art, and the NaviBeat mark. No statusbar clutter, just the music.
-          </p>
-          <p>
-            It ships as two skins over one shared core, so you can keep it clean or go deep.
-          </p>
-          <ul>
-            <li><span class="rbx-theme__b" aria-hidden="true">A</span><span><strong>NaviBeat</strong>: the clean skin. Track, artist, album, a single thicker scrubber that also shows volume the classic iPod way, play mode, and battery.</span></li>
-            <li><span class="rbx-theme__b" aria-hidden="true">B</span><span><strong>NaviBeat Audiophile</strong>: a mono variant that adds kHz, bit depth, lossless and bitrate readouts, channels, ReplayGain, and a left-right VU.</span></li>
-          </ul>
-          <p style="margin-top:18px;color:var(--text-2);font-size:14px;">
-            Installing the theme is opt-in, and you can switch it on or off in the device's own Theme Settings at any time.
-          </p>
+      <p class="eyebrow eyebrow--accent">Unlocked with NaviSyncRock</p>
+      <h2 id="theme-heading">Two themes for your iPod. Real screens.</h2>
+      <p class="rbx-shots__sub">
+        Unlocking NaviSyncRock installs a NaviBeat theme on the device: pure black and copper, big readable type, real album art, and a NaviBeat panel on the browser with your library at a glance. It ships as <strong>two skins</strong> over one shared core, switchable in the iPod's own Theme Settings.
+      </p>
+      <div class="rbx-shots__grid">
+        <div class="rbx-shot">
+          <img src="assets/screenshots/rockbox/wps-clean.png" width="300" height="493" loading="lazy" alt="The clean NaviBeat theme playing on a Rockbox iPod: album art top-right, track, artist, album and year, MP3 320 kbps, clock and battery in the corner, the next track, and a copper scrubber.">
+          <h3>NaviBeat</h3>
+          <p>The clean skin. Album art, track, artist, album and year, a thick scrubber that also shows volume, and a charging bolt.</p>
         </div>
-        <div class="rbx-wps-wrap">
-          <figure style="margin:0;width:100%;max-width:340px;">
-            <div class="rbx-wps" role="img" aria-label="A concept of the NaviBeat Rockbox theme: pure black screen with copper accents, album art on the left, track and artist on the right, and a copper scrubber with elapsed and total time.">
-              <div class="rbx-wps__status">
-                <span><strong>3 OF 18</strong></span>
-                <span>SHUFFLE &middot; 87%</span>
-              </div>
-              <div class="rbx-wps__body">
-                <div class="rbx-wps__art" aria-hidden="true">
-                  <img src="assets/icon.svg" alt="">
-                </div>
-                <div class="rbx-wps__meta">
-                  <p class="rbx-wps__title">Midnight Drive</p>
-                  <p class="rbx-wps__artist">The Carbon Sessions</p>
-                  <p class="rbx-wps__album">Copper &amp; Vinyl</p>
-                </div>
-              </div>
-              <div class="rbx-wps__foot" aria-hidden="true">
-                <div class="rbx-wps__bar"><div class="rbx-wps__fill"></div></div>
-                <div class="rbx-wps__times"><span>1:24</span><span>3:42</span></div>
-              </div>
-            </div>
-            <figcaption class="rbx-wps__cap">Concept of the NaviBeat theme. Rendered on this page in CSS.</figcaption>
-          </figure>
+        <div class="rbx-shot">
+          <img src="assets/screenshots/rockbox/wps-audiophile.png" width="300" height="493" loading="lazy" alt="The NaviBeat Audiophile theme: title, artist, MP3 CBR 320 kbps, 44100 Hz sample rate, a left and right VU meter, and album art.">
+          <h3>NaviBeat Audiophile</h3>
+          <p>The data-dense skin. Codec, bitrate, sample rate in Hz, and a live left / right VU meter.</p>
+        </div>
+        <div class="rbx-shot">
+          <img src="assets/screenshots/rockbox/menu-panel.png" width="300" height="245" loading="lazy" alt="The Rockbox menu with the NaviBeat panel on the right: the NaviBeat logo, navibeat.app, and library stats (396 songs, 215 artists, 316 albums, 5 playlists, storage), with orange menu icons on the left.">
+          <h3>Library at a glance</h3>
+          <p>Orange menu icons, plus a NaviBeat panel with your library stats and storage, refreshed on every sync.</p>
         </div>
       </div>
+      <p class="rbx-shots__note">Real renders from the Rockbox iPod simulator, not mockups.</p>
     </div>
   </section>
 
@@ -517,16 +593,27 @@
   <section class="rbx-roadmap" id="roadmap">
     <div class="wrap">
       <div class="rbx-roadmap__head">
-        <p class="eyebrow eyebrow--accent">Build roadmap</p>
-        <h2 id="roadmap-heading">What is being built, transparently.</h2>
-        <p>Rockbox Bridge is a macOS feature in active development. It is not in the App Store build yet. Here is the order things are being built, with honest status. Orange means actively in development. Gray means planned and queued. No vapor.</p>
+        <p class="eyebrow eyebrow--accent">Roadmap &amp; progress</p>
+        <h2 id="roadmap-heading">Where NaviSyncRock is, transparently.</h2>
+        <p>NaviSyncRock is a macOS feature in active development, not in the App Store build yet. This is the honest state of each piece as a timeline. A check means done and working on a real device. Orange means built or actively in development. Gray means planned and queued. No vapor.</p>
         <div class="rbx-legend">
-          <span class="rbx-legend__item"><span class="rbx-legend__dot rbx-legend__dot--active"></span> In development</span>
+          <span class="rbx-legend__item"><span class="rbx-legend__dot rbx-legend__dot--done"></span> Done</span>
+          <span class="rbx-legend__item"><span class="rbx-legend__dot rbx-legend__dot--active"></span> Built / in development</span>
           <span class="rbx-legend__item"><span class="rbx-legend__dot rbx-legend__dot--planned"></span> Planned</span>
         </div>
       </div>
 
-      <p class="rbx-phase">Phase 1 &middot; The one-way push</p>
+      <p class="rbx-phase">Done &middot; Working on a real iPod today</p>
+      <ol class="rbx-timeline rbx-timeline--done">
+        <li class="rbx-step rbx-step--done">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">Done &middot; On device</p>
+          <h3 class="rbx-step__title">Two NaviBeat themes</h3>
+          <p class="rbx-step__desc">Both skins (clean and Audiophile) are finished and tested on a real Rockbox iPod: album art, a thick scrubber, a charging bolt, orange menu icons, and a NaviBeat browser panel with live-baked library stats and storage. Every screen validated against Rockbox's own <code>checkwps</code> parser before it ever touches the device.</p>
+        </li>
+      </ol>
+
+      <p class="rbx-phase rbx-phase--two">Phase 1 &middot; The one-way push (built, pending App Store)</p>
       <ol class="rbx-timeline">
 
         <li class="rbx-step rbx-step--active">
@@ -564,13 +651,6 @@
           <p class="rbx-step__desc">Click the device to browse its contents grouped All, Albums, Artists, and Playlists, mirroring the library grid you already use. Remove items you no longer want, and affected playlists update.</p>
         </li>
 
-        <li class="rbx-step rbx-step--active">
-          <span class="rbx-step__dot" aria-hidden="true"></span>
-          <p class="rbx-step__status">In development &middot; Bonus</p>
-          <h3 class="rbx-step__title">NaviBeat Rockbox theme</h3>
-          <p class="rbx-step__desc">A free theme installed on first connect: two skins (clean and Audiophile) over one shared core, drawn for the iPod screen in pure black and copper. Opt-in, switchable on the device at any time.</p>
-        </li>
-
       </ol>
 
       <p class="rbx-phase rbx-phase--two">Phase 2 &middot; Read-back, through your Navidrome</p>
@@ -600,7 +680,7 @@
       </ol>
 
       <p style="margin:48px 0 0;color:var(--text-2);font-size:13px;max-width:64ch;">
-        Phase 1 is the one-way push and ships first. Phase 2 is the metadata read-back and can follow in a later update without holding up Phase 1. The theme is independent and lands whenever its on-device export is finished. Final format and price details are still being set.
+        The two themes are done and working on a real iPod today. Phase 1 (the one-way push) is built and pending an App Store submission. Phase 2 (the metadata read-back) can follow in a later update without holding up Phase 1. NaviSyncRock is a planned one-time $4.99 unlock; the exact submission timing is still being set.
       </p>
     </div>
   </section>
@@ -620,11 +700,62 @@
     </div>
   </section>
 
+  <!-- VS TERMINAL -->
+  <section class="rbx-vs" id="vs">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">GUI vs terminal</p>
+      <h2>The one-click way to sync Navidrome to a Rockbox iPod.</h2>
+      <p class="rbx-vs__sub">Most ways to get a Navidrome or Subsonic library onto a Rockbox iPod are terminal scripts, rsync one-liners, or small homelab projects. They work if you enjoy editing config files. <strong>NaviSyncRock does it from a real Mac app</strong>, with the transcoding, album art, and playlists handled for you.</p>
+      <table class="rbx-vs__table">
+        <thead>
+          <tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col">NaviSyncRock</th><th scope="col">Terminal scripts / homelab</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Interface</th><td class="rbx-vs__us" data-l="NaviSyncRock">Right-click &rarr; Send to RockBox. No terminal, no config files.</td><td data-l="Scripts">Command line, flags, cron jobs, YAML.</td></tr>
+          <tr><th scope="row">Transcoding</th><td class="rbx-vs__us" data-l="NaviSyncRock">Your Navidrome transcodes to the format and bitrate you pick.</td><td data-l="Scripts">You wire up ffmpeg and its flags yourself.</td></tr>
+          <tr><th scope="row">Album art</th><td class="rbx-vs__us" data-l="NaviSyncRock">Re-encoded to a baseline JPEG that Rockbox actually renders.</td><td data-l="Scripts">Usually broken on old hardware, or manual.</td></tr>
+          <tr><th scope="row">Playlists</th><td class="rbx-vs__us" data-l="NaviSyncRock">.m3u8 with correct device-root paths, written for you.</td><td data-l="Scripts">Hand-rolled or missing.</td></tr>
+          <tr><th scope="row">iPod themes</th><td class="rbx-vs__us" data-l="NaviSyncRock">Two custom NaviBeat themes installed on unlock.</td><td data-l="Scripts">None.</td></tr>
+          <tr><th scope="row">Privacy</th><td class="rbx-vs__us" data-l="NaviSyncRock">Your server, your files, over USB. No third party.</td><td data-l="Scripts">Depends entirely on the script.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="rbx-faq" id="faq">
+    <div class="wrap" style="max-width: 840px;">
+      <p class="eyebrow eyebrow--accent">FAQ</p>
+      <h2>Syncing Navidrome to a Rockbox iPod</h2>
+      <details class="rbx-faq__item">
+        <summary>Can you sync a Navidrome library to a Rockbox iPod?</summary>
+        <p>Yes. NaviSyncRock, a paid feature of the NaviBeat macOS app, sends music from your own Navidrome server onto a Rockbox iPod. It asks your server to transcode each track to an iPod-friendly format and to resize the album art to a baseline JPEG Rockbox can read, then lays the files out in <code>/Music/Artist/Album</code> folders with a <code>cover.jpg</code> per album and writes <code>.m3u8</code> playlists with correct on-device paths. It is a one-way send-to, not a two-way sync, and nothing leaves your own server.</p>
+      </details>
+      <details class="rbx-faq__item">
+        <summary>Is there a GUI app to put Navidrome music on a Rockbox iPod, without the terminal?</summary>
+        <p>Yes. Most ways to move a Navidrome or Subsonic library onto a Rockbox iPod are command-line scripts or small homelab projects. NaviSyncRock is a native Mac app feature: plug in the iPod, right-click a song, album, artist, or playlist, and choose Send to RockBox. No terminal, no scripts, no config files. It is part of NaviBeat on the Mac App Store.</p>
+      </details>
+      <details class="rbx-faq__item">
+        <summary>How much does NaviSyncRock cost?</summary>
+        <p>NaviSyncRock is a one-time in-app unlock inside NaviBeat, with a planned launch price of $4.99, separate from the base NaviBeat app (a $5.99 Universal Purchase for all Apple devices). The unlock also installs two custom NaviBeat iPod themes. It is in active development and not downloadable yet.</p>
+      </details>
+      <details class="rbx-faq__item">
+        <summary>Does NaviSyncRock upload my music to a third party?</summary>
+        <p>No. The music comes from your own Navidrome server, your own server does the transcoding and art resizing, and the files are written directly to your iPod over USB. Nothing is uploaded to any third-party service, and NaviBeat never scrobbles directly to Last.fm. Any metadata read-back in a later phase goes through your Navidrome only.</p>
+      </details>
+      <details class="rbx-faq__item">
+        <summary>Why does album art not show on a Rockbox iPod, and does NaviSyncRock fix it?</summary>
+        <p>Old Rockbox hardware cannot read progressive or oversized JPEGs, which is why album art often does not show. NaviSyncRock re-encodes each cover to a baseline JPEG sized for the iPod screen and names it <code>cover.jpg</code> per album folder, which is the format Rockbox actually renders. It ships with NaviBeat themes tuned so the art displays correctly.</p>
+      </details>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="rbx-cta">
     <div class="wrap">
-      <h2 id="cta">Get NaviBeat now, Rockbox Bridge is on the way.</h2>
-      <p>NaviBeat is on the App Store today as one $5.99 Universal Purchase for every Apple device. Rockbox Bridge is a macOS feature in active development and will arrive as a separate paid unlock (around $5) in a future update. It is not available to download yet.</p>
+      <h2 id="cta">Get NaviBeat now, NaviSyncRock is on the way.</h2>
+      <p>NaviBeat is on the App Store today as one $5.99 Universal Purchase for every Apple device. <strong>NaviSyncRock</strong> is a macOS feature in active development and will arrive as a separate one-time unlock in a future update. It is not available to download yet.</p>
+      <div class="rbx-price" style="margin: 6px auto 26px;"><b>$4.99</b><span>one-time NaviSyncRock unlock &middot; planned launch price</span></div>
       <div class="p-hero__ctas">
         <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Get NaviBeat on the App Store, $5.99</a>
         <a class="link-quiet" href="index.html">&larr; Back to NaviBeat</a>
