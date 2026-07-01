@@ -336,6 +336,20 @@
     .rbx-shot p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0 auto; max-width: 34ch; }
     .rbx-shots__note { text-align: center; color: var(--text-2); font-size: 13px; margin: 40px 0 0; }
 
+    /* macOS app functionality showcase (real app screenshots) */
+    .rbx-app { padding: 96px 0; background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .rbx-app h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 16px; }
+    .rbx-app__sub { color: var(--text-1); font-size: 17px; max-width: 66ch; line-height: 1.6; margin: 0 0 48px; }
+    .rbx-app__grid { display: grid; grid-template-columns: 1fr; gap: 44px 34px; }
+    @media (min-width: 900px) { .rbx-app__grid { grid-template-columns: 1fr 1fr; } }
+    .rbx-app__item { min-width: 0; }
+    /* macOS window captures carry their own natural shadow (alpha), so no frame. */
+    .rbx-app__item img { width: 100%; height: auto; display: block; }
+    .rbx-app__item h3 { font-family: var(--font-display); font-weight: 500; font-size: 21px; margin: 20px 0 7px; color: var(--text-0); }
+    .rbx-app__item h3 .rbx-app__num { color: var(--accent); font-family: var(--font-mono); font-size: 15px; margin-right: 10px; }
+    .rbx-app__item p { color: var(--text-1); font-size: 15px; line-height: 1.62; margin: 0; max-width: 54ch; }
+    .rbx-app__note { text-align: center; color: var(--text-2); font-size: 13px; margin: 48px 0 0; }
+
     /* Done state in the roadmap timeline */
     .rbx-timeline--done::before { background: var(--accent) !important; }
     .rbx-step--done .rbx-step__dot { border-color: var(--accent); background: var(--bg-0); }
@@ -467,7 +481,7 @@
         </p>
         <div class="rbx-price"><b>$4.99</b><span>one-time unlock &middot; planned launch price</span></div>
         <div class="p-hero__ctas" style="margin-top: 28px;">
-          <a class="btn btn--primary" href="#roadmap">See the roadmap &amp; progress &darr;</a>
+          <a class="btn btn--primary" href="#app">See it in action &darr;</a>
           <a class="link-quiet" href="#shots">See the themes&nbsp;&rarr;</a>
         </div>
        </div>
@@ -598,6 +612,58 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- macOS APP FUNCTIONALITY (real app screenshots) -->
+  <section class="rbx-app" id="app">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">The macOS app</p>
+      <h2>Your iPod, managed like a real music app</h2>
+      <p class="rbx-app__sub">Plug in your Rockbox player and it shows up in the NaviBeat sidebar. Browse what is actually on the device, play it straight from the iPod with no server, sync your offline plays home, and fill in missing artwork. Real screens, no mockups.</p>
+      <div class="rbx-app__grid">
+        <div class="rbx-app__item">
+          <img src="assets/screenshots/rockbox/app-albums-grid.png" width="1600" loading="lazy" alt="The On this player screen: a grid of album covers for everything on the connected iPod, with a storage bar and song, album, artist and playlist counts.">
+          <h3><span class="rbx-app__num">01</span>Everything on your player, with art</h3>
+          <p>A real album-art grid of what is on the device, with a storage bar and live counts. Browse it exactly like your library.</p>
+        </div>
+        <div class="rbx-app__item">
+          <img src="assets/screenshots/rockbox/app-artist-detail.png" width="1600" loading="lazy" alt="The Sub Focus artist page inside On this player: four Sub Focus albums with their cover art and a Play button.">
+          <h3><span class="rbx-app__num">02</span>Drill into any artist or album</h3>
+          <p>Open an artist to see its albums, open an album to see its tracks, then press Play. All from the files on the iPod.</p>
+        </div>
+        <div class="rbx-app__item">
+          <img src="assets/screenshots/rockbox/app-songs.png" width="1600" loading="lazy" alt="The Songs tab: a list of tracks on the device, each with its album-art thumbnail, title and artist.">
+          <h3><span class="rbx-app__num">03</span>Play straight from the iPod</h3>
+          <p>Tap any song and it plays locally, with album-art rows and a now-playing indicator. Take your library to a friend who has NaviBeat, connect, and listen. No server required.</p>
+        </div>
+        <div class="rbx-app__item">
+          <img src="assets/screenshots/rockbox/app-artists.png" width="1600" loading="lazy" alt="The Artists tab: a list of every artist on the player with album and track counts.">
+          <h3><span class="rbx-app__num">04</span>Browse by artist, song or playlist</h3>
+          <p>Tabbed browsing of exactly what is on the device: artists, songs, playlists, even the raw folders. Delete anything you do not want.</p>
+        </div>
+        <div class="rbx-app__item">
+          <img src="assets/screenshots/rockbox/app-playlists.png" width="1600" loading="lazy" alt="The Playlists tab: the playlists that live on the connected player.">
+          <h3><span class="rbx-app__num">05</span>Your playlists, on the device</h3>
+          <p>The playlists you sent live on the player as standard files. Open one to see its tracks, or play the whole thing.</p>
+        </div>
+        <div class="rbx-app__item">
+          <img src="assets/screenshots/rockbox/app-scrobbles.png" width="1600" loading="lazy" alt="The Scrobbles synced dialog: Submitted 0 new plays, 86 already synced and skipped, with Show details and Re-sync everything options.">
+          <h3><span class="rbx-app__num">06</span>Sync your offline plays home</h3>
+          <p>Everything you played on the iPod, submitted back through your own Navidrome with a full report. De-duplicated, so a second sync never scrobbles anything twice.</p>
+        </div>
+        <div class="rbx-app__item">
+          <img src="assets/screenshots/rockbox/app-artwork.png" width="1600" loading="lazy" alt="The Artwork updated dialog after scanning the player for albums missing cover art.">
+          <h3><span class="rbx-app__num">07</span>Find missing artwork</h3>
+          <p>One click fills in cover art for any album on the player that is missing it, from your Navidrome or public databases. It only writes cover files: your audio is never touched.</p>
+        </div>
+        <div class="rbx-app__item">
+          <img src="assets/screenshots/rockbox/app-settings.png" width="1600" loading="lazy" alt="The NaviSyncRock settings: send format MP3, bitrate 192 kbps, album art size 200 by 200, duplicate handling, and an Install NaviBeat theme button.">
+          <h3><span class="rbx-app__num">08</span>Your rules for the send</h3>
+          <p>Choose the codec, bitrate and album-art size, decide how duplicates are handled, and install the bonus NaviBeat theme with one button.</p>
+        </div>
+      </div>
+      <p class="rbx-app__note">Actual screenshots of NaviSyncRock running in NaviBeat for macOS.</p>
     </div>
   </section>
 
