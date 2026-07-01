@@ -18,7 +18,7 @@
   <meta property="og:description" content="NaviSyncRock: sync your Navidrome library to a Rockbox iPod from a real Mac app. One click transcodes the audio, fixes album art, writes playlists, and installs two custom iPod themes. In active development.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://navibeat.app/rockbox.html">
-  <meta property="og:image" content="https://navibeat.app/assets/screenshots/rockbox/wps-clean.png">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/rockbox/og-navisyncrock.png">
   <meta property="og:image:alt" content="A Rockbox iPod running the NaviBeat theme, synced from Navidrome via NaviSyncRock.">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="NaviBeat">
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sync Navidrome to a Rockbox iPod, no terminal, no scripts">
   <meta name="twitter:description" content="NaviSyncRock syncs your Navidrome library to a Rockbox iPod from a real Mac app: transcode, fix art, write playlists, install two iPod themes. In active development.">
-  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/rockbox/wps-clean.png">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/rockbox/og-navisyncrock.png">
   <meta name="twitter:image:alt" content="A Rockbox iPod running the NaviBeat theme, synced from a Navidrome library.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
@@ -366,17 +366,53 @@
     .rbx-faq__item > summary::after { content: '+'; color: var(--accent); font-size: 24px; flex-shrink: 0; transition: transform 0.2s var(--ease); }
     .rbx-faq__item[open] > summary::after { transform: rotate(45deg); }
     .rbx-faq__item p { color: var(--text-1); font-size: 15.5px; line-height: 1.7; margin: 0 0 20px; max-width: 74ch; }
+
+    /* ===== iPod Classic 6G mockup (pure CSS, black) ===== */
+    .ipod {
+      position: relative; width: 100%; margin: 0 auto;
+      aspect-ratio: 61.8 / 103.5;                 /* real iPod Classic 6G front ratio */
+      border-radius: 8% / 4.8%;
+      background: linear-gradient(155deg, #45454b 0%, #34343a 42%, #2a2a30 100%);
+      box-shadow: 0 34px 80px rgba(0,0,0,0.6), 0 4px 14px rgba(0,0,0,0.45),
+                  inset 0 1px 2px rgba(255,255,255,0.14), inset 0 -3px 10px rgba(0,0,0,0.5),
+                  inset 0 0 0 1px rgba(255,255,255,0.05);
+      padding: 6% 6.5% 4%; display: flex; flex-direction: column; align-items: center;
+    }
+    .ipod__screen {
+      width: 100%; aspect-ratio: 4 / 3; border-radius: 2.5%; overflow: hidden; background: #000;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.9), 0 1px 2px rgba(255,255,255,0.07), inset 0 0 24px rgba(0,0,0,0.5);
+    }
+    .ipod__screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ipod__wheel {
+      position: relative; width: 66%; aspect-ratio: 1; margin-top: auto; margin-bottom: 3%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 40%, #34343a 0%, #26262b 58%, #1a1a1e 100%);
+      box-shadow: inset 0 2px 5px rgba(255,255,255,0.06), inset 0 -4px 10px rgba(0,0,0,0.55),
+                  0 1px 3px rgba(0,0,0,0.5);
+      display: grid; place-items: center;
+    }
+    .ipod__center {
+      width: 39%; aspect-ratio: 1; border-radius: 50%;
+      background: radial-gradient(circle at 50% 38%, #26262b 0%, #141416 100%);
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.7), inset 0 -1px 2px rgba(255,255,255,0.05), 0 0 0 1px rgba(0,0,0,0.4);
+    }
+    .ipod__wheel b { position: absolute; color: #8a8a90; font-family: var(--font-sans); font-weight: 600; font-size: clamp(9px, 1.1vw, 12px); letter-spacing: 0.14em; user-select: none; }
+    .ipod__wheel .w-m { top: 8%; }
+    .ipod__wheel .w-l { left: 9%; top: 43%; font-size: 1.25em; }
+    .ipod__wheel .w-r { right: 9%; top: 43%; font-size: 1.25em; }
+    .ipod__wheel .w-b { bottom: 8%; font-size: 1.25em; }
+
+    /* Hero as a 2-column grid: copy left, big iPod right */
+    .rbx-hero__grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+    @media (min-width: 1000px) { .rbx-hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: 64px; } .rbx-hero__inner { max-width: 640px; } }
+    .rbx-hero__ipod { display: none; }
+    @media (min-width: 1000px) { .rbx-hero__ipod { display: block; } .rbx-hero__ipod .ipod { max-width: 300px; } }
+    /* Showcase iPods */
+    .rbx-shot .ipod { max-width: 240px; margin-bottom: 18px; }
   </style>
 </head>
 <body>
 <a class="skip-link" href="#top">Skip to content</a>
-
-<div class="beta-banner" role="status">
-  <div class="beta-banner__inner">
-    <span class="beta-banner__dot" aria-hidden="true"></span>
-    <span><strong>NaviBeat is live on the App Store.</strong> One $5.99 Universal Purchase for iPhone, iPad, Mac, Apple TV, and Apple Watch. <a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Buy on the App Store &rarr;</a></span>
-  </div>
-</div>
 
 <header class="nav" id="nav">
   <div class="wrap nav__inner">
@@ -392,6 +428,7 @@
       <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
       <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
       <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="rockbox.html" class="nav__link nav__link-hide-sm">Rockbox</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
       <a href="navifin.html" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
@@ -417,7 +454,8 @@
         <span class="crumb__sep" aria-hidden="true">/</span>
         <span class="crumb__current">Rockbox</span>
       </nav>
-      <div class="rbx-hero__inner">
+      <div class="rbx-hero__grid">
+       <div class="rbx-hero__inner">
         <span class="rbx-chip"><span class="rbx-chip__dot" aria-hidden="true"></span>NaviSyncRock &middot; macOS &middot; In active development</span>
         <h1 id="rockbox">Sync your library to a real <em>Rockbox iPod</em>.</h1>
 
@@ -433,6 +471,13 @@
           <a class="btn btn--primary" href="#roadmap">See the roadmap &amp; progress &darr;</a>
           <a class="link-quiet" href="#shots">See the themes&nbsp;&rarr;</a>
         </div>
+       </div>
+       <div class="rbx-hero__ipod">
+         <div class="ipod">
+           <div class="ipod__screen"><img src="assets/screenshots/rockbox/screen-clean.png" width="320" height="240" loading="eager" alt="The NaviBeat Now Playing screen on a black Rockbox iPod: Skyline by Aurora Bay, album art, the next track, and a copper scrubber."></div>
+           <div class="ipod__wheel" aria-hidden="true"><b class="w-m">MENU</b><b class="w-l">&#9198;&#xFE0E;</b><b class="w-r">&#9197;&#xFE0E;</b><b class="w-b">&#9199;&#xFE0E;</b><div class="ipod__center"></div></div>
+         </div>
+       </div>
       </div>
     </div>
   </section>
@@ -570,22 +615,22 @@
       </p>
       <div class="rbx-shots__grid">
         <div class="rbx-shot">
-          <img src="assets/screenshots/rockbox/wps-clean.png" width="300" height="493" loading="lazy" alt="The clean NaviBeat theme playing on a Rockbox iPod: album art top-right, track, artist, album and year, MP3 320 kbps, clock and battery in the corner, the next track, and a copper scrubber.">
+          <div class="ipod"><div class="ipod__screen"><img src="assets/screenshots/rockbox/screen-clean.png" width="320" height="240" loading="lazy" alt="The clean NaviBeat theme on a Rockbox iPod: album art, track, artist, album and year, MP3 320 kbps, next track, and a copper scrubber."></div><div class="ipod__wheel" aria-hidden="true"><b class="w-m">MENU</b><b class="w-l">&#9198;&#xFE0E;</b><b class="w-r">&#9197;&#xFE0E;</b><b class="w-b">&#9199;&#xFE0E;</b><div class="ipod__center"></div></div></div>
           <h3>NaviBeat</h3>
           <p>The clean skin. Album art, track, artist, album and year, a thick scrubber that also shows volume, and a charging bolt.</p>
         </div>
         <div class="rbx-shot">
-          <img src="assets/screenshots/rockbox/wps-audiophile.png" width="300" height="493" loading="lazy" alt="The NaviBeat Audiophile theme: title, artist, MP3 CBR 320 kbps, 44100 Hz sample rate, a left and right VU meter, and album art.">
+          <div class="ipod"><div class="ipod__screen"><img src="assets/screenshots/rockbox/screen-audiophile.png" width="320" height="240" loading="lazy" alt="The NaviBeat Audiophile theme: title, artist, MP3 CBR 320 kbps, 44100 Hz sample rate, a left and right VU meter, and album art."></div><div class="ipod__wheel" aria-hidden="true"><b class="w-m">MENU</b><b class="w-l">&#9198;&#xFE0E;</b><b class="w-r">&#9197;&#xFE0E;</b><b class="w-b">&#9199;&#xFE0E;</b><div class="ipod__center"></div></div></div>
           <h3>NaviBeat Audiophile</h3>
           <p>The data-dense skin. Codec, bitrate, sample rate in Hz, and a live left / right VU meter.</p>
         </div>
         <div class="rbx-shot">
-          <img src="assets/screenshots/rockbox/menu-panel.png" width="300" height="245" loading="lazy" alt="The Rockbox menu with the NaviBeat panel on the right: the NaviBeat logo, navibeat.app, and library stats (396 songs, 215 artists, 316 albums, 5 playlists, storage), with orange menu icons on the left.">
+          <div class="ipod"><div class="ipod__screen"><img src="assets/screenshots/rockbox/screen-panel.png" width="320" height="240" loading="lazy" alt="The Rockbox menu with the NaviBeat panel on the right: the NaviBeat logo, navibeat.app, and library stats (396 songs, 215 artists, 316 albums, 5 playlists), with orange menu icons on the left."></div><div class="ipod__wheel" aria-hidden="true"><b class="w-m">MENU</b><b class="w-l">&#9198;&#xFE0E;</b><b class="w-r">&#9197;&#xFE0E;</b><b class="w-b">&#9199;&#xFE0E;</b><div class="ipod__center"></div></div></div>
           <h3>Library at a glance</h3>
           <p>Orange menu icons, plus a NaviBeat panel with your library stats and storage, refreshed on every sync.</p>
         </div>
       </div>
-      <p class="rbx-shots__note">Real renders from the Rockbox iPod simulator, not mockups.</p>
+      <p class="rbx-shots__note">The screens are actual renders from the Rockbox iPod simulator, shown in an iPod mockup.</p>
     </div>
   </section>
 
