@@ -181,6 +181,14 @@
   </url>
 
   <url>
+    <loc>https://navibeat.app/rockbox.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/rockbox.html" />
+  </url>
+
+  <url>
     <loc>https://navibeat.app/multi-library.html</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
