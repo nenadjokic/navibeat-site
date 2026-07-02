@@ -39,7 +39,7 @@
   /* ---- Layout ---- */
   --max-w: 1280px;
   --gutter: 80px;
-  --rhythm: 112px;
+  --rhythm: 72px;
 
   /* ---- Motion ---- */
   --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
@@ -49,7 +49,7 @@
 @media (max-width: 900px) {
   :root {
     --gutter: 24px;
-    --rhythm: 64px;
+    --rhythm: 48px;
   }
 }
 
