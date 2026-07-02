@@ -1,9 +1,7 @@
-// Cloudflare Workers config for navibeat.app (static assets worker).
-// Committed so Workers Builds stops auto-generating this on every build
-// (the auto-setup also mis-answers the "functions directory" prompt).
 {
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "navibeat-site",
-  "compatibility_date": "2026-07-01",
+  "compatibility_date": "2026-07-02",
   "observability": {
     "enabled": true
   },
