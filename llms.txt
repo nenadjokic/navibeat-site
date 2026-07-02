@@ -29,6 +29,11 @@
 - Server Health diagnostics (server type, version, OpenSubsonic extensions, scan status)
 - Optional Last.fm integration (scrobbles route through your Navidrome, never directly)
 - Secure remote access: custom HTTP headers for Cloudflare Access and Authelia, mTLS client certificates, Tailscale, no third-party relay
+- Fully localized into 10 languages: English, German, French, Spanish, Brazilian Portuguese, Russian, Ukrainian, Serbian, Simplified Chinese, Traditional Chinese; in-app language picker on every platform (including Apple TV, which has no per-app system language setting)
+- Listening Stats: a 24-hour listening clock, weekday heatmap, and top artists/albums/songs with a week/month/year switcher (iPhone, iPad, Mac)
+- 10-band equalizer with presets on the selectable high-fidelity audio engine
+- NaviSyncRock (macOS add-on): sync songs, albums, artists, and playlists from Navidrome to Rockbox iPods with server-side transcoding, rendered album art, generated playlists, scrobbles synced back from the device, and two custom NaviBeat Rockbox themes
+- CarPlay with voice search that understands the play command in every app language and resolves against your own library
 
 ## Pages
 
