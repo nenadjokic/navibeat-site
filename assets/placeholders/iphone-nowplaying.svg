@@ -7,7 +7,7 @@
   <text x="600" y="740" font-family="JetBrains Mono, monospace" font-size="28" fill="#f2efe8" opacity="0.45" text-anchor="middle">ALBUM ART</text>
   <g transform="translate(200,1200)" fill="#f2efe8" font-family="Inter Tight, sans-serif">
     <text font-size="44" font-weight="600">Track Title</text>
-    <text y="56" font-size="30" fill="#a8a39a">Artist — Album</text>
+    <text y="56" font-size="30" fill="#a8a39a">Artist - Album</text>
   </g>
   <rect x="200" y="1340" width="800" height="6" rx="3" fill="#1c1c1c"/>
   <rect x="200" y="1340" width="300" height="6" rx="3" fill="#E39B56"/>

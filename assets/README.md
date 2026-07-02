@@ -1,8 +1,8 @@
 # NaviBeat marketing assets
 
-All image slots are referenced by filename. To swap in real renders/screenshots later, drop a file with the same name into the same folder — nothing else needs to change.
+All image slots are referenced by filename. To swap in real renders/screenshots later, drop a file with the same name into the same folder - nothing else needs to change.
 
-## `assets/devices/` — hero + lozenge device renders
+## `assets/devices/` - hero + lozenge device renders
 
 Used by: home page hero lineup (`index.html`) and per-platform hero shots (`macos.html`, `appletv.html`, coming-soon pages).
 
@@ -17,7 +17,7 @@ Used by: home page hero lineup (`index.html`) and per-platform hero shots (`maco
 
 **Swap format:** Replace the `.svg` with `.png` / `.webp` at the target dimensions and update `<img src>` in the HTML to match the new extension. All `<img>` tags use `width: 100%; height: auto` so any reasonable aspect ratio is honoured.
 
-## `assets/placeholders/` — deep-dive screenshot slots
+## `assets/placeholders/` - deep-dive screenshot slots
 
 Used by: inline "deep" blocks inside platform pages.
 
@@ -45,4 +45,4 @@ Brand mark used in the nav + footer. Keep this one as SVG for crisp rendering at
 2. Save to the same path with the same filename (or update the single `<img src>` reference if you change extension).
 3. Push to Gitea → Cloudflare Pages auto-builds.
 
-No layout changes required — the container CSS handles sizing.
+No layout changes required - the container CSS handles sizing.
