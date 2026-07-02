@@ -50,7 +50,7 @@
   <rect x="660" y="52" width="80" height="18" rx="8" fill="#000"/>
 
   <g clip-path="url(#mb-screen-clip)">
-    <!-- Desktop wallpaper — deep warm gradient -->
+    <!-- Desktop wallpaper - deep warm gradient -->
     <rect x="140" y="52" width="1120" height="704" fill="#0a0a0a"/>
     <rect x="140" y="52" width="1120" height="704" fill="url(#mb-art-vignette)" opacity="0.45"/>
 
@@ -86,7 +86,7 @@
 
       <!-- Track metadata overlay on art -->
       <text x="224" y="642" fill="#f2efe8" font-family="'Fraunces', Georgia, serif" font-style="italic" font-weight="300" font-size="30">Fade Into You</text>
-      <text x="224" y="670" fill="#f2efe8" opacity="0.72" font-family="'Inter Tight', system-ui, sans-serif" font-size="14">Mazzy Star — So Tonight That I Might See</text>
+      <text x="224" y="670" fill="#f2efe8" opacity="0.72" font-family="'Inter Tight', system-ui, sans-serif" font-size="14">Mazzy Star - So Tonight That I Might See</text>
 
       <!-- Right half: frosted drawer -->
       <rect x="700" y="132" width="500" height="578" fill="url(#mb-drawer)"/>
