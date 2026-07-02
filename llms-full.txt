@@ -83,6 +83,24 @@ Pi, a NAS, or any server.
   lyrics, and album covers are resolving.
 - Optional Last.fm integration. It is opt-in, and scrobbles route through your
   own Navidrome rather than being sent directly from the app.
+- Fully localized into 10 languages: English, German, French, Spanish, Brazilian
+  Portuguese, Russian, Ukrainian, Serbian, Simplified Chinese, and Traditional
+  Chinese. An in-app language picker forces any of them per app, including on
+  Apple TV, which has no per-app system language setting at all.
+- Listening Stats: a 24-hour listening clock, a weekday heatmap, and top
+  artists, albums, and songs, with a week/month/year switcher. On iPhone, iPad,
+  and Mac, built from your own play history.
+- 10-band equalizer with presets, available on NaviBeat's selectable
+  high-fidelity audio engine (pick the engine in Settings).
+- NaviSyncRock (a paid macOS add-on): sync songs, albums, artists, and
+  playlists from your Navidrome server to a Rockbox iPod. The server transcodes
+  (MP3/AAC/Opus), album art is written so it renders even on old hardware,
+  .m3u8 playlists are generated, plays made on the iPod sync back to your
+  server as scrobbles, and two custom NaviBeat Rockbox themes are included.
+  Details: https://navibeat.app/rockbox.html
+- CarPlay with voice search: say "play <artist/album/song/playlist>" in any of
+  the app's languages; it resolves against your own library and shows exactly
+  what it heard when nothing matches.
 
 ## Privacy and security
 
