@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
 
-  <link rel="stylesheet" href="styles.css?v=20260630c">
+  <link rel="stylesheet" href="styles.css?v=20260702a">
 
   <script type="application/ld+json">
   {
@@ -276,7 +276,7 @@
         <img src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
-      Navi<span class="brand-beat">Beat</span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
     </a>
     <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <a href="#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
@@ -744,13 +744,62 @@
         <article class="f-card">
           <span class="f-card__idx">New / Localization</span>
           <h3 class="h3">NaviBeat now speaks 10 languages.</h3>
-          <p>English, German, French, Spanish, Brazilian Portuguese, Russian, Ukrainian, Serbian, and Chinese in both Simplified and Traditional. Every screen is translated, and an in-app language picker lets you force any of them, even on Apple&nbsp;TV, where the system offers no per-app language setting at all.</p>
+          <ul class="wn-langs">
+            <li class="wn-langs__chip">English</li>
+            <li class="wn-langs__chip">German</li>
+            <li class="wn-langs__chip">French</li>
+            <li class="wn-langs__chip">Spanish</li>
+            <li class="wn-langs__chip">Brazilian Portuguese</li>
+            <li class="wn-langs__chip">Russian</li>
+            <li class="wn-langs__chip">Ukrainian</li>
+            <li class="wn-langs__chip">Serbian</li>
+            <li class="wn-langs__chip">Chinese (Simplified)</li>
+            <li class="wn-langs__chip">Chinese (Traditional)</li>
+          </ul>
+          <p>Every screen is translated, and an in-app language picker lets you force any of them, even on Apple&nbsp;TV, where the system offers no per-app language setting at all.</p>
+          <p class="wn-langs__ask">Don&rsquo;t see yours? <a href="mailto:nenad.dev@icloud.com?subject=Language%20request%20for%20NaviBeat">Tell me which one</a>, and I&rsquo;ll add it.</p>
           <p class="f-card__kicker">Deset jezika. Zehn Sprachen. Dix langues.</p>
         </article>
 
         <article class="f-card">
           <span class="f-card__idx">New / Listening Stats</span>
           <h3 class="h3">Your listening, mapped.</h3>
+          <div class="wn-illo wn-stats" aria-hidden="true">
+            <svg class="wn-stats__clock" viewBox="0 0 100 100" width="72" height="72">
+              <circle class="wn-stats__ring" cx="50" cy="50" r="42"/>
+              <line class="wn-stats__tick wn-stats__tick--major" x1="50.00" y1="14.00" x2="50.00" y2="8.00"/>
+              <line class="wn-stats__tick" x1="59.96" y1="12.81" x2="60.87" y2="9.43"/>
+              <line class="wn-stats__tick" x1="69.25" y1="16.66" x2="71.00" y2="13.63"/>
+              <line class="wn-stats__tick" x1="77.22" y1="22.78" x2="79.70" y2="20.30"/>
+              <line class="wn-stats__tick" x1="83.34" y1="30.75" x2="86.37" y2="29.00"/>
+              <line class="wn-stats__tick" x1="87.19" y1="40.04" x2="90.57" y2="39.13"/>
+              <line class="wn-stats__tick wn-stats__tick--major" x1="86.00" y1="50.00" x2="92.00" y2="50.00"/>
+              <line class="wn-stats__tick" x1="87.19" y1="59.96" x2="90.57" y2="60.87"/>
+              <line class="wn-stats__tick" x1="83.34" y1="69.25" x2="86.37" y2="71.00"/>
+              <line class="wn-stats__tick" x1="77.22" y1="77.22" x2="79.70" y2="79.70"/>
+              <line class="wn-stats__tick" x1="69.25" y1="83.34" x2="71.00" y2="86.37"/>
+              <line class="wn-stats__tick" x1="59.96" y1="87.19" x2="60.87" y2="90.57"/>
+              <line class="wn-stats__tick wn-stats__tick--major" x1="50.00" y1="86.00" x2="50.00" y2="92.00"/>
+              <line class="wn-stats__tick" x1="40.04" y1="87.19" x2="39.13" y2="90.57"/>
+              <line class="wn-stats__tick" x1="30.75" y1="83.34" x2="29.00" y2="86.37"/>
+              <line class="wn-stats__tick" x1="22.78" y1="77.22" x2="20.30" y2="79.70"/>
+              <line class="wn-stats__tick" x1="16.66" y1="69.25" x2="13.63" y2="71.00"/>
+              <line class="wn-stats__tick" x1="12.81" y1="59.96" x2="9.43" y2="60.87"/>
+              <line class="wn-stats__tick wn-stats__tick--major" x1="14.00" y1="50.00" x2="8.00" y2="50.00"/>
+              <line class="wn-stats__tick" x1="12.81" y1="40.04" x2="9.43" y2="39.13"/>
+              <line class="wn-stats__tick" x1="16.66" y1="30.75" x2="13.63" y2="29.00"/>
+              <line class="wn-stats__tick" x1="22.78" y1="22.78" x2="20.30" y2="20.30"/>
+              <line class="wn-stats__tick" x1="30.75" y1="16.66" x2="29.00" y2="13.63"/>
+              <line class="wn-stats__tick" x1="40.04" y1="12.81" x2="39.13" y2="9.43"/>
+              <path class="wn-stats__arc" d="M 39.13 90.57 A 42 42 0 0 1 9.43 60.87"/>
+              <circle class="wn-stats__hub" cx="50" cy="50" r="3"/>
+            </svg>
+            <div class="wn-stats__heatmap">
+              <span style="--o:.29"></span><span style="--o:.27"></span><span style="--o:.5"></span><span style="--o:.35"></span><span style="--o:.61"></span><span style="--o:.8"></span><span style="--o:.59"></span>
+              <span style="--o:.35"></span><span style="--o:.23"></span><span style="--o:.43"></span><span style="--o:.35"></span><span style="--o:.45"></span><span style="--o:.82"></span><span style="--o:.87"></span>
+              <span style="--o:.21"></span><span style="--o:.3"></span><span style="--o:.5"></span><span style="--o:.66"></span><span style="--o:.63"></span><span style="--o:.81"></span><span style="--o:.92"></span>
+            </div>
+          </div>
           <p>A 24-hour listening clock, a weekday heatmap, and your top artists, albums, and songs, with a week, month, and year switcher. Built from your own play history, rendered beautifully on iPhone, iPad, and Mac.</p>
           <p class="f-card__kicker">Know your own taste.</p>
         </article>
@@ -758,6 +807,21 @@
         <article class="f-card">
           <span class="f-card__idx">New / Equalizer</span>
           <h3 class="h3">A 10-band EQ on the new audio engine.</h3>
+          <div class="wn-illo wn-eq" aria-hidden="true">
+            <div class="wn-eq__bars">
+              <span class="wn-eq__bar" style="--h:46%;--d:0s;--dur:1.9s"></span>
+              <span class="wn-eq__bar wn-eq__bar--hot" style="--h:62%;--d:.15s;--dur:2.3s"></span>
+              <span class="wn-eq__bar" style="--h:40%;--d:.3s;--dur:2.0s"></span>
+              <span class="wn-eq__bar" style="--h:72%;--d:.45s;--dur:2.5s"></span>
+              <span class="wn-eq__bar" style="--h:55%;--d:.6s;--dur:1.8s"></span>
+              <span class="wn-eq__bar wn-eq__bar--hot" style="--h:78%;--d:.75s;--dur:2.2s"></span>
+              <span class="wn-eq__bar" style="--h:48%;--d:.1s;--dur:2.4s"></span>
+              <span class="wn-eq__bar" style="--h:66%;--d:.25s;--dur:1.9s"></span>
+              <span class="wn-eq__bar" style="--h:36%;--d:.5s;--dur:2.1s"></span>
+              <span class="wn-eq__bar" style="--h:58%;--d:.65s;--dur:2.3s"></span>
+            </div>
+            <div class="wn-eq__labels"><span>60&nbsp;Hz</span><span>20&nbsp;kHz</span></div>
+          </div>
           <p>Shape the sound with a full ten-band equalizer and presets, riding on NaviBeat&rsquo;s selectable high-fidelity audio engine. Pick the engine in Settings, dial in your curve, and it follows your playback.</p>
           <p class="f-card__kicker">Your ears, your curve.</p>
         </article>
@@ -766,6 +830,7 @@
           <span class="f-card__idx">New / NaviSyncRock</span>
           <h3 class="h3">Your Navidrome, on a real iPod.</h3>
           <p>Sync songs, albums, artists, and playlists from your server to a <a href="rockbox.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Rockbox player</a>: your server transcodes, the album art actually renders even on old hardware, playlists are written for you, and plays on the iPod sync back to your server as scrobbles. Two custom NaviBeat themes ride along. A Mac add-on.</p>
+          <p class="wn-rockbox-note">Built on <a href="https://www.rockbox.org" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Rockbox</a>, a wonderful volunteer-run open-source project that has kept old iPods playing for decades. We&rsquo;re fans building on top of their work, not affiliated with the Rockbox project, and glad it exists.</p>
           <p class="f-card__kicker">Click wheel, meet self-hosting.</p>
         </article>
 
@@ -1017,7 +1082,7 @@
       <div>
         <a class="footer__brand" href="#top">
           <img src="assets/icon.svg" alt="">
-          Navi<span class="brand-beat">Beat</span>
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
       </div>
@@ -1053,7 +1118,7 @@
       </div>
     </div>
     <div class="footer__bar">
-      <span>&copy; 2026 Nenad Jokic, Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
       <span>v1.1.3 &middot; Live on the App Store</span>
     </div>
   </div>

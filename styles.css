@@ -1,5 +1,5 @@
 /* =============================================================================
-   NaviBeat marketing site v3 — Vinyl / audiophile identity
+   NaviBeat marketing site v3 - Vinyl / audiophile identity
    Design direction: VinylBeat Brand Identity (differentiates from embertide.app).
    Neutral carbon canvas, vinyl-orange accent on copper gradients, Oswald display,
    Manrope body. Spinning vinyl, live EQ waveforms, speaker-mesh texture.
@@ -9,10 +9,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* ---- Palette (Vinyl / audiophile tokens — neutral carbon + vinyl orange).
+  /* ---- Palette (Vinyl / audiophile tokens - neutral carbon + vinyl orange).
          Token NAMES kept identical to the old Warm-Vinyl set so every inline
          var(--token) across all pages re-skins through the cascade. ---- */
-  --bg-0:   #0C0C0E;       /* neutral carbon — primary canvas (not warm brown, not embertide plum) */
+  --bg-0:   #0C0C0E;       /* neutral carbon - primary canvas (not warm brown, not embertide plum) */
   --bg-1:   #141417;       /* slightly lifted surface */
   --bg-2:   #17171B;       /* card backgrounds */
   --bg-3:   #1b1b1f;       /* hover states / speaker-mesh base */
@@ -20,9 +20,9 @@
   --border:        rgba(255, 255, 255, 0.07);
   --border-strong: rgba(255, 255, 255, 0.16);
 
-  --text-0: #EDEDF0;       /* off-white — primary text */
-  --text-1: #A6A6AE;       /* muted — secondary text */
-  --text-2: #8C8C95;       /* quiet — labels, captions */
+  --text-0: #EDEDF0;       /* off-white - primary text */
+  --text-1: #A6A6AE;       /* muted - secondary text */
+  --text-2: #8C8C95;       /* quiet - labels, captions */
 
   --accent:   #F47B20;     /* vinyl orange (on copper-metallic gradients, not flat) */
   --accent-2: #C9601A;     /* deep copper-orange */
@@ -64,7 +64,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  /* Subtle neutral grain overlay — carbon texture */
+  /* Subtle neutral grain overlay - carbon texture */
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.55  0 0 0 0 0.58  0 0 0 0.06 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>");
   background-attachment: fixed;
 }
@@ -81,7 +81,7 @@ a:hover { color: var(--accent-hi); }
   border-radius: 4px;
 }
 
-/* Visually-hidden utility — keeps heading semantics for screen readers
+/* Visually-hidden utility - keeps heading semantics for screen readers
    and SEO crawlers without painting it on the page. WCAG 1.3.1 friendly. */
 .visually-hidden {
   position: absolute;
@@ -95,7 +95,7 @@ a:hover { color: var(--accent-hi); }
   border: 0;
 }
 
-/* Skip-to-content link — visually hidden until keyboard focus brings it
+/* Skip-to-content link - visually hidden until keyboard focus brings it
    in. WCAG 2.4.1 (Bypass Blocks). Every page provides `<main id="top">`
    as the target. */
 .skip-link {
@@ -155,7 +155,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   letter-spacing: 0.01em;
 }
-/* accent words: no italic serif — colored orange, like the VinylBeat prototype */
+/* accent words: no italic serif - colored orange, like the VinylBeat prototype */
 h1 em, h2 em, h3 em, h4 em,
 .display em, .h2 em, .h3 em, .lede em {
   font-style: normal;
@@ -357,6 +357,7 @@ section { padding-block: var(--rhythm); }
   font-size: 20px;
   letter-spacing: 0.01em;
   color: var(--text-0);
+  white-space: nowrap;
 }
 
 .nav__mark {
@@ -408,6 +409,7 @@ section { padding-block: var(--rhythm); }
   padding: 4px 2px;
   position: relative;
   transition: color 0.2s var(--ease);
+  white-space: nowrap;
 }
 .nav__link::after {
   content: "";
@@ -446,8 +448,20 @@ section { padding-block: var(--rhythm); }
 /* Mobile disclosure toggle (hamburger). Hidden on desktop. */
 .nav__toggle { display: none; }
 
-@media (max-width: 720px) {
+/* Mid widths: the full link row needs ~1080px; tighten spacing instead of
+   letting the right side clip before the hamburger takes over at 900px. */
+@media (min-width: 901px) and (max-width: 1140px) {
+  .nav__inner { gap: 16px; padding-inline: 40px; }
+  .nav__links { gap: 14px; }
+  .nav__link { letter-spacing: 0.07em; }
+  .nav__inner .btn--compact { padding-left: 12px; padding-right: 12px; font-size: 12px; }
+}
+
+@media (max-width: 900px) {
   .nav__inner { position: relative; }
+
+  /* Nav: shorten the always-visible CTA so the right edge never crops. */
+  .nav__inner .btn--compact { padding-left: 12px; padding-right: 12px; font-size: 12px; }
 
   /* Closed bar: hide product links + NaviFin cross-promo; keep only the App Store CTA + the toggle. */
   .nav__links a.nav__link-hide-sm,
@@ -656,7 +670,7 @@ section { padding-block: var(--rhythm); }
 }
 
 /* =============================================================================
-   Hero device lineup — real screenshots
+   Hero device lineup - real screenshots
    ============================================================================= */
 
 .lineup {
@@ -679,7 +693,7 @@ section { padding-block: var(--rhythm); }
   will-change: transform;
 }
 
-/* Warm amber underlighting — stage floor */
+/* Warm amber underlighting - stage floor */
 .lineup__glow {
   position: absolute;
   inset: -12% -4% -22% -4%;
@@ -770,7 +784,7 @@ section { padding-block: var(--rhythm); }
   z-index: 7;
 }
 
-/* Per-device bezel framing — warm amber inner rim, rounded glass effect */
+/* Per-device bezel framing - warm amber inner rim, rounded glass effect */
 .lineup__device--tv img {
   border-radius: 10px;
 }
@@ -822,7 +836,7 @@ section { padding-block: var(--rhythm); }
 .lineup__caption span:nth-child(3) { animation-delay: 2.16s; }
 
 /* =============================================================================
-   Platforms band — clickable cards with real screenshots as bg
+   Platforms band - clickable cards with real screenshots as bg
    ============================================================================= */
 
 .platforms {
@@ -903,7 +917,7 @@ section { padding-block: var(--rhythm); }
   transition: transform 0.4s var(--ease-spring);
 }
 
-/* Watch screenshot is portrait — center it in the 16:10 thumb (avoid grid overflow) */
+/* Watch screenshot is portrait - center it in the 16:10 thumb (avoid grid overflow) */
 .plat-card__thumb--watch img {
   object-fit: contain;
   object-position: center;
@@ -911,7 +925,7 @@ section { padding-block: var(--rhythm); }
 }
 .plat-card:hover .plat-card__thumb img { transform: scale(1.04); }
 
-/* Thumbnail overlay gradient — fades into card body */
+/* Thumbnail overlay gradient - fades into card body */
 .plat-card__thumb::after {
   content: "";
   position: absolute;
@@ -973,7 +987,7 @@ section { padding-block: var(--rhythm); }
 }
 
 /* =============================================================================
-   Explore grid — per-platform cards (homepage)
+   Explore grid - per-platform cards (homepage)
    The key improvement: cards now show a real screenshot instead of wireframe SVG
    ============================================================================= */
 
@@ -1134,13 +1148,13 @@ section { padding-block: var(--rhythm); }
 
 .xcard__label { font-size: 12px; color: var(--text-2); }
 
-/* Pipeline (CarPlay) — no-link */
+/* Pipeline (CarPlay) - no-link */
 .xcard--pipeline {
   opacity: 0.6;
 }
 
 /* =============================================================================
-   Feature cards — 4 selling points
+   Feature cards - 4 selling points
    ============================================================================= */
 
 .features {
@@ -1185,6 +1199,170 @@ section { padding-block: var(--rhythm); }
   line-height: 1.2;
   color: var(--accent);
   margin-top: auto;
+}
+
+/* =============================================================================
+   #whats-new - "Fresh from the workshop" card illustrations.
+   Everything below is scoped under #whats-new / a .wn- class prefix so it
+   never touches the shared .f-card / .features grid used by the "4 selling
+   points" section above (or any other page reusing those base classes).
+   ============================================================================= */
+
+/* Shared inset "device screen" frame the illustrations sit in */
+#whats-new .wn-illo {
+  border-radius: 12px;
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  padding: 14px 16px 12px;
+  margin: 2px 0 4px;
+}
+
+/* ---- Equalizer card: 10-band live EQ ---- */
+#whats-new .wn-eq__bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 64px;
+}
+#whats-new .wn-eq__bar {
+  width: 14px;
+  height: var(--h, 45%);
+  border-radius: 3px 3px 1px 1px;
+  background: linear-gradient(180deg, var(--accent-hi), var(--accent) 55%, var(--accent-2));
+  box-shadow: 0 0 8px rgba(244, 123, 32, 0.16);
+  transform-origin: bottom center;
+  animation: wnEqPulse var(--dur, 2.1s) ease-in-out infinite;
+  animation-delay: var(--d, 0s);
+}
+#whats-new .wn-eq__bar--hot {
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(244, 123, 32, 0.32);
+}
+@keyframes wnEqPulse {
+  0%, 100% { transform: scaleY(0.86); }
+  50%      { transform: scaleY(1.14); }
+}
+#whats-new .wn-eq__labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+/* ---- Listening Stats card: 24-hour clock ring + weekday heatmap.
+   Deliberately abstract: no numbers, hours, or counts are drawn, so this
+   never reads as a real-data claim or a faked screenshot. ---- */
+#whats-new .wn-stats {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+#whats-new .wn-stats__clock { flex: none; overflow: visible; }
+#whats-new .wn-stats__ring {
+  fill: none;
+  stroke: var(--border-strong);
+  stroke-width: 2;
+}
+#whats-new .wn-stats__tick {
+  stroke: var(--text-2);
+  stroke-width: 1;
+  opacity: 0.55;
+}
+#whats-new .wn-stats__tick--major {
+  stroke: var(--text-1);
+  stroke-width: 1.6;
+  opacity: 0.85;
+}
+#whats-new .wn-stats__arc {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 5px var(--accent-glow));
+  animation: wnArcGlow 3.2s ease-in-out infinite;
+}
+#whats-new .wn-stats__hub { fill: var(--accent); }
+@keyframes wnArcGlow {
+  0%, 100% { opacity: 0.7; }
+  50%      { opacity: 1; }
+}
+#whats-new .wn-stats__heatmap {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  flex: none;
+}
+#whats-new .wn-stats__heatmap span {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: var(--o, 0.3);
+}
+
+/* ---- Localization card: language chips ---- */
+#whats-new .wn-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 2px 0 4px;
+  padding: 0;
+}
+#whats-new .wn-langs__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg-1);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  white-space: nowrap;
+}
+#whats-new .wn-langs__chip::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+#whats-new .wn-langs__ask {
+  font-size: 14px;
+  color: var(--text-2);
+}
+#whats-new .wn-langs__ask a { color: var(--accent); border-bottom: 1px solid var(--accent-dim); }
+#whats-new .wn-langs__ask a:hover { color: var(--accent-hi); }
+
+/* ---- NaviSyncRock card: Rockbox project shout-out ---- */
+#whats-new .wn-rockbox-note {
+  font-size: 13.5px;
+  color: var(--text-2);
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+#whats-new .wn-rockbox-note a { color: var(--accent); border-bottom: 1px solid var(--accent-dim); }
+#whats-new .wn-rockbox-note a:hover { color: var(--accent-hi); }
+
+@media (max-width: 640px) {
+  #whats-new .wn-eq__bar { width: 10px; }
+  #whats-new .wn-stats { flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #whats-new .wn-eq__bar { animation: none; }
+  #whats-new .wn-stats__arc { animation: none; opacity: 1; }
 }
 
 /* =============================================================================
@@ -1248,7 +1426,7 @@ section { padding-block: var(--rhythm); }
 .manifesto__trace-ok   { color: var(--accent); }
 .manifesto__trace-bad  { color: #d97757; } /* terracotta-red, lifted to clear AA text contrast on bg-2 while staying in palette */
 
-/* #proofbar — at-a-glance trust row under the hero. Reuses the mono/eyebrow
+/* #proofbar - at-a-glance trust row under the hero. Reuses the mono/eyebrow
    voice + the warm surface; no new visual language. */
 .proofbar { background: var(--bg-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .proofbar__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 0; padding: 15px 0; }
@@ -1689,7 +1867,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .sec-head p { color: var(--text-1); font-size: 17px; line-height: 1.65; }
 
 /* =============================================================================
-   Platform pages — platform.css additions
+   Platform pages - platform.css additions
    ============================================================================= */
 
 /* Breadcrumb */
@@ -1801,7 +1979,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   box-shadow: 0 40px 88px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(244, 123, 32, 0.07);
 }
 
-/* macOS screenshots have built-in OS window shadow — skip ours to avoid
+/* macOS screenshots have built-in OS window shadow - skip ours to avoid
    double-shadow / picture-frame effect (matches .p-shot__media img rule below) */
 .p-hero__shot img[src*="/macos/"] {
   border: none;
@@ -1883,7 +2061,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   box-shadow: 0 32px 72px rgba(0, 0, 0, 0.52);
 }
 
-/* macOS screenshots ship with built-in OS window shadow — skip our box-shadow
+/* macOS screenshots ship with built-in OS window shadow - skip our box-shadow
    on macOS images to avoid double-shadow / picture-frame effect */
 .p-shot__media img[src*="/macos/"] {
   box-shadow: none;
@@ -1891,7 +2069,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 }
 
 /* =========================================================================
-   Lightbox — click any platform-page screenshot to open full-screen
+   Lightbox - click any platform-page screenshot to open full-screen
    ========================================================================= */
 .lightbox-trigger {
   cursor: zoom-in;
@@ -1991,7 +2169,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   color: var(--text-0);
 }
 
-/* Screenshot gallery — responsive grid, wraps naturally */
+/* Screenshot gallery - responsive grid, wraps naturally */
 .strip {
   padding-block: 16px 32px;
 }
@@ -2024,7 +2202,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 }
 
 /* =============================================================================
-   Prose — support & privacy pages
+   Prose - support & privacy pages
    ============================================================================= */
 
 .prose {
@@ -2066,7 +2244,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .prose ul { padding-left: 20px; }
 .prose a { color: var(--accent); border-bottom: 1px solid rgba(244, 123, 32, 0.28); padding-bottom: 1px; }
 .prose a:hover { color: var(--accent-hi); border-bottom-color: var(--accent-hi); }
-/* Beta program (and any future inline CTA inside .prose) — the generic
+/* Beta program (and any future inline CTA inside .prose) - the generic
    `.prose a` rule above paints anchor text in `--accent` and adds a faux
    underline border, which would override `.btn--primary`'s dark text +
    bright orange fill and produce a barely-readable cream-on-tan button.
@@ -2095,7 +2273,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .prose .contact-box p { margin: 0; color: var(--text-0); font-size: 16px; }
 
 /* =========================================================
-   THEATER — cinematic sticky-scroll showcase
+   THEATER - cinematic sticky-scroll showcase
    5 acts · ~100vh each · height:480vh total
    ========================================================= */
 
@@ -2225,7 +2403,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   display: flex; align-items: center; justify-content: center;
 }
 
-/* --- Caption block (with backdrop glass — user tweak a) --- */
+/* --- Caption block (with backdrop glass - user tweak a) --- */
 .act__caption {
   position: absolute; right: max(40px, 5vw); bottom: 14vh;
   max-width: 380px; z-index: 25;
@@ -2290,7 +2468,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   box-shadow: 0 18px 30px rgba(0,0,0,.6);
 }
 
-/* ---- Act 2: Mac (main window + mini-player floater — user tweak c: floater on LEFT) ---- */
+/* ---- Act 2: Mac (main window + mini-player floater - user tweak c: floater on LEFT) ---- */
 .act-mac__group { position: relative; width: 90%; }
 .dev-mac {
   position: relative; width: 100%;
@@ -2338,7 +2516,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .act.is-active .dev-ipad { transform: scale(1); opacity: 1; }
 .dev-ipad img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
-/* Lyric macro zoom overlay — pops out to the LEFT of the iPad. Kept below the
+/* Lyric macro zoom overlay - pops out to the LEFT of the iPad. Kept below the
    iPad's top edge (was top:-12%, which poked up into the centred .theater__title
    across a wide band of viewport heights). */
 .dev-ipad__zoom {
@@ -2414,7 +2592,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .act.is-active .dev-iphone--queue  { transform: translateY(-12px) scale(1) rotate(4deg); }
 .dev-iphone { transition-delay: var(--d); }
 
-/* Apple Watch — hovers top-right near phones */
+/* Apple Watch - hovers top-right near phones */
 .dev-watch {
   position: absolute; right: 6%; top: 8%;
   width: 13%; aspect-ratio: 410/502;
@@ -2437,7 +2615,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   border-radius: 2px;
 }
 
-/* ---- Act 5: Family — all five devices together ---- */
+/* ---- Act 5: Family - all five devices together ---- */
 .family {
   /* Family act sets its own width (ignores the .act__stage cap), so it gets the
      same height-aware clearance term to stay below the title on short viewports. */
@@ -2462,7 +2640,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .family__watch { right: 6%; top: 14%; width: 14%; --d: .60s; z-index: 7; }
 .family__watch img { border-radius: 22px; box-shadow: 0 0 0 1px rgba(244, 123, 32,.12) inset, 0 0 0 4px #141417; }
 
-/* Family — receipt overlay (Universal Purchase) */
+/* Family - receipt overlay (Universal Purchase) */
 .family__receipt {
   position: absolute; left: 6%; top: 14%;
   background: rgba(14,11,8,.86); backdrop-filter: blur(12px);
@@ -2505,7 +2683,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 }
 
 /* =============================================================================
-   MOBILE EMERGENCY FIXES — 2026-04-29 night
+   MOBILE EMERGENCY FIXES - 2026-04-29 night
    The 5-act theater (480vh sticky scroll) is a desktop-only experience.
    Below 720px every act fails to lay out: stages shrink to ~190px tall,
    captions overlap the device, and you're left scrolling through ~4000px
@@ -2521,9 +2699,6 @@ a.proofbar__item:hover { color: var(--accent-hi); }
      band right after it carries the "every Apple screen" message in a clean
      6-up grid. Skip the 480vh dead-air block entirely. */
   .theater { display: none; }
-
-  /* Nav: shorten the always-visible CTA so the right edge stops cropping. */
-  .nav__inner .btn--compact { padding-left: 12px; padding-right: 12px; font-size: 12px; }
 
   /* Hero CTAs: stack vertically + full-width buttons. Two CTAs side-by-side
      never fit at iPhone widths (390px content area). */
@@ -2557,7 +2732,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 
 /* =============================================================================
    Vinyl / audiophile signature motifs (added for the VinylBeat reskin).
-   Decorative only — these never replace the app brand icon.
+   Decorative only - these never replace the app brand icon.
    ============================================================================= */
 
 @keyframes vb-spin { to { transform: rotate(360deg); } }
@@ -2575,7 +2750,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   box-shadow: inset 0 0 40px rgba(0,0,0,.7), inset 0 0 0 1px rgba(255,255,255,.04);
 }
 
-/* Live equalizer / waveform — author bars as <span> with inline height + delay */
+/* Live equalizer / waveform - author bars as <span> with inline height + delay */
 .eq { display: flex; align-items: center; gap: 3px; height: 96px; }
 .eq span {
   display: block; width: 4px; border-radius: 4px; transform-origin: center;

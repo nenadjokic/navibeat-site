@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
-  <link rel="stylesheet" href="styles.css?v=20260630c">
+  <link rel="stylesheet" href="styles.css?v=20260702a">
 
   <script type="application/ld+json">
   {
@@ -292,13 +292,14 @@
         <img src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
-      NaviBeat
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
     </a>
     <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
       <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
       <a href="lastfm.html" class="nav__link nav__link-hide-sm" aria-current="page">Last.fm</a>
+      <a href="rockbox.html" class="nav__link nav__link-hide-sm">Rockbox</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
       <a href="navifin.html" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
@@ -415,10 +416,10 @@
   </section>
 
   <!-- COMPARISON -->
-  <section class="lfm-vs" id="vs">
+  <section class="lfm-vs" id="vs" aria-labelledby="vs-title">
     <div class="wrap">
       <p class="eyebrow eyebrow--accent">The taste-intelligence gap</p>
-      <h2 id="vs">What no other Subsonic client surfaces today.</h2>
+      <h2 id="vs-title">What no other Subsonic client surfaces today.</h2>
       <p class="lfm-vs__sub">
         Most clients in this space stop at scrobbling: sending plays to Last.fm and not reading anything back. NaviBeat reads <em>your</em> Last.fm history into the player so the data you&rsquo;ve been generating for years finally pays off as features.
       </p>
@@ -456,11 +457,11 @@
   </section>
 
   <!-- ROADMAP TIMELINE -->
-  <section class="lfm-roadmap" id="roadmap">
+  <section class="lfm-roadmap" id="roadmap" aria-labelledby="roadmap-title">
     <div class="wrap">
       <div class="lfm-roadmap__head">
         <p class="eyebrow eyebrow--accent">Live roadmap</p>
-        <h2 id="roadmap">Shipping order, transparently.</h2>
+        <h2 id="roadmap-title">Shipping order, transparently.</h2>
         <p>Every Last.fm feature, in the order we&rsquo;re building them. Updated as work lands. White means done and shipped; orange means actively in development; gray means planned and queued. No vapor.</p>
         <div class="lfm-legend">
           <span class="lfm-legend__item"><span class="lfm-legend__dot lfm-legend__dot--done"></span> Done</span>
@@ -636,7 +637,7 @@
       <div>
         <a class="footer__brand" href="index.html">
           <img src="assets/icon.svg" alt="">
-          NaviBeat
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
       </div>
