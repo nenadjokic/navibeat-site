@@ -5,7 +5,7 @@
   if (window.matchMedia('(max-width: 720px)').matches) return;
 
   const targets = document.querySelectorAll(
-    '.p-hero__shot img, .p-shot__media img, .strip__item img'
+    '.p-hero__shot img, .p-shot__media img, .strip__item img, .rbx-hero__ipod img, .rbx-app__item img, .rbx-shot img'
   );
   if (!targets.length) return;
 
