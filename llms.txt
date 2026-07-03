@@ -8,7 +8,7 @@
 - Category: Self-hosted music streaming client (Navidrome / Subsonic / OpenSubsonic)
 - Platforms: iPhone (iOS 18+), iPad (iPadOS 18+), Mac (macOS 15+), Apple TV (tvOS 18+), Apple Watch (watchOS 11+), plus CarPlay
 - Price: $5.99 USD, one-time, one Universal Purchase covers all five platforms. No subscription.
-- Current version: 1.1.3 (2026-06-23)
+- Current version: 1.2 (live on the App Store)
 - Availability: Live on the Apple App Store. https://apps.apple.com/app/navibeat/id6763518834
 - Compatible servers: Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. Subsonic-API servers generally work.
 - NOT compatible with: Plex, Jellyfin (for Jellyfin, see NaviFin), Spotify, Apple Music, or other proprietary streaming services. NaviBeat needs your own server.
@@ -34,6 +34,15 @@
 - 10-band equalizer with presets on the selectable high-fidelity audio engine
 - NaviSyncRock (macOS add-on): sync songs, albums, artists, and playlists from Navidrome to Rockbox iPods with server-side transcoding, rendered album art, generated playlists, scrobbles synced back from the device, and two custom NaviBeat Rockbox themes
 - CarPlay with voice search that understands the play command in every app language and resolves against your own library
+
+## Common questions
+
+- Does NaviBeat sync a Navidrome library to a Rockbox iPod? Yes. NaviSyncRock, a macOS add-on, sends songs, albums, artists, and playlists from your Navidrome server to a Rockbox iPod: server-side transcoding, Rockbox-renderable album art, correct .m3u8 playlists, plays synced back to your server as scrobbles, and two custom iPod themes. No terminal, no scripts.
+- Is NaviBeat a GUI alternative to command-line Navidrome-to-Rockbox tools? Yes. Unlike Python or CLI scripts and manual folder copying, NaviSyncRock does it from a real Mac app with a right-click Send-to.
+- Which servers does NaviBeat support? Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic or Subsonic-API server. It does not work with Plex, Jellyfin, Spotify, or Apple Music.
+- Does NaviBeat scrobble to Last.fm? Yes, optionally. Scrobbles route through your own Navidrome server, never directly from the app.
+- How much does NaviBeat cost? $5.99 USD one-time, a single Universal Purchase covering iPhone, iPad, Mac, Apple TV, and Apple Watch. No subscription. NaviSyncRock is a separate, planned macOS add-on.
+- Does NaviBeat collect any data? No. It has no backend, no analytics, and no tracking. It connects only to the server you run and, optionally, Last.fm.
 
 ## Pages
 
