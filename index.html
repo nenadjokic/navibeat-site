@@ -124,6 +124,7 @@
           "Universal Purchase across Apple TV, Mac, iPhone, iPad, Apple Watch",
           "Fully localized into 10 languages (English, German, French, Spanish, Brazilian Portuguese, Russian, Ukrainian, Serbian, Simplified and Traditional Chinese) with an in-app language picker",
           "Listening Stats: 24-hour listening clock, weekday heatmap, and top artists, albums, and songs, from your connected Last.fm history",
+          "Your ListenBrainz Home shelf and Your Mixes: listen count, top artists and tracks, and ListenBrainz Weekly and Daily Jams once you connect a ListenBrainz account",
           "10-band equalizer with presets on the selectable high-fidelity audio engine",
           "Classical album support: automatic work and movement grouping on iPhone, iPad, and Mac (Navidrome 0.63+)",
           "Download queue with live speed and stats, a transfer history, and one-tap retry; Apple Watch sends tracked the same way",
@@ -142,7 +143,7 @@
           "Offline downloads with LRU cache and cached metadata for fully-offline browsing",
           "Star ratings synced to your server",
           "Server Health diagnostics: server type, version, OpenSubsonic extensions, library scan status",
-          "Optional Last.fm integration",
+          "Optional Last.fm and ListenBrainz integration, with a Preferred Source picker when you connect both",
           "Secure remote access: custom HTTP headers for Cloudflare Access and Authelia, mTLS client certificates, Tailscale, no third-party relay",
           "Zero analytics, zero trackers"
         ],
@@ -164,7 +165,8 @@
           { "@type": "SoftwareApplication", "name": "Supysonic", "url": "https://github.com/spl0k/supysonic" },
           { "@type": "SoftwareApplication", "name": "Madsonic", "url": "https://www.madsonic.org" },
           { "@type": "Thing", "name": "OpenSubsonic API" },
-          { "@type": "Organization", "name": "Last.fm", "url": "https://www.last.fm" }
+          { "@type": "Organization", "name": "Last.fm", "url": "https://www.last.fm" },
+          { "@type": "Organization", "name": "ListenBrainz", "url": "https://listenbrainz.org" }
         ]
       },
       {
@@ -357,7 +359,7 @@
           <figure class="lineup__device lineup__device--mac" style="--stagger: 160ms;">
             <img src="assets/screenshots/macos/navibeat-mac-home.webp"
                  alt="NaviBeat on Mac: native SwiftUI sidebar with Home, Artists, Albums, Playlists, Radio, Directories and Featured Album hero."
-                 width="1240" height="724" loading="eager" decoding="async">
+                 width="2880" height="1800" loading="eager" decoding="async">
           </figure>
 
           <figure class="lineup__device lineup__device--ipad" style="--stagger: 320ms;">
@@ -442,7 +444,7 @@
             <figure class="dev-mac" aria-hidden="true">
               <img src="assets/screenshots/macos/navibeat-mac-home.webp"
                    alt="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero"
-                   width="1240" height="724" loading="lazy" decoding="async">
+                   width="2880" height="1800" loading="lazy" decoding="async">
             </figure>
             <figure class="dev-mac__floater" aria-label="Mini Player floating above main window">
               <img src="assets/screenshots/macos/navibeat-mac-mini-player.webp"
@@ -619,7 +621,7 @@
           <a class="plat-card" href="macos.html" aria-label="NaviBeat for Mac, on the App Store">
             <div class="plat-card__thumb">
               <img src="assets/screenshots/macos/navibeat-mac-home.webp"
-                   alt="NaviBeat Mac home screen" width="1240" height="724" loading="lazy" decoding="async">
+                   alt="NaviBeat Mac home screen" width="2880" height="1800" loading="lazy" decoding="async">
             </div>
             <div class="plat-card__body">
               <div class="plat-card__name">Mac <span class="plat-card__arrow">&rarr;</span></div>
@@ -707,7 +709,7 @@
         <article class="f-card">
           <span class="f-card__idx">02 / Self-hosted &amp; private</span>
           <h3 class="h3">Your Navidrome. No cloud in between.</h3>
-          <p>Zero analytics. Zero tracking. Zero hidden services. NaviBeat doesn&rsquo;t talk to anyone you didn&rsquo;t sign in to. Optional <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm integration</a> is opt-in and you&rsquo;re in control.</p>
+          <p>Zero analytics. Zero tracking. Zero hidden services. NaviBeat doesn&rsquo;t talk to anyone you didn&rsquo;t sign in to. Optional <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm or ListenBrainz integration</a> is opt-in and you&rsquo;re in control.</p>
           <p class="f-card__kicker">Your server, your rules.</p>
         </article>
 
@@ -805,7 +807,7 @@
               <span style="--o:.21"></span><span style="--o:.3"></span><span style="--o:.5"></span><span style="--o:.66"></span><span style="--o:.63"></span><span style="--o:.81"></span><span style="--o:.92"></span>
             </div>
           </div>
-          <p>A 24-hour listening clock, a weekday heatmap, and your top artists, albums, and songs, with a week, month, and year switcher. Built from your <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm</a> scrobble history once you connect your account in Settings, rendered beautifully on iPhone, iPad, and Mac.</p>
+          <p>A 24-hour listening clock, a weekday heatmap, and your top artists, albums, and songs, with a week, month, and year switcher. Built from your <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm</a> scrobble history once you connect your account in Settings, rendered beautifully on iPhone, iPad, and Mac. Prefer <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">ListenBrainz</a>? Connect it instead for your own Your ListenBrainz Home shelf: listen count, top artists, and top tracks.</p>
           <p class="f-card__kicker">Know your own taste.</p>
         </article>
 
@@ -901,7 +903,7 @@
           Your server. <em>Your library.</em> Your rules.
         </h2>
         <p class="body-copy" style="font-size:18px;">
-          NaviBeat is a client. Your music lives where it already does: a Raspberry Pi, a Synology, a home server under someone&rsquo;s desk. We never see your library, your credentials, or a single play event. We couldn&rsquo;t if we wanted to: the app has no backend. The only services NaviBeat ever talks to are the ones <em>you</em> sign in to: your Navidrome server, and optionally <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm</a>. <a href="privacy.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Read the privacy policy.</a>
+          NaviBeat is a client. Your music lives where it already does: a Raspberry Pi, a Synology, a home server under someone&rsquo;s desk. We never see your library, your credentials, or a single play event. We couldn&rsquo;t if we wanted to: the app has no backend. The only services NaviBeat ever talks to are the ones <em>you</em> sign in to: your Navidrome server, and optionally <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm or ListenBrainz</a>. <a href="privacy.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Read the privacy policy.</a>
         </p>
       </div>
       <div class="manifesto__trace reveal">
@@ -909,6 +911,7 @@
         <div><span style="color:var(--text-2)">&rarr;</span> 10.0.0.14:4533 <span class="manifesto__trace-ok" style="float:right">your navidrome</span></div>
         <div><span style="color:var(--text-2)">&rarr;</span> 10.0.0.14:4533 <span class="manifesto__trace-ok" style="float:right">your navidrome</span></div>
         <div><span style="color:var(--text-2)">&rarr;</span> ws.audioscrobbler.com <span class="manifesto__trace-ok" style="float:right">last.fm &middot; opt-in</span></div>
+        <div><span style="color:var(--text-2)">&rarr;</span> api.listenbrainz.org <span class="manifesto__trace-ok" style="float:right">listenbrainz &middot; opt-in</span></div>
         <div class="manifesto__trace-rule">analytics.google.com <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
         <div style="color:var(--text-2)">telemetry.apple.com <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
         <div style="color:var(--text-2)">crashlytics.io <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
@@ -1141,7 +1144,7 @@
           <li><a href="#features">Features</a></li>
           <li><a href="multi-library.html">Multi-Library</a></li>
           <li><a href="widgets.html">Widgets</a></li>
-          <li><a href="lastfm.html">Last.fm</a></li>
+          <li><a href="lastfm.html">Last.fm &amp; ListenBrainz</a></li>
           <li><a href="rockbox.html">Rockbox</a></li>
           <li><a href="appletv.html">Apple TV</a></li>
           <li><a href="macos.html">Mac</a></li>

@@ -195,8 +195,8 @@
           { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-gonic", "name": "Gonic", "description": "Lightweight Go implementation of the Subsonic + OpenSubsonic API. Popular for low-power servers." },
           { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-universal-purchase", "name": "Universal Purchase", "description": "Apple mechanism where one $5.99 NaviBeat purchase covers iOS, iPadOS, macOS, tvOS, and watchOS." },
           { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-lrc", "name": "LRC lyrics", "description": "Lyrics file format with per-line time stamps. NaviBeat reads LRC from Navidrome and renders them time-synced." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-automix", "name": "AutoMix", "description": "NaviBeat's endless-playback mode. Uses server similar-track data (optionally Last.fm-enriched)." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-scrobble", "name": "Scrobble", "description": "Reporting a play event to Last.fm. NaviBeat never scrobbles directly: scrobbles route through Navidrome." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-automix", "name": "AutoMix", "description": "NaviBeat's endless-playback mode. Uses server similar-track data, optionally enriched via Last.fm or ListenBrainz." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-scrobble", "name": "Scrobble", "description": "Reporting a play event to Last.fm or ListenBrainz. NaviBeat never scrobbles directly: scrobbles route through Navidrome." },
           { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-carplay", "name": "CarPlay", "description": "Apple's in-car experience. NaviBeat ships full CarPlay support: library, search, Now Playing." }
         ]
       }
@@ -319,10 +319,10 @@
     <dd>A lyrics file format with per-line time stamps (<code>[mm:ss.xx]</code>). NaviBeat reads LRC straight from your Navidrome and renders them time-synced: tap any line to seek.</dd>
 
     <dt id="def-automix">AutoMix</dt>
-    <dd>NaviBeat's endless-playback mode. When the queue runs out, AutoMix uses your server's similar-track / similar-artist data (optionally enriched via Last.fm) to keep music going without manually building a queue.</dd>
+    <dd>NaviBeat's endless-playback mode. When the queue runs out, AutoMix uses your server's similar-track / similar-artist data, optionally enriched via Last.fm or ListenBrainz (pick a Preferred source in Settings if you connect both), to keep music going without manually building a queue.</dd>
 
     <dt id="def-scrobble">Scrobble</dt>
-    <dd>Reporting a play event to Last.fm so it's recorded in your listening history. NaviBeat <em>never</em> scrobbles directly to Last.fm: scrobbles route through your Navidrome server (which already holds your Last.fm credentials), keeping the trust boundary on your side.</dd>
+    <dd>Reporting a play event to Last.fm or ListenBrainz so it's recorded in your listening history. NaviBeat <em>never</em> scrobbles directly to either service: scrobbles route through your Navidrome server (which already holds your credentials), keeping the trust boundary on your side.</dd>
 
     <dt id="def-carplay">CarPlay</dt>
     <dd>Apple's in-car experience that mirrors a subset of an iPhone app on the head-unit display. NaviBeat ships full CarPlay support: library, search, Now Playing, and continuous-push playback.</dd>
