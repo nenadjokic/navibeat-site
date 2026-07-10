@@ -51,7 +51,7 @@
         "url": "https://navibeat.app/",
         "logo": "https://navibeat.app/assets/icon-512.png",
         "email": "support@navibeat.app",
-        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
         "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
         "sameAs": [
           "https://www.navidrome.org/apps/"
@@ -75,7 +75,7 @@
         "datePublished": "2026-07-10",
         "dateModified": "2026-07-10",
         "inLanguage": "en",
-        "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "url": "https://navibeat.app/#maker" },
+        "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"], "url": "https://navibeat.app/#maker" },
         "publisher": { "@id": "https://navibeat.app/#org" },
         "isPartOf": { "@id": "https://navibeat.app/#website" },
         "about": { "@id": "https://navibeat.app/#app" },
@@ -92,6 +92,44 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
           { "@type": "ListItem", "position": 2, "name": "ListenBrainz", "item": "https://navibeat.app/listenbrainz.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://navibeat.app/listenbrainz.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does NaviBeat submit listens directly to ListenBrainz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. NaviBeat is read-only by design: it reads your ListenBrainz history to surface insights in the player, but it never writes scrobbles directly. Those always go through your own Navidrome server, which you already control."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have to connect ListenBrainz to use NaviBeat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. ListenBrainz is fully optional. Don't connect it and NaviBeat works exactly the same: same player, same library, zero external requests. Connecting it is one guided flow in Settings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use ListenBrainz and Last.fm at the same time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Several features (listener counts, artist tags, similar tracks, AutoMix) are source-neutral: connect ListenBrainz, Last.fm, or both, and NaviBeat arbitrates through your Preferred Source in Settings, Music Data, so nothing renders twice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why ListenBrainz instead of only Last.fm?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ListenBrainz is not a brand you have to trust, it is an open project from MetaBrainz. A few surfaces belong to ListenBrainz alone, while a few deep-history features are still Last.fm-only today. This page shows a transparent roadmap of what is done, in progress, and planned."
+            }
+          }
         ]
       }
     ]
@@ -546,6 +584,33 @@
         <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Get it on the App Store, $5.99</a>
         <a class="link-quiet" href="lastfm.html">Prefer Last.fm?&nbsp;&rarr;</a>
         <a class="link-quiet" href="index.html">&larr; Back to NaviBeat</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ: visible Q&A mirrored exactly by the FAQPage node in the head @graph (GEO / AEO). -->
+  <section aria-labelledby="lb-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="lb-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat submit listens directly to ListenBrainz?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. NaviBeat is read-only by design: it reads your ListenBrainz history to surface insights in the player, but it never writes scrobbles directly. Those always go through your own Navidrome server, which you already control.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do I have to connect ListenBrainz to use NaviBeat?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. ListenBrainz is fully optional. Don't connect it and NaviBeat works exactly the same: same player, same library, zero external requests. Connecting it is one guided flow in Settings.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I use ListenBrainz and Last.fm at the same time?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Several features (listener counts, artist tags, similar tracks, AutoMix) are source-neutral: connect ListenBrainz, Last.fm, or both, and NaviBeat arbitrates through your Preferred Source in Settings, Music Data, so nothing renders twice.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Why ListenBrainz instead of only Last.fm?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">ListenBrainz is not a brand you have to trust, it is an open project from MetaBrainz. A few surfaces belong to ListenBrainz alone, while a few deep-history features are still Last.fm-only today. This page shows a transparent roadmap of what is done, in progress, and planned.</p>
+        </div>
       </div>
     </div>
   </section>

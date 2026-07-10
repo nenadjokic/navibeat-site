@@ -51,7 +51,7 @@
         "url": "https://navibeat.app/",
         "logo": "https://navibeat.app/assets/icon-512.png",
         "email": "support@navibeat.app",
-        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
         "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
         "sameAs": [
           "https://www.navidrome.org/apps/"
@@ -75,7 +75,7 @@
         "datePublished": "2026-05-03",
         "dateModified": "2026-07-10",
         "inLanguage": "en",
-        "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "url": "https://navibeat.app/#maker" },
+        "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"], "url": "https://navibeat.app/#maker" },
         "publisher": { "@id": "https://navibeat.app/#org" },
         "isPartOf": { "@id": "https://navibeat.app/#website" },
         "about": { "@id": "https://navibeat.app/#app" },
@@ -90,6 +90,44 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
           { "@type": "ListItem", "position": 2, "name": "Last.fm", "item": "https://navibeat.app/lastfm.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://navibeat.app/lastfm.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does NaviBeat scrobble directly to Last.fm?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. NaviBeat is read-only by design: it reads your Last.fm history to surface insights in the player, but it never writes scrobbles directly. Scrobbles always go through your own Navidrome server, which you already control."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have to connect Last.fm to use NaviBeat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Last.fm is fully optional. Don't connect it and NaviBeat works exactly the same: same player, same library, zero external requests. Connecting it is one tap in Settings."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I love albums, artists, or playlists through Last.fm?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Last.fm only models one kind of favourite, Loved tracks, with no concept of a loved album, artist, or playlist and no star ratings. So NaviBeat's Last.fm favouriting is scoped to per-song hearts and per-song ratings, the only signals that round-trip cleanly. Album, artist, and playlist favouriting stays in the Navidrome web UI."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does the Last.fm integration actually add?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It surfaces insights from your listening history inside the player. NaviBeat aims to be the deepest Last.fm integration of any Subsonic client, and this page carries a transparent roadmap of what is done, in progress, and planned."
+            }
+          }
         ]
       }
     ]
@@ -617,6 +655,33 @@
       <div class="p-hero__ctas">
         <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Get it on the App Store, $5.99</a>
         <a class="link-quiet" href="index.html">&larr; Back to NaviBeat</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ: visible Q&A mirrored exactly by the FAQPage node in the head @graph (GEO / AEO). -->
+  <section aria-labelledby="lastfm-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="lastfm-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat scrobble directly to Last.fm?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. NaviBeat is read-only by design: it reads your Last.fm history to surface insights in the player, but it never writes scrobbles directly. Scrobbles always go through your own Navidrome server, which you already control.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do I have to connect Last.fm to use NaviBeat?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. Last.fm is fully optional. Don't connect it and NaviBeat works exactly the same: same player, same library, zero external requests. Connecting it is one tap in Settings.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I love albums, artists, or playlists through Last.fm?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. Last.fm only models one kind of favourite, Loved tracks, with no concept of a loved album, artist, or playlist and no star ratings. So NaviBeat's Last.fm favouriting is scoped to per-song hearts and per-song ratings, the only signals that round-trip cleanly. Album, artist, and playlist favouriting stays in the Navidrome web UI.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What does the Last.fm integration actually add?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">It surfaces insights from your listening history inside the player. NaviBeat aims to be the deepest Last.fm integration of any Subsonic client, and this page carries a transparent roadmap of what is done, in progress, and planned.</p>
+        </div>
       </div>
     </div>
   </section>

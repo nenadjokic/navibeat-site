@@ -51,7 +51,7 @@
         "url": "https://navibeat.app/",
         "logo": "https://navibeat.app/assets/icon-512.png",
         "email": "support@navibeat.app",
-        "founder": { "@type": "Person", "name": "Nenad Jokic" },
+        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
         "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
         "sameAs": [
           "https://www.navidrome.org/apps/"
@@ -132,6 +132,44 @@
         "mentions": [
           { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
           { "@type": "Thing", "name": "OpenSubsonic API" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://navibeat.app/ipad.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I install NaviBeat on my iPad?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open the App Store on your iPad, search for NaviBeat, and install it. It runs on iPadOS 18 or later, on iPad Pro, iPad Air, and iPad mini."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What music server does NaviBeat need?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic-compatible server, including Airsonic-Advanced and Gonic. It does not host or stream any music of its own."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does it cost, and does one purchase cover iPad?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NaviBeat is $5.99 USD, one time. It is a Universal Purchase, so that single price covers all five Apple platforms: iPad, iPhone, Mac, Apple TV, and Apple Watch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the iPad version just the iPhone app enlarged?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The iPad layout gives your library room to breathe, with a wider interface built for the larger screen rather than a stretched phone view."
+            }
+          }
         ]
       }
     ]
@@ -410,6 +448,33 @@
           Get it on the App Store, $5.99
         </a>
         <a class="link-quiet" href="index.html">Back to all platforms &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ: visible Q&A mirrored exactly by the FAQPage node in the head @graph (GEO / AEO). -->
+  <section aria-labelledby="ipad-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="ipad-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How do I install NaviBeat on my iPad?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Open the App Store on your iPad, search for NaviBeat, and install it. It runs on iPadOS 18 or later, on iPad Pro, iPad Air, and iPad mini.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What music server does NaviBeat need?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic-compatible server, including Airsonic-Advanced and Gonic. It does not host or stream any music of its own.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How much does it cost, and does one purchase cover iPad?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">NaviBeat is $5.99 USD, one time. It is a Universal Purchase, so that single price covers all five Apple platforms: iPad, iPhone, Mac, Apple TV, and Apple Watch.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Is the iPad version just the iPhone app enlarged?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. The iPad layout gives your library room to breathe, with a wider interface built for the larger screen rather than a stretched phone view.</p>
+        </div>
       </div>
     </div>
   </section>
