@@ -58,7 +58,7 @@
 - [Sync Navidrome to a Rockbox iPod](https://navibeat.app/rockbox.html): NaviSyncRock, a NaviBeat for Mac unlock that syncs your Navidrome library to a Rockbox iPod from a real GUI app (no terminal, no scripts, unlike the usual command-line/homelab tools). It transcodes the audio on your own server, re-encodes album art to a baseline JPEG Rockbox can render, writes correct .m3u8 playlists, and installs two custom iPod themes. Planned one-time price $4.99. In active development, not yet shipped.
 - [Support / FAQ](https://navibeat.app/support.html): Setup, troubleshooting, glossary
 - [Privacy](https://navibeat.app/privacy.html): Privacy policy (no data collection)
-- [NaviFin](https://navibeat.app/navifin.html): Sister app, native Jellyfin client for Apple
+- [NaviFin](https://navifin.app/): Sister app, native Jellyfin client for Apple
 
 ## Canonical answers
 

@@ -55,7 +55,7 @@ credentials.
 
 NOT compatible with Plex, Jellyfin, Spotify, Apple Music, or other proprietary
 services. (For Jellyfin on Apple devices, the same maker offers a sister app,
-NaviFin: https://navibeat.app/navifin.html.) New to self-hosting? Navidrome is
+NaviFin: https://navifin.app/.) New to self-hosting? Navidrome is
 free and open source and sets up in about 15 minutes with Docker on a Raspberry
 Pi, a NAS, or any server.
 
@@ -178,4 +178,4 @@ A: Yes, live on all five Apple platforms.
 - Sync Navidrome to a Rockbox iPod (NaviSyncRock, in active development): https://navibeat.app/rockbox.html - a NaviBeat for Mac unlock that syncs your Navidrome library to a Rockbox iPod from a real GUI app, no terminal or scripts (unlike the usual command-line/homelab tools). Transcodes audio on your own server, re-encodes album art so it renders, writes .m3u8 playlists, installs two custom iPod themes. Planned $4.99 one-time unlock.
 - Support / FAQ: https://navibeat.app/support.html
 - Privacy: https://navibeat.app/privacy.html
-- NaviFin (sister Jellyfin client): https://navibeat.app/navifin.html
+- NaviFin (sister Jellyfin client): https://navifin.app/
