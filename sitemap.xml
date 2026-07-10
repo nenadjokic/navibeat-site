@@ -174,10 +174,18 @@
 
   <url>
     <loc>https://navibeat.app/lastfm.html</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/lastfm.html" />
+  </url>
+
+  <url>
+    <loc>https://navibeat.app/listenbrainz.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/listenbrainz.html" />
   </url>
 
   <url>

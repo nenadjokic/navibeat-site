@@ -54,7 +54,8 @@
 - [Apple Watch](https://navibeat.app/applewatch.html): watchOS feature page
 - [Multi-library](https://navibeat.app/multi-library.html): Navidrome multi-library support
 - [Widgets](https://navibeat.app/widgets.html): Home Screen, Lock Screen, Live Activity, desktop widgets
-- [Last.fm](https://navibeat.app/lastfm.html): Last.fm integration, scrobbling, Year in Review
+- [Last.fm](https://navibeat.app/lastfm.html): Last.fm integration, scrobbling, Year in Review, Time Machine
+- [ListenBrainz](https://navibeat.app/listenbrainz.html): ListenBrainz integration, the open MetaBrainz listening service, Your ListenBrainz shelf, Your Mixes, star-first loved sync
 - [Sync Navidrome to a Rockbox iPod](https://navibeat.app/rockbox.html): NaviSyncRock, a NaviBeat for Mac unlock that syncs your Navidrome library to a Rockbox iPod from a real GUI app (no terminal, no scripts, unlike the usual command-line/homelab tools). It transcodes the audio on your own server, re-encodes album art to a baseline JPEG Rockbox can render, writes correct .m3u8 playlists, and installs two custom iPod themes. Planned one-time price $4.99. In active development, not yet shipped.
 - [Support / FAQ](https://navibeat.app/support.html): Setup, troubleshooting, glossary
 - [Privacy](https://navibeat.app/privacy.html): Privacy policy (no data collection)

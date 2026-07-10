@@ -452,8 +452,8 @@
     <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
-      <a href="widgets.html" class="nav__link nav__link-hide-sm">Widgets</a>
       <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="listenbrainz.html" class="nav__link nav__link-hide-sm">ListenBrainz</a>
       <a href="rockbox.html" class="nav__link nav__link-hide-sm">Rockbox</a>
       <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
       <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
@@ -808,11 +808,11 @@
       <p class="rbx-phase rbx-phase--two">Phase 2 &middot; Read-back, through your Navidrome</p>
       <ol class="rbx-timeline">
 
-        <li class="rbx-step rbx-step--planned">
+        <li class="rbx-step rbx-step--done">
           <span class="rbx-step__dot" aria-hidden="true"></span>
-          <p class="rbx-step__status">Planned &middot; Phase 2</p>
+          <p class="rbx-step__status">Done &middot; Phase 2</p>
           <h3 class="rbx-step__title">Plays back into Navidrome</h3>
-          <p class="rbx-step__desc">When you reconnect, NaviBeat reads the plays Rockbox logged on the device and, after you review and confirm, submits them to your Navidrome. Navidrome updates your play counts and forwards to Last.fm or ListenBrainz per your own server config. Nothing is submitted silently, and NaviBeat never scrobbles directly.</p>
+          <p class="rbx-step__desc">When you reconnect, NaviBeat reads the plays Rockbox logged on the device, matches each one to your library, and, after you review and confirm, submits them to your Navidrome. Unmatched plays are reported, never guessed. Navidrome updates your play counts and forwards to Last.fm or ListenBrainz per your own server config: NaviBeat itself never scrobbles directly.</p>
         </li>
 
         <li class="rbx-step rbx-step--planned">
@@ -822,17 +822,17 @@
           <p class="rbx-step__desc">Star ratings you set on the iPod can be read back and written to your Navidrome, with a conflict policy you control: device wins, server wins, or only fill in the blanks. Reviewed and confirmed before anything is written.</p>
         </li>
 
-        <li class="rbx-step rbx-step--planned">
+        <li class="rbx-step rbx-step--done">
           <span class="rbx-step__dot" aria-hidden="true"></span>
-          <p class="rbx-step__status">Planned &middot; Phase 2</p>
+          <p class="rbx-step__status">Done &middot; Phase 2</p>
           <h3 class="rbx-step__title">Device-made playlists back into Navidrome</h3>
-          <p class="rbx-step__desc">Playlists you built on the device can be resolved against your library and recreated in Navidrome, with any unmatched tracks listed plainly rather than guessed.</p>
+          <p class="rbx-step__desc">Playlists you built on the device are resolved against your library and created or updated in Navidrome, with any unmatched tracks listed plainly rather than guessed.</p>
         </li>
 
       </ol>
 
       <p style="margin:48px 0 0;color:var(--text-2);font-size:13px;max-width:64ch;">
-        The two themes are done and working on a real iPod today. Phase 1 (the one-way push) is built and pending an App Store submission. Phase 2 (the metadata read-back) can follow in a later update without holding up Phase 1. NaviSyncRock is a planned one-time $4.99 unlock; the exact submission timing is still being set.
+        The two themes are done and working on a real iPod today. Phase 1 (the one-way push) is built and pending an App Store submission. Two of the three Phase 2 read-back pieces (plays and device-made playlists) are also built; ratings read-back is still planned. NaviSyncRock is a planned one-time $4.99 unlock; the exact submission timing is still being set.
       </p>
     </div>
   </section>
@@ -943,7 +943,8 @@
           <li><a href="index.html#features">Features</a></li>
           <li><a href="multi-library.html">Multi-Library</a></li>
           <li><a href="widgets.html">Widgets</a></li>
-          <li><a href="lastfm.html">Last.fm &amp; ListenBrainz</a></li>
+          <li><a href="lastfm.html">Last.fm</a></li>
+          <li><a href="listenbrainz.html">ListenBrainz</a></li>
           <li><a href="rockbox.html">Rockbox</a></li>
           <li><a href="appletv.html">Apple TV</a></li>
           <li><a href="macos.html">Mac</a></li>
