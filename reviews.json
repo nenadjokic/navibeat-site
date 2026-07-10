@@ -1,9 +1,25 @@
 {
- "count": 12,
- "average": 4.0,
- "fetchedAt": 1782835429875,
+ "count": 14,
+ "average": 4.14,
+ "fetchedAt": 1783672589016,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
+  {
+   "author": "Rtr8",
+   "rating": 5,
+   "title": "Very great!",
+   "body": "Every update is meaningful to an already well designed app. It’s clearly a labor of love and it shows. Excellent.",
+   "territory": "USA",
+   "date": "2026-07-05T13:12:28-07:00"
+  },
+  {
+   "author": "RezaDxD",
+   "rating": 5,
+   "title": "Very nice",
+   "body": "Beautiful ui on ios, so smooth, also on tvos, imp its just need a some tweaks on tvos menu navigation like negates unnecessary click when choosing artist/album on library…",
+   "territory": "IDN",
+   "date": "2026-07-02T21:13:26-07:00"
+  },
   {
    "author": "Dan8787",
    "rating": 5,
