@@ -1857,10 +1857,20 @@ a.proofbar__item:hover { color: var(--accent-hi); }
     transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1),
     border-color 0.25s var(--ease);
 }
-.reveal-ready .features.is-in > .f-card:nth-child(1) { transition-delay:  0ms; opacity: 1; transform: none; }
-.reveal-ready .features.is-in > .f-card:nth-child(2) { transition-delay: 80ms; opacity: 1; transform: none; }
-.reveal-ready .features.is-in > .f-card:nth-child(3) { transition-delay: 160ms; opacity: 1; transform: none; }
-.reveal-ready .features.is-in > .f-card:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(1)  { transition-delay:   0ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(2)  { transition-delay:  80ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(3)  { transition-delay: 160ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(4)  { transition-delay: 240ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(5)  { transition-delay: 320ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(6)  { transition-delay: 400ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(7)  { transition-delay: 480ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(8)  { transition-delay: 560ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(9)  { transition-delay: 640ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(10) { transition-delay: 720ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(11) { transition-delay: 800ms; opacity: 1; transform: none; }
+.reveal-ready .features.is-in > .f-card:nth-child(12) { transition-delay: 880ms; opacity: 1; transform: none; }
+/* Beyond 12, reveal without an extra stagger delay rather than staying invisible */
+.reveal-ready .features.is-in > .f-card:nth-child(n+13) { opacity: 1; transform: none; }
 
 .reveal-ready .explore-grid > * {
   opacity: 0;

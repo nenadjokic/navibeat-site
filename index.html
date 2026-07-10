@@ -92,7 +92,7 @@
         "primaryImageOfPage": "https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg",
         "inLanguage": "en",
         "datePublished": "2026-04-18",
-        "dateModified": "2026-06-23"
+        "dateModified": "2026-07-10"
       },
       {
         "@type": "SoftwareApplication",
@@ -123,9 +123,14 @@
           "Navidrome and OpenSubsonic compatibility",
           "Universal Purchase across Apple TV, Mac, iPhone, iPad, Apple Watch",
           "Fully localized into 10 languages (English, German, French, Spanish, Brazilian Portuguese, Russian, Ukrainian, Serbian, Simplified and Traditional Chinese) with an in-app language picker",
-          "Listening Stats: 24-hour listening clock, weekday heatmap, and top artists, albums, and songs",
+          "Listening Stats: 24-hour listening clock, weekday heatmap, and top artists, albums, and songs, from your connected Last.fm history",
           "10-band equalizer with presets on the selectable high-fidelity audio engine",
-          "NaviSyncRock: sync your Navidrome library to Rockbox iPods with server-side transcoding, album art, playlists, and scrobbles synced back (macOS add-on)",
+          "Classical album support: automatic work and movement grouping on iPhone, iPad, and Mac (Navidrome 0.63+)",
+          "Download queue with live speed and stats, a transfer history, and one-tap retry; Apple Watch sends tracked the same way",
+          "Prefer Downloaded Music: play local copies from disk even while online, or stream fresh, your choice",
+          "Denser Albums grid on iPhone and iPad",
+          "Apple Watch redesign: compact album rows and direct-from-server downloads",
+          "NaviSyncRock: sync your Navidrome library to a RockBox player with server-side transcoding, album art, playlists, and scrobbles synced back; recognizes 100+ RockBox player models by brand (macOS add-on)",
           "CarPlay with voice search that understands every app language",
           "Multi-library support: pick All Libraries, a single library, or any subset",
           "Time-synced LRC lyrics",
@@ -800,7 +805,7 @@
               <span style="--o:.21"></span><span style="--o:.3"></span><span style="--o:.5"></span><span style="--o:.66"></span><span style="--o:.63"></span><span style="--o:.81"></span><span style="--o:.92"></span>
             </div>
           </div>
-          <p>A 24-hour listening clock, a weekday heatmap, and your top artists, albums, and songs, with a week, month, and year switcher. Built from your own play history, rendered beautifully on iPhone, iPad, and Mac.</p>
+          <p>A 24-hour listening clock, a weekday heatmap, and your top artists, albums, and songs, with a week, month, and year switcher. Built from your <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm</a> scrobble history once you connect your account in Settings, rendered beautifully on iPhone, iPad, and Mac.</p>
           <p class="f-card__kicker">Know your own taste.</p>
         </article>
 
@@ -828,10 +833,45 @@
 
         <article class="f-card">
           <span class="f-card__idx">New / NaviSyncRock</span>
-          <h3 class="h3">Your Navidrome, on a real iPod.</h3>
-          <p>Sync songs, albums, artists, and playlists from your server to a <a href="rockbox.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Rockbox player</a>: your server transcodes, the album art actually renders even on old hardware, playlists are written for you, and plays on the iPod sync back to your server as scrobbles. Two custom NaviBeat themes ride along. A Mac add-on.</p>
-          <p class="wn-rockbox-note">Built on <a href="https://www.rockbox.org" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Rockbox</a>, a wonderful volunteer-run open-source project that has kept old iPods playing for decades. We&rsquo;re fans building on top of their work, not affiliated with the Rockbox project, and glad it exists.</p>
-          <p class="f-card__kicker">Click wheel, meet self-hosting.</p>
+          <h3 class="h3">Your Navidrome, on a real RockBox player.</h3>
+          <p>Sync songs, albums, artists, and playlists from your server to <a href="rockbox.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">your RockBox player</a>: your server transcodes, the album art actually renders even on old hardware, playlists are written for you, and plays sync back to your server as scrobbles. Two custom NaviBeat themes ride along, and NaviSyncRock now recognizes over 100 RockBox player models by brand, not just one. A Mac add-on.</p>
+          <p class="wn-rockbox-note">Built on <a href="https://www.rockbox.org" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Rockbox</a>, a wonderful volunteer-run open-source project that has kept old media players playing for decades. We&rsquo;re fans building on top of their work, not affiliated with the Rockbox project, and glad it exists.</p>
+          <p class="f-card__kicker">Real hardware, meet self-hosting.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">New / Classical</span>
+          <h3 class="h3">Classical, done right.</h3>
+          <p>Albums tagged as classical group by work, with every movement listed underneath in the right order. A suite stays one work with four movements, not four unrelated tracks. Ships on iPhone, iPad, and Mac, and needs a Navidrome 0.63+ server for the work and movement tags.</p>
+          <p class="f-card__kicker">One work, every movement.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">New / Downloads</span>
+          <h3 class="h3">Downloads you can trust, and retry.</h3>
+          <p>Watch live speed and queue stats while albums download, then check a history of every transfer, finished or failed. One tap retries anything that did not make it. Sends to your Apple Watch show up in the very same list, tracked like any other download.</p>
+          <p class="f-card__kicker">Nothing gets lost in the queue.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">New / Prefer Downloaded Music</span>
+          <h3 class="h3">Offline first, even when you are not.</h3>
+          <p>A new setting keeps downloaded tracks playing from disk, even when you are back on Wi-Fi or cellular. Turn it off and those same tracks stream fresh instead. Your whole library stays browsable in Offline Mode, with anything you have not downloaded dimmed rather than hidden.</p>
+          <p class="f-card__kicker">Your call, every time.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">New / Denser Library</span>
+          <h3 class="h3">More covers, less scrolling.</h3>
+          <p>The Albums grid packs more cover art on screen at once on iPhone and iPad, so browsing by artwork takes fewer swipes to get where you are going.</p>
+          <p class="f-card__kicker">Browse by artwork, faster.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">New / Apple Watch, redesigned</span>
+          <h3 class="h3">Your watch, rebuilt.</h3>
+          <p>The Watch app now uses compact, glanceable rows instead of tall tiles, and downloads pull directly from your server with no phone required. Send an album from your iPhone and it lands on your wrist by itself, tracked as a first-class transfer with the same retry history as any other download.</p>
+          <p class="f-card__kicker">Small screen, full app.</p>
         </article>
 
         <article class="f-card">

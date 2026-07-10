@@ -74,7 +74,7 @@
         "description": "How to sync your Navidrome library to a Rockbox iPod from a real Mac app instead of terminal scripts. NaviSyncRock transcodes the audio on your own server, re-encodes album art so Rockbox renders it, writes correct .m3u8 playlists, and installs two custom iPod themes. Send-to, not two-way sync. In active development.",
         "url": "https://navibeat.app/rockbox.html",
         "datePublished": "2026-07-01",
-        "dateModified": "2026-07-01",
+        "dateModified": "2026-07-10",
         "inLanguage": "en",
         "keywords": "sync navidrome to rockbox, navidrome rockbox sync, navidrome ipod, put navidrome music on a rockbox ipod, gui alternative to terminal scripts",
         "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "url": "https://navibeat.app/#maker" },
@@ -173,6 +173,19 @@
     @media (max-width: 720px) { .rbx-trust__grid { grid-template-columns: 1fr; } }
     .rbx-trust__cell h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 8px; font-family: var(--font-sans); font-weight: 600; }
     .rbx-trust__cell p { color: var(--text-1); font-size: 14px; line-height: 1.55; margin: 0; }
+
+    /* DEVICE COMPATIBILITY: NaviSyncRock names 100+ RockBox player models by brand */
+    .rbx-devices { padding: 88px 0 40px; }
+    .rbx-devices h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 14px 0 20px; }
+    .rbx-devices__sub { color: var(--text-1); font-size: 17px; max-width: 66ch; line-height: 1.6; margin: 0 0 32px; }
+    .rbx-devices__grid { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .rbx-devices__pill {
+      font-family: var(--font-sans); font-size: 14px; color: var(--text-1);
+      background: var(--bg-1); border: 1px solid var(--border); border-radius: 999px;
+      padding: 9px 16px;
+    }
+    .rbx-devices__pill--any { color: var(--text-2); font-style: italic; }
+    .rbx-devices__foot { color: var(--text-2); font-size: 13px; max-width: 64ch; line-height: 1.6; margin: 0; }
 
     /* HOW IT WORKS, numbered step cards */
     .rbx-how { padding: 88px 0 40px; }
@@ -482,6 +495,7 @@
         <div class="rbx-price"><b>$4.99</b><span>one-time unlock &middot; planned launch price</span></div>
         <div class="p-hero__ctas" style="margin-top: 28px;">
           <a class="btn btn--primary" href="#app">See it in action &darr;</a>
+          <a class="link-quiet" href="#devices">Is my player supported?&nbsp;&rarr;</a>
           <a class="link-quiet" href="#shots">See the themes&nbsp;&rarr;</a>
         </div>
        </div>
@@ -514,6 +528,37 @@
           <p>Phase 2 reads plays and ratings back into your Navidrome, which forwards them per your own server config. NaviBeat never scrobbles directly to Last.fm.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- DEVICE COMPATIBILITY -->
+  <section class="rbx-devices" id="devices">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">Not just one brand</p>
+      <h2 id="devices-heading">NaviSyncRock recognizes your RockBox player by name.</h2>
+      <p class="rbx-devices__sub">
+        Sync always worked with any RockBox device: NaviBeat just looks for a RockBox folder on the drive. What changed is the device catalog. NaviSyncRock now names over 100 RockBox player models correctly in the sidebar, spanning more than a dozen brands, not just one.
+      </p>
+      <ul class="rbx-devices__grid" aria-label="RockBox player brands NaviSyncRock recognizes">
+        <li class="rbx-devices__pill"><span>iriver</span></li>
+        <li class="rbx-devices__pill"><span>SanDisk Sansa</span></li>
+        <li class="rbx-devices__pill"><span>Sony Walkman (NW / NWZ)</span></li>
+        <li class="rbx-devices__pill"><span>Samsung YP</span></li>
+        <li class="rbx-devices__pill"><span>Creative Zen</span></li>
+        <li class="rbx-devices__pill"><span>Cowon iAudio</span></li>
+        <li class="rbx-devices__pill"><span>Toshiba Gigabeat</span></li>
+        <li class="rbx-devices__pill"><span>Philips GoGear</span></li>
+        <li class="rbx-devices__pill"><span>Olympus M:Robe</span></li>
+        <li class="rbx-devices__pill"><span>FiiO</span></li>
+        <li class="rbx-devices__pill"><span>Shanling</span></li>
+        <li class="rbx-devices__pill"><span>HiBy</span></li>
+        <li class="rbx-devices__pill"><span>AGPTEK</span></li>
+        <li class="rbx-devices__pill"><span>Anbernic</span></li>
+        <li class="rbx-devices__pill"><span>xDuoo</span></li>
+        <li class="rbx-devices__pill"><span>iBasso</span></li>
+        <li class="rbx-devices__pill rbx-devices__pill--any"><span>And more, whatever RockBox itself supports</span></li>
+      </ul>
+      <p class="rbx-devices__foot">Recognizing the brand only changes what the sidebar and theme call your device: sync itself has always worked the same way on any RockBox player. A matching NaviBeat theme currently ships for six screen resolutions; more are on the way.</p>
     </div>
   </section>
 
