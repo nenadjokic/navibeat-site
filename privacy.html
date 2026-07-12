@@ -130,10 +130,13 @@
   <aside class="tldr" role="doc-tip" aria-label="Quick answer">
     <p><strong>TL;DR.</strong> NaviBeat has no backend. The only network
        requests it makes are to your own Navidrome server and, if you
-       enable it, Last.fm and/or ListenBrainz. Your server URL, username and (Keychain-protected)
-       password live on the device only. We see zero playback events, zero
-       library data, zero credentials, zero analytics. There is no
-       NaviBeat account to make.</p>
+       enable them, Last.fm and/or ListenBrainz (and MusicBrainz, which
+       ListenBrainz needs to identify a track). Your credentials live in the
+       Keychain and, if you use iCloud Keychain, sync between your own Apple
+       devices, end-to-end encrypted, which is how your Apple Watch inherits the
+       pairing. <strong>We</strong> see zero playback events, zero library data,
+       zero credentials, zero analytics. There is no NaviBeat account to make,
+       because there is no NaviBeat server to make it on.</p>
   </aside>
 
   <p>NaviBeat is a client application for Navidrome and OpenSubsonic-compatible music servers. This policy explains what data the app stores and what, if anything, leaves your device.</p>
@@ -142,7 +145,8 @@
   <ul>
     <li><strong>Server URL:</strong> stored in SwiftData (local device storage) to reconnect automatically at launch.</li>
     <li><strong>Username:</strong> stored in SwiftData alongside the server URL.</li>
-    <li><strong>Password:</strong> stored in the iOS/tvOS Keychain with the <code>kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly</code> protection class. It never leaves the device in plaintext.</li>
+    <li><strong>Password:</strong> stored in the Keychain, never in plain files, and never sent to us. It is protected with <code>kSecAttrAccessibleAfterFirstUnlock</code> and marked as syncable, which means it rides <strong>iCloud Keychain</strong> to your other Apple devices. That is deliberate: it is how your Apple Watch inherits the pairing without you typing anything on a watch. iCloud Keychain is end-to-end encrypted by Apple, so neither we nor Apple can read it. If you would rather it never left the device, turn iCloud Keychain off in iOS Settings and pair each device by hand.</li>
+    <li><strong>On the wire, your password is never sent at all.</strong> NaviBeat authenticates with a salted hash (Subsonic token auth), so what travels to your server is a token and a salt, not the password.</li>
     <li><strong>Playback history:</strong> a local log of which tracks you have played and when, stored in SwiftData. Used to power discovery shelves (Recently Played, On This Day, etc.). Not transmitted to any third party.</li>
     <li><strong>Recent searches:</strong> the last 10 search queries, stored in UserDefaults. Cleared when you delete the app.</li>
     <li><strong>Settings:</strong> playback preferences (scrobble toggle, gapless prefetch, bit rate, audio format), stored in UserDefaults.</li>
@@ -152,8 +156,23 @@
   <ul>
     <li><strong>Requests to your Navidrome server only.</strong> NaviBeat sends API requests (search, browse, stream) exclusively to the server URL you configure. Your server is under your control.</li>
     <li><strong>Scrobbling (optional).</strong> If you enable the &ldquo;Submit play history&rdquo; setting, NaviBeat calls your Navidrome server&rsquo;s <code>scrobble</code> endpoint after each track. NaviBeat itself never scrobbles directly to any external service: if your Navidrome server forwards scrobbles to Last.fm or ListenBrainz, that&rsquo;s a server-side configuration entirely under your control.</li>
-    <li><strong>Last.fm integration (optional, opt-in).</strong> If you connect your Last.fm account in Settings &rarr; Last.fm, NaviBeat reads from the Last.fm API on your behalf to surface listener counts, similar artists, your listening stats, year-in-review, and other taste-intelligence features. NaviBeat never writes scrobbles directly to Last.fm. Connecting Last.fm is fully optional: the app works completely without it. <a href="lastfm.html">See the Last.fm page for the full feature list.</a></li>
-    <li><strong>ListenBrainz integration (optional, opt-in).</strong> If you connect your ListenBrainz account in Settings &rarr; ListenBrainz, NaviBeat reads your listen count and top artists and tracks for the Your ListenBrainz Home shelf, resolves your tracks against MusicBrainz for accurate matching, and syncs loved tracks with your Navidrome stars (star-first: unstarring never removes a love that still exists on ListenBrainz). NaviBeat never writes scrobbles directly to ListenBrainz. Connecting ListenBrainz is fully optional and independent of Last.fm: use either, both, or neither. <a href="listenbrainz.html">See the ListenBrainz page for the full feature list.</a></li>
+    <li><strong>Last.fm (optional, and only if you connect it).</strong> Connecting a Last.fm account means the app talks to Last.fm on your behalf, so here is exactly what that involves.
+      <ul>
+        <li><strong>NaviBeat never scrobbles to Last.fm.</strong> Your plays go to your own Navidrome server. Last.fm sees them only if you configured your server to forward them, which is a setting on your server, not in this app.</li>
+        <li><strong>What NaviBeat reads from Last.fm:</strong> your username, your listening history, your loved tracks, your top artists and tracks, plus public data like listener counts, artist tags and similar artists. This is what powers Listening Stats, Year in Review, Time Machine and the Last.fm shelves.</li>
+        <li><strong>What NaviBeat writes to Last.fm:</strong> one thing. When you star a track, it sends a <em>love</em>; when you unstar it, it sends an <em>unlove</em>. That is the whole write surface. It is controlled by <em>Sync favorites with Last.fm</em>, which is on once you connect and which you can switch off, and then NaviBeat writes nothing at all.</li>
+        <li>Not connecting Last.fm means the app never contacts it. Everything else keeps working. <a href="lastfm.html">See the Last.fm page.</a></li>
+      </ul>
+    </li>
+    <li><strong>ListenBrainz (optional, and only if you connect it).</strong> Same shape as Last.fm, and the same honesty about it.
+      <ul>
+        <li><strong>NaviBeat never submits listens to ListenBrainz.</strong> Your plays go to your own Navidrome server, and it forwards them only if you set that up.</li>
+        <li><strong>What NaviBeat reads:</strong> your listen count, top artists and recordings, loved recordings, the mixes ListenBrainz builds for you (Weekly Jams and friends), and public data like listener counts and similar artists.</li>
+        <li><strong>What NaviBeat writes:</strong> one thing. Starring a track sends a <em>love</em>. Unstarring deliberately does NOT remove it, because a love on ListenBrainz may predate this app and we will not delete something we did not create. Controlled by <em>Sync favorites with ListenBrainz</em>, on once you connect, switchable off.</li>
+        <li><strong>MusicBrainz.</strong> To write a love, ListenBrainz needs a MusicBrainz id, so the app may look a track's name up at musicbrainz.org (rate-limited, no account, no token). Nothing about you is sent there beyond the artist and track name being resolved.</li>
+        <li>Use either, both, or neither. <a href="listenbrainz.html">See the ListenBrainz page.</a></li>
+      </ul>
+    </li>
     <li><strong>Nothing else.</strong> NaviBeat contains no analytics SDK, no crash reporter, no advertising framework, and no telemetry. Zero data is sent to the developer. The only services NaviBeat ever talks to are the ones <em>you</em> sign in to.</li>
   </ul>
 

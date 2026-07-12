@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>NaviBeat Widgets: Home, Lock Screen, Live Activity, Desktop</title>
-  <meta name="description" content="NaviBeat ships native widgets across iPhone Home Screen, Lock Screen, Dynamic Island Live Activity, and Mac Desktop. Built-in transport. Zero analytics.">
+  <title>NaviBeat Widgets: Home Screen, Lock Screen, Desktop, Watch</title>
+  <meta name="description" content="NaviBeat ships native widgets across the iPhone Home Screen, Lock Screen and StandBy, the Mac desktop, and the Apple Watch face. Zero analytics.">
   <meta name="theme-color" content="#0C0C0E">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="apple-itunes-app" content="app-id=6763518834">
@@ -13,7 +13,7 @@
   <link rel="canonical" href="https://navibeat.app/widgets.html">
   <link rel="alternate" hreflang="en" href="https://navibeat.app/widgets.html">
 
-  <meta property="og:title" content="NaviBeat Widgets: Home, Lock Screen, Live Activity, Desktop">
+  <meta property="og:title" content="NaviBeat Widgets: Home Screen, Lock Screen, Desktop, Watch">
   <meta property="og:description" content="Native widgets on every Apple platform. Glance at what's playing, tap to transport, deep-link to the album. App Group only, zero analytics.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://navibeat.app/widgets.html">
@@ -23,8 +23,8 @@
   <meta property="og:site_name" content="NaviBeat">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NaviBeat Widgets: Home, Lock Screen, Live Activity, Desktop">
-  <meta name="twitter:description" content="Native widgets across iPhone Home Screen, Lock Screen, Dynamic Island, and Mac Desktop. Built-in transport, zero analytics.">
+  <meta name="twitter:title" content="NaviBeat Widgets: Home Screen, Lock Screen, Desktop, Watch">
+  <meta name="twitter:description" content="Native widgets across the iPhone Home Screen, Lock Screen, the Mac desktop, and the Apple Watch face. Zero analytics.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
   <meta name="twitter:image:alt" content="NaviBeat native widgets on iPhone and Mac.">
 
@@ -57,8 +57,8 @@
       {
         "@type": "Article",
         "@id": "https://navibeat.app/widgets.html#article",
-        "headline": "NaviBeat Widgets: Home, Lock Screen, Live Activity, Desktop",
-        "name": "NaviBeat Widgets: Home, Lock Screen, Live Activity, Desktop",
+        "headline": "NaviBeat Widgets: Home Screen, Lock Screen, Desktop, Watch",
+        "name": "NaviBeat Widgets: Home Screen, Lock Screen, Desktop, Watch",
         "description": "Native widgets on every Apple platform. Glance at what's playing, tap to transport, deep-link to the album. App Group only, zero analytics.",
         "url": "https://navibeat.app/widgets.html",
         "datePublished": "2026-05-28",
@@ -126,11 +126,11 @@
         <h1 id="widgets">Native widgets across <em>every Apple surface</em>.</h1>
 
         <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
-          <strong style="color: var(--text-0);">TL;DR.</strong> NaviBeat ships five widget surfaces: iPhone Home Screen (Now Playing + Recently Played), iPhone Lock Screen and StandBy (three accessory families), iPhone Dynamic Island Live Activity, and Mac Desktop. Every surface reads from a sandboxed App Group container the player writes to, so widgets stay snappy without ever phoning home.
+          <strong style="color: var(--text-0);">TL;DR.</strong> NaviBeat ships ten widgets across four surfaces: the iPhone and iPad Home Screen (Now Playing, Playback Controls, Recently Played, Playlists, Radio), the Lock Screen and StandBy (three accessory families), the Mac desktop (four widgets), and the Apple Watch face (a complication in four shapes). Every one reads from a sandboxed App Group container the player writes to, so they stay quick without ever phoning home.
         </aside>
 
         <p class="lfm-sub">
-          Tap a widget to deep-link straight into the album. Use the transport buttons without unlocking. Glance at the Dynamic Island while you scroll, or pin the Mac Desktop widget to your wallpaper. All five surfaces share the same App Intents, so play / pause / next / previous always do the same thing across iPhone, iPad, and Mac.
+          Tap a widget to go straight to the album. Tap play, pause, next or previous and NaviBeat carries it out. Pick which playlists and which radio stations your widgets show. Pin one to the Mac wallpaper, or put Now Playing on your watch face.
         </p>
         <div class="p-hero__ctas" style="margin-top: 28px;">
           <a class="btn btn--primary" href="#surfaces">See every surface &darr;</a>
@@ -149,12 +149,12 @@
           <p>Every widget reads from a sandboxed App Group container the host app writes to. No network calls, no background fetches, no analytics SDK. The widget binary itself never opens a socket.</p>
         </div>
         <div class="lfm-trust__cell">
-          <h3>In-process App Intents</h3>
-          <p>Tapping Play / Next / Previous inside a widget runs inside the host app process (AudioPlaybackIntent). No re-launch, no animation jank, no surprise modal: the widget glyph just flips.</p>
+          <h3>Deep links, not background intents</h3>
+          <p>Tapping Play, Next or Previous opens a <code>navibeat://</code> link into the app, and the app performs it. We went this way on purpose: Apple's in-widget button intents never reliably registered in Release builds (FB13281659), and a control that silently does nothing is worse than one that brings the app forward. It also means a widget process is never the thing touching your music server.</p>
         </div>
         <div class="lfm-trust__cell">
           <h3>Cross-platform shared engine</h3>
-          <p>iPhone and Mac widgets share the same NaviBeatWidgets library so the App Group layout, snapshot wire format, and intent shapes match across platforms. Behaviour you learn on iPhone holds on the Mac.</p>
+          <p>iPhone and Mac widgets share the same App Group layout and the same snapshot wire format, so behaviour you learn on the iPhone holds on the Mac.</p>
         </div>
         <div class="lfm-trust__cell">
           <h3>Reload budget respected</h3>
@@ -204,12 +204,12 @@
         </div>
 
         <div class="lfm-sync__card lfm-sync__card--syncs">
-          <h3>Live Activity + Dynamic Island</h3>
+          <h3>Playlists, Radio, and your watch</h3>
           <ul>
-            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Lock Screen long-form: cover + scrubber + transport</span></li>
-            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Dynamic Island expanded (4 regions)</span></li>
-            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Compact + minimal play-state glyph</span></li>
-            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Auto-ends when the queue empties</span></li>
+            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Playlists widget: choose exactly which playlists it shows</span></li>
+            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Radio widget: choose exactly which stations it shows</span></li>
+            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Apple Watch complication in four shapes</span></li>
+            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Now Playing (large): the next tracks, each one tappable</span></li>
           </ul>
         </div>
 
@@ -219,7 +219,7 @@
             <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Small + Medium + Large sizes</span></li>
             <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Cover art backdrop, full transport row</span></li>
             <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Large: Up Next peek (next 3 queued tracks)</span></li>
-            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Same App Intents shape as the iPhone widget</span></li>
+            <li><span class="lfm-sync__mark" aria-hidden="true">&#10003;</span> <span>Playlists and Radio widgets too, both configurable</span></li>
           </ul>
         </div>
 
@@ -238,7 +238,7 @@
         <li>App Group identifiers: <code>group.app.navibeat.NaviBeatApp.ios</code> and <code>group.app.navibeat.NaviBeatApp.macos</code>. Per-platform on purpose so a misconfigured iPad cannot read the Mac's container or vice versa.</li>
         <li>Cover art bytes live as JPEG files inside the container, never embedded in the snapshot JSON (the snapshot stays under a few KB so UserDefaults reads are quick).</li>
         <li>Widget reloads only fire on real track changes or play / pause flips. Tick-by-tick "elapsed seconds" updates persist to the container but do not refresh the widget UI, which keeps NaviBeat well under Apple's daily reload budget.</li>
-        <li>The Live Activity ends automatically when the queue empties, the user stops playback, or the stale window expires (set to remaining-track-duration + 30s grace, capped at the ActivityKit 8-hour ceiling).</li>
+        <li>Widget controls are plain <code>navibeat://</code> links into the app, not background intents. Tapping one brings NaviBeat forward and the app performs the action, so a widget process is never the thing touching your music server.</li>
       </ul>
     </div>
   </section>

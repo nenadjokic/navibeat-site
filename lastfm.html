@@ -101,7 +101,7 @@
             "name": "Does NaviBeat scrobble directly to Last.fm?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. NaviBeat is read-only by design: it reads your Last.fm history to surface insights in the player, but it never writes scrobbles directly. Scrobbles always go through your own Navidrome server, which you already control."
+              "text": "No. NaviBeat never scrobbles to Last.fm. Your plays go to your own Navidrome server, and Last.fm sees them only if you configured your server to forward them. NaviBeat writes to Last.fm in exactly one place: when you star a track it loves that track, and you can turn that off in Settings. Everything else it does with Last.fm is reading."
             }
           },
           {
@@ -368,7 +368,7 @@
         <h1 id="lastfm">Most clients scrobble. <em>NaviBeat reads it back.</em></h1>
 
         <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
-          <strong style="color: var(--text-0);">TL;DR.</strong> Last.fm is opt-in and read-only for scrobbling inside NaviBeat: plays never go from the app directly to Last.fm, they route through your Navidrome server (which already holds your credentials). NaviBeat <em>reads</em> Last.fm data to surface listener counts, similar tracks, Year-in-Review, and time-machine playlists. Prefer an open, self-hostable service instead? See the <a href="listenbrainz.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">ListenBrainz page</a>.
+          <strong style="color: var(--text-0);">TL;DR.</strong> Last.fm is opt-in. NaviBeat <strong>never scrobbles to Last.fm</strong>: your plays go to your own Navidrome server, and it forwards them only if you set that up. Connecting Last.fm sends your username and listening history <em>from</em> Last.fm to the app, to surface listener counts, similar tracks, Year in Review and time-machine playlists. The one thing NaviBeat writes back is a love when you star a track, and you can switch that off. Prefer an open, self-hostable service instead? See the <a href="listenbrainz.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">ListenBrainz page</a>.
         </aside>
 
         <p class="lfm-sub">
@@ -388,8 +388,8 @@
       <h2 id="lfm-trust-title" class="visually-hidden">Last.fm with NaviBeat: four guardrails</h2>
       <div class="lfm-trust__grid">
         <div class="lfm-trust__cell">
-          <h3>Read-only by design</h3>
-          <p>NaviBeat reads your Last.fm history to surface insights inside the player. It never writes scrobbles directly: those always go through your Navidrome server, which you already control.</p>
+          <h3>We never send your listens</h3>
+          <p>NaviBeat does not scrobble to Last.fm. Not once, not ever. Your plays go to your own Navidrome server, and Last.fm hears about them only if <em>you</em> told your server to forward them. What NaviBeat sends Last.fm directly is one thing: when you star a track, it loves that track (you can switch that off). Everything else it does with Last.fm is reading.</p>
         </div>
         <div class="lfm-trust__cell">
           <h3>Fully optional</h3>
@@ -668,7 +668,7 @@
       <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat scrobble directly to Last.fm?</h3>
-          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. NaviBeat is read-only by design: it reads your Last.fm history to surface insights in the player, but it never writes scrobbles directly. Scrobbles always go through your own Navidrome server, which you already control.</p>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. NaviBeat never scrobbles to Last.fm. Your plays go to your own Navidrome server, and Last.fm sees them only if you configured your server to forward them. NaviBeat writes to Last.fm in exactly one place: when you star a track it loves that track, and you can turn that off in Settings. Everything else it does with Last.fm is reading.</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do I have to connect Last.fm to use NaviBeat?</h3>

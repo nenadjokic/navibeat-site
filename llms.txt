@@ -74,7 +74,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - Internet radio streaming
 - AutoMix endless playback and a sleep timer
 - Mini Player with pin-on-top (macOS)
-- Home Screen, Lock Screen, and Live Activity widgets; macOS desktop widgets
+- Widgets: Home Screen and Lock Screen (plus StandBy) on iPhone and iPad, four desktop widgets on macOS, and an Apple Watch complication. The Playlists and Radio widgets let you choose which playlists and stations they show.
 - Star ratings synced to your server
 - Listening Stats: 24-hour listening clock, weekday heatmap, top artists/albums/songs with a week/month/year switcher (iPhone, iPad, Mac)
 - Server Health diagnostics (server type, version, OpenSubsonic extensions, scan status)
@@ -107,7 +107,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - [Apple TV](https://navibeat.app/appletv.html): tvOS feature page
 - [Apple Watch](https://navibeat.app/applewatch.html): watchOS feature page
 - [Multi-library](https://navibeat.app/multi-library.html): Navidrome multi-library support
-- [Widgets](https://navibeat.app/widgets.html): Home Screen, Lock Screen, Live Activity, desktop widgets
+- [Widgets](https://navibeat.app/widgets.html): Home Screen, Lock Screen, StandBy, macOS desktop, Apple Watch complication
 - [Last.fm](https://navibeat.app/lastfm.html): Last.fm integration, scrobbling, Year in Review, Time Machine
 - [ListenBrainz](https://navibeat.app/listenbrainz.html): ListenBrainz integration, Your ListenBrainz shelf, Your Mixes, star-first loved sync
 - [Sync Navidrome to a Rockbox iPod](https://navibeat.app/rockbox.html): NaviSyncRock, shipped in 1.3.0, a $4.99 macOS unlock. Syncs your Navidrome library to a Rockbox iPod from a real GUI app (no terminal, no scripts, unlike the usual command-line tools).

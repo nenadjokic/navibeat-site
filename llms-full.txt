@@ -221,8 +221,9 @@ any server.
 - Internet radio streaming.
 - AutoMix endless playback and a sleep timer.
 - Mini Player with pin-on-top on macOS.
-- Widgets: Home Screen, Lock Screen, and Live Activity widgets on iOS, plus
-  desktop widgets on macOS.
+- Widgets: Home Screen and Lock Screen widgets (plus StandBy) on iPhone and
+  iPad, four desktop widgets on macOS, and an Apple Watch complication. The
+  Playlists and Radio widgets let you pick which playlists and stations appear.
 - Star ratings synced to your server.
 - Listening Stats: a 24-hour listening clock, a weekday heatmap, and top artists,
   albums, and songs, with a week/month/year switcher. On iPhone, iPad, and Mac.

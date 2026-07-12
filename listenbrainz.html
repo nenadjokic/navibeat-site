@@ -103,7 +103,7 @@
             "name": "Does NaviBeat submit listens directly to ListenBrainz?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. NaviBeat is read-only by design: it reads your ListenBrainz history to surface insights in the player, but it never writes scrobbles directly. Those always go through your own Navidrome server, which you already control."
+              "text": "No. NaviBeat never submits listens to ListenBrainz. Your plays go to your own Navidrome server, and ListenBrainz sees them only if you configured your server to forward them. NaviBeat writes to ListenBrainz in exactly one place: when you star a track it loves that track, and you can turn that off in Settings. Everything else it does with ListenBrainz is reading."
             }
           },
           {
@@ -370,7 +370,7 @@
         <h1 id="listenbrainz">The open <em>ListenBrainz integration</em>, done right.</h1>
 
         <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
-          <strong style="color: var(--text-0);">TL;DR.</strong> ListenBrainz is the open, self-hostable listening service from <a href="https://metabrainz.org" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:2px;">MetaBrainz</a>, the same nonprofit behind the MusicBrainz music database. Connecting it in NaviBeat is opt-in and read-only for scrobbling: plays never go from the app directly to ListenBrainz, they route through your Navidrome server. NaviBeat <em>reads</em> ListenBrainz data for a Your ListenBrainz Home shelf, Your Mixes (Weekly &amp; Daily Jams), Show on ListenBrainz, and star-first loved-track sync. Prefer Last.fm, or want the deeper Year-in-Review and Time Machine stats? See the <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm page</a>.
+          <strong style="color: var(--text-0);">TL;DR.</strong> ListenBrainz is the open, self-hostable listening service from <a href="https://metabrainz.org" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:2px;">MetaBrainz</a>, the same nonprofit behind the MusicBrainz music database. Connecting it in NaviBeat is opt-in. NaviBeat <strong>never submits listens to ListenBrainz</strong>: your plays go to your own Navidrome server, and it forwards them only if you set that up. The one thing NaviBeat writes back is a love when you star a track, and you can switch that off. NaviBeat <em>reads</em> ListenBrainz data for a Your ListenBrainz Home shelf, Your Mixes (Weekly &amp; Daily Jams), Show on ListenBrainz, and star-first loved-track sync. Prefer Last.fm, or want the deeper Year-in-Review and Time Machine stats? See the <a href="lastfm.html" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm page</a>.
         </aside>
 
         <p class="lfm-sub">
@@ -390,8 +390,8 @@
       <h2 id="lfm-trust-title" class="visually-hidden">ListenBrainz with NaviBeat: four guardrails</h2>
       <div class="lfm-trust__grid">
         <div class="lfm-trust__cell">
-          <h3>Read-only by design</h3>
-          <p>NaviBeat reads your ListenBrainz history to surface insights inside the player. It never writes scrobbles directly: those always go through your Navidrome server, which you already control.</p>
+          <h3>We never send your listens</h3>
+          <p>NaviBeat does not submit listens to ListenBrainz. Not once, not ever. Your plays go to your own Navidrome server, and ListenBrainz hears about them only if <em>you</em> told your server to forward them. What NaviBeat sends ListenBrainz directly is one thing: when you star a track, it loves that track (you can switch that off). Everything else it does with ListenBrainz is reading.</p>
         </div>
         <div class="lfm-trust__cell">
           <h3>Fully optional</h3>
@@ -597,7 +597,7 @@
       <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat submit listens directly to ListenBrainz?</h3>
-          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. NaviBeat is read-only by design: it reads your ListenBrainz history to surface insights in the player, but it never writes scrobbles directly. Those always go through your own Navidrome server, which you already control.</p>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. NaviBeat never submits listens to ListenBrainz. Your plays go to your own Navidrome server, and ListenBrainz sees them only if you configured your server to forward them. NaviBeat writes to ListenBrainz in exactly one place: when you star a track it loves that track, and you can turn that off in Settings. Everything else it does with ListenBrainz is reading.</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do I have to connect ListenBrainz to use NaviBeat?</h3>
