@@ -212,7 +212,7 @@ any server.
 - Optional Last.fm and ListenBrainz integration. Both are opt-in, and scrobbles
   route through your own server rather than being sent directly from the app.
 - Light, Dark, and System appearance on every platform.
-- Fully localized into 10 languages: English, German, French, Spanish, Brazilian
+- Fully localized into 11 languages: English, German, French, Spanish, Polish, Brazilian
   Portuguese, Russian, Ukrainian, Serbian, Simplified Chinese, and Traditional
   Chinese. An in-app language picker forces any of them per app, including on
   Apple TV, which has no per-app system language setting at all.
