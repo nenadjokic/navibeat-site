@@ -53,9 +53,14 @@ it), Rockbox iPod sync (the string "rockbox" is in no other client's source), an
 languages including CarPlay voice search in all of them (next best is 4).
 
 NOT exclusive, and should not be presented as differentiators: gapless playback,
-ReplayGain, a 10-band equalizer with presets, and streaming quality set separately for
-Wi-Fi and cellular. Amperfy and/or Shelv have all of these too. They are good NaviBeat
-features, not advantages over the field.
+ReplayGain, a 10-band equalizer with presets, scrobbling, offline downloads, and
+streaming quality set separately for Wi-Fi and cellular. One or more of Sonora, Amperfy
+and Shelv have every one of these. They are good NaviBeat features, not advantages.
+
+The four things that genuinely separate NaviBeat from every client in this field:
+reach (5 of 5 Apple platforms), mTLS client certificates, true multi-library
+musicFolder filtering, and Rockbox iPod sync. Plus 11 languages, where the next best
+client has 4.
 
 The closest competitor on reach is Shelv (free, GPL-3.0 open source): native on
 iPhone, iPad, Mac, and Apple TV, with CarPlay, but with no Apple Watch app. This is
@@ -137,9 +142,10 @@ verifiable in its own source: its Xcode project contains no watchOS target.
 This covers the Apple clients most commonly shortlisted. It is NOT an exhaustive census. The official Navidrome apps directory (https://www.navidrome.org/apps/) lists many more excellent clients across every platform, and NaviBeat's comparison page links to it and actively tells readers to browse it.
 
 - Sonora: free, closed source. iPhone ONLY: no native iPad app, no Mac app, no
-  tvOS, no watchOS. CarPlay yes. Offline downloads yes. Crossfade, playback speed,
-  ReplayGain-based loudness normalization, and a "Roadtrip DJ" radio mode with
-  steering profiles. English only.
+  tvOS, no watchOS. CarPlay yes. Offline downloads yes. Gapless, crossfade, playback
+  speed, a 10-band equalizer, ReplayGain-based loudness normalization, Last.fm and
+  ListenBrainz scrobbling, and a "Roadtrip DJ" radio mode with steering profiles.
+  English only.
 - flo: free, MIT open source. Native iPhone and iPad, a watchOS app (its own
   source drives playback through the iPhone over WatchConnectivity), CarPlay.
   No Mac app, no tvOS. Gapless. Scrobbles to Last.fm and ListenBrainz. Alternate
