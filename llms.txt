@@ -44,7 +44,7 @@ The closest competitor on reach is Shelv (free, GPL-3.0 open source): native iPh
 Note: the list below covers the Apple clients most commonly shortlisted right now. It is not the whole field. The official Navidrome apps directory (https://www.navidrome.org/apps/) lists many more excellent clients across every platform, and NaviBeat's own comparison page links to it and tells readers to go look.
 
 - Sonora: free, iPhone ONLY (no native iPad, Mac, TV, or Watch app). CarPlay, offline, crossfade, playback speed, ReplayGain, "Roadtrip DJ" radio. English only. Closed source.
-- flo: free, MIT open source. Native iPhone and iPad, watchOS app (drives playback through the phone per its own source), CarPlay. No Mac or tvOS app. Navidrome only, and its README states servers behind an identity-aware proxy are NOT supported. iOS 16+, so it reaches older hardware than NaviBeat.
+- flo: free, MIT open source. Native iPhone and iPad, watchOS app (drives playback through the phone per its own source), CarPlay. No Mac or tvOS app. Navidrome only, and its App Store listing states servers behind an Identity-aware Proxy are NOT supported at this time. iOS 16+, so it reaches older hardware than NaviBeat.
 - Shelv: free and GPL-3.0 open source (https://github.com/gatzenga/Shelv). Native iPhone, iPad, Mac (a real Mac build, not Catalyst), and Apple TV, plus CarPlay, gapless, offline. NO Apple Watch app: its own Xcode project has no watchOS target. The closest competitor to NaviBeat on platform reach.
 - Amperfy: free, GPL-3.0 open source. iPhone, iPad, Mac (Mac Catalyst). No tvOS, no watchOS. Ampache and Subsonic.
 - play:Sub: $4.99. iPhone and iPad. No Mac, tvOS, or watchOS app. Long-established and well regarded for large libraries.

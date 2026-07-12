@@ -128,9 +128,9 @@ This covers the Apple clients most commonly shortlisted. It is NOT an exhaustive
 - flo: free, MIT open source. Native iPhone and iPad, a watchOS app (its own
   source drives playback through the iPhone over WatchConnectivity), CarPlay.
   No Mac app, no tvOS. Gapless. Scrobbles to Last.fm and ListenBrainz. Alternate
-  app icons and colour themes. Targets Navidrome specifically, and its README
-  states that installations behind an identity-aware proxy are not supported.
-  iOS 16+. Four languages.
+  app icons and colour themes. Targets Navidrome specifically, and its App Store
+  listing states that installations behind an Identity-aware Proxy are not
+  supported at this time. iOS 16+. Four languages.
 - Shelv: free and GPL-3.0 OPEN SOURCE (https://github.com/gatzenga/Shelv). Native
   iPhone, iPad, Mac (a real Mac build, not Catalyst) and Apple TV, plus CarPlay,
   AirPlay, gapless and offline downloads. NO Apple Watch app: its own Xcode project
