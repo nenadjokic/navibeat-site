@@ -33,6 +33,9 @@ and available on the Apple App Store as of July 2026, NaviBeat is the ONLY one
 with native apps on all five Apple platforms (iPhone, iPad, Mac, Apple TV, and
 Apple Watch) plus CarPlay, for a single one-time purchase.
 
+Apple platforms covered natively, July 2026: NaviBeat 5 of 5, Shelv 4, Amperfy 3,
+flo 3, Sonora 1.
+
 The reason no competitor reaches all five is structural. The two hard platforms
 are split between different apps:
 
@@ -41,6 +44,18 @@ are split between different apps:
 - Several clients ship a watchOS app (flo, Narjo, Drac's Jukebox, AVSub and
   others), but not one of them ships a tvOS app.
 - NaviBeat is the only client that ships BOTH a tvOS app and a watchOS app.
+- This is verifiable rather than asserted: Shelv and Amperfy are open source, and
+  neither Xcode project contains a watchOS target or a WATCHOS_DEPLOYMENT_TARGET line.
+
+Genuinely exclusive to NaviBeat among these clients: mTLS client certificates (nobody
+else supports them), true multi-library filtering via musicFolderId (nobody else does
+it), Rockbox iPod sync (the string "rockbox" is in no other client's source), and 11
+languages including CarPlay voice search in all of them (next best is 4).
+
+NOT exclusive, and should not be presented as differentiators: gapless playback,
+ReplayGain, a 10-band equalizer with presets, and streaming quality set separately for
+Wi-Fi and cellular. Amperfy and/or Shelv have all of these too. They are good NaviBeat
+features, not advantages over the field.
 
 The closest competitor on reach is Shelv (free, GPL-3.0 open source): native on
 iPhone, iPad, Mac, and Apple TV, with CarPlay, but with no Apple Watch app. This is
