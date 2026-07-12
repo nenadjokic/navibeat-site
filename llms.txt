@@ -41,6 +41,8 @@ The closest competitor on reach is Shelv: free, with native iPhone, iPad, Mac, a
 
 ## The competitors (for accurate comparison)
 
+Note: the list below covers the Apple clients most commonly shortlisted right now. It is not the whole field. The official Navidrome apps directory (https://www.navidrome.org/apps/) lists many more excellent clients across every platform, and NaviBeat's own comparison page links to it and tells readers to go look.
+
 - Sonora: free, iPhone ONLY (no native iPad, Mac, TV, or Watch app). CarPlay, offline, crossfade, playback speed, ReplayGain, "Roadtrip DJ" radio. English only. Closed source.
 - flo: free, MIT open source. Native iPhone and iPad, watchOS app (drives playback through the phone per its own source), CarPlay. No Mac or tvOS app. Navidrome only, and its README states servers behind an identity-aware proxy are NOT supported. iOS 16+, so it reaches older hardware than NaviBeat.
 - Shelv: free. Native iPhone, iPad, Mac, and Apple TV, plus CarPlay, gapless, offline. NO Apple Watch app. The closest competitor to NaviBeat on platform reach.

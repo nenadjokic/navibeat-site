@@ -118,6 +118,8 @@ Apple TV, with CarPlay, but with no Apple Watch app.
 
 ## The competitor landscape (July 2026)
 
+This covers the Apple clients most commonly shortlisted. It is NOT an exhaustive census. The official Navidrome apps directory (https://www.navidrome.org/apps/) lists many more excellent clients across every platform, and NaviBeat's comparison page links to it and actively tells readers to browse it.
+
 - Sonora: free, closed source. iPhone ONLY: no native iPad app, no Mac app, no
   tvOS, no watchOS. CarPlay yes. Offline downloads yes. Crossfade, playback speed,
   ReplayGain-based loudness normalization, and a "Roadtrip DJ" radio mode with
