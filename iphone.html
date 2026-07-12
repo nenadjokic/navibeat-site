@@ -75,7 +75,7 @@
         "primaryImageOfPage": "https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-now-playing.jpg",
         "inLanguage": "en",
         "datePublished": "2026-04-18",
-        "dateModified": "2026-07-10"
+        "dateModified": "2026-07-12"
       },
       {
         "@type": "BreadcrumbList",
@@ -95,7 +95,7 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music Streaming Client",
         "operatingSystem": "iOS 18+",
-        "softwareVersion": "1.1.3",
+        "softwareVersion": "1.3.0",
         "datePublished": "2026-04-18",
         "downloadUrl": "https://apps.apple.com/app/navibeat/id6763518834",
         "installUrl": "https://apps.apple.com/app/navibeat/id6763518834",
@@ -257,7 +257,7 @@
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Distribution</dt>
             <dd style="margin: 0; color: var(--text-1);">App Store (live now) &middot; CarPlay included</dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Version</dt>
-            <dd style="margin: 0; color: var(--text-1);">1.1.3 &middot; <time datetime="2026-06-23">updated June 23, 2026</time></dd>
+            <dd style="margin: 0; color: var(--text-1);">1.3.0 &middot; <time datetime="2026-07-12">updated July 12, 2026</time></dd>
           </dl>
         </div>
 
@@ -291,6 +291,48 @@
           <p class="p-stat__label">Universal Purchase &middot; all Apple devices</p>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- WHY IT WINS ON IPHONE (answer-first) -->
+  <section id="why-iphone" aria-labelledby="why-iphone-title">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="eyebrow eyebrow--accent">The short answer</p>
+        <h2 id="why-iphone-title" class="h2">Why NaviBeat is the best Navidrome client for iPhone.</h2>
+      </div>
+
+      <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 8px 0 34px; padding: 20px 24px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15.5px; line-height: 1.7; color: var(--text-1); max-width: 78ch;">
+        <strong style="color: var(--text-0);">Short answer.</strong> NaviBeat is a native iOS 18 app, written in SwiftUI, built around the four things you actually do with a self-hosted library on a phone: <strong>listen offline</strong>, <strong>drive with CarPlay</strong>, <strong>stream on cellular without stalls</strong>, and <strong>hear your files properly</strong>. It does all four, it is the same $5.99 Universal Purchase that also covers iPad, Mac, Apple TV, and Apple Watch, and it has no backend, no analytics, and no third-party trackers of any kind.
+      </aside>
+
+      <div class="why-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin-top:8px;">
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">01 / Offline</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">Genuinely offline, not just cached.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">Pin a song, an album, a playlist, or an <strong>entire artist</strong>. Artwork and metadata come down with the audio, so the whole library <strong>browses offline</strong>, not just plays. An <strong>LRU cache with a size limit you set</strong> manages the space for you. <strong>Prefer Downloaded Music</strong> plays the local file even when you are online, so a weak signal never touches your listening. The download queue shows live speed, transfer history, and one-tap retry.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">02 / CarPlay</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">CarPlay with voice search that speaks your language.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">CarPlay is included in the same purchase, with your library, playlists, downloads, and Now Playing controls on the car screen. Say <em>play</em> and the name of an artist, album, song, or playlist <strong>in any of the app's 10 languages</strong>: the search resolves against <strong>your own library</strong>, not a streaming catalog, and when nothing matches it shows you exactly what it heard instead of failing silently.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">03 / Cellular</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">Built for a bad signal, not just a good one.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">Streaming quality is set <strong>separately for Wi-Fi and for cellular</strong>, across 10 tiers (Original, Opus 320 down to 64, MP3 320 to 128). <strong>Auto</strong> sends the original file on Wi-Fi and a light Opus transcode on cellular, so the buffer stays ahead of the playhead on a train. NaviBeat's streaming engine was rebuilt specifically to stop the cellular failure modes: no stalling, no rewinding to the start of a track, no failure to advance, accurate seeking inside transcoded streams, and automatic recovery if iOS resets its audio service.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">04 / Audio quality</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">You self-host for the quality. NaviBeat respects that.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">A selectable <strong>high-fidelity playback engine</strong> with a <strong>10-band equalizer</strong> and presets. <strong>ReplayGain</strong> (track, album, or automatic) so a shuffle across a mixed library does not swing 10 dB between songs. <strong>Gapless playback</strong>, so live albums and DJ mixes run through without a hole. Your server does the transcoding, in the format and bitrate you choose, or none at all.</p>
+        </article>
+
+      </div>
     </div>
   </section>
 
@@ -555,7 +597,7 @@
     </div>
     <div class="footer__bar">
       <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>v1.1.3 &middot; Live on the App Store</span>
+      <span>v1.3.0 &middot; Live on the App Store</span>
     </div>
   </div>
 </footer>
