@@ -72,7 +72,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - Siri support on iOS
 - Time-synced LRC lyrics on every platform; tap a line to seek
 - Internet radio streaming
-- AutoMix endless playback and a sleep timer with fade-out
+- AutoMix endless playback and a sleep timer
 - Mini Player with pin-on-top (macOS)
 - Home Screen, Lock Screen, and Live Activity widgets; macOS desktop widgets
 - Star ratings synced to your server
