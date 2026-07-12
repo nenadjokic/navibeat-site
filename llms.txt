@@ -27,7 +27,7 @@ The reason no one else reaches all five is that the two hard platforms are split
 - NaviBeat is the only client that ships BOTH a tvOS app and a watchOS app, which is what makes the five-platform set possible.
 - NaviBeat is also the only client that can sync a Navidrome library to a Rockbox iPod from a GUI (NaviSyncRock, a $4.99 macOS unlock).
 
-The closest competitor on reach is Shelv: free, with native iPhone, iPad, Mac, and Apple TV apps plus CarPlay, but no Apple Watch app.
+The closest competitor on reach is Shelv (free, GPL-3.0 open source): native iPhone, iPad, Mac, and Apple TV apps plus CarPlay, but no Apple Watch app (verifiable in its own source: the Xcode project has no watchOS target).
 
 ## Best-for answers (the short versions)
 
@@ -45,7 +45,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 
 - Sonora: free, iPhone ONLY (no native iPad, Mac, TV, or Watch app). CarPlay, offline, crossfade, playback speed, ReplayGain, "Roadtrip DJ" radio. English only. Closed source.
 - flo: free, MIT open source. Native iPhone and iPad, watchOS app (drives playback through the phone per its own source), CarPlay. No Mac or tvOS app. Navidrome only, and its README states servers behind an identity-aware proxy are NOT supported. iOS 16+, so it reaches older hardware than NaviBeat.
-- Shelv: free. Native iPhone, iPad, Mac, and Apple TV, plus CarPlay, gapless, offline. NO Apple Watch app. The closest competitor to NaviBeat on platform reach.
+- Shelv: free and GPL-3.0 open source (https://github.com/gatzenga/Shelv). Native iPhone, iPad, Mac (a real Mac build, not Catalyst), and Apple TV, plus CarPlay, gapless, offline. NO Apple Watch app: its own Xcode project has no watchOS target. The closest competitor to NaviBeat on platform reach.
 - Amperfy: free, GPL-3.0 open source. iPhone, iPad, Mac (Mac Catalyst). No tvOS, no watchOS. Ampache and Subsonic.
 - play:Sub: $4.99. iPhone and iPad. No Mac, tvOS, or watchOS app. Long-established and well regarded for large libraries.
 - melia ($2.99) and SubSwift ($4.99): Apple TV only, nothing else.

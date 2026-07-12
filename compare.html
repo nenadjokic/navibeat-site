@@ -211,7 +211,7 @@
       <div class="sec-head reveal">
         <p class="eyebrow eyebrow--accent">Side by side</p>
         <h2 id="table-title" class="h2">The Navidrome clients on Apple, compared.</h2>
-        <p>These are the five Apple clients most people currently shortlist, so they are the ones compared here. They are <strong>not</strong> the whole field: there are <a href="https://www.navidrome.org/apps/" target="_blank" rel="noopener" style="color:var(--accent-hi);">many more excellent Navidrome apps</a> in the official directory, and they deserve a look. Amperfy and flo are open source; Sonora, Shelv and NaviBeat are not. Only NaviBeat is paid. <strong>Shelv is the closest competitor on reach</strong>: it is free and it gets to the Apple TV and the Mac. The Apple Watch is where the five-platform set breaks for everyone but NaviBeat.</p>
+        <p>These are the five Apple clients most people currently shortlist, so they are the ones compared here. They are <strong>not</strong> the whole field: there are <a href="https://www.navidrome.org/apps/" target="_blank" rel="noopener" style="color:var(--accent-hi);">many more excellent Navidrome apps</a> in the official directory, and they deserve a look. Amperfy, flo and Shelv are all open source; Sonora and NaviBeat are not. Only NaviBeat is paid. <strong>Shelv is the closest competitor on reach</strong>: it is free and it gets to the Apple TV and the Mac. The Apple Watch is where the five-platform set breaks for everyone but NaviBeat.</p>
       </div>
 
       <div class="cmp-table-wrap">
@@ -370,7 +370,7 @@
               <td><span class="cmp-n">No</span></td>
               <td><span class="cmp-y">Yes, MIT</span></td>
               <td><span class="cmp-y">Yes, GPL-3.0</span></td>
-              <td><span class="cmp-n">No</span></td>
+              <td><span class="cmp-y">Yes, GPL-3.0</span></td>
             </tr>
             <tr>
               <th scope="row">Sync to a Rockbox iPod</th>
@@ -426,7 +426,7 @@
 
         <article id="shelv">
           <h3>Pick Shelv if&hellip;</h3>
-          <p>You want <strong>Apple TV and Mac, for free</strong>. Shelv is the closest thing to NaviBeat's reach: a free client with native iPhone, iPad, Mac and <strong>Apple TV</strong> apps, plus CarPlay, gapless and offline downloads. If your listening is TV plus desktop and you do not want to pay, it is a genuinely strong choice and I will not pretend otherwise. What you give up: there is <strong>no Apple Watch app</strong>, so you cannot leave the phone behind on a run, and there is no Rockbox sync, no equalizer or multi-library support stated in its materials.</p>
+          <p>You want <strong>Apple TV and Mac, for free</strong>, and you want <strong>open source</strong>. Shelv is the closest thing to NaviBeat's reach: a free, <strong>GPL-3.0</strong> client with native iPhone, iPad, Mac and <strong>Apple TV</strong> apps, plus CarPlay, gapless and offline downloads, and you can read every line of it. If your listening is TV plus desktop and you do not want to pay, it is a genuinely strong choice and I will not pretend otherwise. What you give up: there is <strong>no Apple Watch app</strong> (its own Xcode project has no watchOS target at all), so you cannot leave the phone behind on a run, and there is no Rockbox sync, no equalizer and no multi-library support.</p>
         </article>
 
         <article>
@@ -465,7 +465,7 @@
         <h2 id="why-nb-title" class="h2">What no other Navidrome client does.</h2>
       </div>
       <ul style="max-width:80ch; margin:20px 0 0; padding:0; list-style:none; display:grid; gap:14px;">
-        <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">All five Apple platforms, natively, for one price.</strong> iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, from a single $5.99 Universal Purchase. Checked against every client listed in the Navidrome apps directory and every Subsonic client on the App Store in July 2026: <strong>no other one ships all five</strong>. The clients that reach the Apple TV have no watch app, and the clients with a watch app do not reach the Apple TV.</li>
+        <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">All five Apple platforms, natively, for one price.</strong> iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, from a single $5.99 Universal Purchase. Checked against every client listed in the Navidrome apps directory and every Subsonic client on the App Store in July 2026: <strong>no other one ships all five</strong>. The clients that reach the Apple TV have no watch app (Shelv, the closest, has no watchOS target in its own open source project at all), and the clients with a watch app do not reach the Apple TV.</li>
         <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">On the Apple TV, and on the watch, and on everything else.</strong> Three other clients ship a tvOS app (Shelv, melia, SubSwift) and several ship a watchOS app, but NaviBeat is the only one that does <strong>both</strong>, which is what makes the five-platform set possible at all.</li>
         <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">Music that stays on the watch.</strong> Standalone watchOS playback with downloads pulled straight from your server, so you can run without your phone.</li>
         <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">It reaches the server you actually built.</strong> Cloudflare Access and Authelia headers, mTLS client certificates and Tailscale, on every platform, with no third-party relay.</li>
@@ -491,7 +491,7 @@
         <li>Sonora: its <a href="https://apps.apple.com/us/app/sonora-navidrome-client/id6760624152" target="_blank" rel="noopener">App Store listing</a> (platform badges, price, privacy label, release notes) and <a href="https://sonora.gmadi.me/" target="_blank" rel="noopener">sonora.gmadi.me</a> (feature claims, which are the developer's own).</li>
         <li>flo: its <a href="https://apps.apple.com/us/app/flo-navidrome-client/id6529533140" target="_blank" rel="noopener">App Store listing</a>, its <a href="https://github.com/kepelet/flo" target="_blank" rel="noopener">MIT-licensed source on GitHub</a> (including the watchOS target and the proxy limitation in the README), and <a href="https://client.flooo.club" target="_blank" rel="noopener">client.flooo.club</a>.</li>
         <li>Amperfy: its <a href="https://github.com/BLeeEZ/amperfy" target="_blank" rel="noopener">GPL-3.0 source on GitHub</a> and its App Store listing. Its Mac build is Mac Catalyst, per <code>SUPPORTS_MACCATALYST = YES</code> in its own project file.</li>
-        <li>Shelv: its <a href="https://apps.apple.com/us/app/shelv-player/id6762255865" target="_blank" rel="noopener">App Store listing</a> (platforms, price, features).</li>
+        <li>Shelv: its <a href="https://apps.apple.com/us/app/shelv-player/id6762255865" target="_blank" rel="noopener">App Store listing</a> and its <a href="https://github.com/gatzenga/Shelv" target="_blank" rel="noopener">GPL-3.0 source on GitHub</a>. Its Xcode project has macOS and tvOS targets and <strong>no watchOS target</strong>, and it is not Mac Catalyst.</li>
         <li>Apple TV only: <a href="https://apps.apple.com/us/app/melia/id6760968937" target="_blank" rel="noopener">melia</a> and <a href="https://apps.apple.com/us/app/subswift/id6504658929" target="_blank" rel="noopener">SubSwift</a> both ship tvOS apps and nothing else.</li>
         <li>Platform rows are taken from each app's App Store <em>Compatibility</em> box, which Apple generates from the shipped binaries. "Requires macOS X or later <strong>and a Mac with Apple M1 chip or later</strong>" means an unmodified iOS app running on Apple silicon, not a Mac app.</li>
         <li>NaviBeat's own claims are all documented on this site: <a href="iphone.html">iPhone</a>, <a href="macos.html">Mac</a>, <a href="appletv.html">Apple TV</a>, <a href="applewatch.html">Apple Watch</a>, <a href="ipad.html">iPad</a>, <a href="multi-library.html">multi-library</a>, <a href="rockbox.html">Rockbox sync</a>, <a href="privacy.html">privacy</a>.</li>

@@ -42,8 +42,9 @@ are split between different apps:
   others), but not one of them ships a tvOS app.
 - NaviBeat is the only client that ships BOTH a tvOS app and a watchOS app.
 
-The closest competitor on reach is Shelv: free, native on iPhone, iPad, Mac, and
-Apple TV, with CarPlay, but with no Apple Watch app.
+The closest competitor on reach is Shelv (free, GPL-3.0 open source): native on
+iPhone, iPad, Mac, and Apple TV, with CarPlay, but with no Apple Watch app. This is
+verifiable in its own source: its Xcode project contains no watchOS target.
 
 ## Platforms and pricing
 
@@ -130,9 +131,10 @@ This covers the Apple clients most commonly shortlisted. It is NOT an exhaustive
   app icons and colour themes. Targets Navidrome specifically, and its README
   states that installations behind an identity-aware proxy are not supported.
   iOS 16+. Four languages.
-- Shelv: free, closed source. Native iPhone, iPad, Mac, and Apple TV, plus
-  CarPlay, AirPlay, gapless and offline downloads. NO Apple Watch app. This is
-  NaviBeat's closest competitor on platform reach.
+- Shelv: free and GPL-3.0 OPEN SOURCE (https://github.com/gatzenga/Shelv). Native
+  iPhone, iPad, Mac (a real Mac build, not Catalyst) and Apple TV, plus CarPlay,
+  AirPlay, gapless and offline downloads. NO Apple Watch app: its own Xcode project
+  contains no watchOS target. This is NaviBeat's closest competitor on platform reach.
 - Amperfy: free, GPL-3.0. iPhone, iPad, and a Mac Catalyst build. No tvOS, no
   watchOS. CarPlay yes. Ampache and Subsonic.
 - play:Sub: $4.99. iPhone and iPad only. CarPlay, offline. Long-established.
