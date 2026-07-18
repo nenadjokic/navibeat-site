@@ -280,9 +280,18 @@
 
   <h2 id="playback-stutters">Playback cuts out or stutters. How do I fix it?</h2>
   <ul>
+    <li>If you stream over cellular through Tailscale, WireGuard, or any VPN, see the next question first: that is the most common cause on the road.</li>
     <li>Try lowering the max bit rate in Settings &gt; Audio to 192 kbps or 128 kbps.</li>
     <li>Check your home network. A wired connection for the Apple TV improves stability significantly.</li>
     <li>Check your server&rsquo;s CPU and disk usage. If Navidrome is transcoding on a slow machine, playback can lag.</li>
+  </ul>
+
+  <h2 id="vpn-cellular-stutter">Music stutters in the car when my server is on Tailscale or WireGuard. Why?</h2>
+  <p>If your server address is private (192.168.x.x, 10.x.x.x, a 100.x tailnet IP, or a .local / .ts.net name), your phone reaches it through a VPN tunnel. On cellular, a moving phone hops between cell towers, and each hop can freeze the tunnel&rsquo;s connections for a while. The stream stops mid-song, NaviBeat recovers it, and a few minutes later it happens again: that is the stutter. It is not your server, and it is not the bit rate.</p>
+  <ul>
+    <li><strong>Best on the road: give NaviBeat a public address.</strong> If your server is also reachable at a public URL (a reverse proxy, a Cloudflare Tunnel, or a port forward with HTTPS), use that as the primary address in Settings &gt; Server addresses. Connections to a public endpoint survive tower changes far better than a VPN tunnel. NaviBeat with both addresses configured uses the home address on Wi-Fi and always uses the primary one on cellular.</li>
+    <li><strong>Simplest: download for the trip.</strong> Downloads play from the device, immune to any network. With Download quality set to Original you get the untouched source files.</li>
+    <li>NaviBeat will show a one-time note when it detects this pattern (repeated recoveries on cellular with a private server address), and Settings &gt; Server addresses shows which route is active.</li>
   </ul>
 
   <h2 id="data-storage">Where is my NaviBeat data stored?</h2>
