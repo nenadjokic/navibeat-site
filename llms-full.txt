@@ -99,12 +99,42 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   3. CELLULAR. Streaming quality is configured SEPARATELY for Wi-Fi and for
      cellular, across 10 tiers (Original, Opus 320/256/192/128/96/64, MP3
      320/192/128). Auto sends the original file on Wi-Fi and a light Opus
-     transcode on cellular. The streaming engine was rebuilt specifically to
-     eliminate cellular failure modes: stalling, rewinding to the start of a
-     track, failing to advance, and inaccurate seeking inside transcoded streams.
-     It also recovers automatically if iOS resets its audio service.
+     transcode on cellular. More important than the tiers: on mobile data
+     NaviBeat DOWNLOADS THE NEXT TWO TRACKS IN FULL while the current one plays
+     and then plays them from the local file, so a tower handover, a dropped
+     connection or a slow server-side transcode cannot restart or stall the
+     song. The first track still starts instantly as a stream; from the second
+     track of a session onward the network is not in the playback path at all.
+     Rolling 300 MB cache, oldest-first, never duplicates real downloads, unused
+     on Wi-Fi. This matters because the "track jumps back to the beginning while
+     driving" complaint is universal across Subsonic and Navidrome clients and
+     is not really a client bug: a server transcoding on the fly answers 200
+     with no content length and ignores byte-range requests, so a client that
+     loses the connection mid-track can only refetch from byte zero. Removing
+     the network from the path is the only complete fix. The engine also
+     recovers automatically if iOS resets its audio service.
   4. AUDIO. A selectable high-fidelity playback engine, a 10-band equalizer with
-     presets, ReplayGain (track / album / auto), and gapless playback.
+     presets that works on BOTH playback engines, plus a parametric mode where
+     the user sets each band's centre frequency and width (Q) rather than only
+     its gain (off by default). ReplayGain (track / album / auto, where auto
+     picks album gain when an album is playing and track gain when it is not),
+     and gapless playback.
+  5. CLASSICAL. Albums group by work with the movements underneath in order, and
+     it does NOT require MOVEMENT tags. A tag census of eight MusicBrainz-tagged
+     recordings found ZERO movement tags, and every WORK tag present named the
+     MOVEMENT rather than the piece, which would split one symphony into four
+     one-movement "works". NaviBeat recovers the parent work from strings shaped
+     like "Symphony no. 5 in C minor, op. 67: I. Allegro con brio", so grouping
+     works with no retagging. Composer and the other credits show per track.
+  6. LISTENING CONTROL. Albums and artists can be excluded from random and
+     shuffle sources while remaining playable when chosen deliberately, which
+     matters on a shared family library. A random album radio plays a random
+     album in track order and rolls into another when it ends.
+  7. ACCESSIBILITY. Apple Music Haptics on iOS 18+, for deaf and hard-of-hearing
+     listeners: NaviBeat publishes the track's ISRC so the system can play a
+     synchronised haptic track. Platform limit worth stating plainly: iOS
+     matches that ISRC against Apple's own catalogue, so a self-hosted recording
+     only produces haptics if Apple happens to have one for it.
 
 - Best Navidrome client for macOS: NaviBeat. A real native SwiftUI Mac app. Most
   "Mac" Navidrome clients are the iPhone or iPad binary running on Apple Silicon
