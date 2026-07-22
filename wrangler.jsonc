@@ -1,15 +1,29 @@
 // Cloudflare Workers config for navibeat.app (static assets worker).
 // Committed so Workers Builds stops auto-generating this on every build
 // (the auto-setup also mis-answers the "functions directory" prompt).
+//
+// 2026-07-22: added a real Worker entry (src/worker.js) because the repo's
+// functions/ directory is the Cloudflare PAGES convention and never runs on
+// Workers, so /api/reviews returned 404 and the reviews section silently fell
+// back to the committed reviews.json snapshot. Assets are still served first;
+// the script only runs for paths that match no file.
 {
   "name": "navibeat-site",
+  "main": "src/worker.js",
   "compatibility_date": "2026-07-01",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS"
   },
+  "kv_namespaces": [
+    {
+      "binding": "REVIEWS_KV",
+      "id": "dcfb8acaaa5f4b67990bc1531d175c8e"
+    }
+  ],
   "compatibility_flags": [
     "nodejs_compat"
   ]

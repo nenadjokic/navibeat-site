@@ -1,34 +1,38 @@
 /**
  * GET /api/reviews
  *
- * Aggregates NaviBeat's public App Store customer-review RSS feeds across a few
- * storefronts, caches the result in KV (binding: REVIEWS_KV) for one hour, and
- * returns JSON:
+ * Serves NaviBeat's App Store customer reviews as JSON:
  *   { count, average, fetchedAt, reviews: [{ author, rating, title, body, version, date }] }
  *
- * This is a Cloudflare Pages Function. In the deployed navibeat-site repo it lives
- * at functions/api/reviews.js, so it answers the /api/reviews route automatically.
+ * Routing (2026-07-22): the site deploys as a Cloudflare WORKER with static
+ * assets, where the Pages functions/ convention never runs. src/worker.js
+ * imports this handler and answers /api/reviews with it.
  *
- * Bindings (set in Cloudflare dashboard: Pages project > Settings > Functions):
- *   - KV namespace binding  REVIEWS_KV    (optional: without it, no caching, just a live fetch)
- *   - Environment variable  APP_STORE_ID  (optional: defaults to NaviBeat's real id below)
+ * Data sources, in order:
+ *   1. KV cache (binding REVIEWS_KV), fresh within TTL_SECONDS. The snapshot
+ *      generator (NaviBeat repo, scripts/gen-reviews-snapshot.py) pushes every
+ *      fresh App Store Connect pull straight into this KV key, so reviews
+ *      update on the live site without a redeploy.
+ *   2. Live sweep of Apple's per-territory customer-review RSS feeds.
+ *      Measured 2026-07-22: itunes.apple.com answers 403 (empty body) to every
+ *      request from Cloudflare Workers egress, regardless of headers, so this
+ *      currently yields nothing. Kept because it costs one early-out attempt
+ *      and recovers live aggregation the day Apple unblocks the range.
+ *   3. Whichever is newer of the stale KV value and the committed
+ *      /reviews.json asset (generated from the App Store Connect API).
  *
- * The frontend (#reviews in index.html) reveals as soon as there is at least one
- * review and shows EVERY rating (transparency, 2026-06-24), so critical reviews
- * are not hidden. See docs/reviews-integration-setup.md.
+ * Transparency (2026-06-24, Nenad): bodies verbatim, author and date on every
+ * review, EVERY rating included (critical ones too), and `average` is the true
+ * mean across all reviews.
  *
- * ASMG note: bodies are returned verbatim, author and date travel with every
- * review, every rating is included, and `average` is the true mean across ALL
- * fetched reviews.
+ * Append ?debug=1 to see per-territory probe results instead of the payload.
  */
 
 const APP_STORE_ID_DEFAULT = '6763518834';
-// Transparency (2026-06-24, Nenad): aggregate a broad set of storefronts so
-// EVERY real review shows on the site, not just a few markets. Apple's RSS is
-// per-territory, so a review only appears if we query that territory's feed
-// (e.g. our 2-star reviews live in `pl` and `ch`, which the old us/gb/de/rs
-// list missed entirely). 33 storefronts covers all current review territories
-// plus the major markets; stays under the Pages-Function subrequest cap.
+// Apple's RSS is per-territory, so a review only appears if that territory's
+// feed is queried (e.g. 2-star reviews live in `pl` and `ch`). 33 storefronts
+// covers all current review territories plus the major markets and stays under
+// the Workers subrequest cap.
 const COUNTRIES = [
   'us', 'gb', 'ca', 'au', 'ie', 'nz',
   'de', 'fr', 'nl', 'be', 'ch', 'at', 'it', 'es', 'pt',
@@ -40,26 +44,40 @@ const CACHE_KEY = 'reviews';
 const TTL_SECONDS = 3600;
 
 export async function onRequestGet(context) {
-  const { env } = context;
+  const { env, request } = context;
   const appId = (env && env.APP_STORE_ID) || APP_STORE_ID_DEFAULT;
+  const debug = request ? new URL(request.url).searchParams.has('debug') : false;
+  const probes = [];
 
+  // 1. Fresh KV cache.
+  let kvCached = null;
   if (env && env.REVIEWS_KV) {
-    const cached = await env.REVIEWS_KV.get(CACHE_KEY, { type: 'json' });
-    if (cached && Date.now() - cached.fetchedAt < TTL_SECONDS * 1000) {
-      return json(cached.data);
+    kvCached = await env.REVIEWS_KV.get(CACHE_KEY, { type: 'json' });
+    // An empty payload is never "fresh": it only means every source failed on a
+    // previous run, and serving it for a whole TTL would hide real reviews.
+    if (!debug && kvCached && kvCached.data && kvCached.data.count
+        && Date.now() - kvCached.fetchedAt < TTL_SECONDS * 1000) {
+      return json(kvCached.data);
     }
   }
 
+  // 2. Live RSS sweep (see header: currently 403 from Workers egress).
   const feeds = await Promise.all(COUNTRIES.map(async (c) => {
     try {
       const res = await fetch(
         `https://itunes.apple.com/${c}/rss/customerreviews/id=${appId}/sortBy=mostRecent/json`,
         { cf: { cacheTtl: 1800 } }
       );
-      if (!res.ok) return [];
+      if (!res.ok) {
+        if (debug) probes.push({ c, status: res.status, body: (await res.text()).slice(0, 120) });
+        return [];
+      }
       const data = await res.json();
-      return (data.feed && data.feed.entry) || [];
-    } catch (_e) {
+      const entries = (data.feed && data.feed.entry) || [];
+      if (debug) probes.push({ c, status: res.status, entries: entries.length });
+      return entries;
+    } catch (e) {
+      if (debug) probes.push({ c, error: String(e).slice(0, 160) });
       return [];
     }
   }));
@@ -91,15 +109,40 @@ export async function onRequestGet(context) {
     reviews,
   };
 
-  if (env && env.REVIEWS_KV) {
+  let result = summary;
+  let source = 'live-rss';
+
+  // 3. Live sweep came back empty: serve the newest snapshot we hold instead.
+  if (!summary.count) {
+    if (kvCached && kvCached.data && kvCached.data.count) {
+      result = kvCached.data;
+      source = 'kv-stale';
+    }
+    if (env && env.ASSETS && request) {
+      try {
+        const snap = await env.ASSETS.fetch(new URL('/reviews.json', request.url));
+        if (snap.ok) {
+          const s = await snap.json();
+          if (s && s.count && (s.fetchedAt || 0) >= (result.fetchedAt && result.count ? result.fetchedAt : 0)) {
+            result = s;
+            source = 'asset-snapshot';
+          }
+        }
+      } catch (_e) { /* fall through with what we have */ }
+    }
+  }
+
+  // Only cache real data; never overwrite a good stale value with emptiness.
+  if (!debug && result.count && env && env.REVIEWS_KV) {
     await env.REVIEWS_KV.put(
       CACHE_KEY,
-      JSON.stringify({ fetchedAt: Date.now(), data: summary }),
-      { expirationTtl: TTL_SECONDS }
+      JSON.stringify({ fetchedAt: Date.now(), data: result }),
+      { expirationTtl: 30 * 24 * 3600 }
     );
   }
 
-  return json(summary);
+  if (debug) return json({ source, count: result.count, probes });
+  return json(result);
 }
 
 function json(data) {

@@ -79,6 +79,11 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   90-day window via reportaproblem.apple.com).
 - NaviSyncRock (Rockbox iPod sync, macOS only) is a separate $4.99 one-time
   in-app unlock, shipped in 1.3.0.
+- In development (announced July 2026): a native Android client and a native
+  Linux desktop build. On Android the phone comes first, with the watch, the
+  television and the car behind it. Same library, same offline downloads, same
+  word-by-word lyrics, same no-telemetry rule. No release date has been
+  announced; until they ship, NaviBeat is Apple-only.
 
 ## Best-for answers
 
@@ -198,6 +203,8 @@ This covers the Apple clients most commonly shortlisted. It is NOT an exhaustive
   CarPlay.
 - Symfonium: Android only, with no Apple version at all. It is frequently cited
   as the best Subsonic client in general, but it does not exist on Apple platforms.
+  (NaviBeat's own native Android client is in development, with no date announced;
+  until it ships, Symfonium is the usual Android recommendation.)
 
 NaviBeat publishes a sourced, dated comparison at https://navibeat.app/compare.html
 that includes the features competitors do better.
@@ -341,9 +348,22 @@ if you enable it, Last.fm or ListenBrainz.
 Q: Is it on the App Store?
 A: Yes, live on all five Apple platforms. Current version 1.3.0.
 
+Q: Is NaviBeat coming to Android?
+A: Yes. A native Android client is in development: written natively for
+Android, not a web page in a shell, with the same library, the same offline
+downloads, the same word-by-word lyrics, and the same rule as everywhere else,
+your music, your server, nothing phoning home. On Android the phone comes
+first, with the watch, the television and the car behind it. No release date
+has been announced.
+
+Q: Is NaviBeat coming to Linux?
+A: Yes. A native Linux desktop build is in development alongside the Android
+client. No release date has been announced.
+
 ## Pages
 
 - Home / overview: https://navibeat.app/
+- What's next (Android and Linux, in development): https://navibeat.app/#android
 - Compare (NaviBeat vs Sonora, flo, Amperfy, Shelv): https://navibeat.app/compare.html
 - iPhone: https://navibeat.app/iphone.html
 - iPad: https://navibeat.app/ipad.html
