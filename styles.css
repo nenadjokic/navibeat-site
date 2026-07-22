@@ -2877,7 +2877,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .androidteaser__note { color: var(--text-2); font-size: 0.92rem; }
 .androidteaser__art {
   flex: 0 0 auto;
-  width: clamp(96px, 14vw, 156px);
+  width: clamp(140px, 20vw, 230px);
   display: grid;
   place-items: center;
   color: var(--accent);
