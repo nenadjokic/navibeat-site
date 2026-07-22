@@ -2839,3 +2839,52 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   .vinyl-stage { min-height: 340px; }
   .vinyl { width: 260px; height: 260px; }
 }
+
+/* ============================================================
+   ANDROID TEASER (2026-07-22)
+   Deliberately a separate band BELOW #platforms rather than a
+   sixth card inside plat-grid: that section's whole thesis is
+   "Every screen Apple makes. One receipt.", and the structured
+   data + llms.txt claim rests on the five-Apple-platforms line.
+   Dropping Android into that grid would quietly contradict both.
+   ============================================================ */
+.androidteaser {
+  padding: clamp(48px, 7vw, 88px) 0;
+  border-top: 1px solid var(--border);
+}
+.androidteaser__inner {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: clamp(24px, 4vw, 44px);
+}
+.androidteaser__copy { flex: 1 1 auto; min-width: 0; }
+.androidteaser__lead {
+  color: var(--text-1);
+  max-width: 60ch;
+  margin: 14px 0 0;
+}
+.androidteaser__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 22px;
+}
+.androidteaser__note { color: var(--text-2); font-size: 0.92rem; }
+.androidteaser__art {
+  flex: 0 0 auto;
+  width: clamp(96px, 14vw, 156px);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  opacity: 0.9;
+}
+.androidteaser__art svg { width: 100%; height: auto; }
+@media (max-width: 720px) {
+  .androidteaser__inner { flex-direction: column-reverse; align-items: flex-start; }
+  .androidteaser__art { width: 84px; }
+}
