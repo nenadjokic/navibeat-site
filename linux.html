@@ -93,7 +93,7 @@
         "image": "https://navibeat.app/assets/icon-512.png",
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music Streaming Client",
-        "operatingSystem": "Linux x86_64",
+        "operatingSystem": "Linux x86_64, Linux ARM64 (aarch64)",
         "softwareVersion": "0.9.32",
         "releaseNotes": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
         "datePublished": "2026-07-23",
@@ -109,7 +109,7 @@
           "availability": "https://schema.org/InStock",
           "url": "https://github.com/nenadjokic/navibeat-linux/releases/latest"
         },
-        "softwareRequirements": "Linux x86_64, VLC (libVLC), and a Navidrome or OpenSubsonic server.",
+        "softwareRequirements": "Linux on x86_64 or ARM64 (Raspberry Pi, Asahi Linux), VLC (libVLC), and a Navidrome or OpenSubsonic server.",
         "featureList": [
           "Native Compose desktop app, no Electron and no web view",
           "Time-synced LRC lyrics with a word-by-word karaoke mode",
@@ -252,7 +252,7 @@
 
           <dl class="key-facts" aria-label="NaviBeat for Linux key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; column-gap: 24px; row-gap: 6px; font-size: 14px; line-height: 1.5; max-width: 60ch;">
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Platform</dt>
-            <dd style="margin: 0; color: var(--text-1);">Linux x86_64 (needs VLC installed)</dd>
+            <dd style="margin: 0; color: var(--text-1);">Linux x86_64 and ARM64 (Raspberry Pi, Asahi), needs VLC</dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Price</dt>
             <dd style="margin: 0; color: var(--text-1);">Free &middot; open beta</dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Server</dt>
@@ -485,11 +485,15 @@
         <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
           <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">Three steps</h3>
           <ol style="margin:0; padding-left:18px; color:var(--text-1); font-size:15px; line-height:1.8;">
-            <li>Download the <a href="https://github.com/nenadjokic/navibeat-linux/releases/latest/download/NaviBeat-linux-x86_64.AppImage" style="color:var(--accent-hi);">AppImage</a>.</li>
-            <li>Make it executable:<br><code>chmod +x NaviBeat-linux-x86_64.AppImage</code></li>
-            <li>Run it:<br><code>./NaviBeat-linux-x86_64.AppImage</code></li>
+            <li>Download the AppImage for your machine:<br>
+              <a href="https://github.com/nenadjokic/navibeat-linux/releases/latest/download/NaviBeat-linux-x86_64.AppImage" style="color:var(--accent-hi);">Intel or AMD (x86_64)</a>
+              &nbsp;&middot;&nbsp;
+              <a href="https://github.com/nenadjokic/navibeat-linux/releases/latest/download/NaviBeat-linux-aarch64.AppImage" style="color:var(--accent-hi);">ARM64 (Raspberry Pi, Asahi)</a>
+            </li>
+            <li>Make it executable:<br><code>chmod +x NaviBeat-linux-*.AppImage</code></li>
+            <li>Run it:<br><code>./NaviBeat-linux-*.AppImage</code></li>
           </ol>
-          <p style="margin:16px 0 0; color:var(--text-2); font-size:13px; line-height:1.6;">The AppImage carries its own Java runtime, so you do not need to install Java.</p>
+          <p style="margin:16px 0 0; color:var(--text-2); font-size:13px; line-height:1.6;">The AppImage carries its own Java runtime, so you do not need to install Java. Runs on 64-bit Intel and AMD, and on ARM64 like a Raspberry Pi or Asahi Linux.</p>
         </article>
 
         <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
