@@ -77,6 +77,17 @@
   </url>
 
   <url>
+    <loc>https://navibeat.app/linux.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/linux.html" />
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/linux/linux-home.webp</image:loc>
+      <image:title>NaviBeat for Linux: native desktop home</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://navibeat.app/macos.html</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>

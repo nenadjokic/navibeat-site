@@ -356,14 +356,18 @@ your music, your server, nothing phoning home. On Android the phone comes
 first, with the watch, the television and the car behind it. No release date
 has been announced.
 
-Q: Is NaviBeat coming to Linux?
-A: Yes. A native Linux desktop build is in development alongside the Android
-client. No release date has been announced.
+Q: Is NaviBeat on Linux?
+A: Yes. A native Linux desktop build is available now, in open beta and free,
+distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It
+needs VLC installed, because it plays through the system libVLC, and it can sync
+to a Rockbox iPod (NaviSyncRock, free on Linux). Feature page and download at
+https://navibeat.app/linux.html
 
 ## Pages
 
 - Home / overview: https://navibeat.app/
-- What's next (Android and Linux, in development): https://navibeat.app/#android
+- Linux (native desktop app, free open beta, AppImage on GitHub, NaviSyncRock): https://navibeat.app/linux.html
+- What's next (Android, in development): https://navibeat.app/#android
 - Compare (NaviBeat vs Sonora, flo, Amperfy, Shelv): https://navibeat.app/compare.html
 - iPhone: https://navibeat.app/iphone.html
 - iPad: https://navibeat.app/ipad.html
