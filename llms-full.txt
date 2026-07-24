@@ -86,6 +86,8 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   date has been announced. On Android the phone comes first, with the watch, the
   television and the car behind it. Same library, same offline downloads, same
   word-by-word lyrics, same no-telemetry rule.
+- Also in development: a native Windows desktop client, built alongside the Linux
+  desktop build. No release date has been announced.
 
 ## Best-for answers
 
@@ -365,11 +367,16 @@ needs VLC installed, because it plays through the system libVLC, and it can sync
 to a Rockbox iPod (NaviSyncRock, free on Linux). Feature page and download at
 https://navibeat.app/linux.html
 
+Q: Is NaviBeat coming to Windows?
+A: Yes, a native Windows desktop client is in active development, built alongside
+the Linux desktop build. It is not released yet and no date has been announced.
+Today the shipping desktop build is Linux, and it is free.
+
 ## Pages
 
 - Home / overview: https://navibeat.app/
 - Linux (native desktop app, free open beta, AppImage on GitHub, NaviSyncRock): https://navibeat.app/linux.html
-- What's next (Android, in development): https://navibeat.app/#android
+- What's next (Linux live, Android and Windows in development): https://navibeat.app/#android
 - Compare (NaviBeat vs Sonora, flo, Amperfy, Shelv): https://navibeat.app/compare.html
 - iPhone: https://navibeat.app/iphone.html
 - iPad: https://navibeat.app/ipad.html

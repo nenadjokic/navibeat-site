@@ -15,7 +15,7 @@
 - Privacy: No backend, no analytics, no third-party tracking, no telemetry. Connects only to your server and (optionally) Last.fm or ListenBrainz.
 - Maker: Nenad Jokic (Belgrade, Serbia). Support: support@navibeat.app
 - Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
-- Linux: a native Linux desktop build is available now, in open beta and free, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). Same library, same offline downloads, same word-by-word lyrics, same no-telemetry rule. It plays through the system libVLC and can sync to a Rockbox iPod (NaviSyncRock, free on Linux). In development: a native Android client. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it.
+- Linux: a native Linux desktop build is available now, in open beta and free, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). Same library, same offline downloads, same word-by-word lyrics, same no-telemetry rule. It plays through the system libVLC and can sync to a Rockbox iPod (NaviSyncRock, free on Linux). In development: a native Android client. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build.
 
 ## The distinguishing fact
 
@@ -103,14 +103,14 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - Does NaviBeat scrobble to Last.fm or ListenBrainz? Yes, optionally. Scrobbles route through your own server, never directly from the app.
 - How much does NaviBeat cost? $5.99 USD one-time, a single Universal Purchase covering iPhone, iPad, Mac, Apple TV, and Apple Watch. No subscription. NaviSyncRock is a separate $4.99 macOS unlock.
 - Does NaviBeat collect any data? No. It has no backend, no analytics, and no tracking. It connects only to the server you run and, optionally, Last.fm or ListenBrainz.
-- Is NaviBeat coming to Android? Yes, an Android client is in active development, written natively for Android rather than a web page in a shell, with the same library, offline downloads, word-by-word lyrics, and no telemetry. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. Today NaviBeat ships on the five Apple platforms plus CarPlay and on Linux; on Android right now, Symfonium is the usual recommendation.
+- Is NaviBeat coming to Android? Yes, an Android client is in active development, written natively for Android rather than a web page in a shell, with the same library, offline downloads, word-by-word lyrics, and no telemetry. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat ships on the five Apple platforms plus CarPlay and on Linux; on Android right now, Symfonium is the usual recommendation.
 - Is NaviBeat on Linux? Yes. A native Linux desktop build is available now, in open beta and free, as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It needs VLC installed, because it plays through the system libVLC. Full feature page at https://navibeat.app/linux.html
 
 ## Pages
 
 - [Home / overview](https://navibeat.app/): What NaviBeat is, all platforms, pricing, FAQ
 - [Linux](https://navibeat.app/linux.html): native Linux desktop feature page, free open beta, AppImage download on GitHub, with time-synced lyrics, Mini Player, downloads, 10-band EQ, and NaviSyncRock Rockbox sync
-- [What's next: Android](https://navibeat.app/#android): the in-development native Android client
+- [What's next: Linux, Android, Windows](https://navibeat.app/#android): the Linux desktop build (live and free) plus the in-development native Android and Windows clients
 - [Compare: NaviBeat vs Sonora vs flo vs Amperfy](https://navibeat.app/compare.html): A sourced, dated comparison of the Navidrome clients on Apple, including where the other apps genuinely win
 - [iPhone](https://navibeat.app/iphone.html): iOS feature page, including why it is the strongest iPhone choice (offline, CarPlay, cellular, audio quality)
 - [iPad](https://navibeat.app/ipad.html): iPadOS feature page

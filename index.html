@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
 
-  <link rel="stylesheet" href="styles.css?v=20260722a">
+  <link rel="stylesheet" href="styles.css?v=20260724a">
 
   <script type="application/ld+json">
   {
@@ -276,10 +276,10 @@
           },
           {
             "@type": "Question",
-            "name": "Is NaviBeat on Linux or Android?",
+            "name": "Is NaviBeat on Linux, Android or Windows?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "NaviBeat for Linux is out now, in open beta and free, as an AppImage on GitHub. A native Android client is in active development, written natively for Android, not a web page in a shell, with the same library, the same offline downloads, the same word by word lyrics, and the same rule that applies everywhere: your music, your server, nothing phoning home. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. Today NaviBeat is native on the five Apple platforms, iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, and now on Linux too."
+              "text": "NaviBeat for Linux is out now, in open beta and free, as an AppImage on GitHub. A native Android client is in active development, written natively for Android, not a web page in a shell, with the same library, the same offline downloads, the same word by word lyrics, and the same rule that applies everywhere: your music, your server, nothing phoning home. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat is native on the five Apple platforms, iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, and now on Linux too."
             }
           }
         ]
@@ -719,53 +719,85 @@
     </div>
   </section>
 
-  <!-- ======================================================= ANDROID TEASER
-       Kept OUT of plat-grid on purpose: that section's thesis is "Every screen
-       Apple makes. One receipt.", and the JSON-LD + llms.txt claim rests on the
-       five-Apple-platforms line. A sixth card in that grid would contradict both.
-       No date, no Play Store promise, no price: none of those are decided. -->
-  <section class="androidteaser" id="android" aria-labelledby="android-title">
-    <div class="wrap reveal">
-      <div class="androidteaser__inner">
-        <div class="androidteaser__copy">
-          <p class="eyebrow eyebrow--accent">What's next</p>
-          <h2 id="android-title" class="h2">NaviBeat is on Linux now. Android is next.</h2>
-          <p class="androidteaser__lead">
-            Written natively for each platform, not a web page in a shell. The same library,
-            the same offline downloads, the same word by word lyrics, and the same rule that
-            has always applied here: your music, your server, nothing phoning home.
-            The <strong style="color:var(--text-1);font-weight:600;">Linux desktop build is out now, in open beta and free</strong>.
-            Android is in active development: there is a working prototype, but it is still too early for a public beta.
-            On Android the phone comes first, with the watch, the television and the car behind it.
-          </p>
-          <div class="androidteaser__meta" style="display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
-            <a class="btn btn--primary btn--compact" href="linux.html">Get NaviBeat for Linux &rarr;</a>
-            <span class="plat-card__status plat-card__status--muted"><span class="plat-card__dot"></span>Android prototype in progress</span>
+  <!-- ======================================================= WHAT'S NEXT: beyond Apple
+       A SEPARATE platform grid from the Apple one above, on purpose. The Apple section's
+       thesis ("Every screen Apple makes. One receipt.") and the five-Apple-platforms
+       JSON-LD / llms claim stay untouched. This grid is the non-Apple line: Linux (live,
+       free, links to its page), Android and Windows (in development, honest progress).
+       Percentages are Nenad's call and are meant to be kept current. -->
+  <section class="platforms platforms--next" id="android" aria-labelledby="next-title">
+    <div class="wrap">
+      <div class="platforms__eyebrow reveal-stagger">
+        <p class="eyebrow eyebrow--accent">What's next</p>
+        <h2 id="next-title" class="platforms__title">NaviBeat is on Linux now. <em style="font-style:italic;">And it keeps going.</em></h2>
+      </div>
+
+      <ul class="plat-grid plat-grid--trio reveal-stagger" role="list">
+
+        <li>
+          <a class="plat-card" href="linux.html" aria-label="NaviBeat for Linux, free open beta, open the Linux page">
+            <div class="plat-card__thumb">
+              <img src="assets/screenshots/linux/linux-home.webp"
+                   alt="NaviBeat for Linux home screen" width="1180" height="768" loading="lazy" decoding="async">
+            </div>
+            <div class="plat-card__body">
+              <div class="plat-card__name">Linux <span class="plat-card__arrow">&rarr;</span></div>
+              <div class="plat-card__status"><span class="plat-card__dot"></span>Live &middot; free &middot; open beta</div>
+              <p class="plat-card__desc">A free, native desktop build. Offline downloads, time-synced lyrics, a 10-band equalizer and Rockbox iPod sync. AppImage for x86_64 and ARM64.</p>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <div class="plat-card plat-card--inactive">
+            <div class="plat-card__thumb plat-card__thumb--icon">
+              <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 10.5a1 1 0 011-1h10a1 1 0 011 1v6.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 016 17z"/>
+                <path d="M3.4 11.2v4.2M20.6 11.2v4.2M9.6 18.5v2.1M14.4 18.5v2.1"/>
+                <path d="M7.2 9.5a4.8 4.8 0 019.6 0"/>
+                <path d="M9.3 6.2L8.2 4.4M14.7 6.2l1.1-1.8"/>
+                <circle cx="10" cy="7.6" r="0.45" fill="currentColor" stroke="none"/>
+                <circle cx="14" cy="7.6" r="0.45" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div class="plat-card__body">
+              <div class="plat-card__name">Android</div>
+              <div class="plat-card__status plat-card__status--muted"><span class="plat-card__dot"></span>In development</div>
+              <p class="plat-card__desc">A native client, working prototype. Phone first, then the watch, the television and the car.</p>
+              <div class="plat-progress" role="img" aria-label="Android build roughly 90 percent complete">
+                <div class="plat-progress__bar" style="width: 90%;"></div>
+              </div>
+              <div class="plat-progress__label">~90% built</div>
+            </div>
           </div>
-        </div>
-        <div class="androidteaser__art" aria-hidden="true">
-          <!-- width/height attributes are the no-CSS fallback: with only a viewBox,
-               a stale cached stylesheet renders this at full container width. -->
-          <svg viewBox="0 0 56 24" width="230" height="99" style="max-width:100%; height:auto;" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-            <!-- Android -->
-            <g transform="translate(0,0)">
-              <path d="M6 10.5a1 1 0 011-1h10a1 1 0 011 1v6.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 016 17z"/>
-              <path d="M3.4 11.2v4.2M20.6 11.2v4.2M9.6 18.5v2.1M14.4 18.5v2.1"/>
-              <path d="M7.2 9.5a4.8 4.8 0 019.6 0"/>
-              <path d="M9.3 6.2L8.2 4.4M14.7 6.2l1.1-1.8"/>
-              <circle cx="10" cy="7.6" r="0.45" fill="currentColor" stroke="none"/>
-              <circle cx="14" cy="7.6" r="0.45" fill="currentColor" stroke="none"/>
-            </g>
-            <!-- Linux desktop: a terminal window -->
-            <g transform="translate(32,0)">
-              <rect x="2" y="5" width="20" height="14" rx="2"/>
-              <path d="M2 9h20"/>
-              <path d="M6.5 12.5l2 2-2 2"/>
-              <path d="M11 16.5h5"/>
-              <circle cx="5" cy="7" r="0.5" fill="currentColor" stroke="none"/>
-            </g>
-          </svg>
-        </div>
+        </li>
+
+        <li>
+          <div class="plat-card plat-card--inactive">
+            <div class="plat-card__thumb plat-card__thumb--icon">
+              <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4.5" width="7.5" height="7" rx="0.6"/>
+                <rect x="13.5" y="4.5" width="7.5" height="7" rx="0.6"/>
+                <rect x="3" y="12.5" width="7.5" height="7" rx="0.6"/>
+                <rect x="13.5" y="12.5" width="7.5" height="7" rx="0.6"/>
+              </svg>
+            </div>
+            <div class="plat-card__body">
+              <div class="plat-card__name">Windows</div>
+              <div class="plat-card__status plat-card__status--muted"><span class="plat-card__dot"></span>In development</div>
+              <p class="plat-card__desc">A native desktop client for Windows, in active development alongside the Linux build.</p>
+              <div class="plat-progress" role="img" aria-label="Windows build roughly 40 percent complete">
+                <div class="plat-progress__bar" style="width: 40%;"></div>
+              </div>
+              <div class="plat-progress__label">~40% built</div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <div style="text-align:center; margin-top: 24px;">
+        <a class="btn btn--primary btn--compact" href="linux.html">Get NaviBeat for Linux &rarr;</a>
       </div>
     </div>
   </section>
@@ -1269,12 +1301,12 @@
 
       <div class="faq__item">
         <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-android">
-          <span>Is NaviBeat on Linux or Android?</span>
+          <span>Is NaviBeat on Linux, Android or Windows?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
         </button>
         <div class="faq__panel" id="faq-android" inert>
           <div class="faq__a">
-            NaviBeat for Linux is out now, in open beta and free, as an AppImage on GitHub. A native Android client is in active development, written natively for Android, not a web page in a shell, with the same library, the same offline downloads, the same word by word lyrics, and the same rule that applies everywhere: your music, your server, nothing phoning home. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. Today NaviBeat is native on the five Apple platforms plus CarPlay, and now on Linux too. See <a href="linux.html">NaviBeat for Linux</a>.
+            NaviBeat for Linux is out now, in open beta and free, as an AppImage on GitHub. A native Android client is in active development, written natively for Android, not a web page in a shell, with the same library, the same offline downloads, the same word by word lyrics, and the same rule that applies everywhere: your music, your server, nothing phoning home. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat is native on the five Apple platforms plus CarPlay, and now on Linux too. See <a href="linux.html">NaviBeat for Linux</a>.
           </div>
         </div>
       </div>

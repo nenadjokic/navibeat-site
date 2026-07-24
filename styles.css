@@ -1024,6 +1024,40 @@ section { padding-block: var(--rhythm); }
   box-shadow: none;
 }
 
+/* What's next: unified platform trio (Linux live + free, Android & Windows in development).
+   Same .plat-card component as the Apple grid, its own centered 3-up layout. */
+.platforms--next { border-top: 1px solid var(--border); }
+.plat-grid--trio { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 920px; margin: 0 auto; }
+@media (max-width: 760px) { .plat-grid--trio { grid-template-columns: 1fr; } }
+
+.plat-card__thumb--icon {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-1);
+  color: var(--accent);
+}
+.plat-card__thumb--icon svg { width: 34%; height: auto; opacity: 0.92; }
+
+.plat-card__desc {
+  font-family: var(--font-sans);
+  font-size: 12.5px; line-height: 1.5;
+  color: var(--text-1);
+  margin: 3px 0 0;
+}
+
+.plat-progress {
+  margin-top: 10px; height: 6px; border-radius: 4px;
+  background: var(--bg-0); border: 1px solid var(--border); overflow: hidden;
+}
+.plat-progress__bar {
+  height: 100%; border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+}
+.plat-progress__label {
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-2); margin-top: 6px;
+}
+
 /* =============================================================================
    Explore grid - per-platform cards (homepage)
    The key improvement: cards now show a real screenshot instead of wireframe SVG
