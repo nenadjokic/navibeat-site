@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaviBeat for Linux: Native Navidrome Client for the Linux Desktop</title>
+  <meta name="description" content="A native Linux desktop client for Navidrome and OpenSubsonic. Time-synced lyrics, Mini Player, downloads, 10-band EQ, and NaviSyncRock iPod sync. Free, beta, AppImage.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/linux.html">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/linux.html">
+
+  <meta property="og:title" content="NaviBeat for Linux: Native Navidrome &amp; Subsonic client for the Linux desktop">
+  <meta property="og:description" content="A native Linux desktop player for Navidrome and OpenSubsonic. Time-synced lyrics, Mini Player, downloads, 10-band EQ, NaviSyncRock iPod sync. Free and open beta.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/linux.html">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/linux/linux-home.webp">
+  <meta property="og:image:alt" content="NaviBeat on Linux: a native sidebar with Home, Albums, Playlists and a Featured Album hero.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat for Linux: Native Navidrome &amp; Subsonic client">
+  <meta name="twitter:description" content="A native Linux desktop app for Navidrome. Lyrics, Mini Player, downloads, EQ, Rockbox sync. Free beta, ships as an AppImage.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/linux/linux-home.webp">
+  <meta name="twitter:image:alt" content="NaviBeat on Linux: native sidebar with a Featured Album hero.">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="styles.css?v=20260726a">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+        "sameAs": [
+          "https://www.navidrome.org/apps/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navibeat.app/#website",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat",
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://navibeat.app/linux.html#webpage",
+        "url": "https://navibeat.app/linux.html",
+        "name": "NaviBeat for Linux",
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "about": { "@id": "https://navibeat.app/linux.html#app" },
+        "primaryImageOfPage": "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
+        "inLanguage": "en",
+        "datePublished": "2026-07-23",
+        "dateModified": "2026-07-24"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://navibeat.app/linux.html#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Platforms", "item": "https://navibeat.app/#platforms" },
+          { "@type": "ListItem", "position": 3, "name": "Linux", "item": "https://navibeat.app/linux.html" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://navibeat.app/linux.html#app",
+        "name": "NaviBeat for Linux",
+        "url": "https://navibeat.app/linux.html",
+        "image": "https://navibeat.app/assets/icon-512.png",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Music Streaming Client",
+        "operatingSystem": "Linux x86_64, Linux ARM64 (aarch64)",
+        "softwareVersion": "0.9.33",
+        "releaseNotes": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
+        "datePublished": "2026-07-23",
+        "downloadUrl": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
+        "installUrl": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
+        "description": "A native Linux desktop client for Navidrome, Airsonic, Gonic, and any OpenSubsonic music server. Time-synced lyrics, Mini Player, downloads and offline playback, 10-band equalizer, and NaviSyncRock sync to a Rockbox player. Free, in open beta, shipped as a self-contained AppImage.",
+        "author": { "@id": "https://navibeat.app/#org" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://github.com/nenadjokic/navibeat-linux/releases/latest"
+        },
+        "softwareRequirements": "Linux on x86_64 or ARM64 (Raspberry Pi, Asahi Linux), VLC (libVLC), and a Navidrome or OpenSubsonic server.",
+        "featureList": [
+          "Native Compose desktop app, no Electron and no web view",
+          "Time-synced LRC lyrics with a word-by-word karaoke mode",
+          "Mini Player that stays on top of other windows",
+          "Downloads and offline playback with Prefer Downloaded Music",
+          "10-band equalizer, ReplayGain and crossfade",
+          "NaviSyncRock: sync your library to a Rockbox iPod or player, free on Linux",
+          "AutoMix endless playback",
+          "Listening Stats, Server Health, Last.fm and ListenBrainz",
+          "mTLS client certificates and custom HTTP headers for Cloudflare Access and Authelia",
+          "Multi-library support",
+          "MPRIS media-key and desktop integration",
+          "Frosted Glass window, dark, light and system themes",
+          "Zero analytics, zero trackers"
+        ],
+        "screenshot": [
+          "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-lyrics.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-albums.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-artists.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock-sync.webp"
+        ],
+        "mentions": [
+          { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
+          { "@type": "Thing", "name": "OpenSubsonic API" },
+          { "@type": "Thing", "name": "Rockbox" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://navibeat.app/linux.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does NaviBeat for Linux cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is free. The Linux build is in open beta and free to download from GitHub. The Apple builds (Mac, iPhone, iPad, Apple TV, Apple Watch) are a one-time $5.99 Universal Purchase on the App Store."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is NaviBeat for Linux stable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is in beta. It is built and tested on real hardware, but it is early and you may encounter bugs. Please report anything that breaks on the GitHub issues page so it can be fixed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Download the AppImage from GitHub, make it executable with chmod +x, and run it. It carries its own Java runtime, so you do not need to install Java. You do need VLC installed, because NaviBeat plays audio through your system's libVLC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What music server does it need?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic-compatible server, including Airsonic-Advanced and Gonic. It does not host or stream any music of its own."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="NaviBeat">
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
+      <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="listenbrainz.html" class="nav__link nav__link-hide-sm">ListenBrainz</a>
+      <a href="rockbox.html" class="nav__link nav__link-hide-sm">Rockbox</a>
+      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+
+      <a class="btn btn--primary btn--compact" href="https://github.com/nenadjokic/navibeat-linux/releases/latest" target="_blank" rel="noopener">Download</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="p-hero">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="index.html">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span>Platforms</span>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">Linux</span>
+      </nav>
+
+      <div class="p-hero__wrap">
+        <div class="p-hero__copy">
+          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px; display:flex; align-items:center; gap:9px;">NaviBeat <span aria-hidden="true">&middot;</span> <img src="assets/linux-tux.png" alt="Linux" width="19" height="22" style="display:inline-block; vertical-align:middle;" loading="eager" decoding="async"> Linux <span aria-hidden="true">&middot;</span> Open beta</p>
+          <h1>
+            <span class="word" style="animation-delay:0ms">The</span>
+            <span class="word" style="animation-delay:60ms">Navidrome</span>
+            <span class="word" style="animation-delay:140ms">client</span>
+            <span class="word" style="animation-delay:200ms">for</span>
+            <span class="word" style="animation-delay:260ms">Linux.</span>
+          </h1>
+          <p class="p-hero__sub">
+            A native desktop music player for Navidrome, Airsonic, Gonic, or any OpenSubsonic server. Time-synced lyrics, a pin-on-top Mini Player, downloads, a 10-band equalizer, and NaviSyncRock sync to a Rockbox player. No Electron, no web view, just a real Linux app. It is <strong>free</strong>, and it is in <strong>beta</strong>.
+          </p>
+          <div class="p-hero__ctas">
+            <a class="btn btn--primary" href="https://github.com/nenadjokic/navibeat-linux/releases/latest/download/NaviBeat-linux-x86_64.AppImage">
+              <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1zM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/>
+              </svg>
+              Download the AppImage, free
+            </a>
+            <a class="link-quiet" href="https://github.com/nenadjokic/navibeat-linux" target="_blank" rel="noopener">View on GitHub&nbsp;&rarr;</a>
+          </div>
+
+          <dl class="key-facts" aria-label="NaviBeat for Linux key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; column-gap: 24px; row-gap: 6px; font-size: 14px; line-height: 1.5; max-width: 60ch;">
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Platform</dt>
+            <dd style="margin: 0; color: var(--text-1);">Linux x86_64 and ARM64 (Raspberry Pi, Asahi), needs VLC</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Price</dt>
+            <dd style="margin: 0; color: var(--text-1);">Free &middot; open beta</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Server</dt>
+            <dd style="margin: 0; color: var(--text-1);">Navidrome v0.50+, OpenSubsonic, Airsonic-Advanced, Gonic</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Distribution</dt>
+            <dd style="margin: 0; color: var(--text-1);">AppImage on <a href="https://github.com/nenadjokic/navibeat-linux/releases/latest" target="_blank" rel="noopener" style="color:var(--accent-hi);">GitHub Releases</a></dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Version</dt>
+            <dd style="margin: 0; color: var(--text-1);">0.9.33 beta &middot; <time datetime="2026-07-24">updated July 24, 2026</time></dd>
+          </dl>
+        </div>
+
+        <div class="p-hero__shot">
+          <img src="assets/screenshots/linux/linux-home.webp"
+               alt="NaviBeat Home on Linux: native sidebar with Home, Artists, Albums, Playlists, Radio, Directories and a Featured Album hero section."
+               width="1180" height="768" loading="eager" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BETA NOTICE -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <aside role="note" aria-label="Beta notice" style="display:flex; gap:14px; align-items:flex-start; padding:18px 22px; background: color-mix(in srgb, var(--accent) 10%, var(--bg-1)); border:1px solid color-mix(in srgb, var(--accent) 35%, var(--border)); border-radius:12px;">
+        <span aria-hidden="true" style="font-size:22px; line-height:1.2;">&#128295;</span>
+        <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">
+          <strong style="color:var(--text-0);">This is a beta.</strong> NaviBeat for Linux is the newest member of the family and still finding its feet. It is built and tested on real hardware, but you may encounter a bug. If something breaks, please <a href="https://github.com/nenadjokic/navibeat-linux/issues/new/choose" target="_blank" rel="noopener" style="color:var(--accent-hi);">tell me on GitHub</a>. Your reports are exactly how it gets better.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="padding-block: clamp(28px, 4vh, 52px);">
+    <div class="wrap">
+      <ul class="p-stats reveal" role="list" aria-label="NaviBeat for Linux at a glance">
+        <li class="p-stat">
+          <p class="p-stat__num"><span class="accent">Free</span></p>
+          <p class="p-stat__label">Open beta &middot; on GitHub</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">0 <span class="accent">SDKs</span></p>
+          <p class="p-stat__label">No analytics. No trackers.</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">1 <span class="accent">file</span></p>
+          <p class="p-stat__label">Self-contained AppImage</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">Rockbox <span class="accent">sync</span></p>
+          <p class="p-stat__label">NaviSyncRock, free on Linux</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHY IT WINS ON LINUX -->
+  <section id="why-linux" aria-labelledby="why-linux-title">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="eyebrow eyebrow--accent">The short answer</p>
+        <h2 id="why-linux-title" class="h2">A real Linux app for the server you already run.</h2>
+      </div>
+
+      <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 8px 0 34px; padding: 20px 24px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15.5px; line-height: 1.7; color: var(--text-1); max-width: 78ch;">
+        <strong style="color: var(--text-0);">Short answer.</strong> NaviBeat for Linux is a <strong>native desktop app</strong>, written in Kotlin with Compose Multiplatform, not a browser tab in a window and not Electron. It draws its own window, remembers where you put it, and answers your <strong>media keys</strong> over MPRIS. It downloads for offline, has a <strong>time-synced lyrics</strong> panel and a pin-on-top <strong>Mini Player</strong>, and it can <strong>sync your library to a Rockbox iPod</strong>, a feature that is a paid add-on on the Mac and free here. It is built for the server behind your <strong>reverse proxy, mTLS, or Tailscale</strong>, not just a plain exposed one.
+      </aside>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px;">
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">01 / Actually native</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">A desktop app, not a web page.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">Written in Kotlin with Compose Multiplatform. Real window management that remembers its size and position, a sidebar, keyboard control, directory browsing, and <strong>MPRIS</strong> so your keyboard's play and skip keys just work. The <strong>Mini Player</strong> stays on top of whatever you are doing.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">02 / Rockbox iPod sync</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">NaviSyncRock: your Navidrome, on a real iPod.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">Plug in a Rockbox iPod or player and send it a song, album, artist, or playlist: <strong>your own server</strong> does the transcoding, album art is re-encoded so old hardware renders it, playlists are written correctly, and plays sync back to Navidrome. On the Mac this is a paid add-on. <strong>On Linux it is free.</strong> <a href="rockbox.html" style="color:var(--accent-hi);">See how it works</a>.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">03 / Audio quality</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">A desktop-grade audio path.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">A <strong>10-band equalizer</strong> (32 Hz to 16 kHz), <strong>ReplayGain</strong> so a shuffle across a mixed library does not swing in loudness, and <strong>crossfade</strong>. A quality badge shows FLAC or the exact bitrate. Send the original file untouched, or ask the server to transcode to a lighter tier.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">04 / Homelab-grade access</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">It reaches the server you actually built.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">Custom HTTP headers for <strong>Cloudflare Access</strong> and <strong>Authelia</strong>, <strong>mTLS client certificates</strong>, and access over <strong>Tailscale</strong>, with no third-party relay in between. Many clients only speak to a plain, directly exposed server. NaviBeat is built for the one behind your proxy.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE SCREENSHOTS -->
+  <section id="features" aria-labelledby="linux-features-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Every screen</p>
+        <h2 id="linux-features-title" class="h2">A native desktop that looks and behaves like one.</h2>
+        <p>Sidebar navigation, keyboard control, a Mini Player, downloads that keep playing when you go offline. The same design as the Apple builds, drawn natively on Linux. Screenshots use a demo library.</p>
+      </div>
+
+      <div class="p-shots">
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-home.webp"
+                 alt="NaviBeat Home on Linux with sidebar and Featured Album hero"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">01 / Home</p>
+            <h3>Sidebar, Featured Album, Quick Play.</h3>
+            <p>The sidebar gives you Home, Artists, Albums, Playlists, Radio and Directories. Home opens on a Featured Album hero with Quick Play, Made for You, and Most Played below. Connect Last.fm or ListenBrainz and Home adds personalized shelves too.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-lyrics.webp"
+                 alt="NaviBeat on Linux showing the Now Playing screen with a time-synced lyrics panel"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">02 / Now Playing &amp; Lyrics</p>
+            <h3>Time-synced lyrics, right beside the art.</h3>
+            <p>Open the lyrics panel next to Now Playing and each line lights up as it is sung. An optional word-by-word karaoke mode uses your server's timing when the track has it. Album art, a quality badge, ratings and full transport controls sit alongside.</p>
+          </div>
+        </article>
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-albums.webp"
+                 alt="NaviBeat Albums grid on Linux with cover art, artist and year, and a now-playing bar"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">03 / Albums</p>
+            <h3>Your whole library at a glance.</h3>
+            <p>An Albums grid with cover art, artist name and release year. Sort by recently added, alphabetically, by artist, or by year. Click any album for the full track list, and keep control from the persistent now-playing bar.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-navisyncrock-sync.webp"
+                 alt="NaviBeat NaviSyncRock sync screen on Linux: choose entire library or selected artists, and a transcode format and bitrate"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">04 / NaviSyncRock</p>
+            <h3>Sync to a Rockbox player, free on Linux.</h3>
+            <p>Pick your whole library or just some artists, albums and playlists, choose a format and bitrate, and NaviBeat transcodes on your server and copies it to a connected Rockbox iPod or player. Set it up from Settings, or just plug the player in. It is a paid add-on on the Mac, and free here.</p>
+          </div>
+        </article>
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-artists.webp"
+                 alt="NaviBeat Artists view on Linux with circular artist images"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">05 / Artists</p>
+            <h3>Every artist, with their art.</h3>
+            <p>Browse artists as circular tiles with their images and album counts. Open one for the full discography. Connect Last.fm for richer artist pages and Listening Stats.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOT STRIP -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">All screenshots</p>
+        <h2 id="every-screen" class="h2">Every screen in one place.</h2>
+      </div>
+    </div>
+    <div class="strip reveal">
+      <div class="strip__track">
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-home.webp" alt="NaviBeat Home on Linux" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Home</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-now-playing.webp" alt="NaviBeat Now Playing on Linux" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Now Playing</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-lyrics.webp" alt="NaviBeat time-synced lyrics on Linux" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Lyrics</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-albums.webp" alt="NaviBeat Albums grid on Linux" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Albums</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-artists.webp" alt="NaviBeat Artists on Linux" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Artists</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-navisyncrock.webp" alt="NaviBeat NaviSyncRock device page on Linux" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">NaviSyncRock</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-navisyncrock-sync.webp" alt="NaviBeat NaviSyncRock sync options on Linux" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Rockbox sync</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALL -->
+  <section id="install" aria-labelledby="linux-install-title">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="eyebrow eyebrow--accent">Get it running</p>
+        <h2 id="linux-install-title" class="h2">Download, make it executable, run.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:18px; align-items:start;">
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">Three steps</h3>
+          <ol style="margin:0; padding-left:18px; color:var(--text-1); font-size:15px; line-height:1.8;">
+            <li>Download the AppImage for your machine:<br>
+              <a href="https://github.com/nenadjokic/navibeat-linux/releases/latest/download/NaviBeat-linux-x86_64.AppImage" style="color:var(--accent-hi);">Intel or AMD (x86_64)</a>
+              &nbsp;&middot;&nbsp;
+              <a href="https://github.com/nenadjokic/navibeat-linux/releases/latest/download/NaviBeat-linux-aarch64.AppImage" style="color:var(--accent-hi);">ARM64 (Raspberry Pi, Asahi)</a>
+            </li>
+            <li>Make it executable:<br><code>chmod +x NaviBeat-linux-*.AppImage</code></li>
+            <li>Run it:<br><code>./NaviBeat-linux-*.AppImage</code></li>
+          </ol>
+          <p style="margin:16px 0 0; color:var(--text-2); font-size:13px; line-height:1.6;">The AppImage carries its own Java runtime, so you do not need to install Java. Runs on 64-bit Intel and AMD, and on ARM64 like a Raspberry Pi or Asahi Linux.</p>
+          <p style="margin:12px 0 0; color:var(--text-2); font-size:13px; line-height:1.6;">An AppImage does not really install, it is a single file you run. The natural home for it is a <code>~/Applications</code> folder. For a menu entry and icon, use <a href="https://github.com/TheAssassin/AppImageLauncher" target="_blank" rel="noopener" style="color:var(--accent-hi);">AppImageLauncher</a>.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">What you need</h3>
+          <ul style="margin:0; padding-left:18px; color:var(--text-1); font-size:15px; line-height:1.8;">
+            <li><strong>VLC installed.</strong> NaviBeat plays through your system's libVLC.<br><code>sudo dnf install vlc</code> &middot; <code>sudo apt install vlc</code></li>
+            <li><strong>FUSE</strong> to double-click the AppImage (<code>sudo apt install libfuse2</code>), or run it with <code>--appimage-extract-and-run</code>.</li>
+            <li>A <strong>Navidrome or OpenSubsonic server</strong> to connect to. NaviBeat is a client and comes with no music of its own.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE / DOWNLOAD -->
+  <section class="price" id="download" aria-labelledby="linux-price-title">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Free, in beta</p>
+      <p class="price__h" id="linux-price-title">Free to download. Free to keep.</p>
+      <div class="price__num">Free</div>
+      <p class="price__sub">Open beta on GitHub. The Apple builds are a one-time $5.99 Universal Purchase.</p>
+      <div class="price__ctas">
+        <a class="btn btn--primary" href="https://github.com/nenadjokic/navibeat-linux/releases/latest/download/NaviBeat-linux-x86_64.AppImage">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1zM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/>
+          </svg>
+          Download the AppImage
+        </a>
+        <a class="link-quiet" href="https://github.com/nenadjokic/navibeat-linux" target="_blank" rel="noopener">All releases on GitHub &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="linux-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="linux-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How much does NaviBeat for Linux cost?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">It is free. The Linux build is in open beta and free to download from GitHub. The Apple builds (Mac, iPhone, iPad, Apple TV, Apple Watch) are a one-time $5.99 Universal Purchase on the App Store.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Is NaviBeat for Linux stable?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">It is in beta. It is built and tested on real hardware, but it is early and you may encounter bugs. Please report anything that breaks on the <a href="https://github.com/nenadjokic/navibeat-linux/issues/new/choose" target="_blank" rel="noopener" style="color:var(--accent-hi);">GitHub issues page</a> so it can be fixed.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How do I install it?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Download the AppImage from GitHub, make it executable with <code>chmod +x</code>, and run it. It carries its own Java runtime, so you do not need to install Java. You do need VLC installed, because NaviBeat plays audio through your system's libVLC.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What music server does it need?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic-compatible server, including Airsonic-Advanced and Gonic. It does not host or stream any music of its own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="index.html">
+          <img src="assets/icon.svg" alt="NaviBeat">
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native player for Navidrome and Subsonic, across the Apple ecosystem and Linux. Built in Belgrade.</p>
+        <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Platforms</h3>
+        <ul>
+          <li><a href="appletv.html">Apple TV</a></li>
+          <li><a href="macos.html">Mac</a></li>
+          <li><a href="linux.html">Linux</a></li>
+          <li><a href="rockbox.html">Rockbox</a></li>
+          <li><a href="iphone.html">iPhone</a></li>
+          <li><a href="ipad.html">iPad</a></li>
+          <li><a href="applewatch.html">Apple Watch</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support.html">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://github.com/nenadjokic/navibeat-linux/issues/new/choose" target="_blank" rel="noopener">Linux bug reports</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="support.html">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>Linux 0.9.33 &middot; Open beta</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { sio.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { el.classList.add('is-in'); });
+    }
+  })();
+</script>
+
+  <script defer src="lightbox.js"></script>
+</body>
+</html>
