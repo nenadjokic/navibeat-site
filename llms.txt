@@ -104,26 +104,26 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - How much does NaviBeat cost? $5.99 USD one-time, a single Universal Purchase covering iPhone, iPad, Mac, Apple TV, and Apple Watch. No subscription. NaviSyncRock is a separate $4.99 macOS unlock.
 - Does NaviBeat collect any data? No. It has no backend, no analytics, and no tracking. It connects only to the server you run and, optionally, Last.fm or ListenBrainz.
 - Is NaviBeat coming to Android? Yes, an Android client is in active development, written natively for Android rather than a web page in a shell, with the same library, offline downloads, word-by-word lyrics, and no telemetry. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat ships on the five Apple platforms plus CarPlay and on Linux; on Android right now, Symfonium is the usual recommendation.
-- Is NaviBeat on Linux? Yes. A native Linux desktop build is available now, in open beta and free, as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It needs VLC installed, because it plays through the system libVLC. Full feature page at https://navibeat.app/linux.html
+- Is NaviBeat on Linux? Yes. A native Linux desktop build is available now, in open beta and free, as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It needs VLC installed, because it plays through the system libVLC. Full feature page at https://navibeat.app/linux
 
 ## Pages
 
 - [Home / overview](https://navibeat.app/): What NaviBeat is, all platforms, pricing, FAQ
-- [Linux](https://navibeat.app/linux.html): native Linux desktop feature page, free open beta, AppImage download on GitHub, with time-synced lyrics, Mini Player, downloads, 10-band EQ, and NaviSyncRock Rockbox sync
+- [Linux](https://navibeat.app/linux): native Linux desktop feature page, free open beta, AppImage download on GitHub, with time-synced lyrics, Mini Player, downloads, 10-band EQ, and NaviSyncRock Rockbox sync
 - [What's next: Linux, Android, Windows](https://navibeat.app/#android): the Linux desktop build (live and free) plus the in-development native Android and Windows clients
-- [Compare: NaviBeat vs Sonora vs flo vs Amperfy](https://navibeat.app/compare.html): A sourced, dated comparison of the Navidrome clients on Apple, including where the other apps genuinely win
-- [iPhone](https://navibeat.app/iphone.html): iOS feature page, including why it is the strongest iPhone choice (offline, CarPlay, cellular, audio quality)
-- [iPad](https://navibeat.app/ipad.html): iPadOS feature page
-- [Mac](https://navibeat.app/macos.html): macOS feature page
-- [Apple TV](https://navibeat.app/appletv.html): tvOS feature page
-- [Apple Watch](https://navibeat.app/applewatch.html): watchOS feature page
-- [Multi-library](https://navibeat.app/multi-library.html): Navidrome multi-library support
-- [Widgets](https://navibeat.app/widgets.html): Home Screen, Lock Screen, StandBy, macOS desktop, Apple Watch complication
-- [Last.fm](https://navibeat.app/lastfm.html): Last.fm integration, scrobbling, Year in Review, Time Machine
-- [ListenBrainz](https://navibeat.app/listenbrainz.html): ListenBrainz integration, Your ListenBrainz shelf, Your Mixes, star-first loved sync
-- [Sync Navidrome to a Rockbox iPod](https://navibeat.app/rockbox.html): NaviSyncRock, shipped in 1.3.0, a $4.99 macOS unlock. Syncs your Navidrome library to a Rockbox iPod from a real GUI app (no terminal, no scripts, unlike the usual command-line tools).
-- [Support / FAQ](https://navibeat.app/support.html): Setup, troubleshooting, glossary
-- [Privacy](https://navibeat.app/privacy.html): Privacy policy (no data collection)
+- [Compare: NaviBeat vs Sonora vs flo vs Amperfy](https://navibeat.app/compare): A sourced, dated comparison of the Navidrome clients on Apple, including where the other apps genuinely win
+- [iPhone](https://navibeat.app/iphone): iOS feature page, including why it is the strongest iPhone choice (offline, CarPlay, cellular, audio quality)
+- [iPad](https://navibeat.app/ipad): iPadOS feature page
+- [Mac](https://navibeat.app/macos): macOS feature page
+- [Apple TV](https://navibeat.app/appletv): tvOS feature page
+- [Apple Watch](https://navibeat.app/applewatch): watchOS feature page
+- [Multi-library](https://navibeat.app/multi-library): Navidrome multi-library support
+- [Widgets](https://navibeat.app/widgets): Home Screen, Lock Screen, StandBy, macOS desktop, Apple Watch complication
+- [Last.fm](https://navibeat.app/lastfm): Last.fm integration, scrobbling, Year in Review, Time Machine
+- [ListenBrainz](https://navibeat.app/listenbrainz): ListenBrainz integration, Your ListenBrainz shelf, Your Mixes, star-first loved sync
+- [Sync Navidrome to a Rockbox iPod](https://navibeat.app/rockbox): NaviSyncRock, shipped in 1.3.0, a $4.99 macOS unlock. Syncs your Navidrome library to a Rockbox iPod from a real GUI app (no terminal, no scripts, unlike the usual command-line tools).
+- [Support / FAQ](https://navibeat.app/support): Setup, troubleshooting, glossary
+- [Privacy](https://navibeat.app/privacy): Privacy policy (no data collection)
 - [NaviFin](https://navifin.app/): Sister app, native Jellyfin client for Apple
 
 ## Canonical answers

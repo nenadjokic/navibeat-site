@@ -11,14 +11,14 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="keywords" content="Navidrome multi-library, Navidrome multiple music folders, Subsonic multi library client, OpenSubsonic music folders, getMusicFolders, musicFolderId, iOS Navidrome client, macOS Navidrome client, Apple TV Navidrome client, multi-library music app">
 
-  <link rel="canonical" href="https://navibeat.app/multi-library.html">
-  <link rel="alternate" hreflang="en" href="https://navibeat.app/multi-library.html">
-  <link rel="alternate" hreflang="x-default" href="https://navibeat.app/multi-library.html">
+  <link rel="canonical" href="https://navibeat.app/multi-library">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/multi-library">
+  <link rel="alternate" hreflang="x-default" href="https://navibeat.app/multi-library">
 
   <meta property="og:title" content="Multi-Library Support for Navidrome and Subsonic | NaviBeat">
   <meta property="og:description" content="Run multiple Navidrome libraries side by side and switch between them on every Apple device. Picker on iPhone, iPad, Mac, Apple TV. Server-side IN-filter, no client merge. Per-device persistence.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://navibeat.app/multi-library.html">
+  <meta property="og:url" content="https://navibeat.app/multi-library">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
   <meta property="og:image:alt" content="NaviBeat native Mac home screen, a privacy-first Navidrome client.">
   <meta property="og:locale" content="en_US">
@@ -69,11 +69,11 @@
       },
       {
         "@type": "TechArticle",
-        "@id": "https://navibeat.app/multi-library.html#article",
+        "@id": "https://navibeat.app/multi-library#article",
         "headline": "Multi-Library Support for Navidrome and Subsonic",
         "name": "Multi-Library Support for Navidrome and Subsonic",
         "description": "How NaviBeat implements Navidrome's multi-library feature across iPhone, iPad, Mac, Apple TV, and Apple Watch with a server-side musicFolderId filter, getMusicFolders permissions, per-device persistence, and one-tap All / single / subset switching.",
-        "url": "https://navibeat.app/multi-library.html",
+        "url": "https://navibeat.app/multi-library",
         "datePublished": "2026-05-26",
         "dateModified": "2026-07-12",
         "inLanguage": "en",
@@ -96,15 +96,15 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://navibeat.app/multi-library.html#breadcrumbs",
+        "@id": "https://navibeat.app/multi-library#breadcrumbs",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Multi-Library Support", "item": "https://navibeat.app/multi-library.html" }
+          { "@type": "ListItem", "position": 2, "name": "Multi-Library Support", "item": "https://navibeat.app/multi-library" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://navibeat.app/multi-library.html#faq",
+        "@id": "https://navibeat.app/multi-library#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -262,7 +262,7 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav__inner">
-    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
         <img src="assets/icon.svg" alt="NaviBeat">
         <span class="nav__pulse"></span>
@@ -270,12 +270,12 @@
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
     </a>
     <nav class="nav__links" id="primary-nav" aria-label="Primary">
-      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
-      <a href="multi-library.html" class="nav__link nav__link-hide-sm" aria-current="page">Multi-Library</a>
-      <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
-      <a href="listenbrainz.html" class="nav__link nav__link-hide-sm">ListenBrainz</a>
-      <a href="rockbox.html" class="nav__link nav__link-hide-sm">Rockbox</a>
-      <a href="support.html" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="multi-library" class="nav__link nav__link-hide-sm" aria-current="page">Multi-Library</a>
+      <a href="lastfm" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="listenbrainz" class="nav__link nav__link-hide-sm">ListenBrainz</a>
+      <a href="rockbox" class="nav__link nav__link-hide-sm">Rockbox</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
       <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
@@ -291,7 +291,7 @@
   <section class="ml-hero">
     <div class="wrap ml-hero__inner">
       <nav class="crumb" aria-label="Breadcrumb">
-        <a href="index.html">NaviBeat</a>
+        <a href="/">NaviBeat</a>
         <span class="crumb__sep" aria-hidden="true">/</span>
         <span class="crumb__current">Multi-Library</span>
       </nav>
@@ -429,7 +429,7 @@
 
       <details class="ml-faq__item">
         <summary>Does the Last.fm or ListenBrainz integration respect the library selection?</summary>
-        <p>Listener counts and similar-tracks lookups are driven by individual track metadata, so they always work regardless of library scope. The <a href="lastfm.html">Last.fm and ListenBrainz features</a> on shelves use whatever you have in front of you: pick All Libraries and the shelf samples from everything; pick one and the shelf draws from that subset.</p>
+        <p>Listener counts and similar-tracks lookups are driven by individual track metadata, so they always work regardless of library scope. The <a href="lastfm">Last.fm and ListenBrainz features</a> on shelves use whatever you have in front of you: pick All Libraries and the shelf samples from everything; pick one and the shelf draws from that subset.</p>
       </details>
 
       <details class="ml-faq__item">
@@ -458,7 +458,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="footer__brand" href="index.html">
+        <a class="footer__brand" href="/">
           <img src="assets/icon.svg" alt="NaviBeat">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
@@ -484,35 +484,35 @@
       <div>
         <h3>Product</h3>
         <ul>
-          <li><a href="index.html#features">Features</a></li>
-          <li><a href="multi-library.html">Multi-Library</a></li>
-          <li><a href="widgets.html">Widgets</a></li>
-          <li><a href="lastfm.html">Last.fm</a></li>
-          <li><a href="listenbrainz.html">ListenBrainz</a></li>
-          <li><a href="rockbox.html">Rockbox</a></li>
-          <li><a href="appletv.html">Apple TV</a></li>
-          <li><a href="macos.html">Mac</a></li>
-          <li><a href="linux.html">Linux</a></li>
-          <li><a href="iphone.html">iPhone</a></li>
-          <li><a href="ipad.html">iPad</a></li>
-          <li><a href="applewatch.html">Apple Watch</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="multi-library">Multi-Library</a></li>
+          <li><a href="widgets">Widgets</a></li>
+          <li><a href="lastfm">Last.fm</a></li>
+          <li><a href="listenbrainz">ListenBrainz</a></li>
+          <li><a href="rockbox">Rockbox</a></li>
+          <li><a href="appletv">Apple TV</a></li>
+          <li><a href="macos">Mac</a></li>
+          <li><a href="linux">Linux</a></li>
+          <li><a href="iphone">iPhone</a></li>
+          <li><a href="ipad">iPad</a></li>
+          <li><a href="applewatch">Apple Watch</a></li>
           <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </div>
       <div>
         <h3>Support</h3>
         <ul>
-          <li><a href="support.html">Help center</a></li>
+          <li><a href="support">Help center</a></li>
           <li><a href="mailto:support@navibeat.app">Email us</a></li>
           <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
-          <li><a href="beta.html">Beta program</a></li>
+          <li><a href="beta">Beta program</a></li>
         </ul>
       </div>
       <div>
         <h3>Legal</h3>
         <ul>
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="support.html">Terms &amp; FAQ</a></li>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="support">Terms &amp; FAQ</a></li>
         </ul>
       </div>
     </div>

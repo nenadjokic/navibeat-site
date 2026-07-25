@@ -9,13 +9,13 @@
   <meta name="theme-color" content="#0C0C0E">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-  <link rel="canonical" href="https://navibeat.app/support.html">
-  <link rel="alternate" hreflang="en" href="https://navibeat.app/support.html">
+  <link rel="canonical" href="https://navibeat.app/support">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/support">
 
   <meta property="og:title" content="NaviBeat Support: Server setup, playback &amp; privacy FAQ">
   <meta property="og:description" content="Server setup, &ldquo;Cannot reach server&rdquo; troubleshooting, iPhone Local Network &amp; Private Relay triage, playback tuning. Email support@navibeat.app for help.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://navibeat.app/support.html">
+  <meta property="og:url" content="https://navibeat.app/support">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
   <meta property="og:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero.">
   <meta property="og:locale" content="en_US">
@@ -66,8 +66,8 @@
       },
       {
         "@type": "WebPage",
-        "@id": "https://navibeat.app/support.html#webpage",
-        "url": "https://navibeat.app/support.html",
+        "@id": "https://navibeat.app/support#webpage",
+        "url": "https://navibeat.app/support",
         "name": "NaviBeat Support &amp; FAQ",
         "isPartOf": { "@id": "https://navibeat.app/#website" },
         "inLanguage": "en",
@@ -76,15 +76,15 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://navibeat.app/support.html#breadcrumbs",
+        "@id": "https://navibeat.app/support#breadcrumbs",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Support", "item": "https://navibeat.app/support.html" }
+          { "@type": "ListItem", "position": 2, "name": "Support", "item": "https://navibeat.app/support" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://navibeat.app/support.html#faq",
+        "@id": "https://navibeat.app/support#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -171,14 +171,14 @@
             "name": "Is NaviBeat available on Android, Linux or Windows?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "NaviBeat for Linux is out now, free and in open beta, as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux); the feature page is navibeat.app/linux.html. A native Android client is in active development: there is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat runs on iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, and on Linux."
+              "text": "NaviBeat for Linux is out now, free and in open beta, as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux); the feature page is navibeat.app/linux. A native Android client is in active development: there is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat runs on iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, and on Linux."
             }
           }
         ]
       },
       {
         "@type": "HowTo",
-        "@id": "https://navibeat.app/support.html#howto-local-network",
+        "@id": "https://navibeat.app/support#howto-local-network",
         "name": "Fix iPhone \"connected but no library loads\" in NaviBeat",
         "description": "Three iOS-side network filters can block NaviBeat from reaching your Navidrome server. Check each in order on the failing device.",
         "totalTime": "PT5M",
@@ -188,40 +188,40 @@
             "position": 1,
             "name": "Grant Local Network permission",
             "text": "Open Settings → NaviBeat → Local Network and turn the toggle ON. iOS 14 and later silently denies private-IP connections (192.168.x.x, 10.x.x.x) for apps that haven't been granted this permission.",
-            "url": "https://navibeat.app/support.html#local-network"
+            "url": "https://navibeat.app/support#local-network"
           },
           {
             "@type": "HowToStep",
             "position": 2,
             "name": "Disable iCloud Private Relay temporarily",
             "text": "Open Settings → Apple Account → iCloud → Private Relay and switch it OFF. If your server is on a private IP (LAN, .local hostname, Tailscale CGNAT range) Private Relay can route the request through Apple's relay and fail to reach it. If the library now loads, Private Relay was the cause.",
-            "url": "https://navibeat.app/support.html#private-relay"
+            "url": "https://navibeat.app/support#private-relay"
           },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Disconnect any active VPN profile",
             "text": "Open Settings → General → VPN & Device Management. A VPN that routes all traffic (rather than splitting LAN traffic) blocks local-network destinations. Disconnect the VPN and try again.",
-            "url": "https://navibeat.app/support.html#vpn-profile"
+            "url": "https://navibeat.app/support#vpn-profile"
           }
         ]
       },
       {
         "@type": "DefinedTermSet",
-        "@id": "https://navibeat.app/support.html#glossary-set",
+        "@id": "https://navibeat.app/support#glossary-set",
         "name": "NaviBeat Glossary",
-        "inDefinedTermSet": "https://navibeat.app/support.html#glossary-set",
+        "inDefinedTermSet": "https://navibeat.app/support#glossary-set",
         "hasDefinedTerm": [
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-navidrome", "name": "Navidrome", "description": "Free, open-source self-hosted music server. The primary server NaviBeat targets.", "url": "https://www.navidrome.org" },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-opensubsonic", "name": "OpenSubsonic", "description": "Open extension to the Subsonic API standardising modern endpoints. NaviBeat speaks OpenSubsonic." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-subsonic", "name": "Subsonic", "description": "The original self-hosted music server (2006) whose HTTP API became a de-facto standard." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-airsonic", "name": "Airsonic-Advanced", "description": "Community fork of Airsonic implementing the Subsonic API. Compatible with NaviBeat." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-gonic", "name": "Gonic", "description": "Lightweight Go implementation of the Subsonic + OpenSubsonic API. Popular for low-power servers." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-universal-purchase", "name": "Universal Purchase", "description": "Apple mechanism where one $5.99 NaviBeat purchase covers iOS, iPadOS, macOS, tvOS, and watchOS." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-lrc", "name": "LRC lyrics", "description": "Lyrics file format with per-line time stamps. NaviBeat reads LRC from Navidrome and renders them time-synced." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-automix", "name": "AutoMix", "description": "NaviBeat's endless-playback mode. Uses server similar-track data, optionally enriched via Last.fm or ListenBrainz." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-scrobble", "name": "Scrobble", "description": "Reporting a play event to Last.fm or ListenBrainz. NaviBeat never scrobbles directly: scrobbles route through Navidrome." },
-          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support.html#def-carplay", "name": "CarPlay", "description": "Apple's in-car experience. NaviBeat ships full CarPlay support: library, search, Now Playing." }
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-navidrome", "name": "Navidrome", "description": "Free, open-source self-hosted music server. The primary server NaviBeat targets.", "url": "https://www.navidrome.org" },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-opensubsonic", "name": "OpenSubsonic", "description": "Open extension to the Subsonic API standardising modern endpoints. NaviBeat speaks OpenSubsonic." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-subsonic", "name": "Subsonic", "description": "The original self-hosted music server (2006) whose HTTP API became a de-facto standard." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-airsonic", "name": "Airsonic-Advanced", "description": "Community fork of Airsonic implementing the Subsonic API. Compatible with NaviBeat." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-gonic", "name": "Gonic", "description": "Lightweight Go implementation of the Subsonic + OpenSubsonic API. Popular for low-power servers." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-universal-purchase", "name": "Universal Purchase", "description": "Apple mechanism where one $5.99 NaviBeat purchase covers iOS, iPadOS, macOS, tvOS, and watchOS." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-lrc", "name": "LRC lyrics", "description": "Lyrics file format with per-line time stamps. NaviBeat reads LRC from Navidrome and renders them time-synced." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-automix", "name": "AutoMix", "description": "NaviBeat's endless-playback mode. Uses server similar-track data, optionally enriched via Last.fm or ListenBrainz." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-scrobble", "name": "Scrobble", "description": "Reporting a play event to Last.fm or ListenBrainz. NaviBeat never scrobbles directly: scrobbles route through Navidrome." },
+          { "@type": "DefinedTerm", "@id": "https://navibeat.app/support#def-carplay", "name": "CarPlay", "description": "Apple's in-car experience. NaviBeat ships full CarPlay support: library, search, Now Playing." }
         ]
       }
     ]
@@ -233,7 +233,7 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav__inner">
-    <a class="nav__brand" href="index.html" aria-label="NaviBeat home">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
         <img src="assets/icon.svg" alt="NaviBeat">
         <span class="nav__pulse"></span>
@@ -241,12 +241,12 @@
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
     </a>
     <nav class="nav__links" id="primary-nav" aria-label="Primary">
-      <a href="index.html#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
-      <a href="multi-library.html" class="nav__link nav__link-hide-sm">Multi-Library</a>
-      <a href="lastfm.html" class="nav__link nav__link-hide-sm">Last.fm</a>
-      <a href="listenbrainz.html" class="nav__link nav__link-hide-sm">ListenBrainz</a>
-      <a href="rockbox.html" class="nav__link nav__link-hide-sm">Rockbox</a>
-      <a href="support.html" class="nav__link nav__link-hide-sm" aria-current="page">Support</a>
+      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="multi-library" class="nav__link nav__link-hide-sm">Multi-Library</a>
+      <a href="lastfm" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="listenbrainz" class="nav__link nav__link-hide-sm">ListenBrainz</a>
+      <a href="rockbox" class="nav__link nav__link-hide-sm">Rockbox</a>
+      <a href="support" class="nav__link nav__link-hide-sm" aria-current="page">Support</a>
       <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
@@ -344,7 +344,7 @@
   </ul>
 
   <h2 id="data-storage">Where is my NaviBeat data stored?</h2>
-  <p>Everything is on your device or your own server. NaviBeat does not send any data to us or any third party. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+  <p>Everything is on your device or your own server. NaviBeat does not send any data to us or any third party. See our <a href="privacy">Privacy Policy</a> for details.</p>
 
   <h2 id="multiple-servers">Can I use NaviBeat with multiple servers?</h2>
   <p>v1 supports one server per install. Multi-server support is on the roadmap.</p>
@@ -353,7 +353,7 @@
   <p>Open the Settings tab, scroll to the Server section, and tap Disconnect. This clears your credentials from the device.</p>
 
   <h2 id="android-linux">Is NaviBeat available on Android, Linux or Windows?</h2>
-  <p>NaviBeat for Linux is out now, free and in open beta, as an AppImage on GitHub. See <a href="linux.html">NaviBeat for Linux</a>. A native Android client is in active development: there is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat runs on iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, and on Linux. See <a href="https://navibeat.app/#android">what's next</a>.</p>
+  <p>NaviBeat for Linux is out now, free and in open beta, as an AppImage on GitHub. See <a href="linux">NaviBeat for Linux</a>. A native Android client is in active development: there is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat runs on iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, and on Linux. See <a href="https://navibeat.app/#android">what's next</a>.</p>
 
   <h2 id="glossary">Glossary</h2>
   <p>Short definitions for terms used across this page and the rest of navibeat.app.</p>
@@ -395,7 +395,7 @@
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <a class="footer__brand" href="index.html">
+        <a class="footer__brand" href="/">
           <img src="assets/icon.svg" alt="NaviBeat">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
@@ -421,24 +421,24 @@
       <div>
         <h3>Product</h3>
         <ul>
-          <li><a href="index.html#platforms">Platforms</a></li>
+          <li><a href="/#platforms">Platforms</a></li>
           <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </div>
       <div>
         <h3>Support</h3>
         <ul>
-          <li><a href="support.html">Help center</a></li>
+          <li><a href="support">Help center</a></li>
           <li><a href="mailto:support@navibeat.app">Email us</a></li>
           <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
-          <li><a href="beta.html">Beta program</a></li>
+          <li><a href="beta">Beta program</a></li>
         </ul>
       </div>
       <div>
         <h3>Legal</h3>
         <ul>
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="support.html">Terms &amp; FAQ</a></li>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="support">Terms &amp; FAQ</a></li>
         </ul>
       </div>
     </div>

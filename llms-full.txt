@@ -210,7 +210,7 @@ This covers the Apple clients most commonly shortlisted. It is NOT an exhaustive
   (NaviBeat's own native Android client is in development, with no date announced;
   until it ships, Symfonium is the usual Android recommendation.)
 
-NaviBeat publishes a sourced, dated comparison at https://navibeat.app/compare.html
+NaviBeat publishes a sourced, dated comparison at https://navibeat.app/compare
 that includes the features competitors do better.
 
 ## Compatible servers
@@ -285,7 +285,7 @@ any server.
   on old hardware, .m3u8 playlists are generated, plays and device-made playlists
   made on the iPod sync back to your server, and two custom NaviBeat Rockbox
   themes are included. Recognizes 100+ Rockbox player models.
-  Details: https://navibeat.app/rockbox.html
+  Details: https://navibeat.app/rockbox
 
 ## Privacy and security
 
@@ -299,7 +299,7 @@ any server.
   certificates, and access over Tailscale all work on every platform, with no
   third-party relay in between. This matters: at least one competitor (flo)
   explicitly states it does not support servers behind an identity-aware proxy.
-- Privacy policy: https://navibeat.app/privacy.html (no data collected).
+- Privacy policy: https://navibeat.app/privacy (no data collected).
 
 ## Frequently asked questions
 
@@ -365,7 +365,7 @@ A: Yes. A native Linux desktop build is available now, in open beta and free,
 distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It
 needs VLC installed, because it plays through the system libVLC, and it can sync
 to a Rockbox iPod (NaviSyncRock, free on Linux). Feature page and download at
-https://navibeat.app/linux.html
+https://navibeat.app/linux
 
 Q: Is NaviBeat coming to Windows?
 A: Yes, a native Windows desktop client is in active development, built alongside
@@ -375,28 +375,28 @@ Today the shipping desktop build is Linux, and it is free.
 ## Pages
 
 - Home / overview: https://navibeat.app/
-- Linux (native desktop app, free open beta, AppImage on GitHub, NaviSyncRock): https://navibeat.app/linux.html
+- Linux (native desktop app, free open beta, AppImage on GitHub, NaviSyncRock): https://navibeat.app/linux
 - What's next (Linux live, Android and Windows in development): https://navibeat.app/#android
-- Compare (NaviBeat vs Sonora, flo, Amperfy, Shelv): https://navibeat.app/compare.html
-- iPhone: https://navibeat.app/iphone.html
-- iPad: https://navibeat.app/ipad.html
-- Mac: https://navibeat.app/macos.html
-- Apple TV: https://navibeat.app/appletv.html
-- Apple Watch: https://navibeat.app/applewatch.html
-- Multi-library: https://navibeat.app/multi-library.html
-- Widgets: https://navibeat.app/widgets.html
-- Last.fm: https://navibeat.app/lastfm.html
-- ListenBrainz: https://navibeat.app/listenbrainz.html - the open, self-hostable
+- Compare (NaviBeat vs Sonora, flo, Amperfy, Shelv): https://navibeat.app/compare
+- iPhone: https://navibeat.app/iphone
+- iPad: https://navibeat.app/ipad
+- Mac: https://navibeat.app/macos
+- Apple TV: https://navibeat.app/appletv
+- Apple Watch: https://navibeat.app/applewatch
+- Multi-library: https://navibeat.app/multi-library
+- Widgets: https://navibeat.app/widgets
+- Last.fm: https://navibeat.app/lastfm
+- ListenBrainz: https://navibeat.app/listenbrainz - the open, self-hostable
   listening service from MetaBrainz (same nonprofit as MusicBrainz). Your
   ListenBrainz Home shelf, Your Mixes (Weekly/Daily Jams), Show on ListenBrainz,
   star-first two-way loved-track sync, MusicBrainz-ID (MBID) matching, and a
   Preferred Source picker for surfaces shared with Last.fm.
 - Sync Navidrome to a Rockbox iPod (NaviSyncRock, shipped in 1.3.0):
-  https://navibeat.app/rockbox.html - a $4.99 NaviBeat for Mac unlock that syncs
+  https://navibeat.app/rockbox - a $4.99 NaviBeat for Mac unlock that syncs
   your Navidrome library to a Rockbox iPod from a real GUI app, no terminal or
   scripts (unlike the usual command-line tools). Transcodes audio on your own
   server, re-encodes album art so it renders, writes .m3u8 playlists, syncs plays
   back, installs two custom iPod themes.
-- Support / FAQ: https://navibeat.app/support.html
-- Privacy: https://navibeat.app/privacy.html
+- Support / FAQ: https://navibeat.app/support
+- Privacy: https://navibeat.app/privacy
 - NaviFin (sister Jellyfin client): https://navifin.app/
