@@ -565,7 +565,11 @@ section { padding-block: var(--rhythm); }
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.5;
-  will-change: opacity, transform;
+  /* will-change removed 2026-07-26. Three of these, each 840px and blurred by
+     80px, so each backing store is roughly 1160px square before device pixels
+     double it. will-change pins that for the life of the page whether or not the
+     hero is on screen. The keyframes are opacity + transform, which the compositor
+     handles without the hint, so this bought nothing and cost a permanent layer. */
 }
 .hero__ambient-glow--a {
   top: -15%; left: 25%;
@@ -744,9 +748,15 @@ section { padding-block: var(--rhythm); }
   pointer-events: none;
   animation: lineupGlow 7s var(--ease) infinite;
 }
+/* Animating a blur RADIUS re-rasterizes the whole layer every single frame, and
+   this one never stops, on or off screen. Lighthouse flagged it by name:
+   "Filter-related property may move pixels", the only non-composited animation
+   here that touches a large surface. The blur stays, it just stays STILL at 52px;
+   opacity and scale carry the same breathing effect and both are free.
+   hue-rotate dropped with it: at these alphas the 5deg shift was not visible. */
 @keyframes lineupGlow {
-  0%, 100% { opacity: 0.88; filter: blur(52px) hue-rotate(0deg); transform: scale(1); }
-  50%       { opacity: 1;   filter: blur(66px) hue-rotate(5deg); transform: scale(1.03); }
+  0%, 100% { opacity: 0.88; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.03); }
 }
 
 .lineup__floor {
@@ -767,11 +777,15 @@ section { padding-block: var(--rhythm); }
   transform: translate3d(0, 28px, 0);
   animation: deviceIn 1s var(--ease-spring) forwards;
   animation-delay: var(--stagger, 0ms);
-  will-change: opacity, transform;
+  /* will-change removed 2026-07-26. deviceIn is a one-shot entrance that ends
+     inside the first two seconds, but the hint kept five layers promoted forever,
+     and these are the biggest bitmaps on the page (mac-home alone is 2880x1800).
+     Stacked drop-shadows make each layer larger still, since the shadow extent
+     grows the bounding box. Two shadows carry the depth; the third was a 10%-alpha
+     amber tint under an image that already sits on an amber glow. */
   filter:
     drop-shadow(0 52px 96px rgba(0, 0, 0, 0.68))
-    drop-shadow(0 16px 36px rgba(0, 0, 0, 0.52))
-    drop-shadow(0 4px 18px rgba(244, 123, 32, 0.10));
+    drop-shadow(0 16px 36px rgba(0, 0, 0, 0.52));
 }
 
 @keyframes deviceIn {
@@ -1859,7 +1873,13 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   transition:
     opacity 0.7s cubic-bezier(0.2, 0.6, 0.2, 1),
     transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
-  will-change: opacity, transform;
+  /* will-change removed 2026-07-26, and this was the worst one by count. The
+     selector matches 15 .reveal elements plus every child of 10 .reveal-stagger
+     blocks, so roughly fifty-five elements each asked the compositor for its own
+     permanent layer, for a 0.7s entrance that runs once and never again.
+     translate3d already gets these onto the fast path during the transition;
+     will-change only pre-warms it, and pre-warming fifty-five layers for the
+     whole session is what starves the rasteriser later, further down the page. */
 }
 
 .reveal-ready .reveal.is-in,
@@ -2387,9 +2407,14 @@ a.proofbar__item:hover { color: var(--accent-hi); }
     radial-gradient(circle, transparent 38%, rgba(244, 123, 32,.05) 38.4%, transparent 39%),
     radial-gradient(circle, transparent 50%, rgba(244, 123, 32,.04) 50.4%, transparent 51%),
     radial-gradient(circle, transparent 62%, rgba(244, 123, 32,.03) 62.4%, transparent 63%);
-  animation: vinylSpin 220s linear infinite;
+  /* vinylSpin removed 2026-07-26, and nothing about this changes visually.
+     The element is a 1400px circle (border-radius:50%) filled with three
+     radial-gradient rings centred on itself. That is rotationally symmetric, so
+     spinning it about its own centre draws the identical image in every frame.
+     What it did cost was real: a permanently promoted layer whose bounding box a
+     rotation widens to ~1980px square, sitting directly behind the sticky stage
+     Nenad photographed as black. The rings stay exactly as they were. */
 }
-@keyframes vinylSpin { to { transform: translate(-50%,-50%) rotate(360deg); } }
 
 /* --- Progress rail --- */
 .theater__rail {
@@ -2463,15 +2488,30 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   border-radius: 4px; color: var(--text-1); font-family: var(--font-mono); font-size: 10px;
 }
 
-/* --- Act base: absolute, cross-fades via opacity --- */
+/* --- Act base: absolute, cross-fades via opacity ---
+   Nenad, 2026-07-26, Safari: he photographed this whole sticky stage as a black
+   rectangle with not even the title text drawn, then the same area fully drawn a
+   moment later. Text does not wait on images, so nothing about loading explains
+   it; Safari simply had not rasterized the container yet.
+   opacity:0 does NOT excuse an element from rasterization. All five acts were
+   being painted at once: nine large screenshots plus five backdrop-filter caption
+   cards, stacked in one sticky box on top of a rotating 1400px gradient layer.
+   visibility:hidden takes the four inactive acts out of rendering entirely, so
+   the compositor holds one act instead of five. The delayed visibility flip keeps
+   the .8s cross-fade intact: it only hides AFTER the fade-out has finished. */
 .act {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none;
-  transition: opacity .8s var(--ease);
+  visibility: hidden;
+  transition: opacity .8s var(--ease), visibility 0s linear .8s;
   z-index: 10;
 }
-.act.is-active { opacity: 1; pointer-events: auto; z-index: 11; }
+.act.is-active {
+  opacity: 1; pointer-events: auto; z-index: 11;
+  visibility: visible;
+  transition: opacity .8s var(--ease), visibility 0s linear 0s;
+}
 
 .act__stage {
   position: relative;
@@ -2748,7 +2788,9 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   .theater__sticky { position: relative; height: auto; padding-block: 48px; flex-direction: column; }
   .theater__rail, .theater__hint { display: none; }
   .theater__title { position: relative; top: 0; margin-bottom: 24px; }
-  .act { position: relative; opacity: 1; pointer-events: auto; padding: 32px 0; }
+  /* visibility must be restored alongside opacity: the desktop rule hides every
+     act that is not .is-active, and this layout stacks all five and shows them. */
+  .act { position: relative; opacity: 1; pointer-events: auto; visibility: visible; padding: 32px 0; }
   .act__caption { position: relative; right: auto; bottom: auto; margin-top: 16px; max-width: none; text-align: center; }
 }
 
