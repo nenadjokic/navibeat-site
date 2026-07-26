@@ -7,8 +7,16 @@
  * /api/reviews (the Pages Functions convention in functions/ never executed on
  * Workers, which is why the route 404'd until 2026-07-22) and hands everything
  * else back to the asset handler for the normal 404.
+ *
+ * 2026-07-26: added /api/linux-downloads plus a scheduled() handler. GitHub only
+ * reports a CUMULATIVE download count per release asset, so a per-day series has
+ * to be snapshotted by us. The cron takes the snapshots; the route serves them.
  */
 import { onRequestGet } from '../functions/api/reviews.js';
+import {
+  onRequestGet as linuxDownloads,
+  collect as collectLinuxDownloads,
+} from '../functions/api/linux-downloads.js';
 
 export default {
   async fetch(request, env) {
@@ -19,6 +27,19 @@ export default {
       }
       return onRequestGet({ request, env });
     }
+    if (url.pathname === '/api/linux-downloads') {
+      if (request.method !== 'GET' && request.method !== 'HEAD') {
+        return new Response('Method Not Allowed', { status: 405, headers: { allow: 'GET, HEAD' } });
+      }
+      return linuxDownloads({ request, env });
+    }
     return env.ASSETS.fetch(request);
+  },
+
+  // Four times a day. Once a day would give the same daily granularity, but four
+  // means a missed run (GitHub answers 403 to unauthenticated bursts from shared
+  // egress) still leaves the day with a value instead of a hole.
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(collectLinuxDownloads(env, event.scheduledTime));
   },
 };

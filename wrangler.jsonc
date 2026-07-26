@@ -22,9 +22,22 @@
     {
       "binding": "REVIEWS_KV",
       "id": "dcfb8acaaa5f4b67990bc1531d175c8e"
+    },
+    {
+      // 2026-07-26: download counters for the Linux release binaries. GitHub
+      // only reports a cumulative count, so the per-day series is snapshotted
+      // by the cron below and stored here under key `linux-downloads`.
+      "binding": "NAVIBEAT_STATS",
+      "id": "d28f2561df244f0c824f45483277aa1a"
     }
   ],
   "compatibility_flags": [
     "nodejs_compat"
-  ]
+  ],
+  // Snapshot the GitHub download counters four times a day (UTC). One a day
+  // would give the same daily granularity; four means one failed poll does not
+  // leave a hole in the series.
+  "triggers": {
+    "crons": ["11 */6 * * *"]
+  }
 }

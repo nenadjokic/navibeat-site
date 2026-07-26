@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NaviBeat for Linux: download counter</title>
+<!-- Unlisted on purpose: not in the nav, not in the sitemap, not indexed. The
+     numbers are real and public via the GitHub API either way, but a beta's
+     download count does not belong in search results. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=20260726a">
+<style>
+  /* One series, so no legend and no categorical palette: the bars carry the
+     site accent (#F47B20), which measures 3:1+ against the --bg-2 surface. A
+     dataviz lightness-band check will flag that hex for a CATEGORICAL dark
+     palette; it does not apply to a single-series magnitude chart, and matching
+     the brand matters more here than moving to a darker step. */
+  .ls-wrap { max-width: 980px; margin: 0 auto; padding: 40px 22px 90px; }
+  .ls-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em;
+                text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+  .ls-h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 4vw, 44px);
+           line-height: 1.05; margin: 0 0 8px; }
+  .ls-sub { color: var(--text-1); font-size: 15px; max-width: 62ch; margin: 0 0 30px; line-height: 1.6; }
+
+  .ls-hero { background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px;
+             padding: 26px 28px; margin-bottom: 14px; }
+  .ls-total { font-family: var(--font-display); font-weight: 700; font-size: 64px; line-height: 1;
+              color: var(--text-0); font-variant-numeric: tabular-nums; }
+  .ls-total-label { font-size: 13px; color: var(--text-2); margin-top: 6px; }
+
+  .ls-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
+  @media (max-width: 680px) { .ls-tiles { grid-template-columns: 1fr; } }
+  .ls-tile { background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+  .ls-tile h3 { font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: .12em;
+                text-transform: uppercase; color: var(--text-2); margin: 0 0 8px; }
+  .ls-tile .v { font-family: var(--font-display); font-weight: 700; font-size: 30px; color: var(--text-0);
+                font-variant-numeric: tabular-nums; line-height: 1; }
+  .ls-tile .n { font-size: 12px; color: var(--text-2); margin-top: 6px; }
+
+  .ls-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px;
+             padding: 22px 24px; margin-bottom: 14px; }
+  .ls-card h2 { font-family: var(--font-display); font-size: 18px; margin: 0 0 4px; }
+  .ls-card .hint { font-size: 12.5px; color: var(--text-2); margin: 0 0 18px; }
+
+  /* Bars: thin marks, 4px rounded data-end anchored to the baseline, a 2px
+     surface gap between neighbours, recessive baseline. */
+  .ls-chart { position: relative; height: 190px; display: flex; align-items: flex-end;
+              gap: 2px; padding-bottom: 22px; }
+  .ls-bar { flex: 1 1 0; min-width: 3px; position: relative; display: flex; align-items: flex-end;
+            height: 100%; cursor: default; }
+  .ls-bar i { display: block; width: 100%; background: var(--accent); border-radius: 4px 4px 0 0;
+              min-height: 2px; transition: background .12s; }
+  .ls-bar:hover i { background: var(--accent-hi); }
+  .ls-bar.zero i { background: rgba(255,255,255,0.10); }
+  .ls-baseline { position: absolute; left: 0; right: 0; bottom: 22px; height: 1px;
+                 background: var(--border-strong); }
+  .ls-xlabels { display: flex; gap: 2px; margin-top: -18px; }
+  .ls-xlabels span { flex: 1 1 0; font-family: var(--font-mono); font-size: 9px; color: var(--text-2);
+                     text-align: center; overflow: hidden; white-space: nowrap; }
+  .ls-tip { position: absolute; pointer-events: none; opacity: 0; transform: translate(-50%, -100%);
+            background: rgba(12,12,14,.96); border: 1px solid var(--border-strong); border-radius: 8px;
+            padding: 7px 10px; font-size: 12px; color: var(--text-0); white-space: nowrap;
+            transition: opacity .1s; z-index: 5; }
+  .ls-tip b { color: var(--accent); }
+
+  table.ls-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  table.ls-table th { text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: .1em;
+                      color: var(--text-2); padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  table.ls-table td { padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-1);
+                      font-variant-numeric: tabular-nums; }
+  table.ls-table tr:last-child td { border-bottom: none; }
+  table.ls-table td.n { color: var(--text-0); font-weight: 600; }
+  .ls-split { display: flex; flex-direction: column; gap: 10px; }
+  .ls-split-row { display: flex; align-items: center; gap: 12px; font-size: 13.5px; color: var(--text-1); }
+  .ls-split-row .name { flex: 0 0 260px; font-family: var(--font-mono); font-size: 12px; color: var(--text-1); }
+  @media (max-width: 680px) { .ls-split-row .name { flex: 0 0 auto; } }
+  .ls-split-row .track { flex: 1; height: 10px; background: rgba(255,255,255,.06); border-radius: 5px; overflow: hidden; }
+  .ls-split-row .track i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
+  .ls-split-row .val { flex: 0 0 56px; text-align: right; color: var(--text-0); font-weight: 600;
+                       font-variant-numeric: tabular-nums; }
+  .ls-note { background: var(--bg-1); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+             border-radius: 10px; padding: 14px 18px; font-size: 13px; color: var(--text-1); line-height: 1.6; }
+  .ls-foot { margin-top: 26px; font-size: 12.5px; color: var(--text-2); }
+  .ls-foot a { color: var(--accent); }
+  .ls-err { color: #ff8a8a; font-size: 13.5px; }
+</style>
+</head>
+<body>
+
+<div class="ls-wrap">
+  <p class="ls-eyebrow">NaviBeat &middot; Linux &middot; open beta</p>
+  <h1 class="ls-h1">Download counter</h1>
+  <p class="ls-sub">Live from the GitHub Releases API for
+    <a href="https://github.com/nenadjokic/navibeat-linux" style="color:var(--accent)">nenadjokic/navibeat-linux</a>,
+    both AppImage architectures. The total is whatever GitHub reports right now; the
+    per-day and per-week numbers come from snapshots this site takes four times a day,
+    because GitHub itself keeps no history.</p>
+
+  <div class="ls-hero">
+    <div class="ls-total" id="total">&hellip;</div>
+    <div class="ls-total-label" id="totalLabel">total downloads, all releases, all architectures</div>
+  </div>
+
+  <div class="ls-tiles">
+    <div class="ls-tile"><h3>Last 24 hours</h3><div class="v" id="d1">&hellip;</div><div class="n" id="d1n"></div></div>
+    <div class="ls-tile"><h3>Last 7 days</h3><div class="v" id="d7">&hellip;</div><div class="n" id="d7n"></div></div>
+    <div class="ls-tile"><h3>Last 30 days</h3><div class="v" id="d30">&hellip;</div><div class="n" id="d30n"></div></div>
+  </div>
+
+  <div class="ls-card">
+    <h2>Downloads per day</h2>
+    <p class="hint" id="chartHint">One bar per day. Hover a bar for the exact count.</p>
+    <div class="ls-chart" id="chart"><div class="ls-baseline"></div><div class="ls-tip" id="tip"></div></div>
+    <div class="ls-xlabels" id="xlabels"></div>
+  </div>
+
+  <div class="ls-card">
+    <h2>By architecture</h2>
+    <p class="hint">Cumulative per release asset, straight from GitHub.</p>
+    <div class="ls-split" id="split"></div>
+  </div>
+
+  <div class="ls-card">
+    <h2>By week</h2>
+    <p class="hint">Weeks start on Monday. The same numbers as the chart, as a table.</p>
+    <table class="ls-table"><thead><tr><th>Week of</th><th>Downloads</th><th>Running total</th></tr></thead>
+      <tbody id="weeks"></tbody></table>
+  </div>
+
+  <div class="ls-note" id="note"></div>
+
+  <p class="ls-foot">
+    <a href="/linux">NaviBeat for Linux</a> &nbsp;&middot;&nbsp;
+    <a href="/api/linux-downloads">raw JSON</a> &nbsp;&middot;&nbsp;
+    <span id="updated"></span>
+  </p>
+</div>
+
+<script>
+const fmt = (n) => (n === null || n === undefined ? '–' : new Intl.NumberFormat('en-US').format(n));
+
+function mondayOf(iso) {
+  const d = new Date(iso + 'T00:00:00Z');
+  const shift = (d.getUTCDay() + 6) % 7;
+  d.setUTCDate(d.getUTCDate() - shift);
+  return d.toISOString().slice(0, 10);
+}
+
+function render(data) {
+  document.getElementById('total').textContent = fmt(data.total);
+  document.getElementById('d1').textContent = fmt(data.last24h);
+  document.getElementById('d7').textContent = fmt(data.last7Days);
+  document.getElementById('d30').textContent = fmt(data.last30Days);
+
+  const days = (data.days || []).filter((d) => d.delta !== null);
+  if (!days.length) {
+    document.getElementById('chartHint').textContent =
+      'No daily numbers yet. The first snapshot is the baseline, so the first bar appears tomorrow.';
+    document.getElementById('d1n').textContent = 'baseline taken today';
+    // Collapse the plot instead of reserving 190px of nothing: an empty frame
+    // reads as a chart that failed to load.
+    document.getElementById('chart').style.display = 'none';
+    document.getElementById('xlabels').style.display = 'none';
+  }
+
+  // Bars
+  const chart = document.getElementById('chart');
+  const tip = document.getElementById('tip');
+  const xl = document.getElementById('xlabels');
+  const max = Math.max(1, ...days.map((d) => d.delta));
+  const show = days.slice(-45);
+  show.forEach((d) => {
+    const bar = document.createElement('div');
+    bar.className = 'ls-bar' + (d.delta === 0 ? ' zero' : '');
+    const fill = document.createElement('i');
+    fill.style.height = Math.max(2, Math.round((d.delta / max) * 100)) + '%';
+    bar.appendChild(fill);
+    bar.addEventListener('mouseenter', () => {
+      const label = d.spansDays > 1
+        ? `<b>${fmt(d.delta)}</b> over ${d.spansDays} days to ${d.date}`
+        : `<b>${fmt(d.delta)}</b> on ${d.date}`;
+      tip.innerHTML = label;
+      tip.style.opacity = '1';
+      tip.style.left = (bar.offsetLeft + bar.offsetWidth / 2) + 'px';
+      tip.style.top = (bar.offsetTop + bar.offsetHeight - parseFloat(fill.style.height) / 100 * bar.offsetHeight - 8) + 'px';
+    });
+    bar.addEventListener('mouseleave', () => { tip.style.opacity = '0'; });
+    chart.appendChild(bar);
+
+    const s = document.createElement('span');
+    s.textContent = show.length > 20 ? d.date.slice(8) : d.date.slice(5);
+    xl.appendChild(s);
+  });
+
+  // Architecture split
+  const split = document.getElementById('split');
+  const assets = Object.entries(data.assets || {}).sort((a, b) => b[1] - a[1]);
+  const top = Math.max(1, ...assets.map((a) => a[1]));
+  assets.forEach(([name, count]) => {
+    const row = document.createElement('div');
+    row.className = 'ls-split-row';
+    row.innerHTML = `<span class="name">${name}</span>
+      <span class="track"><i style="width:${Math.round((count / top) * 100)}%"></i></span>
+      <span class="val">${fmt(count)}</span>`;
+    split.appendChild(row);
+  });
+
+  // Weekly rollup
+  const weeks = new Map();
+  days.forEach((d) => {
+    const k = mondayOf(d.date);
+    weeks.set(k, (weeks.get(k) || 0) + d.delta);
+  });
+  const tbody = document.getElementById('weeks');
+  let running = 0;
+  if (!weeks.size) {
+    tbody.innerHTML = '<tr><td colspan="3">No full day recorded yet.</td></tr>';
+  } else {
+    [...weeks.entries()].sort().forEach(([w, n]) => {
+      running += n;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${w}</td><td class="n">${fmt(n)}</td><td>${fmt(running)}</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  const since = data.trackingSince || '–';
+  document.getElementById('note').innerHTML =
+    `<b>Why the total and the daily numbers do not add up.</b> GitHub's API reports only a
+     cumulative count per release asset, with no history, so every number in the hero is
+     the true all-time total while the daily and weekly figures can only start from the
+     first snapshot this site took, on <b>${since}</b>. Anything downloaded before that
+     is in the total and not in the chart.`;
+  document.getElementById('updated').textContent =
+    data.updated ? 'last snapshot ' + new Date(data.updated).toISOString().replace('T', ' ').slice(0, 16) + ' UTC' : '';
+}
+
+fetch('/api/linux-downloads')
+  .then((r) => r.json())
+  .then(render)
+  .catch(() => {
+    document.getElementById('total').textContent = '–';
+    document.getElementById('note').innerHTML =
+      '<span class="ls-err">The counter endpoint did not answer. The numbers are still live at ' +
+      '<a href="https://github.com/nenadjokic/navibeat-linux/releases">the GitHub releases page</a>.</span>';
+  });
+</script>
+</body>
+</html>
