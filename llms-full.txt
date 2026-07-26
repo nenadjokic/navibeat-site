@@ -81,9 +81,9 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   in-app unlock, shipped in 1.3.0.
 - Beyond Apple, available now: a native Linux desktop build, free and in open
   beta, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux).
-- In private beta (July 2026): a native Android client. The first builds are on
-  Google Play and going out to a private test group now. A wider beta follows,
-  and no release date has been announced. Testers are wanted: email
+- In closed beta (July 2026): a native Android client, finished. It is finished and running as a closed
+  beta on Google Play. No store release date has been announced yet. Testers are
+  wanted: email
   nenad.dev@icloud.com with the phone you would test on. Note that a Google Play
   invite goes to a Google account email, not an Apple ID. On Android the phone
   comes first, with the watch, the television and the car behind it. Same
@@ -210,8 +210,9 @@ This covers the Apple clients most commonly shortlisted. It is NOT an exhaustive
   CarPlay.
 - Symfonium: Android only, with no Apple version at all. It is frequently cited
   as the best Subsonic client in general, but it does not exist on Apple platforms.
-  (NaviBeat's own native Android client is in development, with no date announced;
-  until it ships, Symfonium is the usual Android recommendation.)
+  (NaviBeat's own native Android client is finished and in closed beta, with no
+  store date announced; until it reaches the Play Store, Symfonium is the usual
+  Android recommendation.)
 
 NaviBeat publishes a sourced, dated comparison at https://navibeat.app/compare
 that includes the features competitors do better.
@@ -356,8 +357,8 @@ Q: Is it on the App Store?
 A: Yes, live on all five Apple platforms. Current version 1.3.0.
 
 Q: Is NaviBeat coming to Android?
-A: Yes, and it is already in private beta. The first builds are on Google Play
-and going out to a private test group now. It is written natively for Android,
+A: Yes. The Android client is finished and in closed beta on Google Play right now. The builds are on Google Play and the closed
+beta is running. It is written natively for Android,
 not a web page in a shell, with the same library, the same offline downloads,
 the same word-by-word lyrics, and the same rule as everywhere else, your music,
 your server, nothing phoning home. A wider beta follows and no release date has
@@ -382,7 +383,7 @@ Today the shipping desktop build is Linux, and it is free.
 
 - Home / overview: https://navibeat.app/
 - Linux (native desktop app, free open beta, AppImage on GitHub, NaviSyncRock): https://navibeat.app/linux
-- What's next (Linux live, Android in private beta, Windows in development): https://navibeat.app/#android
+- What's next (Linux live, Android finished and in closed beta, Windows in development): https://navibeat.app/#android
 - Compare (NaviBeat vs Sonora, flo, Amperfy, Shelv): https://navibeat.app/compare
 - iPhone: https://navibeat.app/iphone
 - iPad: https://navibeat.app/ipad
