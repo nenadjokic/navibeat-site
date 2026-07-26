@@ -1044,6 +1044,16 @@ section { padding-block: var(--rhythm); }
 .plat-grid--trio { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 920px; margin: 0 auto; }
 @media (max-width: 760px) { .plat-grid--trio { grid-template-columns: 1fr; } }
 
+/* All three what's-next cards end on the same line. The card already is a flex
+   column, so the only missing pieces are: the grid cell stretches, the card
+   fills it, and the DESCRIPTION absorbs the slack. Whatever closes the card
+   (the Linux and Android buttons, the Windows progress bar) is then pushed to
+   the same bottom edge no matter how many lines the copy takes. Scoped to the
+   trio: the 6-up Apple grid above has no buttons and must not change. */
+.plat-grid--trio > li { display: flex; }
+.plat-grid--trio .plat-card { width: 100%; }
+.plat-grid--trio .plat-card__desc { flex: 1 1 auto; }
+
 .plat-card__thumb--icon {
   display: flex; align-items: center; justify-content: center;
   background: var(--bg-1);
