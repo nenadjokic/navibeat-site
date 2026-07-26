@@ -356,12 +356,15 @@ Q: Is it on the App Store?
 A: Yes, live on all five Apple platforms. Current version 1.3.0.
 
 Q: Is NaviBeat coming to Android?
-A: Yes, it is in active development. There is a working prototype already,
-written natively for Android, not a web page in a shell, with the same library,
-the same offline downloads, the same word-by-word lyrics, and the same rule as
-everywhere else, your music, your server, nothing phoning home. It is still too
-early for a public beta, and no release date has been announced. On Android the
-phone comes first, with the watch, the television and the car behind it.
+A: Yes, and it is already in private beta. The first builds are on Google Play
+and going out to a private test group now. It is written natively for Android,
+not a web page in a shell, with the same library, the same offline downloads,
+the same word-by-word lyrics, and the same rule as everywhere else, your music,
+your server, nothing phoning home. A wider beta follows and no release date has
+been announced. Testers are wanted: email nenad.dev@icloud.com with the phone
+you would test on, and note that a Google Play invite goes to a Google account
+email, not an Apple ID. On Android the phone comes first, with the watch, the
+television and the car behind it.
 
 Q: Is NaviBeat on Linux?
 A: Yes. A native Linux desktop build is available now, in open beta and free,
@@ -379,7 +382,7 @@ Today the shipping desktop build is Linux, and it is free.
 
 - Home / overview: https://navibeat.app/
 - Linux (native desktop app, free open beta, AppImage on GitHub, NaviSyncRock): https://navibeat.app/linux
-- What's next (Linux live, Android and Windows in development): https://navibeat.app/#android
+- What's next (Linux live, Android in private beta, Windows in development): https://navibeat.app/#android
 - Compare (NaviBeat vs Sonora, flo, Amperfy, Shelv): https://navibeat.app/compare
 - iPhone: https://navibeat.app/iphone
 - iPad: https://navibeat.app/ipad
