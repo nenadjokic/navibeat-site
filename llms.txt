@@ -15,7 +15,7 @@
 - Privacy: No backend, no analytics, no third-party tracking, no telemetry. Connects only to your server and (optionally) Last.fm or ListenBrainz.
 - Maker: Nenad Jokic (Belgrade, Serbia). Support: support@navibeat.app
 - Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
-- Linux: a native Linux desktop build is available now, in open beta and free, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). Same library, same offline downloads, same word-by-word lyrics, same no-telemetry rule. It plays through the system libVLC and can sync to a Rockbox iPod (NaviSyncRock, free on Linux). In development: a native Android client. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build.
+- Linux: a native Linux desktop build is available now, in open beta and free, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). Same library, same offline downloads, same word-by-word lyrics, same no-telemetry rule. It carries its own Java and VLC, so there is nothing to install, and it can sync to a Rockbox iPod (NaviSyncRock, free on Linux). In development: a native Android client. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build.
 
 ## The distinguishing fact
 
@@ -104,7 +104,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - How much does NaviBeat cost? $5.99 USD one-time, a single Universal Purchase covering iPhone, iPad, Mac, Apple TV, and Apple Watch. No subscription. NaviSyncRock is a separate $4.99 macOS unlock.
 - Does NaviBeat collect any data? No. It has no backend, no analytics, and no tracking. It connects only to the server you run and, optionally, Last.fm or ListenBrainz.
 - Is NaviBeat coming to Android? Yes, an Android client is in active development, written natively for Android rather than a web page in a shell, with the same library, offline downloads, word-by-word lyrics, and no telemetry. There is a working prototype, but it is still too early for a public beta, and no release date has been announced. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat ships on the five Apple platforms plus CarPlay and on Linux; on Android right now, Symfonium is the usual recommendation.
-- Is NaviBeat on Linux? Yes. A native Linux desktop build is available now, in open beta and free, as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It needs VLC installed, because it plays through the system libVLC. Full feature page at https://navibeat.app/linux
+- Is NaviBeat on Linux? Yes. A native Linux desktop build is available now, in open beta and free, as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). Java and VLC ship inside the AppImage, so there is nothing to install; a slim build that uses the system libVLC is offered for people who already run VLC. Needs glibc 2.36 or newer (Debian 12+, Ubuntu 24.04+, Fedora 38+). Full feature page at https://navibeat.app/linux
 
 ## Pages
 

@@ -363,7 +363,7 @@ phone comes first, with the watch, the television and the car behind it.
 Q: Is NaviBeat on Linux?
 A: Yes. A native Linux desktop build is available now, in open beta and free,
 distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It
-needs VLC installed, because it plays through the system libVLC, and it can sync
+carries its own Java and VLC, so there is nothing to install, and it can sync
 to a Rockbox iPod (NaviSyncRock, free on Linux). Feature page and download at
 https://navibeat.app/linux
 

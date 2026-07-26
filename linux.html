@@ -109,7 +109,7 @@
           "availability": "https://schema.org/InStock",
           "url": "https://github.com/nenadjokic/navibeat-linux/releases/latest"
         },
-        "softwareRequirements": "Linux on x86_64 or ARM64 (Raspberry Pi, Asahi Linux), VLC (libVLC), and a Navidrome or OpenSubsonic server.",
+        "softwareRequirements": "Linux on x86_64 or ARM64 (Raspberry Pi, Asahi Linux) with glibc 2.36 or newer (Debian 12+, Ubuntu 24.04+, Fedora 38+), and a Navidrome or OpenSubsonic server. Java and VLC are included in the download.",
         "featureList": [
           "Native Compose desktop app, no Electron and no web view",
           "Time-synced LRC lyrics with a word-by-word karaoke mode",
@@ -164,7 +164,7 @@
             "name": "How do I install it?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Download the AppImage from GitHub, make it executable with chmod +x, and run it. It carries its own Java runtime, so you do not need to install Java. You do need VLC installed, because NaviBeat plays audio through your system's libVLC."
+              "text": "Download the AppImage from GitHub, make it executable with chmod +x, and run it. It carries its own Java runtime and its own VLC, so there is nothing to install. If you already run VLC and want a smaller download, the slim build uses your system libVLC instead."
             }
           },
           {
@@ -252,7 +252,7 @@
 
           <dl class="key-facts" aria-label="NaviBeat for Linux key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; column-gap: 24px; row-gap: 6px; font-size: 14px; line-height: 1.5; max-width: 60ch;">
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Platform</dt>
-            <dd style="margin: 0; color: var(--text-1);">Linux x86_64 and ARM64 (Raspberry Pi, Asahi), needs VLC</dd>
+            <dd style="margin: 0; color: var(--text-1);">Linux x86_64 and ARM64 (Raspberry Pi, Asahi), nothing to install</dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Price</dt>
             <dd style="margin: 0; color: var(--text-1);">Free &middot; open beta</dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Server</dt>
@@ -504,7 +504,7 @@
         <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
           <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">What you need</h3>
           <ul style="margin:0; padding-left:18px; color:var(--text-1); font-size:15px; line-height:1.8;">
-            <li><strong>VLC installed.</strong> NaviBeat plays through your system's libVLC.<br><code>sudo dnf install vlc</code> &middot; <code>sudo apt install vlc</code></li>
+            <li><strong>Nothing to install.</strong> Java and VLC both travel inside the download.<br>Already have VLC? The <code>slim</code> build is a smaller file that uses yours.</li>
             <li><strong>FUSE</strong> to double-click the AppImage (<code>sudo apt install libfuse2</code>), or run it with <code>--appimage-extract-and-run</code>.</li>
             <li>A <strong>Navidrome or OpenSubsonic server</strong> to connect to. NaviBeat is a client and comes with no music of its own.</li>
           </ul>
@@ -549,7 +549,7 @@
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How do I install it?</h3>
-          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Download the AppImage from GitHub, make it executable with <code>chmod +x</code>, and run it. It carries its own Java runtime, so you do not need to install Java. You do need VLC installed, because NaviBeat plays audio through your system's libVLC.</p>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Download the AppImage from GitHub, make it executable with <code>chmod +x</code>, and run it. It carries its own Java runtime and its own VLC, so there is nothing to install. If you already run VLC and want a smaller download, the <code>slim</code> build uses your system libVLC instead.</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What music server does it need?</h3>
