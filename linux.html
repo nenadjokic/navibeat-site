@@ -74,7 +74,7 @@
         "primaryImageOfPage": "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
         "inLanguage": "en",
         "datePublished": "2026-07-23",
-        "dateModified": "2026-07-24"
+        "dateModified": "2026-07-29"
       },
       {
         "@type": "BreadcrumbList",
@@ -94,7 +94,7 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music Streaming Client",
         "operatingSystem": "Linux x86_64, Linux ARM64 (aarch64)",
-        "softwareVersion": "0.9.33",
+        "softwareVersion": "0.9.35",
         "releaseNotes": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
         "datePublished": "2026-07-23",
         "downloadUrl": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
@@ -109,7 +109,7 @@
           "availability": "https://schema.org/InStock",
           "url": "https://github.com/nenadjokic/navibeat-linux/releases/latest"
         },
-        "softwareRequirements": "Linux on x86_64 or ARM64 (Raspberry Pi, Asahi Linux) with glibc 2.36 or newer (Debian 12+, Ubuntu 24.04+, Fedora 38+), and a Navidrome or OpenSubsonic server. Java and VLC are included in the download.",
+        "softwareRequirements": "Linux on x86_64 or ARM64 (Raspberry Pi, Asahi Linux) with glibc 2.38 or newer (Ubuntu 24.04+, Fedora 39+, Debian 13+), and a Navidrome or OpenSubsonic server. Java and VLC are included in the download.",
         "featureList": [
           "Native Compose desktop app, no Electron and no web view",
           "Time-synced LRC lyrics with a word-by-word karaoke mode",
@@ -250,6 +250,12 @@
             <a class="link-quiet" href="https://github.com/nenadjokic/navibeat-linux" target="_blank" rel="noopener">View on GitHub&nbsp;&rarr;</a>
           </div>
 
+          <p style="margin:14px 0 0; color:var(--text-2); font-size:13px; line-height:1.7; max-width:60ch;">
+            One step after the download: mark it executable, then run it.<br>
+            <code>chmod +x NaviBeat-linux-x86_64.AppImage &amp;&amp; ./NaviBeat-linux-x86_64.AppImage</code><br>
+            Prefer the mouse? Right-click the file, Properties, Permissions, tick <strong>Allow executing file as program</strong>, then double-click it.
+          </p>
+
           <dl class="key-facts" aria-label="NaviBeat for Linux key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; column-gap: 24px; row-gap: 6px; font-size: 14px; line-height: 1.5; max-width: 60ch;">
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Platform</dt>
             <dd style="margin: 0; color: var(--text-1);">Linux x86_64 and ARM64 (Raspberry Pi, Asahi), nothing to install</dd>
@@ -260,7 +266,7 @@
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Distribution</dt>
             <dd style="margin: 0; color: var(--text-1);">AppImage on <a href="https://github.com/nenadjokic/navibeat-linux/releases/latest" target="_blank" rel="noopener" style="color:var(--accent-hi);">GitHub Releases</a></dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Version</dt>
-            <dd style="margin: 0; color: var(--text-1);">0.9.33 beta &middot; <time datetime="2026-07-24">updated July 24, 2026</time></dd>
+            <dd style="margin: 0; color: var(--text-1);">0.9.35 beta &middot; <time datetime="2026-07-29">updated July 29, 2026</time></dd>
           </dl>
         </div>
 
@@ -494,7 +500,9 @@
               &nbsp;&middot;&nbsp;
               <a href="https://github.com/nenadjokic/navibeat-linux/releases/latest/download/NaviBeat-linux-aarch64.AppImage" style="color:var(--accent-hi);">ARM64 (Raspberry Pi, Asahi)</a>
             </li>
-            <li>Make it executable:<br><code>chmod +x NaviBeat-linux-*.AppImage</code></li>
+            <li><strong>Make it executable.</strong> A browser always saves the file without that flag.<br><code>chmod +x NaviBeat-linux-*.AppImage</code><br>
+              <span style="font-size:13px; color:var(--text-2);">No terminal? Right-click the file, Properties, Permissions, tick <strong>Allow executing file as program</strong>. GNOME Files, Dolphin, Thunar and Nemo all have it.</span>
+            </li>
             <li>Run it:<br><code>./NaviBeat-linux-*.AppImage</code></li>
           </ol>
           <p style="margin:16px 0 0; color:var(--text-2); font-size:13px; line-height:1.6;">The AppImage carries its own Java runtime, so you do not need to install Java. Runs on 64-bit Intel and AMD, and on ARM64 like a Raspberry Pi or Asahi Linux.</p>
@@ -528,6 +536,9 @@
           </svg>
           Download the AppImage
         </a>
+        <p style="margin:14px 0 0; color:var(--text-2); font-size:13px; line-height:1.7;">
+          Then mark it executable and run it: <code>chmod +x NaviBeat-linux-x86_64.AppImage</code>, or right-click the file, Properties, Permissions, <strong>Allow executing file as program</strong>.
+        </p>
         <a class="link-quiet" href="https://github.com/nenadjokic/navibeat-linux" target="_blank" rel="noopener">All releases on GitHub &rarr;</a>
       </div>
     </div>
@@ -619,7 +630,7 @@
     </div>
     <div class="footer__bar">
       <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>Linux 0.9.33 &middot; Open beta</span>
+      <span>Linux 0.9.35 &middot; Open beta</span>
     </div>
   </div>
 </footer>
