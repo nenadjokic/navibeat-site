@@ -30,7 +30,10 @@
     lastFocused = document.activeElement;
     lbImg.src = img.src;
     lbImg.alt = img.alt || '';
-    lbCap.textContent = img.alt || (img.closest('[aria-label]')?.getAttribute('aria-label') || '');
+    // Optional chaining is a PARSE error on Safari before 13.1 and killed this
+    // whole file silently there (2026-07-30 audit); explicit check instead.
+    var lbHost = img.closest('[aria-label]');
+    lbCap.textContent = img.alt || (lbHost ? lbHost.getAttribute('aria-label') : '') || '';
     overlay.classList.add('is-open');
     document.body.style.overflow = 'hidden';
     var main = document.querySelector('main');

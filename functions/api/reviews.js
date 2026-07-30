@@ -149,7 +149,12 @@ function json(data) {
   return new Response(JSON.stringify(data), {
     headers: {
       'content-type': 'application/json; charset=utf-8',
-      'cache-control': 'public, max-age=600',
+      // 2026-07-30 site audit: the cold Worker path measured 1.52s and, with
+      // only max-age=600, roughly every visitor after 10 quiet minutes paid
+      // it. s-maxage lets the edge keep serving the cached body and
+      // stale-while-revalidate refreshes it in the background, so the cold
+      // path almost never lands on a real visitor.
+      'cache-control': 'public, max-age=600, s-maxage=3600, stale-while-revalidate=86400',
     },
   });
 }

@@ -66,7 +66,9 @@ body {
   overflow-x: hidden;
   /* Subtle neutral grain overlay - carbon texture */
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.55  0 0 0 0 0.58  0 0 0 0.06 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>");
-  background-attachment: fixed;
+  /* background-attachment:fixed removed 2026-07-30: on Android Chrome a fixed
+     body background repaints on every scroll frame; the grain tiles the same
+     without it. */
 }
 
 img, svg { display: block; max-width: 100%; height: auto; }
@@ -128,6 +130,10 @@ a:hover { color: var(--accent-hi); }
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    /* 2026-07-30: delays must go too, or the zero-duration entrance still
+       WAITS out its delay with the element invisible. */
+    animation-delay: 0s !important;
+    transition-delay: 0s !important;
   }
 }
 
@@ -697,7 +703,7 @@ section { padding-block: var(--rhythm); }
   max-width: 54ch;
   opacity: 0;
   transform: translateY(10px);
-  animation: wordIn 0.65s var(--ease) 0.5s forwards;
+  animation: wordIn 0.5s var(--ease) 0.2s forwards;
 }
 
 .hero__ctas {
@@ -708,7 +714,7 @@ section { padding-block: var(--rhythm); }
   justify-content: center;
   opacity: 0;
   transform: translateY(8px);
-  animation: wordIn 0.6s var(--ease) 0.7s forwards;
+  animation: wordIn 0.5s var(--ease) 0.3s forwards;
 }
 
 /* =============================================================================
@@ -720,7 +726,7 @@ section { padding-block: var(--rhythm); }
   width: 100%;
   margin-top: clamp(40px, 6vh, 80px);
   opacity: 0;
-  animation: lineupFade 0.9s var(--ease) 0.9s forwards;
+  animation: lineupFade 0.6s var(--ease) 0.15s forwards;
 }
 @keyframes lineupFade { to { opacity: 1; } }
 
@@ -730,6 +736,11 @@ section { padding-block: var(--rhythm); }
   max-width: 1280px;
   margin: 0 auto;
   aspect-ratio: 1280 / 700;
+}
+@supports not (aspect-ratio: 1 / 1) {
+  .lineup__stage::before { content: ""; display: block; padding-top: 54.69%; }
+}
+.lineup__stage {
   transform: translate3d(0, var(--lineup-parallax, 0px), 0);
   transition: transform 0.12s linear;
   will-change: transform;
@@ -1087,13 +1098,6 @@ section { padding-block: var(--rhythm); }
    The key improvement: cards now show a real screenshot instead of wireframe SVG
    ============================================================================= */
 
-.explore-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-@media (max-width: 960px) { .explore-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .explore-grid { grid-template-columns: 1fr; } }
 
 .xcard {
   display: flex;
@@ -1881,8 +1885,8 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   opacity: 0;
   transform: translate3d(0, 28px, 0);
   transition:
-    opacity 0.7s cubic-bezier(0.2, 0.6, 0.2, 1),
-    transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
+    opacity 0.5s cubic-bezier(0.2, 0.6, 0.2, 1),
+    transform 0.5s cubic-bezier(0.2, 0.6, 0.2, 1);
   /* will-change removed 2026-07-26, and this was the worst one by count. The
      selector matches 15 .reveal elements plus every child of 10 .reveal-stagger
      blocks, so roughly fifty-five elements each asked the compositor for its own
@@ -1900,17 +1904,17 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 }
 
 .reveal-ready .reveal-stagger > *:nth-child(1)  { transition-delay:  0ms; }
-.reveal-ready .reveal-stagger > *:nth-child(2)  { transition-delay: 80ms; }
-.reveal-ready .reveal-stagger > *:nth-child(3)  { transition-delay: 160ms; }
-.reveal-ready .reveal-stagger > *:nth-child(4)  { transition-delay: 240ms; }
-.reveal-ready .reveal-stagger > *:nth-child(5)  { transition-delay: 320ms; }
-.reveal-ready .reveal-stagger > *:nth-child(6)  { transition-delay: 400ms; }
-.reveal-ready .reveal-stagger > *:nth-child(7)  { transition-delay: 480ms; }
-.reveal-ready .reveal-stagger > *:nth-child(8)  { transition-delay: 560ms; }
-.reveal-ready .reveal-stagger > *:nth-child(9)  { transition-delay: 640ms; }
-.reveal-ready .reveal-stagger > *:nth-child(10) { transition-delay: 720ms; }
-.reveal-ready .reveal-stagger > *:nth-child(11) { transition-delay: 800ms; }
-.reveal-ready .reveal-stagger > *:nth-child(12) { transition-delay: 880ms; }
+.reveal-ready .reveal-stagger > *:nth-child(2)  { transition-delay: 40ms; }
+.reveal-ready .reveal-stagger > *:nth-child(3)  { transition-delay: 80ms; }
+.reveal-ready .reveal-stagger > *:nth-child(4)  { transition-delay: 120ms; }
+.reveal-ready .reveal-stagger > *:nth-child(5)  { transition-delay: 160ms; }
+.reveal-ready .reveal-stagger > *:nth-child(6)  { transition-delay: 200ms; }
+.reveal-ready .reveal-stagger > *:nth-child(7)  { transition-delay: 240ms; }
+.reveal-ready .reveal-stagger > *:nth-child(8)  { transition-delay: 280ms; }
+.reveal-ready .reveal-stagger > *:nth-child(9)  { transition-delay: 320ms; }
+.reveal-ready .reveal-stagger > *:nth-child(10) { transition-delay: 360ms; }
+.reveal-ready .reveal-stagger > *:nth-child(11) { transition-delay: 400ms; }
+.reveal-ready .reveal-stagger > *:nth-child(12) { transition-delay: 440ms; }
 
 /* Feature grid wave */
 .reveal-ready .features > .f-card {
@@ -1935,22 +1939,6 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .reveal-ready .features.is-in > .f-card:nth-child(12) { transition-delay: 880ms; opacity: 1; transform: none; }
 /* Beyond 12, reveal without an extra stagger delay rather than staying invisible */
 .reveal-ready .features.is-in > .f-card:nth-child(n+13) { opacity: 1; transform: none; }
-
-.reveal-ready .explore-grid > * {
-  opacity: 0;
-  transform: translate3d(0, 22px, 0);
-  transition:
-    opacity 0.65s cubic-bezier(0.2, 0.6, 0.2, 1),
-    transform 0.65s cubic-bezier(0.2, 0.6, 0.2, 1),
-    border-color 0.3s var(--ease),
-    box-shadow 0.3s var(--ease);
-}
-.reveal-ready .explore-grid.is-in > *:nth-child(1) { transition-delay:  0ms; opacity: 1; transform: none; }
-.reveal-ready .explore-grid.is-in > *:nth-child(2) { transition-delay: 70ms; opacity: 1; transform: none; }
-.reveal-ready .explore-grid.is-in > *:nth-child(3) { transition-delay: 140ms; opacity: 1; transform: none; }
-.reveal-ready .explore-grid.is-in > *:nth-child(4) { transition-delay: 210ms; opacity: 1; transform: none; }
-.reveal-ready .explore-grid.is-in > *:nth-child(5) { transition-delay: 280ms; opacity: 1; transform: none; }
-.reveal-ready .explore-grid.is-in > *:nth-child(6) { transition-delay: 350ms; opacity: 1; transform: none; }
 
 .reveal-ready .plat-grid > * {
   opacity: 0;
@@ -2791,18 +2779,6 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .family__receipt-row b { color: var(--text-0); font-weight: 500; }
 .family__receipt-rule { height: 1px; background: var(--border); margin: 8px 0; }
 .family__receipt-total { color: var(--accent); font-size: 13px; }
-
-/* ---- Mobile fallback (≤ 720px): static stacked layout ---- */
-@media (max-width: 720px) {
-  .theater { height: auto; }
-  .theater__sticky { position: relative; height: auto; padding-block: 48px; flex-direction: column; }
-  .theater__rail, .theater__hint { display: none; }
-  .theater__title { position: relative; top: 0; margin-bottom: 24px; }
-  /* visibility must be restored alongside opacity: the desktop rule hides every
-     act that is not .is-active, and this layout stacks all five and shows them. */
-  .act { position: relative; opacity: 1; pointer-events: auto; visibility: visible; padding: 32px 0; }
-  .act__caption { position: relative; right: auto; bottom: auto; margin-top: 16px; max-width: none; text-align: center; }
-}
 
 /* ---- Reduced-motion: disable all theater keyframes + transitions ---- */
 @media (prefers-reduced-motion: reduce) {

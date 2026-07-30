@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
 
-  <link rel="stylesheet" href="styles.css?v=20260726c">
+  <link rel="stylesheet" href="styles.css?v=20260730a">
 
   <script type="application/ld+json">
   {
@@ -171,6 +171,7 @@
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="multi-library" class="nav__link nav__link-hide-sm">Multi-Library</a>
       <a href="lastfm" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="listenbrainz" class="nav__link nav__link-hide-sm">ListenBrainz</a>
       <a href="rockbox" class="nav__link nav__link-hide-sm">Rockbox</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
       <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
@@ -612,6 +613,25 @@
   </div>
 </footer>
 
-<script src="lightbox.js" defer></script>
+<script>
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    var navToggle = nav.querySelector('.nav__toggle');
+    if (navToggle) {
+      var setNav = function (open) {
+        nav.classList.toggle('nav--open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+      nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+    }
+  })();
+</script>
 </body>
 </html>

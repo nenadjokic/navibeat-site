@@ -38,7 +38,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
-  <link rel="stylesheet" href="styles.css?v=20260726c">
+  <link rel="stylesheet" href="styles.css?v=20260730a">
 
   <script type="application/ld+json">
   {
@@ -688,7 +688,8 @@
 </footer>
 
 <script>
-  document.documentElement.classList.add('reveal-ready');
+  /* reveal-ready removed 2026-07-30: this page has no IntersectionObserver,
+     so the class left every .reveal (the whole FAQ) at opacity 0 forever. */
   (function () {
     var nav = document.getElementById('nav');
     if (nav) {
