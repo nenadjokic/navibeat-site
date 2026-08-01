@@ -121,6 +121,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - [Widgets](https://navibeat.app/widgets): Home Screen, Lock Screen, StandBy, macOS desktop, Apple Watch complication
 - [Last.fm](https://navibeat.app/lastfm): Last.fm integration, scrobbling, Year in Review, Time Machine
 - [ListenBrainz](https://navibeat.app/listenbrainz): ListenBrainz integration, Your ListenBrainz shelf, Your Mixes, star-first loved sync
+- [NaviBeat Mixes plugin](https://github.com/nenadjokic/navibeat-mixes): free, open-source (GPL-3.0) Navidrome server plugin (0.63.1+) that generates up to 23 playlists from your listening (time-of-day mixes, Rediscover, Artist/Genre Radios, Daily Mixes, decade mixes); NaviBeat shows them on a dedicated NaviBeat Mixes Home shelf led by the mix matching the current hour. Distinct from "Your Mixes", which is the ListenBrainz shelf.
 - [Sync Navidrome to a Rockbox iPod](https://navibeat.app/rockbox): NaviSyncRock, shipped in 1.3.0, a $4.99 macOS unlock. Syncs your Navidrome library to a Rockbox iPod from a real GUI app (no terminal, no scripts, unlike the usual command-line tools).
 - [Support / FAQ](https://navibeat.app/support): Setup, troubleshooting, glossary
 - [Privacy](https://navibeat.app/privacy): Privacy policy (no data collection)
