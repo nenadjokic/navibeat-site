@@ -212,6 +212,23 @@
     <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/features" />
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png</image:loc>
+      <image:title>NaviBeat feature overview on Mac: sidebar, featured album and shelves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-offline.jpg</image:loc>
+      <image:title>NaviBeat offline browsing on iPhone with non-downloaded tracks greyed out</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-lyrics-panel.png</image:loc>
+      <image:title>NaviBeat time-synced lyrics panel on Mac</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg</image:loc>
+      <image:title>NaviBeat on Apple TV built for focus navigation</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://navibeat.app/multi-library</loc>
