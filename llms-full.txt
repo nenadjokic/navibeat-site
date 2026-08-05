@@ -371,7 +371,9 @@ Q: Is NaviBeat on Linux?
 A: Yes. A native Linux desktop build is available now, in open beta and free,
 distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It
 carries its own Java and VLC, so there is nothing to install, and it can sync
-to a Rockbox iPod (NaviSyncRock, free on Linux). Feature page and download at
+to a Rockbox iPod (NaviSyncRock, free on Linux). It also ships a terminal
+client: run it with --tui for a full text interface over SSH, and on a machine
+with no display it starts that way by itself. Feature page and download at
 https://navibeat.app/linux
 
 Q: Is NaviBeat coming to Windows?
