@@ -218,6 +218,18 @@
       <image:title>NaviBeat feature overview on Mac: sidebar, featured album and shelves</image:title>
     </image:image>
     <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-jump-buttons.jpg</image:loc>
+      <image:title>NaviBeat jump buttons on iPhone, either side of Play, with Next and Previous still in place</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-accent-colour.jpg</image:loc>
+      <image:title>NaviBeat accent colour settings on iPhone: presets, colour picker and hex field</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-handoff-card.jpg</image:loc>
+      <image:title>NaviBeat Continue card on iPhone, offering to pick up what another device is playing</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-offline.jpg</image:loc>
       <image:title>NaviBeat offline browsing on iPhone with non-downloaded tracks greyed out</image:title>
     </image:image>
