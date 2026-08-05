@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaviBeat Features: every feature, on every Apple platform</title>
+  <meta name="description" content="The complete NaviBeat feature list: multi-library Navidrome, offline downloads, equalizer and ReplayGain, CarPlay, widgets, Last.fm and ListenBrainz, mTLS, Rockbox iPod sync, and what is in the beta right now.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="apple-itunes-app" content="app-id=6763518834">
+
+  <link rel="canonical" href="https://navibeat.app/features">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/features">
+
+  <meta property="og:title" content="NaviBeat Features: every feature, on every Apple platform">
+  <meta property="og:description" content="The complete feature list for NaviBeat, the native Navidrome and Subsonic client for iPhone, iPad, Mac, Apple TV and Apple Watch. Plus what is in the beta right now.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://navibeat.app/features">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta property="og:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat Features: every feature, on every Apple platform">
+  <meta name="twitter:description" content="Multi-library Navidrome, true offline, equalizer and ReplayGain, CarPlay, widgets, Last.fm, ListenBrainz, mTLS, Rockbox iPod sync.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:image:alt" content="NaviBeat running on Mac.">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20260730b">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://navibeat.app/features#page",
+        "url": "https://navibeat.app/features",
+        "name": "NaviBeat Features: every feature, on every Apple platform",
+        "description": "The complete NaviBeat feature list across iPhone, iPad, Mac, Apple TV, Apple Watch and CarPlay, plus the features currently in the TestFlight beta.",
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://navibeat.app/#app",
+        "name": "NaviBeat",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "iOS 18+, iPadOS 18+, macOS 15+, tvOS 18+, watchOS 11+",
+        "offers": { "@type": "Offer", "price": "5.99", "priceCurrency": "USD" },
+        "url": "https://apps.apple.com/app/navibeat/id6763518834"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .ft-hero { padding: 132px 0 24px; }
+    .ft-hero__h {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(38px, 6vw, 74px);
+      line-height: 1.03;
+      letter-spacing: -0.02em;
+      margin: 12px 0 18px;
+    }
+    .ft-hero__sub { color: var(--text-1); font-size: 18px; line-height: 1.65; max-width: 62ch; margin: 0 0 28px; }
+    .ft-hero__cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .ft-cta { padding: 80px 0 96px; text-align: center; }
+    .ft-cta h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 3.5vw, 42px); margin: 0 0 14px; }
+    .ft-cta__sub { color: var(--text-1); margin: 0 auto 28px; font-size: 17px; max-width: 60ch; }
+    .ft-cta .ft-hero__cta { justify-content: center; }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="NaviBeat">
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <a href="features" class="nav__link nav__link-hide-sm" aria-current="page">Features</a>
+      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="multi-library" class="nav__link nav__link-hide-sm">Multi-Library</a>
+      <a href="lastfm" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="listenbrainz" class="nav__link nav__link-hide-sm">ListenBrainz</a>
+      <a href="rockbox" class="nav__link nav__link-hide-sm">Rockbox</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+
+      <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="ft-hero">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">Every feature, one page</p>
+      <h1 class="ft-hero__h">Everything NaviBeat does.</h1>
+      <p class="ft-hero__sub">One app, one $5.99 purchase, five Apple platforms plus CarPlay. This is the whole list: what is on the App Store today, and what is finished and running in the beta right now.</p>
+      <div class="ft-hero__cta">
+        <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Get it on the App Store</a>
+        <a class="btn btn--ghost" href="beta">Join the beta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= BETA -->
+  <section id="beta-features" aria-labelledby="beta-features-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">In the beta right now</p>
+        <h2 id="beta-features-title" class="h2">Finished, running, and one release away.</h2>
+        <p class="body-copy" style="font-size:18px;margin-top:10px;">Everything below is built and in testers' hands through TestFlight today. It reaches the App Store in the next release. <a href="beta" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Anyone can join the beta</a>, and it is free.</p>
+      </div>
+      <div class="features">
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Appearance</span>
+          <h3 class="h3">Pick your own accent colour.</h3>
+          <p>Amber is still the default and one tap brings it back, but the whole app now follows whatever colour you choose: six one-tap presets, a full colour picker, and a hex field if you know exactly what you want.</p>
+          <p>The text and glyphs drawn on top of your colour switch between black and white on their own, so a pale yellow stays as readable as a deep purple, and the gradient follows your choice instead of staying orange.</p>
+          <p class="f-card__kicker">iPhone, iPad and Mac.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Player</span>
+          <h3 class="h3">Jump buttons, for the things you do not listen to end to end.</h3>
+          <p>Skip back and skip forward by 10, 15 or 30 seconds, either side of Play. Next and Previous stay exactly where they are.</p>
+          <p>They can be limited to one library, which is the point if you keep audiobooks and podcasts on the same server as your music: turn them on for that library and your music player is unchanged. Off until you ask for them.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Continuity</span>
+          <h3 class="h3">Start on one device, carry on with another.</h3>
+          <p>Leave a song half finished on the Mac and NaviBeat on your phone offers to continue it, at the second you stopped, with the rest of the queue intact. Tap it and <strong style="color:var(--text-1);font-weight:600;">the Mac pauses itself</strong>, within a few seconds, so you are never chased through the house by your own music.</p>
+          <p>It works through your own server's play queue, so there is nothing extra to configure and nothing leaves your network.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Playlists</span>
+          <h3 class="h3">Smart Playlists you write yourself.</h3>
+          <p>Build a playlist out of rules rather than by hand: artist, genre, year, rating, play count, when you added it, whether it is in another playlist, and more. Results update as your library does, and you see them while you are still editing the rules.</p>
+          <p>Definitions sync across your devices, and a snapshot can be written back to your server as an ordinary playlist so every other client sees it too.</p>
+          <p class="f-card__kicker">Everywhere, including Apple TV.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Offline</span>
+          <h3 class="h3">Offline stopped being a separate mode.</h3>
+          <p>Downloaded music now lives inside the normal app. The same Home, the same artists, the same albums, with anything you do not have on the device shown greyed out instead of hidden, so you always know what is missing rather than wondering where it went.</p>
+          <p>When your server cannot be reached, NaviBeat switches to your downloads on its own and switches back when the server returns. Favourites, ratings and artwork keep working while you are cut off, and catch up afterwards.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and CarPlay.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Servers</span>
+          <h3 class="h3">Saved servers, and no retyping.</h3>
+          <p>Keep several servers side by side and switch between them without entering anything again. Each entry carries its own proxy headers and its own mTLS client certificate, so a server behind an identity-aware proxy is a saved entry like any other.</p>
+          <p class="f-card__kicker">iPhone, iPad and Mac.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Artists</span>
+          <h3 class="h3">A discography that behaves like a discography.</h3>
+          <p>Albums are grouped by release type, so albums, EPs, singles, live records and compilations stop fighting for the same list. An <strong style="color:var(--text-1);font-weight:600;">All Songs</strong> view flattens an artist's whole catalogue into one sortable list, play counts show on the album page, and Top Songs are visible on the artist header rather than hidden in a menu.</p>
+          <p>Albums released in the same year are finally in the right order: if your files carry a release date, NaviBeat reads it down to the day, and an original release beats a later reissue so a box of remasters cannot jump to the front.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Lyrics</span>
+          <h3 class="h3">Lyrics, and an optional lookup when your server has none.</h3>
+          <p>Time-synced lyrics scroll with the song and a tap on any line seeks to it. New in the beta: if your server and its own lyrics plugin both come up empty, NaviBeat can ask lrclib.net instead.</p>
+          <p>That lookup is <strong style="color:var(--text-1);font-weight:600;">off until you turn it on</strong>, and it sends the song title, artist, album and length. Nothing about you and nothing about your server.</p>
+          <p class="f-card__kicker">Your server is always asked first.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Automation</span>
+          <h3 class="h3">Shortcuts, and a share link that is safe to send.</h3>
+          <p>Shortcuts actions for play, pause, next, previous and shuffle, plus Play Playlist by name, so NaviBeat can sit inside your own automations and Focus modes.</p>
+          <p>Copy Share Link asks <em>your server</em> for a proper share URL rather than pasting anything of yours into a message.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Beta / Access</span>
+          <h3 class="h3">VoiceOver on every control, and Reduce Motion honoured.</h3>
+          <p>Every transport control announces what it does and, where it is a toggle, what state it is in, instead of reading out the name of an icon. Reduce Motion turns off the animation the rest of the app leans on.</p>
+          <p class="f-card__kicker">iPhone, iPad and Mac.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= LIBRARY -->
+  <section id="library" aria-labelledby="library-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow">On the App Store today</p>
+        <h2 id="library-title" class="h2">Your library, the way you filed it.</h2>
+      </div>
+      <div class="features">
+
+        <article class="f-card">
+          <span class="f-card__idx">Library / Multi-Library</span>
+          <h3 class="h3">Real Navidrome multi-library support.</h3>
+          <p>All Libraries, one, or any subset you like, filtered on the server rather than hidden in the app. Music in one library and audiobooks in another stay apart everywhere: Home, search, shuffle, CarPlay and the Watch. <a href="multi-library" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">How it works</a>.</p>
+          <p class="f-card__kicker">No other Apple client filters by musicFolder.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Library / Browsing</span>
+          <h3 class="h3">Albums, artists, genres, playlists, folders.</h3>
+          <p>Sort and filter the way you think: by name, by artist, by year, by date added, by rating, by play count. Genres are first class, folder browsing is there for libraries organised by directory, and every tag on an album renders as a chip you can tap through.</p>
+          <p class="f-card__kicker">Compilations and album artists handled properly.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Library / Home</span>
+          <h3 class="h3">A Home screen made of your own listening.</h3>
+          <p>Recently played, most played, recently added, favourites, On This Day, and shelves built from what you actually return to. Star ratings and favourites sync straight to your server, so they are the same in every other client you use.</p>
+          <p class="f-card__kicker">Nothing recommended by a stranger.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Library / Stats</span>
+          <h3 class="h3">Listening stats that stay on your side.</h3>
+          <p>A 24 hour listening clock, a weekday heatmap, and your top artists, albums and songs with a week, month or year switcher. Computed from your own play history, not from a service.</p>
+          <p class="f-card__kicker">iPhone, iPad and Mac.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= SOUND -->
+  <section id="sound" aria-labelledby="sound-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow">On the App Store today</p>
+        <h2 id="sound-title" class="h2">Playback and sound.</h2>
+      </div>
+      <div class="features">
+
+        <article class="f-card">
+          <span class="f-card__idx">Sound / Path</span>
+          <h3 class="h3">A real audio path.</h3>
+          <p>A selectable high fidelity playback engine, a 10 band equalizer with presets, ReplayGain per track or per album or automatic, and gapless playback for the records that were written to be heard that way.</p>
+          <p class="f-card__kicker">FLAC, ALAC, MP3, AAC, Opus, Ogg and more.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Sound / Quality</span>
+          <h3 class="h3">Wi-Fi and cellular, set separately.</h3>
+          <p>Ten tiers, from the original file down to a light Opus stream, chosen independently for Wi-Fi and for mobile data. Auto sends the original at home and something kind to your data plan on the road. Your server does the transcoding, so nothing is re-encoded on the phone.</p>
+          <p class="f-card__kicker">A codec and bitrate badge tells you what you are actually hearing, and can be turned off.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Sound / Queue</span>
+          <h3 class="h3">The queue, and what happens when it ends.</h3>
+          <p>Reorder, shuffle, repeat, play next, add to queue, and a sleep timer. AutoMix keeps going when the queue runs out, using similar tracks resolved from your server or from Last.fm and ListenBrainz if you connect them.</p>
+          <p class="f-card__kicker">Internet radio stations too.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Sound / Lyrics</span>
+          <h3 class="h3">Lyrics that keep time.</h3>
+          <p>Time-synced LRC lyrics on every platform, scrolling with the song, with a tap on any line to seek there. Plain lyrics render properly when that is all a track has.</p>
+          <p class="f-card__kicker">Including the Watch.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= OFFLINE -->
+  <section id="offline" aria-labelledby="offline-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow">On the App Store today</p>
+        <h2 id="offline-title" class="h2">Offline, properly.</h2>
+      </div>
+      <div class="features">
+
+        <article class="f-card">
+          <span class="f-card__idx">Offline / Downloads</span>
+          <h3 class="h3">Pin a song, an album, a playlist, or an entire artist.</h3>
+          <p>A download queue with live speed, a history, and one tap to retry whatever failed. Artwork and metadata are cached with the audio, so the library <em>browses</em> offline as well as plays, which is the part most clients skip.</p>
+          <p class="f-card__kicker">An LRU cache with a size limit you set.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Offline / Behaviour</span>
+          <h3 class="h3">Prefer Downloaded Music, and Keep Streamed Songs.</h3>
+          <p>Play the local file even when the server is reachable, so a good connection never costs you data you already spent. Keep Streamed Songs quietly saves what you play, so the music you return to ends up on the device without you managing anything.</p>
+          <p class="f-card__kicker">Downloads you asked for are never deleted automatically.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= PLATFORMS -->
+  <section id="screens" aria-labelledby="screens-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow">One purchase</p>
+        <h2 id="screens-title" class="h2">Every screen Apple makes.</h2>
+        <p class="body-copy" style="font-size:18px;margin-top:10px;">Five native apps plus CarPlay, one $5.99 Universal Purchase. No client in the Navidrome apps directory covers all five.</p>
+      </div>
+      <div class="features">
+
+        <article class="f-card">
+          <span class="f-card__idx">iPhone</span>
+          <h3 class="h3">iPhone and CarPlay.</h3>
+          <p>The full library in your pocket, Siri support, Home Screen, Lock Screen and StandBy widgets, and CarPlay with voice search that understands the play command in all eleven app languages and resolves it against your own library. <a href="iphone" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">iPhone page</a>.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">iPad</span>
+          <h3 class="h3">iPad, as an iPad app.</h3>
+          <p>A real iPadOS layout with a sidebar, a Featured Album hero and density tuned for the display, not a phone app stretched to fill the glass. Pointer and keyboard are first class. <a href="ipad" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">iPad page</a>.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Mac</span>
+          <h3 class="h3">Mac, natively.</h3>
+          <p>SwiftUI, not Electron, not Catalyst, not an iPhone binary. A Mini Player that pins on top of any window, a menu bar presence, four desktop widgets, and a 7 day free trial. <a href="macos" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Mac page</a>.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Apple TV</span>
+          <h3 class="h3">Apple TV, built for the remote.</h3>
+          <p>Focus navigation done properly, Top Shelf, and an in-app language picker because tvOS offers no per-app language setting at all. <a href="appletv" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Apple TV page</a>.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Apple Watch</span>
+          <h3 class="h3">Apple Watch, without the phone.</h3>
+          <p>Standalone playback on the wrist, with downloads pulled straight from your server over Wi-Fi and an iPhone transfer as the fallback. A complication, lyrics, and Crown volume. <a href="applewatch" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Apple Watch page</a>.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Linux and beyond</span>
+          <h3 class="h3">Linux now, Android and Windows next.</h3>
+          <p>A native Linux desktop build is out as a free open beta, carrying its own Java and VLC so there is nothing to install. A native Android client is finished and in closed beta, and a Windows client is in active development. <a href="linux" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Linux page</a>.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= CONNECTIONS -->
+  <section id="connections" aria-labelledby="connections-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow">Optional, always</p>
+        <h2 id="connections-title" class="h2">What it connects to, if you let it.</h2>
+      </div>
+      <div class="features">
+
+        <article class="f-card">
+          <span class="f-card__idx">Last.fm</span>
+          <h3 class="h3">Last.fm, routed through your own server.</h3>
+          <p>Listener counts, similar artists, loved track sync, and scrobbles that go out <strong style="color:var(--text-1);font-weight:600;">through Navidrome</strong> rather than straight from the app. <a href="lastfm" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">See the integration</a>.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">ListenBrainz</span>
+          <h3 class="h3">ListenBrainz, first class.</h3>
+          <p>The open, self-hostable alternative from the MusicBrainz nonprofit. Your ListenBrainz shelf, Weekly and Daily Jams, two way loved track sync, and a Preferred Source picker where it shares a surface with Last.fm. <a href="listenbrainz" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">See the integration</a>.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">NaviBeat Mixes</span>
+          <h3 class="h3">Mixes your own server builds.</h3>
+          <p>A free, open source plugin for Navidrome 0.63.1 and newer that generates up to 23 playlists from how you listen: morning and night mixes, Rediscover, artist and genre radios, decade mixes. They are ordinary server playlists, so every client sees them. <a href="https://github.com/nenadjokic/navibeat-mixes" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Get the plugin</a>.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Rockbox</span>
+          <h3 class="h3">NaviSyncRock: your Navidrome on a real iPod.</h3>
+          <p>Sync songs, albums, artists and playlists from your server to a Rockbox iPod from a normal Mac app. Your server transcodes, artwork is re-encoded for old hardware, plays on the device sync back, and two NaviBeat iPod themes are installed. A one time $4.99 unlock on the Mac. <a href="rockbox" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">How it works</a>.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= PRIVACY -->
+  <section id="privacy-features" aria-labelledby="privacy-features-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow">The part that does not change</p>
+        <h2 id="privacy-features-title" class="h2">Privacy, security and languages.</h2>
+      </div>
+      <div class="features">
+
+        <article class="f-card">
+          <span class="f-card__idx">Privacy</span>
+          <h3 class="h3">Zero analytics. Zero tracking.</h3>
+          <p>There is no NaviBeat backend. The app talks to your server and to nothing else, unless you connect Last.fm or ListenBrainz yourself. No telemetry, no crash pings, no accounts. <a href="privacy" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Privacy policy</a>.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Security</span>
+          <h3 class="h3">mTLS client certificates.</h3>
+          <p>Import a client certificate and reach a server that refuses anyone without one. No other Apple client here supports them at all. Custom proxy headers ride alongside, for setups behind an identity-aware proxy.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">Languages</span>
+          <h3 class="h3">Eleven languages, and you can force one.</h3>
+          <p>English, German, French, Spanish, Polish, Brazilian Portuguese, Russian, Ukrainian, Serbian, Simplified and Traditional Chinese. An in-app picker overrides the system language, including on Apple TV. <a href="mailto:nenad.dev@icloud.com?subject=Language%20request%20for%20NaviBeat" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Ask for yours</a>.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ft-cta">
+    <div class="wrap">
+      <h2>One app. One purchase. Every screen.</h2>
+      <p class="ft-cta__sub">$5.99 once, on the App Store, for iPhone, iPad, Mac, Apple TV and Apple Watch. The beta is free and open if you want the list above sooner.</p>
+      <div class="ft-hero__cta">
+        <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Get NaviBeat</a>
+        <a class="btn btn--ghost" href="beta">Join the beta</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="/">
+          <img src="assets/icon.svg" alt="NaviBeat">
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+        <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="features">Features</a></li>
+          <li><a href="multi-library">Multi-Library</a></li>
+          <li><a href="widgets">Widgets</a></li>
+          <li><a href="lastfm">Last.fm</a></li>
+          <li><a href="listenbrainz">ListenBrainz</a></li>
+          <li><a href="rockbox">Rockbox</a></li>
+          <li><a href="appletv">Apple TV</a></li>
+          <li><a href="macos">Mac</a></li>
+          <li><a href="linux">Linux</a></li>
+          <li><a href="iphone">iPhone</a></li>
+          <li><a href="ipad">iPad</a></li>
+          <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+          <li><a href="beta">Beta program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="support">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>Live on the App Store &middot; 1.3.4 in beta</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  if (!nav) return;
+  var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  var navToggle = nav.querySelector('.nav__toggle');
+  if (navToggle) {
+    var setNav = function (open) {
+      nav.classList.toggle('nav--open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+    nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+  }
+})();
+</script>
+
+</body>
+</html>
