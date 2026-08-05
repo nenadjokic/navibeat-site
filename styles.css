@@ -417,7 +417,7 @@ section { padding-block: var(--rhythm); }
 
 .nav__links {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   margin-left: auto;
   align-items: center;
 }
@@ -512,16 +512,16 @@ section { padding-block: var(--rhythm); }
 /* Mobile disclosure toggle (hamburger). Hidden on desktop. */
 .nav__toggle { display: none; }
 
-/* Mid widths: the full link row needs ~1080px; tighten spacing instead of
-   letting the right side clip before the hamburger takes over at 900px. */
-@media (min-width: 901px) and (max-width: 1140px) {
+/* Mid widths: the full link row needs ~1000px; tighten spacing instead of
+   letting the right side clip before the hamburger takes over at 1000px. */
+@media (min-width: 1001px) and (max-width: 1240px) {
   .nav__inner { gap: 16px; padding-inline: 40px; }
-  .nav__links { gap: 14px; }
+  .nav__links { gap: 12px; }
   .nav__link { letter-spacing: 0.07em; }
   .nav__inner .btn--compact { padding-left: 12px; padding-right: 12px; font-size: 12px; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .nav__inner { position: relative; }
 
   /* Nav: shorten the always-visible CTA so the right edge never crops. */

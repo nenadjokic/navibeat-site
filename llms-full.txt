@@ -375,6 +375,11 @@ to a Rockbox iPod (NaviSyncRock, free on Linux). It also ships a terminal
 client: run it with --tui for a full text interface over SSH, and on a machine
 with no display it starts that way by itself. Feature page and download at
 https://navibeat.app/linux
+The terminal client is the same app, not a second one: the same library code,
+the same player, the same downloads, the same MPRIS integration. Ten screens sit
+on the number keys (Home, Albums, Artists, Songs, Playlists, Genres, Radios,
+Favorites, Downloads, Queue) and the bindings are cmus and mpd vocabulary, with
+the arrow keys working alongside the letters. Screenshots: navibeat.app/linux#tui
 
 Q: Is NaviBeat coming to Windows?
 A: Yes, a native Windows desktop client is in active development, built alongside

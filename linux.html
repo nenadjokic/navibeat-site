@@ -35,7 +35,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20260730b">
+  <link rel="stylesheet" href="styles.css?v=20260805a">
 
   <script type="application/ld+json">
   {
@@ -130,7 +130,9 @@
           "https://navibeat.app/assets/screenshots/linux/linux-albums.webp",
           "https://navibeat.app/assets/screenshots/linux/linux-artists.webp",
           "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock-sync.webp"
+          "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock-sync.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-tui.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-tui-keys.webp"
         ],
         "mentions": [
           { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
@@ -164,6 +166,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Download the AppImage from GitHub, make it executable with chmod +x, and run it. It carries its own Java runtime and its own VLC, so there is nothing to install. If you already run VLC and want a smaller download, the slim build uses your system libVLC instead."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I run NaviBeat on a headless server with no desktop?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Run it with --tui and NaviBeat draws itself in the terminal instead of a window, so it works over SSH on a headless server or a Raspberry Pi. It is the same app underneath: the same library, the same queue, the same downloads, the same gapless playback, with cmus and mpd style keys. On a machine with no display attached it starts in terminal mode by itself."
             }
           },
           {
@@ -238,7 +248,7 @@
             <span class="word" style="animation-delay:260ms">Linux.</span>
           </h1>
           <p class="p-hero__sub">
-            A native desktop music player for Navidrome, Airsonic, Gonic, or any OpenSubsonic server. Time-synced lyrics, a pin-on-top Mini Player, downloads, a 10-band equalizer, and NaviSyncRock sync to a Rockbox player. No Electron, no web view, just a real Linux app. It is <strong>free</strong>, and it is in <strong>beta</strong>.
+            A native desktop music player for Navidrome, Airsonic, Gonic, or any OpenSubsonic server. Time-synced lyrics, a pin-on-top Mini Player, downloads, a 10-band equalizer, and NaviSyncRock sync to a Rockbox player. No Electron, no web view, just a real Linux app. Run it with <code>--tui</code> and the whole thing works in a terminal over SSH, so a headless server or a Raspberry Pi can hold your library too. It is <strong>free</strong>, and it is in <strong>beta</strong>.
           </p>
           <div class="p-hero__ctas">
             <a class="btn btn--primary" href="https://github.com/nenadjokic/navibeat-linux/releases/latest/download/NaviBeat-linux-x86_64.AppImage">
@@ -437,6 +447,47 @@
     </div>
   </section>
 
+  <!-- TERMINAL CLIENT -->
+  <section id="tui" aria-labelledby="linux-tui-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">No display required</p>
+        <h2 id="linux-tui-title" class="h2">The same app, in a terminal.</h2>
+        <p>Run it with <code>--tui</code> and NaviBeat draws itself in the terminal instead of a window. Your whole library, the queue, downloads, favourites, search, gapless playback, all of it over SSH on a headless server or a Raspberry Pi. On a machine with no display attached it starts that way by itself, so a music player never dies on a missing X server.</p>
+      </div>
+
+      <div class="p-shots">
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-tui.webp"
+                 alt="NaviBeat terminal client on Linux: an alphabetical album list of a 200 album library with artist and year columns, and a now playing bar showing a FLAC track with a progress bar"
+                 width="1404" height="1026" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">01 / Terminal client</p>
+            <h3>Ten screens, one keystroke each.</h3>
+            <p>Home, Albums, Artists, Songs, Playlists, Genres, Radios, Favorites, Downloads and Queue sit on the number keys. The bar along the bottom keeps the track, the artist, the elapsed time, the format and the volume in front of you while you browse somewhere else. It is the same engine underneath as the windowed app: the same library code, the same player, the same downloads, the same MPRIS integration, so your desktop's media keys still work.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-tui-keys.webp"
+                 alt="NaviBeat terminal client key map: screens on the number keys, j and k to move, enter to play, slash to search, question mark for help"
+                 width="1404" height="1026" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">02 / Keys</p>
+            <h3>The keys you already know.</h3>
+            <p>The bindings are cmus and mpd vocabulary: <code>j</code> and <code>k</code> to move, <code>enter</code> to play, <code>space</code> to pause, <code>n</code> and <code>p</code> for next and previous, <code>/</code> to search the server, <code>a</code> to queue, <code>d</code> to download, <code>f</code> to favourite. The arrow keys work alongside the letters, so nobody has to learn anything to get started, and <code>?</code> puts the whole map on screen.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- SCREENSHOT STRIP -->
   <section style="padding-top:0;">
     <div class="wrap">
@@ -478,6 +529,14 @@
         <div class="strip__item">
           <img src="assets/screenshots/linux/linux-navisyncrock-sync.webp" alt="NaviBeat NaviSyncRock sync options on Linux" width="1180" height="768" loading="lazy" decoding="async">
           <p class="strip__caption">Rockbox sync</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-tui.webp" alt="NaviBeat terminal client on Linux, running with --tui" width="1404" height="1026" loading="lazy" decoding="async">
+          <p class="strip__caption">Terminal client</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-tui-keys.webp" alt="NaviBeat terminal client key map" width="1404" height="1026" loading="lazy" decoding="async">
+          <p class="strip__caption">Terminal keys</p>
         </div>
       </div>
     </div>
@@ -562,6 +621,10 @@
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How do I install it?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Download the AppImage from GitHub, make it executable with <code>chmod +x</code>, and run it. It carries its own Java runtime and its own VLC, so there is nothing to install. If you already run VLC and want a smaller download, the <code>slim</code> build uses your system libVLC instead.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I run NaviBeat on a headless server with no desktop?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Run it with <code>--tui</code> and NaviBeat draws itself in the terminal instead of a window, so it works over SSH on a headless server or a Raspberry Pi. It is the same app underneath: the same library, the same queue, the same downloads, the same gapless playback, with cmus and mpd style keys. On a machine with no display attached it starts in terminal mode by itself. <a href="#tui" style="color:var(--accent-hi);">See the terminal client</a>.</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What music server does it need?</h3>
