@@ -92,7 +92,7 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music Streaming Client",
         "operatingSystem": "Linux x86_64, Linux ARM64 (aarch64)",
-        "softwareVersion": "0.9.55",
+        "softwareVersion": "0.9.56",
         "releaseNotes": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
         "datePublished": "2026-07-23",
         "downloadUrl": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
@@ -120,6 +120,8 @@
           "mTLS client certificates and custom HTTP headers for Cloudflare Access and Authelia",
           "Multi-library support",
           "Terminal client with --tui, so it runs over SSH on a headless server or Raspberry Pi",
+          "Terminal client shows the library, the queue and time-synced lyrics at once, with cover art in the terminal",
+          "Listening heatmap of seven days by twenty four hours, from your own play log",
           "MPRIS media-key and desktop integration",
           "Frosted Glass window, dark, light and system themes",
           "Zero analytics, zero trackers"
@@ -132,7 +134,9 @@
           "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock.webp",
           "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock-sync.webp",
           "https://navibeat.app/assets/screenshots/linux/linux-tui.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-tui-keys.webp"
+          "https://navibeat.app/assets/screenshots/linux/linux-tui-keys.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-tui-listening.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-tui-game.webp"
         ],
         "mentions": [
           { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
@@ -276,7 +280,7 @@
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Distribution</dt>
             <dd style="margin: 0; color: var(--text-1);">AppImage on <a href="https://github.com/nenadjokic/navibeat-linux/releases/latest" target="_blank" rel="noopener" style="color:var(--accent-hi);">GitHub Releases</a></dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Version</dt>
-            <dd style="margin: 0; color: var(--text-1);">0.9.55 beta &middot; <time datetime="2026-08-05">updated August 5, 2026</time></dd>
+            <dd style="margin: 0; color: var(--text-1);">0.9.56 beta &middot; <time datetime="2026-08-05">updated August 5, 2026</time></dd>
           </dl>
         </div>
 
@@ -453,7 +457,7 @@
       <div class="sec-head reveal-stagger">
         <p class="eyebrow eyebrow--accent">No display required</p>
         <h2 id="linux-tui-title" class="h2">The same app, in a terminal.</h2>
-        <p>Run it with <code>--tui</code> and NaviBeat draws itself in the terminal instead of a window. Your whole library, the queue, downloads, favourites, search, gapless playback, all of it over SSH on a headless server or a Raspberry Pi. On a machine with no display attached it starts that way by itself, so a music player never dies on a missing X server.</p>
+        <p>Run it with <code>--tui</code> and NaviBeat draws itself in the terminal instead of a window. Your whole library, the queue, the lyrics, cover art, downloads, favourites, search, gapless playback, all of it over SSH on a headless server or a Raspberry Pi. On a machine with no display attached it starts that way by itself, so a music player never dies on a missing X server.</p>
       </div>
 
       <div class="p-shots">
@@ -461,13 +465,13 @@
         <article class="p-shot reveal">
           <figure class="p-shot__media">
             <img src="assets/screenshots/linux/linux-tui.webp"
-                 alt="NaviBeat terminal client on Linux: an alphabetical album list of a 200 album library with artist and year columns, and a now playing bar showing a FLAC track with a progress bar"
-                 width="1482" height="964" loading="lazy" decoding="async">
+                 alt="NaviBeat terminal client on Linux: an album list on the left in its own framed section, Up Next and time-synced lyrics on the right, and a framed now playing bar with cover art and a gradient progress bar"
+                 width="1482" height="1088" loading="lazy" decoding="async">
           </figure>
           <div class="p-shot__copy">
             <p class="eyebrow">01 / Terminal client</p>
-            <h3>Ten screens, one keystroke each.</h3>
-            <p>Home, Albums, Artists, Songs, Playlists, Genres, Radios, Favorites, Downloads and Queue sit on the number keys. The bar along the bottom keeps the track, the artist, the elapsed time, the format and the volume in front of you while you browse somewhere else. It is the same engine underneath as the windowed app: the same library code, the same player, the same downloads, the same MPRIS integration, so your desktop's media keys still work.</p>
+            <h3>Your library, what is next, and the words. At once.</h3>
+            <p>Every section sits in its own frame, and the one your keys are going to is drawn in NaviBeat's own gradient, so you can see where you are from across the room. <strong>Tab</strong> moves between the library, Up Next and the lyrics. In the queue, enter jumps to a track; in the lyrics, enter seeks to that line. Ten screens still sit on the number keys, and it is the same engine as the windowed app underneath: the same library code, the same player, the same downloads, the same MPRIS integration, so your desktop's media keys still work.</p>
           </div>
         </article>
 
@@ -480,7 +484,33 @@
           <div class="p-shot__copy">
             <p class="eyebrow">02 / Keys</p>
             <h3>The keys you already know.</h3>
-            <p>The bindings are cmus and mpd vocabulary: <code>j</code> and <code>k</code> to move, <code>enter</code> to play, <code>space</code> to pause, <code>n</code> and <code>p</code> for next and previous, <code>/</code> to search the server, <code>a</code> to queue, <code>d</code> to download, <code>f</code> to favourite. The arrow keys work alongside the letters, so nobody has to learn anything to get started, and <code>?</code> puts the whole map on screen.</p>
+            <p>The bindings are cmus and mpd vocabulary: <code>j</code> and <code>k</code> to move, <code>enter</code> to play, <code>space</code> to pause, <code>n</code> and <code>p</code> for next and previous, <code>/</code> to search the server, <code>a</code> to queue, <code>d</code> to download, <code>f</code> to favourite, <code>w</code> for the side panes. The arrow keys work alongside the letters, so nobody has to learn anything to get started, the line along the bottom always shows the keys that work where you are, and <code>?</code> puts the whole map on screen.</p>
+          </div>
+        </article>
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-tui-listening.webp"
+                 alt="NaviBeat terminal client: a listening heatmap of seven days by twenty four hours, with top artists, albums and songs listed underneath"
+                 width="1482" height="1088" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">03 / Listening</p>
+            <h3>When you actually listen.</h3>
+            <p>Seven days by twenty four hours, built from the play log NaviBeat keeps on your own machine and nowhere else. Your busiest hour, and your top artists, albums and songs beneath it. <code>[</code> and <code>]</code> move between week, month, year and all time. A grid of cells is the one thing a terminal draws better than a window, and this one fills as you listen.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-tui-game.webp"
+                 alt="NaviBeat terminal client: Guess the Year, a hidden track playing with four candidate years to choose from and a running score"
+                 width="1482" height="1088" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">04 / Guess the Year</p>
+            <h3>A game made of your own records.</h3>
+            <p>A track from your library plays with its name hidden, and you pick from four years. Ten points for the exact year, eight if you are within two, and the track keeps playing after you answer, because it is a way to listen rather than a quiz. It sits on Home, next to the heatmap.</p>
           </div>
         </article>
 
@@ -694,7 +724,7 @@
     </div>
     <div class="footer__bar">
       <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>Linux 0.9.55 &middot; Open beta</span>
+      <span>Linux 0.9.56 &middot; Open beta</span>
     </div>
   </div>
 </footer>

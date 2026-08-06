@@ -373,7 +373,9 @@ distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It
 carries its own Java and VLC, so there is nothing to install, and it can sync
 to a Rockbox iPod (NaviSyncRock, free on Linux). It also ships a terminal
 client: run it with --tui for a full text interface over SSH, and on a machine
-with no display it starts that way by itself. Feature page and download at
+with no display it starts that way by itself. It shows the library, the queue
+and time-synced lyrics at once, draws real cover art in terminal cells, and has
+a listening heatmap built from your own play log. Feature page and download at
 https://navibeat.app/linux
 The terminal client is the same app, not a second one: the same library code,
 the same player, the same downloads, the same MPRIS integration. Ten screens sit
