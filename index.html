@@ -40,7 +40,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=20260806a">
+  <link rel="stylesheet" href="styles.css?v=20260806b">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp 2000w"
         imagesizes="(max-width: 960px) 84vw, (max-width: 1280px) 58vw, 742px">
@@ -324,7 +324,7 @@
   <div class="wrap nav__inner">
     <a class="nav__brand" href="#top" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
-        <img src="assets/icon.svg" alt="NaviBeat">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
         <span class="nav__pulse"></span>
       </span>
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
@@ -337,7 +337,7 @@
       <a href="listenbrainz" class="nav__link nav__link-hide-sm">ListenBrainz</a>
       <a href="rockbox" class="nav__link nav__link-hide-sm">Rockbox</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
-      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
@@ -396,7 +396,7 @@
           <span class="lineup__floor" aria-hidden="true"></span>
 
           <figure class="lineup__device lineup__device--tv" style="--stagger: 0ms;">
-            <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp"
+            <img fetchpriority="low" src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp"
                  srcset="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album-1194.webp 1194w, assets/screenshots/tvos/navibeat-apple-tv-home-featured-album-1791.webp 1791w"
                  sizes="(max-width: 960px) 44vw, (max-width: 1280px) 30vw, 384px"
                  alt="NaviBeat on Apple TV 4K: Home screen with Featured Album hero, Quick Play shelf, and Recently Added row."
@@ -412,7 +412,7 @@
           </figure>
 
           <figure class="lineup__device lineup__device--ipad" style="--stagger: 160ms;">
-            <img src="assets/screenshots/ipad/navibeat-ipad-home.webp"
+            <img fetchpriority="low" src="assets/screenshots/ipad/navibeat-ipad-home.webp"
                  srcset="assets/screenshots/ipad/navibeat-ipad-home-500.webp 500w, assets/screenshots/ipad/navibeat-ipad-home-1000.webp 1000w"
                  sizes="(max-width: 960px) 58vw, (max-width: 1280px) 44vw, 563px"
                  alt="NaviBeat Home on iPad Pro with sidebar, Featured Album hero, Quick Play row, and Most Played shelf."
@@ -420,7 +420,7 @@
           </figure>
 
           <figure class="lineup__device lineup__device--iphone" style="--stagger: 240ms;">
-            <img src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp"
+            <img fetchpriority="low" src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp"
                  srcset="assets/screenshots/iphone/navibeat-iphone-now-playing-280.webp 280w, assets/screenshots/iphone/navibeat-iphone-now-playing-560.webp 560w"
                  sizes="(max-width: 960px) 22vw, (max-width: 1280px) 15vw, 192px"
                  alt="NaviBeat Now Playing full-screen on iPhone."
@@ -428,7 +428,7 @@
           </figure>
 
           <figure class="lineup__device lineup__device--watch" style="--stagger: 320ms;">
-            <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp"
+            <img fetchpriority="low" src="assets/screenshots/watch/navibeat-watch-now-playing.webp"
                  alt="NaviBeat Now Playing on Apple Watch."
                  width="410" height="502" loading="eager" decoding="async">
           </figure>
@@ -545,26 +545,26 @@
         <div class="act__stage">
           <div class="act-iphone__group">
             <figure class="dev-iphone dev-iphone--lyrics" aria-hidden="true">
-              <img src="assets/screenshots/iphone/navibeat-iphone-lyrics.webp"
+              <img decoding="async" src="assets/screenshots/iphone/navibeat-iphone-lyrics.webp"
                  srcset="assets/screenshots/iphone/navibeat-iphone-lyrics-250.webp 250w, assets/screenshots/iphone/navibeat-iphone-lyrics-500.webp 500w"
                  sizes="250px"
                    alt="NaviBeat iPhone lyrics view" width="644" height="1400" loading="lazy">
             </figure>
             <figure class="dev-iphone dev-iphone--np" aria-hidden="true">
-              <img src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp"
+              <img decoding="async" src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp"
                  srcset="assets/screenshots/iphone/navibeat-iphone-now-playing-280.webp 280w, assets/screenshots/iphone/navibeat-iphone-now-playing-560.webp 560w"
                  sizes="280px"
                    alt="NaviBeat iPhone Now Playing" width="644" height="1400" loading="lazy">
             </figure>
             <figure class="dev-iphone dev-iphone--queue" aria-hidden="true">
-              <img src="assets/screenshots/iphone/navibeat-iphone-queue.webp"
+              <img decoding="async" src="assets/screenshots/iphone/navibeat-iphone-queue.webp"
                  srcset="assets/screenshots/iphone/navibeat-iphone-queue-250.webp 250w, assets/screenshots/iphone/navibeat-iphone-queue-500.webp 500w"
                  sizes="250px"
                    alt="NaviBeat iPhone Up Next queue" width="644" height="1400" loading="lazy">
             </figure>
             <figure class="dev-watch" aria-label="Apple Watch Now Playing">
               <span class="dev-watch__crown" aria-hidden="true"></span>
-              <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp"
+              <img decoding="async" src="assets/screenshots/watch/navibeat-watch-now-playing.webp"
                    alt="NaviBeat Apple Watch Now Playing" width="410" height="502" loading="lazy">
             </figure>
           </div>
@@ -581,25 +581,25 @@
         <div class="act__stage">
           <div class="family" aria-label="All five NaviBeat devices together">
             <figure class="family__device family__tv" aria-hidden="true">
-              <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp" alt="NaviBeat Home with featured album on Apple TV" loading="lazy">
+              <img width="1920" height="1080" decoding="async" src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp" alt="NaviBeat Home with featured album on Apple TV" loading="lazy">
             </figure>
             <figure class="family__device family__mac" aria-hidden="true">
-              <img src="assets/screenshots/macos/navibeat-mac-home.webp"
+              <img width="2880" height="1800" decoding="async" src="assets/screenshots/macos/navibeat-mac-home.webp"
                  srcset="assets/screenshots/macos/navibeat-mac-home-1000.webp 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp 2000w"
                  sizes="1000px" alt="NaviBeat Home screen on Mac" loading="lazy">
             </figure>
             <figure class="family__device family__ipad" aria-hidden="true">
-              <img src="assets/screenshots/ipad/navibeat-ipad-home.webp"
+              <img width="2752" height="2064" decoding="async" src="assets/screenshots/ipad/navibeat-ipad-home.webp"
                  srcset="assets/screenshots/ipad/navibeat-ipad-home-500.webp 500w, assets/screenshots/ipad/navibeat-ipad-home-1000.webp 1000w"
                  sizes="500px" alt="NaviBeat Home screen on iPad" loading="lazy">
             </figure>
             <figure class="family__device family__iphone" aria-hidden="true">
-              <img src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp"
+              <img width="1320" height="2868" decoding="async" src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp"
                  srcset="assets/screenshots/iphone/navibeat-iphone-now-playing-280.webp 280w, assets/screenshots/iphone/navibeat-iphone-now-playing-560.webp 560w"
                  sizes="280px" alt="NaviBeat Now Playing screen on iPhone" loading="lazy">
             </figure>
             <figure class="family__device family__watch" aria-hidden="true">
-              <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp" alt="NaviBeat Now Playing on Apple Watch" loading="lazy">
+              <img width="410" height="502" decoding="async" src="assets/screenshots/watch/navibeat-watch-now-playing.webp" alt="NaviBeat Now Playing on Apple Watch" loading="lazy">
             </figure>
             <aside class="family__receipt" aria-label="Universal Purchase receipt">
               <div class="family__receipt-h">// receipt.txt</div>
@@ -1416,7 +1416,7 @@
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="#top">
-          <img src="assets/icon.svg" alt="NaviBeat">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
@@ -1430,7 +1430,7 @@
         </div>
         <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
         <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
-          <img class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <img decoding="async" class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
           <span class="sibling-card__text">
             <span class="sibling-card__label">From the same maker</span>
             <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>

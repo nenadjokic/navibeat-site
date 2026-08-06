@@ -333,13 +333,18 @@ section { padding-block: var(--rhythm); }
   width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 8px var(--accent);
+  box-shadow: 0 0 10px var(--accent);
   flex-shrink: 0;
   animation: betaPulse 2.4s var(--ease) infinite;
 }
+/* Same reason as navPulse below: box-shadow is a paint property, so animating
+   its blur radius repainted this dot on every frame for the life of the page.
+   opacity and scale reach the compositor instead and the dot still breathes.
+   The static box-shadow above sits at the midpoint of the old two radii, so the
+   glow reads the same. */
 @keyframes betaPulse {
-  0%, 100% { opacity: 0.7; box-shadow: 0 0 6px var(--accent); }
-  50%       { opacity: 1;   box-shadow: 0 0 14px var(--accent-hi); }
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.32); }
 }
 .beta-banner a { color: var(--accent); border-bottom: 1px solid rgba(244, 123, 32, 0.3); }
 .beta-banner a:hover { color: var(--accent-hi); }
@@ -407,12 +412,20 @@ section { padding-block: var(--rhythm); }
   width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 2px var(--bg-0), 0 0 10px var(--accent);
+  box-shadow: 0 0 0 2px var(--bg-0), 0 0 11px var(--accent);
   animation: navPulse 2.4s var(--ease) infinite;
 }
+/* This dot lives inside the sticky bar, which means it is on screen on every
+   page for as long as the page is open. Animating the box-shadow blur radius
+   made that a repaint on every frame, forever, on the one layer the browser can
+   least afford to keep dirty: a phone then has to finish that paint before it
+   can deliver the tap sitting behind it. Only opacity and transform here now,
+   both of which the compositor owns, with the glow pinned static above at the
+   midpoint of the two radii the keyframes used to sweep between.
+   .hero__eyebrow-dot rides the same keyframes and gets the same treatment. */
 @keyframes navPulse {
-  0%, 100% { box-shadow: 0 0 0 2px var(--bg-0), 0 0 7px var(--accent); opacity: 0.8; }
-  50%       { box-shadow: 0 0 0 2px var(--bg-0), 0 0 16px var(--accent-hi); opacity: 1; }
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.28); }
 }
 
 .nav__links {
@@ -534,10 +547,43 @@ section { padding-block: var(--rhythm); }
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
+  /* A media query contributes no specificity, so the .nav rule above (0,1,0)
+     cannot reach the scrolled bar: .nav.is-scrolled up at line 367 is (0,2,0)
+     and keeps winning. Measured on the page before this line existed: 0.96 at
+     rest, then 0.90 the moment scrollY passed 24, with the blur already gone.
+     The bar was getting MORE see-through exactly when content starts running
+     underneath it, which is the one state the opacity was raised to cover.
+     Restated at the same specificity, a shade denser than 0.96 because with no
+     blur to soften it the scrolled bar is the only thing separating the header
+     from moving artwork. */
+  .nav.is-scrolled { background: rgba(14, 11, 8, 0.985); }
 
   /* A tap has to say something the instant it lands, whatever the compositor
      is doing. Without this the only feedback is the panel appearing. */
   .nav__toggle:active { opacity: 0.55; }
+
+  /* THE many-taps bug (Nenad, 2026-08-06: "moram da kliknem mnogo puta da se
+     otvori"). It was never speed. .nav__links carries margin-left:auto, and
+     that auto margin is the only thing holding the toggle against the right
+     edge. Opening the panel makes .nav__links position:absolute, which takes it
+     out of the flex flow and takes the auto margin with it, so the button
+     TELEPORTED back next to the brand: measured -122px at 320 wide up to -202px
+     at 430, on all six pages checked, 60 of 60 width/page combinations, and
+     elementFromPoint at the pixel just tapped came back as .nav__inner, not the
+     button. So the first tap DID open the menu, the button then jumped out from
+     under the thumb, the second tap in the same spot hit bare bar and did
+     nothing, and the third finally found the button again and shut it. Handing
+     the auto margin to the toggle while the panel is open keeps it on the exact
+     pixel it was tapped on. */
+  .nav--open .nav__toggle { margin-left: auto; }
+
+  /* iOS keeps double-tap-to-zoom armed on a plain width=device-width viewport,
+     so it holds a click back while it waits to see whether a second tap is
+     coming. This says there is no zoom gesture on these controls and the tap
+     can resolve immediately. */
+  .nav__toggle,
+  .nav__links a,
+  .nav__links .btn { touch-action: manipulation; }
 
   /* Nav: shorten the always-visible CTA so the right edge never crops. */
   .nav__inner .btn--compact { padding-left: 12px; padding-right: 12px; font-size: 12px; }
@@ -702,7 +748,10 @@ section { padding-block: var(--rhythm); }
   width: 7px; height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
+  /* The 2px bg-0 ring used to arrive from the navPulse keyframes, which no
+     longer carry a box-shadow. Restated here so the dot renders exactly as it
+     did before the keyframes were made compositable. */
+  box-shadow: 0 0 0 2px var(--bg-0), 0 0 11px var(--accent);
   animation: navPulse 2.4s var(--ease) infinite;
   flex-shrink: 0;
 }
@@ -2990,3 +3039,58 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   .androidteaser__inner { flex-direction: column-reverse; align-items: flex-start; }
   .androidteaser__art { width: 84px; }
 }
+
+/* =============================================================================
+   Phone rendering budget
+   -----------------------------------------------------------------------------
+   Measured 2026-08-06 on a 390x844 viewport, against four earlier builds served
+   side by side from git, because "it used to be fine" needed a number and not a
+   memory. The homepage was 10,414px tall on 2026-07-01 and is 28,601px today:
+   12.3 phone screens grown into 33.9, DOM up from 586 nodes to 1,004, and 23% of
+   that arrived in a single day. Nothing here is one bad rule. It is a page that
+   quietly got two and a half times longer while every decorative animation on it
+   kept running whether or not it was anywhere near the screen.
+   ============================================================================= */
+
+@media (max-width: 720px) {
+  /* content-visibility:auto was the obvious answer for 28 off-screen screens and
+     it was tried here first. It is NOT in this file on purpose. Measured on the
+     real page: the document collapsed from 28,601px to 14,506px and never came
+     back, #buy landed 19,715px away from an anchor jump, the scroll-reveal
+     observer went 17 targets to 0 because nothing inside a skipped subtree ever
+     intersects (so half the page would have shipped stuck at opacity 0), and the
+     off-screen equaliser bars carried on animating regardless, 10 of 10. It
+     bought nothing and broke four things. Do not put it back without running the
+     same four checks. */
+
+  /* Four blurred glow layers, about 1.5 million CSS px of blurred surface
+     between them (1.47M measured at DPR 2, 1.51M at DPR 3), and the only reason
+     they hold GPU texture the whole time the page is open is that their
+     animations never end, so the compositor never gets to release the layer. A
+     phone has the least texture memory of anything we ship to and it is carrying
+     the largest copy of it. They keep their pose and their blur, they just stop
+     breathing at a width where a 12px drift over nine seconds was not something
+     anyone was going to notice. */
+  .hero__ambient-glow,
+  .lineup__glow { animation: none; }
+
+  /* Thirty seconds per turn on a 360px disc at 20% opacity, forever, purely so
+     the compositor can never go idle behind the content. */
+  .hero__vinyl { animation: none; }
+
+  /* Smooth scrolling was written for a page that was twelve screens long. It is
+     thirty-four now, so a tap on a nav anchor became an animated journey:
+     measured on a 6x throttled phone profile, #buy is 19,644px away and takes
+     1,910ms across 199 rendered frames, every one of them painting whatever is
+     passing through the viewport. That is the stutter you get immediately after
+     opening the menu, because opening the menu is how you reach those links.
+     The jump is instant at this width instead. Anchors still land on their
+     section: five of them checked after this change, every one landing on the
+     section top rather than near it. */
+  html { scroll-behavior: auto; }
+}
+
+/* Every tappable control, not just the nav: iOS holds a click back while it
+   waits out the double-tap-to-zoom window unless it is told the element has no
+   zoom gesture on it. Pinch zoom is untouched, so this costs no accessibility. */
+a, button, summary, .btn, [role="button"] { touch-action: manipulation; }
