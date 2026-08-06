@@ -524,6 +524,21 @@ section { padding-block: var(--rhythm); }
 @media (max-width: 1000px) {
   .nav__inner { position: relative; }
 
+  /* Same reason as the panel below: a 22px saturating backdrop blur on a
+     STICKY bar is repainted on every scroll frame, and on a phone that is the
+     difference between a tap landing instantly and a tap that seems ignored.
+     The bar goes nearly opaque instead, which reads the same at this width
+     because there is no wide content showing through it anyway. */
+  .nav {
+    background: rgba(14, 11, 8, 0.96);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  /* A tap has to say something the instant it lands, whatever the compositor
+     is doing. Without this the only feedback is the panel appearing. */
+  .nav__toggle:active { opacity: 0.55; }
+
   /* Nav: shorten the always-visible CTA so the right edge never crops. */
   .nav__inner .btn--compact { padding-left: 12px; padding-right: 12px; font-size: 12px; }
 
@@ -547,12 +562,17 @@ section { padding-block: var(--rhythm); }
   .nav--open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   /* Open: the whole link cluster drops into a full-width panel in the nav's blur/border voice. */
+  /* NO backdrop-filter here, deliberately (Nenad, 2026-08-06: "moram da
+     kliknem mnogo puta da se otvori ... jako je sporo"). The panel's own
+     background is 97% opaque, so the blur behind it was invisible and cost a
+     full-width composite on top of the bar's OWN blur. On a phone that delay
+     is long enough to read as "the tap did nothing", so the next tap toggles
+     it shut again, which is exactly the many-taps-to-open symptom. The look is
+     unchanged: 0.97 over 1.0 is not a difference anyone can see. */
   .nav--open .nav__links {
     position: absolute; top: calc(100% + 1px); left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 0; margin: 0;
-    background: rgba(14, 11, 8, 0.97);
-    -webkit-backdrop-filter: saturate(140%) blur(14px);
-    backdrop-filter: saturate(140%) blur(14px);
+    background: rgb(14, 11, 8);
     border-bottom: 1px solid var(--border);
     box-shadow: 0 22px 44px rgba(0, 0, 0, 0.42);
     padding: 6px 22px 18px;
