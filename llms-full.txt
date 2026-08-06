@@ -381,7 +381,10 @@ The terminal client is the same app, not a second one: the same library code,
 the same player, the same downloads, the same MPRIS integration. Ten screens sit
 on the number keys (Home, Albums, Artists, Songs, Playlists, Genres, Radios,
 Favorites, Downloads, Queue) and the bindings are cmus and mpd vocabulary, with
-the arrow keys working alongside the letters. Screenshots: navibeat.app/linux#tui
+the arrow keys working alongside the letters. There is a full Now Playing screen
+at the top of Home with a large cover, the queue and the words beside it, and H
+and L move the divider between the library and the side column.
+Screenshots: navibeat.app/linux#tui
 
 Q: Is NaviBeat coming to Windows?
 A: Yes, a native Windows desktop client is in active development, built alongside
