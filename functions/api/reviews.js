@@ -22,8 +22,20 @@
  *      /reviews.json asset (generated from the App Store Connect API).
  *
  * Transparency (2026-06-24, Nenad): bodies verbatim, author and date on every
- * review, EVERY rating included (critical ones too), and `average` is the true
- * mean across all reviews.
+ * review, critical ratings included (not just the 4-5 star ones).
+ *
+ * Headline metric (changed 2026-08-08): `count` and `average` are the RATINGS
+ * aggregate, every star Apple holds including the majority that carry no
+ * written review, matching what Apple's own product page shows so a visitor can
+ * verify it by tapping through. They are NOT the mean of the `reviews` array:
+ * people who write skew critical, so that mean runs lower and is carried
+ * separately as `writtenAverage`. The site must say "ratings" in the headline.
+ *
+ * One content rule applies to the `reviews` array: a body that says nothing
+ * about the app beyond restating its own star rating is left out, enforced
+ * identically for 1-star and 5-star (see is_substantive in the NaviBeat repo,
+ * scripts/gen-reviews-snapshot.py). It is not a rating filter, and every
+ * substantive critical review is served.
  *
  * Append ?debug=1 to see per-territory probe results instead of the payload.
  */

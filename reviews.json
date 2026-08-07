@@ -1,9 +1,70 @@
 {
- "count": 14,
- "average": 4.14,
- "fetchedAt": 1783672589016,
+ "count": 31,
+ "average": 4.23,
+ "headlineSource": "iTunes lookup ratings aggregate, all storefronts",
+ "writtenCount": 22,
+ "writtenAverage": 3.82,
+ "shownCount": 21,
+ "excludedForNoContent": 1,
+ "fetchedAt": 1786141281236,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
+  {
+   "author": "マキマ「支配の悪魔」",
+   "rating": 3,
+   "title": "Broken Artworks on iOS",
+   "body": "The app is generally good, which is why I am going for 3 stars. Unfortunately, on iOS the artwork of musics gets stretched/broken whereas on MacOS it looks okay.\n\nNo idea where this difference comes from, but when that gets fixed I will definitely change the review.",
+   "territory": "PRT",
+   "date": "2026-08-04T08:21:13-07:00"
+  },
+  {
+   "author": "OConstantine",
+   "rating": 5,
+   "title": "Не плохо 👍",
+   "body": "Пол дня по ходил прослушивая музыку в целом мне нравится. Но есть одно замечание буферит через два три трека mp3, FLAC, без разницы.  Интернет LTE вроде стабильный. Со стороны сервера и прокси обратного все максимально оптимизировано путем добавления заголовков. Обратите внимание на это пожалуйста. А так пока на первый взгляд все нормально еще бы добавили заголовок идет тримминг или кэш.",
+   "territory": "RUS",
+   "date": "2026-07-24T05:38:40-07:00"
+  },
+  {
+   "author": "laristein",
+   "rating": 4,
+   "title": "Almost perfect tvOS client",
+   "body": "The app is beautiful, snappy and offers just about everything I expect from a tvOS client. The only thing that’s a probably a bug is, on the Library tab, the sub-tab (Albums, Favorites etc) cannot be reached via navigation. It skips to the selection instead, so it is basically impossible for me to explore the library that way.\nOverall, great app",
+   "territory": "USA",
+   "date": "2026-07-19T18:16:35-07:00"
+  },
+  {
+   "author": "moousq",
+   "rating": 2,
+   "title": "Красивая картинка, кривая реализация",
+   "body": "С стороны выглядело как ультимативное решение для задачи работы на apple tv, в реальности крайне не удобный, не логичный UX, специфичный UI, много кривых элементов и спорных дизайн решений. Багов с запасом, пользоваться поиском невозможно, вернутся из части меню невозможно, радио не удаляется, и таких моментов очень много. В общем и целом разочарован, своих денег не стоит.",
+   "territory": "RUS",
+   "date": "2026-07-19T04:31:37-07:00"
+  },
+  {
+   "author": "Tijs72",
+   "rating": 5,
+   "title": "Amazing Feature Set",
+   "body": "Including offline playback on my Apple Watch! Nice UI. No subscription model. Multiple Server support. This app has it all. Impressive.",
+   "territory": "NLD",
+   "date": "2026-07-19T03:35:40-07:00"
+  },
+  {
+   "author": "夜里磨刀",
+   "rating": 4,
+   "title": "好用，可惜手表版有容量限制",
+   "body": "有可能让手表下载超过2.2G的歌曲吗？",
+   "territory": "CHN",
+   "date": "2026-07-13T06:56:11-07:00"
+  },
+  {
+   "author": "SUYBDSUVYBSDUVYBS",
+   "rating": 2,
+   "title": "Cumbersome design",
+   "body": "Somewhat bizarre navigation design on tvOS. Navigating through your library “artists” or “albums” requires selecting the library tab first, instead of being a normal menu item. Then if you play an album, you are kicked to the “now playing” menu and have to navigate back to library to browse other items. Why would you not just stay in library tab like every other media player?",
+   "territory": "USA",
+   "date": "2026-07-11T10:52:23-07:00"
+  },
   {
    "author": "Rtr8",
    "rating": 5,

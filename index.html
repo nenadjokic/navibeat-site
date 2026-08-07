@@ -1498,8 +1498,18 @@
 <script>
   /* App Store reviews: live customer reviews from Apple's public RSS, served by /api/reviews
      (Cloudflare Pages Function + KV). Transparent (2026-06-24): body shown verbatim, author + date
-     visible, EVERY rating shown (incl. critical reviews, not just 4-5 star), and the headline
-     average is the true mean across all reviews. Reveals as soon as one review exists.
+     visible, critical reviews shown alongside the rest (not just 4-5 star). Reveals as soon as one
+     review exists.
+
+     HEADLINE (changed 2026-08-08): `d.count` / `d.average` are the RATINGS aggregate, every star
+     Apple has including the majority left with no written review, which is the same figure Apple's
+     own product page shows. It is NOT the mean of the cards below: written reviews skew critical, so
+     that mean runs lower (`d.writtenAverage` carries it if ever needed). Say "ratings" in the
+     headline, never "reviews", or the number is a false claim.
+
+     The cards exclude one thing only: a review whose body says nothing about the app beyond
+     restating its own star rating, applied to 1-star and 5-star alike (see is_substantive in
+     scripts/gen-reviews-snapshot.py). Every substantive critical review is shown.
      See docs/reviews-integration-setup.md. */
   (function () {
     function render(d) {
@@ -1508,10 +1518,11 @@
       var stat = document.getElementById('reviews-stat');
       var grid = document.getElementById('reviews-grid');
       var esc = function (s) { var p = document.createElement('p'); p.textContent = s || ''; return p.innerHTML; };
-      stat.textContent = '★ ' + d.average.toFixed(1) + ' from ' + d.count + ' App Store reviews';
-      stat.setAttribute('aria-label', 'Average rating ' + d.average.toFixed(1) + ' out of 5 from ' + d.count + ' App Store reviews');
-      // Transparency: show EVERY review (all ratings), most-recent first. No
-      // rating filter - critical reviews appear alongside the rest. Capped at
+      stat.textContent = '★ ' + d.average.toFixed(1) + ' from ' + d.count + ' App Store ratings';
+      stat.setAttribute('aria-label', 'Average rating ' + d.average.toFixed(1) + ' out of 5 from ' + d.count + ' App Store ratings');
+      // Show every review the snapshot carries, most-recent first. No rating
+      // filter here: critical reviews appear alongside the rest, and the only
+      // exclusion happened upstream in the generator's content rule. Capped at
       // 24 cards so the page stays sane as the review count grows.
       var shown = d.reviews.slice(0, 24);
       grid.innerHTML = shown.map(function (x) {
