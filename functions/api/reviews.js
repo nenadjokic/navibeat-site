@@ -145,10 +145,27 @@ export async function onRequestGet(context) {
   }
 
   // Only cache real data; never overwrite a good stale value with emptiness.
-  if (!debug && result.count && env && env.REVIEWS_KV) {
+  //
+  // BUG FIXED 2026-08-08, and it silently served a month-old snapshot. Two
+  // separate mistakes compounded:
+  //
+  //   1. The outer stamp was `Date.now()`, i.e. WHEN WE WROTE, not how old the
+  //      data is. Falling back to a stale snapshot therefore re-stamped it as
+  //      fresh, so the TTL check at the top passed for another full hour, and
+  //      re-stamped again on the next miss. Stale data stayed "fresh" forever.
+  //   2. It rewrote even when `result` came straight out of KV, which can only
+  //      ever re-stamp, never improve anything, and which is what clobbered the
+  //      generator's authoritative push: gen-reviews-snapshot.py wrote the new
+  //      snapshot, a request landed on an edge replica that had not caught up
+  //      yet, and the worker wrote the old payload back over it.
+  //
+  // So: carry the DATA's own fetchedAt as the outer stamp, and never write back
+  // a value that came out of KV in the first place. A snapshot pushed by the
+  // generator now always wins on recency, because it genuinely is more recent.
+  if (!debug && result.count && env && env.REVIEWS_KV && source !== 'kv-stale') {
     await env.REVIEWS_KV.put(
       CACHE_KEY,
-      JSON.stringify({ fetchedAt: Date.now(), data: result }),
+      JSON.stringify({ fetchedAt: result.fetchedAt || Date.now(), data: result }),
       { expirationTtl: 30 * 24 * 3600 }
     );
   }
