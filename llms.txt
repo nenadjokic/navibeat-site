@@ -8,7 +8,7 @@
 - Category: Self-hosted music streaming client (Navidrome / Subsonic / OpenSubsonic)
 - Platforms: iPhone (iOS 18+), iPad (iPadOS 18+), Mac (macOS 15+), Apple TV (tvOS 18+), Apple Watch (watchOS 11+), plus CarPlay
 - Price: $5.99 USD, one-time, one Universal Purchase covers all five platforms. No subscription.
-- Current version: 1.3.3 on the App Store (macOS and tvOS live; the iOS 1.3.3 update is in review). 1.3.4 is in open TestFlight beta and is the version described under "In the beta right now" below.
+- Current version: 1.3.3 on the App Store (macOS and tvOS live; the iOS 1.3.3 update is in review). 1.4 is in open TestFlight beta and is the version described under "In the beta right now" below.
 - Availability: Live on the Apple App Store. https://apps.apple.com/app/navibeat/id6763518834
 - Compatible servers: Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. Subsonic-API servers generally work.
 - NOT compatible with: Plex, Jellyfin (for Jellyfin, see NaviFin), Spotify, Apple Music, or other proprietary streaming services. NaviBeat needs your own server.
@@ -129,13 +129,15 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - [Privacy](https://navibeat.app/privacy): Privacy policy (no data collection)
 - [NaviFin](https://navifin.app/): Sister app, native Jellyfin client for Apple
 
-## In the beta right now (1.3.4, open TestFlight)
+## In the beta right now (1.4, open TestFlight)
 
 These are finished and running in the public TestFlight beta today, and reach the App Store in the next release. The beta is free and open to anyone: https://navibeat.app/beta
 
 - User-chosen accent colour: six presets, a full colour picker and a hex field. The glyph colour drawn on top of the accent is computed from WCAG relative luminance, so it stays readable on any choice, and the gradient derives from the chosen colour.
 - Jump buttons: skip back and forward by 10, 15 or 30 seconds, placed either side of Play with Next and Previous left in place. Can be limited to one library, which is what makes an audiobook library behave differently from a music library on the same server. Off by default. iPhone, iPad, Mac and Apple TV. There is no jump pair on the Apple Watch.
-- Cross-device continue (handoff): another device offers to continue what you left half-played, at the same second and with the queue intact, and the first device pauses itself within a few seconds. Runs through the server's own play queue, so nothing leaves the network.
+- Cross-device continue (handoff): another device offers to continue what you left half-played, at the same second and with the queue intact, and the first device pauses itself. Runs through the server's own play queue, so nothing leaves the network.
+- Faster starts on streamed lossless: the exact length of a FLAC is read from the first 42 bytes instead of scanning the file, which took one 8 minute 24-bit track over Wi-Fi from 31 seconds to 3, with the end of the track still accurate to the sample. Track-to-track joins on seamless albums were fixed in the same pass.
+- Landscape on every iPhone, at any Display Zoom setting, opening the wide player with lyrics beside the artwork. It used to be limited to the larger phones and switched itself off under Larger Text.
 - Smart Playlists: user-defined rules (artist, genre, year, rating, play count, date added, membership of another playlist), live results while editing, definitions synced across devices, and an optional snapshot written back to the server as a normal playlist.
 - Offline folded into the normal UI: the same Home, artists and albums, with what is not downloaded greyed out rather than hidden, plus an automatic switch to downloads when the server is unreachable and back when it returns.
 - Saved servers: several servers side by side, switched without retyping, each with its own proxy headers and mTLS client certificate.
