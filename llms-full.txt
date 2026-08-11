@@ -80,7 +80,9 @@ verifiable in its own source: its Xcode project contains no watchOS target.
 - NaviSyncRock (Rockbox iPod sync, macOS only) is a separate $4.99 one-time
   in-app unlock, shipped in 1.3.0.
 - Beyond Apple, available now: a native Linux desktop build, free and in open
-  beta, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux).
+  beta, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux)
+  and from signed apt and dnf repositories at dl.navibeat.app, so
+  `apt install navibeat` and `dnf install navibeat` work on x86_64 and ARM64.
 - In closed beta (July 2026): a native Android client, finished. It is finished and running as a closed
   beta on Google Play. No store release date has been announced yet. Testers are
   wanted: email
@@ -369,7 +371,11 @@ television and the car behind it.
 
 Q: Is NaviBeat on Linux?
 A: Yes. A native Linux desktop build is available now, in open beta and free,
-distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux). It
+distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux) and
+from signed apt and dnf repositories at dl.navibeat.app. On Debian, Ubuntu,
+Raspberry Pi OS, Mint, Fedora, RHEL, Rocky and Alma it installs with
+`apt install navibeat` or `dnf install navibeat`, on x86_64 and ARM64, and new
+versions arrive with a normal `apt upgrade` or `dnf upgrade`. It
 carries its own Java and VLC, so there is nothing to install, and it can sync
 to a Rockbox iPod (NaviSyncRock, free on Linux). It plays to a UPnP or DLNA
 speaker, receiver or smart TV on the same network, found automatically with no
