@@ -372,8 +372,8 @@ television and the car behind it.
 Q: Is NaviBeat on Linux?
 A: Yes. A native Linux desktop build is available now, in open beta and free,
 distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux) and
-from signed apt and dnf repositories at dl.navibeat.app. On Debian, Ubuntu,
-Raspberry Pi OS, Mint, Fedora, RHEL, Rocky and Alma it installs with
+from signed apt and dnf repositories at dl.navibeat.app. On Debian 12+, Ubuntu 24.04+,
+Raspberry Pi OS, Mint and Fedora 38+ it installs with
 `apt install navibeat` or `dnf install navibeat`, on x86_64 and ARM64, and new
 versions arrive with a normal `apt upgrade` or `dnf upgrade`. It
 carries its own Java and VLC, so there is nothing to install, and it can sync

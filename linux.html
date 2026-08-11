@@ -172,7 +172,7 @@
             "name": "How do I install it?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Two ways. On Debian, Ubuntu, Raspberry Pi OS, Fedora, RHEL, Rocky or Alma, add the NaviBeat repository at dl.navibeat.app and run apt install navibeat or dnf install navibeat, and apt upgrade or dnf upgrade carries new versions from then on. Anywhere else, download the AppImage from GitHub, make it executable with chmod +x, and run it. Both carry their own Java runtime and their own VLC, so there is nothing else to install. If you already run VLC and want a smaller download, the slim AppImage uses your system libVLC instead."
+              "text": "Two ways. On Debian 12+, Ubuntu 24.04+, Raspberry Pi OS, Mint and Fedora 38+, add the NaviBeat repository at dl.navibeat.app and run apt install navibeat or dnf install navibeat, and apt upgrade or dnf upgrade carries new versions from then on. Anywhere else, download the AppImage from GitHub, make it executable with chmod +x, and run it. Both carry their own Java runtime and their own VLC, so there is nothing else to install. If you already run VLC and want a smaller download, the slim AppImage uses your system libVLC instead."
             }
           },
           {
@@ -643,7 +643,7 @@ https://dl.navibeat.app/deb stable main" \
   | sudo tee /etc/apt/sources.list.d/navibeat.list
 sudo apt update &amp;&amp; sudo apt install navibeat</code></pre>
 
-          <p style="margin:0 0 6px; color:var(--text-0); font-size:14px; font-weight:600;">Fedora, RHEL, Rocky, Alma</p>
+          <p style="margin:0 0 6px; color:var(--text-0); font-size:14px; font-weight:600;">Fedora 38 and newer</p>
           <pre style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>sudo dnf install https://dl.navibeat.app/navibeat-release.rpm
 sudo dnf install navibeat</code></pre>
 
@@ -693,7 +693,7 @@ sudo dnf install navibeat</code></pre>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How do I install it?</h3>
-          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Two ways. On Debian, Ubuntu, Raspberry Pi OS, Mint, Fedora, RHEL, Rocky or Alma, add the NaviBeat repository and run <code>apt install navibeat</code> or <code>dnf install navibeat</code>, and every later version arrives with <code>apt upgrade</code> or <code>dnf upgrade</code>. Anywhere else, download the AppImage, make it executable with <code>chmod +x</code>, and run it. Both carry their own Java runtime and their own VLC, so there is nothing else to install. If you already run VLC and want a smaller download, the <code>slim</code> AppImage uses your system libVLC instead. <a href="#install" style="color:var(--accent-hi);">See both, with the commands</a>.</p>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Two ways. On Debian 12+, Ubuntu 24.04+, Raspberry Pi OS, Mint and Fedora 38+, add the NaviBeat repository and run <code>apt install navibeat</code> or <code>dnf install navibeat</code>, and every later version arrives with <code>apt upgrade</code> or <code>dnf upgrade</code>. Anywhere else, download the AppImage, make it executable with <code>chmod +x</code>, and run it. Both carry their own Java runtime and their own VLC, so there is nothing else to install. If you already run VLC and want a smaller download, the <code>slim</code> AppImage uses your system libVLC instead. <a href="#install" style="color:var(--accent-hi);">See both, with the commands</a>.</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I run NaviBeat on a headless server with no desktop?</h3>
