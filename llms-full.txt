@@ -81,8 +81,9 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   in-app unlock, shipped in 1.3.0.
 - Beyond Apple, available now: a native Linux desktop build, free and in open
   beta, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux)
-  and from signed apt and dnf repositories at dl.navibeat.app, so
-  `apt install navibeat` and `dnf install navibeat` work on x86_64 and ARM64.
+  and from signed apt, dnf and pacman repositories at dl.navibeat.app, so
+  `apt install navibeat`, `dnf install navibeat` and `pacman -Syu navibeat`
+  work on x86_64 and ARM64.
 - In closed beta (July 2026): a native Android client, finished. It is finished and running as a closed
   beta on Google Play. No store release date has been announced yet. Testers are
   wanted: email
@@ -372,11 +373,12 @@ television and the car behind it.
 Q: Is NaviBeat on Linux?
 A: Yes. A native Linux desktop build is available now, in open beta and free,
 distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux) and
-from signed apt and dnf repositories at dl.navibeat.app. On Debian 12+, Ubuntu 24.04+,
-Raspberry Pi OS, Mint and Fedora 38+ it installs with
-`apt install navibeat` or `dnf install navibeat`, on x86_64 and ARM64, and new
-versions arrive with a normal `apt upgrade` or `dnf upgrade`. It
-carries its own Java and VLC, so there is nothing to install, and it can sync
+from signed apt, dnf and pacman repositories at dl.navibeat.app. On Debian 12+, Ubuntu 24.04+,
+Raspberry Pi OS, Mint, Fedora 38+ and Arch Linux it installs with
+`apt install navibeat`, `dnf install navibeat` or `pacman -Syu navibeat`, on x86_64 and
+ARM64, and new versions arrive with a normal `apt upgrade`, `dnf upgrade` or `pacman -Syu`. The
+Debian and Fedora packages carry their own Java and VLC, so there is nothing to install, and the
+Arch package carries its own Java and uses the `libvlc` in Arch's own repositories. It can sync
 to a Rockbox iPod (NaviSyncRock, free on Linux). It plays to a UPnP or DLNA
 speaker, receiver or smart TV on the same network, found automatically with no
 address to type. It also ships a terminal

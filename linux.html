@@ -172,7 +172,7 @@
             "name": "How do I install it?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Two ways. On Debian 12+, Ubuntu 24.04+, Raspberry Pi OS, Mint and Fedora 38+, add the NaviBeat repository at dl.navibeat.app and run apt install navibeat or dnf install navibeat, and apt upgrade or dnf upgrade carries new versions from then on. Anywhere else, download the AppImage from GitHub, make it executable with chmod +x, and run it. Both carry their own Java runtime and their own VLC, so there is nothing else to install. If you already run VLC and want a smaller download, the slim AppImage uses your system libVLC instead."
+              "text": "Two ways. On Debian 12+, Ubuntu 24.04+, Raspberry Pi OS, Mint, Fedora 38+ and Arch Linux, add the NaviBeat repository at dl.navibeat.app and run apt install navibeat, dnf install navibeat or pacman -Syu navibeat, and apt upgrade, dnf upgrade or pacman -Syu carries new versions from then on. Anywhere else, download the AppImage from GitHub, make it executable with chmod +x, and run it. The Debian and Fedora packages and the AppImage carry their own Java runtime and their own VLC, so there is nothing else to install; the Arch package brings its own Java and uses the libvlc in Arch's own repositories. If you already run VLC and want a smaller download, the slim AppImage uses your system libVLC instead."
             }
           },
           {
@@ -631,8 +631,8 @@
         </article>
 
         <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
-          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">Or install it with apt or dnf</h3>
-          <p style="margin:0 0 14px; color:var(--text-1); font-size:15px; line-height:1.7;">NaviBeat has its own signed repository, so it arrives with a menu entry and an icon, and <code>apt upgrade</code> or <code>dnf upgrade</code> carries new versions along with everything else on the machine.</p>
+          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">Or install it with apt, dnf or pacman</h3>
+          <p style="margin:0 0 14px; color:var(--text-1); font-size:15px; line-height:1.7;">NaviBeat has its own signed repository, so it arrives with a menu entry and an icon, and <code>apt upgrade</code>, <code>dnf upgrade</code> or <code>pacman -Syu</code> carries new versions along with everything else on the machine.</p>
 
           <p style="margin:0 0 6px; color:var(--text-0); font-size:14px; font-weight:600;">Debian, Ubuntu, Raspberry Pi OS, Mint</p>
           <pre style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>sudo install -d /etc/apt/keyrings
@@ -647,7 +647,19 @@ sudo apt update &amp;&amp; sudo apt install navibeat</code></pre>
           <pre style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>sudo dnf install https://dl.navibeat.app/navibeat-release.rpm
 sudo dnf install navibeat</code></pre>
 
-          <p style="margin:0; color:var(--text-2); font-size:13px; line-height:1.6;">Both packages carry Java and VLC inside, the same as the full AppImage, so they depend on nothing but a C library and work on a Fedora that has never added RPM Fusion. x86_64 and ARM64 both.</p>
+          <p style="margin:0 0 6px; color:var(--text-0); font-size:14px; font-weight:600;">Arch Linux, and Arch Linux ARM</p>
+          <pre style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>curl -fsSL https://dl.navibeat.app/navibeat-repo.asc -o /tmp/navibeat-repo.asc
+sudo pacman-key --add /tmp/navibeat-repo.asc
+sudo pacman-key --lsign-key 0940E93F0EA97642
+sudo tee -a /etc/pacman.conf &gt;/dev/null &lt;&lt;'EOF'
+
+[navibeat]
+SigLevel = Required
+Server = https://dl.navibeat.app/arch/$arch
+EOF
+sudo pacman -Syu navibeat</code></pre>
+
+          <p style="margin:0; color:var(--text-2); font-size:13px; line-height:1.6;">The Debian and Fedora packages carry Java and VLC inside, the same as the full AppImage, so they depend on nothing but a C library and work on a Fedora that has never added RPM Fusion. The Arch package carries its own Java and uses the <code>libvlc</code> already in Arch's own repositories, which is how a package on Arch is expected to behave. x86_64 and ARM64 for all three.</p>
           <p style="margin:12px 0 0; color:var(--text-2); font-size:13px; line-height:1.6;">Every package is signed. The key's fingerprint, so you can check the one you are asked to trust:<br><code style="font-size:11.5px; word-break:break-all;">4ABC 7093 F4A6 6FFD EF71&nbsp; 6DAD 0940 E93F 0EA9 7642</code></p>
         </article>
 
@@ -693,7 +705,7 @@ sudo dnf install navibeat</code></pre>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How do I install it?</h3>
-          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Two ways. On Debian 12+, Ubuntu 24.04+, Raspberry Pi OS, Mint and Fedora 38+, add the NaviBeat repository and run <code>apt install navibeat</code> or <code>dnf install navibeat</code>, and every later version arrives with <code>apt upgrade</code> or <code>dnf upgrade</code>. Anywhere else, download the AppImage, make it executable with <code>chmod +x</code>, and run it. Both carry their own Java runtime and their own VLC, so there is nothing else to install. If you already run VLC and want a smaller download, the <code>slim</code> AppImage uses your system libVLC instead. <a href="#install" style="color:var(--accent-hi);">See both, with the commands</a>.</p>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Two ways. On Debian 12+, Ubuntu 24.04+, Raspberry Pi OS, Mint, Fedora 38+ and Arch Linux, add the NaviBeat repository and run <code>apt install navibeat</code>, <code>dnf install navibeat</code> or <code>pacman -Syu navibeat</code>, and every later version arrives with <code>apt upgrade</code>, <code>dnf upgrade</code> or <code>pacman -Syu</code>. Anywhere else, download the AppImage, make it executable with <code>chmod +x</code>, and run it. The Debian and Fedora packages and the AppImage carry their own Java runtime and their own VLC, so there is nothing else to install; the Arch package brings its own Java and uses the <code>libvlc</code> in Arch's own repositories. If you already run VLC and want a smaller download, the <code>slim</code> AppImage uses your system libVLC instead. <a href="#install" style="color:var(--accent-hi);">See both, with the commands</a>.</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I run NaviBeat on a headless server with no desktop?</h3>
