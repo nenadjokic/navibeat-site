@@ -42,6 +42,9 @@
       if (e.key !== 'Escape' || !group.classList.contains('is-open')) return;
       var inside = group.contains(document.activeElement);
       setOpen(false);
+      // The pointer may still be resting on the trigger, and CSS hover would
+      // hold the panel open against the key that just dismissed it.
+      group.classList.add('is-dismissed');
       if (inside) trigger.focus();
     });
 
@@ -53,6 +56,11 @@
 
     document.addEventListener('click', function (e) {
       if (!group.contains(e.target)) setOpen(false);
+    });
+
+    // Moving away clears the dismissal, so the menu behaves normally next time.
+    group.addEventListener('mouseleave', function () {
+      group.classList.remove('is-dismissed');
     });
   });
 })();

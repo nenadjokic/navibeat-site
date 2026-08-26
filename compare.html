@@ -167,7 +167,7 @@
     </a>
     <nav class="nav__links" id="primary-nav" aria-label="Primary">
       <div class="nav__group nav__link-hide-sm">
-        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features" aria-current="true">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features">
           Features<span class="nav__caret" aria-hidden="true"></span>
         </button>
         <div class="nav__menu" id="nav-menu-features">
@@ -177,7 +177,6 @@
           <a href="lastfm">Last.fm</a>
           <a href="listenbrainz">ListenBrainz</a>
           <a href="rockbox">Rockbox</a>
-          <a href="compare" aria-current="page">Compare</a>
         </div>
       </div>
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
@@ -641,6 +640,7 @@
       nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
     }
+
 
   })();
 </script>
