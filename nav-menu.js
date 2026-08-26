@@ -32,10 +32,17 @@
       setOpen(!group.classList.contains('is-open'));
     });
 
-    // Escape closes and hands focus back, so a keyboard user is never left
-    // inside a panel that is no longer showing.
-    group.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') { setOpen(false); trigger.focus(); }
+    // Escape closes it. Listening on the document rather than on the group,
+    // because macOS does not give a <button> focus when it is clicked: after a
+    // mouse click the focus is still on the body, so a listener scoped to the
+    // group never sees the key and the menu stayed open. Focus only goes back
+    // to the trigger if it was inside the menu to begin with, so Escape does
+    // not yank focus away from wherever a mouse user actually is.
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape' || !group.classList.contains('is-open')) return;
+      var inside = group.contains(document.activeElement);
+      setOpen(false);
+      if (inside) trigger.focus();
     });
 
     // Leaving the group by tabbing closes it too: an open panel behind the
