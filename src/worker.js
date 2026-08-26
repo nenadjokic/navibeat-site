@@ -17,6 +17,7 @@ import {
   onRequestGet as linuxDownloads,
   collect as collectLinuxDownloads,
 } from '../functions/api/linux-downloads.js';
+import { handle as roadmap } from '../functions/api/roadmap.js';
 
 export default {
   async fetch(request, env) {
@@ -32,6 +33,14 @@ export default {
         return new Response('Method Not Allowed', { status: 405, headers: { allow: 'GET, HEAD' } });
       }
       return linuxDownloads({ request, env });
+    }
+    // The public roadmap board. One module owns every /api/roadmap* path and
+    // answers null for anything it does not recognise, so an unknown path under
+    // that prefix still falls through to the normal 404 instead of being
+    // swallowed here.
+    if (url.pathname === '/api/roadmap' || url.pathname.startsWith('/api/roadmap/')) {
+      const res = await roadmap(request, env, url.pathname);
+      if (res) return res;
     }
     return env.ASSETS.fetch(request);
   },

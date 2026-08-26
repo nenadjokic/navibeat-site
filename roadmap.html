@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaviBeat Roadmap: Vote on What Gets Built Next</title>
+  <meta name="description" content="The public NaviBeat and NaviFin roadmap. See what is being considered, what is in progress and what shipped, vote for what you need, and suggest something new. No account required.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/roadmap">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/roadmap">
+
+  <meta property="og:title" content="NaviBeat Roadmap: vote on what gets built next">
+  <meta property="og:description" content="What is being considered, what is in progress, what shipped. Vote for what you need or suggest something new. No account required.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/roadmap">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta property="og:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat Roadmap: vote on what gets built next">
+  <meta name="twitter:description" content="Vote for the features and fixes you need. No account required.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar.">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20260806b">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+        "sameAs": ["https://www.navidrome.org/apps/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navibeat.app/#website",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat",
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://navibeat.app/roadmap#webpage",
+        "url": "https://navibeat.app/roadmap",
+        "name": "NaviBeat Roadmap",
+        "description": "Public roadmap for NaviBeat and NaviFin. Vote on what gets built next.",
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "inLanguage": "en",
+        "datePublished": "2026-08-27",
+        "dateModified": "2026-08-27"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://navibeat.app/roadmap#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Roadmap", "item": "https://navibeat.app/roadmap" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* The board inherits the site's tokens; only what a voting board needs is
+       defined here. Status colours are deliberately NOT the vinyl accent: the
+       accent means "you did this" on the vote button, and a status that borrowed
+       it would read as a state you had caused. */
+    .rm-status-considering { --rm-status: #8C8C95; }
+    .rm-status-progress    { --rm-status: #4C9AD4; }
+    .rm-status-shipped     { --rm-status: #4FA86B; }
+    .rm-status-declined    { --rm-status: #6E6E78; }
+
+    .rm-hero { padding: 118px 0 34px; }
+    .rm-hero h1 { margin: 12px 0 16px; max-width: 18ch; text-wrap: balance; }
+    .rm-hero p { max-width: 62ch; color: var(--text-1); font-size: 17px; line-height: 1.68; margin: 0; }
+
+    /* How it works: three plain steps. Numbered because it IS a sequence, and
+       the reader needs to know voting comes before anything gets built. */
+    .rm-how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 30px 0 0; padding: 0; list-style: none; }
+    .rm-how li { background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
+    .rm-how b { display: block; font-family: var(--font-display); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .rm-how span { color: var(--text-1); font-size: 14px; line-height: 1.6; }
+
+    .rm-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 26px; }
+    .rm-filter { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+    .rm-chip {
+      font: 600 13px/1 var(--font-sans); color: var(--text-1); background: var(--bg-2);
+      border: 1px solid var(--border); border-radius: 999px; padding: 8px 14px; cursor: pointer;
+      transition: color .16s var(--ease), border-color .16s var(--ease), background .16s var(--ease);
+    }
+    .rm-chip:hover { color: var(--text-0); border-color: var(--border-strong); }
+    .rm-chip[aria-pressed="true"] { color: #12120F; background: var(--accent); border-color: var(--accent); }
+    .rm-controls__spacer { flex: 1 1 auto; }
+
+    .rm-group { margin: 0 0 40px; }
+    .rm-group__head { display: flex; align-items: baseline; gap: 10px; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .rm-group__head h2 { font-family: var(--font-display); font-size: 20px; letter-spacing: .04em; text-transform: uppercase; margin: 0; color: var(--text-0); }
+    .rm-group__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rm-status); flex: none; }
+    .rm-group__count { font: 500 13px/1 var(--font-mono); color: var(--text-2); font-variant-numeric: tabular-nums; }
+
+    .rm-list { display: grid; gap: 10px; }
+
+    .rm-item {
+      display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start;
+      background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px;
+      border-left: 3px solid var(--rm-status);
+    }
+    .rm-item__title { font-size: 16px; font-weight: 650; color: var(--text-0); line-height: 1.45; margin: 0 0 8px; }
+
+    /* The vote control. Tall rather than wide so the number is the thing you
+       read, and pressed state uses the accent because it is the one action on
+       this page that is yours. */
+    .rm-vote {
+      display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 58px;
+      padding: 9px 6px; background: var(--bg-1); border: 1px solid var(--border);
+      border-radius: 11px; cursor: pointer; color: var(--text-1);
+      transition: border-color .16s var(--ease), color .16s var(--ease), background .16s var(--ease);
+    }
+    .rm-vote:hover { border-color: var(--border-strong); color: var(--text-0); }
+    .rm-vote:disabled { cursor: default; opacity: .55; }
+    .rm-vote[aria-pressed="true"] { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+    .rm-vote__arrow { font-size: 12px; line-height: 1; }
+    .rm-vote__n { font: 700 17px/1.1 var(--font-mono); font-variant-numeric: tabular-nums; }
+    .rm-vote__label { font-size: 9px; letter-spacing: .09em; text-transform: uppercase; color: var(--text-2); }
+
+    .rm-tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .rm-tag {
+      font: 600 11px/1 var(--font-sans); letter-spacing: .05em; text-transform: uppercase;
+      color: var(--text-2); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px;
+    }
+    .rm-tag--kind { color: var(--rm-status); border-color: color-mix(in srgb, var(--rm-status) 42%, transparent); }
+
+    .rm-item__actions { display: flex; gap: 14px; align-items: center; margin-top: 10px; }
+    .rm-link {
+      background: none; border: 0; padding: 0; cursor: pointer;
+      font: 600 13px/1 var(--font-sans); color: var(--text-2);
+      border-bottom: 1px dashed var(--border-strong); transition: color .16s var(--ease);
+    }
+    .rm-link:hover { color: var(--accent); }
+
+    .rm-comments { margin: 12px 0 0; padding: 12px 0 0; border-top: 1px solid var(--border); display: grid; gap: 10px; }
+    .rm-comment { font-size: 14px; line-height: 1.6; color: var(--text-1); }
+    .rm-comment b { color: var(--text-0); font-weight: 650; }
+    .rm-comment time { color: var(--text-2); font-size: 12px; margin-left: 6px; }
+
+    .rm-form { display: grid; gap: 10px; margin-top: 12px; }
+    .rm-form textarea, .rm-form input[type="text"], .rm-form input[type="email"], .rm-form select {
+      width: 100%; font: 400 14px/1.6 var(--font-sans); color: var(--text-0);
+      background: var(--bg-1); border: 1px solid var(--border); border-radius: 10px; padding: 11px 13px;
+    }
+    .rm-form textarea { min-height: 92px; resize: vertical; }
+    .rm-form :is(textarea, input, select):focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+    .rm-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .rm-form__note { font-size: 12.5px; color: var(--text-2); line-height: 1.55; margin: 0; }
+    .rm-form__actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+    .rm-say { font-size: 13px; line-height: 1.55; margin: 0; }
+    .rm-say--ok { color: #7CC894; }
+    .rm-say--bad { color: #E0796B; }
+
+    /* Empty and loading states matter more than usual here: the board opens with
+       nothing on it, and a bare page would read as broken rather than as new. */
+    .rm-empty { text-align: center; padding: 54px 24px; border: 1px dashed var(--border-strong); border-radius: 16px; background: var(--bg-1); }
+    .rm-empty h2 { font-family: var(--font-display); font-size: 22px; text-transform: uppercase; letter-spacing: .04em; margin: 0 0 10px; color: var(--text-0); }
+    .rm-empty p { color: var(--text-1); max-width: 52ch; margin: 0 auto; line-height: 1.68; font-size: 15px; }
+
+    .rm-suggest { background: var(--bg-2); border: 1px solid var(--border); border-radius: 16px; padding: 24px 26px; margin: 8px 0 var(--rhythm); }
+    .rm-suggest h2 { font-family: var(--font-display); font-size: 20px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 6px; }
+    .rm-suggest > p { color: var(--text-1); font-size: 14.5px; line-height: 1.65; margin: 0 0 14px; max-width: 64ch; }
+
+    .rm-skel { height: 78px; border-radius: 14px; background: linear-gradient(90deg, var(--bg-2) 0%, var(--bg-3) 50%, var(--bg-2) 100%); background-size: 200% 100%; animation: rm-shimmer 1.4s var(--ease) infinite; }
+    @keyframes rm-shimmer { to { background-position: -200% 0; } }
+    @media (prefers-reduced-motion: reduce) { .rm-skel { animation: none; } }
+
+    @media (max-width: 760px) {
+      .rm-how { grid-template-columns: 1fr; }
+      .rm-form__row { grid-template-columns: 1fr; }
+      .rm-hero { padding-top: 96px; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <a href="features" class="nav__link nav__link-hide-sm">Features</a>
+      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="multi-library" class="nav__link nav__link-hide-sm">Multi-Library</a>
+      <a href="lastfm" class="nav__link nav__link-hide-sm">Last.fm</a>
+      <a href="listenbrainz" class="nav__link nav__link-hide-sm">ListenBrainz</a>
+      <a href="rockbox" class="nav__link nav__link-hide-sm">Rockbox</a>
+      <a href="roadmap" class="nav__link nav__link-hide-sm" aria-current="page">Roadmap</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+
+      <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap rm-hero">
+    <span class="eyebrow eyebrow--accent">Roadmap</span>
+    <h1>What gets built next is partly your call</h1>
+    <p>
+      Everything here started as an email from someone using NaviBeat or NaviFin. Vote for what you
+      need and it moves up the list. No account, no sign-up, and nothing you write appears on this
+      page until a human has read it.
+    </p>
+    <ol class="rm-how">
+      <li><b>1 &middot; Vote</b><span>One press per item. Press again to take it back. Votes decide what I look at first, not automatically what I build first.</span></li>
+      <li><b>2 &middot; Add what is missing</b><span>Not on the list? Suggest it below. It lands in the same support queue as email and gets the same reply.</span></li>
+      <li><b>3 &middot; Watch it move</b><span>Items travel from being considered, to in progress, to shipped. Things I decide against stay visible, so a vote is never quietly dropped.</span></li>
+    </ol>
+  </section>
+
+  <section class="wrap" style="padding-bottom: 16px;">
+    <div class="rm-controls">
+      <div class="rm-filter" id="rm-filter-section" role="group" aria-label="Filter by app">
+        <button class="rm-chip" type="button" data-value="" aria-pressed="true">Everything</button>
+      </div>
+      <div class="rm-controls__spacer"></div>
+      <div class="rm-filter" id="rm-filter-kind" role="group" aria-label="Filter by type">
+        <button class="rm-chip" type="button" data-value="" aria-pressed="true">All types</button>
+        <button class="rm-chip" type="button" data-value="BUG" aria-pressed="false">Bugs</button>
+        <button class="rm-chip" type="button" data-value="CR" aria-pressed="false">Requests</button>
+      </div>
+    </div>
+
+    <div id="rm-board" aria-live="polite" aria-busy="true">
+      <div class="rm-list">
+        <div class="rm-skel"></div>
+        <div class="rm-skel"></div>
+        <div class="rm-skel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="rm-suggest">
+      <h2>Ask for something</h2>
+      <p>
+        A bug I have not seen, or a feature you keep reaching for and it is not there. This goes
+        straight into the support queue, so you get an answer either way. It shows up on this board
+        only once I have read it and written a public description for it.
+      </p>
+      <form class="rm-form" id="rm-suggest-form" novalidate>
+        <input type="text" id="rm-s-title" name="title" maxlength="120" required
+               placeholder="One line: what do you want to happen?" aria-label="Title">
+        <textarea id="rm-s-body" name="body" maxlength="2000"
+                  placeholder="Optional. What you tried, what device you are on, what happened instead." aria-label="Details"></textarea>
+        <div class="rm-form__row">
+          <select id="rm-s-section" aria-label="Which app">
+            <option value="">Which app? (optional)</option>
+            <option value="Apple">NaviBeat on iPhone, iPad, Mac, TV or Watch</option>
+            <option value="Android">NaviBeat on Android</option>
+            <option value="Linux">NaviBeat on Linux or Windows</option>
+            <option value="Rockbox">NaviBeat for Rockbox players</option>
+            <option value="Mixes">NaviBeat Mixes (the Navidrome plugin)</option>
+            <option value="NaviFin">NaviFin</option>
+          </select>
+          <select id="rm-s-kind" aria-label="Bug or request">
+            <option value="CR">A feature I want</option>
+            <option value="BUG">Something is broken</option>
+          </select>
+        </div>
+        <input type="email" id="rm-s-email" maxlength="120"
+               placeholder="Your email, if you want a reply (optional)" aria-label="Email">
+        <div class="rm-form__actions">
+          <button class="btn btn--primary btn--compact" type="submit">Send it</button>
+          <p class="rm-say" id="rm-suggest-say" role="status"></p>
+        </div>
+        <p class="rm-form__note">
+          Your email is only used to answer you. Nothing you type here is published as written.
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="/">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img decoding="async" class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="/#platforms">Platforms</a></li>
+          <li><a href="roadmap">Roadmap</a></li>
+          <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+          <li><a href="beta">Beta program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="support">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>Live on the App Store &middot; 1.4 in beta</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    var navToggle = nav.querySelector('.nav__toggle');
+    if (navToggle) {
+      var setNav = function (open) {
+        nav.classList.toggle('nav--open', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      };
+      navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+      nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+    }
+  })();
+</script>
+
+<script>
+/**
+ * The board. Everything is drawn from /api/roadmap; nothing is baked into the
+ * HTML, so publishing an item in Zammad is the only step needed to make it
+ * appear here.
+ */
+(function () {
+  'use strict';
+
+  var GROUPS = [
+    { key: 'progress',    label: 'In progress',       note: 'Being built right now.' },
+    { key: 'considering', label: 'Under consideration', note: 'On the list. Votes move these.' },
+    { key: 'shipped',     label: 'Shipped',           note: 'Out in a release.' },
+    { key: 'declined',    label: 'Not planned',       note: 'Decided against, and left here on purpose.' }
+  ];
+  var SECTION_LABEL = {
+    Apple: 'Apple', Android: 'Android', Linux: 'Linux', Rockbox: 'Rockbox',
+    Mixes: 'Mixes', NaviFin: 'NaviFin'
+  };
+
+  var board = document.getElementById('rm-board');
+  var state = { items: [], voted: {}, section: '', kind: '', open: {}, busy: {} };
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function when(iso) {
+    var d = new Date(iso);
+    if (isNaN(d)) return '';
+    return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  function post(path, body) {
+    return fetch(path, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(body)
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        if (!r.ok) throw new Error(j.error || 'Request failed.');
+        return j;
+      });
+    });
+  }
+
+  function say(el, text, ok) {
+    el.textContent = text;
+    el.className = 'rm-say ' + (ok ? 'rm-say--ok' : 'rm-say--bad');
+  }
+
+  function visible() {
+    return state.items.filter(function (i) {
+      if (state.section && i.section !== state.section) return false;
+      if (state.kind && i.kind !== state.kind) return false;
+      return true;
+    });
+  }
+
+  function itemHtml(i) {
+    var voted = !!state.voted[i.id];
+    var tags = [];
+    if (i.kind) tags.push('<span class="rm-tag rm-tag--kind">' + (i.kind === 'BUG' ? 'Bug' : 'Request') + '</span>');
+    if (i.section && SECTION_LABEL[i.section]) tags.push('<span class="rm-tag">' + esc(SECTION_LABEL[i.section]) + '</span>');
+
+    var comments = (i.comments || []).map(function (c) {
+      return '<p class="rm-comment"><b>' + esc(c.author || 'Someone') + '</b> ' + esc(c.body) +
+             '<time>' + esc(when(c.created_at)) + '</time></p>';
+    }).join('');
+
+    var openForm = state.open[i.id];
+    var form = openForm
+      ? '<form class="rm-form" data-comment-for="' + i.id + '">' +
+          '<textarea maxlength="2000" required aria-label="Your comment" ' +
+            'placeholder="I have this too, and here is what it looks like for me..."></textarea>' +
+          '<div class="rm-form__row">' +
+            '<input type="text" maxlength="60" placeholder="Your name (optional)" aria-label="Your name">' +
+            '<button class="btn btn--ghost btn--compact" type="submit">Send</button>' +
+          '</div>' +
+          '<p class="rm-say" role="status"></p>' +
+          '<p class="rm-form__note">Comments are read before they appear, so yours will not show up straight away.</p>' +
+        '</form>'
+      : '';
+
+    return '' +
+      '<article class="rm-item rm-status-' + esc(i.status) + '">' +
+        '<button class="rm-vote" type="button" data-vote="' + i.id + '" aria-pressed="' + (voted ? 'true' : 'false') +
+          '" aria-label="' + (voted ? 'Remove your vote from' : 'Vote for') + ' ' + esc(i.title) + '">' +
+          '<span class="rm-vote__arrow" aria-hidden="true">&#9650;</span>' +
+          '<span class="rm-vote__n">' + (i.votes || 0) + '</span>' +
+          '<span class="rm-vote__label">' + (voted ? 'Voted' : 'Vote') + '</span>' +
+        '</button>' +
+        '<div>' +
+          '<h3 class="rm-item__title">' + esc(i.title) + '</h3>' +
+          '<div class="rm-tags">' + tags.join('') + '</div>' +
+          '<div class="rm-item__actions">' +
+            '<button class="rm-link" type="button" data-comment="' + i.id + '">' +
+              (openForm ? 'Never mind' : 'I have this too') + '</button>' +
+            ((i.comments || []).length
+              ? '<span class="rm-tag">' + (i.comments.length === 1 ? '1 comment' : i.comments.length + ' comments') + '</span>'
+              : '') +
+          '</div>' +
+          (comments ? '<div class="rm-comments">' + comments + '</div>' : '') +
+          form +
+        '</div>' +
+      '</article>';
+  }
+
+  function render() {
+    var rows = visible();
+    board.setAttribute('aria-busy', 'false');
+
+    if (!state.items.length) {
+      board.innerHTML =
+        '<div class="rm-empty">' +
+          '<h2>The board opens empty</h2>' +
+          '<p>Nothing has been published to it yet. Everything on this page starts as a real report ' +
+          'from a real person, so the first items will appear as soon as the current queue is ' +
+          'triaged. Ask for something below and it can be one of them.</p>' +
+        '</div>';
+      return;
+    }
+
+    if (!rows.length) {
+      board.innerHTML =
+        '<div class="rm-empty">' +
+          '<h2>Nothing matches that</h2>' +
+          '<p>No open item fits the filters you picked. Clear one of them, or suggest what you were ' +
+          'looking for below.</p>' +
+        '</div>';
+      return;
+    }
+
+    board.innerHTML = GROUPS.map(function (g) {
+      var mine = rows.filter(function (i) { return i.status === g.key; });
+      if (!mine.length) return '';
+      return '' +
+        '<section class="rm-group rm-status-' + g.key + '">' +
+          '<div class="rm-group__head">' +
+            '<span class="rm-group__dot" aria-hidden="true"></span>' +
+            '<h2>' + g.label + '</h2>' +
+            '<span class="rm-group__count">' + mine.length + '</span>' +
+            '<span class="rm-group__count" style="margin-left:auto;">' + g.note + '</span>' +
+          '</div>' +
+          '<div class="rm-list">' + mine.map(itemHtml).join('') + '</div>' +
+        '</section>';
+    }).join('');
+  }
+
+  /* The app filter is built from what is actually on the board, so a line with
+     nothing published never shows a chip that leads to an empty list. */
+  function buildSectionFilter() {
+    var host = document.getElementById('rm-filter-section');
+    var present = [];
+    state.items.forEach(function (i) {
+      if (i.section && SECTION_LABEL[i.section] && present.indexOf(i.section) === -1) present.push(i.section);
+    });
+    host.querySelectorAll('[data-value]:not([data-value=""])').forEach(function (b) { b.remove(); });
+    present.forEach(function (s) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'rm-chip';
+      b.dataset.value = s;
+      b.setAttribute('aria-pressed', 'false');
+      b.textContent = SECTION_LABEL[s];
+      host.appendChild(b);
+    });
+    host.parentElement.style.display = present.length > 1 ? '' : 'none';
+  }
+
+  function wireFilter(id, key) {
+    document.getElementById(id).addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-value]');
+      if (!btn) return;
+      state[key] = btn.dataset.value;
+      this.querySelectorAll('[data-value]').forEach(function (b) {
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+      render();
+    });
+  }
+
+  board.addEventListener('click', function (e) {
+    var voteBtn = e.target.closest('[data-vote]');
+    if (voteBtn) {
+      var id = Number(voteBtn.dataset.vote);
+      if (state.busy[id]) return;
+      state.busy[id] = true;
+      voteBtn.disabled = true;
+
+      post('/api/roadmap/vote', { item_id: id }).then(function (res) {
+        var item = state.items.filter(function (i) { return i.id === id; })[0];
+        if (item) item.votes = res.votes;
+        if (res.voted) state.voted[id] = true; else delete state.voted[id];
+      }).catch(function () {
+        // Deliberately quiet: a failed vote leaves the number as it was, which
+        // is the truth, and a red banner over a roadmap is out of proportion.
+      }).then(function () {
+        delete state.busy[id];
+        render();
+      });
+      return;
+    }
+
+    var commentBtn = e.target.closest('[data-comment]');
+    if (commentBtn) {
+      var cid = Number(commentBtn.dataset.comment);
+      if (state.open[cid]) delete state.open[cid]; else state.open[cid] = true;
+      render();
+      var form = board.querySelector('[data-comment-for="' + cid + '"] textarea');
+      if (form) form.focus();
+    }
+  });
+
+  board.addEventListener('submit', function (e) {
+    var form = e.target.closest('[data-comment-for]');
+    if (!form) return;
+    e.preventDefault();
+    var id = Number(form.dataset.commentFor);
+    var text = form.querySelector('textarea').value;
+    var author = form.querySelector('input[type="text"]').value;
+    var out = form.querySelector('.rm-say');
+    var button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+
+    post('/api/roadmap/comment', { item_id: id, body: text, author: author }).then(function () {
+      say(out, 'Got it. It will appear here once I have read it.', true);
+      form.querySelector('textarea').value = '';
+    }).catch(function (err) {
+      say(out, err.message, false);
+    }).then(function () {
+      button.disabled = false;
+    });
+  });
+
+  document.getElementById('rm-suggest-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var out = document.getElementById('rm-suggest-say');
+    var button = this.querySelector('button[type="submit"]');
+    var title = document.getElementById('rm-s-title').value.trim();
+    if (title.length < 6) { say(out, 'Give it a title of at least 6 characters.', false); return; }
+    button.disabled = true;
+
+    post('/api/roadmap/submit', {
+      title: title,
+      body: document.getElementById('rm-s-body').value,
+      email: document.getElementById('rm-s-email').value,
+      section: document.getElementById('rm-s-section').value,
+      kind: document.getElementById('rm-s-kind').value
+    }).then(function () {
+      say(out, 'Sent. It is in the support queue now.', true);
+      document.getElementById('rm-s-title').value = '';
+      document.getElementById('rm-s-body').value = '';
+    }).catch(function (err) {
+      say(out, err.message, false);
+    }).then(function () {
+      button.disabled = false;
+    });
+  });
+
+  wireFilter('rm-filter-section', 'section');
+  wireFilter('rm-filter-kind', 'kind');
+
+  fetch('/api/roadmap', { headers: { accept: 'application/json' } })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      state.items = data.items || [];
+      (data.voted || []).forEach(function (id) { state.voted[id] = true; });
+      buildSectionFilter();
+      render();
+    })
+    .catch(function () {
+      board.setAttribute('aria-busy', 'false');
+      board.innerHTML =
+        '<div class="rm-empty">' +
+          '<h2>The board did not load</h2>' +
+          '<p>Reload the page. If it keeps happening, email ' +
+          '<a href="mailto:support@navibeat.app">support@navibeat.app</a> and it will get fixed.</p>' +
+        '</div>';
+    });
+})();
+</script>
+
+</body>
+</html>

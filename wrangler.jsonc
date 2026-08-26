@@ -31,6 +31,17 @@
       "id": "d28f2561df244f0c824f45483277aa1a"
     }
   ],
+  // 2026-08-27: the public roadmap board at /roadmap. Zammad on the NAS stays
+  // the source of truth for what an item IS; this database holds the read model
+  // the edge can serve plus the two things that only exist at the edge, votes
+  // and what visitors write in. The sync script on the NAS carries those back.
+  "d1_databases": [
+    {
+      "binding": "ROADMAP_DB",
+      "database_name": "navibeat-roadmap",
+      "database_id": "bf54ed3b-daad-4468-aff9-fc0394ec3ff8"
+    }
+  ],
   "compatibility_flags": [
     "nodejs_compat"
   ],
