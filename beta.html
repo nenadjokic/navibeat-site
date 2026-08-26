@@ -97,12 +97,21 @@
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
     </a>
     <nav class="nav__links" id="primary-nav" aria-label="Primary">
-      <a href="features" class="nav__link nav__link-hide-sm">Features</a>
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features">
+          Features<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-features">
+          <a href="features">Overview</a>
+          <a href="multi-library">Multi-Library</a>
+          <a href="widgets">Widgets</a>
+          <a href="lastfm">Last.fm</a>
+          <a href="listenbrainz">ListenBrainz</a>
+          <a href="rockbox">Rockbox</a>
+          <a href="compare">Compare</a>
+        </div>
+      </div>
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
-      <a href="multi-library" class="nav__link nav__link-hide-sm">Multi-Library</a>
-      <a href="lastfm" class="nav__link nav__link-hide-sm">Last.fm</a>
-      <a href="listenbrainz" class="nav__link nav__link-hide-sm">ListenBrainz</a>
-      <a href="rockbox" class="nav__link nav__link-hide-sm">Rockbox</a>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
       <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
@@ -250,8 +259,10 @@
       nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
     }
+
   })();
 </script>
 
+<script src="nav-menu.js" defer></script>
 </body>
 </html>

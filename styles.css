@@ -523,6 +523,107 @@ section { padding-block: var(--rhythm); }
 .sibling-card__desc { font-size: 12.5px; color: var(--text-1); }
 
 /* Mobile disclosure toggle (hamburger). Hidden on desktop. */
+/* -----------------------------------------------------------------------------
+   Grouped nav (2026-08-27)
+
+   The bar carried nine text links plus the NaviFin promo plus the CTA, and it
+   ran out of room: the NaviFin label was being cut in half between roughly 1240
+   and 1400px. Adding Roadmap made a row that was already full overflow.
+
+   Two menus take eight of those links off the bar and leave four. The links
+   themselves stay in the HTML, so the internal linking to the device and
+   integration pages is unchanged; only their position moves.
+
+   Opening is a CLICK on a real <button>. Hover is an extra, and only where
+   hovering means something: this nav has already cost one long session over
+   taps that appeared to do nothing, and a menu that opens on hover behaves
+   exactly that way on a touch screen.
+   -------------------------------------------------------------------------- */
+
+.nav__group { position: relative; }
+
+.nav__trigger {
+  /* Inherits .nav__link for type and colour; these are the button resets. */
+  background: none;
+  border: 0;
+  cursor: pointer;
+  gap: 6px;
+  font-family: inherit;
+}
+.nav__caret {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.2s var(--ease);
+  opacity: 0.7;
+}
+.nav__group.is-open .nav__caret { transform: translateY(1px) rotate(-135deg); }
+.nav__group.is-open > .nav__trigger { color: var(--text-0); }
+.nav__group.is-open > .nav__trigger::after { transform: scaleX(1); }
+
+.nav__menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: -14px;
+  min-width: 216px;
+  padding: 7px;
+  display: grid;
+  gap: 1px;
+  background: var(--bg-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 13px;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.16s var(--ease), transform 0.16s var(--ease), visibility 0.16s;
+}
+.nav__group.is-open > .nav__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* The gap between trigger and panel would break a hover journey, so bridge it
+   with a transparent strip rather than moving the panel flush against the bar. */
+.nav__menu::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: -13px;
+  height: 13px;
+}
+
+.nav__menu a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 550;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-1);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s var(--ease), color 0.15s var(--ease);
+}
+.nav__menu a:hover { background: var(--bg-3); color: var(--text-0); }
+.nav__menu a[aria-current="page"] { color: var(--accent); background: var(--accent-dim); }
+.nav__menu a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+@media (hover: hover) and (min-width: 1001px) {
+  .nav__group:hover > .nav__menu { opacity: 1; visibility: visible; transform: none; }
+  .nav__group:hover > .nav__trigger { color: var(--text-0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav__menu, .nav__caret { transition: none; }
+}
+
 .nav__toggle { display: none; }
 
 /* Mid widths: the full link row needs ~1000px; tighten spacing instead of
@@ -590,6 +691,7 @@ section { padding-block: var(--rhythm); }
 
   /* Closed bar: hide product links + NaviFin cross-promo; keep only the App Store CTA + the toggle. */
   .nav__links a.nav__link-hide-sm,
+  .nav__links .nav__group.nav__link-hide-sm,
   .nav__links .nav__link--navifin { display: none; }
   .nav__links { gap: 12px; margin-left: auto; }
 
@@ -628,6 +730,25 @@ section { padding-block: var(--rhythm); }
     display: flex; align-items: center; padding: 14px 0;
     border-bottom: 1px solid var(--border); font-size: 13px;
   }
+
+  /* The menu flattens into the panel: its items are simply more rows. A panel
+     that is already a list has nothing to gain from a second layer inside it,
+     and a hover-opened box has no way to be dismissed by a thumb. */
+  .nav--open .nav__links .nav__group.nav__link-hide-sm { display: block; }
+  .nav--open .nav__group > .nav__trigger { display: none; }
+  .nav--open .nav__group > .nav__menu {
+    position: static; opacity: 1; visibility: visible; transform: none;
+    min-width: 0; padding: 0; background: none; border: 0;
+    box-shadow: none; border-radius: 0; display: block;
+  }
+  .nav--open .nav__group > .nav__menu::before { content: none; }
+  .nav--open .nav__menu a {
+    padding: 14px 0; border-radius: 0;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 13px;
+    letter-spacing: 0.07em; text-transform: uppercase;
+  }
+  .nav--open .nav__menu a:hover { background: none; }
   .nav--open .nav__links .btn { margin-top: 14px; align-self: flex-start; }
 }
 
