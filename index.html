@@ -1561,11 +1561,20 @@
     // the background whenever it lands (its cold path measured 1.52s). The
     // gotLive flag stops a slow snapshot response from overwriting fresher
     // live data.
-    var gotLive = false;
+    // 2026-08-27: whichever answer carries MORE reviews wins, not whichever
+    // lands last. The page used to paint the full snapshot and then replace it
+    // with a thinner live answer a second later, which is exactly what a
+    // visitor reported seeing: every review for a moment, then one.
+    var shown = -1;
+    function offer(d) {
+      var n = d && Array.isArray(d.reviews) ? d.reviews.length : 0;
+      if (!n || n < shown) return;
+      if (safeRender(d)) shown = n;
+    }
     fetch('/reviews.json').then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (d) { if (!gotLive) safeRender(d); }).catch(function () {});
+      .then(offer).catch(function () {});
     fetch('/api/reviews').then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (d) { if (d && safeRender(d)) gotLive = true; }).catch(function () {});
+      .then(offer).catch(function () {});
   })();
 </script>
 

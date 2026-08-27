@@ -124,24 +124,44 @@ export async function onRequestGet(context) {
   let result = summary;
   let source = 'live-rss';
 
-  // 3. Live sweep came back empty: serve the newest snapshot we hold instead.
-  if (!summary.count) {
-    if (kvCached && kvCached.data && kvCached.data.count) {
-      result = kvCached.data;
-      source = 'kv-stale';
-    }
-    if (env && env.ASSETS && request) {
-      try {
-        const snap = await env.ASSETS.fetch(new URL('/reviews.json', request.url));
-        if (snap.ok) {
-          const s = await snap.json();
-          if (s && s.count && (s.fetchedAt || 0) >= (result.fetchedAt && result.count ? result.fetchedAt : 0)) {
-            result = s;
-            source = 'asset-snapshot';
-          }
+  // 3. Pick the RICHEST payload we hold, not merely a non-empty one.
+  //
+  // BUG FIXED 2026-08-27, and it was visible to every visitor: the page painted
+  // all 21 reviews from the snapshot and then dropped to a single card a second
+  // later. The fallback below used to be gated on `!summary.count`, so ANY
+  // non-empty live sweep won outright. On 2026-08-25 at 16:42 Apple answered
+  // from exactly one territory, the sweep came back with one review, that
+  // beat a 21-review snapshot on the strength of being non-empty, and it was
+  // written into KV. From then on the bad payload also won every recency
+  // comparison, because it genuinely was more recent.
+  //
+  // Recency alone cannot decide this: a sweep is newer by construction while
+  // being a small sample of the same underlying data. Count of reviews is what
+  // actually says which payload is more complete, so that leads, and recency
+  // only breaks ties. Note `count` is the ratings aggregate and NOT comparable
+  // across sources, so the comparison uses the length of `reviews`.
+  const size = (d) => (d && Array.isArray(d.reviews) ? d.reviews.length : 0);
+  const better = (candidate, current) => {
+    if (!candidate || !candidate.count || !size(candidate)) return false;
+    if (size(candidate) !== size(current)) return size(candidate) > size(current);
+    return (candidate.fetchedAt || 0) > (current.fetchedAt || 0);
+  };
+
+  if (kvCached && kvCached.data && better(kvCached.data, result)) {
+    result = kvCached.data;
+    source = 'kv-stale';
+  }
+  if (env && env.ASSETS && request) {
+    try {
+      const snap = await env.ASSETS.fetch(new URL('/reviews.json', request.url));
+      if (snap.ok) {
+        const s = await snap.json();
+        if (better(s, result)) {
+          result = s;
+          source = 'asset-snapshot';
         }
-      } catch (_e) { /* fall through with what we have */ }
-    }
+      }
+    } catch (_e) { /* fall through with what we have */ }
   }
 
   // Only cache real data; never overwrite a good stale value with emptiness.
@@ -162,7 +182,13 @@ export async function onRequestGet(context) {
   // So: carry the DATA's own fetchedAt as the outer stamp, and never write back
   // a value that came out of KV in the first place. A snapshot pushed by the
   // generator now always wins on recency, because it genuinely is more recent.
-  if (!debug && result.count && env && env.REVIEWS_KV && source !== 'kv-stale') {
+  // Added 2026-08-27: never write a payload thinner than what KV already holds.
+  // Without this the one-territory sweep overwrote a full snapshot, and the
+  // damage outlived the request that caused it.
+  const worseThanKV = kvCached && kvCached.data
+    && (kvCached.data.reviews || []).length > (result.reviews || []).length;
+
+  if (!debug && result.count && env && env.REVIEWS_KV && source !== 'kv-stale' && !worseThanKV) {
     await env.REVIEWS_KV.put(
       CACHE_KEY,
       JSON.stringify({ fetchedAt: result.fetchedAt || Date.now(), data: result }),
