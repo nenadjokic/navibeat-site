@@ -410,11 +410,17 @@
 (function () {
   'use strict';
 
+  // Each note says exactly as much as the ticket state behind it can support,
+  // and no more. "Being built right now" was a claim the data never made: the
+  // state only says an item has been picked up, and the first item to carry that
+  // label was in fact already written and waiting for a release. Same trap on the
+  // other side, where a ticket is closed when it has been answered, which is not
+  // the same as shipped.
   var GROUPS = [
-    { key: 'progress',    label: 'In progress',       note: 'Being built right now.' },
-    { key: 'considering', label: 'Under consideration', note: 'On the list. Votes move these.' },
-    { key: 'shipped',     label: 'Shipped',           note: 'Out in a release.' },
-    { key: 'declined',    label: 'Not planned',       note: 'Decided against, and left here on purpose.' }
+    { key: 'progress',    label: 'In progress',        note: 'Picked up. Not in a release yet.' },
+    { key: 'considering', label: 'Under consideration', note: 'On the list. Votes help me pick what comes first.' },
+    { key: 'shipped',     label: 'Done',               note: 'Closed. Usually that means it shipped.' },
+    { key: 'declined',    label: 'Not planned',        note: 'Decided against, and left here on purpose.' }
   ];
   var SECTION_LABEL = {
     Apple: 'Apple', Android: 'Android', Linux: 'Linux', Rockbox: 'Rockbox',
