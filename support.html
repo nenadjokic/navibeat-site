@@ -89,7 +89,7 @@
             "name": "Why does my music restart from the beginning when I am driving?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "This is the most common complaint across Subsonic and Navidrome clients, and it is not really a client bug. When a server transcodes on the fly it answers with a 200 response that carries no content length and ignores byte-range requests. So when a mobile connection drops mid-track, a client has no way to resume from where it was and refetches from byte zero: the track jumps back to the start while the playhead keeps counting. NaviBeat removes the network from the playback path on cellular. It downloads the next two tracks in your queue in full while the current one plays, then plays them from the local file, so a tower handover, a dropped connection or a slow transcode cannot restart or stall the song. Your first track still starts instantly as a stream; from the second track of a session onward this cannot happen. The cache is a rolling 300 MB, cleans itself oldest-first, never duplicates your real downloads, and is not used on Wi-Fi."
+              "text": "This is the most common complaint across Subsonic and Navidrome clients, and it is not really a client bug. When a server transcodes on the fly it answers with a 200 response that carries no content length and ignores byte-range requests. So when a mobile connection drops mid-track, a client has no way to resume from where it was and refetches from byte zero: the track jumps back to the start while the playhead keeps counting. NaviBeat removes the network from the playback path on cellular. It downloads the next two tracks in your queue in full while the current one plays, then plays them from the local file, so a tower handover, a dropped connection or a slow transcode cannot restart or stall the song. When the server is transcoding, NaviBeat downloads your first track whole before it starts, so that one costs a short wait instead of a restart; from the second track of a session onward this cannot happen. The cache is a rolling 300 MB, cleans itself oldest-first, never duplicates your real downloads, and is not used on Wi-Fi."
             }
           },
           {
@@ -296,7 +296,7 @@
   <p>NaviBeat takes the network out of the playback path on cellular. It downloads the next two tracks in your
   queue <strong>in full</strong> while the current one plays, then plays them from the local file. A tower
   handover, a dropped connection or a slow transcode cannot restart or stall a song that is already on disk.
-  Your first track still starts instantly as a stream; from the second track of a session onward this cannot
+  When the server is transcoding, NaviBeat downloads your first track whole before it starts, so that one costs a short wait instead of a restart; from the second track of a session onward this cannot
   happen. The cache is a rolling 300 MB, cleans itself oldest first, never duplicates your real downloads, and
   is not used on Wi-Fi.</p>
   <p>If you are on a VPN such as Tailscale or WireGuard, see the tunnel question below as well: a tunnel adds

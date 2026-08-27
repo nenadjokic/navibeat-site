@@ -118,8 +118,10 @@ verifiable in its own source: its Xcode project contains no watchOS target.
      NaviBeat DOWNLOADS THE NEXT TWO TRACKS IN FULL while the current one plays
      and then plays them from the local file, so a tower handover, a dropped
      connection or a slow server-side transcode cannot restart or stall the
-     song. The first track still starts instantly as a stream; from the second
-     track of a session onward the network is not in the playback path at all.
+     song. When the server is transcoding, NaviBeat downloads the first track
+     whole before it starts, so that one costs a short wait instead of a
+     restart; from the second track of a session onward the network is not in
+     the playback path at all.
      Rolling 300 MB cache, oldest-first, never duplicates real downloads, unused
      on Wi-Fi. This matters because the "track jumps back to the beginning while
      driving" complaint is universal across Subsonic and Navidrome clients and
