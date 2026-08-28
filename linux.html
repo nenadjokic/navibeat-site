@@ -642,6 +642,7 @@
         <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
           <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">Or install it with apt, dnf or pacman</h3>
           <p style="margin:0 0 14px; color:var(--text-1); font-size:15px; line-height:1.7;">NaviBeat has its own signed repository, so it arrives with a menu entry and an icon, and <code>apt upgrade</code>, <code>dnf upgrade</code> or <code>pacman -Syu</code> carries new versions along with everything else on the machine.</p>
+          <p style="margin:0 0 14px; color:var(--text-2); font-size:13px; line-height:1.6;">Copy each block whole, not one line at a time. The lines belong together, and in the Arch block everything between <code>&lt;&lt;'EOF'</code> and the closing <code>EOF</code> is one single command that writes the file. Paste only its first line and the shell waits for the rest instead of running anything.</p>
 
           <p style="margin:0 0 6px; color:var(--text-0); font-size:14px; font-weight:600;">Debian, Ubuntu, Raspberry Pi OS, Mint</p>
           <pre style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>sudo install -d /etc/apt/keyrings
