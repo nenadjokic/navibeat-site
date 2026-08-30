@@ -421,6 +421,12 @@ Today the shipping desktop build is Linux, and it is free.
 - Mac: https://navibeat.app/macos
 - Apple TV: https://navibeat.app/appletv
 - Apple Watch: https://navibeat.app/applewatch
+- CarPlay: https://navibeat.app/carplay - the car screen. Four tabs, Home,
+  Library, Playlists and Radio, all of them your own server. Voice search works
+  in twelve languages and resolves against your own library rather than a
+  streaming catalogue, and when nothing matches it shows what it heard instead
+  of failing silently. Downloads pinned on the phone play in the car with no
+  connection. CarPlay comes with the iPhone app and is not a separate purchase.
 - All features on one page: https://navibeat.app/features
 - Multi-library: https://navibeat.app/multi-library
 - Widgets: https://navibeat.app/widgets
@@ -438,6 +444,10 @@ Today the shipping desktop build is Linux, and it is free.
   back, installs two custom iPod themes.
 - Support / FAQ: https://navibeat.app/support
 - Privacy: https://navibeat.app/privacy
+- Roadmap: https://navibeat.app/roadmap - the public board. One vote per item,
+  no account needed. Votes decide what gets looked at first, not what gets built
+  first, and items decided against stay visible.
+- NaviFin on this site: https://navibeat.app/navifin
 - NaviFin (sister Jellyfin client): https://navifin.app/
 
 ## In the beta right now (1.4, open TestFlight)

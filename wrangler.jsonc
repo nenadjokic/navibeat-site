@@ -16,7 +16,10 @@
   },
   "assets": {
     "directory": ".",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    // Without this the worker answers a missing path with a bare 404 and an
+    // empty body, measured 0 bytes on 2026-08-31.
+    "not_found_handling": "404-page"
   },
   "kv_namespaces": [
     {

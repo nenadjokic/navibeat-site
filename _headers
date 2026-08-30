@@ -2,6 +2,12 @@
 # Applied to every response served from this site.
 
 /*
+  # Measured 2026-08-31: the /*.html rule below never matched, because pages are
+  # served extensionless (/carplay, not /carplay.html), so every HTML response
+  # came back max-age=0, must-revalidate and revalidated on every single visit.
+  # The default now lives here, where it applies, and /assets/* still overrides
+  # it with the immutable year.
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Referrer-Policy: strict-origin-when-cross-origin
@@ -21,6 +27,17 @@
 /manifest.json
   Cache-Control: public, max-age=86400
 
-# HTML responses kept fresh.
+# Kept for the handful of URLs that really do end in .html.
 /*.html
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+# The AI and crawler entry points change with the site, so they follow the same
+# short freshness window rather than the asset year.
+/llms.txt
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/llms-full.txt
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/sitemap.xml
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/robots.txt
+  Cache-Control: public, max-age=3600

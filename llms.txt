@@ -118,6 +118,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - [Mac](https://navibeat.app/macos): macOS feature page
 - [Apple TV](https://navibeat.app/appletv): tvOS feature page
 - [Apple Watch](https://navibeat.app/applewatch): watchOS feature page
+- [CarPlay](https://navibeat.app/carplay): the car screen, four tabs (Home, Library, Playlists, Radio), voice search in twelve languages resolved against your own library, and downloads that play with no connection. CarPlay comes with the iPhone app and is not a separate purchase.
 - [Features](https://navibeat.app/features): the complete feature list on one page, including everything currently in the beta
 - [Multi-library](https://navibeat.app/multi-library): Navidrome multi-library support
 - [Widgets](https://navibeat.app/widgets): Home Screen, Lock Screen, StandBy, macOS desktop, Apple Watch complication
@@ -127,6 +128,8 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - [Sync Navidrome to a Rockbox iPod](https://navibeat.app/rockbox): NaviSyncRock, shipped in 1.3.0, a $4.99 macOS unlock. Syncs your Navidrome library to a Rockbox iPod from a real GUI app (no terminal, no scripts, unlike the usual command-line tools).
 - [Support / FAQ](https://navibeat.app/support): Setup, troubleshooting, glossary
 - [Privacy](https://navibeat.app/privacy): Privacy policy (no data collection)
+- [Roadmap](https://navibeat.app/roadmap): the public board. Vote on what gets built next, suggest what is missing, and see what was decided against and why.
+- [NaviFin, on this site](https://navibeat.app/navifin): the sister app for Jellyfin, what it is and how it differs from NaviBeat.
 - [NaviFin](https://navifin.app/): Sister app, native Jellyfin client for Apple
 
 ## In the beta right now (1.4, open TestFlight)
