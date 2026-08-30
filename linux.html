@@ -38,163 +38,246 @@
   <link rel="stylesheet" href="styles.css?v=20260831">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://navibeat.app/#org",
-        "name": "NaviBeat",
-        "url": "https://navibeat.app/",
-        "logo": "https://navibeat.app/assets/icon-512.png",
-        "email": "support@navibeat.app",
-        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
-        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
         "sameAs": [
-          "https://www.navidrome.org/apps/"
+          "https://www.linkedin.com/in/nenad-jokic/"
         ]
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://navibeat.app/#website",
-        "url": "https://navibeat.app/",
-        "name": "NaviBeat",
-        "publisher": { "@id": "https://navibeat.app/#org" },
-        "inLanguage": "en"
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://navibeat.app/linux#webpage",
-        "url": "https://navibeat.app/linux",
-        "name": "NaviBeat for Linux",
-        "isPartOf": { "@id": "https://navibeat.app/#website" },
-        "about": { "@id": "https://navibeat.app/linux#app" },
-        "primaryImageOfPage": "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
-        "inLanguage": "en",
-        "datePublished": "2026-07-23",
-        "dateModified": "2026-08-06"
+      "sameAs": [
+        "https://www.navidrome.org/apps/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://navibeat.app/#website",
+      "url": "https://navibeat.app/",
+      "name": "NaviBeat",
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
       },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://navibeat.app/linux#breadcrumbs",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Platforms", "item": "https://navibeat.app/#platforms" },
-          { "@type": "ListItem", "position": 3, "name": "Linux", "item": "https://navibeat.app/linux" }
-        ]
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://navibeat.app/linux#webpage",
+      "url": "https://navibeat.app/linux",
+      "name": "NaviBeat for Linux",
+      "isPartOf": {
+        "@id": "https://navibeat.app/#website"
       },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://navibeat.app/linux#app",
-        "name": "NaviBeat for Linux",
-        "url": "https://navibeat.app/linux",
-        "image": "https://navibeat.app/assets/icon-512.png",
-        "applicationCategory": "MultimediaApplication",
-        "applicationSubCategory": "Music Streaming Client",
-        "operatingSystem": "Linux x86_64, Linux ARM64 (aarch64)",
-        "softwareVersion": "0.9.94",
-        "releaseNotes": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
-        "datePublished": "2026-07-23",
-        "downloadUrl": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
-        "installUrl": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
-        "description": "A native Linux desktop client for Navidrome, Airsonic, Gonic, and any OpenSubsonic music server. Time-synced lyrics, Mini Player, downloads and offline playback, 10-band equalizer, and NaviSyncRock sync to a Rockbox player. Free, in open beta, shipped as a self-contained AppImage.",
-        "author": { "@id": "https://navibeat.app/#org" },
-        "publisher": { "@id": "https://navibeat.app/#org" },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": "https://github.com/nenadjokic/navibeat-linux/releases/latest"
+      "about": {
+        "@id": "https://navibeat.app/linux#app"
+      },
+      "primaryImageOfPage": "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
+      "inLanguage": "en",
+      "datePublished": "2026-07-23",
+      "dateModified": "2026-08-06"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://navibeat.app/linux#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NaviBeat",
+          "item": "https://navibeat.app/"
         },
-        "softwareRequirements": "Linux on x86_64 or ARM64 (Raspberry Pi, Asahi Linux) with glibc 2.36 or newer (Debian 12+, Ubuntu 24.04+, Fedora 38+, Raspberry Pi OS), and a Navidrome or OpenSubsonic server. Java and VLC are included in the download.",
-        "featureList": [
-          "Native Compose desktop app, no Electron and no web view",
-          "Time-synced LRC lyrics with a word-by-word karaoke mode",
-          "Mini Player that stays on top of other windows",
-          "Downloads and offline playback with Prefer Downloaded Music",
-          "10-band equalizer, ReplayGain and crossfade",
-          "NaviSyncRock: sync your library to a Rockbox iPod or player, free on Linux",
-          "AutoMix endless playback",
-          "Listening Stats, Server Health, Last.fm and ListenBrainz",
-          "mTLS client certificates and custom HTTP headers for Cloudflare Access and Authelia",
-          "Multi-library support",
-          "Terminal client with --tui, so it runs over SSH on a headless server or Raspberry Pi",
-          "Terminal client shows the library, the queue and time-synced lyrics at once, with cover art in the terminal",
-          "Terminal client has a full Now Playing screen with a large cover, the queue and the words beside it",
-          "Listening heatmap of seven days by twenty four hours, from your own play log",
-          "Play to a UPnP or DLNA speaker, receiver or smart TV on your network, found automatically",
-          "MPRIS media-key and desktop integration",
-          "Frosted Glass window, dark, light and system themes",
-          "Zero analytics, zero trackers"
-        ],
-        "screenshot": [
-          "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-lyrics.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-albums.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-artists.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock-sync.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-tui.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-tui-nowplaying.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-tui-keys.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-tui-listening.webp",
-          "https://navibeat.app/assets/screenshots/linux/linux-tui-game.webp"
-        ],
-        "mentions": [
-          { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
-          { "@type": "Thing", "name": "OpenSubsonic API" },
-          { "@type": "Thing", "name": "Rockbox" }
-        ]
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Platforms",
+          "item": "https://navibeat.app/#platforms"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Linux",
+          "item": "https://navibeat.app/linux"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://navibeat.app/linux#app",
+      "name": "NaviBeat for Linux",
+      "url": "https://navibeat.app/linux",
+      "image": "https://navibeat.app/assets/icon-512.png",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Music Streaming Client",
+      "operatingSystem": "Linux x86_64, Linux ARM64 (aarch64)",
+      "softwareVersion": "0.9.94",
+      "releaseNotes": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
+      "datePublished": "2026-07-23",
+      "downloadUrl": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
+      "installUrl": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
+      "description": "A native Linux desktop client for Navidrome, Airsonic, Gonic, and any OpenSubsonic music server. Time-synced lyrics, Mini Player, downloads and offline playback, 10-band equalizer, and NaviSyncRock sync to a Rockbox player. Free, in open beta, shipped as a self-contained AppImage.",
+      "author": {
+        "@id": "https://navibeat.app/#org"
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://navibeat.app/linux#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How much does NaviBeat for Linux cost?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "It is free. The Linux build is in open beta and free to download from GitHub. The Apple builds (Mac, iPhone, iPad, Apple TV, Apple Watch) are a one-time $5.99 Universal Purchase on the App Store."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is NaviBeat for Linux stable?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "It is in beta. It is built and tested on real hardware, but it is early and you may encounter bugs. Please report anything that breaks on the GitHub issues page so it can be fixed."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I install it?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Two ways. On Debian 12+, Ubuntu 24.04+, Raspberry Pi OS, Mint, Fedora 38+ and Arch Linux, add the NaviBeat repository at dl.navibeat.app and run apt install navibeat, dnf install navibeat or pacman -Syu navibeat, and apt upgrade, dnf upgrade or pacman -Syu carries new versions from then on. Anywhere else, download the AppImage from GitHub, make it executable with chmod +x, and run it. The Debian and Fedora packages and the AppImage carry their own Java runtime and their own VLC, so there is nothing else to install; the Arch package brings its own Java and uses the libvlc in Arch's own repositories. If you already run VLC and want a smaller download, the slim AppImage uses your system libVLC instead."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I run NaviBeat on a headless server with no desktop?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Run it with --tui and NaviBeat draws itself in the terminal instead of a window, so it works over SSH on a headless server or a Raspberry Pi. It is the same app underneath: the same library, the same queue, the same downloads, the same gapless playback, with cmus and mpd style keys. On a machine with no display attached it starts in terminal mode by itself."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What music server does it need?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic-compatible server, including Airsonic-Advanced and Gonic. It does not host or stream any music of its own."
-            }
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/nenadjokic/navibeat-linux/releases/latest"
+      },
+      "softwareRequirements": "Linux on x86_64 or ARM64 (Raspberry Pi, Asahi Linux) with glibc 2.36 or newer (Debian 12+, Ubuntu 24.04+, Fedora 38+, Raspberry Pi OS), and a Navidrome or OpenSubsonic server. Java and VLC are included in the download.",
+      "featureList": [
+        "Native Compose desktop app, no Electron and no web view",
+        "Time-synced LRC lyrics with a word-by-word karaoke mode",
+        "Mini Player that stays on top of other windows",
+        "Downloads and offline playback with Prefer Downloaded Music",
+        "10-band equalizer, ReplayGain and crossfade",
+        "NaviSyncRock: sync your library to a Rockbox iPod or player, free on Linux",
+        "AutoMix endless playback",
+        "Listening Stats, Server Health, Last.fm and ListenBrainz",
+        "mTLS client certificates and custom HTTP headers for Cloudflare Access and Authelia",
+        "Multi-library support",
+        "Terminal client with --tui, so it runs over SSH on a headless server or Raspberry Pi",
+        "Terminal client shows the library, the queue and time-synced lyrics at once, with cover art in the terminal",
+        "Terminal client has a full Now Playing screen with a large cover, the queue and the words beside it",
+        "Listening heatmap of seven days by twenty four hours, from your own play log",
+        "Play to a UPnP or DLNA speaker, receiver or smart TV on your network, found automatically",
+        "MPRIS media-key and desktop integration",
+        "Frosted Glass window, dark, light and system themes",
+        "Zero analytics, zero trackers"
+      ],
+      "screenshot": [
+        "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-lyrics.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-albums.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-artists.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock-sync.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-tui.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-tui-nowplaying.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-tui-keys.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-tui-listening.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-tui-game.webp"
+      ],
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Navidrome",
+          "url": "https://www.navidrome.org"
+        },
+        {
+          "@type": "Thing",
+          "name": "OpenSubsonic API"
+        },
+        {
+          "@type": "Thing",
+          "name": "Rockbox"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://navibeat.app/linux#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does NaviBeat for Linux cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is free. The Linux build is in open beta and free to download from GitHub. The Apple builds (Mac, iPhone, iPad, Apple TV, Apple Watch) are a one-time $5.99 Universal Purchase on the App Store."
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "@type": "Question",
+          "name": "Is NaviBeat for Linux stable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is in beta. It is built and tested on real hardware, but it is early and you may encounter bugs. Please report anything that breaks on the GitHub issues page so it can be fixed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I install it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two ways. On Debian 12+, Ubuntu 24.04+, Raspberry Pi OS, Mint, Fedora 38+ and Arch Linux, add the NaviBeat repository at dl.navibeat.app and run apt install navibeat, dnf install navibeat or pacman -Syu navibeat, and apt upgrade, dnf upgrade or pacman -Syu carries new versions from then on. Anywhere else, download the AppImage from GitHub, make it executable with chmod +x, and run it. The Debian and Fedora packages and the AppImage carry their own Java runtime and their own VLC, so there is nothing else to install; the Arch package brings its own Java and uses the libvlc in Arch's own repositories. If you already run VLC and want a smaller download, the slim AppImage uses your system libVLC instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run NaviBeat on a headless server with no desktop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Run it with --tui and NaviBeat draws itself in the terminal instead of a window, so it works over SSH on a headless server or a Raspberry Pi. It is the same app underneath: the same library, the same queue, the same downloads, the same gapless playback, with cmus and mpd style keys. On a machine with no display attached it starts in terminal mode by itself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What music server does it need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic-compatible server, including Airsonic-Advanced and Gonic. It does not host or stream any music of its own."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://navibeat.app/linux#howto",
+      "name": "Install NaviBeat on Linux from the package repository",
+      "description": "Add the NaviBeat repository and install the client with apt, dnf or pacman.",
+      "totalTime": "PT3M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "A terminal"
+        }
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "A Navidrome or OpenSubsonic server"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Install on Debian and Ubuntu",
+          "text": "sudo install -d /etc/apt/keyrings\ncurl -fsSL https://dl.navibeat.app/navibeat-repo.gpg \\\n  | sudo tee /etc/apt/keyrings/navibeat.gpg >/dev/null\necho \"deb [signed-by=/etc/apt/keyrings/navibeat.gpg] \\\nhttps://dl.navibeat.app/deb stable main\" \\\n  | sudo tee /etc/apt/sources.list.d/navibeat.list\nsudo apt update && sudo apt install navibeat"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Install on Fedora",
+          "text": "sudo dnf install https://dl.navibeat.app/navibeat-release.rpm\nsudo dnf install navibeat"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Install on Arch Linux",
+          "text": "curl -fsSL https://dl.navibeat.app/navibeat-repo.asc -o /tmp/navibeat-repo.asc\nsudo pacman-key --add /tmp/navibeat-repo.asc\nsudo pacman-key --lsign-key 0940E93F0EA97642\nsudo tee -a /etc/pacman.conf >/dev/null <<'EOF'\n\n[navibeat]\nSigLevel = Required\nServer = https://dl.navibeat.app/arch/$arch\nEOF\nsudo pacman -Syu navibeat"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
