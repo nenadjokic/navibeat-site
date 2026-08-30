@@ -217,6 +217,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/rockbox" />
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/rockbox/ipod-navibeat-hero.png</image:loc>
+      <image:title>The NaviBeat theme running on a Rockbox iPod Classic</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/rockbox/app-sync-sending.png</image:loc>
+      <image:title>NaviSyncRock sending a chosen set of artists from Navidrome to a Rockbox iPod</image:title>
+    </image:image>
   </url>
 
   <url>
