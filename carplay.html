@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>NaviBeat for CarPlay: Your Navidrome Library on the Car Screen</title>
-  <meta name="description" content="NaviBeat on CarPlay: your own Navidrome library on the car screen. Home, Library, Playlists and Radio, with voice search resolved against your own music. $5.99 Universal Purchase.">
+  <title>NaviBeat for CarPlay: Navidrome on Your Car Screen</title>
+  <meta name="description" content="Your own Navidrome library on the car screen: Home, Library, Playlists and Radio, with voice search in twelve languages that resolves against your music.">
   <meta name="theme-color" content="#0C0C0E">
   <meta name="apple-itunes-app" content="app-id=6763518834">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -36,7 +36,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20260827">
+  <link rel="stylesheet" href="styles.css?v=20260831">
 
   <script type="application/ld+json">
   {
@@ -110,6 +110,8 @@
           "Home, Library, Playlists and Radio tabs on the car screen",
           "Voice search in twelve languages, resolved against your own library",
           "Browse artists, albums and recently added",
+          "Downloads play in the car with no connection",
+          "Streaming quality set separately for Wi-Fi and cellular",
           "Your own playlists and internet radio stations",
           "Comes with the iPhone app, no separate purchase",
           "Zero analytics, zero trackers"
@@ -162,7 +164,7 @@
   <div class="wrap nav__inner">
     <a class="nav__brand" href="/" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
-        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
@@ -184,7 +186,7 @@
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
-      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
@@ -289,7 +291,7 @@
         <h2 id="carplay-screens-title" class="h2">Four tabs, and all of them are your server.</h2>
         <p style="margin:14px 0 0; color:var(--text-1); font-size:16px; line-height:1.7;">Nothing here is a recommendation feed. Every row is something already on your own Navidrome or Subsonic server, in the order you keep it.</p>
       </div>
-      <div style="margin-top:30px; display:grid; gap:22px; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); max-width:1000px;">
+      <div style="margin-top:30px; display:grid; gap:22px; grid-template-columns:repeat(auto-fit, minmax(min(340px, 100%), 1fr)); max-width:1000px;">
         <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border);">
           <img src="assets/screenshots/carplay/navibeat-carplay-home.webp?v=20260830"
                srcset="assets/screenshots/carplay/navibeat-carplay-home-760.webp?v=20260830 760w, assets/screenshots/carplay/navibeat-carplay-home.webp?v=20260830 800w"
@@ -348,6 +350,27 @@
     </div>
   </section>
 
+
+  <!-- VOICE SEARCH -->
+  <section id="voice" aria-labelledby="carplay-voice-title">
+    <div class="wrap reveal" style="max-width:78ch;">
+      <p class="eyebrow eyebrow--accent">Voice search</p>
+      <h2 id="carplay-voice-title" class="h2">Say it in your language, and it looks in your library.</h2>
+      <p style="margin:16px 0 0; color:var(--text-1); font-size:16px; line-height:1.75;">Say <em>play</em> and the name of an artist, album, song or playlist <strong style="color:var(--text-0);">in any of the app's twelve languages</strong>. The search resolves against <strong style="color:var(--text-0);">your own library</strong>, not a streaming catalogue, so the thing you asked for is the thing on your server. When nothing matches, it shows you exactly what it heard rather than failing silently.</p>
+      <p style="margin:14px 0 0; color:var(--text-1); font-size:16px; line-height:1.75;">Typing in a moving car is a bad idea, so search hands the typing back to your phone and primes voice recognition with the names in your own library.</p>
+    </div>
+  </section>
+
+  <!-- OFFLINE IN THE CAR -->
+  <section id="offline" aria-labelledby="carplay-offline-title">
+    <div class="wrap reveal" style="max-width:78ch;">
+      <p class="eyebrow eyebrow--accent">Downloads and signal</p>
+      <h2 id="carplay-offline-title" class="h2">A garage, a tunnel, a dead zone.</h2>
+      <p style="margin:16px 0 0; color:var(--text-1); font-size:16px; line-height:1.75;">Your library, playlists, downloads and Now Playing controls are all on the car screen, and the downloads are the part that matters when the signal is not. Anything pinned on the phone plays in the car with no connection at all.</p>
+      <p style="margin:14px 0 0; color:var(--text-1); font-size:16px; line-height:1.75;">Streaming quality is set <strong style="color:var(--text-0);">separately for Wi-Fi and for cellular</strong>, so the car does not have to pull the same files your home network does. And the car stays on the screen you left, through a switch from Wi-Fi to cellular and through unplugging and plugging back in.</p>
+    </div>
+  </section>
+
   <!-- PRICE -->
   <section class="price" id="buy" aria-labelledby="carplay-price-title">
     <div class="wrap reveal">
@@ -400,7 +423,7 @@
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="/">
-          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
@@ -489,7 +512,7 @@
   })();
 </script>
 
-  <script defer src="lightbox.js"></script>
-<script src="nav-menu.js?v=20260827" defer></script>
+  <script defer src="lightbox.js?v=20260831"></script>
+<script src="nav-menu.js?v=20260831" defer></script>
 </body>
 </html>

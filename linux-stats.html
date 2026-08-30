@@ -9,7 +9,7 @@
      download count does not belong in search results. -->
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=20260827">
+<link rel="stylesheet" href="styles.css?v=20260831">
 <style>
   /* One series, so no legend and no categorical palette: the bars carry the
      site accent (#F47B20), which measures 3:1+ against the --bg-2 surface. A
@@ -87,8 +87,9 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<div class="ls-wrap">
+<main class="ls-wrap" id="main">
   <p class="ls-eyebrow">NaviBeat &middot; Linux &middot; open beta</p>
   <h1 class="ls-h1">Download counter</h1>
   <p class="ls-sub">Live from the GitHub Releases API for
@@ -103,9 +104,9 @@
   </div>
 
   <div class="ls-tiles">
-    <div class="ls-tile"><h3>Last 24 hours</h3><div class="v" id="d1">&hellip;</div><div class="n" id="d1n"></div></div>
-    <div class="ls-tile"><h3>Last 7 days</h3><div class="v" id="d7">&hellip;</div><div class="n" id="d7n"></div></div>
-    <div class="ls-tile"><h3>Last 30 days</h3><div class="v" id="d30">&hellip;</div><div class="n" id="d30n"></div></div>
+    <div class="ls-tile"><h2>Last 24 hours</h2><div class="v" id="d1">&hellip;</div><div class="n" id="d1n"></div></div>
+    <div class="ls-tile"><h2>Last 7 days</h2><div class="v" id="d7">&hellip;</div><div class="n" id="d7n"></div></div>
+    <div class="ls-tile"><h2>Last 30 days</h2><div class="v" id="d30">&hellip;</div><div class="n" id="d30n"></div></div>
   </div>
 
   <div class="ls-card">
@@ -135,7 +136,7 @@
     <a href="/api/linux-downloads">raw JSON</a> &nbsp;&middot;&nbsp;
     <span id="updated"></span>
   </p>
-</div>
+</main>
 
 <script>
 const fmt = (n) => (n === null || n === undefined ? '–' : new Intl.NumberFormat('en-US').format(n));

@@ -36,45 +36,110 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20260827">
+  <link rel="stylesheet" href="styles.css?v=20260831">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://navibeat.app/#org",
-        "name": "NaviBeat",
-        "url": "https://navibeat.app/",
-        "logo": "https://navibeat.app/assets/icon-512.png",
-        "email": "support@navibeat.app",
-        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
-        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" }
-      },
-      {
-        "@type": "Article",
-        "@id": "https://navibeat.app/widgets#article",
-        "headline": "NaviBeat Widgets: Home Screen, Lock Screen, Desktop, Watch",
-        "name": "NaviBeat Widgets: Home Screen, Lock Screen, Desktop, Watch",
-        "description": "Native widgets on every Apple platform. Glance at what's playing, tap to transport, deep-link to the album. App Group only, zero analytics.",
-        "url": "https://navibeat.app/widgets",
-        "datePublished": "2026-05-28",
-        "dateModified": "2026-07-12",
-        "inLanguage": "en",
-        "author": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
-        "publisher": { "@id": "https://navibeat.app/#org" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://navibeat.app/widgets#breadcrumbs",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Widgets", "item": "https://navibeat.app/widgets" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
         ]
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://navibeat.app/widgets#article",
+      "headline": "NaviBeat Widgets: Home Screen, Lock Screen, Desktop, Watch",
+      "name": "NaviBeat Widgets: Home Screen, Lock Screen, Desktop, Watch",
+      "description": "Native widgets on every Apple platform. Glance at what's playing, tap to transport, deep-link to the album. App Group only, zero analytics.",
+      "url": "https://navibeat.app/widgets",
+      "datePublished": "2026-05-28",
+      "dateModified": "2026-07-12",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
+        ]
+      },
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://navibeat.app/widgets#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NaviBeat",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Widgets",
+          "item": "https://navibeat.app/widgets"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://navibeat.app/widgets#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many widgets does NaviBeat ship?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eleven, across four surfaces: the iPhone and iPad Home Screen, the Lock Screen and StandBy, the Mac desktop, and the Apple Watch face."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I control playback from a widget?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Tap play, pause, next or previous and NaviBeat carries it out. Tapping the widget itself goes straight to the album."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do the widgets send anything to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every widget reads from a sandboxed App Group container that the player writes to, so they stay quick without phoning home."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I choose what a widget shows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You pick which playlists and which radio stations appear."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
   <style>
     /* ====== Widgets page, local styles ======
@@ -168,7 +233,7 @@
   <div class="wrap nav__inner">
     <a class="nav__brand" href="/" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
-        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
@@ -190,7 +255,7 @@
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
-      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
@@ -349,6 +414,33 @@
     </div>
   </section>
 
+
+  <!-- FAQ: mirrored exactly by the FAQPage node in the head @graph. -->
+  <section aria-labelledby="widgets-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="widgets-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How many widgets does NaviBeat ship?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Eleven, across four surfaces: the iPhone and iPad Home Screen, the Lock Screen and StandBy, the Mac desktop, and the Apple Watch face.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I control playback from a widget?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Tap play, pause, next or previous and NaviBeat carries it out. Tapping the widget itself goes straight to the album.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do the widgets send anything to a server?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. Every widget reads from a sandboxed App Group container that the player writes to, so they stay quick without phoning home.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I choose what a widget shows?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. You pick which playlists and which radio stations appear.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -356,7 +448,7 @@
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="/">
-          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
@@ -443,6 +535,6 @@
 })();
 </script>
 
-<script src="nav-menu.js?v=20260827" defer></script>
+<script src="nav-menu.js?v=20260831" defer></script>
 </body>
 </html>

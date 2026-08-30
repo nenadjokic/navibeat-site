@@ -40,7 +40,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=20260827">
+  <link rel="stylesheet" href="styles.css?v=20260831">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp?v=20260830 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp?v=20260830 2000w"
         imagesizes="(max-width: 960px) 84vw, (max-width: 1280px) 58vw, 742px">
@@ -324,7 +324,7 @@
   <div class="wrap nav__inner">
     <a class="nav__brand" href="#top" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
-        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
@@ -346,7 +346,7 @@
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
-      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
@@ -869,7 +869,7 @@
         It is not only the broadest. It is built to be the best on each screen individually, for reasons you can check:
       </p>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:14px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap:14px;">
         <a href="iphone" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
           <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for iPhone</p>
           <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">Offline that <strong style="color:var(--text-0);">browses</strong>, not just plays. CarPlay voice search in 12 languages. Streaming quality set separately for Wi-Fi and cellular. 10-band EQ, ReplayGain, gapless. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
@@ -1455,7 +1455,7 @@
         <h2 id="reviews-title" class="h2">What people are saying.</h2>
         <p id="reviews-stat" class="body-copy" style="font-size:18px;margin-top:8px;"></p>
       </div>
-      <div id="reviews-grid" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));"></div>
+      <div id="reviews-grid" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(280px, 100%), 1fr));"></div>
     </div>
   </section>
 
@@ -1467,7 +1467,7 @@
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="#top">
-          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
@@ -1764,6 +1764,6 @@
   })();
 </script>
 
-<script src="nav-menu.js?v=20260827" defer></script>
+<script src="nav-menu.js?v=20260831" defer></script>
 </body>
 </html>

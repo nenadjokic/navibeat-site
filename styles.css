@@ -249,6 +249,11 @@ section { padding-block: var(--rhythm); }
    ============================================================================= */
 
 .btn {
+  /* A modifier-less .btn used to inherit whatever colour its container set,
+     which on a dark card meant 1.09:1 (beta.html, measured 2026-08-31). Every
+     modifier below sets its own colour, so this default only ever applies to
+     the bare class. */
+  color: var(--text-0);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2501,7 +2506,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 
 .strip__track {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 16px;
 }
 .strip__item {
@@ -3230,3 +3235,57 @@ a.proofbar__item:hover { color: var(--accent-hi); }
    waits out the double-tap-to-zoom window unless it is told the element has no
    zoom gesture on it. Pinch zoom is untouched, so this costs no accessibility. */
 a, button, summary, .btn, [role="button"] { touch-action: manipulation; }
+
+
+/* ============================================================ ACCESSIBILITY
+   WCAG 2.2 SC 1.4.1 Use of Colour. Measured with axe-core on 2026-08-31: an
+   accent link sitting inside running text read 1.32:1 against the paragraph
+   around it (#FBB06A on #A6A6AE), and 2.06:1 for a plain one. Colour alone may
+   carry a link only at 3:1 or better, so links in prose get an underline.
+
+   Scoped to running text on purpose. Navigation, footer lists, buttons and
+   cards are not prose, they read as controls from their position and layout,
+   and underlining them would change the design rather than clarify it. */
+p a:not(.btn):not(.link-quiet),
+aside a:not(.btn):not(.link-quiet),
+td a:not(.btn),
+dd a:not(.btn),
+figcaption a:not(.btn),
+li p a:not(.btn) {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+p a:not(.btn):not(.link-quiet):hover,
+td a:not(.btn):hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Visually hidden, still read aloud. Used for a table header that is blank on
+   screen because the column holds row labels. */
+.vh {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  overflow: hidden; white-space: nowrap;
+}
+
+/* WCAG 2.2 SC 1.4.10 Reflow. Measured at a 320px viewport on 2026-08-31: five
+   pages scrolled sideways. Two causes, both structural rather than cosmetic.
+
+   1. A grid or flex child defaults to min-width:auto, so it refuses to shrink
+      below its own content and drags the row past the viewport. Setting it to 0
+      changes nothing at any width where the content already fits.
+   2. Unbreakable strings, bundle identifiers and keychain constants, have no
+      space to wrap at. */
+.features > *, .f-card > *, .p-stats > *, .plat-grid > *, .faq > *,
+.wrap > div, .wrap > section, .wrap > article { min-width: 0; }
+
+code { overflow-wrap: anywhere; }
+
+@media (max-width: 420px) {
+  /* A pill button is nowrap by design, which is right until the label is wider
+     than the phone. */
+  .btn { white-space: normal; }
+}

@@ -34,54 +34,129 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20260827">
+  <link rel="stylesheet" href="styles.css?v=20260831">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://navibeat.app/#org",
-        "name": "NaviBeat",
-        "url": "https://navibeat.app/",
-        "logo": "https://navibeat.app/assets/icon-512.png",
-        "email": "support@navibeat.app",
-        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
-        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
-        "sameAs": [ "https://www.navidrome.org/apps/" ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://navibeat.app/#website",
-        "url": "https://navibeat.app/",
-        "name": "NaviBeat",
-        "publisher": { "@id": "https://navibeat.app/#org" },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://navibeat.app/beta#webpage",
-        "url": "https://navibeat.app/beta",
-        "name": "NaviBeat Beta Program",
-        "description": "Join the NaviBeat TestFlight program: try early builds across iPhone, iPad, Mac, Apple TV, and Apple Watch. Share feedback, help shape the next release.",
-        "inLanguage": "en",
-        "isPartOf": { "@id": "https://navibeat.app/#website" },
-        "about": { "@id": "https://navibeat.app/#app" },
-        "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"], "url": "https://navibeat.app/#maker" },
-        "publisher": { "@id": "https://navibeat.app/#org" },
-        "primaryImageOfPage": "https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png?v=20260830"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://navibeat.app/beta#breadcrumbs",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://navibeat.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Beta Program", "item": "https://navibeat.app/beta" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
         ]
-      }
-    ]
-  }
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
+      },
+      "sameAs": [
+        "https://www.navidrome.org/apps/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://navibeat.app/#website",
+      "url": "https://navibeat.app/",
+      "name": "NaviBeat",
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://navibeat.app/beta#webpage",
+      "url": "https://navibeat.app/beta",
+      "name": "NaviBeat Beta Program",
+      "description": "Join the NaviBeat TestFlight program: try early builds across iPhone, iPad, Mac, Apple TV, and Apple Watch. Share feedback, help shape the next release.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://navibeat.app/#website"
+      },
+      "about": {
+        "@id": "https://navibeat.app/#app"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://navibeat.app/#nenad",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
+        ],
+        "url": "https://navibeat.app/#maker"
+      },
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "primaryImageOfPage": "https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png?v=20260830"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://navibeat.app/beta#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Beta Program",
+          "item": "https://navibeat.app/beta"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://navibeat.app/beta#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I join the NaviBeat beta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Apple beta is open to anyone, with no invite and no waiting. Install TestFlight from the App Store, then open testflight.apple.com/join/N7Fa1NtG on each device you want to test on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which devices can I test on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "iPhone, iPad, Mac, Apple TV and Apple Watch, all from the same public TestFlight link."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Android beta the same thing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Android is a separate group on Google Play and it does still need an email, because a Google Play invite goes to a Google account address rather than an Apple ID."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is expected of a tester?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That you share what you find. NaviBeat is built by one person in Belgrade, so every bug flagged and every odd interaction noticed changes what ships."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -91,7 +166,7 @@
   <div class="wrap nav__inner">
     <a class="nav__brand" href="/" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
-        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
@@ -113,7 +188,7 @@
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
-      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
@@ -147,7 +222,7 @@
     <p style="margin-bottom: 14px;">Ready? The link is public, so you can join right now. Install TestFlight first, then open this on every Apple device you want to test on.</p>
     <a class="btn btn--primary" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener" style="margin-bottom:14px;">Join the TestFlight beta</a>
     <p style="margin-bottom: 14px; font-size:14px; color:var(--text-2);">Would rather say hello first, or tell me what you plan to test? Write instead, and I will reply.</p>
-    <a class="btn" href="mailto:nenad.dev@icloud.com?subject=NaviBeat%20beta%20tester%20sign-up&amp;body=Hi%20Nenad%2C%0A%0AI%27d%20like%20to%20join%20the%20NaviBeat%20beta%20program.%0A%0A--%20About%20me%20--%0AApple%20ID%20email%20%28for%20TestFlight%20invite%29%3A%20%0ADevices%20I%27ll%20test%20on%3A%20%20%20%28iPhone%20%2F%20iPad%20%2F%20Mac%20%2F%20Apple%20TV%20%2F%20Apple%20Watch%29%0AMy%20server%3A%20%20%28Navidrome%20%2F%20Airsonic%20%2F%20Gonic%20%2F%20other%29%0AHow%20I%20expose%20it%3A%20%20%20%28LAN%20only%20%2F%20Tailscale%20%2F%20Cloudflare%20Tunnel%20%2F%20reverse%20proxy%20with%20cert%20%2F%20other%29%0AApproximate%20library%20size%3A%20%20%20%28%23%20of%20albums%2C%20rough%20genre%20mix%29%0A%0A--%20What%20I%27d%20like%20to%20focus%20on%20--%0A%0A%0AThanks%21">I want to be a beta tester</a>
+    <a class="btn btn--ghost" href="mailto:nenad.dev@icloud.com?subject=NaviBeat%20beta%20tester%20sign-up&amp;body=Hi%20Nenad%2C%0A%0AI%27d%20like%20to%20join%20the%20NaviBeat%20beta%20program.%0A%0A--%20About%20me%20--%0AApple%20ID%20email%20%28for%20TestFlight%20invite%29%3A%20%0ADevices%20I%27ll%20test%20on%3A%20%20%20%28iPhone%20%2F%20iPad%20%2F%20Mac%20%2F%20Apple%20TV%20%2F%20Apple%20Watch%29%0AMy%20server%3A%20%20%28Navidrome%20%2F%20Airsonic%20%2F%20Gonic%20%2F%20other%29%0AHow%20I%20expose%20it%3A%20%20%20%28LAN%20only%20%2F%20Tailscale%20%2F%20Cloudflare%20Tunnel%20%2F%20reverse%20proxy%20with%20cert%20%2F%20other%29%0AApproximate%20library%20size%3A%20%20%20%28%23%20of%20albums%2C%20rough%20genre%20mix%29%0A%0A--%20What%20I%27d%20like%20to%20focus%20on%20--%0A%0A%0AThanks%21">I want to be a beta tester</a>
   </div>
 
   <h2 id="android">Android testers, separately</h2>
@@ -177,9 +252,36 @@
     <p style="margin-bottom: 14px;">Still ready? Same public link, no email needed.</p>
     <a class="btn btn--primary" href="https://testflight.apple.com/join/N7Fa1NtG" target="_blank" rel="noopener" style="margin-bottom:14px;">Join the TestFlight beta</a>
     <p style="margin-bottom: 14px; font-size:14px; color:var(--text-2);">Or write first, if you would rather.</p>
-    <a class="btn" href="mailto:nenad.dev@icloud.com?subject=NaviBeat%20beta%20tester%20sign-up&amp;body=Hi%20Nenad%2C%0A%0AI%27d%20like%20to%20join%20the%20NaviBeat%20beta%20program.%0A%0A--%20About%20me%20--%0AApple%20ID%20email%20%28for%20TestFlight%20invite%29%3A%20%0ADevices%20I%27ll%20test%20on%3A%20%20%20%28iPhone%20%2F%20iPad%20%2F%20Mac%20%2F%20Apple%20TV%20%2F%20Apple%20Watch%29%0AMy%20server%3A%20%20%28Navidrome%20%2F%20Airsonic%20%2F%20Gonic%20%2F%20other%29%0AHow%20I%20expose%20it%3A%20%20%20%28LAN%20only%20%2F%20Tailscale%20%2F%20Cloudflare%20Tunnel%20%2F%20reverse%20proxy%20with%20cert%20%2F%20other%29%0AApproximate%20library%20size%3A%20%20%20%28%23%20of%20albums%2C%20rough%20genre%20mix%29%0A%0A--%20What%20I%27d%20like%20to%20focus%20on%20--%0A%0A%0AThanks%21">I want to be a beta tester</a>
+    <a class="btn btn--ghost" href="mailto:nenad.dev@icloud.com?subject=NaviBeat%20beta%20tester%20sign-up&amp;body=Hi%20Nenad%2C%0A%0AI%27d%20like%20to%20join%20the%20NaviBeat%20beta%20program.%0A%0A--%20About%20me%20--%0AApple%20ID%20email%20%28for%20TestFlight%20invite%29%3A%20%0ADevices%20I%27ll%20test%20on%3A%20%20%20%28iPhone%20%2F%20iPad%20%2F%20Mac%20%2F%20Apple%20TV%20%2F%20Apple%20Watch%29%0AMy%20server%3A%20%20%28Navidrome%20%2F%20Airsonic%20%2F%20Gonic%20%2F%20other%29%0AHow%20I%20expose%20it%3A%20%20%20%28LAN%20only%20%2F%20Tailscale%20%2F%20Cloudflare%20Tunnel%20%2F%20reverse%20proxy%20with%20cert%20%2F%20other%29%0AApproximate%20library%20size%3A%20%20%20%28%23%20of%20albums%2C%20rough%20genre%20mix%29%0A%0A--%20What%20I%27d%20like%20to%20focus%20on%20--%0A%0A%0AThanks%21">I want to be a beta tester</a>
   </div>
 </div>
+
+  <!-- FAQ: mirrored exactly by the FAQPage node in the head @graph. -->
+  <section aria-labelledby="beta-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="beta-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How do I join the NaviBeat beta?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">The Apple beta is open to anyone, with no invite and no waiting. Install TestFlight from the App Store, then open testflight.apple.com/join/N7Fa1NtG on each device you want to test on.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Which devices can I test on?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">iPhone, iPad, Mac, Apple TV and Apple Watch, all from the same public TestFlight link.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Is the Android beta the same thing?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. Android is a separate group on Google Play and it does still need an email, because a Google Play invite goes to a Google account address rather than an Apple ID.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What is expected of a tester?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">That you share what you find. NaviBeat is built by one person in Belgrade, so every bug flagged and every odd interaction noticed changes what ships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer" role="contentinfo">
@@ -187,7 +289,7 @@
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="/">
-          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
@@ -267,6 +369,6 @@
   })();
 </script>
 
-<script src="nav-menu.js?v=20260827" defer></script>
+<script src="nav-menu.js?v=20260831" defer></script>
 </body>
 </html>

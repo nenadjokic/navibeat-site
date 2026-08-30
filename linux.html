@@ -35,7 +35,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20260827">
+  <link rel="stylesheet" href="styles.css?v=20260831">
 
   <script type="application/ld+json">
   {
@@ -204,7 +204,7 @@
   <div class="wrap nav__inner">
     <a class="nav__brand" href="/" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
-        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
@@ -226,7 +226,7 @@
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
-      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
@@ -353,7 +353,7 @@
         <strong style="color: var(--text-0);">Short answer.</strong> NaviBeat for Linux is a <strong>native desktop app</strong>, written in Kotlin with Compose Multiplatform, not a browser tab in a window and not Electron. It draws its own window, remembers where you put it, and answers your <strong>media keys</strong> over MPRIS. It downloads for offline, has a <strong>time-synced lyrics</strong> panel and a pin-on-top <strong>Mini Player</strong>, and it can <strong>sync your library to a Rockbox iPod</strong>, a feature that is a paid add-on on the Mac and free here. It is built for the server behind your <strong>reverse proxy, mTLS, or Tailscale</strong>, not just a plain exposed one.
       </aside>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:18px;">
 
         <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
           <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">01 / Actually native</p>
@@ -610,7 +610,7 @@
         <p class="eyebrow eyebrow--accent">Get it running</p>
         <h2 id="linux-install-title" class="h2">Install it from a repository, or run a single file.</h2>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:18px; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap:18px; align-items:start;">
 
         <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
           <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">Three steps</h3>
@@ -645,7 +645,7 @@
           <p style="margin:0 0 14px; color:var(--text-2); font-size:13px; line-height:1.6;">Copy each block whole, not one line at a time. The lines belong together, and in the Arch block everything between <code>&lt;&lt;'EOF'</code> and the closing <code>EOF</code> is one single command that writes the file. Paste only its first line and the shell waits for the rest instead of running anything.</p>
 
           <p style="margin:0 0 6px; color:var(--text-0); font-size:14px; font-weight:600;">Debian, Ubuntu, Raspberry Pi OS, Mint</p>
-          <pre style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>sudo install -d /etc/apt/keyrings
+          <pre tabindex="0" role="region" aria-label="Debian and Ubuntu commands" style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>sudo install -d /etc/apt/keyrings
 curl -fsSL https://dl.navibeat.app/navibeat-repo.gpg \
   | sudo tee /etc/apt/keyrings/navibeat.gpg &gt;/dev/null
 echo "deb [signed-by=/etc/apt/keyrings/navibeat.gpg] \
@@ -654,11 +654,11 @@ https://dl.navibeat.app/deb stable main" \
 sudo apt update &amp;&amp; sudo apt install navibeat</code></pre>
 
           <p style="margin:0 0 6px; color:var(--text-0); font-size:14px; font-weight:600;">Fedora 38 and newer</p>
-          <pre style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>sudo dnf install https://dl.navibeat.app/navibeat-release.rpm
+          <pre tabindex="0" role="region" aria-label="Fedora commands" style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>sudo dnf install https://dl.navibeat.app/navibeat-release.rpm
 sudo dnf install navibeat</code></pre>
 
           <p style="margin:0 0 6px; color:var(--text-0); font-size:14px; font-weight:600;">Arch Linux, and Arch Linux ARM</p>
-          <pre style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>curl -fsSL https://dl.navibeat.app/navibeat-repo.asc -o /tmp/navibeat-repo.asc
+          <pre tabindex="0" role="region" aria-label="Arch Linux commands" style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>curl -fsSL https://dl.navibeat.app/navibeat-repo.asc -o /tmp/navibeat-repo.asc
 sudo pacman-key --add /tmp/navibeat-repo.asc
 sudo pacman-key --lsign-key 0940E93F0EA97642
 sudo tee -a /etc/pacman.conf &gt;/dev/null &lt;&lt;'EOF'
@@ -736,7 +736,7 @@ sudo pacman -Syu navibeat</code></pre>
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="/">
-          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native player for Navidrome and Subsonic, across the Apple ecosystem and Linux. Built in Belgrade.</p>
@@ -825,7 +825,7 @@ sudo pacman -Syu navibeat</code></pre>
   })();
 </script>
 
-  <script defer src="lightbox.js"></script>
-<script src="nav-menu.js?v=20260827" defer></script>
+  <script defer src="lightbox.js?v=20260831"></script>
+<script src="nav-menu.js?v=20260831" defer></script>
 </body>
 </html>

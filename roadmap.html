@@ -35,52 +35,115 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20260827">
+  <link rel="stylesheet" href="styles.css?v=20260831">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://navibeat.app/#org",
-        "name": "NaviBeat",
-        "url": "https://navibeat.app/",
-        "logo": "https://navibeat.app/assets/icon-512.png",
-        "email": "support@navibeat.app",
-        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
-        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
-        "sameAs": ["https://www.navidrome.org/apps/"]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://navibeat.app/#website",
-        "url": "https://navibeat.app/",
-        "name": "NaviBeat",
-        "publisher": { "@id": "https://navibeat.app/#org" },
-        "inLanguage": "en"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://navibeat.app/roadmap#webpage",
-        "url": "https://navibeat.app/roadmap",
-        "name": "NaviBeat Roadmap",
-        "description": "Public roadmap for NaviBeat and NaviFin. Vote on what gets built next.",
-        "isPartOf": { "@id": "https://navibeat.app/#website" },
-        "inLanguage": "en",
-        "datePublished": "2026-08-27",
-        "dateModified": "2026-08-27"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://navibeat.app/roadmap#breadcrumbs",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Roadmap", "item": "https://navibeat.app/roadmap" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
         ]
-      }
-    ]
-  }
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
+      },
+      "sameAs": [
+        "https://www.navidrome.org/apps/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://navibeat.app/#website",
+      "url": "https://navibeat.app/",
+      "name": "NaviBeat",
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://navibeat.app/roadmap#webpage",
+      "url": "https://navibeat.app/roadmap",
+      "name": "NaviBeat Roadmap",
+      "description": "Public roadmap for NaviBeat and NaviFin. Vote on what gets built next.",
+      "isPartOf": {
+        "@id": "https://navibeat.app/#website"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-08-27",
+      "dateModified": "2026-08-27"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://navibeat.app/roadmap#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NaviBeat",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Roadmap",
+          "item": "https://navibeat.app/roadmap"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://navibeat.app/roadmap#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I vote for a feature?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One press per item, and pressing again takes it back. There is no account and no sign-up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the most-voted item get built first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not automatically. Votes decide what gets looked at first, not what gets built first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the thing I need is not on the list?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Suggest it on the same page. It lands in the same support queue as email and gets the same reply, and nothing you write appears on the board until a human has read it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to ideas you decide against?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They stay visible on the board. A vote is never quietly dropped."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <style>
@@ -209,7 +272,7 @@
   <div class="wrap nav__inner">
     <a class="nav__brand" href="/" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
-        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
@@ -231,7 +294,7 @@
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="roadmap" class="nav__link nav__link-hide-sm" aria-current="page">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
-      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
@@ -319,6 +382,33 @@
       </form>
     </div>
   </section>
+
+  <!-- FAQ: mirrored exactly by the FAQPage node in the head @graph. -->
+  <section aria-labelledby="roadmap-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="roadmap-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How do I vote for a feature?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">One press per item, and pressing again takes it back. There is no account and no sign-up.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does the most-voted item get built first?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Not automatically. Votes decide what gets looked at first, not what gets built first.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What if the thing I need is not on the list?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Suggest it on the same page. It lands in the same support queue as email and gets the same reply, and nothing you write appears on the board until a human has read it.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What happens to ideas you decide against?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">They stay visible on the board. A vote is never quietly dropped.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer" role="contentinfo">
@@ -326,7 +416,7 @@
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="/">
-          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
@@ -692,6 +782,6 @@
 })();
 </script>
 
-<script src="nav-menu.js?v=20260827" defer></script>
+<script src="nav-menu.js?v=20260831" defer></script>
 </body>
 </html>

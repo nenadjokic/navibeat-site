@@ -55,7 +55,16 @@
     // Keyboard-accessible trigger: behaves like a button.
     img.setAttribute('role', 'button');
     img.setAttribute('tabindex', '0');
-    if (!img.getAttribute('aria-label')) img.setAttribute('aria-label', 'View screenshot full screen');
+    // aria-label REPLACES alt for the accessible name, so setting a fixed
+    // label here made every screenshot announce as "View screenshot full
+    // screen, button". Measured 2026-08-31: 17 of 17 images on iphone.html
+    // announced identically and none of their written alt text reached a
+    // screen reader. Append instead of replace, and only when there is alt to
+    // keep; an image with no alt still gets the plain action label.
+    if (!img.getAttribute('aria-label')) {
+      var lbAlt = (img.getAttribute('alt') || '').trim();
+      img.setAttribute('aria-label', lbAlt ? lbAlt + ', view full screen' : 'View screenshot full screen');
+    }
     img.addEventListener('click', (e) => { e.preventDefault(); open(img); });
     img.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }

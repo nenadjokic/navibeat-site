@@ -36,7 +36,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=20260827">
+  <link rel="stylesheet" href="styles.css?v=20260831">
 
   <script type="application/ld+json">
   {
@@ -140,7 +140,7 @@
     .cmp-y { color: var(--accent-hi); font-weight: 700; }
     .cmp-n { color: var(--text-2); }
     .cmp-note { font-size: 12.5px; color: var(--text-2); display: block; margin-top: 3px; }
-    .cmp-pick { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 26px; }
+    .cmp-pick { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 18px; margin-top: 26px; }
     .cmp-pick article { background: var(--bg-1); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
     .cmp-pick h3 { font-size: 19px; margin: 0 0 12px; color: var(--text-0); }
     .cmp-pick p { margin: 0; color: var(--text-1); font-size: 15px; line-height: 1.7; }
@@ -160,7 +160,7 @@
   <div class="wrap nav__inner">
     <a class="nav__brand" href="/" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
-        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
@@ -182,7 +182,7 @@
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
-      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
@@ -234,7 +234,7 @@
           <caption class="visually-hidden">Feature comparison of NaviBeat, Sonora, flo, Amperfy and Shelv as Navidrome clients on Apple platforms, July 2026</caption>
           <thead>
             <tr>
-              <th scope="col">&nbsp;</th>
+              <th scope="col"><span class="vh">Client</span></th>
               <th scope="col" class="is-us">NaviBeat</th>
               <th scope="col">Sonora</th>
               <th scope="col">flo</th>
@@ -472,7 +472,7 @@
         <p class="eyebrow eyebrow--accent">And go look at the rest</p>
         <h2 id="more-apps-title" class="h2">There are many more great Navidrome apps.</h2>
       </div>
-      <aside style="margin: 8px 0 0; padding: 24px 28px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; max-width: 82ch;">
+      <div style="margin: 8px 0 0; padding: 24px 28px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; max-width: 82ch;">
         <p style="margin:0 0 16px; color:var(--text-1); font-size:15.5px; line-height:1.72;">
           The table above covers the Apple clients people shortlist most often <em>right now</em>. That is a snapshot, not a census. The Navidrome community is full of excellent work: clients for Android, for the web, for the desktop, for Linux, for hardware you would not expect, built by people who care a great deal and mostly give it away for free.
         </p>
@@ -480,7 +480,7 @@
           The <strong style="color:var(--text-0);">official Navidrome apps directory</strong> is the place to see all of them. If none of the five above fit how you listen, go there. You will very likely find something that does, and NaviBeat is proud to be listed alongside them.
         </p>
         <a class="btn btn--primary btn--compact" href="https://www.navidrome.org/apps/" target="_blank" rel="noopener">Browse every Navidrome app &rarr;</a>
-      </aside>
+      </div>
     </div>
   </section>
 
@@ -566,7 +566,7 @@
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="/">
-          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
@@ -645,6 +645,6 @@
 
   })();
 </script>
-<script src="nav-menu.js?v=20260827" defer></script>
+<script src="nav-menu.js?v=20260831" defer></script>
 </body>
 </html>

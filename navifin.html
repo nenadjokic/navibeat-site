@@ -35,7 +35,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20260827">
+  <link rel="stylesheet" href="styles.css?v=20260831">
 
   <!-- NaviFin teaser: scoped palette override (Jellyfin navy + purple/blue) on top of the shared NaviBeat stylesheet. -->
   <style>
@@ -56,6 +56,8 @@
       --accent-glow: rgba(0, 164, 220, 0.22);
       --nf-grad: linear-gradient(135deg, #aa5cc3 0%, #00a4dc 100%);
     }
+
+    .brand-beat { color: var(--accent-hi); }
 
     .nf-hero {
       position: relative;
@@ -272,63 +274,142 @@
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://navibeat.app/#org",
-        "name": "NaviBeat",
-        "url": "https://navibeat.app/",
-        "logo": "https://navibeat.app/assets/icon-512.png",
-        "email": "support@navibeat.app",
-        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
-        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
-        "sameAs": [ "https://www.navidrome.org/apps/" ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
+        ]
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://navibeat.app/#website",
-        "url": "https://navibeat.app/",
-        "name": "NaviBeat",
-        "publisher": { "@id": "https://navibeat.app/#org" },
-        "inLanguage": "en"
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://navibeat.app/navifin#webpage",
-        "url": "https://navibeat.app/navifin",
-        "name": "NaviFin: A Native Jellyfin Client for Apple",
-        "description": "NaviFin is the sister app to NaviBeat: a native Jellyfin player for Apple TV, Mac, iPad, and iPhone. In development, open beta on TestFlight, coming soon to the App Store.",
-        "inLanguage": "en",
-        "isPartOf": { "@id": "https://navibeat.app/#website" },
-        "publisher": { "@id": "https://navibeat.app/#org" },
-        "about": { "@id": "https://navibeat.app/navifin#app" },
-        "author": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] }
+      "sameAs": [
+        "https://www.navidrome.org/apps/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://navibeat.app/#website",
+      "url": "https://navibeat.app/",
+      "name": "NaviBeat",
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
       },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://navibeat.app/navifin#app",
-        "url": "https://navibeat.app/navifin",
-        "name": "NaviFin",
-        "applicationCategory": "MultimediaApplication",
-        "applicationSubCategory": "Jellyfin Media Client",
-        "operatingSystem": "iOS, iPadOS, macOS, tvOS",
-        "description": "Native Apple-ecosystem client for Jellyfin media servers. Hybrid AVPlayer + VLC playback engine plays anything: movies, TV, music, and Live TV. In open beta.",
-        "softwareVersion": "Beta",
-        "image": "https://navibeat.app/assets/navifin/navifin-icon.svg",
-        "author": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] }
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://navibeat.app/navifin#webpage",
+      "url": "https://navibeat.app/navifin",
+      "name": "NaviFin: A Native Jellyfin Client for Apple",
+      "description": "NaviFin is the sister app to NaviBeat: a native Jellyfin player for Apple TV, Mac, iPad, and iPhone. In development, open beta on TestFlight, coming soon to the App Store.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://navibeat.app/#website"
       },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://navibeat.app/navifin#breadcrumbs",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://navibeat.app/" },
-          { "@type": "ListItem", "position": 2, "name": "NaviFin", "item": "https://navibeat.app/navifin" }
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "about": {
+        "@id": "https://navibeat.app/navifin#app"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
         ]
       }
-    ]
-  }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://navibeat.app/navifin#app",
+      "url": "https://navibeat.app/navifin",
+      "name": "NaviFin",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Jellyfin Media Client",
+      "operatingSystem": "iOS, iPadOS, macOS, tvOS",
+      "description": "Native Apple-ecosystem client for Jellyfin media servers. Hybrid AVPlayer + VLC playback engine plays anything: movies, TV, music, and Live TV. In open beta.",
+      "softwareVersion": "Beta",
+      "image": "https://navibeat.app/assets/navifin/navifin-icon.svg",
+      "author": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://navibeat.app/navifin#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "NaviFin",
+          "item": "https://navibeat.app/navifin"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://navibeat.app/navifin#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is NaviFin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A native Jellyfin player for Apple TV, Mac, iPad and iPhone, built by the same person who makes NaviBeat. It plays movies, TV, music and Live TV from your own Jellyfin server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is NaviFin the same app as NaviBeat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They are separate apps for separate servers. NaviBeat speaks Subsonic to Navidrome, and NaviFin speaks the Jellyfin API to your Jellyfin server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I try NaviFin today?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, through TestFlight. It is not on the App Store yet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does NaviFin have a backend of its own?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your media lives on your server, and the app has no backend of its own. That is the same rule NaviBeat follows."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -338,7 +419,7 @@
   <div class="wrap nav__inner">
     <a class="nav__brand" href="/" aria-label="NaviBeat home">
       <span class="nav__mark" aria-hidden="true">
-        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
         <span class="nav__pulse"></span>
       </span>
       <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
@@ -360,7 +441,7 @@
       <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
-      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
 
       <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
     </nav>
@@ -460,7 +541,7 @@
       <div class="nf-soon">
         <p class="nf-eyebrow" style="color: var(--text-2);">Where things stand</p>
         <h2 class="nf-h2" style="margin-bottom: 10px;">In development. Beta open today.</h2>
-        <p class="nf-h2-sub">NaviFin is not on the App Store yet. It does have its own site now, at <a href="https://navifin.app/" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">navifin.app</a>, which is where the full story lives. TestFlight is the way in.</p>
+        <p class="nf-h2-sub">NaviFin is not on the App Store yet. It does have its own site now, at <a href="https://navifin.app/" style="color:var(--accent-hi);border-bottom:1px solid var(--accent-dim)">navifin.app</a>, which is where the full story lives. TestFlight is the way in.</p>
 
         <div class="nf-soon-grid">
           <div class="nf-soon-item">
@@ -476,7 +557,7 @@
           <div class="nf-soon-item">
             <div class="s-label">Now</div>
             <div class="s-title">Its own website</div>
-            <p><a href="https://navifin.app/" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">navifin.app</a> is live, with the full feature list, the platform pages and the beta link. This page is the short version for people who found NaviFin through NaviBeat.</p>
+            <p><a href="https://navifin.app/" style="color:var(--accent-hi);border-bottom:1px solid var(--accent-dim)">navifin.app</a> is live, with the full feature list, the platform pages and the beta link. This page is the short version for people who found NaviFin through NaviBeat.</p>
           </div>
         </div>
 
@@ -490,6 +571,33 @@
     </div>
   </section>
 
+
+  <!-- FAQ: mirrored exactly by the FAQPage node in the head @graph. -->
+  <section aria-labelledby="navifin-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="navifin-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What is NaviFin?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">A native Jellyfin player for Apple TV, Mac, iPad and iPhone, built by the same person who makes NaviBeat. It plays movies, TV, music and Live TV from your own Jellyfin server.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Is NaviFin the same app as NaviBeat?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. They are separate apps for separate servers. NaviBeat speaks Subsonic to Navidrome, and NaviFin speaks the Jellyfin API to your Jellyfin server.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I try NaviFin today?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes, through TestFlight. It is not on the App Store yet.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviFin have a backend of its own?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. Your media lives on your server, and the app has no backend of its own. That is the same rule NaviBeat follows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer" role="contentinfo">
@@ -497,7 +605,7 @@
     <div class="footer__grid">
       <div>
         <a class="footer__brand" href="/">
-          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="">
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
         <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
@@ -578,6 +686,6 @@
   })();
 </script>
 
-<script src="nav-menu.js?v=20260827" defer></script>
+<script src="nav-menu.js?v=20260831" defer></script>
 </body>
 </html>
