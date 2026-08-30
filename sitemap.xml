@@ -5,7 +5,7 @@
 
   <url>
     <loc>https://navibeat.app/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/" />
@@ -34,7 +34,7 @@
 
   <url>
     <loc>https://navibeat.app/appletv</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/appletv" />
@@ -78,7 +78,7 @@
 
   <url>
     <loc>https://navibeat.app/linux</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/linux" />
@@ -89,7 +89,7 @@
   </url>
   <url>
     <loc>https://navibeat.app/macos</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/macos" />
@@ -137,7 +137,7 @@
 
   <url>
     <loc>https://navibeat.app/iphone</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/iphone" />
@@ -157,7 +157,7 @@
 
   <url>
     <loc>https://navibeat.app/ipad</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/ipad" />
@@ -172,8 +172,20 @@
   </url>
 
   <url>
+    <loc>https://navibeat.app/carplay</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/carplay" />
+    <image:image>
+      <image:loc>https://navibeat.app/assets/screenshots/carplay/navibeat-carplay-home.jpg</image:loc>
+      <image:title>NaviBeat CarPlay: your own library on the car screen</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://navibeat.app/applewatch</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/applewatch" />
@@ -185,7 +197,7 @@
 
   <url>
     <loc>https://navibeat.app/lastfm</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/lastfm" />
@@ -193,7 +205,7 @@
 
   <url>
     <loc>https://navibeat.app/listenbrainz</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/listenbrainz" />
@@ -201,7 +213,7 @@
 
   <url>
     <loc>https://navibeat.app/rockbox</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/rockbox" />
@@ -209,7 +221,7 @@
 
   <url>
     <loc>https://navibeat.app/features</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/features" />
@@ -244,7 +256,7 @@
   </url>
   <url>
     <loc>https://navibeat.app/multi-library</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/multi-library" />
@@ -253,7 +265,7 @@
 
   <url>
     <loc>https://navibeat.app/support</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/support" />
@@ -261,7 +273,7 @@
 
   <url>
     <loc>https://navibeat.app/privacy</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/privacy" />
@@ -269,7 +281,7 @@
 
   <url>
     <loc>https://navibeat.app/navifin</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/navifin" />
@@ -281,7 +293,7 @@
 
   <url>
     <loc>https://navibeat.app/widgets</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/widgets" />
@@ -289,15 +301,22 @@
 
   <url>
     <loc>https://navibeat.app/beta</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/beta" />
   </url>
 
   <url>
+    <loc>https://navibeat.app/roadmap</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://navibeat.app/compare</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/compare" />

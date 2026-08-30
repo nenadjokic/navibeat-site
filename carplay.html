@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaviBeat for CarPlay: Your Navidrome Library on the Car Screen</title>
+  <meta name="description" content="NaviBeat on CarPlay: your own Navidrome library on the car screen. Home, Library, Playlists and Radio, with voice search resolved against your own music. $5.99 Universal Purchase.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="apple-itunes-app" content="app-id=6763518834">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/carplay">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/carplay">
+
+  <meta property="og:title" content="NaviBeat for CarPlay: Navidrome &amp; Subsonic on the car screen">
+  <meta property="og:description" content="Home, Library, Playlists and Radio on the car screen. Voice search against your own library.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/carplay">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/carplay/navibeat-carplay-home.jpg?v=20260830">
+  <meta property="og:image:alt" content="NaviBeat on a CarPlay screen showing Pick up where you left off and Quick Play.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat for CarPlay: Navidrome client on the car screen">
+  <meta name="twitter:description" content="Home, Library, Playlists and Radio on the car screen. Voice search against your own library.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/carplay/navibeat-carplay-home.jpg?v=20260830">
+  <meta name="twitter:image:alt" content="NaviBeat on a CarPlay screen.">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20260827">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://navibeat.app/#org",
+        "name": "NaviBeat",
+        "url": "https://navibeat.app/",
+        "logo": "https://navibeat.app/assets/icon-512.png",
+        "email": "support@navibeat.app",
+        "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
+        "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
+        "sameAs": [ "https://www.navidrome.org/apps/" ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navibeat.app/#website",
+        "url": "https://navibeat.app/",
+        "name": "NaviBeat",
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://navibeat.app/carplay#webpage",
+        "url": "https://navibeat.app/carplay",
+        "name": "NaviBeat for CarPlay",
+        "isPartOf": { "@id": "https://navibeat.app/#website" },
+        "about": { "@id": "https://navibeat.app/carplay#app" },
+        "primaryImageOfPage": "https://navibeat.app/assets/screenshots/carplay/navibeat-carplay-home.jpg?v=20260830",
+        "inLanguage": "en",
+        "datePublished": "2026-08-30",
+        "dateModified": "2026-08-30"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://navibeat.app/carplay#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NaviBeat", "item": "https://navibeat.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Platforms", "item": "https://navibeat.app/#platforms" },
+          { "@type": "ListItem", "position": 3, "name": "CarPlay", "item": "https://navibeat.app/carplay" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://navibeat.app/carplay#app",
+        "name": "NaviBeat for CarPlay",
+        "url": "https://navibeat.app/carplay",
+        "image": "https://navibeat.app/assets/icon-512.png",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Music Streaming Client",
+        "operatingSystem": "iOS 18+ with CarPlay",
+        "softwareVersion": "1.3.3",
+        "datePublished": "2026-04-18",
+        "downloadUrl": "https://apps.apple.com/app/navibeat/id6763518834",
+        "installUrl": "https://apps.apple.com/app/navibeat/id6763518834",
+        "description": "CarPlay support in the NaviBeat iPhone app for Navidrome and OpenSubsonic servers. Home, Library, Playlists and Radio on the car screen, with voice search resolved against your own library.",
+        "author": { "@id": "https://navibeat.app/#org" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "offers": {
+          "@type": "Offer",
+          "price": "5.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2027-05-13",
+          "url": "https://apps.apple.com/app/navibeat/id6763518834"
+        },
+        "featureList": [
+          "Home, Library, Playlists and Radio tabs on the car screen",
+          "Voice search in twelve languages, resolved against your own library",
+          "Browse artists, albums and recently added",
+          "Your own playlists and internet radio stations",
+          "Comes with the iPhone app, no separate purchase",
+          "Zero analytics, zero trackers"
+        ],
+        "screenshot": [
+          "https://navibeat.app/assets/screenshots/carplay/navibeat-carplay-home.jpg?v=20260830",
+          "https://navibeat.app/assets/screenshots/carplay/navibeat-carplay-library.jpg?v=20260830",
+          "https://navibeat.app/assets/screenshots/carplay/navibeat-carplay-playlists.jpg?v=20260830",
+          "https://navibeat.app/assets/screenshots/carplay/navibeat-carplay-radio.jpg?v=20260830"
+        ],
+        "mentions": [
+          { "@type": "SoftwareApplication", "name": "Navidrome", "url": "https://www.navidrome.org" },
+          { "@type": "Thing", "name": "OpenSubsonic API" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://navibeat.app/carplay#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does NaviBeat support CarPlay?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. CarPlay comes with the NaviBeat iPhone app, so there is nothing extra to buy or install. Plug the phone in, or connect wirelessly if your car supports it, and NaviBeat appears on the car screen." }
+          },
+          {
+            "@type": "Question",
+            "name": "What can I do from the car screen?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Four tabs: Home, Library, Playlists and Radio. Home carries Pick up where you left off and Quick Play. Library holds search, artists, albums and recently added. Playlists lists your own playlists, and Radio lists your internet radio stations." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does voice search work with my own music?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. CarPlay voice search works in twelve languages and resolves against your own library, not a catalogue somebody else owns." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need a separate purchase for CarPlay?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. NaviBeat is $5.99 USD once, as a Universal Purchase. That single price covers iPhone, iPad, Mac, Apple TV and Apple Watch, and CarPlay comes with the iPhone app." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features">
+          Features<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-features">
+          <a href="features">Overview</a>
+          <a href="multi-library">Multi-Library</a>
+          <a href="widgets">Widgets</a>
+          <a href="lastfm">Last.fm</a>
+          <a href="listenbrainz">ListenBrainz</a>
+          <a href="rockbox">Rockbox</a>
+        </div>
+      </div>
+      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><img decoding="async" src="assets/navifin/navifin-icon.svg" alt="NaviFin" class="nav__navifin-ic" width="17" height="17">NaviFin</a>
+
+      <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="p-hero">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span>Platforms</span>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">CarPlay</span>
+      </nav>
+
+      <div class="p-hero__wrap">
+        <div class="p-hero__copy">
+          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat &nbsp;&middot;&nbsp; CarPlay</p>
+          <h1>
+            <span class="word" style="animation-delay:0ms">Your</span>
+            <span class="word" style="animation-delay:70ms">own</span>
+            <span class="word" style="animation-delay:150ms">library,</span>
+            <span class="word" style="animation-delay:210ms">on</span>
+            <span class="word" style="animation-delay:270ms">the</span>
+            <span class="word" style="animation-delay:330ms">car</span>
+            <span class="word" style="animation-delay:390ms">screen.</span>
+          </h1>
+          <p class="p-hero__sub">
+            Four tabs, and all of them are your server: Home, Library, Playlists and Radio. Voice search works in twelve languages and resolves against your own music rather than a catalogue somebody else owns. CarPlay comes with the iPhone app, so there is nothing extra to buy.
+          </p>
+          <div class="p-hero__ctas">
+            <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+              </svg>
+              Get it on the App Store, $5.99
+            </a>
+            <a class="link-quiet" href="#screens">See the car screen&nbsp;&rarr;</a>
+          </div>
+
+          <dl class="key-facts" aria-label="NaviBeat for CarPlay key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; column-gap: 24px; row-gap: 6px; font-size: 14px; line-height: 1.5; max-width: 60ch;">
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Platform</dt>
+            <dd style="margin: 0; color: var(--text-1);">CarPlay, from the NaviBeat iPhone app &middot; iOS 18+</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Price</dt>
+            <dd style="margin: 0; color: var(--text-1);">$5.99 USD &middot; one-time &middot; Universal Purchase</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Server</dt>
+            <dd style="margin: 0; color: var(--text-1);">Navidrome v0.50+, OpenSubsonic, Airsonic-Advanced, Gonic</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Install</dt>
+            <dd style="margin: 0; color: var(--text-1);">Comes with the iPhone app &middot; nothing separate to buy</dd>
+          </dl>
+        </div>
+
+        <div class="p-hero__shot">
+          <img src="assets/screenshots/carplay/navibeat-carplay-home.webp?v=20260830"
+               alt="NaviBeat on a CarPlay screen showing the Home tab with Pick up where you left off and Quick Play."
+               width="800" height="486" loading="eager" decoding="async" fetchpriority="high" style="border-radius:16px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="padding-block: clamp(28px, 4vh, 52px);">
+    <div class="wrap">
+      <ul class="p-stats reveal" role="list" aria-label="NaviBeat for CarPlay at a glance">
+        <li class="p-stat">
+          <p class="p-stat__num"><span class="accent">4</span> tabs</p>
+          <p class="p-stat__label">Home &middot; Library &middot; Playlists &middot; Radio</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">Voice <span class="accent">search</span></p>
+          <p class="p-stat__label">Twelve languages &middot; your own library</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">No <span class="accent">extra</span> app</p>
+          <p class="p-stat__label">Comes with the iPhone app</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num"><span class="accent">$5.99</span> once</p>
+          <p class="p-stat__label">Universal Purchase &middot; all Apple devices</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- THE CAR SCREEN -->
+  <section id="screens" aria-labelledby="carplay-screens-title">
+    <div class="wrap">
+      <div class="reveal" style="max-width:70ch;">
+        <p class="eyebrow eyebrow--accent">The car screen</p>
+        <h2 id="carplay-screens-title" class="h2">Four tabs, and all of them are your server.</h2>
+        <p style="margin:14px 0 0; color:var(--text-1); font-size:16px; line-height:1.7;">Nothing here is a recommendation feed. Every row is something already on your own Navidrome or Subsonic server, in the order you keep it.</p>
+      </div>
+      <div style="margin-top:30px; display:grid; gap:22px; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); max-width:1000px;">
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border);">
+          <img src="assets/screenshots/carplay/navibeat-carplay-home.webp?v=20260830"
+               srcset="assets/screenshots/carplay/navibeat-carplay-home-760.webp?v=20260830 760w, assets/screenshots/carplay/navibeat-carplay-home.webp?v=20260830 800w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on a CarPlay screen: the Home tab with Pick up where you left off showing Slow Aurora by Aurora Fields, and Quick Play with Shuffle My Library."
+               width="800" height="486" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 18px 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Home</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">Pick up where you left off, then Quick Play.</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border);">
+          <img src="assets/screenshots/carplay/navibeat-carplay-library.webp?v=20260830"
+               srcset="assets/screenshots/carplay/navibeat-carplay-library-760.webp?v=20260830 760w, assets/screenshots/carplay/navibeat-carplay-library.webp?v=20260830 800w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on a CarPlay screen: the Library tab with a search field and rows for Artists, Albums and Recently Added."
+               width="800" height="486" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 18px 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Library</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">Search, artists, albums, recently added.</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border);">
+          <img src="assets/screenshots/carplay/navibeat-carplay-playlists.webp?v=20260830"
+               srcset="assets/screenshots/carplay/navibeat-carplay-playlists-760.webp?v=20260830 760w, assets/screenshots/carplay/navibeat-carplay-playlists.webp?v=20260830 800w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on a CarPlay screen: the Playlists tab listing Deep Ambient, Discover Mix, Focus Flow and Folk and Field with track counts."
+               width="800" height="486" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 18px 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Playlists</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">The playlists you already keep on your server.</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border);">
+          <img src="assets/screenshots/carplay/navibeat-carplay-radio.webp?v=20260830"
+               srcset="assets/screenshots/carplay/navibeat-carplay-radio-760.webp?v=20260830 760w, assets/screenshots/carplay/navibeat-carplay-radio.webp?v=20260830 800w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on a CarPlay screen: the Radio tab listing Ambient Channel, Downtempo Lounge, Indie Folk Stream and Lo-Fi Beats 24/7."
+               width="800" height="486" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 18px 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Radio</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">Your own internet radio stations.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT CHANGES IN 1.4 -->
+  <section id="whats-new" aria-labelledby="carplay-new-title">
+    <div class="wrap reveal" style="max-width:78ch;">
+      <p class="eyebrow eyebrow--accent">In the 1.4 beta</p>
+      <h2 id="carplay-new-title" class="h2">The car screen is your own music, in your own order.</h2>
+      <p style="margin:16px 0 0; color:var(--text-1); font-size:16px; line-height:1.75;">The CarPlay home screen used to be six fixed rows of nothing personal. It now draws the same shelves the phone does, as rows of artwork: Pick up where you left off, Quick Play, NaviBeat Mixes, Made for You, your playlists, Most Played, Recently Added. You arrange the order from the phone. <strong style="color:var(--text-0);">Play All</strong> and <strong style="color:var(--text-0);">Shuffle All</strong> are named rows at the top of every list rather than buttons nobody found. Search hands the typing back to your phone and primes voice recognition with the names in your own library. And the car stays on the screen you left, through a switch from Wi-Fi to cellular and through unplugging and plugging back in.</p>
+      <p style="margin:16px 0 0; color:var(--text-2); font-size:14.5px;">CarPlay, from the iPhone. In the beta now. <a href="beta" style="color:var(--accent-hi);">Join the beta &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section class="price" id="buy" aria-labelledby="carplay-price-title">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Launch price</p>
+      <p class="price__h" id="carplay-price-title">One purchase. Every device.</p>
+      <div class="price__num">$5.99</div>
+      <p class="price__sub">iPhone, iPad, Mac, Apple TV, Apple Watch. CarPlay comes with the phone.</p>
+      <div class="price__ctas">
+        <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          Get it on the App Store, $5.99
+        </a>
+        <a class="link-quiet" href="/">Back to all platforms &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ: mirrored exactly by the FAQPage node in the head @graph. -->
+  <section aria-labelledby="carplay-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="carplay-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat support CarPlay?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. CarPlay comes with the NaviBeat iPhone app, so there is nothing extra to buy or install. Plug the phone in, or connect wirelessly if your car supports it, and NaviBeat appears on the car screen.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What can I do from the car screen?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Four tabs: Home, Library, Playlists and Radio. Home carries Pick up where you left off and Quick Play. Library holds search, artists, albums and recently added. Playlists lists your own playlists, and Radio lists your internet radio stations.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does voice search work with my own music?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. CarPlay voice search works in twelve languages and resolves against your own library, not a catalogue somebody else owns.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do I need a separate purchase for CarPlay?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. NaviBeat is $5.99 USD once, as a Universal Purchase. That single price covers iPhone, iPad, Mac, Apple TV and Apple Watch, and CarPlay comes with the iPhone app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="/">
+          <img width="1024" height="1024" decoding="async" src="assets/icon.svg" alt="NaviBeat">
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+        <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img decoding="async" class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Platforms</h3>
+        <ul>
+          <li><a href="appletv">Apple TV</a></li>
+          <li><a href="macos">Mac</a></li>
+          <li><a href="linux">Linux</a></li>
+          <li><a href="rockbox">Rockbox</a></li>
+          <li><a href="iphone">iPhone</a></li>
+          <li><a href="ipad">iPad</a></li>
+          <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="carplay">CarPlay</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+          <li><a href="beta">Beta program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="support">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>Live on the App Store &middot; 1.4 in beta</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features').forEach(function (el) { sio.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features').forEach(function (el) { el.classList.add('is-in'); });
+    }
+  })();
+</script>
+
+  <script defer src="lightbox.js"></script>
+<script src="nav-menu.js?v=20260827" defer></script>
+</body>
+</html>

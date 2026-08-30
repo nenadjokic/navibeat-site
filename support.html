@@ -16,7 +16,7 @@
   <meta property="og:description" content="Server setup, &ldquo;Cannot reach server&rdquo; troubleshooting, iPhone Local Network &amp; Private Relay triage, playback tuning. Email support@navibeat.app for help.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/support">
-  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png?v=20260830">
   <meta property="og:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero.">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="NaviBeat">
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NaviBeat Support: Server setup, playback &amp; privacy FAQ">
   <meta name="twitter:description" content="Server setup, troubleshooting, privacy FAQ. Email support@navibeat.app for help.">
-  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png?v=20260830">
   <meta name="twitter:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
@@ -137,7 +137,7 @@
             "name": "Playback cuts out or stutters. How do I fix it?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Lower the max bit rate in Settings → Audio to 192 kbps or 128 kbps. Use a wired connection for Apple TV to improve stability. Check your server's CPU and disk usage: if Navidrome is transcoding on a slow machine, playback can lag."
+              "text": "Lower Stream quality in Settings → Playback & Audio to 192 kbps or 128 kbps. Use a wired connection for Apple TV to improve stability. Check your server's CPU and disk usage: if Navidrome is transcoding on a slow machine, playback can lag."
             }
           },
           {
@@ -145,7 +145,7 @@
             "name": "Where is my NaviBeat data stored?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Everything is on your device or your own server. NaviBeat does not send any data to us or any third party. See the NaviBeat Privacy Policy for details."
+              "text": "Everything is on your device or your own server. Nothing is ever sent to us: there is no NaviBeat account and no NaviBeat server. Three outside services can be reached, and only because you asked for them: Last.fm and ListenBrainz if you connect them, and lrclib.net if you switch on the lyrics fallback, which is sent a song title, artist, album and length and nothing else. All three are off until you turn them on. See the NaviBeat Privacy Policy for the full list."
             }
           },
           {
@@ -153,7 +153,7 @@
             "name": "Can I use NaviBeat with multiple servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "v1 supports one server per install. Multi-server support is on the roadmap."
+              "text": "Yes. Save as many servers as you like and switch between them without typing anything again, from Settings → Server & Library → Saved Servers. Each saved entry keeps its own password, home address, custom proxy headers and mTLS client certificate, so a switch restores the whole setup. NaviBeat plays one server at a time: switching makes the chosen server active rather than merging two libraries into one view, and a switch is verified before it takes effect. Saved Servers is on iPhone, iPad, Mac and Apple TV; the Apple Watch follows whichever server the iPhone is paired with."
             }
           },
           {
@@ -161,7 +161,7 @@
             "name": "How do I disconnect from my server?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Open the Settings tab, scroll to the Server section, and tap Disconnect. This clears your credentials from the device."
+              "text": "Open Settings → Server & Library → Server and tap Reset pairing. This clears your credentials from the device. Downloads and settings are kept, and you can pair again at any time."
             }
           },
           {
@@ -338,7 +338,7 @@
   <h2 id="playback-stutters">Playback cuts out or stutters. How do I fix it?</h2>
   <ul>
     <li>If you stream over cellular through Tailscale, WireGuard, or any VPN, see the next question first: that is the most common cause on the road.</li>
-    <li>Try lowering the max bit rate in Settings &gt; Audio to 192 kbps or 128 kbps.</li>
+    <li>Try lowering <em>Stream quality</em> in Settings &gt; Playback &amp; Audio to 192 kbps or 128 kbps.</li>
     <li>Check your home network. A wired connection for the Apple TV improves stability significantly.</li>
     <li>Check your server&rsquo;s CPU and disk usage. If Navidrome is transcoding on a slow machine, playback can lag.</li>
   </ul>
@@ -346,19 +346,20 @@
   <h2 id="vpn-cellular-stutter">Music stutters in the car when my server is on Tailscale or WireGuard. Why?</h2>
   <p>If your server address is private (192.168.x.x, 10.x.x.x, a 100.x tailnet IP, or a .local / .ts.net name), your phone reaches it through a VPN tunnel. On cellular, a moving phone hops between cell towers, and each hop can freeze the tunnel&rsquo;s connections for a while. The stream stops mid-song, NaviBeat recovers it, and a few minutes later it happens again: that is the stutter. It is not your server, and it is not the bit rate.</p>
   <ul>
-    <li><strong>Best on the road: give NaviBeat a public address.</strong> If your server is also reachable at a public URL (a reverse proxy, a Cloudflare Tunnel, or a port forward with HTTPS), use that as the primary address in Settings &gt; Server addresses. Connections to a public endpoint survive tower changes far better than a VPN tunnel. NaviBeat with both addresses configured uses the home address on Wi-Fi and always uses the primary one on cellular.</li>
+    <li><strong>Best on the road: give NaviBeat a public address.</strong> If your server is also reachable at a public URL (a reverse proxy, a Cloudflare Tunnel, or a port forward with HTTPS), use that as the primary address in Settings &gt; Server &amp; Library &gt; Server addresses. Connections to a public endpoint survive tower changes far better than a VPN tunnel. NaviBeat with both addresses configured uses the home address on Wi-Fi and always uses the primary one on cellular.</li>
     <li><strong>Simplest: download for the trip.</strong> Downloads play from the device, immune to any network. With Download quality set to Original you get the untouched source files.</li>
-    <li>NaviBeat will show a one-time note when it detects this pattern (repeated recoveries on cellular with a private server address), and Settings &gt; Server addresses shows which route is active.</li>
+    <li>NaviBeat will show a one-time note when it detects this pattern (repeated recoveries on cellular with a private server address), and Settings &gt; Server &amp; Library &gt; Server addresses shows which route is active.</li>
   </ul>
 
   <h2 id="data-storage">Where is my NaviBeat data stored?</h2>
-  <p>Everything is on your device or your own server. NaviBeat does not send any data to us or any third party. See our <a href="privacy">Privacy Policy</a> for details.</p>
+  <p>Everything is on your device or your own server. Nothing is ever sent to us: there is no NaviBeat account and no NaviBeat server. Three outside services can be reached, and only because you asked for them: Last.fm and ListenBrainz if you connect them, and lrclib.net if you switch on the lyrics fallback, which sends a song title, artist, album and length and nothing else. All three are off until you turn them on. See our <a href="privacy">Privacy Policy</a> for the full list.</p>
 
   <h2 id="multiple-servers">Can I use NaviBeat with multiple servers?</h2>
-  <p>v1 supports one server per install. Multi-server support is on the roadmap.</p>
+  <p>Yes. Save as many servers as you like and switch between them without typing anything again. Open <em>Settings &rarr; Server &amp; Library &rarr; Saved Servers</em>, tap <em>Save Current Server</em>, then pair with the next one and save that too. Each saved entry keeps its own password, its own home address, its own custom proxy headers and its own mTLS client certificate, so a switch restores the whole setup and not just the URL.</p>
+  <p>NaviBeat plays one server at a time: switching makes the chosen server the active one rather than merging two libraries into one view. A switch is verified before it takes effect, so if the new server does not answer you stay on the one you were using. Saved Servers is on iPhone, iPad, Mac and Apple TV. The Apple Watch follows whichever server the iPhone is paired with.</p>
 
   <h2 id="disconnect-server">How do I disconnect from my server?</h2>
-  <p>Open the Settings tab, scroll to the Server section, and tap Disconnect. This clears your credentials from the device.</p>
+  <p>Open Settings &rarr; Server &amp; Library &rarr; Server and tap <em>Reset pairing</em>. This clears your credentials from the device. Downloads and settings are kept, and you can pair again at any time.</p>
 
   <h2 id="android-linux">Is NaviBeat available on Android, Linux or Windows?</h2>
   <p>NaviBeat for Linux is out now, free and in open beta, as an AppImage on GitHub. See <a href="linux">NaviBeat for Linux</a>. The native Android client is finished and in closed beta on Google Play now. A wider beta follows, and no release date has been announced. If you want in, email nenad.dev@icloud.com with the phone you would test on. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat runs on iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, and on Linux. See <a href="https://navibeat.app/#android">what's next</a>.</p>

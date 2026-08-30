@@ -839,8 +839,34 @@
 
       </ol>
 
+      <p class="rbx-phase rbx-phase--two">In the beta &middot; New in 1.4</p>
+      <ol class="rbx-timeline">
+
+        <li class="rbx-step rbx-step--done">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">Done &middot; in the beta</p>
+          <h3 class="rbx-step__title">Auto-sync: plug the player in and walk away</h3>
+          <p class="rbx-step__desc">A player you have synced before repeats that same sync on its own the moment you plug it in, with NaviBeat running. The sidebar row turns green and says <em>Synced 21:42</em> when the run finishes, so you can tell at a glance whether it is safe to eject. Nothing new is chosen for you: it repeats the selection you saved on that player.</p>
+        </li>
+
+        <li class="rbx-step rbx-step--done">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">Done &middot; in the beta</p>
+          <h3 class="rbx-step__title">Original transfer: the file, untouched</h3>
+          <p class="rbx-step__desc">Alongside the transcode formats there is now an <strong>Original</strong> setting that copies the file off your server exactly as it is, whatever format that is, per track. If your player can play FLAC, it gets your FLAC.</p>
+        </li>
+
+        <li class="rbx-step rbx-step--done">
+          <span class="rbx-step__dot" aria-hidden="true"></span>
+          <p class="rbx-step__status">Done &middot; in the beta</p>
+          <h3 class="rbx-step__title">Parallel transfer, measured at twice the speed</h3>
+          <p class="rbx-step__desc">Several tracks are pulled from your server at once while writing to the player stays one at a time, which is the half that old hardware cares about. Measured at roughly double the previous speed on a real player.</p>
+        </li>
+
+      </ol>
+
       <p style="margin:48px 0 0;color:var(--text-2);font-size:13px;max-width:64ch;">
-        The two themes are done and working on a real iPod today. Phase 1 (the one-way push) shipped in NaviBeat 1.3.0 for Mac. Two of the three Phase 2 read-back pieces (plays and device-made playlists) shipped with it; ratings read-back is still planned. NaviSyncRock is a one-time $4.99 in-app unlock, available now.
+        The two themes are done and working on a real iPod today. Phase 1 (the one-way push) shipped in NaviBeat 1.3.0 for Mac. Two of the three Phase 2 read-back pieces (plays and device-made playlists) shipped with it; ratings read-back is still planned. Auto-sync, Original transfer and parallel transfer are in the beta and reach the Mac App Store in the next release. NaviSyncRock is a one-time $4.99 in-app unlock, available now.
       </p>
     </div>
   </section>
@@ -876,7 +902,7 @@
           <tr><th scope="row">Album art</th><td class="rbx-vs__us" data-l="NaviSyncRock">Re-encoded to a baseline JPEG that Rockbox actually renders.</td><td data-l="Scripts">Usually broken on old hardware, or manual.</td></tr>
           <tr><th scope="row">Playlists</th><td class="rbx-vs__us" data-l="NaviSyncRock">.m3u8 with correct device-root paths, written for you.</td><td data-l="Scripts">Hand-rolled or missing.</td></tr>
           <tr><th scope="row">iPod themes</th><td class="rbx-vs__us" data-l="NaviSyncRock">Two custom NaviBeat themes installed on unlock.</td><td data-l="Scripts">None.</td></tr>
-          <tr><th scope="row">Privacy</th><td class="rbx-vs__us" data-l="NaviSyncRock">Your server, your files, over USB. No third party.</td><td data-l="Scripts">Depends entirely on the script.</td></tr>
+          <tr><th scope="row">Privacy</th><td class="rbx-vs__us" data-l="NaviSyncRock">Your server, your files, over USB. The one exception is Find Missing Artwork, which asks MusicBrainz and the Cover Art Archive for covers your own server does not have, and only when you press it.</td><td data-l="Scripts">Depends entirely on the script.</td></tr>
         </tbody>
       </table>
     </div>
@@ -969,6 +995,7 @@
           <li><a href="iphone">iPhone</a></li>
           <li><a href="ipad">iPad</a></li>
           <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="carplay">CarPlay</a></li>
           <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </div>

@@ -2880,7 +2880,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 .act.is-active .dev-ipad__zoom { transform: translate(0,0) scale(1); opacity: 1; }
 .dev-ipad__zoom-img {
   position: absolute; inset: 0;
-  background-image: url("assets/screenshots/ipad/navibeat-ipad-lyrics.webp");
+  background-image: url("assets/screenshots/ipad/navibeat-ipad-lyrics.webp?v=20260830");
   background-size: 300%;
   background-position: 35% 38%;
   animation: theaterZoomDrift 14s var(--ease) infinite alternate;

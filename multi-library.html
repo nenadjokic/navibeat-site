@@ -19,7 +19,7 @@
   <meta property="og:description" content="Run multiple Navidrome libraries side by side and switch between them on every Apple device. Picker on iPhone, iPad, Mac, Apple TV. Server-side IN-filter, no client merge. Per-device persistence.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://navibeat.app/multi-library">
-  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png?v=20260830">
   <meta property="og:image:alt" content="NaviBeat native Mac home screen, a privacy-first Navidrome client.">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="NaviBeat">
@@ -27,7 +27,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Multi-Library Support for Navidrome and Subsonic | NaviBeat">
   <meta name="twitter:description" content="Run multiple Navidrome libraries side by side on every Apple device. Pick one, all, or any subset. Server-side filter via getMusicFolders + musicFolderId.">
-  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png?v=20260830">
   <meta name="twitter:image:alt" content="NaviBeat native Mac home screen, a privacy-first Navidrome client.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
@@ -109,7 +109,7 @@
             "name": "Does this work on Subsonic, Airsonic, Gonic, or only Navidrome?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Any OpenSubsonic-compatible server that implements getMusicFolders with permission scoping and accepts a repeated musicFolderId on browse calls works the same way. Navidrome 0.55+ is the primary target; Airsonic-Advanced and Gonic also work. Servers that only ever return a single folder degrade cleanly: NaviBeat hides the picker and runs as a single-library client."
+              "text": "Any OpenSubsonic-compatible server that implements getMusicFolders with permission scoping and accepts a repeated musicFolderId on browse calls works the same way. Navidrome 0.58 or later is what the per-library filtering needs, because that is the version that reads a repeated musicFolderId and does the filtering itself; Airsonic-Advanced and Gonic also work. Servers that only ever return a single folder degrade cleanly: NaviBeat hides the picker and runs as a single-library client."
             }
           },
           {
@@ -117,7 +117,7 @@
             "name": "Why is the selection per-device and not synced via iCloud?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Two reasons. First, a typical use case is phone shows my private library, Apple TV shows the shared family library, and forcing iCloud sync would defeat that. Second, NaviBeat stores nothing in iCloud or any backend: the only services NaviBeat talks to are the ones you signed in to. Per-device selection respects that boundary."
+              "text": "Two reasons. First, a typical use case is phone shows my private library, Apple TV shows the shared family library, and forcing iCloud sync would defeat that. Second, NaviBeat stores nothing in iCloud or any backend, and there is no NaviBeat server for a selection to sync through. Per-device selection respects that boundary."
             }
           },
           {
@@ -377,8 +377,12 @@
           <p><strong>Pill row above the Library tab strip.</strong> Focus-driven, remote-friendly. Switches the shelves in place without leaving the screen.</p>
         </div>
         <div class="ml-platform">
+          <h3>CarPlay</h3>
+          <p><strong>Follows the phone, everywhere.</strong> The car has no picker of its own, by design. It honours whatever the iPhone is set to, on every list and every shelf, not only the home tab.</p>
+        </div>
+        <div class="ml-platform">
           <h3>Apple Watch</h3>
-          <p><strong>Inherits the iPhone selection.</strong> The Watch is a remote for what the phone is set to, so the subset stays consistent on the wrist.</p>
+          <p><strong>Inherits the iPhone selection.</strong> The Watch has no picker of its own, so the subset stays consistent on the wrist. It still plays on its own, from music stored on the watch.</p>
         </div>
       </div>
     </div>
@@ -417,12 +421,12 @@
 
       <details class="ml-faq__item">
         <summary>Does this work on Subsonic, Airsonic, Gonic, or only Navidrome?</summary>
-        <p>Any OpenSubsonic-compatible server that implements <code>getMusicFolders</code> with permission scoping and accepts a repeated <code>musicFolderId</code> on browse calls works the same way. Navidrome 0.55+ is the primary target; Airsonic-Advanced and Gonic also work. Servers that only ever return a single folder degrade cleanly: NaviBeat hides the picker and runs as a single-library client.</p>
+        <p>Any OpenSubsonic-compatible server that implements <code>getMusicFolders</code> with permission scoping and accepts a repeated <code>musicFolderId</code> on browse calls works the same way. Navidrome 0.58 or later is what the per-library filtering needs, because that is the version that reads a repeated musicFolderId and does the filtering itself; Airsonic-Advanced and Gonic also work. Servers that only ever return a single folder degrade cleanly: NaviBeat hides the picker and runs as a single-library client.</p>
       </details>
 
       <details class="ml-faq__item">
         <summary>Why is the selection per-device and not synced via iCloud?</summary>
-        <p>Two reasons. First, a typical use case is "phone shows my private library, Apple TV shows the shared family library", and forcing iCloud sync would defeat that. Second, NaviBeat stores nothing in iCloud or any backend: the only services NaviBeat talks to are the ones you signed in to. Per-device selection respects that boundary.</p>
+        <p>Two reasons. First, a typical use case is "phone shows my private library, Apple TV shows the shared family library", and forcing iCloud sync would defeat that. Second, NaviBeat stores nothing in iCloud or any backend, and there is no NaviBeat server for a selection to sync through. Per-device selection respects that boundary.</p>
       </details>
 
       <details class="ml-faq__item">
@@ -505,6 +509,7 @@
           <li><a href="iphone">iPhone</a></li>
           <li><a href="ipad">iPad</a></li>
           <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="carplay">CarPlay</a></li>
           <li><a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App Store</a></li>
         </ul>
       </div>

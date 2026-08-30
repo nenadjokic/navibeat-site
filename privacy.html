@@ -16,7 +16,7 @@
   <meta property="og:description" content="What data is stored on your device, what leaves it, and what never does. No analytics. No trackers. No hidden third parties.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://navibeat.app/privacy">
-  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png?v=20260830">
   <meta property="og:image:alt" content="NaviBeat on Mac: native SwiftUI sidebar with Featured Album hero.">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="NaviBeat">
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NaviBeat Privacy Policy: Local-only, zero telemetry">
   <meta name="twitter:description" content="What data is stored on your device, what leaves it, and what never does.">
-  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/macos/navibeat-mac-home.png?v=20260830">
   <meta name="twitter:image:alt" content="NaviBeat on Mac, a privacy-first Navidrome client.">
 
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
@@ -132,19 +132,23 @@
 <div class="prose">
   <h1 id="privacy-policy">Privacy Policy</h1>
   <p class="meta">Last updated:
-    <time datetime="2026-07-10">July 10, 2026</time>
+    <time datetime="2026-08-29">August 29, 2026</time>
   </p>
 
   <aside class="tldr" role="doc-tip" aria-label="Quick answer">
-    <p><strong>TL;DR.</strong> NaviBeat has no backend. The only network
-       requests it makes are to your own Navidrome server and, if you
-       enable them, Last.fm and/or ListenBrainz (and MusicBrainz, which
-       ListenBrainz needs to identify a track). Your credentials live in the
-       Keychain and, if you use iCloud Keychain, sync between your own Apple
-       devices, end-to-end encrypted, which is how your Apple Watch inherits the
-       pairing. <strong>We</strong> see zero playback events, zero library data,
-       zero credentials, zero analytics. There is no NaviBeat account to make,
-       because there is no NaviBeat server to make it on.</p>
+    <p><strong>TL;DR.</strong> NaviBeat has no backend. It talks to your own
+       Navidrome server, and to nothing else unless you switch something on.
+       The things you can switch on are Last.fm, ListenBrainz (with
+       MusicBrainz, which ListenBrainz needs to identify a track), and an
+       <a href="#lrclib">lrclib.net lyrics lookup</a> that sends a song title,
+       artist, album and length when your own server has no lyrics for a track.
+       Every one of them is off until you turn it on. Your credentials live in
+       the Keychain and, if you leave credential sync on, ride iCloud Keychain
+       to your other Apple devices, end-to-end encrypted, which is how your
+       Apple Watch inherits the pairing. <strong>We</strong> see zero playback
+       events, zero library data, zero credentials, zero analytics. There is no
+       NaviBeat account to make, because there is no NaviBeat server to make it
+       on.</p>
   </aside>
 
   <p>NaviBeat is a client application for Navidrome and OpenSubsonic-compatible music servers. This policy explains what data the app stores and what, if anything, leaves your device.</p>
@@ -153,11 +157,12 @@
   <ul>
     <li><strong>Server URL:</strong> stored in SwiftData (local device storage) to reconnect automatically at launch.</li>
     <li><strong>Username:</strong> stored in SwiftData alongside the server URL.</li>
-    <li><strong>Password:</strong> stored in the Keychain, never in plain files, and never sent to us. It is protected with <code>kSecAttrAccessibleAfterFirstUnlock</code> and marked as syncable, which means it rides <strong>iCloud Keychain</strong> to your other Apple devices. That is deliberate: it is how your Apple Watch inherits the pairing without you typing anything on a watch. iCloud Keychain is end-to-end encrypted by Apple, so neither we nor Apple can read it. If you would rather it never left the device, turn iCloud Keychain off in iOS Settings and pair each device by hand.</li>
+    <li><strong>Password:</strong> stored in the Keychain, never in plain files, and never sent to us. It is protected with <code>kSecAttrAccessibleAfterFirstUnlock</code>. By default it is also marked as syncable, which means it rides <strong>iCloud Keychain</strong> to your other Apple devices: that is how your Apple Watch inherits the pairing without you typing anything on a watch. iCloud Keychain is end-to-end encrypted by Apple, so neither we nor Apple can read it. If you would rather it never left the device, turn <em>Sync credentials to your other Apple devices</em> off under Settings &rarr; Server &amp; Library &rarr; Security &amp; Sync on iPhone, and pair each device by hand. An imported mTLS client certificate is never synced at all: it stays on the device it was imported on.</li>
     <li><strong>On the wire, your password is never sent at all.</strong> NaviBeat authenticates with a salted hash (Subsonic token auth), so what travels to your server is a token and a salt, not the password.</li>
     <li><strong>Playback history:</strong> a local log of which tracks you have played and when, stored in SwiftData. Used to power discovery shelves (Recently Played, On This Day, etc.). Not transmitted to any third party.</li>
-    <li><strong>Recent searches:</strong> the last 10 search queries, stored in UserDefaults. Cleared when you delete the app.</li>
-    <li><strong>Settings:</strong> playback preferences (scrobble toggle, gapless prefetch, bit rate, audio format), stored in UserDefaults.</li>
+    <li><strong>Recent searches:</strong> your last 20 search queries on iPhone, iPad and Mac, and the last 10 on Apple TV, stored in UserDefaults. You can clear them in the app, and deleting the app removes them.</li>
+    <li><strong>Settings:</strong> everything you choose in Settings, from streaming and download quality to theme, accent colour, lyrics, crossfade, ReplayGain, equalizer bands, jump-button lengths and which services you connected, stored in UserDefaults. None of it is a profile of you and none of it leaves the device except where this page says otherwise.</li>
+    <li><strong>Spotlight entries (only if you turn them on).</strong> <em>Find in Spotlight</em> is off until you switch it on. When you do, NaviBeat writes artist and album names into the system Spotlight index so you can find them from the Home Screen. The default scope is your downloads only; you can widen it to the whole library. Switching it off deletes everything NaviBeat put there.</li>
   </ul>
 
   <h2 id="data-leaves">What leaves your device</h2>
@@ -181,7 +186,16 @@
         <li>Use either, both, or neither. <a href="listenbrainz">See the ListenBrainz page.</a></li>
       </ul>
     </li>
-    <li><strong>Nothing else.</strong> NaviBeat contains no analytics SDK, no crash reporter, no advertising framework, and no telemetry. Zero data is sent to the developer. The only services NaviBeat ever talks to are the ones <em>you</em> sign in to.</li>
+    <li id="lrclib"><strong>lrclib.net (optional, and off until you switch it on).</strong> Lyrics come from your own server first. If your server and its lyrics plugin both come back with nothing, and only if you have turned on the lrclib fallback in Settings, NaviBeat asks <a href="https://lrclib.net" target="_blank" rel="noopener">lrclib.net</a> for that one song.
+      <ul>
+        <li><strong>What is sent:</strong> the song&rsquo;s title, its artist, its album and its length in seconds. That is the whole request. The length is there because it is what keeps a remaster, a live take and a radio edit of the same song apart.</li>
+        <li><strong>What is not sent:</strong> anything about you, your server, your account or the rest of your library. lrclib needs no account, no key and no sign-in, so there is nothing to identify you with. If a track has no title or no artist, NaviBeat sends nothing rather than send a useless request.</li>
+        <li>The switch is off in a fresh install. With it off, NaviBeat never contacts lrclib.net at all, and lyrics come only from your own server.</li>
+      </ul>
+    </li>
+    <li><strong>MusicBrainz and the Cover Art Archive on the Mac (only during a NaviSyncRock sync).</strong> When you ask NaviSyncRock to find missing artwork for an iPod, it looks in your own Navidrome first. For albums it cannot match there, it searches <code>musicbrainz.org</code> for the album and artist name and fetches the cover from <code>coverartarchive.org</code>. Both are public, need no account, and are only ever reached because you pressed the button.</li>
+    <li><strong>Speakers on your network stay on your network.</strong> On iPhone and Mac, NaviBeat can play to a UPnP or DLNA speaker. Finding one and controlling it happens entirely inside your local network, and the address it hands the speaker is your own server&rsquo;s. Nothing about it reaches us or anyone else.</li>
+    <li><strong>Nothing else, and nothing to the developer.</strong> NaviBeat contains no analytics SDK, no crash reporter, no advertising framework, and no telemetry. Zero data is sent to us: there is no NaviBeat account and no NaviBeat server for it to go to. Apart from your own server, the outside services above are the complete list, every one of them is off until you turn it on, and every one of them can be turned off again.</li>
   </ul>
 
   <h2 id="data-retention">Data retention</h2>
