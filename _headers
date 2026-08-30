@@ -2,12 +2,6 @@
 # Applied to every response served from this site.
 
 /*
-  # Measured 2026-08-31: the /*.html rule below never matched, because pages are
-  # served extensionless (/carplay, not /carplay.html), so every HTML response
-  # came back max-age=0, must-revalidate and revalidated on every single visit.
-  # The default now lives here, where it applies, and /assets/* still overrides
-  # it with the immutable year.
-  Cache-Control: public, max-age=300, stale-while-revalidate=86400
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Referrer-Policy: strict-origin-when-cross-origin
@@ -26,6 +20,53 @@
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 /manifest.json
   Cache-Control: public, max-age=86400
+
+
+# HTML routes. Declared one by one on purpose: a Cache-Control on /* is
+# APPENDED to the asset rule below rather than replacing it, which stacked a
+# 300 second value in front of the immutable year (measured live 2026-08-31).
+/
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/appletv
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/applewatch
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/beta
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/carplay
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/compare
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/features
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/ipad
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/iphone
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/lastfm
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/linux
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/linux-stats
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/listenbrainz
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/macos
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/multi-library
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/navifin
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/privacy
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/roadmap
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/rockbox
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/support
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+/widgets
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
 # Kept for the handful of URLs that really do end in .html.
 /*.html
