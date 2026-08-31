@@ -80,6 +80,24 @@ async function countSince(db, table, voter, hours) {
   return row ? row.n : 0;
 }
 
+// #501791: has this person already sent this exact title recently? Same shape as
+// countSince above, and deliberately scoped by TITLE rather than by the whole
+// body: the title is what the person retypes, and two genuinely different ideas
+// from one person do not share one.
+const DUPLICATE_WINDOW_HOURS = 24;
+
+async function sentThisAlready(db, voter, title) {
+  const since = new Date(Date.now() - DUPLICATE_WINDOW_HOURS * 3600 * 1000).toISOString();
+  const row = await db
+    .prepare(
+      `SELECT COUNT(*) AS n FROM submissions
+       WHERE voter = ? AND created_at > ? AND lower(trim(title)) = lower(trim(?))`
+    )
+    .bind(voter, since, title)
+    .first();
+  return !!(row && row.n > 0);
+}
+
 /* ---------------------------------------------------------------- board ---- */
 
 async function board(request, env) {
@@ -165,6 +183,25 @@ async function submit(request, env) {
   const recent = await countSince(db, 'submissions', voter, 24);
   if (recent >= SUBMIT_PER_DAY) {
     return json({ error: `That is ${SUBMIT_PER_DAY} suggestions today. Try again tomorrow.` }, 429);
+  }
+
+  // #501791: the same suggestion twice files two support tickets, and it
+  // happened on 2026-08-31: hanlane97 sent the same title and the same body at
+  // 11:57 and 11:58, and both became tickets that then needed the same answer
+  // written twice.
+  //
+  // The page is what invites it, and the page is right: a new suggestion appears
+  // on the board only after it has been read and given a public description, so
+  // a person who sends one sees nothing appear and reasonably tries again. The
+  // form already disables its button for the duration of the POST, so this is
+  // not a double click. The server is the only place that can tell a resend from
+  // a second idea.
+  //
+  // ANSWER `ok`, NOT AN ERROR. Somebody resending because they were unsure has
+  // done nothing wrong and must see the same reassurance, not a rejection that
+  // reads as though their idea was refused.
+  if (await sentThisAlready(db, voter, title)) {
+    return json({ ok: true, duplicate: true });
   }
 
   const email = clean(body.email, 120);
