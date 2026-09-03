@@ -22,6 +22,12 @@ import { handle as roadmap } from '../functions/api/roadmap.js';
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    // 2026-09-03, Nenad: the NaviFin page on this site is gone, and its address
+    // sends people to the real NaviFin site. The static page was deleted so this
+    // handler actually sees the path (assets are served before the worker runs).
+    if (url.pathname === '/navifin' || url.pathname === '/navifin/' || url.pathname === '/navifin.html') {
+      return Response.redirect('https://navifin.app/', 301);
+    }
     if (url.pathname === '/api/reviews') {
       if (request.method !== 'GET' && request.method !== 'HEAD') {
         return new Response('Method Not Allowed', { status: 405, headers: { allow: 'GET, HEAD' } });

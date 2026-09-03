@@ -129,7 +129,6 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - [Support / FAQ](https://navibeat.app/support): Setup, troubleshooting, glossary
 - [Privacy](https://navibeat.app/privacy): Privacy policy (no data collection)
 - [Roadmap](https://navibeat.app/roadmap): the public board. Vote on what gets built next, suggest what is missing, and see what was decided against and why.
-- [NaviFin, on this site](https://navibeat.app/navifin): the sister app for Jellyfin, what it is and how it differs from NaviBeat.
 - [NaviFin](https://navifin.app/): Sister app, native Jellyfin client for Apple
 
 ## In the beta right now (1.4, open TestFlight)

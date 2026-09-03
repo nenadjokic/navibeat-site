@@ -447,7 +447,6 @@ Today the shipping desktop build is Linux, and it is free.
 - Roadmap: https://navibeat.app/roadmap - the public board. One vote per item,
   no account needed. Votes decide what gets looked at first, not what gets built
   first, and items decided against stay visible.
-- NaviFin on this site: https://navibeat.app/navifin
 - NaviFin (sister Jellyfin client): https://navifin.app/
 
 ## In the beta right now (1.4, open TestFlight)

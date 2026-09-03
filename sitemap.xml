@@ -288,18 +288,6 @@
   </url>
 
   <url>
-    <loc>https://navibeat.app/navifin</loc>
-    <lastmod>2026-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/navifin" />
-    <image:image>
-      <image:loc>https://navibeat.app/assets/navifin/macos-gladiator.png</image:loc>
-      <image:title>NaviFin movie detail on Mac: native Jellyfin client</image:title>
-    </image:image>
-  </url>
-
-  <url>
     <loc>https://navibeat.app/widgets</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
