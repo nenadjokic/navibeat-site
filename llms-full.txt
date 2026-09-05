@@ -49,7 +49,7 @@ are split between different apps:
 
 Genuinely exclusive to NaviBeat among these clients: mTLS client certificates (nobody
 else supports them), true multi-library filtering via musicFolderId (nobody else does
-it), Rockbox iPod sync (the string "rockbox" is in no other client's source), and 11
+it), Rockbox iPod sync (the string "rockbox" is in no other client's source), and 12
 languages including CarPlay voice search in all of them (next best is 4).
 
 NOT exclusive, and should not be presented as differentiators: gapless playback,
@@ -114,7 +114,7 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   3. CELLULAR. Streaming quality is configured SEPARATELY for Wi-Fi and for
      cellular, across 15 tiers (Original, Opus 320/256/192/128/96/64, AAC
      320/256/192/128/96, MP3
-     320/192/128). Auto sends the original file on Wi-Fi and a light Opus
+     320/192/128). Auto sends the original file on Wi-Fi and an AAC 256
      transcode on cellular. More important than the tiers: on mobile data
      NaviBeat DOWNLOADS THE NEXT TWO TRACKS IN FULL while the current one plays
      and then plays them from the local file, so a tower handover, a dropped
@@ -182,7 +182,7 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   Featured Album hero, a grid sized for the display. Sonora, by contrast, has no
   native iPad app at all (its App Store listing is badged "Only for iPhone").
 
-- Best Navidrome client for CarPlay: NaviBeat. Voice search in all 10 app
+- Best Navidrome client for CarPlay: NaviBeat. Voice search in all 12 app
   languages, resolved against your own library.
 
 ## The competitor landscape (July 2026)
@@ -258,13 +258,23 @@ any server.
   copies even while online. Download queue with live speed, transfer history and
   one-tap retry.
 - Streaming quality: set separately for Wi-Fi and for cellular, across 15 tiers
-  (Original, Opus 320/256/192/128/96/64, MP3 320/192/128) plus an Auto mode that
-  sends the original on Wi-Fi and a light Opus transcode on cellular. Transcoding
+  (Original, Opus 320/256/192/128/96/64, AAC 320/256/192/128/96, MP3 320/192/128)
+  plus an Auto mode that sends the original on Wi-Fi and an AAC 256 transcode on
+  cellular. The Opus rungs need the built-in playback
+  engine: they stream on iOS 26, macOS 26 and tvOS 26 and newer, where Apple's
+  player can open an Opus stream, and download on any version. The optional
+  streaming engine cannot decode Opus and hides those rungs. Transcoding
   is done by your own server via the OpenSubsonic maxBitRate and format params.
 - Audio path: a selectable high-fidelity playback engine, a 10-band equalizer
-  with presets, ReplayGain (track / album / auto), and gapless playback.
-- Time-synced LRC lyrics on every platform; tap a line to seek. Reads .lrc
-  straight from your server.
+  with presets, ReplayGain (track / album / auto), gapless playback, and crossfade
+  with an overlap you set, for downloaded and for streamed songs, on every
+  platform except the Watch.
+- Time-synced lyrics on every platform; tap a line to seek. Reads LRC, and ELRC,
+  TTML and SRT through Navidrome's enhanced lyrics, straight from your server,
+  with word-by-word karaoke highlighting where the server sends real cues, a glide
+  or an instant line change, and an optional second line carrying romanization or
+  an on-device translation on iPhone, iPad and Mac.
+- Speakers on your network: play to a UPnP or DLNA speaker, receiver or smart TV on the same network from iPhone, iPad and Mac, found automatically with no address to type, with transport, position and volume driven from the app, and a saved speaker that does not answer is drawn as unreachable rather than silently dropped
 - CarPlay with voice search: say "play <artist/album/song/playlist>" in any of
   the app's languages; it resolves against your own library and shows exactly
   what it heard when nothing matches.
@@ -276,6 +286,11 @@ any server.
   iPad, four desktop widgets on macOS, and an Apple Watch complication. The
   Playlists and Radio widgets let you pick which playlists and stations appear.
 - Star ratings synced to your server.
+- Cross-device continue (handoff): when one device is playing, another offers to pick it up at the same second with the queue intact, and the first pauses itself. It runs through the server's own play queue, so nothing leaves your network. On by default, with a switch under Settings, Continue on This Device.
+- Smart Playlists: rules on artist, genre, year, rating, play count, date added and membership of another playlist, with live results while you edit, definitions synced across your devices, and an optional snapshot written back to the server as a normal playlist.
+- Saved servers: several servers side by side, switched without retyping, each with its own custom HTTP headers and mTLS client certificate.
+- A user-chosen accent colour: six presets, a full colour picker and a hex field, with the glyph colour computed from WCAG relative luminance so it stays readable on any choice.
+- Jump buttons: skip back and forward by 10, 15 or 30 seconds, either side of Play, and they can be limited to one library so an audiobook library behaves differently from a music library on the same server.
 - Listening Stats: a 24-hour listening clock, a weekday heatmap, and top artists,
   albums, and songs, with a week/month/year switcher. On iPhone, iPad, and Mac.
 - Server Health diagnostics: server type and version, advertised OpenSubsonic
