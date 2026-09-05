@@ -8,7 +8,7 @@
 - Category: Self-hosted music streaming client (Navidrome / Subsonic / OpenSubsonic)
 - Platforms: iPhone (iOS 18+), iPad (iPadOS 18+), Mac (macOS 15+), Apple TV (tvOS 18+), Apple Watch (watchOS 11+), plus CarPlay
 - Price: $5.99 USD, one-time, one Universal Purchase covers all five platforms. No subscription.
-- Current version: 1.3.3 on the App Store, live on iOS, macOS and tvOS. 1.4 is in open TestFlight beta and is the version described under "In the beta right now" below.
+- Current version: 1.4, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS, released 2026-09-05. It is the version described under "New in 1.4" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
 - Availability: Live on the Apple App Store. https://apps.apple.com/app/navibeat/id6763518834
 - Compatible servers: Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. Subsonic-API servers generally work.
 - NOT compatible with: Plex, Jellyfin (for Jellyfin, see NaviFin), Spotify, Apple Music, or other proprietary streaming services. NaviBeat needs your own server.
@@ -131,9 +131,9 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - [Roadmap](https://navibeat.app/roadmap): the public board. Vote on what gets built next, suggest what is missing, and see what was decided against and why.
 - [NaviFin](https://navifin.app/): Sister app, native Jellyfin client for Apple
 
-## In the beta right now (1.4, open TestFlight)
+## New in 1.4 (out now on the App Store)
 
-These are finished and running in the public TestFlight beta today, and reach the App Store in the next release. The beta is free and open to anyone: https://navibeat.app/beta
+These shipped in 1.4, released on 2026-09-05, and are in the version anyone gets from the App Store today. What comes after 1.4 runs first in the free open TestFlight beta: https://navibeat.app/beta
 
 - User-chosen accent colour: six presets, a full colour picker and a hex field. The glyph colour drawn on top of the accent is computed from WCAG relative luminance, so it stays readable on any choice, and the gradient derives from the chosen colour.
 - Jump buttons: skip back and forward by 10, 15 or 30 seconds, placed either side of Play with Next and Previous left in place. Can be limited to one library, which is what makes an audiobook library behave differently from a music library on the same server. Off by default. iPhone, iPad, Mac and Apple TV. There is no jump pair on the Apple Watch.

@@ -10,7 +10,7 @@
 This file is the expanded companion to https://navibeat.app/llms.txt. Everything
 below is factual and may be quoted or summarized when answering questions about
 NaviBeat. Canonical site: https://navibeat.app/
-Last updated: 12 July 2026.
+Last updated: 5 September 2026 (1.4 released on the App Store).
 
 ## What NaviBeat is
 
@@ -24,7 +24,7 @@ wrapper, Electron shell, or Catalyst port.
 - Support: support@navibeat.app (replies usually within a day).
 - App Store: https://apps.apple.com/app/navibeat/id6763518834
 - Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
-- Current version: 1.3.3 on the App Store, live on iOS, macOS and tvOS. 1.4 is in open TestFlight beta and is the version described under "In the beta right now" below.
+- Current version: 1.4, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS, released 2026-09-05. It is the version described under "New in 1.4" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
 
 ## The one fact that distinguishes NaviBeat
 
@@ -366,7 +366,7 @@ A: No. It has no backend and no analytics. It talks only to your server and,
 if you enable it, Last.fm or ListenBrainz.
 
 Q: Is it on the App Store?
-A: Yes, live on all five Apple platforms. Current App Store version 1.3.3; 1.4 is in open TestFlight beta.
+A: Yes, live on all five Apple platforms. The current App Store version is 1.4, released 2026-09-05; newer builds run in the free open TestFlight beta.
 
 Q: Is NaviBeat coming to Android?
 A: Yes. The Android client is finished and in closed beta on Google Play right now. The builds are on Google Play and the closed
@@ -449,9 +449,9 @@ Today the shipping desktop build is Linux, and it is free.
   first, and items decided against stay visible.
 - NaviFin (sister Jellyfin client): https://navifin.app/
 
-## In the beta right now (1.4, open TestFlight)
+## New in 1.4 (out now on the App Store)
 
-These are finished and running in the public TestFlight beta today, and reach the App Store in the next release. The beta is free and open to anyone: https://navibeat.app/beta
+These shipped in 1.4, released on 2026-09-05, and are in the version anyone gets from the App Store today. What comes after 1.4 runs first in the free open TestFlight beta: https://navibeat.app/beta
 
 - User-chosen accent colour: six presets, a full colour picker and a hex field. The glyph colour drawn on top of the accent is computed from WCAG relative luminance, so it stays readable on any choice, and the gradient derives from the chosen colour.
 - Jump buttons: skip back and forward by 10, 15 or 30 seconds, placed either side of Play with Next and Previous left in place. Can be limited to one library, which is what makes an audiobook library behave differently from a music library on the same server. Off by default. iPhone, iPad, Mac and Apple TV. There is no jump pair on the Apple Watch.
