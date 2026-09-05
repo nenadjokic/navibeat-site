@@ -222,8 +222,8 @@
       <image:title>The NaviBeat theme running on a Rockbox iPod Classic</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/rockbox/app-sync-sending.png</image:loc>
-      <image:title>NaviSyncRock sending a chosen set of artists from Navidrome to a Rockbox iPod</image:title>
+      <image:loc>https://navibeat.app/assets/screenshots/rockbox/app-sync-full-library.png</image:loc>
+      <image:title>NaviSyncRock sending a whole Navidrome library to a Rockbox iPod, step by step</image:title>
     </image:image>
   </url>
 
