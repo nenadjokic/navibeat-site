@@ -133,6 +133,13 @@
           "priceValidUntil": "2027-05-13",
           "url": "https://apps.apple.com/app/navibeat/id6763518834"
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.35",
+          "ratingCount": 48,
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "featureList": [
           "Navidrome and OpenSubsonic compatibility",
           "Universal Purchase across Apple TV, Mac, iPhone, iPad, Apple Watch",
@@ -1472,6 +1479,7 @@
         <p id="reviews-stat" class="body-copy" style="font-size:18px;margin-top:8px;"></p>
       </div>
       <div id="reviews-grid" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(280px, 100%), 1fr));"></div>
+      <div id="reviews-more" style="margin-top:30px;text-align:center;"></div>
     </div>
   </section>
 
@@ -1577,9 +1585,13 @@
       stat.setAttribute('aria-label', 'Average rating ' + d.average.toFixed(1) + ' out of 5 from ' + d.count + ' App Store ratings');
       // Show every review the snapshot carries, most-recent first. No rating
       // filter here: critical reviews appear alongside the rest, and the only
-      // exclusion happened upstream in the generator's content rule. Capped at
-      // 24 cards so the page stays sane as the review count grows.
-      var shown = d.reviews.slice(0, 24);
+      // exclusion happened upstream in the generator's content rule.
+      // 2026-09-05: the list used to be TRUNCATED at 24 and the rest were never
+      // reachable, which quietly dropped 8 real reviews the day the 25th landed.
+      // Every review is written into the grid now; the ones past the first 24
+      // start hidden behind a button, and `expanded` lives outside render() so a
+      // reader who opens the list keeps it open when the live answer re-renders.
+      var shown = d.reviews;
       grid.innerHTML = shown.map(function (x) {
         var raw = x.body || '';
         var body = raw.slice(0, 600) + (raw.length > 600 ? '…' : '');
@@ -1591,8 +1603,33 @@
           '<cite style="color:var(--text-2);font-style:normal;font-size:13px;">' + esc(x.author) + ' · ' + when + '</cite>' +
         '</blockquote>';
       }).join('');
+      applyLimit(grid, shown.length);
       sec.hidden = false;
       return true;
+    }
+    // Visibility of the overflow cards, plus the control that reveals them.
+    // Rebuilt on every render, so a second render cannot leave a stale button
+    // or a half-open list behind.
+    var LIMIT = 24;
+    var expanded = false;
+    function applyLimit(grid, total) {
+      var kids = grid.children;
+      for (var i = LIMIT; i < kids.length; i++) {
+        kids[i].style.display = expanded ? '' : 'none';
+      }
+      var more = document.getElementById('reviews-more');
+      if (!more) return;
+      more.innerHTML = '';
+      if (expanded || total <= LIMIT) return;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'btn btn--ghost';
+      btn.textContent = 'Show all ' + total + ' reviews';
+      btn.addEventListener('click', function () {
+        expanded = true;
+        applyLimit(grid, total);
+      });
+      more.appendChild(btn);
     }
     // Prefer the live function (auto-updates from Apple's RSS); fall back to the
     // committed snapshot (reviews.json), which is always served even where the

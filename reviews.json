@@ -1,14 +1,102 @@
 {
- "count": 31,
- "average": 4.23,
+ "count": 48,
+ "average": 4.35,
  "headlineSource": "iTunes lookup ratings aggregate, all storefronts",
- "writtenCount": 22,
- "writtenAverage": 3.82,
- "shownCount": 21,
+ "writtenCount": 33,
+ "writtenAverage": 4.0,
+ "shownCount": 32,
  "excludedForNoContent": 1,
- "fetchedAt": 1786141281236,
+ "fetchedAt": 1788644053245,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
+  {
+   "author": "GuiloLac",
+   "rating": 4,
+   "title": "Opus support is broken",
+   "body": "When trying to open an Opus file, app keeps buffering and will refuse to play any kind of other file after that.\n\nGreat app otherwise",
+   "territory": "USA",
+   "date": "2026-09-03T11:45:17-07:00"
+  },
+  {
+   "author": "albertasky",
+   "rating": 5,
+   "title": "Great App",
+   "body": "Great job on this app! Smooth on Mac OS and iOS; feels very native. Especially love the lyrics being accessible. Keep up the great work on this; super impressed.",
+   "territory": "CAN",
+   "date": "2026-09-01T12:03:31-07:00"
+  },
+  {
+   "author": "Lex is the happiest",
+   "rating": 5,
+   "title": "The best",
+   "body": "The best Navidrome client for Apple devices",
+   "territory": "ESP",
+   "date": "2026-08-28T14:24:54-07:00"
+  },
+  {
+   "author": "Tecsharp",
+   "rating": 5,
+   "title": "Exccelent app",
+   "body": "It’s an excellent app. I’ve been testing it, and I haven’t experienced any freezes or issues so far. The app feels very smooth, and I was especially impressed that it supports both production and local links. That was really great to see. For now, it’s definitely meeting my needs.",
+   "territory": "MEX",
+   "date": "2026-08-25T16:06:39-07:00"
+  },
+  {
+   "author": "TiagoM05",
+   "rating": 5,
+   "title": "Spotify Killer",
+   "body": "Been using NaviBeat for a while since I decided to leave Spotify and curate my own music server. I tried other free alternatives but either the UI wasn’t up to standard or the system was too buggy. NaviBeat found a perfect middle ground with modern clean look and a polished finish that makes the user experience so smooth. Thank you for your work Nenad!",
+   "territory": "PRT",
+   "date": "2026-08-24T00:54:59-07:00"
+  },
+  {
+   "author": "notimpressed",
+   "rating": 1,
+   "title": "Frequently fails to stream",
+   "body": "NaviBeat often hangs on “Buffering” when trying to stream. I’ve changed all the settings related to streaming quality but I can’t seem to shake the dreaded “Buffering.” Doesn’t matter whether I’m on WiFi at home or cellular.\n\nI’ve got both my local IP and public domains setup correctly. I’ve used other Subsonic apps in the same locations, on the same networks, and with the same server and they’ve all streamed perfectly.\n\nAlso, download speeds are absurdly slow, like under 1 MB/s when I’m on the same network as my server.",
+   "territory": "USA",
+   "date": "2026-08-22T19:18:01-07:00"
+  },
+  {
+   "author": "akirichev",
+   "rating": 5,
+   "title": "Lightweight music app for all your Apple devices",
+   "body": "A lightweight, but packed with functionality Subsonic client that is nicely integrated with the devices from the Apple Ecosystem. It offers a seamless experience by offering to continue listening the queue from another device you left behind. Really nice feature is the integration with Last.fm that magically create infinite queue after your has ended.",
+   "territory": "BGR",
+   "date": "2026-08-20T02:12:55-07:00"
+  },
+  {
+   "author": "gzwi'ck",
+   "rating": 3,
+   "title": "Multiple account support",
+   "body": "The interface is polished, the audio features are excellent, but, there is one major limitation, I can’t save multiple Navidrome user accounts and quickly switch between them.\n\nI use different accounts on the same server, each with its own libraries, playlists and permissions. Having to disconnect and enter the credentials again every time I want to switch users is quite inconvenient.\n\nIt would be great to have an account switcher that lets you save multiple users for the same Navidrome server and switch between them instantly, without logging out and re-entering credentials.",
+   "territory": "ITA",
+   "date": "2026-08-16T05:50:44-07:00"
+  },
+  {
+   "author": "inkaroo",
+   "rating": 5,
+   "title": "amazing",
+   "body": "I’m setting up a home server for the first time with no experience. This app gave me zero issues in connecting and is insanely clean and runs smooth. so cool and def worth the cost!",
+   "territory": "USA",
+   "date": "2026-08-15T11:30:06-07:00"
+  },
+  {
+   "author": "Kenlst1",
+   "rating": 4,
+   "title": "個人體驗和功能改善和建議",
+   "body": "整體來說 這個軟件算那麼多同類型軟件最好用。但還有以下建議：\n1. 增加多曲目點選按鈕，可以批量收藏 / 刪除 / 下載 \n2.  發現無法顯示播放紀錄 不知道是不是Bug \n3. 關於歌手信息有時候會識別錯誤，建議增加手動修正或者其他方法可以改正，因為顯示錯誤的歌手資料很痛苦。\n4. 下載項目頁面也是沒得多選 ，不能批量刪除。\n5.可以在專輯 名稱下面顯示專輯品質 例如 Hi res / 44.1 lossless \n6. 專輯封面可以增加用戶自行上傳按鈕",
+   "territory": "HKG",
+   "date": "2026-08-15T02:17:59-07:00"
+  },
+  {
+   "author": "cdransf",
+   "rating": 5,
+   "title": "Excellent Navidrome client",
+   "body": "A fully-featured, rapidly developed and altogether outstanding client for Navidrome and other Subsonic servers. It supports everything I need on every device and the developer is kind and responsive.",
+   "territory": "USA",
+   "date": "2026-08-07T15:18:55-07:00"
+  },
   {
    "author": "マキマ「支配の悪魔」",
    "rating": 3,
@@ -131,7 +219,7 @@
   },
   {
    "author": "Bruger001",
-   "rating": 4,
+   "rating": 5,
    "title": "Awesome App",
    "body": "Awesome app with great features. Only thing missing would be an equalizer.",
    "territory": "DNK",
