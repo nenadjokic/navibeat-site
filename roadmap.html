@@ -350,6 +350,7 @@
         straight into the support queue, so you get an answer either way. It shows up on this board
         only once I have read it and written a public description for it.
       </p>
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
       <form class="rm-form" id="rm-suggest-form" novalidate>
         <input type="text" id="rm-s-title" name="title" maxlength="120" required
                placeholder="One line: what do you want to happen?" aria-label="Title">
@@ -372,6 +373,16 @@
         </div>
         <input type="email" id="rm-s-email" maxlength="120"
                placeholder="Your email, if you want a reply (optional)" aria-label="Email">
+        <!-- Turnstile, added 2026-09-06 after a nonsense submission came through
+             this form and had to be filed, read and closed by hand (#501973).
+             data-theme="auto" so the widget follows the page in both schemes.
+             The site key is public by design and belongs in the page; its pair,
+             the secret, lives only on the Worker as TURNSTILE_SECRET and is
+             never committed. Until that secret is set the Worker logs that
+             submissions are unguarded and lets them through, so this page never
+             answers a real person with an error it cannot explain. -->
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAEppyhYeqCHI0-DK"
+             data-theme="auto" data-size="flexible"></div>
         <div class="rm-form__actions">
           <button class="btn btn--primary btn--compact" type="submit">Send it</button>
           <p class="rm-say" id="rm-suggest-say" role="status"></p>
@@ -740,6 +751,18 @@
     var button = this.querySelector('button[type="submit"]');
     var title = document.getElementById('rm-s-title').value.trim();
     if (title.length < 6) { say(out, 'Give it a title of at least 6 characters.', false); return; }
+
+    // Turnstile drops its token into a hidden input inside this form. Read it
+    // from the DOM rather than from `turnstile.getResponse()` so the form still
+    // submits when the script is blocked or has not loaded: the field is then
+    // absent, the token is empty, and the Worker decides. It is the Worker that
+    // enforces this, never the page.
+    var tokenField = this.querySelector('[name="cf-turnstile-response"]');
+    var token = tokenField ? tokenField.value : '';
+    if (tokenField && !token) {
+      say(out, 'Tick the box first, then send it.', false);
+      return;
+    }
     button.disabled = true;
 
     post('/api/roadmap/submit', {
@@ -747,7 +770,8 @@
       body: document.getElementById('rm-s-body').value,
       email: document.getElementById('rm-s-email').value,
       section: document.getElementById('rm-s-section').value,
-      kind: document.getElementById('rm-s-kind').value
+      kind: document.getElementById('rm-s-kind').value,
+      turnstileToken: token
     }).then(function () {
       say(out, 'Sent. It is in the support queue now.', true);
       document.getElementById('rm-s-title').value = '';
@@ -756,6 +780,10 @@
       say(out, err.message, false);
     }).then(function () {
       button.disabled = false;
+      // A Turnstile token is good for ONE verification. Without this reset the
+      // second suggestion in a sitting carries a spent token and the Worker
+      // refuses it, which reads to the sender as the form breaking.
+      if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} }
     });
   });
 

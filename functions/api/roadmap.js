@@ -168,6 +168,67 @@ async function vote(request, env) {
   return json({ item_id: id, votes: n, voted: !existing });
 }
 
+/* ------------------------------------------------------------ turnstile ---- */
+
+// Cloudflare Turnstile, on the "Ask for something" form only. Added 2026-09-06
+// after #501973: a submission titled "Become Gay" with the body "Being lesbian"
+// came through the public form, was filed automatically as a BUG on the Apple
+// board, and had to be read and closed by hand.
+//
+// The form was never wide open. It already rate limits per voter hash per day,
+// refuses the same title twice inside 24 hours, and holds minimum lengths. None
+// of that can tell a well-formed nonsense submission from a real one, which is
+// the gap this closes.
+//
+// Turnstile rather than reCAPTCHA, and the reason is on the site itself: the
+// privacy page and llms.txt both say NaviBeat carries no third-party tracking.
+// Google's widget would put a Google script and its cookie on the page of the
+// site making that claim. Turnstile sets no cookie, and the verification below
+// is a server call from the same Worker that already serves the page.
+const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+
+/**
+ * True when the submission may proceed.
+ *
+ * UNCONFIGURED IS OPEN, AND IT SAYS SO. With no TURNSTILE_SECRET bound, this
+ * returns true and warns. Failing closed instead would take the form down the
+ * moment this deploys and before the secret is set, and a form that answers
+ * every visitor with an error is worse than the junk it would stop. The warning
+ * is greppable in the Worker log, so "unguarded" is a state you can see rather
+ * than one you have to remember.
+ */
+async function passesTurnstile(request, env, token) {
+  const secret = env.TURNSTILE_SECRET;
+  if (!secret) {
+    console.warn('[roadmap] TURNSTILE_SECRET is not set: submissions are UNGUARDED');
+    return true;
+  }
+  if (typeof token !== 'string' || !token) return false;
+
+  const form = new FormData();
+  form.append('secret', secret);
+  form.append('response', token);
+  // Cloudflare hands the client address to the Worker, and Turnstile scores
+  // better with it. Absent on a local dev request, hence the guard.
+  const ip = request.headers.get('CF-Connecting-IP');
+  if (ip) form.append('remoteip', ip);
+
+  try {
+    const res = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body: form });
+    const out = await res.json();
+    if (!out.success) {
+      console.warn(`[roadmap] turnstile refused: ${(out['error-codes'] || []).join(',')}`);
+    }
+    return !!out.success;
+  } catch (err) {
+    // A verification that cannot be reached must not silently admit everyone,
+    // and must not eat a real person's suggestion either. Refuse, and the form
+    // tells them to try again: the retry costs one tick of the box.
+    console.error(`[roadmap] turnstile unreachable: ${err && err.message}`);
+    return false;
+  }
+}
+
 /* --------------------------------------------------------------- submit ---- */
 
 async function submit(request, env) {
@@ -176,6 +237,11 @@ async function submit(request, env) {
 
   const title = clean(body.title, MAX_TITLE);
   if (title.length < 6) return json({ error: 'Give it a title of at least 6 characters.' }, 400);
+
+  // Before the database, on purpose: a refused submission costs no D1 read.
+  if (!(await passesTurnstile(request, env, body.turnstileToken))) {
+    return json({ error: 'That did not verify. Tick the box and send it again.' }, 400);
+  }
 
   const db = env.ROADMAP_DB;
   const voter = await voterHash(request, env);
