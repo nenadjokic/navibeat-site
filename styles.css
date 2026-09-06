@@ -2040,6 +2040,12 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 }
 .faq__q:hover { color: var(--accent-hi); }
 
+/* The glyph is drawn, not written. It used to be a literal "+" text node inside
+   the button, and once the question became a heading that put "+" into the
+   heading's own text: "What is NaviBeat? +". aria-hidden keeps it from being
+   spoken either way, but it does not keep it out of textContent, which is what
+   a crawler reads. */
+.faq__plus::before { content: "+"; }
 .faq__plus {
   color: var(--accent);
   font-size: 24px;
