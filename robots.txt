@@ -57,5 +57,10 @@ Sitemap: https://navibeat.app/sitemap.xml
 # convention. Not a registered robots.txt directive, so it is a comment: it is
 # here because robots.txt is the first file an agent reads, and nothing else
 # was telling anyone these exist.
+#
+# Deliberately NOT linked from the page footer. That was tried on 2026-09-06
+# and measured: a 32 KB plain-text file linked from all twenty pages becomes a
+# crawlable, indexable document with no title, no H1 and no canonical, sitting
+# in results next to the real pages. Agents read robots.txt. That is enough.
 # https://navibeat.app/llms.txt
 # https://navibeat.app/llms-full.txt

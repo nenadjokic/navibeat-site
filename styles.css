@@ -2014,6 +2014,12 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 }
 .faq__item:last-child { border-bottom: 1px solid var(--border); }
 
+/* The question is a heading that happens to be a disclosure button. Wrapping the
+   button in an h3 is the standard accordion pattern: it puts the questions in the
+   document outline, where the rest of this site already keeps them, without
+   changing a pixel or touching the script, which targets the button. */
+.faq__h { margin: 0; font: inherit; }
+
 .faq__q {
   width: 100%;
   display: flex;

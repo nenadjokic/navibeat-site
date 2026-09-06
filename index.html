@@ -40,7 +40,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=202609061401">
+  <link rel="stylesheet" href="styles.css?v=202609061409">
   <link rel="stylesheet" href="artifact.css?v=202609061100">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp?v=20260830 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp?v=20260830 2000w"
@@ -295,7 +295,7 @@
             "name": "Does NaviBeat support multiple Navidrome libraries?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. NaviBeat detects multi-library Navidrome servers automatically and surfaces a picker at the top of the Library tab on iPhone, at the top of the sidebar on iPad and Mac, and as a pill row above the Library tab strip on Apple TV. Pick All Libraries, a single library, or any subset (N of M). Filtering is server-side via repeated musicFolderId, so pagination and ranking are preserved. The picker is hidden on single-library servers. See https://navibeat.app/multi-library for the full feature page."
+              "text": "Yes. NaviBeat detects multi-library servers automatically and surfaces a picker: at the top of the Library tab on iPhone, in the sidebar on iPad and Mac, and as a pill row on Apple TV. Pick All Libraries, a single library, or any subset. Filtering is server-side, so pagination and ranking stay intact, and the picker is hidden on single-library servers. See the multi-library page for the full story."
             }
           },
           {
@@ -303,7 +303,7 @@
             "name": "What’s the refund policy?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Apple handles refunds directly: their standard window is 90 days through reportaproblem.apple.com. On the Mac App Store you can try NaviBeat free for 7 days first. If something doesn't work, reach support@navibeat.app."
+              "text": "Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. On the Mac App Store you can try NaviBeat free for 7 days first. If something doesn’t work, reach us at support@navibeat.app."
             }
           },
           {
@@ -1338,10 +1338,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-intro">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-intro">
           <span>What is NaviBeat?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-intro" inert>
           <div class="faq__a">
             NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and OpenSubsonic servers. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, and is one $5.99 one-time Universal Purchase. It is a client only: it has no backend, no analytics, and no tracking, and connects solely to the server you run.
@@ -1350,10 +1350,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-best-ios">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-best-ios">
           <span>What is the best Navidrome client for iOS?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-best-ios" inert>
           <div class="faq__a">
             For most iPhone listeners, NaviBeat. It covers the four things that decide daily use on a phone: true offline listening, where artwork and metadata are cached so the library browses offline and not just plays; CarPlay with voice search in 12 languages that resolves against your own library; streaming quality set separately for Wi-Fi and cellular across 15 tiers; and a real audio path with a 10-band equalizer, ReplayGain and gapless playback. It is $5.99 once, and that same purchase covers iPad, Mac, Apple TV and Apple Watch. If you want a free app instead, Sonora and flo are both good, and flo is open source. We lay it all out, including what they do better, on the <a href="compare">comparison page</a>.
@@ -1362,10 +1362,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-best-apple">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-best-apple">
           <span>What is the best Navidrome client for the Apple ecosystem?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-best-apple" inert>
           <div class="faq__a">
             NaviBeat. Among the Navidrome and Subsonic clients listed in the Navidrome apps directory and on the App Store as of July 2026, it is the only one with native apps on all five Apple platforms, iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, for one $5.99 Universal Purchase. The clients that reach the Apple TV have no watch app, and the clients with a watch app do not reach the Apple TV. NaviBeat is the only one that does both.
@@ -1374,10 +1374,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-diff">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-diff">
           <span>How is NaviBeat different from other Navidrome and Subsonic clients?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-diff" inert>
           <div class="faq__a">
             NaviBeat is a single native app that spans all five Apple platforms, iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, for one $5.99 Universal Purchase. It is built in SwiftUI for each device rather than a wrapped web view, supports Navidrome multi-library switching server-side, ships time-synced lyrics, internet radio, offline pinning, and Server Health diagnostics, and has no backend, no analytics, and no tracking. It works with Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic server.
@@ -1386,10 +1386,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-1">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-1">
           <span>Do I need a Navidrome server?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-1" inert>
           <div class="faq__a">
             Yes. NaviBeat is a client: it plays music from a server you run. Navidrome is free, open source, and runs on anything from a Raspberry Pi to a NAS. Any OpenSubsonic-compatible server works too (Gonic, Airsonic-Advanced). <a href="https://www.navidrome.org" target="_blank" rel="noopener">navidrome.org</a> takes about 15 minutes with Docker. NaviBeat is also officially listed on the <a href="https://www.navidrome.org/apps/" target="_blank" rel="noopener">navidrome.org/apps</a> directory with the OpenSubsonic indicator.
@@ -1398,10 +1398,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-2">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-2">
           <span>Do I get all platforms for $5.99?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-2" inert>
           <div class="faq__a">
             Yes. NaviBeat is a Universal Purchase. Buy once on any Apple device and it installs on the other four (Mac, Apple TV, iPhone, iPad, Apple Watch) at no extra cost. The Apple Watch app ships embedded in the iPhone app, so it installs automatically when you pair your Watch.
@@ -1410,10 +1410,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-3">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-3">
           <span>Is NaviBeat on the App Store?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-3" inert>
           <div class="faq__a">
             Yes. NaviBeat is live on the App Store on all five Apple platforms: iPhone, iPad, Mac, Apple TV, and Apple Watch. One $5.99 Universal Purchase covers every device, with no subscription. <a href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">Open the App Store listing&nbsp;&rarr;</a>
@@ -1422,10 +1422,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-4">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-4">
           <span>Does it work offline?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-4" inert>
           <div class="faq__a">
             Yes. Pin individual albums, playlists, or whole artists for offline playback. NaviBeat keeps an LRU cache with a size limit you set in Settings. Flights, subways, and spotty hotel Wi-Fi don&rsquo;t stop the music. Downloads sync across devices via your server, not our cloud.
@@ -1434,10 +1434,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-6">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-6">
           <span>Does it work with Cloudflare Access, Tailscale, or a reverse proxy?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-6" inert>
           <div class="faq__a">
             Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for <strong>Cloudflare Access</strong> (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an <strong>mTLS client certificate</strong>, or simply reach your server over <strong>Tailscale</strong>. It all works on every platform, with no third-party relay in between.
@@ -1446,10 +1446,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-8">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-8">
           <span>What is Server Health?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-8" inert>
           <div class="faq__a">
             A diagnostics screen for self-hosters. It shows your server type and version, the OpenSubsonic extensions it advertises, the library scan status and track count, and whether artist images, lyrics and album covers are resolving, so you can confirm your Navidrome is set up exactly the way you expect.
@@ -1458,10 +1458,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-9">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-9">
           <span>Does NaviBeat support multiple Navidrome libraries?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-9" inert>
           <div class="faq__a">
             Yes. NaviBeat detects multi-library servers automatically and surfaces a picker: at the top of the Library tab on iPhone, in the sidebar on iPad and Mac, and as a pill row on Apple TV. Pick All Libraries, a single library, or any subset. Filtering is server-side, so pagination and ranking stay intact, and the picker is hidden on single-library servers. See the <a href="multi-library">multi-library page</a> for the full story.
@@ -1470,10 +1470,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-5">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-5">
           <span>What&rsquo;s the refund policy?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-5" inert>
           <div class="faq__a">
             Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. On the Mac App Store you can try NaviBeat free for 7 days first. If something doesn&rsquo;t work, reach us at <a href="mailto:support@navibeat.app">support@navibeat.app</a>.
@@ -1482,10 +1482,10 @@
       </div>
 
       <div class="faq__item">
-        <button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-android">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-android">
           <span>Is NaviBeat on Linux, Android or Windows?</span>
           <span class="faq__plus" aria-hidden="true">+</span>
-        </button>
+        </button></h3>
         <div class="faq__panel" id="faq-android" inert>
           <div class="faq__a">
             NaviBeat for Linux is out now, free and at version 1.0, as an AppImage on GitHub. The native Android client is finished and in closed beta on Google Play, written natively for Android, not a web page in a shell, with the same library, the same offline downloads, the same word by word lyrics, and the same rule that applies everywhere: your music, your server, nothing phoning home. It is finished and running as a closed beta on Google Play. No store release date has been announced yet. To join the test, email nenad.dev@icloud.com with the phone you would test on. On Android the phone comes first, with the watch, the television and the car behind it. A native Windows desktop client is in active development too, alongside the Linux build. Today NaviBeat is native on the five Apple platforms plus CarPlay, and now on Linux too. See <a href="linux">NaviBeat for Linux</a>.
@@ -1569,7 +1569,6 @@
           <li><a href="support">Help center</a></li>
           <li><a href="mailto:support@navibeat.app">Email us</a></li>
           <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
-          <li><a href="llms.txt">llms.txt (for AI)</a></li>
           <li><a href="beta">Beta program</a></li>
         </ul>
       </div>

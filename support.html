@@ -35,7 +35,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=202609061401">
+  <link rel="stylesheet" href="styles.css?v=202609061409">
 
   <script type="application/ld+json">
   {
@@ -89,7 +89,7 @@
             "name": "Why does my music restart from the beginning when I am driving?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "This is the most common complaint across Subsonic and Navidrome clients, and it is not really a client bug. When a server transcodes on the fly it answers with a 200 response that carries no content length and ignores byte-range requests. So when a mobile connection drops mid-track, a client has no way to resume from where it was and refetches from byte zero: the track jumps back to the start while the playhead keeps counting. NaviBeat removes the network from the playback path on cellular. It downloads the next two tracks in your queue in full while the current one plays, then plays them from the local file, so a tower handover, a dropped connection or a slow transcode cannot restart or stall the song. When the server is transcoding, NaviBeat downloads your first track whole before it starts, so that one costs a short wait instead of a restart; from the second track of a session onward this cannot happen. The cache is a rolling 300 MB, cleans itself oldest-first, never duplicates your real downloads, and is not used on Wi-Fi."
+              "text": "This is the most common complaint across every Subsonic and Navidrome client, and it is not really a client bug. When a server transcodes on the fly it answers with a 200 response that carries no content length and ignores byte-range requests. So when a mobile connection drops mid-track, the client has no way to resume from where it was and refetches from byte zero: the track jumps back to the start while the playhead keeps counting. NaviBeat takes the network out of the playback path on cellular. It downloads the next two tracks in your queue in full while the current one plays, then plays them from the local file. A tower handover, a dropped connection or a slow transcode cannot restart or stall a song that is already on disk. When the server is transcoding, NaviBeat downloads your first track whole before it starts, so that one costs a short wait instead of a restart; from the second track of a session onward this cannot happen. The cache is a rolling 300 MB, cleans itself oldest first, never duplicates your real downloads, and is not used on Wi-Fi. If you are on a VPN such as Tailscale or WireGuard, see the tunnel question below as well: a tunnel adds its own failure mode at every cell-tower change."
             }
           },
           {
@@ -97,7 +97,7 @@
             "name": "Does NaviBeat group classical albums by work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, and it does not require perfect tags. Albums group by work with every movement listed underneath in the right order. Crucially it does not depend on MOVEMENT tags, which almost no real library carries: a tag census of eight MusicBrainz-tagged recordings found zero MOVEMENT tags, and every WORK tag that existed named the movement rather than the piece, which would split one symphony into four separate one-movement works. NaviBeat recovers the parent work from tags and titles shaped like Symphony no. 5 in C minor, op. 67: I. Allegro con brio, so grouping works without you retagging anything. Composer, conductor and the other credits are shown per track."
+              "text": "Yes, and it does not need perfect tags. Albums group by work with every movement listed underneath in the right order. What matters is that it does not depend on MOVEMENT tags, which almost no real library carries. A tag census of eight MusicBrainz-tagged recordings found zero MOVEMENT tags, and every WORK tag that did exist named the movement rather than the piece, which would split one symphony into four separate one-movement works. NaviBeat recovers the parent work from tags and titles shaped like Symphony no. 5 in C minor, op. 67: I. Allegro con brio, so grouping works without you retagging anything. Composer, conductor and the other credits are shown per track."
             }
           },
           {
@@ -113,7 +113,7 @@
             "name": "The app says \"Cannot reach server\". What do I do?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Check that your Navidrome server is running. Verify the URL you entered including the port number (for example http://192.168.0.110:4533). If you're away from home, make sure the server is reachable from outside your home network (reverse proxy, Tailscale, or similar). If the server uses a self-signed TLS certificate, NaviBeat may reject the connection: use a trusted certificate (Let's Encrypt is free) or contact support."
+              "text": "Check that your Navidrome server is running. Check that the URL you entered is correct, including the port number (e.g., http://192.168.0.110:4533). If you are away from home, make sure your server is accessible from outside your home network (via a reverse proxy, Tailscale, or similar). If your server uses a self-signed TLS certificate, NaviBeat may reject the connection. Use a trusted certificate (Let\u2019s Encrypt is free) or reach out to us for help."
             }
           },
           {
@@ -137,7 +137,7 @@
             "name": "Playback cuts out or stutters. How do I fix it?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Lower Stream quality in Settings → Playback & Audio to 192 kbps or 128 kbps. Use a wired connection for Apple TV to improve stability. Check your server's CPU and disk usage: if Navidrome is transcoding on a slow machine, playback can lag."
+              "text": "If you stream over cellular through Tailscale, WireGuard, or any VPN, see the next question first: that is the most common cause on the road. Try lowering Stream quality in Settings > Playback & Audio to 192 kbps or 128 kbps. Check your home network. A wired connection for the Apple TV improves stability significantly. Check your server’s CPU and disk usage. If Navidrome is transcoding on a slow machine, playback can lag."
             }
           },
           {
@@ -441,7 +441,6 @@
           <li><a href="support">Help center</a></li>
           <li><a href="mailto:support@navibeat.app">Email us</a></li>
           <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
-          <li><a href="llms.txt">llms.txt (for AI)</a></li>
           <li><a href="beta">Beta program</a></li>
         </ul>
       </div>
