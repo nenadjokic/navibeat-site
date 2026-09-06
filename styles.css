@@ -2887,12 +2887,23 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   position: absolute; inset: 0;
   background-image: url("assets/screenshots/ipad/navibeat-ipad-lyrics.webp?v=20260830");
   background-size: 300%;
-  background-position: 35% 38%;
+  /* The loupe is labelled "LRC zoom" so it has to be over the active lyric.
+     It was at 35% 38%, which lands on the album art, not on the words.
+     Corrected on 2026-09-06 by measuring the source image rather than
+     estimating: the highlighted amber line in
+     navibeat-ipad-lyrics.webp (2752x2064) sits at y 48.3% and spans
+     x 51.8% to 85.2%, centre x 68.5%. A percentage background-position aligns
+     that point of the image with the same point of the box, so these two
+     numbers put the line in the middle of the loupe. */
+  background-position: 68.5% 48.3%;
   animation: theaterZoomDrift 14s var(--ease) infinite alternate;
 }
 @keyframes theaterZoomDrift {
-  0%   { background-position: 30% 35%; transform: scale(1); }
-  100% { background-position: 42% 48%; transform: scale(1.05); }
+  /* Drifts around the lyric line instead of away from it. At 300% the loupe
+     shows roughly x 52 to 85 per cent of the image, which is exactly the width
+     of the line, so the drift is kept small enough to never lose it. */
+  0%   { background-position: 65% 45.5%; transform: scale(1); }
+  100% { background-position: 72% 51%;   transform: scale(1.04); }
 }
 .dev-ipad__zoom-tag {
   position: absolute; left: 14px; top: 14px; z-index: 2;
@@ -3289,3 +3300,672 @@ code { overflow-wrap: anywhere; }
      than the phone. */
   .btn { white-space: normal; }
 }
+
+/* ===== BEGIN GENERATED DIRECTION-4 CHASSIS, DO NOT EDIT HERE ===== */
+/* ============================================================================
+   DIRECTION 4 CHASSIS. CANONICAL SOURCE.
+
+   Do not edit this text inside navibeat-site/styles.css or
+   NaviFin/marketing/site/styles.css. Both of those carry a GENERATED copy,
+   written by build-chassis.py between the BEGIN and END markers.
+
+   Edit this file, then run:   python3 build-chassis.py
+
+   WHY IT IS GENERATED RATHER THAN COPIED
+   The original defect was two stylesheets that started identical and drifted,
+   which is how NaviFin ended up being NaviBeat with swapped :root values.
+   Panic's model works because the divergence is DECLARED: one chassis, ten
+   [data-takeover] blocks of four values each. Across two repositories,
+   "declared" has to mean "generated", or the copies drift again.
+
+   WHAT DIVERGES
+   Exactly five custom properties per app, in the repaint block that
+   build-chassis.py appends after this layer, plus each site's own artifact.
+   Nothing else.
+
+   WHY THIS IS A LAYER RATHER THAN A REWRITE
+   styles.css is 3291 lines on NaviBeat and 3000 on NaviFin, shared by 21 and 13
+   pages. Rewriting it by hand would put 1 MB of copy and every JSON-LD block at
+   risk for no visual gain. This layer is appended last, so it wins on cascade
+   order, and it neutralises the tell-bearing rules by name. The superseded rules
+   above it are dead but harmless, and can be pruned later page by page.
+   ============================================================================ */
+
+/* ---------------------------------------------------------------------------
+   1. THE DISPLAY FACE.
+   --font-display was Oswald, a condensed face used at every heading size. It is
+   referenced throughout both stylesheets, so redefining it here replaces the
+   condensed all-caps display type on all 34 pages in one declaration.
+   Archivo carries a width axis (wdth 62..125, verified in the shipped woff2),
+   so one file gives both a display cut and a text cut.
+   --------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url('assets/fonts/archivo-latin-var.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --font-display: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-sans:    "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Measure. Apple's reading column is 980px, its wide media track 1260px.
+     Both sites currently use 1280px for everything, prose included. */
+  --max-w: 1260px;
+  --measure: 980px;
+
+  /* Motion, measured off Apple's StaggeredFadeIn component. */
+  --ease: cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* ---------------------------------------------------------------------------
+   2. KILL THE TELLS.
+   Each block below names the tell from AI-TELLS.md that it neutralises and the
+   production rule it supersedes.
+   --------------------------------------------------------------------------- */
+
+/* Tell 4 and 10: uppercase display type and letterspaced caps eyebrows.
+   Supersedes `h1,h2,h3,h4 { text-transform: uppercase }` at styles.css:178 and
+   `.eyebrow { text-transform: uppercase; letter-spacing: 0.26em }` at :164.
+   Across nine indie sites surveyed, not one sets a headline in all caps, and
+   Apple's four product pages contain zero uppercase rules. The eyebrow itself
+   is fine, Apple puts one in the H1 slot at 28px. The caps and the wide
+   tracking are the tell. */
+h1, h2, h3, h4, h5, h6,
+.display, .h1, .h2, .h3, .h4,
+.eyebrow, .eyebrow--accent,
+.sec-head, .sec-head__title,
+.hero__h1, .hero__eyebrow,
+.act__caption-eyebrow, .theater__title-eyebrow, .platforms__eyebrow,
+.f-card__kicker, .f-card__idx,
+.strip__caption, .price__label, .wn-kicker, .cmp__eyebrow {
+  text-transform: none;
+}
+
+.eyebrow, .eyebrow--accent,
+.act__caption-eyebrow, .theater__title-eyebrow, .platforms__eyebrow,
+.f-card__kicker, .wn-kicker, .cmp__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.016em;   /* was +0.26em */
+  line-height: 1.4;
+}
+
+/* The tracking ladder, measured on Apple: display tracking is a function of
+   size and crosses zero at exactly 40px. Negative above, positive below.
+   The production rules run POSITIVE at large sizes, which is the opposite. */
+h1, .display, .hero__h1 { letter-spacing: -0.028em; line-height: 1.02; font-weight: 600; }
+h2, .h2                 { letter-spacing: -0.024em; line-height: 1.06; font-weight: 600; }
+h3, .h3                 { letter-spacing: -0.018em; line-height: 1.2;  font-weight: 600; }
+
+/* Archivo's width axis, set slightly narrow on display and normal on text, so
+   one family yields two genuinely different cuts. */
+h1, h2, .display, .h2, .hero__h1, .price__amount, .stat__n {
+  font-variation-settings: "wdth" 92;
+}
+
+/* Weight discipline. A census of Apple's compiled stylesheets found 600 and 400
+   only, across 282 declarations on AirPods and 287 on MacBook Pro. Zero uses of
+   800 or 900 in 3.2 MB of CSS. Emphasis comes from size, never from weight. */
+.display, .h2, .h3, h1, h2, h3, .hero__h1 { font-weight: 600; }
+
+/* Tell 3: the accent-coloured word inside the headline. This is the single most
+   recognisable generic-hero marker. Supersedes
+   `h1 em, h2 em ... { color: var(--accent) }` at styles.css:186 and
+   `.hero__h1 .word--italic { color: var(--accent) }` at :919.
+   Replaced with Bear's device: the word keeps its normal colour and takes a
+   real underline held off the baseline. bear.app does this with a genuine <u>
+   inside the h1 and a per-platform text-decoration-color. */
+h1 em, h2 em, h3 em, h4 em,
+.display em, .h2 em, .h3 em, .lede em,
+.hero__h1 .word--italic,
+h1 u, h2 u, .u-mark {
+  color: inherit;
+  font-style: normal;
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--emph);
+}
+/* The lede is body copy, so its emphasis stays quiet. */
+.lede em { text-decoration-thickness: 2px; }
+
+/* Tell 1 and 16: the centred hero and the centred column.
+   Supersedes `.hero__h1 { margin-inline: auto }` at styles.css:908 and the
+   centred text-align at :872. Apple's display headings are left aligned and
+   sentence case at every breakpoint above 734px. */
+.hero, .hero__inner, .hero__copy, .hero__h1, .hero__ctas, .hero__lede {
+  text-align: left;
+}
+.hero__h1 { margin-inline: 0; max-width: 20ch; }
+.hero__lede, .hero .lede { margin-inline: 0; }
+.hero__ctas { justify-content: flex-start; }
+
+/* Tell 2: the pill badge floating above the H1.
+   Apple has no badge above any of its four hero headlines. The only badge-like
+   classes in their markup are the shopping-bag counter and a tab control.
+   The eyebrow stays as content, it just stops being a pill. */
+.hero__eyebrow {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  color: var(--text-1);
+  justify-content: flex-start;
+}
+.hero__eyebrow-dot { display: none; }
+
+/* Tell 6: the gradient-filled pill CTA.
+   Supersedes `.btn--primary { background: linear-gradient(...) }` at :275.
+   Apple's button radius IS 980px, a full pill, so the shape is fine. The fill
+   is flat rgb(0,113,227) and there is no shadow. The gradient is the tell. */
+.btn {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  border-radius: 980px;
+  border: 0;
+  text-transform: none;
+}
+.btn--primary,
+.btn--primary:hover,
+.btn--primary:active {
+  background: var(--mark-a);
+  /* DARK text, not white. Measured on the rendered pixels: white on NaviBeat's
+     #F47B20 is 2.73:1 and on NaviFin's #AA5CC3 is 4.18:1, both under the 4.5:1
+     WCAG AA floor for text this size. #0C0C0E gives 7.17:1 and 4.68:1. The old
+     gradient button already used near-black; the white came in with this layer
+     and was a regression, caught by measuring rather than by eye. */
+  color: #0C0C0E;
+  border: 0;
+  box-shadow: none;
+  transform: none;
+}
+.btn--primary:hover { opacity: 0.88; }
+.btn--ghost {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.btn--ghost:hover { background: rgba(255,255,255,0.05); transform: none; }
+
+/* Tell 9: the SVG turbulence grain overlay on the body.
+   Zero noise overlays across Apple's four pages and across all nine indie
+   sites surveyed. */
+body { background-image: none; }
+
+/* Tell 17: a 1px translucent-white border on every surface.
+   Apple's .tile declares no border property at all and its box-shadow token
+   defaults to initial. Filled shapes, no outline. */
+.f-card, .p-shot, .strip__item, .wn-card, .price-card, .maker__card {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* Tell 13: the feature grid of equal bordered cards with an index number.
+   Kept as a grid, but the index becomes a quiet label rather than a numbered
+   badge, and the card becomes a filled shape. */
+.f-card__idx {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  color: var(--text-2);
+}
+
+
+/* Tell 5: the centred italic subhead running three lines.
+   Supersedes the italic ledes at styles.css:927, :1114, :1526, :1782 and :1966.
+   Apple sets `font-style: italic` exactly once per stylesheet, in the reset for
+   cite/dfn/em/i. No subhead on any of their four pages is italic. */
+/* Found by measuring font-style across all 34 rendered pages, not by grepping.
+   The remaining display italics were .price__sub (on 5 NaviFin pages and the
+   NaviBeat price band), .f-card__kicker, .lineup__caption and
+   .manifesto__trace-comment. A bare <em> inside prose is left alone, because
+   that is legitimate typography rather than a tell. */
+.hero__lede, .lede, .hero__strap, .price__note,
+.manifesto__lede, .maker__lede, .theater__lede, .act__caption-p,
+.price__sub, .price__h, .f-card__kicker, .lineup__caption,
+.manifesto__trace-comment, .strip__caption, .p-stat__label {
+  font-style: normal;
+}
+.manifesto__nos em {
+  font-style: normal;
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--emph);
+}
+
+/* The hero copy column. Supersedes `.hero__copy { margin: 0 auto; text-align:
+   center }` at styles.css:869. Left aligned and flush, so the eyebrow, the
+   headline, the lede and the buttons all share one left edge. */
+.hero__copy {
+  max-width: var(--measure);
+  margin: 0 0 56px;
+  text-align: left;
+}
+
+/* The words in the H1 are separate spans on separate source lines, so the
+   markup already contributes a collapsed whitespace between them. The
+   production rule adds 0.22em on top of that, which double-spaced every gap
+   once the condensed face was replaced by a normal-width one. */
+.hero__h1 .word + .word { margin-left: 0; }
+
+/* Tell 7 and 8: the saturated glow behind the product.
+   Supersedes the radial gradients at styles.css:810, :816 and :822. No blur
+   glow sits behind any product image on Apple's four pages. The ground keeps a
+   trace of warmth so the page is not flat, at roughly a quarter of the old
+   strength. */
+.hero__glow, .hero__glow--2, .hero__glow--3,
+.hero::before, .hero::after {
+  opacity: 0.22;
+}
+
+
+/* The hero subhead. Supersedes `.hero__sub` at styles.css:925, which set
+   italic + Oswald 700 + margin auto, so it was a centred italic display face
+   used as body copy. Three tells in one rule. Now a normal-weight sans,
+   flush left, sized as the lede it actually is. */
+.hero__sub {
+  margin: 0 0 40px;
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-variation-settings: "wdth" 100;
+  letter-spacing: 0.011em;
+  color: var(--text-1);
+  max-width: 54ch;
+  text-align: left;
+}
+
+/* The theater and act captions carry their own em rules at styles.css:2702 and
+   :2791, which are more specific than the generic `h2 em` above, so they need
+   naming. Same underline device, and the same de-centring. */
+.theater__title-h em, .act__caption-h em, .theater__title-h u, .act__caption-h u {
+  font-style: normal;
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--emph);
+}
+.theater__title, .theater__title-h, .act__caption, .act__caption-h, .act__caption-p {
+  text-align: left;
+}
+/* .theater__title is position:absolute with left:0 and right:0, so once it stops
+   centring its content the text lands against the window edge. Give it the same
+   column the rest of the page uses. .theater__title-h carried margin-inline:auto
+   with a 528px max-width, which re-centred it inside that column. */
+.theater__title {
+  max-width: var(--max-w);
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  padding-inline: 24px;
+  width: 100%;
+}
+.theater__title-h, .theater__title-eyebrow {
+  margin-inline: 0;
+  max-width: 24ch;
+}
+.theater__title-h, .act__caption-h {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 92;
+  font-weight: 600;
+  letter-spacing: -0.024em;
+  text-transform: none;
+}
+
+
+/* The long tail, found by measuring getComputedStyle across the rendered pages
+   rather than by reading the stylesheet. Grepping the CSS found the headline
+   rules; only the browser found these: the nav, the breadcrumb, bare <th>
+   elements, the footer bar and the sibling-card label were all still computing
+   uppercase with positive tracking after the rules above were in place.
+   Re-measured on index, compare, features, iphone and support. */
+.nav__link, .nav__trigger, .nav__caret, .nav__link--navifin,
+.crumb, .crumb__sep, .crumb__current,
+th, .cmp th, .cmp__group, .cmp-section h3,
+.sibling-card__label, .footer__bar, .footer__heart,
+.strip__caption, .rail__label, .theater__rail-label, .p-shot__kicker,
+.wn-card__kicker, .price__kicker, .badge, .pill, .tag {
+  text-transform: none;
+  letter-spacing: -0.012em;
+}
+
+/* Table headers stay distinguishable by weight and colour rather than by caps
+   and 0.2em tracking. */
+th, .cmp th {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+}
+.cmp__group, .cmp-section h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.012em;
+}
+.nav__link, .nav__trigger {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* ---------------------------------------------------------------------------
+   2b. THE SWEEP.
+
+   Enumerating classes did not finish the job, and it was never going to. The
+   caps and the wide tracking are spread across 458 distinct classes on NaviBeat
+   alone, many behind selectors more specific than a class-level override, and
+   the markup carries 62 INLINE style attributes setting text-transform, which
+   beat every selector regardless of specificity. Only !important reaches those.
+
+   This is safe to sweep because there is nothing legitimate to protect: across
+   both stylesheets the only text-transform values that exist are `uppercase`
+   (35 each) and `none`. No `capitalize`, no `lowercase`. And no site in either
+   survey, Apple's four pages or the nine indie sites, sets a headline or a label
+   in caps.
+
+   Letter-spacing is swept to a sane text default here and the display ladder is
+   restored immediately below. Both are !important, so source order decides and
+   the ladder wins.
+   --------------------------------------------------------------------------- */
+*, *::before, *::after {
+  text-transform: none !important;
+  letter-spacing: -0.014em !important;
+}
+
+/* The ladder, restored. Measured on Apple: display tracking is a function of
+   size and crosses zero at 40px, negative above and positive below. */
+h1, .display, .hero__h1, .theater__title-h, .act__caption-h {
+  letter-spacing: -0.028em !important;
+}
+h2, .h2                       { letter-spacing: -0.024em !important; }
+h3, .h3                       { letter-spacing: -0.018em !important; }
+.lede, .body-copy, .hero__sub { letter-spacing:  0.011em !important; }
+.eyebrow, .eyebrow--accent, th, dt, .p-stat__label, .proofbar__item,
+.f-card__kicker, .strip__caption, .crumb, .nav__link {
+  letter-spacing: -0.012em !important;
+}
+code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
+
+
+/* ---------------------------------------------------------------------------
+   TEXT LEFT, MEDIA RIGHT. Nenad asked for this on both sites, 2026-09-06.
+
+   The copy and the device lineup were stacked, which left a tall empty band
+   under the buttons (very visible on NaviFin) and pushed the product below the
+   fold. Both sites share the same structure, .hero__wrap containing
+   .hero__copy and .lineup, and .lineup__stage is width:100% with
+   aspect-ratio 1280/700, so it scales into a narrower column with no per-site
+   work. One rule, both sites. That is the chassis earning its keep.
+
+   The stage is drawn for a 1280px canvas, so in a ~620px column the devices
+   would read small. Letting it run past the column edge keeps them large and
+   fills the space on the right. .hero has overflow:hidden already, so the
+   bleed is clipped at the window rather than causing a horizontal scrollbar.
+   --------------------------------------------------------------------------- */
+@media (min-width: 1040px) {
+  .hero__wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+    gap: clamp(28px, 3vw, 56px);
+    align-items: center;
+  }
+  .hero__copy { margin: 0; max-width: none; grid-column: 1; }
+
+  /* The stacked hero set the headline at up to 100px because it had the full
+     width to run in. In a 460px column that wraps to six lines, so the
+     two-column layout needs its own step on the size ladder. Tracking stays on
+     the ladder: negative above 40px. */
+  .hero__h1 { font-size: clamp(38px, 3.4vw, 54px); max-width: 14ch; }
+  .hero__sub { max-width: 44ch; }
+
+  .lineup { margin-top: 0; grid-column: 2; align-self: center; }
+
+  /* The lineup is art-directed on a 1280px canvas with every device positioned
+     absolutely in per cent. Scaling that canvas down to a column width renders
+     each device at roughly half size and the screenshots turn to mush, which is
+     what the first two attempts did. So the stage keeps a near-native width and
+     runs past the column toward the window instead. .hero already has
+     overflow:hidden, so the right-hand devices crop at the window edge as a
+     deliberate bleed rather than producing a horizontal scrollbar. */
+  .lineup__stage {
+    max-width: none;
+    /* Near-native width so the devices stay large, but bounded by what is
+       actually left on screen after the copy column, so the Mac window is never
+       sliced. Only the watch at the far right edge crops, which reads as a
+       deliberate bleed. The small negative margin buys back the gap. */
+    width: min(1120px, calc(100vw - 730px));
+    margin: 0 0 0 -40px;
+  }
+
+  /* The caption belongs under the devices it captions, not floating beside them. */
+  .lineup__caption { margin-top: 26px; text-align: left; }
+  .hero__strap, .hero__proof, .proofbar { grid-column: 1 / -1; }
+}
+
+/* Between 1040 and 1400 there is not enough room for a 1180px stage next to the
+   copy, so the bleed would swallow most of the lineup. Shrink it there. */
+@media (min-width: 1040px) and (max-width: 1400px) {
+  .lineup__stage { width: calc(100vw - 620px); margin-left: -24px; }
+  .hero__wrap { grid-template-columns: minmax(0, 380px) minmax(0, 1fr); }
+  .hero__h1 { font-size: clamp(34px, 3.1vw, 44px); }
+}
+
+
+/* ---------------------------------------------------------------------------
+   THE THEATER, VERTICAL SPACE. Nenad, 2026-09-06: too much empty space above
+   and below the device in the sticky scroll section.
+
+   Measured cause, not a guess. .act__stage is a FIXED 1180 x 620 box centred in
+   a sticky pane that is 100vh tall. On a 1679px-tall window that leaves 529px
+   of dead space above it and the same below, while .theater__title sits at 8vh
+   and .theater__rail at 95vh, so both are pinned to the window edges and the
+   void between them and the stage grows with the window. The composition was
+   drawn for roughly a 900px-tall viewport, where those numbers are tight.
+
+   Two changes. The stage now scales with the available height instead of being
+   fixed, and the title, caption and rail are pulled in toward it with capped
+   offsets so they stop tracking the window edge on tall screens.
+   --------------------------------------------------------------------------- */
+/* The stage height is expressed once, as a variable, so the title and the
+   caption can be positioned RELATIVE TO THE STAGE instead of relative to the
+   window edge. That is the actual fix: with everything anchored to the viewport,
+   the gaps grew with the window. */
+.theater__sticky {
+  /* Bounded three ways: by height, by the width the window can show, and by
+     what is left after the heading above and the caption plus rail below. That
+     third bound is what stops the stage from growing so tall that the heading
+     gets squeezed under the sticky header on a short laptop screen. */
+  --stage-h: min(
+      64vh,
+      calc((100vw - 80px) * 620 / 1180),
+      calc(100vh - var(--title-top) - 104px - 210px)
+  );
+
+  /* THE TITLE IS THE ANCHOR.
+     The stage centres in a 100vh pinned pane, so with everything measured from
+     the pane's middle the blank above the heading grew with the window: 164px
+     at 1679 tall even after the first lift pass.
+     Inverted here. --title-top says where the heading sits, near the top and
+     roughly constant, and --lift is then whatever it takes to pull the stage up
+     to meet it. The pane is height:100vh, so 50vh is its middle and the whole
+     thing can be expressed in vh, which margin percentages could not do because
+     they resolve against width.
+     104px is the heading's own height plus the gap under it. max(0px, ...)
+     means short windows, where the stage already sits high, are untouched. */
+  /* The sticky header measures 69px and shares top:0 with this pane, so the
+     heading has to clear it. Measured at 81px with the beta banner in place, so
+     the floor is 104px, leaving about 23px of air under the header. Without it
+     the eyebrow sat at 52px on a 1280x720 laptop, behind the header. */
+  --nav-h: 81px;
+  --title-top: clamp(104px, calc(4vh + 72px), 128px);
+  --lift: max(0px, calc(50vh - var(--stage-h) / 2 - var(--title-top) - 104px));
+}
+
+.act__stage {
+  /* aspect-ratio 1180/620 is already declared, so setting the height derives
+     the width. Bounded by what the window can actually show. */
+  height: var(--stage-h, 620px);
+  width: auto;
+  max-width: calc(100vw - 80px);
+  /* .act centres this with align-items:center, so adding bottom margin makes the
+     outer box taller and moves the visible box up by half of it. */
+  margin-bottom: calc(var(--lift, 0px) * 2);
+}
+
+/* The stage is centred in the pane, so its top edge is 50% minus half its
+   height. The title sits just above that, with max() so it can never be pushed
+   off the top of a short window. Was a flat 8vh, which is 134px at 1679px tall
+   and left a 387px void. */
+.theater__title {
+  top: max(24px, calc(50% - var(--stage-h, 620px) / 2 - 104px - var(--lift, 0px)));
+}
+
+/* Same idea below the stage: sit just under it rather than at 74.5vh. Only on
+   windows tall enough to have room, though. Below that the card is bottom
+   anchored, because a fixed px cap guessed at its height and the card is taller
+   at narrower widths where the copy wraps more, so it ran off the bottom of the
+   screen at 720, 780, 900 and 1050. Measured, not assumed.
+   It deliberately still overlaps the right edge of the stage: that floating
+   card over the corner is the original composition. It never overlaps the rail,
+   which sits centred while the card is hard right. */
+.act__caption {
+  top: calc(50% + var(--stage-h, 620px) / 2 + 20px - var(--lift, 0px));
+  bottom: auto;
+}
+/* 1280 rather than 1140: at 1920 x 1200 the stage-relative anchoring put the
+   card's bottom edge a few pixels past the pane. Measured, then moved. */
+@media (max-height: 1280px) {
+  .act__caption {
+    top: auto;
+    bottom: clamp(84px, 11vh, 132px);
+  }
+}
+
+.theater__rail {
+  /* was 95vh */
+  top: auto;
+  bottom: clamp(20px, 3.5vh, 44px);
+}
+
+/* Short windows keep a tighter stage. This override used to drop the third
+   bound, the one that reserves room for the heading, which is why the eyebrow
+   still slid under the sticky header at 1280x720 and 1366x768 after the first
+   fix. It now carries the same three-way min, and the title rule is left to the
+   main one above so there is a single definition of where the heading sits. */
+@media (max-height: 860px) {
+  .theater__sticky {
+    --stage-h: min(
+        56vh,
+        calc((100vw - 80px) * 620 / 1180),
+        calc(100vh - var(--title-top) - 104px - 190px)
+    );
+  }
+}
+
+
+/* The short-answer card. Nenad, 2026-09-06: it looked stranded on NaviFin.
+
+   Cause: navibeat.app wraps the same paragraph in a real section with an eyebrow
+   and an H2, while navifin.app had a bare <aside class="tldr"> with an inline
+   margin:0 auto and a 78ch cap, so it floated centred in a 1260px column while
+   every other block on the page sat left. The markup now matches NaviBeat, and
+   the card stops centring itself. The paragraph text is untouched: it is the
+   direct answer an engine lifts whole, which is the whole point of it. */
+.tldr {
+  margin-inline: 0;
+  max-width: 74ch;
+}
+#the-claim { padding-block: 8px 0; }
+#the-claim .sec-head { margin-bottom: 22px; }
+
+/* The theater begins with a 100vh sticky pane, so the band between this card and
+   the first act read as dead space. Pulling the section up closes most of it. */
+.theater { margin-top: 0; }
+
+
+
+
+/* .theater carried 72px of top padding above the pinned pane, which reads as
+   part of the same gap under the proof bar. The pane fills the viewport on its
+   own, so the padding buys nothing. */
+.theater { padding-top: 0; }
+
+
+
+/* ---------------------------------------------------------------------------
+   3. THE WORDMARK, BUILT FROM SEPARATELY COLOURABLE PARTS.
+   This is what makes the repaint mean anything. A single flat logo cannot be
+   repainted per product. Both sites already split the wordmark into two spans
+   (.brand-navi and .brand-beat on NaviBeat, .brand-fin on NaviFin), so the
+   slots bind straight onto the existing markup.
+   --------------------------------------------------------------------------- */
+.nav__brand-text, .brand-navi { color: var(--mark-a); }
+.brand-beat, .brand-fin { color: var(--mark-b); }
+.nav__brand-text {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 88;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-transform: none;
+}
+
+/* ---------------------------------------------------------------------------
+   4. MEASURE AND RHYTHM.
+   The band bleeds, the text does not. Apple's section element runs full width
+   and the column inside it is capped at 980px. Both sites currently centre
+   every section at 1280px and nothing ever reaches the window edge.
+   --------------------------------------------------------------------------- */
+.wrap { max-width: var(--max-w); }
+.wrap--measure, .prose, .manifesto__copy, .maker__copy, .faq__list {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+.lede, .body-copy { letter-spacing: 0.011em; }
+
+/* ---------------------------------------------------------------------------
+   5. MOTION.
+   Opacity plus a 30px translate, staggered, gated on the OS setting with a
+   no-JS fallback that leaves content visible. Matches Apple's own component.
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-stagger, .word, .hero__h1 .word {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   THE REPAINT, navibeat. Five values. This is the entire declared difference
+   between this site and the other one. Generated by build-chassis.py from the
+   SITES table, so the two can never silently drift apart again.
+   --------------------------------------------------------------------------- */
+:root {
+  --ground:  #0A0907;
+  --raise:   #100E0B;
+  --mark-a:  #F47B20;
+  --mark-b:  #FB9C2A;
+  --emph:    #FB9C2A;
+  --accent:  #F47B20;
+}
+
+/* ===== END GENERATED DIRECTION-4 CHASSIS ===== */

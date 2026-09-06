@@ -35,7 +35,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20260831">
+  <link rel="stylesheet" href="styles.css?v=202609061100">
 
   <script type="application/ld+json">
 {
@@ -214,7 +214,11 @@
       font: 600 11px/1 var(--font-sans); letter-spacing: .05em; text-transform: uppercase;
       color: var(--text-2); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px;
     }
-    .rm-tag--kind { color: var(--rm-status); border-color: color-mix(in srgb, var(--rm-status) 42%, transparent); }
+    /* The kind tag took its text colour from --rm-status, which for a
+       considered item is a muted grey measuring 3.54:1 on the card at 11px,
+       under the 4.5:1 WCAG AA floor. The border keeps the status tint, the text
+       gets a readable grey: 5.36:1. Measured on the rendered card. */
+    .rm-tag--kind { color: #8C8C95; border-color: color-mix(in srgb, var(--rm-status) 42%, transparent); }
 
     .rm-item__actions { display: flex; gap: 14px; align-items: center; margin-top: 10px; }
     .rm-link {
@@ -364,7 +368,6 @@
             <option value="Linux">NaviBeat on Linux or Windows</option>
             <option value="Rockbox">NaviBeat for Rockbox players</option>
             <option value="Mixes">NaviBeat Mixes (the Navidrome plugin)</option>
-            <option value="NaviFin">NaviFin</option>
           </select>
           <select id="rm-s-kind" aria-label="Bug or request">
             <option value="CR">A feature I want</option>
@@ -904,6 +907,6 @@
 })();
 </script>
 
-<script src="nav-menu.js?v=20260831" defer></script>
+<script src="nav-menu.js?v=202609061100" defer></script>
 </body>
 </html>

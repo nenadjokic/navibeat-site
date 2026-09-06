@@ -40,7 +40,8 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=20260831">
+  <link rel="stylesheet" href="styles.css?v=202609061100">
+  <link rel="stylesheet" href="artifact.css?v=202609061100">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp?v=20260830 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp?v=20260830 2000w"
         imagesizes="(max-width: 960px) 84vw, (max-width: 1280px) 58vw, 742px">
@@ -469,11 +470,8 @@
   </section>
 
   <!-- EQ waveform divider: vinyl/audiophile signature -->
-  <div class="wrap wave-div" aria-hidden="true">
-    <div class="eq" style="height:60px;">
-      <span style="height:16px"></span><span style="height:38px" class="hot"></span><span style="height:24px;animation-delay:.2s"></span><span style="height:52px;animation-delay:.05s"></span><span style="height:20px;animation-delay:.3s"></span><span style="height:60px" class="hot"></span><span style="height:30px;animation-delay:.12s"></span><span style="height:44px;animation-delay:.26s"></span><span style="height:18px;animation-delay:.4s"></span><span style="height:56px" class="hot"></span><span style="height:32px;animation-delay:.18s"></span><span style="height:46px;animation-delay:.33s"></span><span style="height:22px;animation-delay:.08s"></span><span style="height:58px;animation-delay:.22s"></span><span style="height:28px" class="hot"></span><span style="height:40px;animation-delay:.36s"></span><span style="height:18px;animation-delay:.14s"></span><span style="height:50px;animation-delay:.28s"></span><span style="height:30px;animation-delay:.42s"></span><span style="height:48px" class="hot"></span><span style="height:24px;animation-delay:.1s"></span><span style="height:38px;animation-delay:.24s"></span><span style="height:16px;animation-delay:.38s"></span><span style="height:54px;animation-delay:.16s"></span>
-    </div>
-  </div>
+    <!-- The decorative waveform strip was removed on 2026-09-06 at Nenad's request. -->
+
 
   <!-- ===================================================== PROOF BAR: at-a-glance trust + credential -->
   <div class="proofbar" role="group" aria-label="At a glance">
@@ -494,12 +492,12 @@
 
       <!-- Act title overlay -->
       <div class="theater__title" id="theater-title" aria-hidden="true">
-        <span class="theater__title-eyebrow" id="theater-act-label">Act 01 · Apple TV</span>
+        <span class="theater__title-eyebrow" id="theater-act-label">Apple TV</span>
         <h2 class="theater__title-h" id="theater-act-title">The big screen, in <em>full focus.</em></h2>
       </div>
 
       <!-- Act 1: Apple TV -->
-      <div class="act act--tv is-active" data-act="0" data-label="Act 01 · Apple TV" data-title="The big screen, in &lt;em&gt;full focus.&lt;/em&gt;">
+      <div class="act act--tv is-active" data-act="0" data-label="Apple TV" data-title="The big screen, in &lt;em&gt;full focus.&lt;/em&gt;">
         <div class="act__stage">
           <figure class="dev-tv" aria-hidden="true">
             <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp?v=20260830"
@@ -516,7 +514,7 @@
       </div>
 
       <!-- Act 2: Mac, main + mini player floater -->
-      <div class="act act--mac" data-act="1" data-label="Act 02 · Mac" data-title="Native SwiftUI. &lt;em&gt;No Electron.&lt;/em&gt;">
+      <div class="act act--mac" data-act="1" data-label="Mac" data-title="Native SwiftUI. &lt;em&gt;No Electron.&lt;/em&gt;">
         <div class="act__stage">
           <div class="act-mac__group">
             <figure class="dev-mac" aria-hidden="true">
@@ -541,7 +539,7 @@
       </div>
 
       <!-- Act 3: iPad, large with macro lyric zoom -->
-      <div class="act act--ipad" data-act="2" data-label="Act 03 · iPad" data-title="Time-synced lyrics, &lt;em&gt;up close.&lt;/em&gt;">
+      <div class="act act--ipad" data-act="2" data-label="iPad" data-title="Time-synced lyrics, &lt;em&gt;up close.&lt;/em&gt;">
         <div class="act__stage">
           <div class="act-ipad__group">
             <figure class="dev-ipad" aria-hidden="true">
@@ -566,7 +564,7 @@
       </div>
 
       <!-- Act 4: iPhone, three phones in arc + watch -->
-      <div class="act act--iphone" data-act="3" data-label="Act 04 · iPhone &amp; Watch" data-title="In your &lt;em&gt;pocket&lt;/em&gt;, and on your &lt;em&gt;wrist.&lt;/em&gt;">
+      <div class="act act--iphone" data-act="3" data-label="iPhone &amp; Watch" data-title="In your &lt;em&gt;pocket&lt;/em&gt;, and on your &lt;em&gt;wrist.&lt;/em&gt;">
         <div class="act__stage">
           <div class="act-iphone__group">
             <figure class="dev-iphone dev-iphone--lyrics" aria-hidden="true">
@@ -602,7 +600,7 @@
       </div>
 
       <!-- Act 5: Family shot + receipt -->
-      <div class="act act--family" data-act="4" data-label="Act 05 · One purchase" data-title="One purchase. &lt;em&gt;Every device.&lt;/em&gt; Forever.">
+      <div class="act act--family" data-act="4" data-label="One purchase" data-title="One purchase. &lt;em&gt;Every device.&lt;/em&gt; Forever.">
         <div class="act__stage">
           <div class="family" aria-label="All five NaviBeat devices together">
             <figure class="family__device family__tv" aria-hidden="true">
@@ -1224,6 +1222,37 @@
   </section>
 
   <!-- ======================================================= MANIFESTO / PRIVACY -->
+  <!-- THE ARTIFACT. Direction 4 gives each site one working instrument rather
+       than a picture of one. This maps to a shipped feature: the 10-band EQ on
+       the new audio engine. Real range inputs, so the keyboard works. -->
+  <section class="eq-section" id="sound" aria-labelledby="eq-title">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--accent">Sound</p>
+      <h2 class="h2" id="eq-title">A 10-band EQ on the new audio engine.</h2>
+      <p class="lede">Not a picture of an equaliser. Drag the sliders.</p>
+
+      <div class="eq-band" style="margin-top:32px">
+        <div class="eq-band__head">
+          <span>equaliser &middot; 10 band</span>
+          <span class="eq-band__preset" id="eqPreset">flat</span>
+        </div>
+        <div class="eq-band__stage">
+          <svg class="eq-band__curve" id="eqCurve" viewBox="0 0 1000 168" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path id="eqPath" fill="none" stroke="var(--emph)" stroke-opacity="0.55" stroke-width="2"></path>
+            <path id="eqFill" fill="var(--emph)" fill-opacity="0.07"></path>
+          </svg>
+          <div class="eq-band__bands" id="eqBands"></div>
+        </div>
+        <div class="eq-band__read">
+          <span>gain <b id="eqGain">+0.0 dB</b> peak</span>
+          <span>preamp <b id="eqPre">0.0 dB</b></span>
+          <span>sample rate <b>44.1 kHz</b></span>
+        </div>
+      </div>
+      <p class="eq-hint">Keyboard works too: tab to a band, then use the arrow keys.</p>
+    </div>
+  </section>
+
   <section class="manifesto" aria-labelledby="manifesto-title">
     <div class="wrap manifesto__inner">
       <div class="reveal-stagger">
@@ -1817,6 +1846,7 @@
   })();
 </script>
 
-<script src="nav-menu.js?v=20260831" defer></script>
+<script src="nav-menu.js?v=202609061100" defer></script>
+  <script src="artifact.js?v=202609061100" defer></script>
 </body>
 </html>
