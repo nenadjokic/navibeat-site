@@ -585,6 +585,13 @@
       ? '<form class="rm-form" data-comment-for="' + i.id + '">' +
           '<textarea maxlength="2000" required aria-label="Your comment" ' +
             'placeholder="I have this too, and here is what it looks like for me..."></textarea>' +
+          /* The same site key as the static widget in "Ask for something"
+             below. It appears twice in this page on purpose: that form is
+             rendered by api.js from its markup, this one is built here and
+             rendered by hand, and neither should depend on the other still
+             existing. Rotating the key means changing both, and
+             `grep -c cf-turnstile roadmap.html` is how you find them. */
+          '<div class="cf-turnstile" data-sitekey="0x4AAAAAAEppyhYeqCHI0-DK"></div>' +
           '<div class="rm-form__row">' +
             '<input type="text" maxlength="60" placeholder="Your name (optional)" aria-label="Your name">' +
             '<button class="btn btn--ghost btn--compact" type="submit">Send</button>' +
@@ -618,9 +625,70 @@
       '</article>';
   }
 
+  /* TURNSTILE ON THE COMMENT FORMS.
+     api.js renders `.cf-turnstile` by itself, but only for what it finds when
+     it loads. A comment form is built by render() long after that, so these are
+     rendered by hand.
+
+     BOTH CALLS TAKE THE CONTAINER, and the bare no-argument form is the bug
+     they avoid. Read api.js: with no argument it resolves through `Fe()`, which
+     walks the widget map and returns the HIGHEST index, meaning the most
+     recently rendered widget. The moment a comment form mounts one, a bare
+     reset() in the suggest handler below would reset that instead of its own,
+     leaving the suggest form holding a spent token. */
+  function dropCaptchas() {
+    if (!window.turnstile) return;
+    board.querySelectorAll('.cf-turnstile').forEach(function (el) {
+      try { window.turnstile.remove(el); } catch (e) {}
+    });
+  }
+
+  function mountCaptchas(tries) {
+    if (!window.turnstile) {
+      // api.js is async defer, so on a slow line the board can render before it
+      // exists. Wait for it rather than leaving a form with no box and a Worker
+      // that will refuse what the form sends.
+      if ((tries || 0) < 20) setTimeout(function () { mountCaptchas((tries || 0) + 1); }, 250);
+      return;
+    }
+    board.querySelectorAll('.cf-turnstile').forEach(function (el) {
+      if (el.firstChild) return;
+      try {
+        window.turnstile.render(el, { sitekey: el.dataset.sitekey, theme: 'auto', size: 'flexible' });
+      } catch (e) {}
+    });
+  }
+
+  /* A vote used to repaint the whole board, and the whole board is one
+     innerHTML. That already threw away a half typed comment; with a challenge
+     standing in that same form it would throw away a solved one too, and the
+     person would have to do it again for pressing an arrow. So while a comment
+     form is open, a vote repaints its own button and nothing else. Nothing else
+     on the board depends on a vote: the groups are not re-sorted here, the
+     order is the one the server sent. */
+  function commentFormOpen() {
+    for (var k in state.open) { if (state.open[k]) return true; }
+    return false;
+  }
+
+  function repaintVote(id) {
+    var item = state.items.filter(function (i) { return i.id === id; })[0];
+    var btn = board.querySelector('[data-vote="' + id + '"]');
+    if (!item || !btn) return;
+    var voted = !!state.voted[id];
+    btn.disabled = false;
+    btn.setAttribute('aria-pressed', voted ? 'true' : 'false');
+    btn.setAttribute('aria-label', (voted ? 'Remove your vote from' : 'Vote for') + ' ' + item.title);
+    btn.querySelector('.rm-vote__n').textContent = item.votes || 0;
+    btn.querySelector('.rm-vote__label').textContent = voted ? 'Voted' : 'Vote';
+  }
+
   function render() {
     var rows = visible();
     board.setAttribute('aria-busy', 'false');
+    // Every path below replaces the board wholesale, which detaches any widget
+    // standing in it.
+    dropCaptchas();
 
     if (!state.items.length) {
       board.innerHTML =
@@ -657,6 +725,8 @@
           '<div class="rm-list">' + mine.map(itemHtml).join('') + '</div>' +
         '</section>';
     }).join('');
+
+    mountCaptchas();
   }
 
   /* The app filter is built from what is actually on the board, so a line with
@@ -709,7 +779,7 @@
         // is the truth, and a red banner over a roadmap is out of proportion.
       }).then(function () {
         delete state.busy[id];
-        render();
+        if (commentFormOpen()) repaintVote(id); else render();
       });
       return;
     }
@@ -733,15 +803,33 @@
     var author = form.querySelector('input[type="text"]').value;
     var out = form.querySelector('.rm-say');
     var button = form.querySelector('button[type="submit"]');
+
+    // Read the token out of the hidden input Turnstile puts inside the widget,
+    // not from getResponse, so a page whose api.js is blocked still submits:
+    // the field is then absent, the token is empty, and the Worker decides. It
+    // is the Worker that enforces this, never the page.
+    var box = form.querySelector('.cf-turnstile');
+    var tokenField = form.querySelector('[name="cf-turnstile-response"]');
+    var token = tokenField ? tokenField.value : '';
+    if (tokenField && !token) {
+      say(out, 'Tick the box first, then send it.', false);
+      return;
+    }
     button.disabled = true;
 
-    post('/api/roadmap/comment', { item_id: id, body: text, author: author }).then(function () {
+    post('/api/roadmap/comment', {
+      item_id: id, body: text, author: author, turnstileToken: token
+    }).then(function () {
       say(out, 'Got it. It will appear here once I have read it.', true);
       form.querySelector('textarea').value = '';
     }).catch(function (err) {
       say(out, err.message, false);
     }).then(function () {
       button.disabled = false;
+      // A token verifies once. Without this the second comment in a sitting
+      // carries a spent one and the Worker refuses it, which reads as the form
+      // breaking.
+      if (window.turnstile && box) { try { window.turnstile.reset(box); } catch (e) {} }
     });
   });
 
@@ -757,6 +845,7 @@
     // submits when the script is blocked or has not loaded: the field is then
     // absent, the token is empty, and the Worker decides. It is the Worker that
     // enforces this, never the page.
+    var box = this.querySelector('.cf-turnstile');
     var tokenField = this.querySelector('[name="cf-turnstile-response"]');
     var token = tokenField ? tokenField.value : '';
     if (tokenField && !token) {
@@ -783,7 +872,12 @@
       // A Turnstile token is good for ONE verification. Without this reset the
       // second suggestion in a sitting carries a spent token and the Worker
       // refuses it, which reads to the sender as the form breaking.
-      if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} }
+      //
+      // THIS FORM'S OWN WIDGET, by container. It used to be a bare reset(),
+      // which was right while the page had one widget and wrong from the moment
+      // a comment form could mount a second: with no argument api.js resets the
+      // most recently rendered one.
+      if (window.turnstile && box) { try { window.turnstile.reset(box); } catch (e) {} }
     });
   });
 

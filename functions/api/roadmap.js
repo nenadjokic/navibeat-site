@@ -170,15 +170,22 @@ async function vote(request, env) {
 
 /* ------------------------------------------------------------ turnstile ---- */
 
-// Cloudflare Turnstile, on the "Ask for something" form only. Added 2026-09-06
-// after #501973: a submission titled "Become Gay" with the body "Being lesbian"
-// came through the public form, was filed automatically as a BUG on the Apple
-// board, and had to be read and closed by hand.
+// Cloudflare Turnstile, on BOTH forms the page offers a visitor: "Ask for
+// something" and the "I have this too" comment box. Added 2026-09-06 after
+// #501973: a submission titled "Become Gay" with the body "Being lesbian" came
+// through the public form, was filed automatically as a BUG on the Apple board,
+// and had to be read and closed by hand. A second one arrived sixteen minutes
+// later on the Android board.
 //
-// The form was never wide open. It already rate limits per voter hash per day,
-// refuses the same title twice inside 24 hours, and holds minimum lengths. None
-// of that can tell a well-formed nonsense submission from a real one, which is
-// the gap this closes.
+// THE COMMENT BOX IS GUARDED TOO, and it went in the same day as the first form
+// rather than later. A comment reaches Zammad by the same road a submission
+// does: the NAS collects it on the next sync and it becomes an article a person
+// has to read. Guarding one of two ways in guards neither.
+//
+// Neither form was ever wide open. Both rate limit per voter hash per day, the
+// submit route refuses the same title twice inside 24 hours, and both hold
+// minimum lengths. None of that can tell well-formed nonsense from a real
+// report, which is the gap this closes.
 //
 // Turnstile rather than reCAPTCHA, and the reason is on the site itself: the
 // privacy page and llms.txt both say NaviBeat carries no third-party tracking.
@@ -200,7 +207,7 @@ const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/sit
 async function passesTurnstile(request, env, token) {
   const secret = env.TURNSTILE_SECRET;
   if (!secret) {
-    console.warn('[roadmap] TURNSTILE_SECRET is not set: submissions are UNGUARDED');
+    console.warn('[roadmap] TURNSTILE_SECRET is not set: the public forms are UNGUARDED');
     return true;
   }
   if (typeof token !== 'string' || !token) return false;
@@ -299,6 +306,12 @@ async function comment(request, env) {
 
   const text = clean(body.body, MAX_BODY);
   if (text.length < 3) return json({ error: 'Say a little more than that.' }, 400);
+
+  // Same check and the same sentence as the submit route, in the same place:
+  // after the cheap validation, before the first D1 read.
+  if (!(await passesTurnstile(request, env, body.turnstileToken))) {
+    return json({ error: 'That did not verify. Tick the box and send it again.' }, 400);
+  }
 
   const db = env.ROADMAP_DB;
   const voter = await voterHash(request, env);
