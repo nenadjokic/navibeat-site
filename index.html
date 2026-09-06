@@ -40,7 +40,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=202609061100">
+  <link rel="stylesheet" href="styles.css?v=202609061235">
   <link rel="stylesheet" href="artifact.css?v=202609061100">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp?v=20260830 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp?v=20260830 2000w"
@@ -1725,6 +1725,44 @@
       document.querySelectorAll('.reveal, .reveal-stagger, .features, .plat-grid').forEach(function (el) {
         sio.observe(el);
       });
+
+      /* THE OBSERVER NEEDS A FALLBACK. A fast scroll outruns it: a scrollbar drag or
+         a thumb flick moves thousands of pixels between two intersection samples, and
+         an element that is below the viewport in one sample and above it in the next
+         never crosses the threshold, so its callback never fires and it stays at
+         opacity 0 for the rest of the page's life. Measured 2026-09-06 on the shipped
+         homepage at 1280x900: a four-step drag to the bottom stranded 7 of 17 blocks
+         and 53 of 53 cards, the price block and the App Store reviews among them.
+
+         The sweep only takes an element whose top edge has already gone above the
+         viewport, which is strictly later than the observer's own condition, so it
+         cannot fire an entrance early and normal scrolling looks exactly as before.
+         It is rAF-throttled and it removes its own listener once every block is in,
+         so it costs nothing for the rest of the session. */
+      var revPending = [].slice.call(document.querySelectorAll('.reveal, .reveal-stagger, .features, .plat-grid'));
+      var revQueued = false;
+      var revSweep = function () {
+        revQueued = false;
+        /* Read every rect before writing a single class. Adding one mid-loop dirties
+           style, and the next getBoundingClientRect would then force a fresh layout,
+           once per element still in the list. */
+        var revLate = [], revRest = [], revI, revEl;
+        for (revI = 0; revI < revPending.length; revI++) {
+          revEl = revPending[revI];
+          (revEl.classList.contains('is-in') || revEl.getBoundingClientRect().top < 0
+            ? revLate : revRest).push(revEl);
+        }
+        for (revI = 0; revI < revLate.length; revI++) {
+          revLate[revI].classList.add('is-in');
+          sio.unobserve(revLate[revI]);
+        }
+        revPending = revRest;
+        if (!revPending.length) { window.removeEventListener('scroll', revOnScroll); }
+      };
+      var revOnScroll = function () {
+        if (!revQueued) { revQueued = true; requestAnimationFrame(revSweep); }
+      };
+      window.addEventListener('scroll', revOnScroll, { passive: true });
     } else {
       document.querySelectorAll('.reveal, .reveal-stagger, .features, .plat-grid').forEach(function (el) {
         el.classList.add('is-in');

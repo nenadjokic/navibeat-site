@@ -3946,10 +3946,59 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
    no-JS fallback that leaves content visible. Matches Apple's own component.
    --------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal-stagger, .word, .hero__h1 .word {
+  /* The three grid families were missing here. They are hidden by their own
+     rules (.features > .f-card, .plat-grid > *, .explore-grid > *) which the
+     old selector list did not name, so a reduced-motion visitor still got the
+     fade on them. */
+  .reveal, .reveal-stagger, .reveal-stagger > *,
+  .features > .f-card, .plat-grid > *, .explore-grid > *,
+  .word, .hero__h1 .word {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   PHONES DO NOT GET THE REVEAL. This is a correctness fix, not a perf one.
+
+   Measured 2026-09-06 from Nenad's own screen recording of navibeat.app at
+   390x844: four separate stretches of pure black content, twelve of the
+   twenty-six seconds. Still black with brightness pushed +22% and contrast
+   1.9x, so nothing was mid-transition. The layout is not empty there either;
+   its largest real void is 279px. The content is present, at opacity 0.
+
+   Cause, read in index.html:1717-1726. One IntersectionObserver per page,
+   threshold 0.08, unobserve on first hit, no fallback. It samples on the main
+   thread. On a 37,856px document a flick moves thousands of pixels between two
+   samples, and an element that is below the viewport in one sample and above it
+   in the next never crosses the threshold, so its callback never fires and it
+   stays invisible for the rest of the page's life. Six of seventeen targets
+   were still at computed opacity 0 after a scripted fast scroll to 18,200px:
+   #works-with, #the-claim (1,850px, 2.2 screens of copy), the network trace,
+   #maker and the whole #buy price block. That last one is the frame where the
+   App Store button hangs alone in the dark, because the button sits outside the
+   reveal wrapper and so was the only thing still painted.
+
+   A half-second entrance does not buy enough to risk silently losing two
+   screens of copy. Above 720px the animation is untouched.
+
+   If you ever want it back on phones, the observer needs a fallback sweep, not
+   a different threshold: no threshold survives two samples that straddle the
+   element completely.
+   --------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  /* .word is deliberately NOT in this list, though it is in the reduced-motion
+     one above. The hero's word-by-word entrance is a plain CSS animation
+     (wordIn, 0.6s, forwards) that runs on load and finishes on its own; no
+     observer is involved, so it was never part of this defect. Naming it here
+     would silently kill the hero animation on every phone, which is a design
+     change wearing a bug fix's clothes. */
+  .reveal, .reveal-stagger, .reveal-stagger > *,
+  .features > .f-card, .plat-grid > *, .explore-grid > * {
+    opacity: 1 !important;
+    transform: none !important;
     transition: none !important;
   }
 }
