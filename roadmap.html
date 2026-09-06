@@ -528,8 +528,22 @@
   ];
   var SECTION_LABEL = {
     Apple: 'Apple', Android: 'Android', Linux: 'Linux', Rockbox: 'Rockbox',
-    Mixes: 'Mixes', NaviFin: 'NaviFin'
+    Mixes: 'Mixes'
   };
+
+  // THIS BOARD IS ONE PRODUCT'S. The database is shared with navifin.app, so the
+  // page has to select its own rows. Everything whose section starts with
+  // NaviFin belongs to the other board and is dropped here; NaviFin's page keeps
+  // the mirror image of this test.
+  //
+  // WHY THIS IS NOT DEAD CODE. Until 2026-09-06 no NaviFin ticket was ever
+  // marked public, so every row in the shared D1 was a NaviBeat row and this
+  // page could render all of them without noticing. The moment the first NaviFin
+  // item is published, an unfiltered board shows it here under a NaviFin chip.
+  // The filter goes in before the data, not after somebody sees it.
+  function isOurs(i) {
+    return !(typeof i.section === 'string' && i.section.indexOf('NaviFin') === 0);
+  }
 
   var board = document.getElementById('rm-board');
   var state = { items: [], voted: {}, section: '', kind: '', open: {}, busy: {} };
@@ -566,6 +580,7 @@
 
   function visible() {
     return state.items.filter(function (i) {
+      if (!isOurs(i)) return false;
       if (state.section && i.section !== state.section) return false;
       if (state.kind && i.kind !== state.kind) return false;
       return true;
@@ -738,6 +753,7 @@
     var host = document.getElementById('rm-filter-section');
     var present = [];
     state.items.forEach(function (i) {
+      if (!isOurs(i)) return;
       if (i.section && SECTION_LABEL[i.section] && present.indexOf(i.section) === -1) present.push(i.section);
     });
     host.querySelectorAll('[data-value]:not([data-value=""])').forEach(function (b) { b.remove(); });
