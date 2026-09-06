@@ -19,7 +19,12 @@
     <img class="lightbox__img" alt="" />
     <div class="lightbox__caption" aria-live="polite"></div>
   `;
-  document.body.appendChild(overlay);
+  // The overlay is built up front but does not enter the DOM until it is first
+  // used. Parking an empty <img> in every page costs a node for nothing, and
+  // to any automated checker it reads as an image with no alt text, which it
+  // is only ever while no screenshot is being viewed. parentNode rather than
+  // isConnected, to stay inside what the old Safari this file already guards
+  // against can parse.
 
   const lbImg = overlay.querySelector('.lightbox__img');
   const lbCap = overlay.querySelector('.lightbox__caption');
@@ -27,6 +32,7 @@
   let lastFocused = null;
 
   function open(img) {
+    if (!overlay.parentNode) document.body.appendChild(overlay);
     lastFocused = document.activeElement;
     lbImg.src = img.src;
     lbImg.alt = img.alt || '';

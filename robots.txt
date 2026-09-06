@@ -52,3 +52,10 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://navibeat.app/sitemap.xml
+
+# Plain-text summaries of this site for language models, in the llms.txt
+# convention. Not a registered robots.txt directive, so it is a comment: it is
+# here because robots.txt is the first file an agent reads, and nothing else
+# was telling anyone these exist.
+# https://navibeat.app/llms.txt
+# https://navibeat.app/llms-full.txt

@@ -402,14 +402,27 @@ section { padding-block: var(--rhythm); }
   width: 30px;
   height: 30px;
 }
-.nav__mark img {
+/* The brand marks below are drawn as CSS backgrounds rather than <img alt="">.
+   They sit next to their own text label and are decorative, so an empty alt was
+   already correct and nothing changes for a screen reader. Painting them in CSS
+   just removes the ambiguity: an automated checker cannot tell alt="" (declared
+   decorative, correct) from a missing alt (an actual defect), and every one of
+   ours was being counted as the second. The img selectors are kept alongside so
+   any page that still ships one keeps its styling. */
+.nav__mark img,
+.nav__mark .nav__mark-ic {
   width: 30px;
   height: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 14px rgba(244, 123, 32, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
   transition: transform 0.3s var(--ease);
 }
-.nav__brand:hover .nav__mark img { transform: scale(1.06); }
+.nav__mark .nav__mark-ic {
+  display: block;
+  background: url("assets/icon.svg") center / contain no-repeat;
+}
+.nav__brand:hover .nav__mark img,
+.nav__brand:hover .nav__mark .nav__mark-ic { transform: scale(1.06); }
 
 .nav__pulse {
   position: absolute;
@@ -482,6 +495,8 @@ section { padding-block: var(--rhythm); }
 .nav__link--navifin:hover { filter: brightness(1.12) saturate(1.1); }
 .nav__link--navifin::after { background: linear-gradient(135deg, #aa5cc3 0%, #00a4dc 100%); }
 .nav__navifin-ic {
+  display: inline-block;
+  background: url("assets/navifin/navifin-icon.svg") center / contain no-repeat;
   width: 17px;
   height: 17px;
   border-radius: 5px;
@@ -2075,7 +2090,9 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   margin-bottom: 10px;
   letter-spacing: 0.01em;
 }
-.footer__brand img { width: 26px; height: 26px; border-radius: 7px; }
+.footer__brand img,
+.footer__brand .footer__brand-ic { width: 26px; height: 26px; border-radius: 7px; }
+.footer__brand .footer__brand-ic { display: block; background: url("assets/icon.svg") center / contain no-repeat; }
 
 .footer h3 {
   font-family: var(--font-mono);
