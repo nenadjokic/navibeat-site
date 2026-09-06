@@ -214,7 +214,11 @@
       font: 600 11px/1 var(--font-sans); letter-spacing: .05em; text-transform: uppercase;
       color: var(--text-2); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px;
     }
-    .rm-tag--kind { color: var(--rm-status); border-color: color-mix(in srgb, var(--rm-status) 42%, transparent); }
+    /* The kind tag took its text colour from --rm-status, which for a
+       considered item is a muted grey measuring 3.54:1 on the card at 11px,
+       under the 4.5:1 WCAG AA floor. The border keeps the status tint, the text
+       gets a readable grey: 5.36:1. Measured on the rendered card. */
+    .rm-tag--kind { color: #8C8C95; border-color: color-mix(in srgb, var(--rm-status) 42%, transparent); }
 
     .rm-item__actions { display: flex; gap: 14px; align-items: center; margin-top: 10px; }
     .rm-link {
