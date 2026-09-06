@@ -5,7 +5,7 @@
 
   <url>
     <loc>https://navibeat.app/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/" />
@@ -34,7 +34,7 @@
 
   <url>
     <loc>https://navibeat.app/appletv</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/appletv" />
@@ -78,7 +78,7 @@
 
   <url>
     <loc>https://navibeat.app/linux</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/linux" />
@@ -89,7 +89,7 @@
   </url>
   <url>
     <loc>https://navibeat.app/macos</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/macos" />
@@ -122,7 +122,7 @@
       <image:title>NaviBeat Mac: directory browser</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-lyrics-panel.png</image:loc>
+      <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-lyrics-panel.webp</image:loc>
       <image:title>NaviBeat Mac: time-synced lyrics panel</image:title>
     </image:image>
     <image:image>
@@ -137,7 +137,7 @@
 
   <url>
     <loc>https://navibeat.app/iphone</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/iphone" />
@@ -157,7 +157,7 @@
 
   <url>
     <loc>https://navibeat.app/ipad</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/ipad" />
@@ -173,7 +173,7 @@
 
   <url>
     <loc>https://navibeat.app/carplay</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/carplay" />
@@ -185,7 +185,7 @@
 
   <url>
     <loc>https://navibeat.app/applewatch</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/applewatch" />
@@ -197,7 +197,7 @@
 
   <url>
     <loc>https://navibeat.app/lastfm</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/lastfm" />
@@ -205,7 +205,7 @@
 
   <url>
     <loc>https://navibeat.app/listenbrainz</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/listenbrainz" />
@@ -213,23 +213,23 @@
 
   <url>
     <loc>https://navibeat.app/rockbox</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/rockbox" />
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/rockbox/ipod-navibeat-hero.png</image:loc>
+      <image:loc>https://navibeat.app/assets/screenshots/rockbox/ipod-navibeat-hero.webp</image:loc>
       <image:title>The NaviBeat theme running on a Rockbox iPod Classic</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/rockbox/app-sync-full-library.png</image:loc>
+      <image:loc>https://navibeat.app/assets/screenshots/rockbox/app-sync-full-library.webp</image:loc>
       <image:title>NaviSyncRock sending a whole Navidrome library to a Rockbox iPod, step by step</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://navibeat.app/features</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/features" />
@@ -238,23 +238,23 @@
       <image:title>NaviBeat feature overview on Mac: sidebar, featured album and shelves</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-jump-buttons.jpg</image:loc>
+      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-jump-buttons.webp</image:loc>
       <image:title>NaviBeat jump buttons on iPhone, either side of Play, with Next and Previous still in place</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-accent-colour.jpg</image:loc>
+      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-accent-colour.webp</image:loc>
       <image:title>NaviBeat accent colour settings on iPhone: presets, colour picker and hex field</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-handoff-card.jpg</image:loc>
+      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-handoff-card.webp</image:loc>
       <image:title>NaviBeat Continue card on iPhone, offering to pick up what another device is playing</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-offline.jpg</image:loc>
+      <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-offline.webp</image:loc>
       <image:title>NaviBeat offline browsing on iPhone with non-downloaded tracks greyed out</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-lyrics-panel.png</image:loc>
+      <image:loc>https://navibeat.app/assets/screenshots/macos/navibeat-mac-lyrics-panel.webp</image:loc>
       <image:title>NaviBeat time-synced lyrics panel on Mac</image:title>
     </image:image>
     <image:image>
@@ -264,7 +264,7 @@
   </url>
   <url>
     <loc>https://navibeat.app/multi-library</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/multi-library" />
@@ -273,7 +273,7 @@
 
   <url>
     <loc>https://navibeat.app/support</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/support" />
@@ -281,7 +281,7 @@
 
   <url>
     <loc>https://navibeat.app/privacy</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/privacy" />
@@ -289,7 +289,7 @@
 
   <url>
     <loc>https://navibeat.app/widgets</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/widgets" />
@@ -297,7 +297,7 @@
 
   <url>
     <loc>https://navibeat.app/beta</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/beta" />
@@ -305,14 +305,14 @@
 
   <url>
     <loc>https://navibeat.app/roadmap</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://navibeat.app/compare</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/compare" />
