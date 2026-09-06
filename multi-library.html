@@ -38,7 +38,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=202609061415">
+  <link rel="stylesheet" href="styles.css?v=202609061417">
 
   <script type="application/ld+json">
   {
@@ -420,37 +420,37 @@
       <h2>FAQ</h2>
 
       <details class="ml-faq__item">
-        <summary>Does this work on Subsonic, Airsonic, Gonic, or only Navidrome?</summary>
+        <summary><h3 class="faq__h">Does this work on Subsonic, Airsonic, Gonic, or only Navidrome?</h3></summary>
         <p>Any OpenSubsonic-compatible server that implements <code>getMusicFolders</code> with permission scoping and accepts a repeated <code>musicFolderId</code> on browse calls works the same way. Navidrome 0.58 or later is what the per-library filtering needs, because that is the version that reads a repeated musicFolderId and does the filtering itself; Airsonic-Advanced and Gonic also work. Servers that only ever return a single folder degrade cleanly: NaviBeat hides the picker and runs as a single-library client.</p>
       </details>
 
       <details class="ml-faq__item">
-        <summary>Why is the selection per-device and not synced via iCloud?</summary>
+        <summary><h3 class="faq__h">Why is the selection per-device and not synced via iCloud?</h3></summary>
         <p>Two reasons. First, a typical use case is "phone shows my private library, Apple TV shows the shared family library", and forcing iCloud sync would defeat that. Second, NaviBeat stores nothing in iCloud or any backend, and there is no NaviBeat server for a selection to sync through. Per-device selection respects that boundary.</p>
       </details>
 
       <details class="ml-faq__item">
-        <summary>Can I scrobble only from one library and ignore another?</summary>
+        <summary><h3 class="faq__h">Can I scrobble only from one library and ignore another?</h3></summary>
         <p>Scrobbling is per-track, not per-library, today. If you want to skip scrobbling for a specific library (a podcast archive, an audiobook folder), the cleanest split is to scope that library to a Navidrome user who has Last.fm and/or ListenBrainz sync disabled at the server level. We are watching whether per-library scrobble settings show up as a real feature request before adding the surface.</p>
       </details>
 
       <details class="ml-faq__item">
-        <summary>Does playback get cut when I deselect a library mid-song?</summary>
+        <summary><h3 class="faq__h">Does playback get cut when I deselect a library mid-song?</h3></summary>
         <p>No. The Now Playing queue is its own scope. A track already playing keeps playing, AutoMix continues, and Up Next stays intact. The selection only affects browse and search going forward. This is the same behavior the Navidrome web UI ships.</p>
       </details>
 
       <details class="ml-faq__item">
-        <summary>Does the Last.fm or ListenBrainz integration respect the library selection?</summary>
+        <summary><h3 class="faq__h">Does the Last.fm or ListenBrainz integration respect the library selection?</h3></summary>
         <p>Listener counts and similar-tracks lookups are driven by individual track metadata, so they always work regardless of library scope. The <a href="lastfm">Last.fm and ListenBrainz features</a> on shelves use whatever you have in front of you: pick All Libraries and the shelf samples from everything; pick one and the shelf draws from that subset.</p>
       </details>
 
       <details class="ml-faq__item">
-        <summary>What if a server admin adds a new library after I paired?</summary>
+        <summary><h3 class="faq__h">What if a server admin adds a new library after I paired?</h3></summary>
         <p>The picker re-fetches on every cold start. If a new library appears, it shows up in the picker on next launch and defaults to deselected so your existing scope does not silently widen. You opt in to the new library on your own.</p>
       </details>
 
       <details class="ml-faq__item">
-        <summary>Is this a paid add-on?</summary>
+        <summary><h3 class="faq__h">Is this a paid add-on?</h3></summary>
         <p>No. Multi-library is part of NaviBeat 1.0.2 at no extra cost. NaviBeat is a one-time $5.99 Universal Purchase that covers iPhone, iPad, Mac, Apple TV, and Apple Watch.</p>
       </details>
     </div>

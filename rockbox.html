@@ -37,7 +37,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=202609061415">
+  <link rel="stylesheet" href="styles.css?v=202609061417">
 
   <script type="application/ld+json">
   {
@@ -923,23 +923,23 @@
       <p class="eyebrow eyebrow--accent">FAQ</p>
       <h2>Syncing Navidrome to a Rockbox iPod</h2>
       <details class="rbx-faq__item">
-        <summary>Can you sync a Navidrome library to a Rockbox iPod?</summary>
+        <summary><h3 class="faq__h">Can you sync a Navidrome library to a Rockbox iPod?</h3></summary>
         <p>Yes. NaviSyncRock, a paid feature of the NaviBeat macOS app, sends music from your own Navidrome server onto a Rockbox iPod. It asks your server to transcode each track to an iPod-friendly format and to resize the album art to a baseline JPEG Rockbox can read, then lays the files out in <code>/Music/Artist/Album</code> folders with a <code>cover.jpg</code> per album and writes <code>.m3u8</code> playlists with correct on-device paths. It is a one-way send-to, not a two-way sync, and nothing leaves your own server.</p>
       </details>
       <details class="rbx-faq__item">
-        <summary>Is there a GUI app to put Navidrome music on a Rockbox iPod, without the terminal?</summary>
+        <summary><h3 class="faq__h">Is there a GUI app to put Navidrome music on a Rockbox iPod, without the terminal?</h3></summary>
         <p>Yes. Most ways to move a Navidrome or Subsonic library onto a Rockbox iPod are command-line scripts or small homelab projects. NaviSyncRock is a native Mac app feature: plug in the iPod, right-click a song, album, artist, or playlist, and choose Send to RockBox. No terminal, no scripts, no config files. It is part of NaviBeat on the Mac App Store.</p>
       </details>
       <details class="rbx-faq__item">
-        <summary>How much does NaviSyncRock cost?</summary>
+        <summary><h3 class="faq__h">How much does NaviSyncRock cost?</h3></summary>
         <p>NaviSyncRock is a one-time in-app unlock inside NaviBeat for Mac, $4.99, separate from the base NaviBeat app (a $5.99 Universal Purchase for all Apple devices). The unlock also installs two custom NaviBeat iPod themes. It is available now, shipped in NaviBeat 1.3.0 for Mac.</p>
       </details>
       <details class="rbx-faq__item">
-        <summary>Does NaviSyncRock upload my music to a third party?</summary>
+        <summary><h3 class="faq__h">Does NaviSyncRock upload my music to a third party?</h3></summary>
         <p>No. The music comes from your own Navidrome server, your own server does the transcoding and art resizing, and the files are written directly to your iPod over USB. Nothing is uploaded to any third-party service, and NaviBeat never scrobbles directly to Last.fm or ListenBrainz. Any metadata read-back in a later phase goes through your Navidrome only.</p>
       </details>
       <details class="rbx-faq__item">
-        <summary>Why does album art not show on a Rockbox iPod, and does NaviSyncRock fix it?</summary>
+        <summary><h3 class="faq__h">Why does album art not show on a Rockbox iPod, and does NaviSyncRock fix it?</h3></summary>
         <p>Old Rockbox hardware cannot read progressive or oversized JPEGs, which is why album art often does not show. NaviSyncRock re-encodes each cover to a baseline JPEG sized for the iPod screen and names it <code>cover.jpg</code> per album folder, which is the format Rockbox actually renders. It ships with NaviBeat themes tuned so the art displays correctly.</p>
       </details>
     </div>
@@ -1032,7 +1032,7 @@
   </div>
 </footer>
 
-<script defer src="lightbox.js?v=202609061415"></script>
+<script defer src="lightbox.js?v=202609061417"></script>
 <script>
   document.documentElement.classList.add('reveal-ready');
   (function () {
