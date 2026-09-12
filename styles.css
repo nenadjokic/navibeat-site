@@ -4075,6 +4075,9 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   .herodeck__slide, .herodeck__slide.is-current { transition: opacity .01s linear; transform: none; }
+  /* No auto-advance under reduced motion, so there is no time to count down.
+     The active dot just reads as full. */
+  .herodeck__dot.is-on::after { animation: none; transform: scaleX(1); }
 }
 
 .herodeck__nav {
@@ -4083,18 +4086,43 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
   gap: 10px;
   margin-top: clamp(18px, 2.6vh, 34px);
 }
+/* The dot is a track and the amber fill inside it is the clock. Nenad, after the
+   first version where the active dot was simply amber: "posto je staticno to
+   dugme ne vidi se i ne oseca se da ce se promeniti". So the fill grows left to
+   right across the slide's ten seconds, and you can see how much is left.
+
+   The animation's length is var(--deck-ms), which the deck's own script writes
+   from data-interval, so the bar and the timer cannot drift apart. Every dot
+   keeps the same width: the old rule grew the active one from 34 to 52px, which
+   shifted the row sideways on every change. */
 .herodeck__dot {
-  width: 34px;
-  height: 4px;
+  position: relative;
+  width: 52px;
+  height: 5px;
   padding: 0;
   border: none;
   border-radius: 999px;
+  overflow: hidden;
   background: var(--border-strong, rgba(255,255,255,.16));
   cursor: pointer;
-  transition: background .3s var(--ease), width .3s var(--ease);
+  transition: background .3s var(--ease);
 }
-.herodeck__dot:hover { background: rgba(244, 123, 32, .5); }
-.herodeck__dot.is-on { background: var(--accent); width: 52px; }
+.herodeck__dot:hover { background: rgba(244, 123, 32, .35); }
+.herodeck__dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.herodeck__dot.is-on::after {
+  animation: herodeckFill var(--deck-ms, 10000ms) linear forwards;
+}
+/* Hovering the dots holds the banner, so the bar holds with it. */
+.herodeck.is-held .herodeck__dot.is-on::after { animation-play-state: paused; }
+@keyframes herodeckFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .herodeck__dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 /* ---- A news banner: copy on the left, artwork on the right ---- */

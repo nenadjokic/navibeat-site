@@ -40,7 +40,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=202609120216">
+  <link rel="stylesheet" href="styles.css?v=202609120223">
   <link rel="stylesheet" href="artifact.css?v=202609061100">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp?v=20260830 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp?v=20260830 2000w"
@@ -385,7 +385,7 @@
       <span class="hero__rings"></span>
     </div>
 
-    <div class="herodeck" data-herodeck data-interval="9000">
+    <div class="herodeck" data-herodeck data-interval="10000">
      <div class="herodeck__track">
 
       <article class="herodeck__slide is-current" data-slide="0" aria-roledescription="slide" aria-label="1 of 3: NaviBeat on every Apple screen">
@@ -1857,12 +1857,15 @@
       if (!deck) return;
       var slides = Array.prototype.slice.call(deck.querySelectorAll('.herodeck__slide'));
       var dots = Array.prototype.slice.call(deck.querySelectorAll('.herodeck__dot'));
-      if (slides.length < 2) return;
+      var nav = deck.querySelector('.herodeck__nav');
+      if (slides.length < 2 || !nav) return;
       var at = 0;
       var timer = null;
       var held = false;
       var onScreen = true;
-      var every = parseInt(deck.getAttribute('data-interval'), 10) || 9000;
+      var every = parseInt(deck.getAttribute('data-interval'), 10) || 10000;
+      // One number drives both the timer and the length of the bar.
+      deck.style.setProperty('--deck-ms', every + 'ms');
 
       function show(n) {
         at = (n + slides.length) % slides.length;
@@ -1873,10 +1876,28 @@
         });
       }
       function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+      // The bar in the active dot is a CSS animation of the same length as the
+      // timer, so the two cannot drift. Re-applying the class is what restarts
+      // it; reading offsetWidth in between forces the reflow that makes the
+      // restart real rather than a no-op.
+      function armFill() {
+        var d = dots[at];
+        if (!d) return;
+        d.classList.remove('is-on');
+        void d.offsetWidth;
+        d.classList.add('is-on');
+      }
       function start() {
         stop();
         if (reduce || held || !onScreen || document.hidden) return;
+        armFill();
         timer = setInterval(function () { show(at + 1); }, every);
+      }
+      function hold(on) {
+        held = on;
+        deck.classList.toggle('is-held', on);
+        if (on) { stop(); } else { start(); }
       }
 
       dots.forEach(function (d) {
@@ -1885,11 +1906,17 @@
           start();
         });
       });
-      deck.addEventListener('mouseenter', function () { held = true; stop(); });
-      deck.addEventListener('mouseleave', function () { held = false; start(); });
-      deck.addEventListener('focusin', function () { held = true; stop(); });
+      // The pause-on-hover is on the DOTS, not on the deck. Measured on the live
+      // page 2026-09-12: with it on the deck, a cursor resting anywhere in the
+      // hero stopped the rotation for good, because the deck is the full width
+      // of the window and 518px tall. Parked cursor, five reads over 25 seconds,
+      // slide 0 every time; with the cursor away, 0 0 1 1 2. Nenad saw exactly
+      // that and reported the banner as dead.
+      nav.addEventListener('mouseenter', function () { hold(true); });
+      nav.addEventListener('mouseleave', function () { hold(false); });
+      deck.addEventListener('focusin', function () { hold(true); });
       deck.addEventListener('focusout', function () {
-        if (!deck.contains(document.activeElement)) { held = false; start(); }
+        if (!deck.contains(document.activeElement)) { hold(false); }
       });
       deck.addEventListener('keydown', function (e) {
         if (e.key === 'ArrowRight') { show(at + 1); start(); }
