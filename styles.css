@@ -3179,8 +3179,7 @@ a.proofbar__item:hover { color: var(--accent-hi); }
      the largest copy of it. They keep their pose and their blur, they just stop
      breathing at a width where a 12px drift over nine seconds was not something
      anyone was going to notice. */
-  .hero__ambient-glow,
-  .lineup__glow { animation: none; }
+  .hero__ambient-glow { animation: none; }
 
   /* Thirty seconds per turn on a 360px disc at 20% opacity, forever, purely so
      the compositor can never go idle behind the content. */
