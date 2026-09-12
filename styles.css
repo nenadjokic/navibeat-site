@@ -975,60 +975,35 @@ section { padding-block: var(--rhythm); }
 }
 @keyframes lineupFade { to { opacity: 1; } }
 
+/* The five stand on a shared floor with depth: each one overlaps the one behind
+   it, none is hidden. Nenad, 2026-09-12, on the flat row that briefly replaced
+   this: "lepse ih poslozi, da bude kao ranije, onako jedno pored drugog iza
+   drugog". The flat row came from his earlier D3 answer; seeing it, he asked for
+   the depth back, so the depth is back and the amber glow and the contact shadow
+   stay out, which was the other half of D3.
+
+   What each overlap covers was chosen, not left to chance: the Mac sits FURTHEST
+   BACK so the Apple TV in front of it keeps its Siri Remote, and the iPad, watch
+   and iPhone step forward over the Mac's right edge rather than over anything
+   that identifies a device. */
 .lineup__stage {
   position: relative;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  aspect-ratio: 1280 / 700;
-}
-@supports not (aspect-ratio: 1 / 1) {
-  .lineup__stage::before { content: ""; display: block; padding-top: 54.69%; }
-}
-.lineup__stage {
+  aspect-ratio: 1280 / 470;
   transform: translate3d(0, var(--lineup-parallax, 0px), 0);
   transition: transform 0.12s linear;
   will-change: transform;
 }
-
-/* Warm amber underlighting - stage floor */
-.lineup__glow {
-  position: absolute;
-  inset: -12% -4% -22% -4%;
-  background:
-    radial-gradient(ellipse 52% 64% at 50% 58%, rgba(244, 123, 32, 0.52) 0%, rgba(244, 123, 32, 0.12) 38%, transparent 70%),
-    radial-gradient(ellipse 28% 42% at 50% 74%, rgba(245, 184, 119, 0.36) 0%, rgba(245, 184, 119, 0.04) 50%, transparent 68%),
-    radial-gradient(ellipse 20% 38% at 80% 60%, rgba(244, 123, 32, 0.18) 0%, transparent 72%);
-  filter: blur(52px);
-  z-index: 0;
-  pointer-events: none;
-  animation: lineupGlow 7s var(--ease) infinite;
-}
-/* Animating a blur RADIUS re-rasterizes the whole layer every single frame, and
-   this one never stops, on or off screen. Lighthouse flagged it by name:
-   "Filter-related property may move pixels", the only non-composited animation
-   here that touches a large surface. The blur stays, it just stays STILL at 52px;
-   opacity and scale carry the same breathing effect and both are free.
-   hue-rotate dropped with it: at these alphas the 5deg shift was not visible. */
-@keyframes lineupGlow {
-  0%, 100% { opacity: 0.88; transform: scale(1); }
-  50%       { opacity: 1;   transform: scale(1.03); }
-}
-
-.lineup__floor {
-  position: absolute;
-  left: 0; right: 0; bottom: -4%;
-  height: 130px;
-  background: radial-gradient(ellipse 58% 100% at 50% 0%, rgba(0, 0, 0, 0.8) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 1;
+@supports not (aspect-ratio: 1 / 1) {
+  .lineup__stage::before { content: ""; display: block; padding-top: 36.72%; }
 }
 
 /* Shared device figure styles */
 .lineup__device {
   position: absolute;
   bottom: 0;
-  z-index: 2;
   opacity: 0;
   transform: translate3d(0, 28px, 0);
   animation: deviceIn 1s var(--ease-spring) forwards;
@@ -1054,69 +1029,32 @@ section { padding-block: var(--rhythm); }
   display: block;
 }
 
-/* Individual device placements */
-.lineup__device--tv {
-  left: 0;
-  bottom: 4%;
-  width: 30%;
-  z-index: 2;
-}
-.lineup__device--mac {
-  left: 50%;
-  bottom: 8%;
-  width: 58%;
-  translate: -50% 28px;
-  animation-name: deviceInMac;
-  animation-timing-function: var(--ease-spring);
-  z-index: 5;
-}
-@keyframes deviceInMac {
-  to { opacity: 1; translate: -50% 0; }
-}
-.lineup__device--ipad {
-  right: 6%;
-  bottom: 10%;
-  width: 44%;
-  z-index: 4;
-}
-.lineup__device--iphone {
-  right: 2%;
-  bottom: -2%;
-  width: 15%;
-  z-index: 6;
-}
-.lineup__device--watch {
-  right: 19%;
-  bottom: -4%;
-  width: 11%;
-  z-index: 7;
-}
+/* Positions. Widths are per cent of the stage; the resulting heights follow each
+   framed asset's own ratio (tvOS 1.5468, Mac 1.5525, iPad 1.3043, iPhone 0.4900,
+   Watch 0.6250), so the five come out roughly as they compare on a desk, with
+   the phone held a little above true scale so it still reads as a phone.
+   z-index runs back to front: Mac, Apple TV, iPad, watch, iPhone. */
+.lineup__device--mac    { left: 24%;   bottom: 14%; width: 46%;   z-index: 2; }
+.lineup__device--tv     { left: 0;     bottom: 6%;  width: 33%;   z-index: 3; }
+.lineup__device--ipad   { left: 62%;   bottom: 10%; width: 31%;   z-index: 4; }
+.lineup__device--watch  { right: 13%;  bottom: 4%;  width: 6%;    z-index: 5; }
+.lineup__device--iphone { right: 2%;   bottom: 0;   width: 11.5%; z-index: 6; }
 
-/* Per-device bezel framing - warm amber inner rim, rounded glass effect */
-.lineup__device--tv img {
-  border-radius: 10px;
-}
-.lineup__device--ipad img,
-.lineup__device--iphone img,
-.lineup__device--watch img {
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
-    0 0 0 1.5px rgba(244, 123, 32, 0.07) inset,
-    0 1px 0 rgba(255, 255, 255, 0.05) inset;
-  background: #08080a;
-}
-.lineup__device--ipad  img { border-radius: 14px; }
-.lineup__device--iphone img { border-radius: 26px; }
-.lineup__device--watch  img { border-radius: 30px; }
+/* The hand-drawn rim and rounded corners that used to stand in for a bezel are
+   gone: the four Apple devices carry a real one inside the PNG now. The Mac is
+   the exception by Nenad's D2 and keeps its own window shot, which already has
+   a title bar and a shadow of its own. */
 
 /* Responsive lineup */
+/* Below 960 the stage gets squarer and the five spread over it instead of
+   standing in one line, so nothing shrinks to a smudge. */
 @media (max-width: 960px) {
-  .lineup__stage { aspect-ratio: 1; }
-  .lineup__device--tv     { left: 0;   bottom: 2%;  width: 44%; }
-  .lineup__device--mac    { left: 50%; bottom: 22%; width: 84%; }
-  .lineup__device--ipad   { right: 2%; bottom: 4%;  width: 58%; }
-  .lineup__device--iphone { right: 4%; bottom: 0;   width: 22%; }
-  .lineup__device--watch  { right: 28%; bottom: 0;  width: 15%; }
+  .lineup__stage { aspect-ratio: 1280 / 760; }
+  .lineup__device--mac    { left: 18%;  bottom: 30%; width: 66%; }
+  .lineup__device--tv     { left: 0;    bottom: 8%;  width: 48%; }
+  .lineup__device--ipad   { right: 1%;  bottom: 4%;  width: 44%; }
+  .lineup__device--watch  { right: 44%; bottom: 2%;  width: 9%; }
+  .lineup__device--iphone { right: 30%; bottom: 0;   width: 17%; }
 }
 @media (max-width: 600px) {
   .hero__h1 { font-size: clamp(42px, 12vw, 62px); }
@@ -2827,25 +2765,19 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 
 /* ---- Act 1: Apple TV (wide hero) ---- */
 .dev-tv {
-  position: relative; width: 78%;
-  border-radius: 14px; overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.04) inset,
-    0 60px 120px rgba(0,0,0,.7),
-    0 18px 40px rgba(0,0,0,.5),
-    0 0 80px rgba(244, 123, 32,.18);
+  position: relative; width: 84%;
+  filter:
+    drop-shadow(0 60px 120px rgba(0,0,0,.7))
+    drop-shadow(0 18px 40px rgba(0,0,0,.5))
+    drop-shadow(0 0 80px rgba(244, 123, 32,.14));
   transform: scale(.96); opacity: 0;
   transition: transform 1s var(--ease-spring), opacity .8s var(--ease);
 }
 .act.is-active .dev-tv { transform: scale(1); opacity: 1; }
 .dev-tv img { width: 100%; height: auto; display: block; }
-.dev-tv__stand {
-  position: absolute; left: 50%; bottom: -22px; transform: translateX(-50%);
-  width: 18%; height: 14px;
-  background: linear-gradient(180deg,#17171B,#08080a);
-  border-radius: 0 0 6px 6px;
-  box-shadow: 0 18px 30px rgba(0,0,0,.6);
-}
+/* The drawn stand is gone: the Apple TV bezel brings the box and the Siri Remote
+   with it, which is what actually sits under a television. */
+.dev-tv__stand { display: none; }
 
 /* ---- Act 2: Mac (main window + mini-player floater - user tweak c: floater on LEFT) ---- */
 .act-mac__group { position: relative; width: 90%; }
@@ -2882,18 +2814,20 @@ a.proofbar__item:hover { color: var(--accent-hi); }
    viewports). Cap it on the iPad's real effective aspect so it clears like the rest. */
 .act--ipad .act__stage { width: min(1180px, 92vw, max(360px, 144vh - 513px)); }
 .act-ipad__group { position: relative; width: 78%; }
+/* The hand-drawn frame is gone: the shot arrives inside Apple's own iPad bezel
+   on a transparent canvas, so the box takes its shape from the image and the
+   depth comes from a drop-shadow filter, which follows the alpha instead of
+   painting a rectangle behind it. */
 .dev-ipad {
-  position: relative; width: 100%; aspect-ratio: 1800/1350;
-  border-radius: 18px; overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.04) inset,
-    0 60px 110px rgba(0,0,0,.7),
-    0 0 100px rgba(244, 123, 32,.18);
+  position: relative; width: 100%;
+  filter:
+    drop-shadow(0 60px 110px rgba(0,0,0,.7))
+    drop-shadow(0 0 100px rgba(244, 123, 32,.14));
   transform: scale(.95); opacity: 0;
   transition: transform 1.1s var(--ease-spring), opacity .8s var(--ease);
 }
 .act.is-active .dev-ipad { transform: scale(1); opacity: 1; }
-.dev-ipad img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.dev-ipad img { width: 100%; height: auto; display: block; }
 
 /* Lyric macro zoom overlay - pops out to the LEFT of the iPad. Kept below the
    iPad's top edge (was top:-12%, which poked up into the centred .theater__title
@@ -2962,19 +2896,15 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   display: flex; align-items: flex-end; justify-content: center; gap: 6%;
 }
 .dev-iphone {
-  position: relative; width: 22%; aspect-ratio: 644/1400;
-  border-radius: 38px; overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.06) inset,
-    0 0 0 8px #08080a,
-    0 50px 90px rgba(0,0,0,.7),
-    0 0 80px rgba(244, 123, 32,.22);
+  position: relative; width: 24%;
+  filter:
+    drop-shadow(0 50px 90px rgba(0,0,0,.7))
+    drop-shadow(0 0 80px rgba(244, 123, 32,.18));
   transform: translateY(40px) scale(.95); opacity: 0;
   transition: transform 1.1s var(--ease-spring), opacity .8s var(--ease);
-  background: #000;
 }
 .act.is-active .dev-iphone { transform: none; opacity: 1; }
-.dev-iphone img { width: 100%; height: 100%; object-fit: cover; }
+.dev-iphone img { width: 100%; height: auto; display: block; }
 .dev-iphone--lyrics { --d: .15s; transform: translateY(40px) scale(.92) rotate(-3deg); }
 .dev-iphone--np    { --d: 0s;   transform: translateY(60px) scale(.94); }
 .dev-iphone--queue { --d: .3s;  transform: translateY(40px) scale(.92) rotate(3deg); }
@@ -2984,33 +2914,28 @@ a.proofbar__item:hover { color: var(--accent-hi); }
 
 /* Apple Watch - hovers top-right near phones */
 .dev-watch {
-  position: absolute; right: 6%; top: 8%;
-  width: 13%; aspect-ratio: 410/502;
-  border-radius: 36px; overflow: hidden;
-  border: 5px solid #141417;
-  box-shadow:
-    0 30px 60px rgba(0,0,0,.7),
-    0 0 0 1px rgba(244, 123, 32,.25) inset,
-    0 0 70px rgba(244, 123, 32,.30);
-  background: #000;
-  transform: translate(20px,-20px) scale(.85) rotate(8deg); opacity: 0;
+  position: absolute; right: 4%; top: 6%;
+  width: 11%;
+  filter:
+    drop-shadow(0 30px 60px rgba(0,0,0,.7))
+    drop-shadow(0 0 70px rgba(244, 123, 32,.22));
+  transform: translate(20px,-20px) scale(.85); opacity: 0;
   transition: transform 1.2s var(--ease-spring) .35s, opacity .9s var(--ease) .3s;
 }
-.act.is-active .dev-watch { transform: translate(0,0) scale(1) rotate(-3deg); opacity: 1; }
-.dev-watch img { width: 100%; height: 100%; object-fit: cover; }
-.dev-watch__crown {
-  position: absolute; right: -7px; top: 35%;
-  width: 5px; height: 14%;
-  background: linear-gradient(180deg,#2a2a2e,#141417);
-  border-radius: 2px;
-}
+.act.is-active .dev-watch { transform: translate(0,0) scale(1); opacity: 1; }
+.dev-watch img { width: 100%; height: auto; display: block; }
+/* The drawn crown is gone: Apple Watch Ultra 3 brings its own, and its Milanese
+   loop besides. */
+.dev-watch__crown { display: none; }
 
 /* ---- Act 5: Family - all five devices together ---- */
 .family {
   /* Family act sets its own width (ignores the .act__stage cap), so it gets the
      same height-aware clearance term to stay below the title on short viewports. */
   position: relative; width: min(1280px, 95vw, max(400px, 158vh - 565px));
-  aspect-ratio: 1280/680;
+  /* Taller than it was (680): the five sit lower now so the receipt card has a
+     clear band above them instead of landing on the Mac window. */
+  aspect-ratio: 1280/700;
 }
 .family__device {
   position: absolute; opacity: 0; transform: translateY(40px) scale(.96);
@@ -3018,21 +2943,23 @@ a.proofbar__item:hover { color: var(--accent-hi); }
   filter: drop-shadow(0 50px 90px rgba(0,0,0,.7)) drop-shadow(0 0 60px rgba(244, 123, 32,.12));
 }
 .act.is-active .family__device { opacity: 1; transform: none; }
-.family__device img { width: 100%; height: auto; display: block; border-radius: 8px; }
-.family__tv    { left: 0;   bottom: 6%;  width: 30%; --d: 0s; }
-.family__mac   { left: 50%; bottom: 10%; width: 56%; transform: translate(-50%,40px) scale(.96); --d: .15s; }
-.act.is-active .family__mac { transform: translateX(-50%); }
-.family__ipad  { right: 8%; bottom: 14%; width: 40%; --d: .30s; z-index: 3; }
-.family__ipad img  { border-radius: 14px; box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset; }
-.family__iphone { right: 4%; bottom: 0; width: 14%; --d: .45s; z-index: 5; }
-.family__iphone img { border-radius: 24px; box-shadow: 0 0 0 1px rgba(244, 123, 32,.08) inset, 0 0 0 5px #08080a; }
-/* Watch repositioned to top-right, more visible (user tweak b) */
-.family__watch { right: 6%; top: 14%; width: 14%; --d: .60s; z-index: 7; }
-.family__watch img { border-radius: 22px; box-shadow: 0 0 0 1px rgba(244, 123, 32,.12) inset, 0 0 0 4px #141417; }
+.family__device img { width: 100%; height: auto; display: block; }
+/* Retuned 2026-09-12 for the framed assets. A bezel makes each picture wider and
+   taller than the bare capture it replaced, so the old per cent positions, which
+   were measured against the captures, put the Apple TV half off the canvas and
+   buried the iPad behind the Mac. Back to front: Mac, Apple TV, iPad, watch,
+   iPhone, the same order as the hero lineup. */
+.family__mac   { left: 21%;  bottom: 8%; width: 42%;   --d: .15s; z-index: 2; }
+.family__tv    { left: 0;    bottom: 0;   width: 29%;   --d: 0s;   z-index: 3; }
+.family__ipad  { left: 55%;  bottom: 2%;  width: 29%;   --d: .30s; z-index: 4; }
+.family__watch { right: 22%; bottom: 18%; width: 6.5%;  --d: .60s; z-index: 5; }
+.family__iphone { right: 10%; bottom: 0;  width: 10.5%; --d: .45s; z-index: 6; }
 
 /* Family - receipt overlay (Universal Purchase) */
 .family__receipt {
-  position: absolute; left: 6%; top: 14%;
+  /* Moved off the devices: at left 6% / top 14% it covered the Mac window once
+     the five were repositioned for their bezels. */
+  position: absolute; left: 0; top: 0;
   background: rgba(14,11,8,.86); backdrop-filter: blur(12px);
   border: 1px solid var(--border-strong); border-radius: 14px;
   padding: 18px 22px;
@@ -3744,10 +3671,9 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
    aspect-ratio 1280/700, so it scales into a narrower column with no per-site
    work. One rule, both sites. That is the chassis earning its keep.
 
-   The stage is drawn for a 1280px canvas, so in a ~620px column the devices
-   would read small. Letting it run past the column edge keeps them large and
-   fills the space on the right. .hero has overflow:hidden already, so the
-   bleed is clipped at the window rather than causing a horizontal scrollbar.
+   The stage used to run past the column edge to keep the devices large, clipped
+   by .hero's overflow:hidden. That bleed was removed on 2026-09-12 when the
+   devices gained real Apple bezels: see the .lineup__stage rule below.
    --------------------------------------------------------------------------- */
 @media (min-width: 1040px) {
   .hero__wrap {
@@ -3767,21 +3693,18 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
 
   .lineup { margin-top: 0; grid-column: 2; align-self: center; }
 
-  /* The lineup is art-directed on a 1280px canvas with every device positioned
-     absolutely in per cent. Scaling that canvas down to a column width renders
-     each device at roughly half size and the screenshots turn to mush, which is
-     what the first two attempts did. So the stage keeps a near-native width and
-     runs past the column toward the window instead. .hero already has
-     overflow:hidden, so the right-hand devices crop at the window edge as a
-     deliberate bleed rather than producing a horizontal scrollbar. */
+  /* The bleed is OFF as of 2026-09-12. It existed because the old stage was a
+     1280px canvas with five devices positioned absolutely, so shrinking it to
+     the column made the screenshots mush; running it past the window edge under
+     .hero's overflow:hidden bought back the size at the cost of clipping the
+     watch. Every device now carries Apple's own bezel, and clipping one at the
+     window edge is the "cropping or obstructing" Apple's App Store Marketing
+     Guidelines name, so the stage fills the column and stops there. It can:
+     the row is sized in per cent of itself, not drawn on a fixed canvas. */
   .lineup__stage {
     max-width: none;
-    /* Near-native width so the devices stay large, but bounded by what is
-       actually left on screen after the copy column, so the Mac window is never
-       sliced. Only the watch at the far right edge crops, which reads as a
-       deliberate bleed. The small negative margin buys back the gap. */
-    width: min(1120px, calc(100vw - 730px));
-    margin: 0 0 0 -40px;
+    width: 100%;
+    margin: 0;
   }
 
   /* The caption belongs under the devices it captions, not floating beside them. */
@@ -3789,10 +3712,10 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
   .hero__strap, .hero__proof, .proofbar { grid-column: 1 / -1; }
 }
 
-/* Between 1040 and 1400 there is not enough room for a 1180px stage next to the
-   copy, so the bleed would swallow most of the lineup. Shrink it there. */
+/* Between 1040 and 1400 the copy column takes a larger share of a narrow window,
+   so it is narrowed to leave the lineup room. The stage itself needs no special
+   width any more: it fills whatever column it is given. */
 @media (min-width: 1040px) and (max-width: 1400px) {
-  .lineup__stage { width: calc(100vw - 620px); margin-left: -24px; }
   .hero__wrap { grid-template-columns: minmax(0, 380px) minmax(0, 1fr); }
   .hero__h1 { font-size: clamp(34px, 3.1vw, 44px); }
 }
@@ -4047,3 +3970,215 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
 }
 
 /* ===== END GENERATED DIRECTION-4 CHASSIS ===== */
+
+/* =========================================================
+   Framed screenshots: nothing drawn on top of Apple's bezel
+   =========================================================
+   A file under assets/framed/ already carries the device's own bezel, its
+   corner radius and its shadow, baked into a PNG with a transparent canvas.
+   Any radius, border or box-shadow the site adds is then drawn around that
+   transparent BOUNDING BOX rather than around the device, which renders as a
+   rounded rectangle floating in empty space with the phone sitting inside it.
+   The macOS window shots already opt out of the same chrome the same way
+   (.p-hero__shot img[src*="/macos/"], .p-shot__media img[src*="/macos/"]), so
+   this follows that pattern instead of reaching for !important.
+
+   The drop-shadow FILTERS on .lineup__device and .family__device stay: a
+   filter follows the alpha channel, so a transparent device casts a shadow in
+   its own shape. That is the one effect that gets better with a real bezel. */
+.p-hero__shot img[src*="/framed/"],
+.p-hero__shot--portrait img[src*="/framed/"],
+.p-shot__media img[src*="/framed/"],
+.strip__item img[src*="/framed/"],
+.lineup__device img[src*="/framed/"],
+.lineup__device--tv img[src*="/framed/"],
+.lineup__device--ipad img[src*="/framed/"],
+.lineup__device--iphone img[src*="/framed/"],
+.lineup__device--watch img[src*="/framed/"],
+.family__device img[src*="/framed/"],
+.family__ipad img[src*="/framed/"],
+.family__iphone img[src*="/framed/"],
+.family__watch img[src*="/framed/"],
+.plat-card__thumb img[src*="/framed/"] {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  /* The thumb is a 16/10 window with object-fit: cover, which on a framed
+     portrait phone shows the top centimetre of the bezel and nothing else.
+     Contain letterboxes it instead, the way the watch thumb already did before
+     any of this. */
+  object-fit: contain;
+  object-position: center;
+  padding: 10px;
+}
+
+/* ---- iPhone Duo, coming soon (Nenad's D4) ----
+   The card is not a link. Every other card in this grid goes to a platform page
+   and says "On the App Store"; this one has neither, and a dead href would
+   promise a page that does not exist. The screen in the artwork is a drawn
+   NaviBeat loading state, not a capture: the app has never run on a Duo, and
+   Nenad's own decision of 2026-09-11 holds every line of that work until
+   Xcode 27.1. Contain, not cover, because the thumb crops at 16/10 and the Duo
+   bezel is 1.393 wide: cover would cut Apple's product image top and bottom. */
+.plat-card--soon { cursor: default; }
+.plat-card--soon:hover {
+  transform: none;
+  border-color: var(--border);
+  box-shadow: none;
+}
+.plat-card--soon:hover .plat-card__thumb img { transform: none; }
+.plat-card__thumb--duo img {
+  object-fit: contain;
+  object-position: center;
+  background: var(--bg-0);
+  padding: 6px;
+}
+.plat-card__dot--soon {
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(244, 123, 32, 0.7);
+  animation: duoPulse 2.4s var(--ease) infinite;
+}
+@keyframes duoPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) {
+  .plat-card__dot--soon { animation: none; }
+}
+
+/* =========================================================
+   HERO DECK: three banners on one stage
+   =========================================================
+   Nenad, 2026-09-12: "da ovaj deo napravimo da bude kao hero banner? pa da se
+   smenjuje ovo, pa onda iphone duo vest, pa mozes whats new neki baner sa
+   slikama". Three slides, the product hero first, then the two pieces of news.
+
+   All three sit in the SAME grid cell, so the deck is as tall as the tallest one
+   and nothing below it moves when the slide changes. Only opacity and visibility
+   animate, both composited. The inactive slides keep their layout, which is why
+   the height is stable, and `visibility: hidden` takes them out of the tab order
+   and off the accessibility tree at the same time. */
+.herodeck { position: relative; }
+.herodeck__track {
+  display: grid;
+  grid-template-areas: "deck";
+}
+.herodeck__slide {
+  grid-area: deck;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity .55s var(--ease), transform .55s var(--ease), visibility 0s linear .55s;
+}
+.herodeck__slide.is-current {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity .55s var(--ease), transform .6s var(--ease-spring), visibility 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .herodeck__slide, .herodeck__slide.is-current { transition: opacity .01s linear; transform: none; }
+}
+
+.herodeck__nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: clamp(18px, 2.6vh, 34px);
+}
+.herodeck__dot {
+  width: 34px;
+  height: 4px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: var(--border-strong, rgba(255,255,255,.16));
+  cursor: pointer;
+  transition: background .3s var(--ease), width .3s var(--ease);
+}
+.herodeck__dot:hover { background: rgba(244, 123, 32, .5); }
+.herodeck__dot.is-on { background: var(--accent); width: 52px; }
+.herodeck__dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* ---- A news banner: copy on the left, artwork on the right ---- */
+.newsbar {
+  display: grid;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+@media (min-width: 1040px) {
+  .newsbar { grid-template-columns: minmax(0, 460px) minmax(0, 1fr); }
+}
+.newsbar__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+}
+.newsbar__pulse {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(244, 123, 32, .8);
+  animation: newsPulse 2.4s var(--ease) infinite;
+  flex-shrink: 0;
+}
+@keyframes newsPulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) { .newsbar__pulse { animation: none; } }
+
+.newsbar__h {
+  font-size: clamp(34px, 3.4vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 14px 0 0;
+  text-wrap: balance;
+  max-width: 15ch;
+}
+.newsbar__h em {
+  font-style: italic;
+  color: var(--accent);
+}
+.newsbar__p {
+  color: var(--text-2);
+  font-size: 17px;
+  line-height: 1.62;
+  margin: 16px 0 0;
+  max-width: 46ch;
+}
+.newsbar .hero__ctas { margin-top: 28px; }
+
+/* The Duo picture is the point of its slide, so it runs to the column edge.
+   Nothing is drawn on top of it: it is Apple's own bezel with our own screen
+   inside, and the drop-shadow follows the alpha rather than boxing it in. */
+.newsbar__art { margin: 0; position: relative; }
+.newsbar__art--duo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter:
+    drop-shadow(0 52px 96px rgba(0, 0, 0, 0.68))
+    drop-shadow(0 16px 36px rgba(0, 0, 0, 0.52))
+    drop-shadow(0 0 90px rgba(244, 123, 32, 0.16));
+}
+
+/* Three phones, fanned, the middle one forward. Same depth idiom as the hero
+   lineup: one beside the other, one behind the other. */
+.newsbar__art--trio {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 1px;
+}
+.newsbar__art--trio img {
+  width: 30%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.66)) drop-shadow(0 0 60px rgba(244, 123, 32, 0.14));
+  transition: transform .5s var(--ease-spring);
+}
+.newsbar__trio-a { transform: translateX(16%) scale(.86); z-index: 1; }
+.newsbar__trio-b { transform: scale(1.04); z-index: 3; }
+.newsbar__trio-c { transform: translateX(-16%) scale(.86); z-index: 1; }
+.newsbar__art--trio:hover .newsbar__trio-a { transform: translateX(8%) scale(.9); }
+.newsbar__art--trio:hover .newsbar__trio-c { transform: translateX(-8%) scale(.9); }
+@media (max-width: 1039px) {
+  .newsbar__art--trio img { width: 30%; }
+  .newsbar__h { max-width: none; }
+}

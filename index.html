@@ -40,7 +40,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=202609061417">
+  <link rel="stylesheet" href="styles.css?v=202609120157">
   <link rel="stylesheet" href="artifact.css?v=202609061100">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp?v=20260830 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp?v=20260830 2000w"
@@ -385,7 +385,11 @@
       <span class="hero__rings"></span>
     </div>
 
-    <div class="wrap hero__wrap">
+    <div class="herodeck" data-herodeck data-interval="9000">
+     <div class="herodeck__track">
+
+      <article class="herodeck__slide is-current" data-slide="0" aria-roledescription="slide" aria-label="1 of 3: NaviBeat on every Apple screen">
+       <div class="wrap hero__wrap">
       <div class="hero__copy">
         <p class="eyebrow hero__eyebrow">
           <span class="hero__eyebrow-dot" aria-hidden="true"></span>
@@ -418,15 +422,12 @@
       <!-- Device lineup: real screenshots, NO wireframe SVGs -->
       <div class="lineup">
         <div class="lineup__stage">
-          <span class="lineup__glow" aria-hidden="true"></span>
-          <span class="lineup__floor" aria-hidden="true"></span>
-
           <figure class="lineup__device lineup__device--tv" style="--stagger: 0ms;">
-            <img fetchpriority="low" src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp?v=20260830"
-                 srcset="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album-1194.webp?v=20260830 1194w, assets/screenshots/tvos/navibeat-apple-tv-home-featured-album-1791.webp?v=20260830 1791w"
+            <img fetchpriority="low" src="assets/framed/tvos/navibeat-apple-tv-home-featured-album.webp?v=20260830"
+                 srcset="assets/framed/tvos/navibeat-apple-tv-home-featured-album-1194.webp?v=20260830 1194w, assets/framed/tvos/navibeat-apple-tv-home-featured-album-1791.webp?v=20260830 1791w"
                  sizes="(max-width: 960px) 44vw, (max-width: 1280px) 30vw, 384px"
                  alt="NaviBeat on Apple TV 4K: Home with a Handoff banner offering to continue what the Mac is playing, a Continue from your iPhone hero, and the Quick Play shelf."
-                 width="1920" height="1080" loading="eager" decoding="async">
+                 width="4300" height="2780" loading="eager" decoding="async">
           </figure>
 
           <figure class="lineup__device lineup__device--mac" style="--stagger: 80ms;">
@@ -438,25 +439,25 @@
           </figure>
 
           <figure class="lineup__device lineup__device--ipad" style="--stagger: 160ms;">
-            <img fetchpriority="low" src="assets/screenshots/ipad/navibeat-ipad-home.webp?v=20260830"
-                 srcset="assets/screenshots/ipad/navibeat-ipad-home-500.webp?v=20260830 500w, assets/screenshots/ipad/navibeat-ipad-home-1000.webp?v=20260830 1000w"
+            <img fetchpriority="low" src="assets/framed/ipad/navibeat-ipad-home.webp?v=20260830"
+                 srcset="assets/framed/ipad/navibeat-ipad-home-500.webp?v=20260830 500w, assets/framed/ipad/navibeat-ipad-home-1000.webp?v=20260830 1000w"
                  sizes="(max-width: 960px) 58vw, (max-width: 1280px) 44vw, 563px"
                  alt="NaviBeat Home on iPad Pro with sidebar, Featured Album hero, Quick Play row, and Most Played shelf."
-                 width="1800" height="1350" loading="eager" decoding="async">
+                 width="3000" height="2300" loading="eager" decoding="async">
           </figure>
 
           <figure class="lineup__device lineup__device--iphone" style="--stagger: 240ms;">
-            <img fetchpriority="low" src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp?v=20260830"
-                 srcset="assets/screenshots/iphone/navibeat-iphone-now-playing-280.webp?v=20260830 280w, assets/screenshots/iphone/navibeat-iphone-now-playing-560.webp?v=20260830 560w"
+            <img fetchpriority="low" src="assets/framed/iphone/navibeat-iphone-now-playing.webp?v=20260830"
+                 srcset="assets/framed/iphone/navibeat-iphone-now-playing-280.webp?v=20260830 280w, assets/framed/iphone/navibeat-iphone-now-playing-560.webp?v=20260830 560w"
                  sizes="(max-width: 960px) 22vw, (max-width: 1280px) 15vw, 192px"
                  alt="NaviBeat Now Playing full-screen on iPhone."
-                 width="644" height="1400" loading="eager" decoding="async">
+                 width="1470" height="3000" loading="eager" decoding="async">
           </figure>
 
           <figure class="lineup__device lineup__device--watch" style="--stagger: 320ms;">
-            <img fetchpriority="low" src="assets/screenshots/watch/navibeat-watch-now-playing.webp?v=20260830"
+            <img fetchpriority="low" src="assets/framed/watch/navibeat-watch-now-playing.webp?v=20260830"
                  alt="NaviBeat Now Playing on Apple Watch."
-                 width="410" height="502" loading="eager" decoding="async">
+                 width="600" height="960" loading="eager" decoding="async">
           </figure>
         </div>
 
@@ -466,6 +467,68 @@
           <span>Forever.</span>
         </p>
       </div>
+       </div>
+      </article>
+
+      <!-- SLIDE 2: iPhone Duo. Written as news, because it is: Apple shipped the
+           device and the adaptation is under way. Text gated on the `site`
+           surface, evidence in docs/app-review/evidence/. -->
+      <article class="herodeck__slide" data-slide="1" aria-roledescription="slide" aria-label="2 of 3: NaviBeat on iPhone Duo">
+       <div class="wrap newsbar">
+        <div class="newsbar__copy">
+          <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>In development</p>
+          <h2 class="newsbar__h">NaviBeat on <em>iPhone Duo.</em></h2>
+          <p class="newsbar__p">Apple has shipped its first folding iPhone, and the work to adapt NaviBeat for it is already well under way. Part of it is in the app already: NaviBeat opens more than one window, and the wide player that sets the lyrics beside the artwork is the shape the inner screen asks for. The rest waits on the Duo simulator.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="roadmap">See the roadmap&nbsp;&rarr;</a>
+          </div>
+        </div>
+        <figure class="newsbar__art newsbar__art--duo">
+          <img src="assets/framed/duo/navibeat-iphone-duo-coming-soon-1400.webp?v=20260912"
+               srcset="assets/framed/duo/navibeat-iphone-duo-coming-soon-560.webp?v=20260912 560w, assets/framed/duo/navibeat-iphone-duo-coming-soon-900.webp?v=20260912 900w, assets/framed/duo/navibeat-iphone-duo-coming-soon-1400.webp?v=20260912 1400w, assets/framed/duo/navibeat-iphone-duo-coming-soon.webp?v=20260912 3056w"
+               sizes="(max-width: 1039px) 88vw, 46vw"
+               alt="An iPhone Duo, open, with the NaviBeat mark and a loading bar drawn on the inner screen."
+               width="1400" height="1005" loading="lazy" decoding="async">
+        </figure>
+       </div>
+      </article>
+
+      <!-- SLIDE 3: what 1.4 brought, three of the eleven items, linking into the
+           section further down that carries all of them. -->
+      <article class="herodeck__slide" data-slide="2" aria-roledescription="slide" aria-label="3 of 3: What is new in 1.4">
+       <div class="wrap newsbar">
+        <div class="newsbar__copy">
+          <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>Fresh from the workshop</p>
+          <h2 class="newsbar__h">1.4 is out, <em>on every platform.</em></h2>
+          <p class="newsbar__p">Eleven things landed with it, and the beta gets new builds almost daily.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="#whats-new">See what is new in 1.4&nbsp;&rarr;</a>
+          </div>
+        </div>
+        <figure class="newsbar__art newsbar__art--trio">
+          <img class="newsbar__trio-a" src="assets/framed/iphone/navibeat-iphone-accent-colour-560.webp?v=20260830"
+               srcset="assets/framed/iphone/navibeat-iphone-accent-colour-280.webp?v=20260830 280w, assets/framed/iphone/navibeat-iphone-accent-colour-560.webp?v=20260830 560w"
+               sizes="18vw" alt="NaviBeat with a custom accent colour on iPhone."
+               width="560" height="1143" loading="lazy" decoding="async">
+          <img class="newsbar__trio-b" src="assets/framed/iphone/navibeat-iphone-handoff-card-560.webp?v=20260830"
+               srcset="assets/framed/iphone/navibeat-iphone-handoff-card-280.webp?v=20260830 280w, assets/framed/iphone/navibeat-iphone-handoff-card-560.webp?v=20260830 560w"
+               sizes="20vw" alt="NaviBeat offering to continue a song started on another device."
+               width="560" height="1143" loading="lazy" decoding="async">
+          <img class="newsbar__trio-c" src="assets/framed/iphone/navibeat-iphone-jump-buttons-560.webp?v=20260830"
+               srcset="assets/framed/iphone/navibeat-iphone-jump-buttons-280.webp?v=20260830 280w, assets/framed/iphone/navibeat-iphone-jump-buttons-560.webp?v=20260830 560w"
+               sizes="18vw" alt="NaviBeat player with skip back and skip forward buttons either side of play."
+               width="560" height="1143" loading="lazy" decoding="async">
+        </figure>
+       </div>
+      </article>
+
+     </div>
+
+     <div class="herodeck__nav" role="tablist" aria-label="Hero banner">
+       <button class="herodeck__dot is-on" type="button" role="tab" aria-selected="true"  aria-controls="" data-go="0"><span class="visually-hidden">Every Apple screen</span></button>
+       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="1"><span class="visually-hidden">NaviBeat on iPhone Duo</span></button>
+       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="2"><span class="visually-hidden">What is new in 1.4</span></button>
+     </div>
     </div>
   </section>
 
@@ -500,9 +563,9 @@
       <div class="act act--tv is-active" data-act="0" data-label="Apple TV" data-title="The big screen, in &lt;em&gt;full focus.&lt;/em&gt;">
         <div class="act__stage">
           <figure class="dev-tv" aria-hidden="true">
-            <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp?v=20260830"
+            <img src="assets/framed/tvos/navibeat-apple-tv-home-featured-album.webp?v=20260830"
                  alt="NaviBeat on Apple TV: Handoff banner and Continue from your iPhone hero"
-                 width="2400" height="1350" loading="lazy" decoding="async">
+                 width="4300" height="2780" loading="lazy" decoding="async">
             <span class="dev-tv__stand" aria-hidden="true"></span>
           </figure>
         </div>
@@ -543,11 +606,11 @@
         <div class="act__stage">
           <div class="act-ipad__group">
             <figure class="dev-ipad" aria-hidden="true">
-              <img src="assets/screenshots/ipad/navibeat-ipad-lyrics.webp?v=20260830"
-                 srcset="assets/screenshots/ipad/navibeat-ipad-lyrics-880.webp?v=20260830 880w, assets/screenshots/ipad/navibeat-ipad-lyrics-1760.webp?v=20260830 1760w"
+              <img src="assets/framed/ipad/navibeat-ipad-lyrics.webp?v=20260830"
+                 srcset="assets/framed/ipad/navibeat-ipad-lyrics-880.webp?v=20260830 880w, assets/framed/ipad/navibeat-ipad-lyrics-1760.webp?v=20260830 1760w"
                  sizes="880px"
                    alt="NaviBeat iPad lyrics view with time-synced LRC"
-                   width="1800" height="1350" loading="lazy" decoding="async">
+                   width="3000" height="2300" loading="lazy" decoding="async">
             </figure>
             <div class="dev-ipad__zoom" aria-hidden="true">
               <span class="dev-ipad__zoom-tag"><span class="act__dot"></span>LRC zoom · 3×</span>
@@ -568,27 +631,27 @@
         <div class="act__stage">
           <div class="act-iphone__group">
             <figure class="dev-iphone dev-iphone--lyrics" aria-hidden="true">
-              <img decoding="async" src="assets/screenshots/iphone/navibeat-iphone-lyrics.webp?v=20260830"
-                 srcset="assets/screenshots/iphone/navibeat-iphone-lyrics-250.webp?v=20260830 250w, assets/screenshots/iphone/navibeat-iphone-lyrics-500.webp?v=20260830 500w"
+              <img decoding="async" src="assets/framed/iphone/navibeat-iphone-lyrics.webp?v=20260830"
+                 srcset="assets/framed/iphone/navibeat-iphone-lyrics-250.webp?v=20260830 250w, assets/framed/iphone/navibeat-iphone-lyrics-500.webp?v=20260830 500w"
                  sizes="250px"
-                   alt="NaviBeat iPhone lyrics view" width="644" height="1400" loading="lazy">
+                   alt="NaviBeat iPhone lyrics view" width="1470" height="3000" loading="lazy">
             </figure>
             <figure class="dev-iphone dev-iphone--np" aria-hidden="true">
-              <img decoding="async" src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp?v=20260830"
-                 srcset="assets/screenshots/iphone/navibeat-iphone-now-playing-280.webp?v=20260830 280w, assets/screenshots/iphone/navibeat-iphone-now-playing-560.webp?v=20260830 560w"
+              <img decoding="async" src="assets/framed/iphone/navibeat-iphone-now-playing.webp?v=20260830"
+                 srcset="assets/framed/iphone/navibeat-iphone-now-playing-280.webp?v=20260830 280w, assets/framed/iphone/navibeat-iphone-now-playing-560.webp?v=20260830 560w"
                  sizes="280px"
-                   alt="NaviBeat iPhone Now Playing" width="644" height="1400" loading="lazy">
+                   alt="NaviBeat iPhone Now Playing" width="1470" height="3000" loading="lazy">
             </figure>
             <figure class="dev-iphone dev-iphone--queue" aria-hidden="true">
-              <img decoding="async" src="assets/screenshots/iphone/navibeat-iphone-queue.webp?v=20260830"
-                 srcset="assets/screenshots/iphone/navibeat-iphone-queue-250.webp?v=20260830 250w, assets/screenshots/iphone/navibeat-iphone-queue-500.webp?v=20260830 500w"
+              <img decoding="async" src="assets/framed/iphone/navibeat-iphone-queue.webp?v=20260830"
+                 srcset="assets/framed/iphone/navibeat-iphone-queue-250.webp?v=20260830 250w, assets/framed/iphone/navibeat-iphone-queue-500.webp?v=20260830 500w"
                  sizes="250px"
-                   alt="NaviBeat iPhone Up Next queue" width="644" height="1400" loading="lazy">
+                   alt="NaviBeat iPhone Up Next queue" width="1470" height="3000" loading="lazy">
             </figure>
             <figure class="dev-watch" aria-label="Apple Watch Now Playing">
               <span class="dev-watch__crown" aria-hidden="true"></span>
-              <img decoding="async" src="assets/screenshots/watch/navibeat-watch-now-playing.webp?v=20260830"
-                   alt="NaviBeat Apple Watch Now Playing" width="410" height="502" loading="lazy">
+              <img decoding="async" src="assets/framed/watch/navibeat-watch-now-playing.webp?v=20260830"
+                   alt="NaviBeat Apple Watch Now Playing" width="600" height="960" loading="lazy">
             </figure>
           </div>
         </div>
@@ -604,7 +667,7 @@
         <div class="act__stage">
           <div class="family" aria-label="All five NaviBeat devices together">
             <figure class="family__device family__tv" aria-hidden="true">
-              <img width="1920" height="1080" decoding="async" src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp?v=20260830" alt="NaviBeat Home with featured album on Apple TV" loading="lazy">
+              <img width="4300" height="2780" decoding="async" src="assets/framed/tvos/navibeat-apple-tv-home-featured-album.webp?v=20260830" alt="NaviBeat Home with featured album on Apple TV" loading="lazy">
             </figure>
             <figure class="family__device family__mac" aria-hidden="true">
               <img width="2880" height="1855" decoding="async" src="assets/screenshots/macos/navibeat-mac-home.webp?v=20260830"
@@ -612,17 +675,17 @@
                  sizes="1000px" alt="NaviBeat Home screen on Mac" loading="lazy">
             </figure>
             <figure class="family__device family__ipad" aria-hidden="true">
-              <img width="2752" height="2064" decoding="async" src="assets/screenshots/ipad/navibeat-ipad-home.webp?v=20260830"
-                 srcset="assets/screenshots/ipad/navibeat-ipad-home-500.webp?v=20260830 500w, assets/screenshots/ipad/navibeat-ipad-home-1000.webp?v=20260830 1000w"
+              <img width="3000" height="2300" decoding="async" src="assets/framed/ipad/navibeat-ipad-home.webp?v=20260830"
+                 srcset="assets/framed/ipad/navibeat-ipad-home-500.webp?v=20260830 500w, assets/framed/ipad/navibeat-ipad-home-1000.webp?v=20260830 1000w"
                  sizes="500px" alt="NaviBeat Home screen on iPad" loading="lazy">
             </figure>
             <figure class="family__device family__iphone" aria-hidden="true">
-              <img width="1320" height="2868" decoding="async" src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp?v=20260830"
-                 srcset="assets/screenshots/iphone/navibeat-iphone-now-playing-280.webp?v=20260830 280w, assets/screenshots/iphone/navibeat-iphone-now-playing-560.webp?v=20260830 560w"
+              <img width="1470" height="3000" decoding="async" src="assets/framed/iphone/navibeat-iphone-now-playing.webp?v=20260830"
+                 srcset="assets/framed/iphone/navibeat-iphone-now-playing-280.webp?v=20260830 280w, assets/framed/iphone/navibeat-iphone-now-playing-560.webp?v=20260830 560w"
                  sizes="280px" alt="NaviBeat Now Playing screen on iPhone" loading="lazy">
             </figure>
             <figure class="family__device family__watch" aria-hidden="true">
-              <img width="410" height="502" decoding="async" src="assets/screenshots/watch/navibeat-watch-now-playing.webp?v=20260830" alt="NaviBeat Now Playing on Apple Watch" loading="lazy">
+              <img width="600" height="960" decoding="async" src="assets/framed/watch/navibeat-watch-now-playing.webp?v=20260830" alt="NaviBeat Now Playing on Apple Watch" loading="lazy">
             </figure>
             <aside class="family__receipt" aria-label="Universal Purchase receipt">
               <div class="family__receipt-h">// receipt.txt</div>
@@ -699,8 +762,8 @@
         <li>
           <a class="plat-card" href="appletv" aria-label="NaviBeat for Apple TV, on the App Store">
             <div class="plat-card__thumb">
-              <img src="assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.webp?v=20260830"
-                   alt="NaviBeat Apple TV home screen" width="2400" height="1350" loading="lazy" decoding="async">
+              <img src="assets/framed/tvos/navibeat-apple-tv-home-featured-album.webp?v=20260830"
+                   alt="NaviBeat Apple TV home screen" width="4300" height="2780" loading="lazy" decoding="async">
             </div>
             <div class="plat-card__body">
               <div class="plat-card__name">Apple TV <span class="plat-card__arrow">&rarr;</span></div>
@@ -727,10 +790,10 @@
         <li>
           <a class="plat-card" href="iphone" aria-label="NaviBeat for iPhone, on the App Store">
             <div class="plat-card__thumb">
-              <img src="assets/screenshots/iphone/navibeat-iphone-now-playing.webp?v=20260830"
-                 srcset="assets/screenshots/iphone/navibeat-iphone-now-playing-280.webp?v=20260830 280w, assets/screenshots/iphone/navibeat-iphone-now-playing-560.webp?v=20260830 560w"
+              <img src="assets/framed/iphone/navibeat-iphone-now-playing.webp?v=20260830"
+                 srcset="assets/framed/iphone/navibeat-iphone-now-playing-280.webp?v=20260830 280w, assets/framed/iphone/navibeat-iphone-now-playing-560.webp?v=20260830 560w"
                  sizes="280px"
-                   alt="NaviBeat iPhone Now Playing screen" width="644" height="1400" loading="lazy" decoding="async">
+                   alt="NaviBeat iPhone Now Playing screen" width="1470" height="3000" loading="lazy" decoding="async">
             </div>
             <div class="plat-card__body">
               <div class="plat-card__name">iPhone <span class="plat-card__arrow">&rarr;</span></div>
@@ -742,10 +805,10 @@
         <li>
           <a class="plat-card" href="ipad" aria-label="NaviBeat for iPad, on the App Store">
             <div class="plat-card__thumb">
-              <img src="assets/screenshots/ipad/navibeat-ipad-home.webp?v=20260830"
-                 srcset="assets/screenshots/ipad/navibeat-ipad-home-500.webp?v=20260830 500w, assets/screenshots/ipad/navibeat-ipad-home-1000.webp?v=20260830 1000w"
+              <img src="assets/framed/ipad/navibeat-ipad-home.webp?v=20260830"
+                 srcset="assets/framed/ipad/navibeat-ipad-home-500.webp?v=20260830 500w, assets/framed/ipad/navibeat-ipad-home-1000.webp?v=20260830 1000w"
                  sizes="500px"
-                   alt="NaviBeat iPad home screen" width="1800" height="1350" loading="lazy" decoding="async">
+                   alt="NaviBeat iPad home screen" width="3000" height="2300" loading="lazy" decoding="async">
             </div>
             <div class="plat-card__body">
               <div class="plat-card__name">iPad <span class="plat-card__arrow">&rarr;</span></div>
@@ -757,8 +820,8 @@
         <li>
           <a class="plat-card" href="applewatch" aria-label="NaviBeat for Apple Watch, on the App Store">
             <div class="plat-card__thumb plat-card__thumb--watch">
-              <img src="assets/screenshots/watch/navibeat-watch-now-playing.webp?v=20260830"
-                   alt="NaviBeat Apple Watch Now Playing" width="410" height="502" loading="lazy" decoding="async">
+              <img src="assets/framed/watch/navibeat-watch-now-playing.webp?v=20260830"
+                   alt="NaviBeat Apple Watch Now Playing" width="600" height="960" loading="lazy" decoding="async">
             </div>
             <div class="plat-card__body">
               <div class="plat-card__name">Apple Watch <span class="plat-card__arrow">&rarr;</span></div>
@@ -1783,6 +1846,67 @@
       var onS = function () { if (!ticking) { ticking = true; requestAnimationFrame(upd); } };
       upd(); window.addEventListener('scroll', onS, { passive: true });
     }
+
+    // ---- Hero deck: three banners, one stage ----
+    // Auto-advance stops on hover, on keyboard focus inside the deck, when the
+    // tab is hidden, when the deck scrolls out of view, and when the reader has
+    // asked for reduced motion. Each of those is a real reason somebody loses
+    // their place in a rotating banner.
+    (function () {
+      var deck = document.querySelector('[data-herodeck]');
+      if (!deck) return;
+      var slides = Array.prototype.slice.call(deck.querySelectorAll('.herodeck__slide'));
+      var dots = Array.prototype.slice.call(deck.querySelectorAll('.herodeck__dot'));
+      if (slides.length < 2) return;
+      var at = 0;
+      var timer = null;
+      var held = false;
+      var onScreen = true;
+      var every = parseInt(deck.getAttribute('data-interval'), 10) || 9000;
+
+      function show(n) {
+        at = (n + slides.length) % slides.length;
+        slides.forEach(function (s, i) { s.classList.toggle('is-current', i === at); });
+        dots.forEach(function (d, i) {
+          d.classList.toggle('is-on', i === at);
+          d.setAttribute('aria-selected', i === at ? 'true' : 'false');
+        });
+      }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+      function start() {
+        stop();
+        if (reduce || held || !onScreen || document.hidden) return;
+        timer = setInterval(function () { show(at + 1); }, every);
+      }
+
+      dots.forEach(function (d) {
+        d.addEventListener('click', function () {
+          show(parseInt(d.getAttribute('data-go'), 10) || 0);
+          start();
+        });
+      });
+      deck.addEventListener('mouseenter', function () { held = true; stop(); });
+      deck.addEventListener('mouseleave', function () { held = false; start(); });
+      deck.addEventListener('focusin', function () { held = true; stop(); });
+      deck.addEventListener('focusout', function () {
+        if (!deck.contains(document.activeElement)) { held = false; start(); }
+      });
+      deck.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { show(at + 1); start(); }
+        else if (e.key === 'ArrowLeft') { show(at - 1); start(); }
+      });
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) { stop(); } else { start(); }
+      });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          onScreen = entries[0].isIntersecting;
+          if (onScreen) { start(); } else { stop(); }
+        }, { threshold: 0.25 }).observe(deck);
+      }
+      show(0);
+      start();
+    })();
 
     // FAQ accordion
     document.querySelectorAll('.faq__item').forEach(function (item) {
