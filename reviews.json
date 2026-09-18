@@ -1,21 +1,78 @@
 {
- "count": 48,
- "average": 4.35,
+ "count": 59,
+ "average": 4.44,
  "headlineSource": "iTunes lookup ratings aggregate, all storefronts",
- "writtenCount": 33,
- "writtenAverage": 4.0,
- "shownCount": 32,
+ "writtenCount": 41,
+ "writtenAverage": 4.17,
+ "shownCount": 39,
  "excludedForNoContent": 1,
- "fetchedAt": 1788644053245,
+ "withheldByDecision": 1,
+ "fetchedAt": 1789746078641,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
   {
-   "author": "GuiloLac",
-   "rating": 4,
-   "title": "Opus support is broken",
-   "body": "When trying to open an Opus file, app keeps buffering and will refuse to play any kind of other file after that.\n\nGreat app otherwise",
+   "author": "reclusivemonkey",
+   "rating": 5,
+   "title": "First Class Navidrome App",
+   "body": "This is an incredible app from a superb dev. The look and feel is incredibly polished AND all the features you could want are included. If you have Navidrome then you need this app.",
+   "territory": "GBR",
+   "date": "2026-09-17T00:44:00-07:00"
+  },
+  {
+   "author": "fresh_cucumber",
+   "rating": 5,
+   "title": "The player you need",
+   "body": "I have been using it for sometime already, very intuitive, smooth UI, looks super natural, many rich features like using custom network certificates. Dev is also very responsive for questions, features requests or bug fixes. It’s also super affordable compared to its competitor narjo player, so 100% worth the money, I’m happy I chose it",
+   "territory": "ESP",
+   "date": "2026-09-16T22:23:52-07:00"
+  },
+  {
+   "author": "aidenlf72",
+   "rating": 5,
+   "title": "Great App!",
+   "body": "I used Amperfy initially to stream music from my server to my phone, but felt like it was missing the little things. I found NaviBeat and have been using it for over a month now and love it! There are plenty of quality of life features and I just love the clean UI in general. Would recommend this to anyone looking for a great client app!",
    "territory": "USA",
-   "date": "2026-09-03T11:45:17-07:00"
+   "date": "2026-09-14T19:31:44-07:00"
+  },
+  {
+   "author": "BigOldeDoinks69",
+   "rating": 5,
+   "title": "Excellent",
+   "body": "Shoutout the app author, they did a wonderful job with this app. I can access all of my music on the go using this app and Tailscale. My favorite feature is the Apple Watch app, it is very well done. I also appreciate the tvOS app. \n\nThis app also will show you the metadata you may be missing, which has helped me fill in the gaps in my library. Would recommend if you have a prolific music library you want to self host and stream from.",
+   "territory": "USA",
+   "date": "2026-09-13T10:19:29-07:00"
+  },
+  {
+   "author": "@penz87",
+   "rating": 5,
+   "title": "love this app",
+   "body": "elite app. as i start my self-hosting music journey with navidrome, this app has made it 10x better. the features are great and the dev is really great at helping and responding with any issues. he’s constantly making it better. happy to support.",
+   "territory": "USA",
+   "date": "2026-09-11T06:31:40-07:00"
+  },
+  {
+   "author": "GuiloLac",
+   "rating": 5,
+   "title": "A great app across all platforms",
+   "body": "Really nice app that works well across all supported Apple platforms. Developer is quick to fix bugs.",
+   "territory": "USA",
+   "date": "2026-09-10T21:53:16-07:00"
+  },
+  {
+   "author": "ReviewerOfApps3",
+   "rating": 5,
+   "title": "Fantastic App",
+   "body": "I never write reviews, but this one is so exceptional I felt the need to. It is well designed, but most importantly a consistent experience across all devices. Having one app for my music across everything has been a dream for a while and this app absolutely nails it. The best navidrome client for Apple devices - period.",
+   "territory": "USA",
+   "date": "2026-09-09T15:27:22-07:00"
+  },
+  {
+   "author": "kiristiba",
+   "rating": 5,
+   "title": "Absolut Hammer Gut",
+   "body": "Von vorne bis hinten einfach richtig gut! So schön designt und alles funktioniert so wie man sich das vorstellt. Ich wüsste einfach nicht, was ich anders haben wollen würde, echt super, vielen Dank :)",
+   "territory": "DEU",
+   "date": "2026-09-05T14:54:25-07:00"
   },
   {
    "author": "albertasky",
