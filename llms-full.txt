@@ -421,6 +421,34 @@ at the top of Home with a large cover, the queue and the words beside it, and H
 and L move the divider between the library and the side column.
 Screenshots: navibeat.app/linux#tui
 
+Q: Can I control NaviBeat from a script, a keyboard shortcut or a voice assistant?
+A: Yes, on Linux. NaviBeat takes commands on the command line, so a script, a
+hotkey or an assistant running on the same machine can start the music:
+`navibeat --play-artist "Miles Davis"`, `navibeat --play-playlist "Favorites"`
+(add --shuffle to either), and `navibeat --search` with `artist:`, `album:`,
+`genre:` and `year:` fields, where a year is a single one, a range like
+1960-1969, or a decade like 1960s. The whole query is one argument, so it is
+quoted. Each command reaches the NaviBeat already running on that desktop,
+prints one line of JSON, and exits with a code a script can branch on: 0 done,
+3 nothing matched, 4 more than one matched and the candidates are listed and
+nothing plays, 5 not signed in or not reachable. `navibeat --current-track`
+prints what is playing the same way, and `navibeat --cast-scan` lists the
+speakers and TVs on the network.
+With no NaviBeat running, the command starts NaviBeat the way clicking the icon
+does and runs what was asked once the account is signed in. Put --tui beside the
+command and the terminal client starts instead, already on the screen the
+command asked for, which is what a terminal listener or a headless box wants.
+`navibeat --agent-skill` prints a Markdown skill file listing the commands, the
+search fields and the exit codes. Saved where an assistant looks for skills, it
+lets that assistant build the command line itself. Nothing leaves the machine
+for any of this: the skill file is text NaviBeat prints, and the commands run
+locally against the listener's own server.
+The flags are part of the desktop build. On Linux a command reaches the NaviBeat
+already running over D-Bus. Windows has no such bus, so there a command works
+when nothing is running yet and otherwise says so and exits 5. The Apple builds
+and the Android build have no command line of their own.
+Details: navibeat.app/linux#cli
+
 Q: Is NaviBeat coming to Windows?
 A: Yes, a native Windows desktop client is in active development, built alongside
 the Linux desktop build. It is not released yet and no date has been announced.

@@ -229,6 +229,14 @@
         },
         {
           "@type": "Question",
+          "name": "Can I start music from a script or a voice assistant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, on Linux. navibeat --play-artist \"Miles Davis\", --play-playlist and --search with artist:, album:, genre: and year: fields, where a year can be a single one, a range like 1960-1969 or a decade like 1960s. The command reaches the NaviBeat already running, prints one line of JSON and exits with a code a script can branch on: 0 done, 3 nothing matched, 4 more than one matched with the candidates listed, 5 not signed in or not reachable. With nothing running it starts NaviBeat the way clicking the icon does, and --tui beside it starts the terminal client instead, already on the screen the command asked for. navibeat --agent-skill prints a Markdown skill file an assistant on your own machine can read, so it can build the command line itself."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What music server does it need?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -632,6 +640,45 @@
     </div>
   </section>
 
+  <section id="cli" aria-labelledby="linux-cli-title">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="eyebrow eyebrow--accent">Scripting and voice</p>
+        <h2 id="linux-cli-title" class="h2">Play something with one command.</h2>
+        <p>NaviBeat takes commands on the command line, so a script, a keyboard shortcut or an assistant on your own machine can start the music. Each one reaches the NaviBeat already running, prints one line of JSON, and exits with a code you can branch on.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap:18px; align-items:start;">
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">The commands</h3>
+          <pre tabindex="0" role="region" aria-label="NaviBeat command line examples" style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>navibeat --play-artist "Miles Davis"
+navibeat --play-playlist "Favorites" --shuffle
+navibeat --search &#39;artist:"Miles Davis" year:1960s&#39;
+navibeat --current-track</code></pre>
+          <p style="margin:0 0 12px; color:var(--text-1); font-size:15px; line-height:1.7;"><code>--search</code> takes fields: <code>artist:</code>, <code>album:</code>, <code>genre:</code> and <code>year:</code>, and a year can be a single one, a range like <code>1960-1969</code>, or a decade like <code>1960s</code>. The whole query is one argument, so quote all of it.</p>
+          <p style="margin:0; color:var(--text-2); font-size:13px; line-height:1.6;">Exit codes are the contract: <code>0</code> done, <code>3</code> nothing matched, <code>4</code> more than one matched and the candidates are listed, <code>5</code> not signed in or not reachable. Installed from apt, dnf or pacman the command is <code>navibeat</code>; with the AppImage it is the file itself.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">In a window, or in your terminal</h3>
+          <p style="margin:0 0 14px; color:var(--text-1); font-size:15px; line-height:1.7;">With NaviBeat already open, the command goes to it and nothing new starts. With nothing running, the command starts NaviBeat the way clicking the icon does, and runs what you asked for once you are signed in.</p>
+          <p style="margin:0 0 12px; color:var(--text-1); font-size:15px; line-height:1.7;">Put <code>--tui</code> beside it and you get the terminal client instead, already on the screen the command asked for:</p>
+          <pre tabindex="0" role="region" aria-label="NaviBeat terminal client with a command" style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>navibeat --tui --search &#39;artist:"Miles Davis" year:1960s&#39;
+navibeat -t --play-artist "Miles Davis" --shuffle</code></pre>
+          <p style="margin:0; color:var(--text-2); font-size:13px; line-height:1.6;"><code>navibeat --cast-scan</code> lists the speakers and TVs on your network, and <code>navibeat --help</code> has the whole set.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">A skill file for your assistant</h3>
+          <p style="margin:0 0 14px; color:var(--text-1); font-size:15px; line-height:1.7;"><code>navibeat --agent-skill</code> prints a Markdown skill file. Save it where your assistant looks for skills and it has the commands, the search fields and the exit codes, so it can drive NaviBeat on your machine without you writing the command line.</p>
+          <pre tabindex="0" role="region" aria-label="Saving the NaviBeat agent skill file" style="margin:0 0 16px; padding:12px 14px; background:var(--bg-2); border:1px solid var(--border); border-radius:8px; overflow-x:auto; font-size:12.5px; line-height:1.7; color:var(--text-1);"><code>navibeat --agent-skill &gt; ~/.claude/skills/navibeat.md</code></pre>
+          <p style="margin:0; color:var(--text-2); font-size:13px; line-height:1.6;">Nothing leaves your machine for this. The skill file is text NaviBeat prints, and the commands run locally against your own server.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- SCREENSHOT STRIP -->
   <section style="padding-top:0;">
     <div class="wrap">
@@ -803,6 +850,10 @@ sudo pacman -Syu navibeat</code></pre>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I run NaviBeat on a headless server with no desktop?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Run it with <code>--tui</code> and NaviBeat draws itself in the terminal instead of a window, so it works over SSH on a headless server or a Raspberry Pi. It is the same app underneath: the same library, the same queue, the same downloads, the same gapless playback, with cmus and mpd style keys. On a machine with no display attached it starts in terminal mode by itself. <a href="#tui" style="color:var(--accent-hi);">See the terminal client</a>.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I start music from a script or a voice assistant?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes, on Linux. <code>navibeat --play-artist "Miles Davis"</code>, <code>--play-playlist</code> and <code>--search</code> with <code>artist:</code>, <code>album:</code>, <code>genre:</code> and <code>year:</code> fields. The command reaches the NaviBeat already running, prints one line of JSON and exits with a code a script can branch on. With nothing running it starts NaviBeat the way clicking the icon does, and <code>--tui</code> beside it starts the terminal client instead. <code>navibeat --agent-skill</code> prints a Markdown skill file your assistant can read, so it can build the command line itself. <a href="#cli" style="color:var(--accent-hi);">See the commands</a>.</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What music server does it need?</h3>
