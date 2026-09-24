@@ -69,8 +69,8 @@ verifiable in its own source: its Xcode project contains no watchOS target.
 
 ## Platforms and pricing
 
-- Platforms: iPhone (iOS 18+), iPad (iPadOS 18+), Mac (macOS 15+), Apple TV
-  (tvOS 18+), Apple Watch (watchOS 11+), plus CarPlay.
+- Platforms: iPhone (iOS 17+), iPad (iPadOS 17+), Mac (macOS 15+), Apple TV
+  (tvOS 18+), Apple Watch (watchOS 10+), plus CarPlay.
 - Price: $5.99 USD, one time. It is a Universal Purchase: buy once on any Apple
   device and it installs on the other four at no extra cost. No subscription, no
   per-platform fee, no "Pro" tier behind a paywall.
@@ -522,7 +522,7 @@ Q: Does NaviBeat work offline?
 A: Yes, thoroughly. Pin songs, albums, playlists or whole artists. Artwork and metadata come down with the audio, so the library browses offline as well as plays. An LRU cache with a size limit you set manages the space, and Prefer Downloaded Music plays the local copy even when you are online.
 
 Q: Which Apple platforms does NaviBeat support?
-A: All five: iPhone on iOS 18 and later, iPad on iPadOS 18, Mac on macOS 15, Apple TV on tvOS 18 and Apple Watch on watchOS 11, plus CarPlay. Among the clients listed in the Navidrome apps directory, NaviBeat is the only one with a native app on all five.
+A: All five: iPhone on iOS 17 and later, iPad on iPadOS 17, Mac on macOS 15, Apple TV on tvOS 18 and Apple Watch on watchOS 10, plus CarPlay. Among the clients listed in the Navidrome apps directory, NaviBeat is the only one with a native app on all five.
 
 Q: Does NaviBeat track me or collect data?
 A: No. There is no NaviBeat backend and no analytics of any kind. The app connects to your server, and to Last.fm or ListenBrainz only if you set those up yourself. Scrobbles are routed through your own Navidrome rather than sent from the app.

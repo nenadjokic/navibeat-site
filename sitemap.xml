@@ -143,7 +143,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/iphone" />
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-now-playing.jpg</image:loc>
-      <image:title>NaviBeat iPhone: full-screen Now Playing on iOS 18+</image:title>
+      <image:title>NaviBeat iPhone: full-screen Now Playing on iOS 17+</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/iphone/navibeat-iphone-lyrics.jpg</image:loc>
@@ -163,7 +163,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/ipad" />
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/ipad/navibeat-ipad-home.jpg</image:loc>
-      <image:title>NaviBeat iPad Pro: sidebar + detail home on iPadOS 18+</image:title>
+      <image:title>NaviBeat iPad Pro: sidebar + detail home on iPadOS 17+</image:title>
     </image:image>
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/ipad/navibeat-ipad-lyrics.jpg</image:loc>
@@ -191,7 +191,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/applewatch" />
     <image:image>
       <image:loc>https://navibeat.app/assets/screenshots/watch/navibeat-watch-now-playing.png</image:loc>
-      <image:title>NaviBeat Apple Watch: wrist Now Playing on watchOS 11+</image:title>
+      <image:title>NaviBeat Apple Watch: wrist Now Playing on watchOS 10+</image:title>
     </image:image>
   </url>
 
