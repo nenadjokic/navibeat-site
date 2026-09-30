@@ -403,7 +403,9 @@ Raspberry Pi OS, Mint, Fedora 38+ and Arch Linux it installs with
 `apt install navibeat`, `dnf install navibeat` or `pacman -Syu navibeat`, on x86_64 and
 ARM64, and new versions arrive with a normal `apt upgrade`, `dnf upgrade` or `pacman -Syu`. The
 Debian and Fedora packages carry their own Java and VLC, so there is nothing to install, and the
-Arch package carries its own Java and uses the `libvlc` in Arch's own repositories. It can sync
+Arch package carries its own Java and uses the `libvlc` in Arch's own repositories. On NixOS a
+community flake maintained by its author, github.com/dmnc98/navibeat-flake, wraps the x86_64
+AppImage from each release: `nix run github:dmnc98/navibeat-flake`. It can sync
 to a Rockbox iPod (NaviSyncRock, free on Linux). It plays to a UPnP or DLNA
 speaker, receiver or smart TV on the same network, found automatically with no
 address to type. It also ships a terminal
