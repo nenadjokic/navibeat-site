@@ -1,15 +1,111 @@
 {
- "count": 59,
- "average": 4.44,
+ "count": 79,
+ "average": 4.47,
  "headlineSource": "iTunes lookup ratings aggregate, all storefronts",
- "writtenCount": 41,
- "writtenAverage": 4.17,
- "shownCount": 39,
- "excludedForNoContent": 1,
+ "writtenCount": 53,
+ "writtenAverage": 4.21,
+ "shownCount": 49,
+ "excludedForNoContent": 3,
  "withheldByDecision": 1,
- "fetchedAt": 1789746078641,
+ "fetchedAt": 1790781191543,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
+  {
+   "author": "Чебупель28",
+   "rating": 5,
+   "title": "Amazing app",
+   "body": "Worth every dollar and even more. Can recommend",
+   "territory": "CYP",
+   "date": "2026-09-28T02:14:28-07:00"
+  },
+  {
+   "author": "laabertasch",
+   "rating": 5,
+   "title": "So gut das es nichtsvergleichbares gibt",
+   "body": "Diese App ist einfach Klasse. Durchdacht, klar, leichtverständlich. So geht es richtig!",
+   "territory": "DEU",
+   "date": "2026-09-28T02:05:38-07:00"
+  },
+  {
+   "author": "didbaizbkalaozoz4646",
+   "rating": 4,
+   "title": "才开始用就被惊艳",
+   "body": "确实很强，不管是在mac还是在iPad、iPhone上，它支持的功能和设计真的很符合我的需要！",
+   "territory": "CHN",
+   "date": "2026-09-25T22:09:34-07:00"
+  },
+  {
+   "author": "Antonello-F",
+   "rating": 5,
+   "title": "Great Job!",
+   "body": "Thanks for all the new features you're adding!",
+   "territory": "ITA",
+   "date": "2026-09-24T08:50:25-07:00"
+  },
+  {
+   "author": "FreeStylarr",
+   "rating": 5,
+   "title": "Navibeat",
+   "body": "Super mooi en strak design. En eindelijk een app die de radio sectie van navidrome eindelijk goed weer geeft met logo’s van de radiozenders. Top App keep up de good work 🥹",
+   "territory": "NLD",
+   "date": "2026-09-24T00:45:14-07:00"
+  },
+  {
+   "author": "Alois v.R.",
+   "rating": 5,
+   "title": "Good app",
+   "body": "Nice features, i use it everyday for my large collection",
+   "territory": "DEU",
+   "date": "2026-09-24T00:13:50-07:00"
+  },
+  {
+   "author": "ReviewBot909",
+   "rating": 4,
+   "title": "volume control",
+   "body": "would it be alright to ask for the volume slider with the player",
+   "territory": "CAN",
+   "date": "2026-09-23T22:38:27-07:00"
+  },
+  {
+   "author": "Hshdkidhdh",
+   "rating": 5,
+   "title": "Great app",
+   "body": "Honestly this app is great has every feature that is needed no complaints at all.",
+   "territory": "GBR",
+   "date": "2026-09-22T19:39:07-07:00"
+  },
+  {
+   "author": "Migoelo",
+   "rating": 3,
+   "title": "Buggy",
+   "body": "Tolle UI aber total buggy. Obwohl transcoding aktiviert ist für mobiles Netz wird mal der eingestellte Codec genutzt, und beim nächsten Lied FLAC. Das noch schlimmere ist aber, das mitten im Lied einfach zum nächsten gesprungen wird ohne ersichtlichen Grund.",
+   "territory": "DEU",
+   "date": "2026-09-21T23:01:34-07:00"
+  },
+  {
+   "author": "IncastroPC",
+   "rating": 5,
+   "title": "At last!",
+   "body": "I spent two days downloading apps to listen to my music. What can I say? Your app is the best I’ve tried! Well done!",
+   "territory": "ITA",
+   "date": "2026-09-20T13:39:14-07:00"
+  },
+  {
+   "author": "Dillan_K3",
+   "rating": 3,
+   "title": "Good Client, Almost Perfect",
+   "body": "Liking the app so far. Only issue Ive ran into is whenever my internet radio streams get interrupted they crash instead of resuming. I also wish there was a way to have internet radio listings display on the Home Screen.",
+   "territory": "USA",
+   "date": "2026-09-18T08:59:33-07:00"
+  },
+  {
+   "author": "belouga_92",
+   "rating": 5,
+   "title": "Perfekter Navidrome-Client",
+   "body": "Perfect Navidrome-Client if you’re looking for a native modern good-looking App for your music. Listening to music is fun again!",
+   "territory": "DEU",
+   "date": "2026-09-17T04:55:23-07:00"
+  },
   {
    "author": "reclusivemonkey",
    "rating": 5,
@@ -89,14 +185,6 @@
    "body": "The best Navidrome client for Apple devices",
    "territory": "ESP",
    "date": "2026-08-28T14:24:54-07:00"
-  },
-  {
-   "author": "Tecsharp",
-   "rating": 5,
-   "title": "Exccelent app",
-   "body": "It’s an excellent app. I’ve been testing it, and I haven’t experienced any freezes or issues so far. The app feels very smooth, and I was especially impressed that it supports both production and local links. That was really great to see. For now, it’s definitely meeting my needs.",
-   "territory": "MEX",
-   "date": "2026-08-25T16:06:39-07:00"
   },
   {
    "author": "TiagoM05",
@@ -233,14 +321,6 @@
    "body": "Apps works super quick to browse and view your library. Simple to figure out and use. Music plays fast and the UI looks great.",
    "territory": "USA",
    "date": "2026-06-27T15:42:39-07:00"
-  },
-  {
-   "author": "Fyrekcaz",
-   "rating": 4,
-   "title": "Great Navidrome App!",
-   "body": "It isn’t perfect but is by far my favorite app for macOS that connects to Navidrome. At the time of writing the app is still super new and I’m confident the features it lacks will be added over time — what exists currently works great. Worth the price.",
-   "territory": "USA",
-   "date": "2026-06-26T07:17:59-07:00"
   },
   {
    "author": "Solid_Inception",
