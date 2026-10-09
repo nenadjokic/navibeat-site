@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaviBeat for iPhone Duo: Navidrome on Both Pages</title>
+  <meta name="description" content="NaviBeat on iPhone Duo: the whole app on the outer screen when it is folded, and a player, album and library that split on the hinge when it is open.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="apple-itunes-app" content="app-id=6763518834">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/duo">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/duo">
+
+  <meta property="og:title" content="NaviBeat for iPhone Duo: your Navidrome library on both pages">
+  <meta property="og:description" content="Folded, the whole app on the outer screen. Open, the player and your albums split on the hinge.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/duo">
+  <meta property="og:image" content="https://navibeat.app/assets/framed/duo/navibeat-duo-made-for-duo.webp?v=20261009">
+  <meta property="og:image:alt" content="NaviBeat on iPhone Duo, opened and seen from outside, with Home on the outer screen.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat for iPhone Duo">
+  <meta name="twitter:description" content="Folded, the whole app on the outer screen. Open, the player and your albums split on the hinge.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/framed/duo/navibeat-duo-made-for-duo.webp?v=20261009">
+  <meta name="twitter:image:alt" content="NaviBeat on iPhone Duo.">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=202609120223">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://navibeat.app/duo#webpage",
+      "url": "https://navibeat.app/duo",
+      "name": "NaviBeat for iPhone Duo",
+      "isPartOf": {
+        "@id": "https://navibeat.app/#website"
+      },
+      "primaryImageOfPage": "https://navibeat.app/assets/framed/duo/navibeat-duo-made-for-duo.webp?v=20261009",
+      "inLanguage": "en",
+      "datePublished": "2026-10-09",
+      "dateModified": "2026-10-09"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://navibeat.app/duo#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NaviBeat",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Platforms",
+          "item": "https://navibeat.app/#platforms"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "iPhone Duo",
+          "item": "https://navibeat.app/duo"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://navibeat.app/duo#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does NaviBeat work on iPhone Duo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. NaviBeat uses the outer screen when the Duo is folded and both pages when it is open. Now Playing, album pages and artist pages split on the hinge, so one page never covers the other."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When does the Duo layout reach the App Store?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With version 1.5.4. It is in the public beta now, through TestFlight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a separate purchase for iPhone Duo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. NaviBeat is $5.99 USD once, as a Universal Purchase. The same purchase covers iPhone, iPhone Duo, iPad, Mac, Apple TV and Apple Watch."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <span class="nav__mark-ic"></span>
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features">
+          Features<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-features">
+          <a href="features">Overview</a>
+          <a href="multi-library">Multi-Library</a>
+          <a href="widgets">Widgets</a>
+          <a href="lastfm">Last.fm</a>
+          <a href="listenbrainz">ListenBrainz</a>
+          <a href="rockbox">Rockbox</a>
+        </div>
+      </div>
+      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><span class="nav__navifin-ic" aria-hidden="true"></span>NaviFin</a>
+
+      <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="p-hero">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span>Platforms</span>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">iPhone Duo</span>
+      </nav>
+
+      <div class="p-hero__wrap">
+        <div class="p-hero__copy">
+          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat &nbsp;&middot;&nbsp; iPhone Duo</p>
+          <h1>
+            <span class="word" style="animation-delay:0ms">Made</span>
+            <span class="word" style="animation-delay:70ms">for</span>
+            <span class="word" style="animation-delay:150ms">iPhone</span>
+            <span class="word" style="animation-delay:210ms">Duo.</span>
+          </h1>
+          <p class="p-hero__sub">
+            Folded, the whole app is on the outer screen, in one hand. Open it half way and NaviBeat splits on the hinge: the cover and controls on one page, lyrics or Up Next on the other. Your own Navidrome library on both pages.
+          </p>
+          <div class="p-hero__ctas">
+            <a class="btn btn--primary" href="beta">Try it in the public beta</a>
+            <a class="link-quiet" href="#screens">See both pages&nbsp;&rarr;</a>
+          </div>
+
+          <dl class="key-facts" aria-label="NaviBeat for iPhone Duo key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; column-gap: 24px; row-gap: 6px; font-size: 14px; line-height: 1.5; max-width: 60ch;">
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Device</dt>
+            <dd style="margin: 0; color: var(--text-1);">iPhone Duo &middot; folded, half open and fully open</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Available</dt>
+            <dd style="margin: 0; color: var(--text-1);">Public beta now &middot; App Store with 1.5.4</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Price</dt>
+            <dd style="margin: 0; color: var(--text-1);">$5.99 USD &middot; one-time &middot; Universal Purchase</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Server</dt>
+            <dd style="margin: 0; color: var(--text-1);">Navidrome v0.50+, OpenSubsonic, Airsonic-Advanced, Gonic</dd>
+          </dl>
+        </div>
+
+        <div class="p-hero__shot">
+          <img src="assets/framed/duo/navibeat-duo-made-for-duo.webp?v=20261009"
+               srcset="assets/framed/duo/navibeat-duo-made-for-duo-800.webp?v=20261009 800w, assets/framed/duo/navibeat-duo-made-for-duo.webp?v=20261009 1600w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on iPhone Duo, opened and seen from outside: the back on the left, Home on the outer screen on the right."
+               width="1600" height="1149" loading="eager" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOLDED -->
+  <section id="folded" aria-labelledby="duo-folded-title">
+    <div class="wrap" style="display:grid; gap:36px; grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr)); align-items:center; max-width:1000px;">
+      <div class="reveal">
+        <p class="eyebrow eyebrow--accent">Folded</p>
+        <h2 id="duo-folded-title" class="h2">Still all yours, in one hand.</h2>
+        <p style="margin:14px 0 0; color:var(--text-1); font-size:16px; line-height:1.7;">The outer screen runs the whole app: Home, your library, playlists, downloads and Now Playing. The tab bar sits on the edge, where your thumb is. Hi-Res and lossless from your own server, folded or not.</p>
+      </div>
+      <figure class="reveal" style="margin:0; max-width:380px; justify-self:center;">
+        <img src="assets/framed/duo/navibeat-duo-folded-now-playing.webp?v=20261009"
+             srcset="assets/framed/duo/navibeat-duo-folded-now-playing-800.webp?v=20261009 800w, assets/framed/duo/navibeat-duo-folded-now-playing.webp?v=20261009 1600w"
+             sizes="(min-width: 900px) 380px, 80vw"
+             alt="NaviBeat on the outer screen of a folded iPhone Duo, showing Now Playing with a Hi-Res 24/96 badge."
+             width="1148" height="1600" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+      </figure>
+    </div>
+  </section>
+
+  <!-- OPEN -->
+  <section id="screens" aria-labelledby="duo-screens-title">
+    <div class="wrap">
+      <div class="reveal" style="max-width:70ch;">
+        <p class="eyebrow eyebrow--accent">Open</p>
+        <h2 id="duo-screens-title" class="h2">Two pages. One player.</h2>
+        <p style="margin:14px 0 0; color:var(--text-1); font-size:16px; line-height:1.7;">Half open like a book, Now Playing splits on the hinge itself, so nothing sits in the fold. Album and artist pages keep that split even when the Duo lies flat.</p>
+      </div>
+      <div style="margin-top:30px; display:grid; gap:22px; grid-template-columns:repeat(auto-fit, minmax(min(340px, 100%), 1fr)); max-width:1100px;">
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border); padding:18px 18px 0;">
+          <img src="assets/framed/duo/navibeat-duo-book-lyrics.webp?v=20261009"
+               srcset="assets/framed/duo/navibeat-duo-book-lyrics-800.webp?v=20261009 800w, assets/framed/duo/navibeat-duo-book-lyrics.webp?v=20261009 1600w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on iPhone Duo, half open: cover and controls on the left page, synced lyrics on the right page." width="1600" height="1162" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 0 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Now Playing</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">Cover and controls on the left page, lyrics on the right.</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border); padding:18px 18px 0;">
+          <img src="assets/framed/duo/navibeat-duo-book-up-next.webp?v=20261009"
+               srcset="assets/framed/duo/navibeat-duo-book-up-next-800.webp?v=20261009 800w, assets/framed/duo/navibeat-duo-book-up-next.webp?v=20261009 1600w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on iPhone Duo, half open: the player on the left page, Up Next on the right page." width="1600" height="1162" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 0 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Up Next</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">The queue opens on the second page, nothing covers the player.</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border); padding:18px 18px 0;">
+          <img src="assets/framed/duo/navibeat-duo-book-album.webp?v=20261009"
+               srcset="assets/framed/duo/navibeat-duo-book-album-800.webp?v=20261009 800w, assets/framed/duo/navibeat-duo-book-album.webp?v=20261009 1600w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on iPhone Duo: an album page with the cover and actions on the left page and every track on the right." width="1600" height="1162" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 0 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Albums</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">About on the left, every track on the right.</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border); padding:18px 18px 0;">
+          <img src="assets/framed/duo/navibeat-duo-book-library.webp?v=20261009"
+               srcset="assets/framed/duo/navibeat-duo-book-library-800.webp?v=20261009 800w, assets/framed/duo/navibeat-duo-book-library.webp?v=20261009 1600w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on iPhone Duo: the library sidebar on one page and the album grid on the other." width="1600" height="1162" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 0 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Library</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">The sidebar on one page, your albums on the other.</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border); padding:18px 18px 0;">
+          <img src="assets/framed/duo/navibeat-duo-open-home.webp?v=20261009"
+               srcset="assets/framed/duo/navibeat-duo-open-home-800.webp?v=20261009 800w, assets/framed/duo/navibeat-duo-open-home.webp?v=20261009 1600w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on iPhone Duo, fully open: Home across both pages." width="1600" height="1162" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 0 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Fully open</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">Flat, it is a small tablet with your whole collection.</span>
+          </figcaption>
+        </figure>
+        <figure class="reveal" style="margin:0; background:var(--bg-1); border-radius:14px; overflow:hidden; border:1px solid var(--border); padding:18px 18px 0;">
+          <img src="assets/framed/duo/navibeat-duo-book-filled.webp?v=20261009"
+               srcset="assets/framed/duo/navibeat-duo-book-filled-800.webp?v=20261009 800w, assets/framed/duo/navibeat-duo-book-filled.webp?v=20261009 1600w"
+               sizes="(min-width: 900px) 46vw, 92vw"
+               alt="NaviBeat on iPhone Duo with the Filled look: both pages tinted in the colour of the album cover." width="1600" height="1162" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+          <figcaption style="padding:14px 0 16px;">
+            <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:5px;">Filled</span>
+            <span style="display:block; color:var(--text-1); font-size:14.5px; line-height:1.55;">Pick Filled and both pages take the colour of the cover.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section class="price" id="buy" aria-labelledby="duo-price-title">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">One price</p>
+      <p class="price__h" id="duo-price-title">One purchase. Every device.</p>
+      <div class="price__num">$5.99</div>
+      <p class="price__sub">iPhone, iPhone Duo, iPad, Mac, Apple TV, Apple Watch.</p>
+      <div class="price__ctas">
+        <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+              </svg>
+          Get it on the App Store, $5.99
+        </a>
+        <a class="link-quiet" href="beta">Join the public beta &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ: mirrored exactly by the FAQPage node in the head @graph. -->
+  <section aria-labelledby="duo-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="duo-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat work on iPhone Duo?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. NaviBeat uses the outer screen when the Duo is folded and both pages when it is open. Now Playing, album pages and artist pages split on the hinge, so one page never covers the other.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">When does the Duo layout reach the App Store?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">With version 1.5.4. It is in the public beta now, through TestFlight.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do I need a separate purchase for iPhone Duo?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. NaviBeat is $5.99 USD once, as a Universal Purchase. The same purchase covers iPhone, iPhone Duo, iPad, Mac, Apple TV and Apple Watch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="/">
+          <span class="footer__brand-ic" aria-hidden="true"></span>
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+        <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img decoding="async" class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Platforms</h3>
+        <ul>
+          <li><a href="appletv">Apple TV</a></li>
+          <li><a href="macos">Mac</a></li>
+          <li><a href="linux">Linux</a></li>
+          <li><a href="rockbox">Rockbox</a></li>
+          <li><a href="iphone">iPhone</a></li>
+          <li><a href="duo">iPhone Duo</a></li>
+          <li><a href="ipad">iPad</a></li>
+          <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="carplay">CarPlay</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+          <li><a href="beta">Beta program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="support">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>Live on the App Store &middot; 1.4 out now</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features').forEach(function (el) { sio.observe(el); });
+
+      /* THE OBSERVER NEEDS A FALLBACK. A fast scroll outruns it: a scrollbar drag or
+         a thumb flick moves thousands of pixels between two intersection samples, and
+         an element that is below the viewport in one sample and above it in the next
+         never crosses the threshold, so its callback never fires and it stays at
+         opacity 0 for the rest of the page's life. Measured 2026-09-06 on the shipped
+         homepage at 1280x900: a four-step drag to the bottom stranded 7 of 17 blocks
+         and 53 of 53 cards, the price block and the App Store reviews among them.
+
+         The sweep only takes an element whose top edge has already gone above the
+         viewport, which is strictly later than the observer's own condition, so it
+         cannot fire an entrance early and normal scrolling looks exactly as before.
+         It is rAF-throttled and it removes its own listener once every block is in,
+         so it costs nothing for the rest of the session. */
+      var revPending = [].slice.call(document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features'));
+      var revQueued = false;
+      var revSweep = function () {
+        revQueued = false;
+        /* Read every rect before writing a single class. Adding one mid-loop dirties
+           style, and the next getBoundingClientRect would then force a fresh layout,
+           once per element still in the list. */
+        var revLate = [], revRest = [], revI, revEl;
+        for (revI = 0; revI < revPending.length; revI++) {
+          revEl = revPending[revI];
+          (revEl.classList.contains('is-in') || revEl.getBoundingClientRect().top < 0
+            ? revLate : revRest).push(revEl);
+        }
+        for (revI = 0; revI < revLate.length; revI++) {
+          revLate[revI].classList.add('is-in');
+          sio.unobserve(revLate[revI]);
+        }
+        revPending = revRest;
+        if (!revPending.length) { window.removeEventListener('scroll', revOnScroll); }
+      };
+      var revOnScroll = function () {
+        if (!revQueued) { revQueued = true; requestAnimationFrame(revSweep); }
+      };
+      window.addEventListener('scroll', revOnScroll, { passive: true });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features').forEach(function (el) { el.classList.add('is-in'); });
+    }
+  })();
+</script>
+
+  <script defer src="lightbox.js?v=202609061417"></script>
+<script src="nav-menu.js?v=202609061100" defer></script>
+</body>
+</html>

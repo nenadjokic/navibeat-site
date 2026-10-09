@@ -184,6 +184,18 @@
   </url>
 
   <url>
+    <loc>https://navibeat.app/duo</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/duo" />
+    <image:image>
+      <image:loc>https://navibeat.app/assets/framed/duo/navibeat-duo-made-for-duo.webp</image:loc>
+      <image:title>NaviBeat on iPhone Duo: the outer screen folded, both pages open</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://navibeat.app/applewatch</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
