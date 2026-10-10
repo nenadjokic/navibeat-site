@@ -1,15 +1,95 @@
 {
- "count": 79,
- "average": 4.47,
+ "count": 98,
+ "average": 4.55,
  "headlineSource": "iTunes lookup ratings aggregate, all storefronts",
- "writtenCount": 53,
- "writtenAverage": 4.21,
- "shownCount": 49,
- "excludedForNoContent": 3,
+ "writtenCount": 64,
+ "writtenAverage": 4.33,
+ "shownCount": 59,
+ "excludedForNoContent": 4,
  "withheldByDecision": 1,
- "fetchedAt": 1790781191543,
+ "fetchedAt": 1791669071991,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
+  {
+   "author": "millgeek",
+   "rating": 5,
+   "title": "Cross-Platform Loving",
+   "body": "I bought Navibeat thinking I would just be using it on my phone. Next thing I know it has become my go-to music player on Mac too, and it’s even better on the bigger screen. Consistently impressed with the quality of Navibeat and the effort this developer has put into building a fantastic cross-platform experience. Wholly recommend.",
+   "territory": "USA",
+   "date": "2026-10-08T16:14:16-07:00"
+  },
+  {
+   "author": "O_Greywolf",
+   "rating": 5,
+   "title": "Always improving",
+   "body": "This is a solid client for my Navidrome server, and the best part is the developer acts on feedback and bug reports quickly - feature requests are considered by a voting system, and bug reports are acted on and replied to in a very reasonable time frame. Very happy with Navidrome on iOS and tvOS both!",
+   "territory": "USA",
+   "date": "2026-10-08T07:27:53-07:00"
+  },
+  {
+   "author": "Tokyo traveller 2025",
+   "rating": 5,
+   "title": "Amazing software",
+   "body": "Using NaviBeat is simply a forking joy!! Fast UI and well thought out functions and design. Works across my devices so what I play on my phone continues on my Apple Tv later while making food.\nShirt I love it ❤️\nFeature request (for ATV) - some kind of music visualization so my tv could look pretty or cool.\nThanks guys - keep up the good work 💪🏻",
+   "territory": "DNK",
+   "date": "2026-10-06T10:47:35-07:00"
+  },
+  {
+   "author": "Ricki Abney",
+   "rating": 5,
+   "title": "Exactly What I Need",
+   "body": "This app is perfect and easily worth the price to help the developer. It looks good but offers nice customization, it was easy to connect and everything looks very good. The app works as it should and it’s exactly what I needed.",
+   "territory": "USA",
+   "date": "2026-10-06T05:19:26-07:00"
+  },
+  {
+   "author": "millgeek",
+   "rating": 5,
+   "title": "Fantastic app",
+   "body": "Love this app. I rarely write reviews but had to take a minute to gush over this one. Beautiful. Functional. Smart design. Versions of the app for every screen. Every Navidrome user should be using this app. right",
+   "territory": "USA",
+   "date": "2026-10-05T20:20:40-07:00"
+  },
+  {
+   "author": "JordCord12",
+   "rating": 4,
+   "title": "Good",
+   "body": "Pretty good some minor bugs and cosmetic misalignments but it’s one of the best ones I’ve tried! Please add a visualizer 🙏",
+   "territory": "USA",
+   "date": "2026-10-05T10:16:57-07:00"
+  },
+  {
+   "author": "KalinkiOne",
+   "rating": 5,
+   "title": "Danke für die sehr gelungene App.",
+   "body": "Ich begleite die App-Entwicklung schon seit Längerem und bin froh, dass es diese App gibt. Sie ist die perfekte Ergänzung zum Navidrome Server mit eigener Musik im Heimnetz. Es ist schön zu sehen, wie positiv sich die App weiterentwickelt und welche Features immer wieder dazukommen. Großen Dank an den Entwickler und die einmalige Zahlung dafür ist mehr als angemessen. Viele Grüße und weiter so.",
+   "territory": "DEU",
+   "date": "2026-10-04T02:34:37-07:00"
+  },
+  {
+   "author": "Benicchio",
+   "rating": 5,
+   "title": "My main navidrome player",
+   "body": "Finally it’s mature! Fully customizable, allows multiple servers, quality configuration on Wi-Fi and mobile, light and the integration with last.fm rocks.",
+   "territory": "BRA",
+   "date": "2026-10-03T20:31:04-07:00"
+  },
+  {
+   "author": "otonielguajardo",
+   "rating": 5,
+   "title": "Unbeatable product quality",
+   "body": "One of the best Navidrome clients I’ve used. It features an impeccable UI that easily rivals streaming apps like Spotify, YouTube Music, and Apple Music",
+   "territory": "MEX",
+   "date": "2026-10-02T11:51:42-07:00"
+  },
+  {
+   "author": "kindfii",
+   "rating": 5,
+   "title": "Amazing Navidrome client",
+   "body": "Worth every cent. It feels very reliable and has all the features you would expect. Totally recommend!",
+   "territory": "ROU",
+   "date": "2026-09-28T11:06:10-07:00"
+  },
   {
    "author": "Чебупель28",
    "rating": 5,
