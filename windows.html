@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaviBeat for Windows: Navidrome Client for the PC</title>
+  <meta name="description" content="A desktop client for Navidrome and OpenSubsonic on Windows 10 and 11. Time-synced lyrics, Mini Player, downloads, 10-band EQ, casting and Rockbox sync. Five days free, then $9.99 once.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/windows">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/windows">
+
+  <meta property="og:title" content="NaviBeat for Windows: Navidrome &amp; Subsonic client for the PC">
+  <meta property="og:description" content="A desktop player for Navidrome and OpenSubsonic on Windows 10 and 11. Lyrics, Mini Player, downloads, 10-band EQ, casting, NaviSyncRock. Five days free, then $9.99 once.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/windows">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/linux/linux-home.webp">
+  <meta property="og:image:alt" content="NaviBeat desktop: a sidebar with Home, Albums, Playlists and a Featured Album hero.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat for Windows: Navidrome &amp; Subsonic client">
+  <meta name="twitter:description" content="A desktop app for Navidrome on Windows 10 and 11. Lyrics, Mini Player, downloads, EQ, Rockbox sync. Five days free, then $9.99 once.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/linux/linux-home.webp">
+  <meta name="twitter:image:alt" content="NaviBeat desktop: sidebar with a Featured Album hero.">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=202609120223">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
+        ]
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
+      },
+      "sameAs": [
+        "https://www.navidrome.org/apps/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://navibeat.app/#website",
+      "url": "https://navibeat.app/",
+      "name": "NaviBeat",
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://navibeat.app/windows#webpage",
+      "url": "https://navibeat.app/windows",
+      "name": "NaviBeat for Windows",
+      "isPartOf": {
+        "@id": "https://navibeat.app/#website"
+      },
+      "about": {
+        "@id": "https://navibeat.app/windows#app"
+      },
+      "primaryImageOfPage": "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
+      "inLanguage": "en",
+      "datePublished": "2026-10-11",
+      "dateModified": "2026-10-11"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://navibeat.app/windows#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NaviBeat",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Platforms",
+          "item": "https://navibeat.app/#platforms"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Windows",
+          "item": "https://navibeat.app/windows"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://navibeat.app/windows#app",
+      "name": "NaviBeat for Windows",
+      "url": "https://navibeat.app/windows",
+      "image": "https://navibeat.app/assets/icon-512.png",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Music Streaming Client",
+      "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+      "softwareVersion": "1.0.32",
+      "datePublished": "2026-10-11",
+      "downloadUrl": "https://dl.navibeat.app/windows/latest/NaviBeat-Setup.exe",
+      "installUrl": "https://dl.navibeat.app/windows/latest/NaviBeat-Setup.exe",
+      "description": "A desktop client for Navidrome, Airsonic, Gonic and any OpenSubsonic music server on Windows 10 and 11. Time-synced lyrics, Mini Player, downloads and offline playback, 10-band equalizer, UPnP and DLNA casting, Library Doctor checks, and NaviSyncRock sync to a Rockbox player. Java and VLC are included. Five-day free trial with every feature, then a one-time $9.99 license.",
+      "author": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://navibeat.lemonsqueezy.com/checkout/buy/f39cd7e9-1ed5-4f85-9e85-cd86f60b99d5?discount=0"
+      },
+      "softwareRequirements": "Windows 10 or Windows 11, 64-bit, and a Navidrome or OpenSubsonic server. Java and VLC are included in the download.",
+      "featureList": [
+        "Desktop app written in Kotlin with Compose Multiplatform, no Electron and no web view",
+        "Time-synced LRC lyrics",
+        "Mini Player that can stay on top of other windows",
+        "Downloads and offline playback with Prefer Downloaded Music",
+        "10-band equalizer, ReplayGain and crossfade",
+        "Play to a UPnP or DLNA speaker, receiver or smart TV on your network, found automatically",
+        "Library Doctor: finds and fixes split albums, track numbers, covers and damaged tags",
+        "NaviSyncRock: sync your library to a Rockbox iPod or player",
+        "mTLS client certificates and custom HTTP headers",
+        "Frosted glass sidebar on Windows 10 (1803 and later) and Windows 11",
+        "Zero analytics, zero trackers"
+      ],
+      "screenshot": [
+        "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-lyrics.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-albums.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-artists.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock.webp",
+        "https://navibeat.app/assets/screenshots/linux/linux-navisyncrock-sync.webp"
+      ],
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Navidrome",
+          "url": "https://www.navidrome.org"
+        },
+        {
+          "@type": "Thing",
+          "name": "OpenSubsonic API"
+        },
+        {
+          "@type": "Thing",
+          "name": "Rockbox"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://navibeat.app/windows#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does NaviBeat for Windows cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "$9.99, once. There's no subscription. You get five days with every feature first, and after that the app asks for a license key."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many computers can I use it on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One key activates up to three computers. To move it, open Settings on the old one and click Release This Computer, then enter the key on the new one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Windows says \"Windows protected your PC\". What do I do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That's SmartScreen. It shows \"Unknown publisher\" for an installer it hasn't seen signed. Click More info, then Run anyway."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to install Java or VLC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Both are inside the installer and the portable zip. Your settings live in %APPDATA%\\NaviBeat and your downloads in %LOCALAPPDATA%\\NaviBeat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pay, and where does the key come from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Checkout is run by Lemon Squeezy. They're the merchant of record, so they handle VAT and send the receipt. The license key arrives by email right after you pay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What music server does it need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic-compatible server, including Airsonic-Advanced and Gonic. It doesn't host or stream any music of its own."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <span class="nav__mark-ic"></span>
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features">
+          Features<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-features">
+          <a href="features">Overview</a>
+          <a href="multi-library">Multi-Library</a>
+          <a href="widgets">Widgets</a>
+          <a href="lastfm">Last.fm</a>
+          <a href="listenbrainz">ListenBrainz</a>
+          <a href="rockbox">Rockbox</a>
+        </div>
+      </div>
+      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><span class="nav__navifin-ic" aria-hidden="true"></span>NaviFin</a>
+
+      <a class="btn btn--primary btn--compact" href="https://apps.apple.com/app/navibeat/id6763518834" target="_blank" rel="noopener">App&nbsp;Store</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="p-hero">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span>Platforms</span>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">Windows</span>
+      </nav>
+
+      <div class="p-hero__wrap">
+        <div class="p-hero__copy">
+          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat <span aria-hidden="true">&middot;</span> Windows <span aria-hidden="true">&middot;</span> Version 1.0</p>
+          <h1>
+            <span class="word" style="animation-delay:0ms">The</span>
+            <span class="word" style="animation-delay:60ms">Navidrome</span>
+            <span class="word" style="animation-delay:140ms">client</span>
+            <span class="word" style="animation-delay:200ms">for</span>
+            <span class="word" style="animation-delay:260ms">Windows.</span>
+          </h1>
+          <p class="p-hero__sub">
+            A desktop music player for Navidrome, Airsonic, Gonic, or any OpenSubsonic server. Time-synced lyrics, a Mini Player that stays on top, downloads for offline, a 10-band equalizer, casting to the speakers on your network, and Rockbox sync. Use every feature free for <strong>five days</strong>. After that it's <strong>$9.99, once</strong>.
+          </p>
+          <div class="p-hero__ctas">
+            <a class="btn btn--primary" href="https://dl.navibeat.app/windows/latest/NaviBeat-Setup.exe">
+              <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1zM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/>
+              </svg>
+              Try it free for 5 days
+            </a>
+            <a class="link-quiet" href="https://navibeat.lemonsqueezy.com/checkout/buy/f39cd7e9-1ed5-4f85-9e85-cd86f60b99d5?discount=0">Buy a license, $9.99&nbsp;&rarr;</a>
+          </div>
+
+          <p style="margin:14px 0 0; color:var(--text-2); font-size:13px; line-height:1.7; max-width:60ch;">
+            Rather not install anything? Get the <a href="https://dl.navibeat.app/windows/latest/NaviBeat-windows-x64-portable.zip" style="color:var(--accent-hi);">portable zip</a>, unpack it anywhere and run <code>NaviBeat.exe</code>.<br>
+            If Windows shows <strong>Windows protected your PC</strong>, click <strong>More info</strong>, then <strong>Run anyway</strong>. <a href="#faq-smartscreen" style="color:var(--accent-hi);">Why it asks</a>.
+          </p>
+
+          <dl class="key-facts" aria-label="NaviBeat for Windows key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; column-gap: 24px; row-gap: 6px; font-size: 14px; line-height: 1.5; max-width: 60ch;">
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Platform</dt>
+            <dd style="margin: 0; color: var(--text-1);">Windows 10 and 11, 64-bit</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Price</dt>
+            <dd style="margin: 0; color: var(--text-1);">$9.99 once, after a five-day free trial</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">License</dt>
+            <dd style="margin: 0; color: var(--text-1);">One key, up to three computers</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Server</dt>
+            <dd style="margin: 0; color: var(--text-1);">Navidrome v0.50+, OpenSubsonic, Airsonic-Advanced, Gonic</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Download</dt>
+            <dd style="margin: 0; color: var(--text-1);">Installer or portable zip, Java and VLC inside</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Version</dt>
+            <dd style="margin: 0; color: var(--text-1);">1.0.32 &middot; <time datetime="2026-10-11">updated October 11, 2026</time></dd>
+          </dl>
+        </div>
+
+        <div class="p-hero__shot">
+          <img src="assets/screenshots/linux/linux-home.webp"
+               alt="NaviBeat Home on the desktop: sidebar with Home, Artists, Albums, Playlists, Radio, Directories and a Featured Album hero section."
+               width="1180" height="768" loading="eager" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRIAL NOTICE -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <aside role="note" aria-label="Free trial" style="display:flex; gap:14px; align-items:flex-start; padding:18px 22px; background: color-mix(in srgb, var(--accent) 10%, var(--bg-1)); border:1px solid color-mix(in srgb, var(--accent) 35%, var(--border)); border-radius:12px;">
+        <span aria-hidden="true" style="font-size:22px; line-height:1.2;">&#9201;</span>
+        <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">
+          <strong style="color:var(--text-0);">Five days, every feature.</strong> Install it, point it at your own server, and use all of it. Settings counts down the days. When you're ready, buy a key and paste it in. Questions go to <a href="mailto:support@navibeat.app" style="color:var(--accent-hi);">support@navibeat.app</a>.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="padding-block: clamp(28px, 4vh, 52px);">
+    <div class="wrap">
+      <ul class="p-stats reveal" role="list" aria-label="NaviBeat for Windows at a glance">
+        <li class="p-stat">
+          <p class="p-stat__num"><span class="accent">$9.99</span></p>
+          <p class="p-stat__label">Once. No subscription.</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">5 <span class="accent">days</span></p>
+          <p class="p-stat__label">Free, with every feature</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">3 <span class="accent">PCs</span></p>
+          <p class="p-stat__label">On one license key</p>
+        </li>
+        <li class="p-stat">
+          <p class="p-stat__num">0 <span class="accent">SDKs</span></p>
+          <p class="p-stat__label">No analytics. No trackers.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why-windows" aria-labelledby="why-windows-title">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="eyebrow eyebrow--accent">The short answer</p>
+        <h2 id="why-windows-title" class="h2">A desktop app for the server you already run.</h2>
+      </div>
+
+      <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 8px 0 34px; padding: 20px 24px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15.5px; line-height: 1.7; color: var(--text-1); max-width: 78ch;">
+        <strong style="color: var(--text-0);">Short answer.</strong> NaviBeat for Windows is a <strong>desktop app</strong> written in Kotlin with Compose Multiplatform. No Electron, no web view. It plays your Navidrome library, keeps <strong>downloads for offline</strong>, shows <strong>time-synced lyrics</strong>, and has a <strong>Mini Player</strong> you can pin on top. It casts to <strong>UPnP and DLNA</strong> speakers, checks your library with <strong>Library Doctor</strong>, and syncs to a <strong>Rockbox iPod</strong>. It's the same code as NaviBeat for Linux, built for Windows.
+      </aside>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:18px;">
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">01 / On your desktop</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">A real app window.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">A sidebar, keyboard control and directory browsing. The <strong>Mini Player</strong> can stay on top of whatever you're doing. On Windows 10 (1803 and later) and Windows 11 the sidebar is <strong>frosted glass</strong>, and your desktop shows through it, blurred.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">02 / Audio</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">EQ, ReplayGain, crossfade.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">A <strong>10-band equalizer</strong>. <strong>ReplayGain</strong>, so a shuffle across a mixed library stays at one loudness. <strong>Crossfade</strong> between tracks.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">03 / Play it somewhere else</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">Send it to the speaker in the other room.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">NaviBeat finds the <strong>UPnP and DLNA</strong> renderers on your network by itself, with no address to type: a network receiver, a streamer, a soundbar, a smart TV. Your queue goes with it.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">04 / New: Library Doctor</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">Find what's wrong with your tags.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">Library Doctor reads your library and lists albums that split in two, duplicate imports, compilations that aren't marked as one, missing or doubled track numbers, missing covers and damaged tag text. Point it at the folder that holds your music and it fixes them in the files, after you review each change, and Write History can undo any of it.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">05 / Rockbox iPod sync</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">NaviSyncRock: your Navidrome, on a real iPod.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">Plug in a Rockbox iPod or player and send it a song, album, artist or playlist. <strong>Your own server</strong> does the transcoding, and NaviBeat copies the result across. <a href="rockbox" style="color:var(--accent-hi);">See how it works</a>.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 10px;">06 / Homelab access</p>
+          <h3 style="font-size:19px; margin:0 0 12px; color:var(--text-0);">It reaches the server you built.</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.7;">When you add your server you can set <strong>custom HTTP headers</strong> and import an <strong>mTLS client certificate</strong> (a <code>.p12</code> file). Your music comes straight from your server, with no relay of ours in between.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE SCREENSHOTS -->
+  <section id="features" aria-labelledby="windows-features-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Every screen</p>
+        <h2 id="windows-features-title" class="h2">A desktop app that behaves like one.</h2>
+        <p>Sidebar navigation, keyboard control, a Mini Player, downloads that keep playing when you go offline. These screenshots come from the Linux build, which shares its code with Windows, and use a demo library.</p>
+      </div>
+
+      <div class="p-shots">
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-home.webp"
+                 alt="NaviBeat Home with sidebar and Featured Album hero"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">01 / Home</p>
+            <h3>Sidebar, Featured Album, Quick Play.</h3>
+            <p>The sidebar gives you Home, Artists, Albums, Playlists, Radio and Directories. Home opens on a Featured Album hero with Quick Play, Made for You and Most Played below.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-lyrics.webp"
+                 alt="NaviBeat Now Playing screen with a time-synced lyrics panel"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">02 / Now Playing &amp; Lyrics</p>
+            <h3>Time-synced lyrics, right beside the art.</h3>
+            <p>Open the lyrics panel next to Now Playing and each line lights up as it's sung. Album art, ratings and full transport controls sit alongside.</p>
+          </div>
+        </article>
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-albums.webp"
+                 alt="NaviBeat Albums grid with cover art, artist and year, and a now-playing bar"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">03 / Albums</p>
+            <h3>Your whole library at a glance.</h3>
+            <p>An Albums grid with cover art, artist name and release year. Sort by recently added, alphabetically, by artist, or by year. Click any album for the full track list, and keep control from the now-playing bar.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-navisyncrock-sync.webp"
+                 alt="NaviBeat NaviSyncRock sync screen: choose entire library or selected artists, and a transcode format and bitrate"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">04 / NaviSyncRock</p>
+            <h3>Sync to a Rockbox player.</h3>
+            <p>Pick your whole library or just some artists, albums and playlists, choose a format and bitrate, and NaviBeat transcodes on your server and copies it to a connected Rockbox iPod or player.</p>
+          </div>
+        </article>
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <img src="assets/screenshots/linux/linux-artists.webp"
+                 alt="NaviBeat Artists view with circular artist images"
+                 width="1180" height="768" loading="lazy" decoding="async">
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">05 / Artists</p>
+            <h3>Every artist, with their art.</h3>
+            <p>Browse artists as circular tiles with their images and album counts. Open one for the full discography.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOT STRIP -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">All screenshots</p>
+        <h2 id="every-screen" class="h2">Every screen in one place.</h2>
+      </div>
+    </div>
+    <div class="strip reveal">
+      <div class="strip__track">
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-home.webp" alt="NaviBeat Home" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Home</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-now-playing.webp" alt="NaviBeat Now Playing" width="1180" height="768" loading="lazy" decoding="async"
+                 srcset="assets/screenshots/linux/linux-now-playing-692.webp 692w, assets/screenshots/linux/linux-now-playing-1038.webp 1038w, assets/screenshots/linux/linux-now-playing.webp 1180w"
+                 sizes="346px">
+          <p class="strip__caption">Now Playing</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-lyrics.webp" alt="NaviBeat time-synced lyrics" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Lyrics</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-albums.webp" alt="NaviBeat Albums grid" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Albums</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-artists.webp" alt="NaviBeat Artists" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Artists</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-navisyncrock.webp" alt="NaviBeat NaviSyncRock device page" width="1180" height="768" loading="lazy" decoding="async"
+                 srcset="assets/screenshots/linux/linux-navisyncrock-692.webp 692w, assets/screenshots/linux/linux-navisyncrock-1038.webp 1038w, assets/screenshots/linux/linux-navisyncrock.webp 1180w"
+                 sizes="346px">
+          <p class="strip__caption">NaviSyncRock</p>
+        </div>
+        <div class="strip__item">
+          <img src="assets/screenshots/linux/linux-navisyncrock-sync.webp" alt="NaviBeat NaviSyncRock sync options" width="1180" height="768" loading="lazy" decoding="async">
+          <p class="strip__caption">Rockbox sync</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALL -->
+  <section id="install" aria-labelledby="windows-install-title">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <p class="eyebrow eyebrow--accent">Get it running</p>
+        <h2 id="windows-install-title" class="h2">Run the installer, or unzip one folder.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap:18px; align-items:start;">
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">The installer</h3>
+          <ol style="margin:0; padding-left:18px; color:var(--text-1); font-size:15px; line-height:1.8;">
+            <li>Download <a href="https://dl.navibeat.app/windows/latest/NaviBeat-Setup.exe" style="color:var(--accent-hi);">NaviBeat-Setup.exe</a>.</li>
+            <li>Run it. It installs for your user account, so it doesn't ask for an administrator password.</li>
+            <li>If you see <strong>Windows protected your PC</strong>, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+            <li>Open NaviBeat and add your server.</li>
+          </ol>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">The portable zip</h3>
+          <ol style="margin:0; padding-left:18px; color:var(--text-1); font-size:15px; line-height:1.8;">
+            <li>Download the <a href="https://dl.navibeat.app/windows/latest/NaviBeat-windows-x64-portable.zip" style="color:var(--accent-hi);">portable zip</a>.</li>
+            <li>Unpack it into any folder.</li>
+            <li>Run <code>NaviBeat.exe</code>. Java and VLC are inside the folder, so there's nothing else to install.</li>
+          </ol>
+          <p style="margin:16px 0 0; color:var(--text-2); font-size:13px; line-height:1.6;">Both versions keep your settings in <code>%APPDATA%\NaviBeat</code> and your downloads in <code>%LOCALAPPDATA%\NaviBeat</code>.</p>
+        </article>
+
+        <article style="background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:24px;">
+          <h3 style="font-size:18px; margin:0 0 14px; color:var(--text-0);">What you need</h3>
+          <ul style="margin:0; padding-left:18px; color:var(--text-1); font-size:15px; line-height:1.8;">
+            <li><strong>Windows 10 or 11, 64-bit.</strong> There's no 32-bit build.</li>
+            <li><strong>Nothing else to install.</strong> Java and VLC travel inside the download.</li>
+            <li>A <strong>Navidrome or OpenSubsonic server</strong> to connect to. NaviBeat is a client and comes with no music of its own.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE / BUY -->
+  <section class="price" id="buy" aria-labelledby="windows-price-title">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">One price</p>
+      <p class="price__h" id="windows-price-title">Try it for five days. Keep it for $9.99.</p>
+      <div class="price__num">$9.99</div>
+      <p class="price__sub">Once. No subscription. One key, up to three computers.</p>
+      <div class="price__ctas">
+        <a class="btn btn--primary" href="https://dl.navibeat.app/windows/latest/NaviBeat-Setup.exe">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1zM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"/>
+          </svg>
+          Try it free for 5 days
+        </a>
+        <a class="btn btn--ghost" href="https://navibeat.lemonsqueezy.com/checkout/buy/f39cd7e9-1ed5-4f85-9e85-cd86f60b99d5?discount=0">Buy a license, $9.99</a>
+        <p style="margin:14px 0 0; color:var(--text-2); font-size:13px; line-height:1.7; max-width:56ch;">
+          Checkout is run by Lemon Squeezy. They're the merchant of record, so they handle VAT and send your receipt. Your license key arrives by email. Paste it into Settings and you're done. To move it to another computer, click <strong>Release This Computer</strong> on the old one.
+        </p>
+        <a class="link-quiet" href="https://dl.navibeat.app/windows/latest/NaviBeat-windows-x64-portable.zip">Portable zip instead &rarr;</a>
+        <p style="margin:14px 0 0; color:var(--text-2); font-size:13px; line-height:1.7; max-width:56ch;">
+          The installer isn't code-signed, so Windows shows <strong>Windows protected your PC</strong> the first time. Click <strong>More info</strong>, then <strong>Run anyway</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="windows-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="windows-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How much does NaviBeat for Windows cost?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">$9.99, once. There's no subscription. You get five days with every feature first, and after that the app asks for a license key.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How many computers can I use it on?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">One key activates up to three computers. To move it, open Settings on the old one and click <strong>Release This Computer</strong>, then enter the key on the new one.</p>
+        </div>
+        <div class="faq__item" id="faq-smartscreen" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Windows says "Windows protected your PC". What do I do?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">That's SmartScreen. It shows "Unknown publisher" for an installer it hasn't seen signed. Click <strong>More info</strong>, then <strong>Run anyway</strong>.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do I need to install Java or VLC?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. Both are inside the installer and the portable zip. Your settings live in <code>%APPDATA%\NaviBeat</code> and your downloads in <code>%LOCALAPPDATA%\NaviBeat</code>.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How do I pay, and where does the key come from?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Checkout is run by Lemon Squeezy. They're the merchant of record, so they handle VAT and send the receipt. The license key arrives by email right after you pay.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What music server does it need?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic-compatible server, including Airsonic-Advanced and Gonic. It doesn't host or stream any music of its own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="/">
+          <span class="footer__brand-ic" aria-hidden="true"></span>
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native player for Navidrome and Subsonic, across the Apple ecosystem and Linux. Built in Belgrade.</p>
+        <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img decoding="async" class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Platforms</h3>
+        <ul>
+          <li><a href="appletv">Apple TV</a></li>
+          <li><a href="macos">Mac</a></li>
+          <li><a href="linux">Linux</a></li>
+          <li><a href="windows">Windows</a></li>
+          <li><a href="rockbox">Rockbox</a></li>
+          <li><a href="iphone">iPhone</a></li>
+          <li><a href="ipad">iPad</a></li>
+          <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="carplay">CarPlay</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="support">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>Windows 1.0.32</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { sio.observe(el); });
+
+      /* Fallback sweep, same as linux.html: a fast scroll can outrun the observer and
+         leave a block at opacity 0, so anything whose top is already above the
+         viewport is revealed on the next frame. */
+      var revPending = [].slice.call(document.querySelectorAll('.reveal, .reveal-stagger, .p-stats'));
+      var revQueued = false;
+      var revSweep = function () {
+        revQueued = false;
+        var revLate = [], revRest = [], revI, revEl;
+        for (revI = 0; revI < revPending.length; revI++) {
+          revEl = revPending[revI];
+          (revEl.classList.contains('is-in') || revEl.getBoundingClientRect().top < 0
+            ? revLate : revRest).push(revEl);
+        }
+        for (revI = 0; revI < revLate.length; revI++) {
+          revLate[revI].classList.add('is-in');
+          sio.unobserve(revLate[revI]);
+        }
+        revPending = revRest;
+        if (!revPending.length) { window.removeEventListener('scroll', revOnScroll); }
+      };
+      var revOnScroll = function () {
+        if (!revQueued) { revQueued = true; requestAnimationFrame(revSweep); }
+      };
+      window.addEventListener('scroll', revOnScroll, { passive: true });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { el.classList.add('is-in'); });
+    }
+  })();
+</script>
+
+  <script defer src="lightbox.js?v=202609061417"></script>
+<script src="nav-menu.js?v=202609061100" defer></script>
+</body>
+</html>

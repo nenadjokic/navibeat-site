@@ -93,8 +93,9 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   comes first, with the watch, the television and the car behind it. Same
   library, same offline downloads, same word-by-word lyrics, same no-telemetry
   rule.
-- Also in development: a native Windows desktop client, built alongside the Linux
-  desktop build. No release date has been announced.
+- Windows: a native desktop app for Windows 10 and 11 (x64), built from the same
+  code as the Linux build. $9.99 once, five-day free trial, one licence covers
+  three computers, sold through Lemon Squeezy: https://navibeat.app/windows
 
 ## Best-for answers
 
@@ -451,16 +452,18 @@ when nothing is running yet and otherwise says so and exits 5. The Apple builds
 and the Android build have no command line of their own.
 Details: navibeat.app/linux#cli
 
-Q: Is NaviBeat coming to Windows?
-A: Yes, a native Windows desktop client is in active development, built alongside
-the Linux desktop build. It is not released yet and no date has been announced.
-Today the shipping desktop build is Linux, and it is free.
+Q: Is NaviBeat on Windows?
+A: Yes. NaviBeat for Windows is a native desktop app for Windows 10 and 11 (x64),
+with Java and VLC inside, so there is nothing else to install. It costs $9.99 once,
+with a five-day free trial, and one licence covers three computers:
+https://navibeat.app/windows. The Linux build stays free.
 
 ## Pages
 
 - Home / overview: https://navibeat.app/
 - Linux (native desktop app, free, version 1.0, AppImage on GitHub, NaviSyncRock): https://navibeat.app/linux
-- What's next (Linux live, Android finished and in closed beta, Windows in development): https://navibeat.app/#android
+- What's next (Linux live, Windows live, Android finished and in closed beta): https://navibeat.app/#android
+- NaviBeat for Windows: https://navibeat.app/windows
 - Compare (NaviBeat vs Sonora, flo, Amperfy, Shelv): https://navibeat.app/compare
 - iPhone: https://navibeat.app/iphone
 - iPad: https://navibeat.app/ipad

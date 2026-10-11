@@ -77,6 +77,13 @@
   </url>
 
   <url>
+    <loc>https://navibeat.app/windows</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/windows" />
+  </url>
+  <url>
     <loc>https://navibeat.app/linux</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
