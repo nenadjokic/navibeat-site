@@ -40,7 +40,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=202609120223">
+  <link rel="stylesheet" href="styles.css?v=202610111510">
   <link rel="stylesheet" href="artifact.css?v=202609061100">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp?v=20260830 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp?v=20260830 2000w"
@@ -399,7 +399,7 @@
     <div class="herodeck" data-herodeck data-interval="10000">
      <div class="herodeck__track">
 
-      <article class="herodeck__slide is-current" data-slide="0" aria-roledescription="slide" aria-label="1 of 3: NaviBeat on every Apple screen">
+      <article class="herodeck__slide is-current" data-slide="0" aria-roledescription="slide" aria-label="1 of 4: NaviBeat on every Apple screen">
        <div class="wrap hero__wrap">
       <div class="hero__copy">
         <p class="eyebrow hero__eyebrow">
@@ -484,7 +484,7 @@
       <!-- SLIDE 2: iPhone Duo. The adaptation is in the public beta since build 327
            (hinge split on in Release, 58ac1d144) and reaches the App Store with 1.5.4. Text gated on the `site`
            surface, evidence in docs/app-review/evidence/. -->
-      <article class="herodeck__slide" data-slide="1" aria-roledescription="slide" aria-label="2 of 3: NaviBeat on iPhone Duo">
+      <article class="herodeck__slide" data-slide="1" aria-roledescription="slide" aria-label="2 of 4: NaviBeat on iPhone Duo">
        <div class="wrap newsbar">
         <div class="newsbar__copy">
           <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>Public beta now</p>
@@ -506,7 +506,7 @@
 
       <!-- SLIDE 3: what 1.4 brought, three of the eleven items, linking into the
            section further down that carries all of them. -->
-      <article class="herodeck__slide" data-slide="2" aria-roledescription="slide" aria-label="3 of 3: What is new in 1.4">
+      <article class="herodeck__slide" data-slide="2" aria-roledescription="slide" aria-label="3 of 4: What is new in 1.4">
        <div class="wrap newsbar">
         <div class="newsbar__copy">
           <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>Fresh from the workshop</p>
@@ -533,12 +533,35 @@
        </div>
       </article>
 
+      <!-- SLIDE 4 (2026-10-11, Nenad): NaviBeat for Windows is live. The picture is
+           the real Windows 11 desktop with the taskbar, so it reads as Windows at a
+           glance. Price and licence are the ones the Windows card below states. -->
+      <article class="herodeck__slide" data-slide="3" aria-roledescription="slide" aria-label="4 of 4: NaviBeat for Windows">
+       <div class="wrap newsbar">
+        <div class="newsbar__copy">
+          <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>Live now</p>
+          <h2 class="newsbar__h">NaviBeat is out <em>on Windows.</em></h2>
+          <p class="newsbar__p">A native desktop app for Windows 10 and 11. $9.99 once, with a five-day free trial, and one purchase covers three computers.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="windows">Get it for Windows&nbsp;&rarr;</a>
+          </div>
+        </div>
+        <figure class="newsbar__art newsbar__art--windows">
+          <img src="assets/screenshots/windows/windows-home.webp?v=20261011"
+               sizes="(max-width: 1039px) 88vw, 46vw"
+               alt="NaviBeat for Windows on the Windows 11 desktop, Home open with Ember Lines ready to play."
+               width="1180" height="738" loading="lazy" decoding="async">
+        </figure>
+       </div>
+      </article>
+
      </div>
 
      <div class="herodeck__nav" role="tablist" aria-label="Hero banner">
        <button class="herodeck__dot is-on" type="button" role="tab" aria-selected="true"  aria-controls="" data-go="0"><span class="visually-hidden">Every Apple screen</span></button>
        <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="1"><span class="visually-hidden">NaviBeat on iPhone Duo</span></button>
        <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="2"><span class="visually-hidden">What is new in 1.4</span></button>
+       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="3"><span class="visually-hidden">NaviBeat for Windows</span></button>
      </div>
     </div>
   </section>
@@ -883,7 +906,7 @@
     <div class="wrap">
       <div class="platforms__eyebrow reveal-stagger">
         <p class="eyebrow eyebrow--accent">What's next</p>
-        <h2 id="next-title" class="platforms__title">NaviBeat is on Linux now. <em style="font-style:italic;">And it keeps going.</em></h2>
+        <h2 id="next-title" class="platforms__title">NaviBeat is on Linux and Windows now. <em style="font-style:italic;">And it keeps going.</em></h2>
       </div>
 
       <ul class="plat-grid plat-grid--trio reveal-stagger" role="list">

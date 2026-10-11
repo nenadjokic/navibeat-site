@@ -4185,6 +4185,19 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
     drop-shadow(0 0 90px rgba(244, 123, 32, 0.16));
 }
 
+/* Windows (2026-10-11): the real desktop screenshot, rounded like a screen,
+   with the same shadow and copper glow as the Duo picture. */
+.newsbar__art--windows img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow:
+    0 52px 96px rgba(0, 0, 0, 0.68),
+    0 16px 36px rgba(0, 0, 0, 0.52),
+    0 0 90px rgba(244, 123, 32, 0.16);
+}
+
 /* Three phones, fanned, the middle one forward. Same depth idiom as the hero
    lineup: one beside the other, one behind the other. */
 .newsbar__art--trio {
