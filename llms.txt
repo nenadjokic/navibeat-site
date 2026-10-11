@@ -1,13 +1,13 @@
 # NaviBeat
 
-> NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch (plus CarPlay) and is sold as one $5.99 USD one-time Universal Purchase on the App Store. NaviBeat is a client only: it has no backend, no analytics, and no tracking, and it connects solely to the server you run (and optionally Last.fm or ListenBrainz).
+> NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch (plus CarPlay) and is sold as one $5.99 USD one-time Universal Purchase on the App Store. NaviBeat is a client only: it has no backend, no analytics, and no tracking, and it connects solely to the server you run (and optionally Last.fm or ListenBrainz). The same client is also out as a desktop app for Linux (free) and for Windows 10 and 11 ($9.99 once, five-day free trial, https://navibeat.app/windows).
 
 ## Key facts
 
 - Name: NaviBeat
 - Category: Self-hosted music streaming client (Navidrome / Subsonic / OpenSubsonic)
-- Platforms: iPhone (iOS 17+), iPad (iPadOS 17+), Mac (macOS 15+), Apple TV (tvOS 18+), Apple Watch (watchOS 10+), plus CarPlay
-- Price: $5.99 USD, one-time, one Universal Purchase covers all five platforms. No subscription.
+- Platforms: iPhone (iOS 17+), iPad (iPadOS 17+), Mac (macOS 15+), Apple TV (tvOS 18+), Apple Watch (watchOS 10+), plus CarPlay. Desktop: Linux (x86_64 and ARM64, free, https://navibeat.app/linux) and Windows 10 and 11 (x64, $9.99 once, https://navibeat.app/windows). Android: finished, in closed beta.
+- Price: $5.99 USD, one-time, one Universal Purchase covers all five Apple platforms. No subscription. Linux is free. Windows is $9.99 USD once after a five-day free trial, one licence for three computers.
 - Current version: 1.4, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS, released 2026-09-05. It is the version described under "New in 1.4" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
 - Availability: Live on the Apple App Store. https://apps.apple.com/app/navibeat/id6763518834
 - App Store rating: 4.55 out of 5 from 98 ratings across all storefronts, 64 of which carry a written review (snapshot of 2026-10-10). Every review the app has, critical ones included, is published at https://navibeat.app/#reviews
@@ -119,7 +119,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 
 - [Home / overview](https://navibeat.app/): What NaviBeat is, all platforms, pricing, FAQ
 - [Linux](https://navibeat.app/linux): native Linux desktop feature page, free, version 1.0, AppImage download on GitHub, with time-synced lyrics, Mini Player, downloads, 10-band EQ, and NaviSyncRock Rockbox sync
-- [What's next: Linux, Android, Windows](https://navibeat.app/#android): the Linux desktop build (live and free) plus the in-development native Android and Windows clients
+- [What's next: Linux, Windows, Android](https://navibeat.app/#android): the Linux desktop build (live and free), the Windows desktop app (live, $9.99 once, five-day free trial) and the native Android client (finished, closed beta)
 - [Compare: NaviBeat vs Sonora vs flo vs Amperfy](https://navibeat.app/compare): A sourced, dated comparison of the Navidrome clients on Apple, including where the other apps genuinely win
 - [iPhone](https://navibeat.app/iphone): iOS feature page, including why it is the strongest iPhone choice (offline, CarPlay, cellular, audio quality)
 - [iPad](https://navibeat.app/ipad): iPadOS feature page
