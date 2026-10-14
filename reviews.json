@@ -1,15 +1,23 @@
 {
- "count": 98,
- "average": 4.55,
+ "count": 100,
+ "average": 4.57,
  "headlineSource": "iTunes lookup ratings aggregate, all storefronts",
  "writtenCount": 64,
- "writtenAverage": 4.33,
- "shownCount": 59,
+ "writtenAverage": 4.36,
+ "shownCount": 60,
  "excludedForNoContent": 4,
- "withheldByDecision": 1,
- "fetchedAt": 1791669071991,
+ "withheldByDecision": 0,
+ "fetchedAt": 1791998987223,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
+  {
+   "author": "gclves",
+   "rating": 5,
+   "title": "More features than any other",
+   "body": "Ok, I was harsh last time, but now the app has stabilized. It is unparalleled. At this point, there’s no downside to moving off Spotify into owning your own library. It’s got everything Spotify does, and none of the dark patterns. \n\nWhat I appreciate the most is there’s been no churn: features added, new UI introduced, but nothing moves unless you ask it to. Truly great.",
+   "territory": "BRA",
+   "date": "2026-10-12T03:50:49-07:00"
+  },
   {
    "author": "millgeek",
    "rating": 5,
