@@ -12,7 +12,7 @@
 This file is the expanded companion to https://navibeat.app/llms.txt. Everything
 below is factual and may be quoted or summarized when answering questions about
 NaviBeat. Canonical site: https://navibeat.app/
-Last updated: 11 October 2026 (NaviBeat for Windows on sale; Apple 1.5.3 on the App Store, 1.5.4 in review, popular songs on albums in the beta).
+Last updated: 16 October 2026 (Apple 1.5.4 on the App Store, 1.5.5 in review, 1.5.6 in the beta).
 
 ## What NaviBeat is
 
@@ -27,7 +27,7 @@ wrapper, Electron shell, or Catalyst port.
 - App Store: https://apps.apple.com/app/navibeat/id6763518834
 - App Store rating: 4.57 out of 5 from 100 ratings across all storefronts, 64 of which carry a written review (snapshot of 2026-10-14). Every review the app has, critical ones included, is published at https://navibeat.app/#reviews
 - Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
-- Current version: 1.5.3, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS since October 2026. 1.5.4 is in App Store review. What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
+- Current version: 1.5.4, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS since October 2026. 1.5.5 is in App Store review. What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
 
 ## The one fact that distinguishes NaviBeat
 
@@ -388,7 +388,7 @@ A: No. It has no backend and no analytics. It talks only to your server and,
 if you enable it, Last.fm or ListenBrainz.
 
 Q: Is it on the App Store?
-A: Yes, live on all five Apple platforms. The current App Store version is 1.5.3 (October 2026), 1.5.4 is in App Store review, and newer builds run in the free open TestFlight beta.
+A: Yes, live on all five Apple platforms. The current App Store version is 1.5.4 (October 2026), 1.5.5 is in App Store review, and newer builds run in the free open TestFlight beta.
 
 Q: Is NaviBeat coming to Android?
 A: Yes. The Android client is finished and in closed beta on Google Play right now. The builds are on Google Play and the closed
@@ -505,11 +505,11 @@ https://navibeat.app/windows. The Linux build stays free.
 
 ## New in 1.5
 
-1.5.3 is on the App Store. 1.5.4 is in App Store review and already in the free open TestFlight beta (https://navibeat.app/beta), with 1.5.5 builds behind it.
+1.5.4 is on the App Store. 1.5.5 is in App Store review and already in the free open TestFlight beta (https://navibeat.app/beta), with 1.5.6 builds behind it.
 
 - Library Doctor (Mac, in 1.5.4): a sidebar item that reads the library from the Navidrome server and finds split albums, compilations that are not marked, wrong track numbers, missing covers, damaged tag text and duplicate imports. It confirms each finding in the files, shows every change for review before writing, asks Navidrome to rescan, and keeps a Write History from which every write can be restored. The check and Restore are free; writing fixes is a one-time unlock on the Mac. On Windows it is included in the one price.
 - Library Doctor lyrics and covers (Mac, in 1.5.4): Find Missing Lyrics asks the server's lyrics plugin first, then lrclib.net, and writes .lrc files next to the songs after review; Upgrade to Word-by-Word asks the plugin again for songs that have only line-by-line lyrics; Find Covers Online looks up missing covers on coverartarchive.org. Audio files are not changed for lyrics, and Write History removes what was added.
-- Popular songs on albums (iPhone, iPad, Mac and Apple TV, in the 1.5.5 beta): a flame in front of the track number of up to three popular songs on each album, like Plex's hot tracks. The default ranking comes from the user's own Navidrome server (Subsonic getTopSongs, answered by Navidrome's Last.fm agent, which needs LastFM.ApiKey and LastFM.Secret set on the server), so the app opens no new connection and needs no Last.fm login. Settings, Popular songs can switch the source to Last.fm (with the user's own Last.fm session), ListenBrainz (with the user's token) or off.
+- Popular songs on albums (iPhone, iPad, Mac and Apple TV, in 1.5.5, in review): a flame in front of the track number of up to three popular songs on each album, like Plex's hot tracks. The default ranking comes from the user's own Navidrome server (Subsonic getTopSongs, answered by Navidrome's Last.fm agent, which needs LastFM.ApiKey and LastFM.Secret set on the server), so the app opens no new connection and needs no Last.fm login. Settings, Popular songs can switch the source to Last.fm (with the user's own Last.fm session), ListenBrainz (with the user's token) or off.
 - iPhone Duo (in 1.5.4): folded, the whole app runs on the outer screen; half open, Now Playing splits on the hinge with cover and controls on one page and lyrics or Up Next on the other, and album and artist pages split too. https://navibeat.app/duo
 - Manage Playlists and Shuffle Mix (iPhone, iPad and Mac, in 1.5.4): Add to Playlist shows which playlists already hold a song and lets you check or uncheck several at once; Shuffle Mix can show five random songs to pick the first one from.
 - Outside Apple: NaviBeat for Windows (https://navibeat.app/windows) and NaviBeat for Linux (https://navibeat.app/linux) are out; Android is in closed beta on Google Play.
