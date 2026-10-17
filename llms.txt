@@ -8,7 +8,7 @@
 - Category: Self-hosted music streaming client (Navidrome / Subsonic / OpenSubsonic)
 - Platforms: iPhone (iOS 17+), iPad (iPadOS 17+), Mac (macOS 15+), Apple TV (tvOS 18+), Apple Watch (watchOS 10+), plus CarPlay. Desktop: Linux (x86_64 and ARM64, free, https://navibeat.app/linux) and Windows 10 and 11 (x64, $9.99 once, https://navibeat.app/windows). Android: finished, in closed beta.
 - Price: $5.99 USD, one-time, one Universal Purchase covers all five Apple platforms. No subscription. Linux is free. Windows is $9.99 USD once after a five-day free trial, one licence for three computers.
-- Current version: 1.5.4, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS since October 2026. 1.5.5 is in App Store review. What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
+- Current version: 1.5.5, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS since October 2026. What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
 - Availability: Live on the Apple App Store. https://apps.apple.com/app/navibeat/id6763518834
 - App Store rating: 4.57 out of 5 from 100 ratings across all storefronts, 64 of which carry a written review (snapshot of 2026-10-14). Every review the app has, critical ones included, is published at https://navibeat.app/#reviews
 - Compatible servers: Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. Subsonic-API servers generally work.
@@ -141,7 +141,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 
 ## New in 1.5
 
-1.5.4 is on the App Store. 1.5.5 is in App Store review and already in the free open TestFlight beta (https://navibeat.app/beta), with 1.5.6 builds behind it.
+1.5.5 is on the App Store. 1.5.6 builds are in the free open TestFlight beta (https://navibeat.app/beta).
 
 - Library Doctor (Mac, in 1.5.4): a sidebar item that reads the library from the Navidrome server and finds split albums, compilations that are not marked, wrong track numbers, missing covers, damaged tag text and duplicate imports. It confirms each finding in the files, shows every change for review before writing, asks Navidrome to rescan, and keeps a Write History from which every write can be restored. The check and Restore are free; writing fixes is a one-time unlock on the Mac. On Windows it is included in the one price.
 - Library Doctor lyrics and covers (Mac, in 1.5.4): Find Missing Lyrics asks the server's lyrics plugin first, then lrclib.net, and writes .lrc files next to the songs after review; Upgrade to Word-by-Word asks the plugin again for songs that have only line-by-line lyrics; Find Covers Online looks up missing covers on coverartarchive.org. Audio files are not changed for lyrics, and Write History removes what was added.
