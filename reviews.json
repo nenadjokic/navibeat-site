@@ -1,15 +1,39 @@
 {
- "count": 100,
- "average": 4.57,
+ "count": 104,
+ "average": 4.58,
  "headlineSource": "iTunes lookup ratings aggregate, all storefronts",
- "writtenCount": 64,
- "writtenAverage": 4.36,
- "shownCount": 60,
+ "writtenCount": 67,
+ "writtenAverage": 4.39,
+ "shownCount": 63,
  "excludedForNoContent": 4,
  "withheldByDecision": 0,
- "fetchedAt": 1791998987223,
+ "fetchedAt": 1792274146597,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
+  {
+   "author": "ЙAARD",
+   "rating": 5,
+   "title": "Amazing Subsonic client",
+   "body": "Please fix Album cover fetching for Radio stations from Subsonic server — I am using Koel and set covers for radio stations and they are not fetched.",
+   "territory": "LVA",
+   "date": "2026-10-15T12:13:53-07:00"
+  },
+  {
+   "author": "Umbilungee",
+   "rating": 5,
+   "title": "The best navidrome client I have found",
+   "body": "I tried a lot of the free open source options for navidrome clients. All lacked features or couldn't handle downloading a 5k track libray. Navibeat is totally worth the price with features no other app has, more reliability and an active, responsive developer continuing to make improvements. I can't recommend enough.",
+   "territory": "USA",
+   "date": "2026-10-14T18:58:50-07:00"
+  },
+  {
+   "author": "Andy Timelord",
+   "rating": 5,
+   "title": "Made for navidrone",
+   "body": "So far really nice player. Really like the one payment thing.",
+   "territory": "GBR",
+   "date": "2026-10-13T13:52:59-07:00"
+  },
   {
    "author": "gclves",
    "rating": 5,

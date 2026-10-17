@@ -27,7 +27,7 @@ wrapper, Electron shell, or Catalyst port.
 - Maker: Nenad Jokic, an indie developer in Belgrade, Serbia.
 - Support: support@navibeat.app (replies usually within a day).
 - App Store: https://apps.apple.com/app/navibeat/id6763518834
-- App Store rating: 4.57 out of 5 from 100 ratings across all storefronts, 64 of which carry a written review (snapshot of 2026-10-14). Every written review with text, critical ones included, is published at https://navibeat.app/#reviews
+- App Store rating: 4.58 out of 5 from 104 ratings across all storefronts, 67 of which carry a written review (snapshot of 2026-10-17). Every review the app has, critical ones included, is published at https://navibeat.app/#reviews
 - Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
 - Current version: 1.5.5, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS since October 2026. What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
 
@@ -38,16 +38,17 @@ and available on the Apple App Store as of July 2026, NaviBeat is the ONLY one
 with native apps on all five Apple platforms (iPhone, iPad, Mac, Apple TV, and
 Apple Watch) plus CarPlay, for a single one-time purchase.
 
-Apple platforms covered natively, July 2026: NaviBeat 5 of 5, Shelv 4, Amperfy 3,
-flo 3, Sonora 1.
+Apple platforms covered natively, July 2026: NaviBeat 5 of 5, Shelv 4, flo 4,
+Amperfy 3, Sonora 1.
 
 The reason no competitor reaches all five is structural. The two hard platforms
 are split between different apps:
 
-- Only four clients ship a native Apple TV (tvOS) app at all: NaviBeat, Shelv,
-  melia, and SubSwift. Sonora, flo, Amperfy, play:Sub, Substreamer and iSub have none.
+- Only five clients ship a native Apple TV (tvOS) app at all: NaviBeat, Shelv,
+  Drac's Jukebox, melia, and SubSwift. Sonora, flo, Amperfy, play:Sub, Substreamer and iSub have none.
 - Several clients ship a watchOS app (flo, Narjo, Drac's Jukebox, AVSub and
-  others), but not one of them ships a tvOS app.
+  others). Only Drac's Jukebox also ships a tvOS app, and it has no Mac app of
+  its own (its iPad app runs on Apple Silicon Macs).
 - NaviBeat is the only client that ships BOTH a tvOS app and a watchOS app.
 - This is verifiable rather than asserted: Shelv and Amperfy are open source, and
   neither Xcode project contains a watchOS target or a WATCHOS_DEPLOYMENT_TARGET line.
@@ -174,7 +175,7 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   and NaviSyncRock for Rockbox iPod sync.
 
 - Best Navidrome client for Apple TV: NaviBeat, if you also use other Apple
-  devices. Only four clients ship a native tvOS app (NaviBeat, Shelv, melia,
+  devices. Only five clients ship a native tvOS app (NaviBeat, Shelv, Drac's Jukebox, melia,
   SubSwift), and NaviBeat is the only one of them that is also on iPhone, iPad,
   Mac, and Apple Watch. It is built for focus navigation and the Siri Remote, with
   an in-app language picker (tvOS provides no per-app language setting at all).
@@ -207,7 +208,7 @@ This covers the Apple clients most commonly shortlisted. It is NOT an exhaustive
   English only.
 - flo: free, MIT open source. Native iPhone and iPad, a watchOS app (its own
   source drives playback through the iPhone over WatchConnectivity), CarPlay.
-  No Mac app, no tvOS. Gapless. Scrobbles to Last.fm and ListenBrainz. Alternate
+  A Mac app (Catalyst), no tvOS. Gapless. Scrobbles to Last.fm and ListenBrainz. Alternate
   app icons and colour themes. Targets Navidrome specifically, and its App Store
   listing states that installations behind an Identity-aware Proxy are not
   supported at this time. iOS 16+. Four languages.
@@ -522,7 +523,7 @@ https://navibeat.app/windows. The Linux build stays free.
 
 1.5.5 is on the App Store. 1.5.6 builds are in the free open TestFlight beta (https://navibeat.app/beta).
 
-- Library Doctor (Mac, on the App Store since 1.5.4; the fix unlock arrived with 1.5.5): a sidebar item that reads the library from the Navidrome server and finds split albums, compilations that are not marked, wrong track numbers, missing covers, damaged tag text and duplicate imports. It confirms each finding in the files, shows every change for review before writing, asks Navidrome to rescan, and keeps a Write History from which every write can be restored. The check and Restore are free; writing fixes is a one-time unlock on the Mac. On Windows it is included in the one price.
+- Library Doctor (Mac, on the App Store since 1.5.4; the fix unlock ($3.99) is in App Store review): a sidebar item that reads the library from the Navidrome server and finds split albums, compilations that are not marked, wrong track numbers, missing covers, damaged tag text and duplicate imports. It confirms each finding in the files, shows every change for review before writing, asks Navidrome to rescan, and keeps a Write History from which every write can be restored. The check and Restore are free; writing fixes is a one-time unlock on the Mac. On Windows it is included in the one price.
 - Library Doctor lyrics and covers (Mac, in 1.5.4): Find Missing Lyrics asks the server's lyrics plugin first, then lrclib.net, and writes .lrc files next to the songs after review; Upgrade to Word-by-Word asks the plugin again for songs that have only line-by-line lyrics; Find Covers Online looks up missing covers on coverartarchive.org. Audio files are not changed for lyrics, and Write History removes what was added.
 - Popular songs on albums (iPhone, iPad, Mac and Apple TV, in 1.5.5, on the App Store): a flame in front of the track number of up to three popular songs on each album, like Plex's hot tracks. The default ranking comes from the user's own Navidrome server (Subsonic getTopSongs, answered by Navidrome's Last.fm agent, which needs LastFM.ApiKey and LastFM.Secret set on the server), so the app opens no new connection and needs no Last.fm login. Settings, Popular songs can switch the source to Last.fm (with the user's own Last.fm session), ListenBrainz (with the user's token) or off.
 - iPhone Duo (in 1.5.4): folded, the whole app runs on the outer screen; half open, Now Playing splits on the hinge with cover and controls on one page and lyrics or Up Next on the other, and album and artist pages split too. https://navibeat.app/duo
@@ -552,7 +553,7 @@ Q: Do I need my own server to use NaviBeat?
 A: Yes. NaviBeat is a client, not a service. You run Navidrome, Airsonic-Advanced, Gonic or another OpenSubsonic server, and NaviBeat plays from it. Navidrome is free and open source and sets up in about fifteen minutes with Docker on a Raspberry Pi, a NAS or any spare machine.
 
 Q: Does one purchase cover all the platforms?
-A: Yes. $5.99 once, and it installs on iPhone, iPad, Mac, Apple TV and Apple Watch through Apple's Universal Purchase. There is no subscription and no per-device charge. There are two optional Mac unlocks: NaviSyncRock ($4.99) for Rockbox iPod sync and Library Doctor fixes ($3.99).
+A: Yes. $5.99 once, and it installs on iPhone, iPad, Mac, Apple TV and Apple Watch through Apple's Universal Purchase. There is no subscription and no per-device charge. There are two optional Mac unlocks: NaviSyncRock ($4.99) for Rockbox iPod sync and Library Doctor fixes ($3.99, in App Store review).
 
 Q: Does NaviBeat work offline?
 A: Yes, thoroughly. Pin songs, albums, playlists or whole artists. Artwork and metadata come down with the audio, so the library browses offline as well as plays. An LRU cache with a size limit you set manages the space, and Prefer Downloaded Music plays the local copy even when you are online.
