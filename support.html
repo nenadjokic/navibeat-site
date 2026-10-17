@@ -89,7 +89,7 @@
             "name": "Why does my music restart from the beginning when I am driving?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "This is the most common complaint across every Subsonic and Navidrome client, and it is not really a client bug. When a server transcodes on the fly it answers with a 200 response that carries no content length and ignores byte-range requests. So when a mobile connection drops mid-track, the client has no way to resume from where it was and refetches from byte zero: the track jumps back to the start while the playhead keeps counting. NaviBeat takes the network out of the playback path on cellular. It downloads the next two tracks in your queue in full while the current one plays, then plays them from the local file. A tower handover, a dropped connection or a slow transcode cannot restart or stall a song that is already on disk. When the server is transcoding (MP3, AAC or Opus), NaviBeat downloads your first track whole before it starts, so that one costs a short wait instead of a restart; from the second track of a session onward this cannot happen. The cache is a rolling 300 MB, cleans itself oldest first, never duplicates your real downloads, and is not used on Wi-Fi. If you are on a VPN such as Tailscale or WireGuard, see the tunnel question below as well: a tunnel adds its own failure mode at every cell-tower change."
+              "text": "This is the most common complaint across every Subsonic and Navidrome client, and it is not really a client bug. When a server transcodes on the fly it answers with a 200 response that carries no content length and ignores byte-range requests. So when a mobile connection drops mid-track, the client has no way to resume from where it was and refetches from byte zero: the track jumps back to the start while the playhead keeps counting. NaviBeat takes the network out of the playback path on cellular. It downloads the next two tracks in your queue in full while the current one plays, then plays them from the local file. A tower handover, a dropped connection or a slow transcode cannot restart or stall a song that is already on disk. When the server is transcoding (MP3, AAC or Opus), NaviBeat downloads your first track whole before it starts, so that one costs a short wait instead of a restart; from the second track of a session onward this cannot happen. The cache is a rolling 300 MB, cleans itself oldest first, never duplicates your real downloads, and works on Wi-Fi and on cellular. If you are on a VPN such as Tailscale or WireGuard, see the tunnel question below as well: a tunnel adds its own failure mode at every cell-tower change."
             }
           },
           {
@@ -145,7 +145,7 @@
             "name": "Where is my NaviBeat data stored?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Everything is on your device or your own server. Nothing is ever sent to us: there is no NaviBeat account and no NaviBeat server. Three outside services can be reached, and only because you asked for them: Last.fm and ListenBrainz if you connect them, and lrclib.net if you switch on the lyrics fallback, which is sent a song title, artist, album and length and nothing else. All three are off until you turn them on. See the NaviBeat Privacy Policy for the full list."
+              "text": "Everything is on your device or your own server. Nothing is ever sent to us: there is no NaviBeat account and no NaviBeat server. Outside services are reached only like this: Last.fm and ListenBrainz if you connect them, and lrclib.net if you switch on the lyrics fallback, which is sent a song title, artist, album and length and nothing else. The New Releases shelf on Home is on by default: it sends the names of artists in your library to musicbrainz.org and loads covers from coverartarchive.org. Switch it off in Customise Home. See the NaviBeat Privacy Policy for the full list."
             }
           },
           {
@@ -298,7 +298,7 @@
   handover, a dropped connection or a slow transcode cannot restart or stall a song that is already on disk.
   When the server is transcoding (MP3, AAC or Opus), NaviBeat downloads your first track whole before it starts, so that one costs a short wait instead of a restart; from the second track of a session onward this cannot
   happen. The cache is a rolling 300 MB, cleans itself oldest first, never duplicates your real downloads, and
-  is not used on Wi-Fi.</p>
+  works on Wi-Fi and on cellular.</p>
   <p>If you are on a VPN such as Tailscale or WireGuard, see the tunnel question below as well: a tunnel adds
   its own failure mode at every cell-tower change.</p>
 
@@ -352,7 +352,7 @@
   </ul>
 
   <h2 id="data-storage">Where is my NaviBeat data stored?</h2>
-  <p>Everything is on your device or your own server. Nothing is ever sent to us: there is no NaviBeat account and no NaviBeat server. Three outside services can be reached, and only because you asked for them: Last.fm and ListenBrainz if you connect them, and lrclib.net if you switch on the lyrics fallback, which sends a song title, artist, album and length and nothing else. All three are off until you turn them on. See our <a href="privacy">Privacy Policy</a> for the full list.</p>
+  <p>Everything is on your device or your own server. Nothing is ever sent to us: there is no NaviBeat account and no NaviBeat server. Outside services are reached only like this: Last.fm and ListenBrainz if you connect them, and lrclib.net if you switch on the lyrics fallback, which sends a song title, artist, album and length and nothing else. The New Releases shelf on Home is on by default: it sends the names of artists in your library to musicbrainz.org and loads covers from coverartarchive.org. Switch it off in Customise Home. See our <a href="privacy">Privacy Policy</a> for the full list.</p>
 
   <h2 id="multiple-servers">Can I use NaviBeat with multiple servers?</h2>
   <p>Yes. Save as many servers as you like and switch between them without typing anything again. Open <em>Settings &rarr; Server &amp; Library &rarr; Saved Servers</em>, tap <em>Save Current Server</em>, then pair with the next one and save that too. Each saved entry keeps its own password, its own home address, its own custom proxy headers and its own mTLS client certificate, so a switch restores the whole setup and not just the URL.</p>

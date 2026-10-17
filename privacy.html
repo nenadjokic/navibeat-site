@@ -132,17 +132,19 @@
 <div class="prose">
   <h1 id="privacy-policy">Privacy Policy</h1>
   <p class="meta">Last updated:
-    <time datetime="2026-08-29">August 29, 2026</time>
+    <time datetime="2026-10-17">October 17, 2026</time>
   </p>
 
   <aside class="tldr" role="doc-tip" aria-label="Quick answer">
-    <p><strong>TL;DR.</strong> NaviBeat has no backend. It talks to your own
-       Navidrome server, and to nothing else unless you switch something on.
-       The things you can switch on are Last.fm, ListenBrainz (with
-       MusicBrainz, which ListenBrainz needs to identify a track), and an
-       <a href="#lrclib">lrclib.net lyrics lookup</a> that sends a song title,
-       artist, album and length when your own server has no lyrics for a track.
-       Every one of them is off until you turn it on. Your credentials live in
+    <p><strong>TL;DR.</strong> NaviBeat has no backend. Apart from your own
+       Navidrome server, it talks to Last.fm and ListenBrainz (with
+       MusicBrainz, which ListenBrainz needs to identify a track) if you
+       connect them, and to an <a href="#lrclib">lrclib.net lyrics lookup</a>
+       that sends a song title, artist, album and length when your own server
+       has no lyrics for a track, if you switch it on. One thing is on by
+       default: the <a href="#new-releases">New Releases shelf</a> on Home
+       sends the names of artists in your library to musicbrainz.org and loads
+       covers from coverartarchive.org. Switch it off in Customise Home. Your credentials live in
        the Keychain and, if you leave credential sync on, ride iCloud Keychain
        to your other Apple devices, end-to-end encrypted, which is how your
        Apple Watch inherits the pairing. <strong>We</strong> see zero playback
@@ -186,16 +188,17 @@
         <li>Use either, both, or neither. <a href="listenbrainz">See the ListenBrainz page.</a></li>
       </ul>
     </li>
+    <li id="new-releases"><strong>MusicBrainz and the Cover Art Archive for New Releases (on by default).</strong> The New Releases shelf on Home is on by default on iPhone, iPad, Mac and Apple TV. To fill it, NaviBeat sends the names of artists in your library to <code>musicbrainz.org</code> and loads the covers from <code>coverartarchive.org</code>. Both are public and need no account. To stop it, switch the shelf off in the Home editor (Customise Home).</li>
     <li id="lrclib"><strong>lrclib.net (optional, and off until you switch it on).</strong> Lyrics come from your own server first. If your server and its lyrics plugin both come back with nothing, and only if you have turned on the lrclib fallback in Settings, NaviBeat asks <a href="https://lrclib.net" target="_blank" rel="noopener">lrclib.net</a> for that one song.
       <ul>
         <li><strong>What is sent:</strong> the song&rsquo;s title, its artist, its album and its length in seconds. That is the whole request. The length is there because it is what keeps a remaster, a live take and a radio edit of the same song apart.</li>
         <li><strong>What is not sent:</strong> anything about you, your server, your account or the rest of your library. lrclib needs no account, no key and no sign-in, so there is nothing to identify you with. If a track has no title or no artist, NaviBeat sends nothing rather than send a useless request.</li>
-        <li>The switch is off in a fresh install. With it off, NaviBeat never contacts lrclib.net at all, and lyrics come only from your own server.</li>
+        <li>The switch is off in a fresh install. With it off, playback never contacts lrclib.net, and lyrics come only from your own server. On the Mac, Library Doctor's Find Missing Lyrics is a separate button and asks lrclib.net when you press it.</li>
       </ul>
     </li>
-    <li><strong>MusicBrainz and the Cover Art Archive on the Mac (only during a NaviSyncRock sync).</strong> When you ask NaviSyncRock to find missing artwork for an iPod, it looks in your own Navidrome first. For albums it cannot match there, it searches <code>musicbrainz.org</code> for the album and artist name and fetches the cover from <code>coverartarchive.org</code>. Both are public, need no account, and are only ever reached because you pressed the button.</li>
+    <li><strong>MusicBrainz and the Cover Art Archive on the Mac (only when you press Find Missing Artwork in NaviSyncRock or Find Covers Online in Library Doctor).</strong> When you ask NaviSyncRock to find missing artwork for an iPod, it looks in your own Navidrome first. For albums it cannot match there, it searches <code>musicbrainz.org</code> for the album and artist name and fetches the cover from <code>coverartarchive.org</code>. Both are public, need no account, and are only ever reached because you pressed the button.</li>
     <li><strong>Speakers on your network stay on your network.</strong> On iPhone and Mac, NaviBeat can play to a UPnP or DLNA speaker. Finding one and controlling it happens entirely inside your local network, and the address it hands the speaker is your own server&rsquo;s. Nothing about it reaches us or anyone else.</li>
-    <li><strong>Nothing else, and nothing to the developer.</strong> NaviBeat contains no analytics SDK, no crash reporter, no advertising framework, and no telemetry. Zero data is sent to us: there is no NaviBeat account and no NaviBeat server for it to go to. Apart from your own server, the outside services above are the complete list, every one of them is off until you turn it on, and every one of them can be turned off again.</li>
+    <li><strong>Nothing else, and nothing to the developer.</strong> NaviBeat contains no analytics SDK, no crash reporter, no advertising framework, and no telemetry. Zero data is sent to us: there is no NaviBeat account and no NaviBeat server for it to go to. Apart from your own server, the outside services above are the complete list. The New Releases shelf is the only one that is on by default, and every one of them can be left off or switched off.</li>
   </ul>
 
   <h2 id="data-retention">Data retention</h2>

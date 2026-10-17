@@ -148,7 +148,7 @@
           "Streaming quality configured separately for Wi-Fi and cellular, across 15 tiers (Original, Opus 320 to 64, AAC 320 to 96, MP3 320 to 128), plus an Auto mode and a Server decides mode. The Opus tiers need the built-in playback engine: they stream on iOS 26, macOS 26 and tvOS 26 and newer, and download on any version",
           "ReplayGain volume normalization: per track, per album, or automatic",
           "Gapless playback",
-          "Light, Dark and System appearance on every platform",
+          "Light, Dark and System appearance on iPhone, iPad, Mac and Apple TV",
           "Fully localized into 12 languages (English, German, French, Italian, Spanish, Polish, Brazilian Portuguese, Russian, Ukrainian, Serbian, Simplified and Traditional Chinese) with an in-app language picker",
           "Listening Stats: 24-hour listening clock, weekday heatmap, and top artists, albums, and songs, from your connected Last.fm history",
           "Your ListenBrainz Home shelf and Your Mixes: listen count, top artists and tracks, and ListenBrainz Weekly and Daily Jams once you connect a ListenBrainz account",
@@ -215,7 +215,7 @@
             "name": "What is NaviBeat?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and OpenSubsonic servers. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, and is one $5.99 one-time Universal Purchase. It is a client only: it has no backend, no analytics, and no tracking, and connects solely to the server you run."
+              "text": "NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and OpenSubsonic servers. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, and is one $5.99 one-time Universal Purchase. It is a client only: it has no backend, no analytics, and no tracking. It talks to the server you run, to Last.fm, ListenBrainz and lrclib.net only if you switch them on, and to musicbrainz.org and coverartarchive.org for the New Releases shelf on Home, which is on by default and can be switched off."
             }
           },
           {
@@ -279,7 +279,7 @@
             "name": "Does it work with Cloudflare Access, Tailscale, or a reverse proxy?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for Cloudflare Access (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an mTLS client certificate, or reach your server over Tailscale. It all works on every platform, with no third-party relay in between."
+              "text": "Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for Cloudflare Access (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an mTLS client certificate, or reach your server over Tailscale. Custom headers work on every platform; mTLS client certificates on iPhone, iPad, Mac and Apple TV. No third-party relay sits in between."
             }
           },
           {
@@ -303,7 +303,7 @@
             "name": "What’s the refund policy?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. On the Mac App Store you can try NaviBeat free for 7 days first. If something doesn’t work, reach us at support@navibeat.app."
+              "text": "Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. The TestFlight beta is free and open on every Apple platform, so you can try it with your own library before buying. If something doesn’t work, reach us at support@navibeat.app."
             }
           },
           {
@@ -509,7 +509,7 @@
        <div class="wrap newsbar">
         <div class="newsbar__copy">
           <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>Fresh from the workshop</p>
-          <h2 class="newsbar__h">1.5 is coming, <em>with Library Doctor.</em></h2>
+          <h2 class="newsbar__h">1.5 is here, <em>with Library Doctor.</em></h2>
           <p class="newsbar__p">Library Doctor on the Mac, the iPhone Duo, a flame on popular songs, and beta builds almost daily.</p>
           <div class="hero__ctas">
             <a class="btn btn--primary" href="#whats-new">See what is new in 1.5&nbsp;&rarr;</a>
@@ -879,7 +879,7 @@
         </li>
 
         <li>
-          <a class="plat-card" href="duo" aria-label="NaviBeat on iPhone Duo, in the public beta">
+          <a class="plat-card" href="duo" aria-label="NaviBeat on iPhone Duo, on the App Store">
             <div class="plat-card__thumb">
               <img src="assets/framed/duo/navibeat-duo-book-lyrics-800.webp?v=20261009"
                    alt="NaviBeat on iPhone Duo, half open: cover and controls on the left page, lyrics on the right" width="800" height="581" loading="lazy" decoding="async">
@@ -918,7 +918,7 @@
             </div>
             <div class="plat-card__body">
               <div class="plat-card__name">Linux</div>
-              <div class="plat-card__status"><span class="plat-card__dot"></span>Live &middot; free &middot; open beta</div>
+              <div class="plat-card__status"><span class="plat-card__dot"></span>Live &middot; free &middot; 1.0</div>
               <p class="plat-card__desc">A free, native desktop build. Offline downloads, time-synced lyrics, a 10-band equalizer and Rockbox iPod sync. AppImage for x86_64 and ARM64.</p>
               <a class="btn btn--primary btn--compact" style="margin-top:12px; width:100%; font-size:12.5px; min-height:34px; padding:8px 14px;"
                  href="linux">Get NaviBeat for Linux &rarr;</a>
@@ -1073,7 +1073,7 @@
           <span class="f-card__idx">New in 1.5.4 / Library Doctor</span>
           <h3 class="h3">Library Doctor checks your library.</h3>
           <p>A new sidebar item reads your library from the server and finds split albums, compilations that are not marked, wrong track numbers, missing covers, damaged tag text and duplicate imports. It names what differs and confirms it in the files. You review every change before it is written, NaviBeat asks Navidrome to scan, and every write can be undone from Write History. The check and Undo are free; writing a fix is a one-time unlock.</p>
-          <p class="f-card__kicker">Mac. In 1.5.4, on the App Store.</p>
+          <p class="f-card__kicker">Mac. On the App Store since 1.5.4; the fix unlock arrived with 1.5.5.</p>
         </article>
         <article class="f-card">
           <span class="f-card__idx">New in 1.5.4 / Library Doctor</span>
@@ -1082,10 +1082,10 @@
           <p class="f-card__kicker">Mac. In 1.5.4, on the App Store.</p>
         </article>
         <article class="f-card">
-          <span class="f-card__idx">New in the beta / Albums</span>
+          <span class="f-card__idx">New in 1.5.5 / Albums</span>
           <h3 class="h3">A flame on the popular songs.</h3>
           <p>On the album page a flame sits in front of the track number of up to three popular songs. The ranking comes from your own Navidrome server, so no Last.fm login is needed in the app. Settings, Popular songs can switch it to Last.fm, ListenBrainz or off.</p>
-          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV. In the beta, 1.5.5.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV. In 1.5.5, on the App Store.</p>
         </article>
         <article class="f-card">
           <span class="f-card__idx">New in 1.5.4 / iPhone Duo</span>
@@ -1157,7 +1157,7 @@
           Your server. <em>Your library.</em> Your rules.
         </h2>
         <p class="body-copy" style="font-size:18px;">
-          NaviBeat is a client. Your music lives where it already does: a Raspberry Pi, a Synology, a home server under someone&rsquo;s desk. We never see your library, your credentials, or a single play event. We couldn&rsquo;t if we wanted to: the app has no backend. Apart from your own Navidrome server, NaviBeat talks to nothing you did not switch on: optionally <a href="lastfm" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm or ListenBrainz</a>, and optionally lrclib.net, which is sent a song title, artist, album and length when your own server has no lyrics for a track. All three ship off. <a href="privacy" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Read the privacy policy.</a>
+          NaviBeat is a client. Your music lives where it already does: a Raspberry Pi, a Synology, a home server under someone&rsquo;s desk. We never see your library, your credentials, or a single play event. We couldn&rsquo;t if we wanted to: the app has no backend. Apart from your own Navidrome server, NaviBeat contacts <a href="lastfm" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm or ListenBrainz</a> if you connect them, and lrclib.net if you switch on the lyrics fallback, which is sent a song title, artist, album and length when your own server has no lyrics for a track. The New Releases shelf on Home is on by default: it sends the names of artists in your library to musicbrainz.org and loads covers from coverartarchive.org. Switch it off in Customise Home. <a href="privacy" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Read the privacy policy.</a>
         </p>
       </div>
       <div class="manifesto__trace reveal">
@@ -1167,10 +1167,12 @@
         <div><span style="color:var(--text-2)">&rarr;</span> ws.audioscrobbler.com <span class="manifesto__trace-ok" style="float:right">last.fm &middot; opt-in</span></div>
         <div><span style="color:var(--text-2)">&rarr;</span> api.listenbrainz.org <span class="manifesto__trace-ok" style="float:right">listenbrainz &middot; opt-in</span></div>
         <div><span style="color:var(--text-2)">&rarr;</span> lrclib.net <span class="manifesto__trace-ok" style="float:right">lyrics &middot; opt-in</span></div>
+        <div><span style="color:var(--text-2)">&rarr;</span> musicbrainz.org <span class="manifesto__trace-ok" style="float:right">new releases &middot; on, can be off</span></div>
+        <div><span style="color:var(--text-2)">&rarr;</span> coverartarchive.org <span class="manifesto__trace-ok" style="float:right">new releases &middot; on, can be off</span></div>
         <div class="manifesto__trace-rule">analytics.google.com <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
         <div style="color:var(--text-2)">telemetry.apple.com <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
         <div style="color:var(--text-2)">crashlytics.io <span class="manifesto__trace-bad" style="float:right">&#x2717; blocked</span></div>
-        <div class="manifesto__trace-comment">// every one switched on by you &middot; 0 hidden third parties</div>
+        <div class="manifesto__trace-comment">// no analytics &middot; no tracking &middot; no account of ours</div>
       </div>
     </div>
   </section>
@@ -1240,7 +1242,7 @@
         </button></h3>
         <div class="faq__panel" id="faq-intro" inert>
           <div class="faq__a">
-            NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and OpenSubsonic servers. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, and is one $5.99 one-time Universal Purchase. It is a client only: it has no backend, no analytics, and no tracking, and connects solely to the server you run.
+            NaviBeat is a native Apple-ecosystem music client for self-hosted Navidrome, Airsonic-Advanced, Gonic, and OpenSubsonic servers. It runs on iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, and is one $5.99 one-time Universal Purchase. It is a client only: it has no backend, no analytics, and no tracking. It talks to the server you run, to Last.fm, ListenBrainz and lrclib.net only if you switch them on, and to musicbrainz.org and coverartarchive.org for the New Releases shelf on Home, which is on by default and can be switched off.
           </div>
         </div>
       </div>
@@ -1336,7 +1338,7 @@
         </button></h3>
         <div class="faq__panel" id="faq-6" inert>
           <div class="faq__a">
-            Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for <strong>Cloudflare Access</strong> (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an <strong>mTLS client certificate</strong>, or simply reach your server over <strong>Tailscale</strong>. It all works on every platform, with no third-party relay in between.
+            Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for <strong>Cloudflare Access</strong> (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an <strong>mTLS client certificate</strong>, or simply reach your server over <strong>Tailscale</strong>. Custom headers work on every platform; mTLS client certificates on iPhone, iPad, Mac and Apple TV. No third-party relay sits in between.
           </div>
         </div>
       </div>
@@ -1372,7 +1374,7 @@
         </button></h3>
         <div class="faq__panel" id="faq-5" inert>
           <div class="faq__a">
-            Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. On the Mac App Store you can try NaviBeat free for 7 days first. If something doesn&rsquo;t work, reach us at <a href="mailto:support@navibeat.app">support@navibeat.app</a>.
+            Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. The TestFlight beta is free and open on every Apple platform, so you can try it with your own library before buying. If something doesn&rsquo;t work, reach us at <a href="mailto:support@navibeat.app">support@navibeat.app</a>.
           </div>
         </div>
       </div>

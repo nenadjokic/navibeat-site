@@ -110,7 +110,7 @@
             "name": "Is there a free Navidrome client for iPhone?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Both Sonora and flo are free on the App Store as of July 2026, and flo is also open source under the MIT licence. NaviBeat is a paid app, 5.99 US dollars one time, with no subscription and no in-app purchases in the base app."
+              "text": "Yes. Both Sonora and flo are free on the App Store as of July 2026, and flo is also open source under the MIT licence. NaviBeat is a paid app, 5.99 US dollars one time, with no subscription. Two optional Mac unlocks: NaviSyncRock ($4.99) and Library Doctor fixes ($3.99)."
             }
           },
           {
@@ -360,7 +360,7 @@
             </tr>
             <tr>
               <th scope="row">Fix the library's tags<br>(Library Doctor)</th>
-              <td class="is-us"><span class="cmp-y">Yes</span><span class="cmp-note">Finds split albums, track numbers, missing covers and damaged tags, and fixes them in the files after your review, with undo. Mac: a $3.99 unlock, in the TestFlight beta now. Free on Linux, included on Windows. iPhone and iPad show the report.</span></td>
+              <td class="is-us"><span class="cmp-y">Yes</span><span class="cmp-note">Finds split albums, track numbers, missing covers and damaged tags, and fixes them in the files after your review, with undo. Mac: the check is free, writing fixes is a $3.99 unlock. Free on Linux, included on Windows. iPhone and iPad show the report.</span></td>
               <td>Not stated</td>
               <td>Not stated</td>
               <td>Not stated</td>
@@ -377,7 +377,7 @@
             </tr>
             <tr>
               <th scope="row">Streaming quality<br>per network</th>
-              <td class="is-us"><span class="cmp-y">Yes</span><span class="cmp-note">Three separate profiles: Wi-Fi, cellular and downloads, across 15 tiers. Auto sends the original on Wi-Fi and a light Opus transcode on cellular; Server decides hands the choice to your own Navidrome profile.</span></td>
+              <td class="is-us"><span class="cmp-y">Yes</span><span class="cmp-note">Three separate profiles: Wi-Fi, cellular and downloads, across 15 tiers. Auto sends the original on Wi-Fi and an AAC 256 transcode on cellular; Server decides hands the choice to your own Navidrome profile.</span></td>
               <td><span class="cmp-n">Not stated</span></td>
               <td><span class="cmp-n">Not stated</span><span class="cmp-note">Plays most formats without transcoding</span></td>
               <td><span class="cmp-y">Yes</span><span class="cmp-note">Separate Wi-Fi and cellular bitrate limits</span></td>
@@ -529,7 +529,7 @@
         <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">Five out of five. Nobody else is above four.</strong> iPhone, iPad, Mac, Apple TV and Apple Watch, natively, plus CarPlay, from a single $5.99 Universal Purchase. This is not a marketing line, it is arithmetic you can check: the clients that reach the <strong>Apple TV</strong> ship no watch app, and the clients that ship a <strong>watch app</strong> never reach the Apple TV. NaviBeat is the only one that does both, which is the only way the set closes.</li>
         <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">The receipts are in their own repositories.</strong> Shelv and Amperfy are open source, so you do not have to take our word for it: neither Xcode project contains a watchOS target, or even a <code>WATCHOS_DEPLOYMENT_TARGET</code> line. We checked, and we would rather you checked too.</li>
         <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">Music that stays on the watch.</strong> Not a remote control for a phone in the other room. Pinned music lives on the watch and plays from the watch, downloaded straight from your server, so you can leave the phone at home and still run with your library.</li>
-        <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">It reaches the server you actually built.</strong> <strong>mTLS client certificates</strong>, custom headers for Cloudflare Access and Authelia, and Tailscale, on every platform, with no third-party relay. No other client here does mTLS at all, and flo's own App Store listing says servers behind an Identity-aware Proxy are not supported at this time.</li>
+        <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">It reaches the server you actually built.</strong> Custom headers for Cloudflare Access and Authelia work on every platform; <strong>mTLS client certificates</strong> on iPhone, iPad, Mac and Apple TV. Tailscale works too, with no third-party relay. No other client here does mTLS at all, and flo's own App Store listing says servers behind an Identity-aware Proxy are not supported at this time.</li>
         <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">Your whole library, however you organise it.</strong> True Navidrome multi-library support: All Libraries, one, or any subset, filtered server-side. No other client here filters by <code>musicFolder</code>.</li>
         <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">Twelve languages, and CarPlay understands all of them.</strong> Say <em>play</em> and a name in any of them and it resolves against <strong>your own library</strong>. The next best client here speaks four. Two speak only English.</li>
         <li style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px; color:var(--text-1); font-size:15px; line-height:1.7;"><strong style="color:var(--text-0);">Your Navidrome, on a real iPod.</strong> NaviSyncRock syncs songs, albums, artists and playlists to a Rockbox player from a normal Mac app, transcoded by your own server, with plays synced back. The word "rockbox" does not appear anywhere in any other client's source. Nobody else is even trying.</li>
@@ -579,7 +579,7 @@
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Is there a free Navidrome client for iPhone?</h3>
-          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Both Sonora and flo are free on the App Store as of July 2026, and flo is open source under the MIT licence. NaviBeat is paid: $5.99 one time, no subscription, and no in-app purchases in the base app.</p>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Both Sonora and flo are free on the App Store as of July 2026, and flo is open source under the MIT licence. NaviBeat is paid: $5.99 one time. No subscription. Two optional Mac unlocks: NaviSyncRock ($4.99) and Library Doctor fixes ($3.99).</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Which Navidrome client has an Apple TV app?</h3>

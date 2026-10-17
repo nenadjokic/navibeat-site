@@ -117,7 +117,7 @@
             "name": "Why is the selection per-device and not synced via iCloud?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Two reasons. First, a typical use case is \"phone shows my private library, Apple TV shows the shared family library\", and forcing iCloud sync would defeat that. Second, NaviBeat stores nothing in iCloud or any backend, and there is no NaviBeat server for a selection to sync through. Per-device selection respects that boundary."
+              "text": "Two reasons. First, a typical use case is \"phone shows my private library, Apple TV shows the shared family library\", and forcing iCloud sync would defeat that. Second, NaviBeat has no backend. Through iCloud Keychain it syncs only your server pairing, your Last.fm and ListenBrainz sign-ins and your Smart Playlist definitions, and a library selection is not one of them. Per-device selection respects that boundary."
             }
           },
           {
@@ -149,7 +149,7 @@
             "name": "What if a server admin adds a new library after I paired?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The picker re-fetches on every cold start. If a new library appears, it shows up in the picker on next launch and defaults to deselected so your existing scope does not silently widen. You opt in to the new library on your own."
+              "text": "The picker re-fetches on every cold start. If a new library appears, it shows up in the picker on next launch. If you picked specific libraries, a new one starts deselected, so your scope does not silently widen; on All Libraries it is included."
             }
           },
           {
@@ -306,7 +306,7 @@
       <p class="eyebrow eyebrow--accent">Shipped in v1.0.2</p>
       <h1>One app, every <em>Navidrome library</em> you run.</h1>
       <p class="ml-sub">
-        NaviBeat is the first native Apple-ecosystem player to fully support Navidrome's multi-library feature. Pick All Libraries, a single library, or any subset, and switch in one tap from iPhone, iPad, Mac, Apple TV, or Apple Watch. The picker only appears when your server actually has more than one library, so single-library setups stay uncluttered.
+        NaviBeat is the first native Apple-ecosystem player to fully support Navidrome's multi-library feature. Pick All Libraries, a single library, or any subset, and switch in one tap from iPhone, iPad, Mac or Apple TV; CarPlay and the Watch follow the iPhone. The picker only appears when your server actually has more than one library, so single-library setups stay uncluttered.
       </p>
     </div>
   </section>
@@ -426,7 +426,7 @@
 
       <details class="ml-faq__item">
         <summary><h3 class="faq__h">Why is the selection per-device and not synced via iCloud?</h3></summary>
-        <p>Two reasons. First, a typical use case is "phone shows my private library, Apple TV shows the shared family library", and forcing iCloud sync would defeat that. Second, NaviBeat stores nothing in iCloud or any backend, and there is no NaviBeat server for a selection to sync through. Per-device selection respects that boundary.</p>
+        <p>Two reasons. First, a typical use case is "phone shows my private library, Apple TV shows the shared family library", and forcing iCloud sync would defeat that. Second, NaviBeat has no backend. Through iCloud Keychain it syncs only your server pairing, your Last.fm and ListenBrainz sign-ins and your Smart Playlist definitions, and a library selection is not one of them. Per-device selection respects that boundary.</p>
       </details>
 
       <details class="ml-faq__item">
@@ -446,7 +446,7 @@
 
       <details class="ml-faq__item">
         <summary><h3 class="faq__h">What if a server admin adds a new library after I paired?</h3></summary>
-        <p>The picker re-fetches on every cold start. If a new library appears, it shows up in the picker on next launch and defaults to deselected so your existing scope does not silently widen. You opt in to the new library on your own.</p>
+        <p>The picker re-fetches on every cold start. If a new library appears, it shows up in the picker on next launch. If you picked specific libraries, a new one starts deselected, so your scope does not silently widen; on All Libraries it is included.</p>
       </details>
 
       <details class="ml-faq__item">

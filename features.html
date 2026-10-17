@@ -123,7 +123,7 @@
             "name": "Does one purchase cover all the platforms?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. $5.99 once, and it installs on iPhone, iPad, Mac, Apple TV and Apple Watch through Apple's Universal Purchase. There is no subscription and no per-device charge. The only extra is NaviSyncRock, a separate $4.99 unlock on the Mac for Rockbox iPod sync."
+              "text": "Yes. $5.99 once, and it installs on iPhone, iPad, Mac, Apple TV and Apple Watch through Apple's Universal Purchase. There is no subscription and no per-device charge. There are two optional Mac unlocks: NaviSyncRock ($4.99) for Rockbox iPod sync and Library Doctor fixes ($3.99)."
             }
           },
           {
@@ -147,7 +147,7 @@
             "name": "Does NaviBeat track me or collect data?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. There is no NaviBeat backend and no analytics of any kind. The app connects to your server, and to Last.fm or ListenBrainz only if you set those up yourself. Scrobbles are routed through your own Navidrome rather than sent from the app."
+              "text": "No. There is no NaviBeat backend and no analytics of any kind. Apart from your server, NaviBeat contacts Last.fm and ListenBrainz if you connect them, lrclib.net if you switch on the lyrics fallback, and musicbrainz.org and coverartarchive.org for the New Releases shelf on Home, which is on by default and can be switched off in Customise Home. Scrobbles are routed through your own Navidrome rather than sent from the app."
             }
           },
           {
@@ -155,7 +155,7 @@
             "name": "Can I try it before paying?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "On the Mac there is a 7 day free trial. On every platform the TestFlight beta is free and open while you are in it, so you can put your own library in front of it before buying."
+              "text": "The TestFlight beta is free and open on every Apple platform, so you can try it with your own library before buying."
             }
           }
         ]
@@ -259,7 +259,7 @@
     <div class="wrap">
       <p class="eyebrow eyebrow--accent">Every feature, one page</p>
       <h1 class="ft-hero__h">Everything NaviBeat does.</h1>
-      <p class="ft-hero__sub"><strong style="color:var(--text-0);">NaviBeat is a native music player for your own Navidrome or Subsonic server, on iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, for one $5.99 purchase.</strong> This is the whole list, and all of it is on the App Store today in 1.4.</p>
+      <p class="ft-hero__sub"><strong style="color:var(--text-0);">NaviBeat is a native music player for your own Navidrome or Subsonic server, on iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, for one $5.99 purchase.</strong> This is the whole list, and all of it is on the App Store today in 1.5.5.</p>
       <div class="ft-hero__cta">
         <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834?pt=128824034&ct=site-features&mt=8" target="_blank" rel="noopener">Get it on the App Store</a>
         <a class="btn btn--ghost" href="beta">Join the beta</a>
@@ -297,7 +297,7 @@
             <p class="eyebrow">New in 1.5.4 / Library Doctor</p>
             <h3>Library Doctor checks your library.</h3>
             <p>A new sidebar item reads your library from the server and finds split albums, compilations that are not marked, wrong track numbers, missing covers, damaged tag text and duplicate imports. It names what differs and confirms it in the files. You review every change before it is written, NaviBeat asks Navidrome to scan, and every write can be undone from Write History. The check and Undo are free; writing a fix is a one-time unlock.</p>
-            <p class="f-card__kicker">Mac. In 1.5.4, on the App Store.</p>
+            <p class="f-card__kicker">Mac. On the App Store since 1.5.4; the fix unlock arrived with 1.5.5.</p>
           </div>
         </article>
 
@@ -310,10 +310,10 @@
                  sizes="340px">
           </figure>
           <div class="p-shot__copy">
-            <p class="eyebrow">New in the beta / Albums</p>
+            <p class="eyebrow">New in 1.5.5 / Albums</p>
             <h3>A flame on the popular songs.</h3>
             <p>On the album page a flame sits in front of the track number of up to three popular songs. The ranking comes from your own Navidrome server and its Last.fm agent, so no Last.fm login is needed in the app. Settings, Popular songs can switch it to Last.fm, ListenBrainz or off.</p>
-            <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV. In the beta, 1.5.5.</p>
+            <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV. In 1.5.5, on the App Store.</p>
           </div>
         </article>
 
@@ -817,8 +817,8 @@
 
         <article class="f-card">
           <span class="f-card__idx">Library / Stats</span>
-          <h3 class="h3">Listening stats that stay on your side.</h3>
-          <p>A 24 hour listening clock, a weekday heatmap, and your top artists, albums and songs with a week, month or year switcher. Computed from your own play history, not from a service.</p>
+          <h3 class="h3">Listening stats.</h3>
+          <p>A 24 hour listening clock, a weekday heatmap, and your top artists, albums and songs with a week, month or year switcher. From your Last.fm history once you connect it; without Last.fm, Listening Stats shows what is most played on your server.</p>
           <p class="f-card__kicker">iPhone, iPad and Mac.</p>
         </article>
       </div>
@@ -957,7 +957,7 @@
         <article class="f-card">
           <span class="f-card__idx">Mac</span>
           <h3 class="h3">Mac, natively.</h3>
-          <p>SwiftUI, not Electron, not Catalyst, not an iPhone binary. A Mini Player that pins on top of any window, a menu bar presence, four desktop widgets, and a 7 day free trial. <a href="macos" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Mac page</a>.</p>
+          <p>SwiftUI, not Electron, not Catalyst, not an iPhone binary. A Mini Player that pins on top of any window, a menu bar presence and four desktop widgets. <a href="macos" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Mac page</a>.</p>
         </article>
 
         <article class="f-card">
@@ -1026,7 +1026,7 @@
         <article class="f-card">
           <span class="f-card__idx">Privacy</span>
           <h3 class="h3">Zero analytics. Zero tracking.</h3>
-          <p>There is no NaviBeat backend. The app talks to your server and to nothing else, unless you connect Last.fm or ListenBrainz yourself. No telemetry, no crash pings, no accounts. <a href="privacy" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Privacy policy</a>.</p>
+          <p>There is no NaviBeat backend. Apart from your server, NaviBeat contacts Last.fm and ListenBrainz if you connect them, lrclib.net if you switch on the lyrics fallback, and musicbrainz.org and coverartarchive.org for the New Releases shelf on Home, which is on by default and can be switched off in Customise Home. No telemetry, no crash pings, no accounts. <a href="privacy" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Privacy policy</a>.</p>
         </article>
 
         <article class="f-card">
@@ -1059,7 +1059,7 @@
 
         <article class="f-card">
           <h3 class="h3">Does one purchase cover all the platforms?</h3>
-          <p>Yes. $5.99 once, and it installs on iPhone, iPad, Mac, Apple TV and Apple Watch through Apple's Universal Purchase. There is no subscription and no per-device charge. The only extra is NaviSyncRock, a separate $4.99 unlock on the Mac for Rockbox iPod sync.</p>
+          <p>Yes. $5.99 once, and it installs on iPhone, iPad, Mac, Apple TV and Apple Watch through Apple's Universal Purchase. There is no subscription and no per-device charge. There are two optional Mac unlocks: NaviSyncRock ($4.99) for Rockbox iPod sync and Library Doctor fixes ($3.99).</p>
         </article>
 
         <article class="f-card">
@@ -1074,12 +1074,12 @@
 
         <article class="f-card">
           <h3 class="h3">Does NaviBeat track me or collect data?</h3>
-          <p>No. There is no NaviBeat backend and no analytics of any kind. The app connects to your server, and to Last.fm or ListenBrainz only if you set those up yourself. Scrobbles are routed through your own Navidrome rather than sent from the app.</p>
+          <p>No. There is no NaviBeat backend and no analytics of any kind. Apart from your server, NaviBeat contacts Last.fm and ListenBrainz if you connect them, lrclib.net if you switch on the lyrics fallback, and musicbrainz.org and coverartarchive.org for the New Releases shelf on Home, which is on by default and can be switched off in Customise Home. Scrobbles are routed through your own Navidrome rather than sent from the app.</p>
         </article>
 
         <article class="f-card">
           <h3 class="h3">Can I try it before paying?</h3>
-          <p>On the Mac there is a 7 day free trial. On every platform the TestFlight beta is free and open while you are in it, so you can put your own library in front of it before buying. <a href="beta" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Join the beta</a>.</p>
+          <p>The TestFlight beta is free and open on every Apple platform, so you can try it with your own library before buying. <a href="beta" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Join the beta</a>.</p>
         </article>
       </div>
     </div>

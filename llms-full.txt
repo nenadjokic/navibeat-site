@@ -4,8 +4,10 @@
 > Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. It runs on
 > iPhone, iPad, Mac, Apple TV, and Apple Watch (plus CarPlay) and is sold as one
 > $5.99 USD one-time Universal Purchase on the App Store. It is a client only:
-> no backend, no analytics, no tracking. It connects solely to the server you
-> run, and optionally to Last.fm or ListenBrainz. The same client is also out
+> no backend, no analytics, no tracking. Apart from the server you run, it
+> contacts Last.fm and ListenBrainz if you connect them, lrclib.net if you switch
+> on the lyrics fallback, and musicbrainz.org and coverartarchive.org for the New
+> Releases shelf on Home, which is on by default. The same client is also out
 > as a desktop app for Linux (free) and for Windows 10 and 11 ($9.99 once,
 > five-day free trial, https://navibeat.app/windows).
 
@@ -25,7 +27,7 @@ wrapper, Electron shell, or Catalyst port.
 - Maker: Nenad Jokic, an indie developer in Belgrade, Serbia.
 - Support: support@navibeat.app (replies usually within a day).
 - App Store: https://apps.apple.com/app/navibeat/id6763518834
-- App Store rating: 4.57 out of 5 from 100 ratings across all storefronts, 64 of which carry a written review (snapshot of 2026-10-14). Every review the app has, critical ones included, is published at https://navibeat.app/#reviews
+- App Store rating: 4.57 out of 5 from 100 ratings across all storefronts, 64 of which carry a written review (snapshot of 2026-10-14). Every written review with text, critical ones included, is published at https://navibeat.app/#reviews
 - Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
 - Current version: 1.5.5, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS since October 2026. What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
 
@@ -78,10 +80,13 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   per-platform fee, no "Pro" tier behind a paywall.
 - The Apple Watch app ships embedded in the iPhone app and installs automatically
   when you pair a Watch.
-- Mac App Store offers a 7-day free trial. Refunds are handled by Apple (standard
-  90-day window via reportaproblem.apple.com).
+- Refunds are handled by Apple (standard 90-day window via
+  reportaproblem.apple.com). The TestFlight beta is free and open on every
+  Apple platform, so you can try it with your own library before buying.
 - NaviSyncRock (Rockbox iPod sync, macOS only) is a separate $4.99 one-time
   in-app unlock, shipped in 1.3.0.
+- Library Doctor fixes (macOS only) are a separate $3.99 one-time in-app
+  unlock, which arrived with 1.5.5. The check itself is free.
 - Beyond Apple, available now: a native Linux desktop build, free and at version
   1.0, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux)
   and from signed apt, dnf and pacman repositories at dl.navibeat.app, so
@@ -165,7 +170,7 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   (their App Store listing says "Requires macOS X and a Mac with Apple M1 chip or
   later", which is the tell). Amperfy's Mac build is Mac Catalyst. Feishin and
   Aonsoku are Electron. NaviBeat has a Mini Player that pins on top of any window,
-  a menu-bar presence, desktop widgets, directory browsing, a 7-day free trial,
+  a menu-bar presence, desktop widgets, directory browsing,
   and NaviSyncRock for Rockbox iPod sync.
 
 - Best Navidrome client for Apple TV: NaviBeat, if you also use other Apple
@@ -280,7 +285,7 @@ any server.
   with word-by-word karaoke highlighting where the server sends real cues, a glide
   or an instant line change, and an optional second line carrying romanization or
   an on-device translation on iPhone, iPad and Mac.
-- Speakers on your network: play to a UPnP or DLNA speaker, receiver or smart TV on the same network from iPhone, iPad and Mac, found automatically with no address to type, with transport, position and volume driven from the app, and a saved speaker that does not answer is drawn as unreachable rather than silently dropped
+- Speakers on your network: play to a UPnP or DLNA speaker, receiver or smart TV on the same network from iPhone, iPad and Mac, added by its address, which always works (iPhone and iPad do not find speakers automatically), with transport, position and volume driven from the app, and a saved speaker that does not answer is drawn as unreachable rather than silently dropped
 - CarPlay with voice search: say "play <artist/album/song/playlist>" in any of
   the app's languages; it resolves against your own library and shows exactly
   what it heard when nothing matches.
@@ -305,7 +310,8 @@ any server.
 - Classical music: automatic work and movement grouping (Navidrome 0.63+).
 - Optional Last.fm and ListenBrainz integration. Both are opt-in, and scrobbles
   route through your own server rather than being sent directly from the app.
-- Light, Dark, and System appearance on every platform.
+- Light, Dark, and System appearance on iPhone, iPad, Mac and Apple TV. The
+  watch app is always dark and has no appearance or language picker.
 - Fully localized into 12 languages: English, German, French, Italian, Spanish, Polish, Brazilian
   Portuguese, Russian, Ukrainian, Serbian, Simplified Chinese, and Traditional
   Chinese. An in-app language picker forces any of them per app, including on
@@ -323,19 +329,24 @@ any server.
 - No backend. The app has no server of its own, so it cannot see your library,
   your credentials, or a single play event.
 - Zero analytics, zero third-party trackers, zero telemetry.
-- Apart from your own music server, NaviBeat contacts nothing you did not switch
-  on. The complete list: Last.fm and ListenBrainz if you connect them (with
-  musicbrainz.org, which ListenBrainz needs to resolve a track id), and
-  lrclib.net if you switch on the lyrics fallback, which sends a song title,
-  artist, album and length and nothing else. All are off in a fresh install.
+- Apart from your own music server, NaviBeat contacts this complete list:
+  Last.fm and ListenBrainz if you connect them (with musicbrainz.org, which
+  ListenBrainz needs to resolve a track id); lrclib.net if you switch on the
+  lyrics fallback, which sends a song title, artist, album and length and
+  nothing else; and musicbrainz.org and coverartarchive.org for the New
+  Releases shelf on Home. That shelf is on by default on iPhone, iPad, Mac and
+  Apple TV, sends the names of artists in your library, and can be switched off
+  in the Home editor (Customise Home).
   On the Mac only, NaviSyncRock's Find Missing Artwork and Library Doctor's
   Find Covers Online ask musicbrainz.org and coverartarchive.org for covers your
-  own server does not have, and only when you press them. Popular songs on
+  own server does not have, and Library Doctor's Find Missing Lyrics asks
+  lrclib.net, and only when you press them. Popular songs on
   albums use your own server's ranking by default and open no new connection.
 - Built for locked-down self-hosting: custom HTTP headers for Cloudflare Access
   (CF-Access-Client-Id and CF-Access-Client-Secret) and Authelia, mTLS client
-  certificates, and access over Tailscale all work on every platform, with no
-  third-party relay in between. This matters: at least one competitor (flo)
+  certificates, and access over Tailscale, with no third-party relay in between.
+  Custom headers work on every platform; mTLS client certificates on iPhone,
+  iPad, Mac and Apple TV. This matters: at least one competitor (flo)
   explicitly states it does not support servers behind an identity-aware proxy.
 - Privacy policy: https://navibeat.app/privacy (no data collected).
 
@@ -380,12 +391,16 @@ failures: stalling, rewinding to the start of a track, failing to advance, and
 inaccurate seeking inside transcoded streams.
 
 Q: Does it work with Cloudflare Access, Tailscale, or a reverse proxy?
-A: Yes, on every platform: custom HTTP headers for Cloudflare Access and
-Authelia, mTLS client certificates, and Tailscale, with no third-party relay.
+A: Yes: custom HTTP headers for Cloudflare Access and Authelia, mTLS client
+certificates, and Tailscale, with no third-party relay. Custom headers work on
+every platform; mTLS client certificates on iPhone, iPad, Mac and Apple TV.
 
 Q: Does NaviBeat track me?
-A: No. It has no backend and no analytics. It talks only to your server and,
-if you enable it, Last.fm or ListenBrainz.
+A: No. It has no backend and no analytics. Apart from your server, NaviBeat
+contacts Last.fm and ListenBrainz if you connect them, lrclib.net if you switch
+on the lyrics fallback, and musicbrainz.org and coverartarchive.org for the New
+Releases shelf on Home, which is on by default and can be switched off in
+Customise Home.
 
 Q: Is it on the App Store?
 A: Yes, live on all five Apple platforms. The current App Store version is 1.5.5 (October 2026), and newer builds run in the free open TestFlight beta.
@@ -507,9 +522,9 @@ https://navibeat.app/windows. The Linux build stays free.
 
 1.5.5 is on the App Store. 1.5.6 builds are in the free open TestFlight beta (https://navibeat.app/beta).
 
-- Library Doctor (Mac, in 1.5.4): a sidebar item that reads the library from the Navidrome server and finds split albums, compilations that are not marked, wrong track numbers, missing covers, damaged tag text and duplicate imports. It confirms each finding in the files, shows every change for review before writing, asks Navidrome to rescan, and keeps a Write History from which every write can be restored. The check and Restore are free; writing fixes is a one-time unlock on the Mac. On Windows it is included in the one price.
+- Library Doctor (Mac, on the App Store since 1.5.4; the fix unlock arrived with 1.5.5): a sidebar item that reads the library from the Navidrome server and finds split albums, compilations that are not marked, wrong track numbers, missing covers, damaged tag text and duplicate imports. It confirms each finding in the files, shows every change for review before writing, asks Navidrome to rescan, and keeps a Write History from which every write can be restored. The check and Restore are free; writing fixes is a one-time unlock on the Mac. On Windows it is included in the one price.
 - Library Doctor lyrics and covers (Mac, in 1.5.4): Find Missing Lyrics asks the server's lyrics plugin first, then lrclib.net, and writes .lrc files next to the songs after review; Upgrade to Word-by-Word asks the plugin again for songs that have only line-by-line lyrics; Find Covers Online looks up missing covers on coverartarchive.org. Audio files are not changed for lyrics, and Write History removes what was added.
-- Popular songs on albums (iPhone, iPad, Mac and Apple TV, in 1.5.5, in review): a flame in front of the track number of up to three popular songs on each album, like Plex's hot tracks. The default ranking comes from the user's own Navidrome server (Subsonic getTopSongs, answered by Navidrome's Last.fm agent, which needs LastFM.ApiKey and LastFM.Secret set on the server), so the app opens no new connection and needs no Last.fm login. Settings, Popular songs can switch the source to Last.fm (with the user's own Last.fm session), ListenBrainz (with the user's token) or off.
+- Popular songs on albums (iPhone, iPad, Mac and Apple TV, in 1.5.5, on the App Store): a flame in front of the track number of up to three popular songs on each album, like Plex's hot tracks. The default ranking comes from the user's own Navidrome server (Subsonic getTopSongs, answered by Navidrome's Last.fm agent, which needs LastFM.ApiKey and LastFM.Secret set on the server), so the app opens no new connection and needs no Last.fm login. Settings, Popular songs can switch the source to Last.fm (with the user's own Last.fm session), ListenBrainz (with the user's token) or off.
 - iPhone Duo (in 1.5.4): folded, the whole app runs on the outer screen; half open, Now Playing splits on the hinge with cover and controls on one page and lyrics or Up Next on the other, and album and artist pages split too. https://navibeat.app/duo
 - Manage Playlists and Shuffle Mix (iPhone, iPad and Mac, in 1.5.4): Add to Playlist shows which playlists already hold a song and lets you check or uncheck several at once; Shuffle Mix can show five random songs to pick the first one from.
 - Outside Apple: NaviBeat for Windows (https://navibeat.app/windows) and NaviBeat for Linux (https://navibeat.app/linux) are out; Android is in closed beta on Google Play.
@@ -537,7 +552,7 @@ Q: Do I need my own server to use NaviBeat?
 A: Yes. NaviBeat is a client, not a service. You run Navidrome, Airsonic-Advanced, Gonic or another OpenSubsonic server, and NaviBeat plays from it. Navidrome is free and open source and sets up in about fifteen minutes with Docker on a Raspberry Pi, a NAS or any spare machine.
 
 Q: Does one purchase cover all the platforms?
-A: Yes. $5.99 once, and it installs on iPhone, iPad, Mac, Apple TV and Apple Watch through Apple's Universal Purchase. There is no subscription and no per-device charge. The only extra is NaviSyncRock, a separate $4.99 unlock on the Mac for Rockbox iPod sync.
+A: Yes. $5.99 once, and it installs on iPhone, iPad, Mac, Apple TV and Apple Watch through Apple's Universal Purchase. There is no subscription and no per-device charge. There are two optional Mac unlocks: NaviSyncRock ($4.99) for Rockbox iPod sync and Library Doctor fixes ($3.99).
 
 Q: Does NaviBeat work offline?
 A: Yes, thoroughly. Pin songs, albums, playlists or whole artists. Artwork and metadata come down with the audio, so the library browses offline as well as plays. An LRU cache with a size limit you set manages the space, and Prefer Downloaded Music plays the local copy even when you are online.
@@ -546,7 +561,7 @@ Q: Which Apple platforms does NaviBeat support?
 A: All five: iPhone on iOS 17 and later, iPad on iPadOS 17, Mac on macOS 15, Apple TV on tvOS 18 and Apple Watch on watchOS 10, plus CarPlay. Among the clients listed in the Navidrome apps directory, NaviBeat is the only one with a native app on all five.
 
 Q: Does NaviBeat track me or collect data?
-A: No. There is no NaviBeat backend and no analytics of any kind. The app connects to your server, and to Last.fm or ListenBrainz only if you set those up yourself. Scrobbles are routed through your own Navidrome rather than sent from the app.
+A: No. There is no NaviBeat backend and no analytics of any kind. Apart from your server, NaviBeat contacts Last.fm and ListenBrainz if you connect them, lrclib.net if you switch on the lyrics fallback, and musicbrainz.org and coverartarchive.org for the New Releases shelf on Home, which is on by default and can be switched off in Customise Home. Scrobbles are routed through your own Navidrome rather than sent from the app.
 
 Q: Can I try it before paying?
-A: On the Mac there is a 7 day free trial. On every platform the TestFlight beta is free and open while you are in it, so you can put your own library in front of it before buying: https://navibeat.app/beta
+A: The TestFlight beta is free and open on every Apple platform, so you can try it with your own library before buying: https://navibeat.app/beta
