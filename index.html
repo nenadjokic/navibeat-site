@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>NaviBeat: Native Navidrome Client for Every Apple Device</title>
-  <meta name="description" content="Native Navidrome client for Apple TV, Mac, iPhone, iPad and Apple Watch, one $5.99 Universal Purchase. Also on Linux (free) and Windows ($9.99).">
+  <meta name="description" content="Native Navidrome client for Apple TV, Mac, iPhone, iPad and Apple Watch, one $5.99 Universal Purchase. Also on Android ($5.99), Linux (free) and Windows ($9.99).">
   <meta name="theme-color" content="#0C0C0E">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="apple-itunes-app" content="app-id=6763518834">
@@ -15,7 +15,7 @@
   <link rel="alternate" hreflang="x-default" href="https://navibeat.app/">
 
   <meta property="og:title" content="NaviBeat: Native Navidrome &amp; Subsonic client for every Apple device">
-  <meta property="og:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. Native SwiftUI Navidrome client with time-synced lyrics, internet radio, Mini Player, AutoMix, and sleep timer. One $5.99 Universal Purchase. Also on Linux and Windows.">
+  <meta property="og:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. Native SwiftUI Navidrome client with time-synced lyrics, internet radio, Mini Player, AutoMix, and sleep timer. One $5.99 Universal Purchase. Also on Android, Linux and Windows.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg?v=20260830">
@@ -27,7 +27,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NaviBeat: Native Navidrome client for every Apple device">
-  <meta name="twitter:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. One $5.99 Universal Purchase. Also on Linux and Windows.">
+  <meta name="twitter:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. One $5.99 Universal Purchase. Also on Android, Linux and Windows.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg?v=20260830">
   <meta name="twitter:image:alt" content="NaviBeat on Apple TV 4K, Featured Album hero on the home screen.">
 
@@ -86,7 +86,8 @@
         "founder": { "@id": "https://navibeat.app/#nenad" },
         "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
         "sameAs": [
-          "https://www.navidrome.org/apps/"
+          "https://www.navidrome.org/apps/",
+          "https://play.google.com/store/apps/details?id=app.navibeat.android"
         ]
       },
       {
@@ -311,7 +312,7 @@
             "name": "Is NaviBeat on Linux, Android or Windows?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "NaviBeat for Linux is out now, free and at version 1.0, as an AppImage on GitHub. The native Android client is finished and in closed beta on Google Play, written natively for Android, not a web page in a shell, with the same library, the same offline downloads, the same word by word lyrics, and the same rule that applies everywhere: your music, your server, nothing phoning home. It is finished and running as a closed beta on Google Play. No store release date has been announced yet. To join the test, email nenad.dev@icloud.com with the phone you would test on. On Android the phone comes first, with the watch, the television and the car behind it. NaviBeat for Windows is out too: $9.99 once, with a five-day free trial, at navibeat.app/windows. Today NaviBeat is native on the five Apple platforms, iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, and on Linux and Windows too."
+              "text": "Yes, on all three. NaviBeat for Android is out on Google Play at https://play.google.com/store/apps/details?id=app.navibeat.android: $5.99 once, a separate purchase from the Apple apps, one app for the phone and Android TV, with Android Auto in the car. It is written natively for Android, not a web page in a shell, with the same library, the same offline downloads, the same word by word lyrics, and the same rule that applies everywhere: your music, your server, nothing phoning home. NaviBeat for Linux is out, free, as an AppImage on GitHub and from apt, dnf and pacman repositories. NaviBeat for Windows is out too: $9.99 once, with a five-day free trial, at navibeat.app/windows. Today NaviBeat is native on the five Apple platforms, iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, and on Android, Linux and Windows."
             }
           }
         ]
@@ -340,6 +341,29 @@
           { "@type": "ListItem", "position": 1, "url": "https://navibeat.app/linux", "name": "NaviBeat for Linux" },
           { "@type": "ListItem", "position": 2, "url": "https://navibeat.app/windows", "name": "NaviBeat for Windows" }
         ]
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://navibeat.app/#android",
+        "name": "NaviBeat for Android",
+        "url": "https://play.google.com/store/apps/details?id=app.navibeat.android",
+        "image": "https://navibeat.app/assets/icon-512.png",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Music Streaming Client",
+        "operatingSystem": "Android, Android TV",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=app.navibeat.android",
+        "installUrl": "https://play.google.com/store/apps/details?id=app.navibeat.android",
+        "contentRating": "Everyone",
+        "description": "Native Android client for Navidrome, Airsonic, Gonic and OpenSubsonic music servers, for the phone and Android TV, with Android Auto. A separate Google Play purchase.",
+        "author": { "@id": "https://navibeat.app/#org" },
+        "publisher": { "@id": "https://navibeat.app/#org" },
+        "offers": {
+          "@type": "Offer",
+          "price": "5.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://play.google.com/store/apps/details?id=app.navibeat.android"
+        }
       }
     ]
   }
@@ -529,14 +553,15 @@
       <!-- SLIDE 4 (2026-10-11, Nenad): NaviBeat for Windows is live. The picture is
            the real Windows 11 desktop with the taskbar, so it reads as Windows at a
            glance. Price and licence are the ones the Windows card below states. -->
-      <article class="herodeck__slide" data-slide="3" aria-roledescription="slide" aria-label="4 of 4: NaviBeat for Windows">
+      <article class="herodeck__slide" data-slide="3" aria-roledescription="slide" aria-label="4 of 4: NaviBeat for Windows and Android">
        <div class="wrap newsbar">
         <div class="newsbar__copy">
           <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>Live now</p>
-          <h2 class="newsbar__h">NaviBeat is out <em>on Windows.</em></h2>
-          <p class="newsbar__p">A native desktop app for Windows 10 and 11. $9.99 once, with a five-day free trial, and one purchase covers three computers.</p>
+          <h2 class="newsbar__h">NaviBeat is out <em>on Windows and Android.</em></h2>
+          <p class="newsbar__p">A native desktop app for Windows 10 and 11, $9.99 once with a five-day free trial. And a native app for Android phones and Android TV, $5.99 once on Google Play.</p>
           <div class="hero__ctas">
             <a class="btn btn--primary" href="windows">Get it for Windows&nbsp;&rarr;</a>
+            <a class="btn btn--ghost" href="https://play.google.com/store/apps/details?id=app.navibeat.android" rel="noopener">Get it on Google Play&nbsp;&rarr;</a>
           </div>
         </div>
         <figure class="newsbar__art newsbar__art--windows">
@@ -893,13 +918,13 @@
        A SEPARATE platform grid from the Apple one above, on purpose. The Apple section's
        thesis ("Every screen Apple makes. One receipt.") and the five-Apple-platforms
        JSON-LD / llms claim stay untouched. This grid is the non-Apple line: Linux (live,
-       free, links to its page), Android (finished, closed beta, testers wanted) and Windows (live, paid, links to its page).
+       free, links to its page), Android (live on Google Play, paid, links to the Play listing) and Windows (live, paid, links to its page).
        Percentages are Nenad's call and are meant to be kept current. -->
   <section class="platforms platforms--next" id="android" aria-labelledby="next-title">
     <div class="wrap">
       <div class="platforms__eyebrow reveal-stagger">
         <p class="eyebrow eyebrow--accent">What's next</p>
-        <h2 id="next-title" class="platforms__title">NaviBeat is on Linux and Windows now. <em style="font-style:italic;">And it keeps going.</em></h2>
+        <h2 id="next-title" class="platforms__title">NaviBeat is on Android, Linux and Windows now. <em style="font-style:italic;">And it keeps going.</em></h2>
       </div>
 
       <ul class="plat-grid plat-grid--trio reveal-stagger" role="list">
@@ -928,10 +953,10 @@
             </div>
             <div class="plat-card__body">
               <div class="plat-card__name">Android</div>
-              <div class="plat-card__status"><span class="plat-card__dot"></span>Closed beta &middot; testers wanted</div>
-              <p class="plat-card__desc">Finished and in closed beta on Google Play. Write to nenad.dev@icloud.com to get in. Phone first, then the watch, the television and the car.</p>
+              <div class="plat-card__status"><span class="plat-card__dot"></span>Live &middot; $5.99 &middot; Google Play</div>
+              <p class="plat-card__desc">A native app for the phone and Android TV, with Android Auto in the car. Offline downloads, time-synced lyrics, internet radio. A separate purchase from the Apple apps.</p>
               <a class="btn btn--primary btn--compact" style="margin-top:12px; width:100%; font-size:12.5px; min-height:34px; padding:8px 14px;"
-                 href="mailto:nenad.dev@icloud.com?subject=NaviBeat%20Android%20beta%20tester%20sign-up&amp;body=Hi%20Nenad%2C%0A%0AI%27d%20like%20to%20join%20the%20NaviBeat%20Android%20beta.%0A%0A--%20About%20me%20--%0AGoogle%20account%20email%20%28for%20the%20Play%20invite%29%3A%20%0APhone%20or%20tablet%3A%20%20%20%28make%20and%20model%29%0AAndroid%20version%3A%20%20%20%28e.g.%2015%29%0AMy%20server%3A%20%20%28Navidrome%20/%20Airsonic%20/%20Gonic%20/%20other%29%0AHow%20I%20expose%20it%3A%20%20%20%28LAN%20only%20/%20Tailscale%20/%20Cloudflare%20Tunnel%20/%20reverse%20proxy%20with%20cert%20/%20other%29%0AApproximate%20library%20size%3A%20%20%20%28%23%20of%20albums%2C%20rough%20genre%20mix%29%0A%0A--%20What%20I%27d%20like%20to%20focus%20on%20--%0A%0A%0AThanks%21">Join the closed beta &rarr;</a>
+                 href="https://play.google.com/store/apps/details?id=app.navibeat.android" rel="noopener">Get it on Google Play &rarr;</a>
             </div>
           </div>
         </li>
@@ -1096,7 +1121,7 @@
         <article class="f-card">
           <span class="f-card__idx">Out now / Windows and Linux</span>
           <h3 class="h3">NaviBeat outside Apple.</h3>
-          <p><a href="windows" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">NaviBeat for Windows</a> is out, one price with Library Doctor and NaviSyncRock included and a five-day free trial. <a href="linux" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">NaviBeat for Linux</a> is out too, free. Android is in closed beta on Google Play.</p>
+          <p><a href="windows" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">NaviBeat for Windows</a> is out, one price with Library Doctor and NaviSyncRock included and a five-day free trial. <a href="linux" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">NaviBeat for Linux</a> is out too, free, and <a href="https://play.google.com/store/apps/details?id=app.navibeat.android" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">NaviBeat for Android</a> is on Google Play.</p>
           <p class="f-card__kicker">Windows and Linux. Live now.</p>
         </article>
 
@@ -1380,7 +1405,7 @@
         </button></h3>
         <div class="faq__panel" id="faq-android" inert>
           <div class="faq__a">
-            NaviBeat for Linux is out now, free and at version 1.0, as an AppImage on GitHub. The native Android client is finished and in closed beta on Google Play, written natively for Android, not a web page in a shell, with the same library, the same offline downloads, the same word by word lyrics, and the same rule that applies everywhere: your music, your server, nothing phoning home. It is finished and running as a closed beta on Google Play. No store release date has been announced yet. To join the test, email nenad.dev@icloud.com with the phone you would test on. On Android the phone comes first, with the watch, the television and the car behind it. NaviBeat for Windows is out too, $9.99 once with a five-day free trial. Today NaviBeat is native on the five Apple platforms plus CarPlay, and on Linux and Windows. See <a href="linux">NaviBeat for Linux</a> and <a href="windows">NaviBeat for Windows</a>.
+            NaviBeat for Android is out on Google Play: $5.99 once, a separate purchase from the Apple apps, one app for the phone and Android TV, with Android Auto in the car. <a href="https://play.google.com/store/apps/details?id=app.navibeat.android" rel="noopener">Get it on Google Play</a>. NaviBeat for Linux is out now, free, as an AppImage on GitHub. The Android app is written natively for Android, not a web page in a shell, with the same library, the same offline downloads, the same word by word lyrics, and the same rule that applies everywhere: your music, your server, nothing phoning home. NaviBeat for Windows is out too, $9.99 once with a five-day free trial. Today NaviBeat is native on the five Apple platforms plus CarPlay, and on Android, Linux and Windows. See <a href="linux">NaviBeat for Linux</a> and <a href="windows">NaviBeat for Windows</a>.
           </div>
         </div>
       </div>
