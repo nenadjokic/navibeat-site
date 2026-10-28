@@ -369,6 +369,73 @@
     </div>
   </section>
 
+  <section id="gapless-crossfade" aria-labelledby="gapless-crossfade-title">
+    <style>
+      .nb-vphone{position:relative;width:100%;max-width:340px;margin:0 auto;aspect-ratio:1470/3000}
+      .nb-vphone__screen{position:absolute;left:5.102%;top:2.2%;width:89.796%;height:95.6%;object-fit:cover;background:#000;border-radius:11%/5.2%;display:block}
+      .nb-vphone__bezel{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+      .nb-vphone__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;border:0;cursor:pointer;color:#fff;background:rgba(12,12,14,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:grid;place-items:center;box-shadow:0 6px 24px rgba(0,0,0,.45);transition:transform .15s ease,opacity .2s ease}
+      .nb-vphone__play svg{margin-left:4px}
+      .nb-vphone__play:hover{transform:translate(-50%,-50%) scale(1.06)}
+      .nb-vphone__play:focus-visible{outline:2px solid var(--accent,#ff8a2a);outline-offset:3px}
+      .nb-vphone.is-playing .nb-vphone__play{opacity:0;pointer-events:none}
+    </style>
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Listen to it</p>
+        <h2 id="gapless-crossfade-title" class="h2">No gap, or a smooth fade.</h2>
+        <p class="body-copy" style="font-size:18px;margin-top:10px;">Two short recordings from an iPhone, with sound. Tap Play.</p>
+      </div>
+
+      <div class="p-shots">
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <div class="nb-vphone">
+              <video class="nb-vphone__screen" src="assets/video/navibeat-iphone-gapless.mp4?v=20261027" poster="assets/video/navibeat-iphone-gapless-poster.webp?v=20261027" playsinline preload="none" aria-label="NaviBeat on iPhone playing an album in order with gapless playback"></video>
+              <img class="nb-vphone__bezel" src="assets/video/iphone-18-pro-max-bezel-760.webp?v=20261027" alt="" width="760" height="1551" aria-hidden="true">
+              <button class="nb-vphone__play" type="button" aria-label="Play the gapless video with sound"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            </div>
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">Playback / Gapless</p>
+            <h3>An album plays straight through.</h3>
+            <p>Gapless playback is on from the start. Songs from one album, played in order, run into each other with no silence between them, the way the album was recorded.</p>
+            <p class="f-card__kicker">Recorded on an iPhone. Turn the sound on.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse reveal">
+          <figure class="p-shot__media">
+            <div class="nb-vphone">
+              <video class="nb-vphone__screen" src="assets/video/navibeat-iphone-crossfade.mp4?v=20261027" poster="assets/video/navibeat-iphone-crossfade-poster.webp?v=20261027" playsinline preload="none" aria-label="NaviBeat on iPhone crossfading between songs on shuffle"></video>
+              <img class="nb-vphone__bezel" src="assets/video/iphone-18-pro-max-bezel-760.webp?v=20261027" alt="" width="760" height="1551" aria-hidden="true">
+              <button class="nb-vphone__play" type="button" aria-label="Play the crossfade video with sound"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            </div>
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">Playback / Crossfade</p>
+            <h3>One song fades into the next.</h3>
+            <p>Turn on Overlap tracks in Settings, Playback &amp; Audio, Crossfade and pick the length. The end of one song fades out while the next one fades in. Songs from one album played in order are left gapless, so an album still sounds like the album.</p>
+            <p class="f-card__kicker">Recorded on an iPhone. Turn the sound on.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('.nb-vphone').forEach(function (box) {
+        var v = box.querySelector('video'), b = box.querySelector('.nb-vphone__play');
+        function toggle() { if (v.paused) { document.querySelectorAll('.nb-vphone video').forEach(function (o) { if (o !== v) o.pause(); }); v.play(); } else { v.pause(); } }
+        b.addEventListener('click', toggle);
+        v.addEventListener('click', toggle);
+        v.addEventListener('play', function () { box.classList.add('is-playing'); });
+        v.addEventListener('pause', function () { box.classList.remove('is-playing'); });
+        v.addEventListener('ended', function () { box.classList.remove('is-playing'); v.currentTime = 0; });
+      });
+    </script>
+  </section>
+
   <section id="beta-features" aria-labelledby="beta-features-title">
     <div class="wrap">
       <div class="sec-head reveal-stagger">
