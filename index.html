@@ -40,7 +40,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=202610111510">
+  <link rel="stylesheet" href="styles.css?v=202610282345">
   <link rel="stylesheet" href="artifact.css?v=202609061100">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp?v=20260830 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp?v=20260830 2000w"
@@ -423,12 +423,12 @@
     <div class="herodeck" data-herodeck data-interval="10000">
      <div class="herodeck__track">
 
-      <article class="herodeck__slide is-current" data-slide="0" aria-roledescription="slide" aria-label="1 of 4: NaviBeat on every Apple screen">
+      <article class="herodeck__slide is-current" data-slide="0" aria-roledescription="slide" aria-label="1 of 4: NaviBeat on every screen">
        <div class="wrap hero__wrap">
       <div class="hero__copy">
         <p class="eyebrow hero__eyebrow">
           <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-          NaviBeat &nbsp;&middot;&nbsp; 1.5.5 out now on the App Store
+          NaviBeat &nbsp;&middot;&nbsp; Now on Apple, Android, Windows and Linux
         </p>
         <h1 class="hero__h1" aria-label="Your music. Your server. Every screen you own.">
           <span class="word" style="animation-delay:0ms">Your</span>
@@ -441,15 +441,24 @@
           <span class="word" style="animation-delay:390ms">own.</span>
         </h1>
         <p class="hero__sub">
-          NaviBeat is a native Navidrome and OpenSubsonic player for Apple TV, Mac, iPhone, iPad, and Apple Watch. Now <strong style="color:var(--text-1);font-weight:600;">live on the App Store across all five platforms</strong> at <span style="color:var(--accent);font-style:normal;">$5.99</span>, one purchase covers every device, forever.
+          NaviBeat is a native Navidrome and OpenSubsonic player for Apple TV, Mac, iPhone, iPad and Apple Watch. It is <strong style="color:var(--text-1);font-weight:600;">live on the App Store across all five Apple platforms</strong> at <span style="color:var(--accent);font-style:normal;">$5.99</span>, one purchase for every Apple device, forever. And now NaviBeat is <strong style="color:var(--text-1);font-weight:600;">on every platform</strong>: Android, Windows and Linux too.
         </p>
-        <div class="hero__ctas">
-          <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834?pt=128824034&ct=site-index&mt=8" target="_blank" rel="noopener" id="hero-buy">
-            <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-            </svg>
-            Get it on the App Store
-          </a>
+        <div class="hero__ctas hero__ctas--stores">
+          <div class="store-badges">
+            <a class="store-badge" href="https://apps.apple.com/app/navibeat/id6763518834?pt=128824034&ct=site-index&mt=8" target="_blank" rel="noopener" id="hero-buy">
+              <img src="assets/badges/app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40">
+            </a>
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=app.navibeat.android" target="_blank" rel="noopener">
+              <img src="assets/badges/google-play-badge.png" alt="Get it on Google Play" width="134" height="40">
+            </a>
+            <a class="store-badge" href="windows">
+              <img src="assets/badges/windows-badge.svg" alt="Download NaviBeat for Windows" width="120" height="40">
+            </a>
+            <a class="store-badge" href="linux">
+              <img src="assets/badges/linux-badge.svg" alt="Download NaviBeat for Linux" width="120" height="40">
+            </a>
+          </div>
+          <p class="store-badges__note">Android $5.99 &middot; Windows $9.99 &middot; Linux free</p>
           <a class="link-quiet" href="https://www.navidrome.org" target="_blank" rel="noopener">Set up your Navidrome server&nbsp;&rarr;</a>
         </div>
       </div>

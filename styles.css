@@ -4222,3 +4222,17 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
   .newsbar__art--trio img { width: 30%; }
   .newsbar__h { max-width: none; }
 }
+
+/* Hero store badges: the official App Store and Google Play badges plus
+   Windows and Linux badges drawn in the same black style, all 40px tall. */
+.hero__ctas--stores { flex-direction: column; align-items: flex-start; gap: 12px; }
+.store-badges { display: grid; grid-template-columns: repeat(2, max-content); gap: 10px; }
+.store-badge { display: inline-flex; border-radius: 8px; transition: transform .15s var(--ease), opacity .15s; }
+.store-badge:hover { transform: translateY(-1px); opacity: .9; }
+.store-badge img { display: block; height: 44px; width: auto; }
+.store-badges__note { margin: 0; font-size: 13px; color: var(--text-2); }
+@media (max-width: 720px) {
+  .hero__ctas--stores { align-items: center; }
+  .store-badges { justify-content: center; }
+  .store-badge img { height: 40px; }
+}
