@@ -48,6 +48,9 @@ export default {
       const res = await roadmap(request, env, url.pathname);
       if (res) return res;
     }
+    if (url.pathname.startsWith('/assets/video/')) {
+      return serveVideo(request, env);
+    }
     return env.ASSETS.fetch(request);
   },
 
@@ -58,3 +61,42 @@ export default {
     ctx.waitUntil(collectLinuxDownloads(env, event.scheduledTime));
   },
 };
+
+// 2026-10-28: byte ranges for the videos on the Features page. The asset
+// handler ignores Range and answers 200 with the whole file, and Safari on
+// iPhone will not play a video that way. The files are a couple of megabytes,
+// so reading one whole and slicing it is cheap. Only a single range is
+// supported, which is what every browser sends for media.
+export async function serveVideo(request, env) {
+  const plain = new Request(new URL(request.url), { method: 'GET' });
+  const res = await env.ASSETS.fetch(plain);
+  if (!res.ok) return res;
+  const body = await res.arrayBuffer();
+  const size = body.byteLength;
+  const headers = new Headers(res.headers);
+  headers.set('accept-ranges', 'bytes');
+  headers.delete('content-length');
+  headers.delete('content-encoding');
+  const range = request.headers.get('range');
+  const m = range && /^bytes=(\d*)-(\d*)$/.exec(range.trim());
+  if (!m || (m[1] === '' && m[2] === '')) {
+    headers.set('content-length', String(size));
+    return new Response(request.method === 'HEAD' ? null : body, { status: 200, headers });
+  }
+  let start, end;
+  if (m[1] === '') {
+    const n = Math.min(Number(m[2]), size);
+    start = size - n;
+    end = size - 1;
+  } else {
+    start = Number(m[1]);
+    end = m[2] === '' ? size - 1 : Math.min(Number(m[2]), size - 1);
+  }
+  if (start >= size || start > end) {
+    headers.set('content-range', `bytes */${size}`);
+    return new Response(null, { status: 416, headers });
+  }
+  headers.set('content-range', `bytes ${start}-${end}/${size}`);
+  headers.set('content-length', String(end - start + 1));
+  return new Response(request.method === 'HEAD' ? null : body.slice(start, end + 1), { status: 206, headers });
+}
