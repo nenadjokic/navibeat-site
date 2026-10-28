@@ -78,7 +78,8 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   (tvOS 18+), Apple Watch (watchOS 10+), plus CarPlay.
 - Price: $5.99 USD, one time. It is a Universal Purchase: buy once on any Apple
   device and it installs on the other four at no extra cost. No subscription, no
-  per-platform fee, no "Pro" tier behind a paywall.
+  per-platform fee. The whole player is included. Two optional Mac tools
+  (Library Doctor fixes and NaviSyncRock) are sold separately.
 - The Apple Watch app ships embedded in the iPhone app and installs automatically
   when you pair a Watch.
 - Refunds are handled by Apple (standard 90-day window via
