@@ -19,11 +19,7 @@
     "binding": "ASSETS",
     // Without this the worker answers a missing path with a bare 404 and an
     // empty body, measured 0 bytes on 2026-08-31.
-    "not_found_handling": "404-page",
-    // 2026-10-28: the static asset handler answers a Range request with 200 and the
-    // whole file (measured on the gapless/crossfade MP4s), and Safari on iPhone
-    // wants 206 to play a video. The worker serves these paths first and slices.
-    "run_worker_first": ["/assets/video/*"]
+    "not_found_handling": "404-page"
   },
   "kv_namespaces": [
     {

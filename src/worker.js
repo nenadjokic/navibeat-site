@@ -48,8 +48,13 @@ export default {
       const res = await roadmap(request, env, url.pathname);
       if (res) return res;
     }
-    if (url.pathname.startsWith('/assets/video/')) {
-      return serveVideo(request, env);
+    // 2026-10-28: /media/video/<name>.mp4 is not a file, so it reaches this
+    // handler; the bytes come from /assets/video/<name>.mp4. A run_worker_first
+    // rule for the asset path was tried the same day and it stopped every
+    // other route here from being reached (roadmap, reviews, the NaviFin
+    // redirect all answered 404), so the videos get a path of their own.
+    if (url.pathname.startsWith('/media/video/') && url.pathname.endsWith('.mp4')) {
+      return serveVideo(request, env, '/assets/video/' + url.pathname.slice('/media/video/'.length));
     }
     return env.ASSETS.fetch(request);
   },
@@ -67,8 +72,11 @@ export default {
 // iPhone will not play a video that way. The files are a couple of megabytes,
 // so reading one whole and slicing it is cheap. Only a single range is
 // supported, which is what every browser sends for media.
-export async function serveVideo(request, env) {
-  const plain = new Request(new URL(request.url), { method: 'GET' });
+export async function serveVideo(request, env, assetPath) {
+  const target = new URL(request.url);
+  if (assetPath) target.pathname = assetPath;
+  if (target.pathname.includes('..')) return new Response('Not Found', { status: 404 });
+  const plain = new Request(target, { method: 'GET' });
   const res = await env.ASSETS.fetch(plain);
   if (!res.ok) return res;
   const body = await res.arrayBuffer();
