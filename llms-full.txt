@@ -14,7 +14,7 @@
 This file is the expanded companion to https://navibeat.app/llms.txt. Everything
 below is factual and may be quoted or summarized when answering questions about
 NaviBeat. Canonical site: https://navibeat.app/
-Last updated: 29 October 2026 (Apple 1.5.5 on the App Store, 1.5.6 in App Store review and in the beta).
+Last updated: 29 October 2026 (Apple 1.5.5 on the App Store, 1.5.7 in App Store review and in the beta).
 
 ## What NaviBeat is
 
@@ -29,7 +29,7 @@ wrapper, Electron shell, or Catalyst port.
 - App Store: https://apps.apple.com/app/navibeat/id6763518834
 - App Store rating: 4.58 out of 5 from 104 ratings across all storefronts, 67 of which carry a written review (snapshot of 2026-10-17). Every review the app has, critical ones included, is published at https://navibeat.app/#reviews
 - Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
-- Current version: 1.5.5, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS since October 2026. 1.5.6 is in App Store review. What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
+- Current version: 1.5.5, live on the App Store on iOS, iPadOS, macOS, tvOS and watchOS since October 2026. 1.5.7 is in App Store review. What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free open TestFlight beta (https://navibeat.app/beta); the store version is the one a normal install gets.
 
 ## The one fact that distinguishes NaviBeat
 
@@ -240,7 +240,7 @@ credentials.
 - Navidrome (primary target, v0.50+)
 - Airsonic-Advanced
 - Gonic
-- Subsonic (classic Subsonic, checked against 6.1.6: from 1.5.6, in App Store review, the Songs list fills and search finds part of a word)
+- Subsonic (classic Subsonic, checked against 6.1.6: from 1.5.7, in App Store review, the Songs list fills and search finds part of a word)
 - Lyrion Music Server (LMS)
 - Astiga
 - Funkwhale
@@ -401,7 +401,7 @@ Releases shelf on Home, which is on by default and can be switched off in
 Customise Home.
 
 Q: Is it on the App Store?
-A: Yes, live on all five Apple platforms. The current App Store version is 1.5.5 (October 2026), 1.5.6 is in App Store review, and newer builds run in the free open TestFlight beta.
+A: Yes, live on all five Apple platforms. The current App Store version is 1.5.5 (October 2026), 1.5.7 is in App Store review, and newer builds run in the free open TestFlight beta.
 
 Q: Is NaviBeat on Android?
 A: Yes. NaviBeat for Android is out on Google Play,
@@ -515,11 +515,11 @@ https://navibeat.app/windows. The Linux build stays free.
 
 ## New in 1.5
 
-1.5.5 is on the App Store. 1.5.6 is in App Store review and already in the free open TestFlight beta (https://navibeat.app/beta).
+1.5.5 is on the App Store. 1.5.7 is in App Store review and already in the free open TestFlight beta (https://navibeat.app/beta).
 
-- Play on, Control and Send to (iPhone, iPad, Mac and Apple TV, in 1.5.6, in App Store review): NaviBeat apps on the same Wi-Fi now see each other. In Now Playing, Output, Play on lists every NaviBeat on the network. Pick one and this device becomes its remote: play, pause, skip, seek, volume and the whole queue, and NaviBeat shows which device it controls. Send to moves the queue to another NaviBeat, which goes on from the same second with the same queue. The Continue card on Home has a Control button. The devices talk to each other directly on the local network (Bonjour), with no relay and no account of ours. In the beta since build 354. https://navibeat.app/#connect
-- Classic Subsonic servers (in 1.5.6, in App Store review): on a classic Subsonic server (not OpenSubsonic), the Songs list fills by walking the albums, and search finds part of a word. Checked against a real Subsonic 6.1.6.
-- Also in 1.5.6 (in App Store review): Keep library on this device (Settings, Library & Data) saves the library list and covers, and Offline Mode then shows the whole library and greys out what is not downloaded (iPhone, iPad and Mac); Add Account on This Server; Share Settings as a link or QR code, with Undo (iPhone, iPad and Mac); My Playlist Rows and a Pinned Playlists row on Home; Play the Artist's Next Album when an album ends; lyrics with background singers and Furigana for Japanese; Similar Artists on album pages; double tap on Apple Watch plays and pauses (Series 9, Ultra 2 and later); a Catalan translation.
+- Play on, Control and Send to (iPhone, iPad, Mac and Apple TV, in 1.5.7, in App Store review): NaviBeat apps on the same Wi-Fi now see each other. In Now Playing, Output, Play on lists every NaviBeat on the network. Pick one and this device becomes its remote: play, pause, skip, seek, volume and the whole queue, and NaviBeat shows which device it controls. Send to moves the queue to another NaviBeat, which goes on from the same second with the same queue. The Continue card on Home has a Control button. The devices talk to each other directly on the local network (Bonjour), with no relay and no account of ours. In the beta since build 354. https://navibeat.app/#connect
+- Classic Subsonic servers (in 1.5.7, in App Store review): on a classic Subsonic server (not OpenSubsonic), the Songs list fills by walking the albums, and search finds part of a word. Checked against a real Subsonic 6.1.6.
+- Also in 1.5.7 (in App Store review): Keep library on this device (Settings, Library & Data) saves the library list and covers, and Offline Mode then shows the whole library and greys out what is not downloaded (iPhone, iPad and Mac); Add Account on This Server; Share Settings as a link or QR code, with Undo (iPhone, iPad and Mac); My Playlist Rows and a Pinned Playlists row on Home; Play the Artist's Next Album when an album ends; lyrics with background singers and Furigana for Japanese; Similar Artists on album pages; double tap on Apple Watch plays and pauses (Series 9, Ultra 2 and later); a Catalan translation.
 - Library Doctor (Mac, on the App Store since 1.5.4; the fix unlock ($3.99) is in App Store review): a sidebar item that reads the library from the Navidrome server and finds split albums, compilations that are not marked, wrong track numbers, missing covers, damaged tag text and duplicate imports. It confirms each finding in the files, shows every change for review before writing, asks Navidrome to rescan, and keeps a Write History from which every write can be restored. The check and Restore are free; writing fixes is a one-time unlock on the Mac. On Windows it is included in the one price.
 - Library Doctor lyrics and covers (Mac, in 1.5.4): Find Missing Lyrics asks the server's lyrics plugin first, then lrclib.net, and writes .lrc files next to the songs after review; Upgrade to Word-by-Word asks the plugin again for songs that have only line-by-line lyrics; Find Covers Online looks up missing covers on coverartarchive.org. Audio files are not changed for lyrics, and Write History removes what was added.
 - Popular songs on albums (iPhone, iPad, Mac and Apple TV, in 1.5.5, on the App Store): a flame in front of the track number of up to three popular songs on each album, like Plex's hot tracks. The default ranking comes from the user's own Navidrome server (Subsonic getTopSongs, answered by Navidrome's Last.fm agent, which needs LastFM.ApiKey and LastFM.Secret set on the server), so the app opens no new connection and needs no Last.fm login. Settings, Popular songs can switch the source to Last.fm (with the user's own Last.fm session), ListenBrainz (with the user's token) or off.
