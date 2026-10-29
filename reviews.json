@@ -1,15 +1,95 @@
 {
- "count": 104,
- "average": 4.58,
+ "count": 120,
+ "average": 4.63,
  "headlineSource": "iTunes lookup ratings aggregate, all storefronts",
- "writtenCount": 67,
- "writtenAverage": 4.39,
- "shownCount": 63,
- "excludedForNoContent": 4,
+ "writtenCount": 74,
+ "writtenAverage": 4.47,
+ "shownCount": 69,
+ "excludedForNoContent": 5,
  "withheldByDecision": 0,
- "fetchedAt": 1792274146597,
+ "fetchedAt": 1793301731431,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
+  {
+   "author": "EnigmaForsaken",
+   "rating": 5,
+   "title": "Thoughtful and polished app",
+   "body": "The more I use the app, the more I’m impressed with its thoughtful design and level of polish. Definitely worth getting if you use Navidrome.",
+   "territory": "NLD",
+   "date": "2026-10-26T16:49:26-07:00"
+  },
+  {
+   "author": "RageDisappointed",
+   "rating": 5,
+   "title": "20+ Year Subsonic User Is Happy",
+   "body": "Really loving the modern and updated subsonic client!\n\nThe IOS version was specifically purchased because the Linux version is wonderful. \n\nThank you!",
+   "territory": "USA",
+   "date": "2026-10-26T10:05:24-07:00"
+  },
+  {
+   "author": "Kenlst1",
+   "rating": 4,
+   "title": "個人體驗和功能改善和建議",
+   "body": "整體來說 這個軟件算那麼多同類型軟件最好用。但還有以下建議：\n1. 增加多曲目點選按鈕，可以批量收藏 / 刪除 / 下載 \n2.  發現無法顯示播放紀錄 不知道是不是Bug \n3. 關於歌手信息有時候會識別錯誤，建議增加手動修正或者其他方法可以改正，因為顯示錯誤的歌手資料很痛苦。\n4. 下載項目頁面也是沒得多選 ，不能批量刪除。\n5.可以在專輯 名稱下面顯示專輯品質 例如 Hi res / 44.1 lossless \n6. 專輯封面可以增加用戶自行上傳按鈕\n7. 建議增加 去除人聲按鈕 （可以調節去除程度）",
+   "territory": "HKG",
+   "date": "2026-10-25T05:42:33-07:00"
+  },
+  {
+   "author": "LuanGarcia1996",
+   "rating": 5,
+   "title": "Finally a correct music app",
+   "body": "This is the one. The last fm integration is incredible and unprecedented. Thank you so much for this! Looking forward to using it on other devices too.",
+   "territory": "USA",
+   "date": "2026-10-21T13:36:02-07:00"
+  },
+  {
+   "author": "Gerko222",
+   "rating": 5,
+   "title": "Next level app, Amazing, love it",
+   "body": "This app is right out insanely good. Tried all other Navidrome players, they were not bad, but I kept missing little things and nerd settings. Don’t get me wrong, Navibeat is easy but has all the expert options if you need them. Polished app, very smooth and stable. Yeah it is not free, but you’ll get the same experience as if it was Spotify or Apple Music, just with your own files. Just try it, you can always refund, but it won’t be needed. Oh and yeah, the other reviewer is right, no subscriptions! Simply lovely",
+   "territory": "NLD",
+   "date": "2026-10-19T00:59:15-07:00"
+  },
+  {
+   "author": "Gerko222",
+   "rating": 5,
+   "title": "Wow, this is next level, just try it, I fell in love",
+   "body": "This app is right out insanely good. Tried all other Navidrome players, they were not bad, but I kept missing little things and nerd settings. Don’t get me wrong, Navibeat is easy but has all the expert options if you need them. Polished app, very smooth and stable. Yeah it is not free, but you’ll get the same experience as if it was Spotify or Apple Music, just with your own files. Just try it, you can always refund, but it won’t be needed",
+   "territory": "NLD",
+   "date": "2026-10-19T00:53:36-07:00"
+  },
+  {
+   "author": "Benicchio",
+   "rating": 5,
+   "title": "Amazing + Last.fm integration",
+   "body": "Finally got it all. Configurable, multiple servers, a real random album selection, transcode options on mobile/wi-fi and an amazing integration with Last.fm (for quick mixes, new albums and more)",
+   "territory": "BRA",
+   "date": "2026-10-17T20:55:28-07:00"
+  },
+  {
+   "author": "eNthrice",
+   "rating": 5,
+   "title": "Great app!",
+   "body": "As a UI designer myself I appreciate the way this app looks and feels! Hope there will eventually be an Android TV version for my Chromecast TV 🤞🏻",
+   "territory": "NLD",
+   "date": "2026-10-17T11:41:49-07:00"
+  },
+  {
+   "author": "楼兰道者",
+   "rating": 4,
+   "title": "功能建议：原生支持Emby音乐库\n我是NaviBeat付费用户。NaviBeat拥有自托管音乐客户端里最优秀的苹果原生界面、迷你播放器、歌词与智能歌单功能。",
+   "body": "很多自建服务器用户用Emby统一管理视频和音乐。Emby的第三方OpenSubsonic插件在元数据、歌词、WAV串流方面不稳定，不好长期使用。\n\n只希望原生对接Emby音乐库，不需要支持视频。只要实现音乐浏览、收藏红心、歌词、转码、离线下载即可。\n\n希望可以考虑将Emby音乐支持加入开发路线，能吸引很多新用户。感谢开发者的出色开发！",
+   "territory": "CHN",
+   "date": "2026-10-17T08:33:52-07:00"
+  },
+  {
+   "author": "Navouilles",
+   "rating": 5,
+   "title": "Une vraie pépite pour écouter sa propre musique",
+   "body": "Une application formidable ! Je l'utilise tous les jours avec mon serveur Navidrome, et c'est un vrai plaisir. L'interface est claire, fluide et agréable, on trouve tout de suite ce qu'on cherche, sans prise de tête. Pochettes, albums, artistes, lecture : tout est soigné et intuitif.\nHonnêtement, elle n'a rien à envier aux grandes applications de streaming, avec en plus le plaisir d'écouter sa propre bibliothèque. Bravo et merci au développeur pour ce travail remarquable, continuez comme ça !",
+   "territory": "FRA",
+   "date": "2026-10-17T03:34:43-07:00"
+  },
   {
    "author": "ЙAARD",
    "rating": 5,
@@ -73,14 +153,6 @@
    "body": "This app is perfect and easily worth the price to help the developer. It looks good but offers nice customization, it was easy to connect and everything looks very good. The app works as it should and it’s exactly what I needed.",
    "territory": "USA",
    "date": "2026-10-06T05:19:26-07:00"
-  },
-  {
-   "author": "millgeek",
-   "rating": 5,
-   "title": "Fantastic app",
-   "body": "Love this app. I rarely write reviews but had to take a minute to gush over this one. Beautiful. Functional. Smart design. Versions of the app for every screen. Every Navidrome user should be using this app. right",
-   "territory": "USA",
-   "date": "2026-10-05T20:20:40-07:00"
   },
   {
    "author": "JordCord12",
@@ -185,14 +257,6 @@
    "body": "Honestly this app is great has every feature that is needed no complaints at all.",
    "territory": "GBR",
    "date": "2026-09-22T19:39:07-07:00"
-  },
-  {
-   "author": "Migoelo",
-   "rating": 3,
-   "title": "Buggy",
-   "body": "Tolle UI aber total buggy. Obwohl transcoding aktiviert ist für mobiles Netz wird mal der eingestellte Codec genutzt, und beim nächsten Lied FLAC. Das noch schlimmere ist aber, das mitten im Lied einfach zum nächsten gesprungen wird ohne ersichtlichen Grund.",
-   "territory": "DEU",
-   "date": "2026-09-21T23:01:34-07:00"
   },
   {
    "author": "IncastroPC",
@@ -337,14 +401,6 @@
    "body": "I’m setting up a home server for the first time with no experience. This app gave me zero issues in connecting and is insanely clean and runs smooth. so cool and def worth the cost!",
    "territory": "USA",
    "date": "2026-08-15T11:30:06-07:00"
-  },
-  {
-   "author": "Kenlst1",
-   "rating": 4,
-   "title": "個人體驗和功能改善和建議",
-   "body": "整體來說 這個軟件算那麼多同類型軟件最好用。但還有以下建議：\n1. 增加多曲目點選按鈕，可以批量收藏 / 刪除 / 下載 \n2.  發現無法顯示播放紀錄 不知道是不是Bug \n3. 關於歌手信息有時候會識別錯誤，建議增加手動修正或者其他方法可以改正，因為顯示錯誤的歌手資料很痛苦。\n4. 下載項目頁面也是沒得多選 ，不能批量刪除。\n5.可以在專輯 名稱下面顯示專輯品質 例如 Hi res / 44.1 lossless \n6. 專輯封面可以增加用戶自行上傳按鈕",
-   "territory": "HKG",
-   "date": "2026-08-15T02:17:59-07:00"
   },
   {
    "author": "cdransf",
@@ -505,14 +561,6 @@
    "body": "With a large screen its almost impossible to use as the text is too small and I can’t zoom in and out with a simple mouse scroll",
    "territory": "CHE",
    "date": "2026-05-27T12:15:55-07:00"
-  },
-  {
-   "author": "Benicchio",
-   "rating": 4,
-   "title": "Promising, but needs a couple of features",
-   "body": "The integration with Last.FM is very interesting and the availability in every device with one purchase is great. But the app misses a couple of key features IMO: more customization options (at least for the Home tab items), connecting to more than one server and cache options on mobile devices.",
-   "territory": "BRA",
-   "date": "2026-05-27T06:42:26-07:00"
   }
  ]
 }
