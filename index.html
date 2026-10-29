@@ -264,7 +264,7 @@
             "name": "Is NaviBeat on the App Store?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. NaviBeat is live on the App Store on all five Apple platforms: iPhone, iPad, Mac, Apple TV, and Apple Watch. The current version is 1.5.5, released in October 2026. One $5.99 Universal Purchase covers every device, with no subscription."
+              "text": "Yes. NaviBeat is live on the App Store on all five Apple platforms: iPhone, iPad, Mac, Apple TV, and Apple Watch. The current version is 1.5.5, released in October 2026, and 1.5.6 is in App Store review. One $5.99 Universal Purchase covers every device, with no subscription."
             }
           },
           {
@@ -423,7 +423,7 @@
     <div class="herodeck" data-herodeck data-interval="10000">
      <div class="herodeck__track">
 
-      <article class="herodeck__slide is-current" data-slide="0" aria-roledescription="slide" aria-label="1 of 4: NaviBeat on every screen">
+      <article class="herodeck__slide is-current" data-slide="0" aria-roledescription="slide" aria-label="1 of 5: NaviBeat on every screen">
        <div class="wrap hero__wrap">
       <div class="hero__copy">
         <p class="eyebrow hero__eyebrow">
@@ -514,10 +514,37 @@
        </div>
       </article>
 
-      <!-- SLIDE 2: iPhone Duo. The adaptation is in the public beta since build 327
+      <!-- SLIDE 2 (2026-10-29): Play on and Send to, the lead item of 1.5.6.
+           Copy is from the approved 1.5.6 What's New and is gated in
+           docs/app-review/2026-10-29-site-connect-156.txt with its evidence sidecar.
+           The picture is the existing Apple TV Now Playing shot; the alt text
+           describes that picture only. Radio is never sent (SendToPicker.swift),
+           so the copy says "queue". -->
+      <article class="herodeck__slide" data-slide="1" aria-roledescription="slide" aria-label="2 of 5: Play on and Send to">
+       <div class="wrap newsbar">
+        <div class="newsbar__copy">
+          <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>New in 1.5.6</p>
+          <h2 class="newsbar__h">Play on <em>another NaviBeat.</em></h2>
+          <p class="newsbar__p">Your iPhone, iPad, Mac and Apple TV now see each other. Pick another NaviBeat on your Wi-Fi and this device becomes its remote. Or send your queue over, and it goes on from the same second. 1.5.6 is in App Store review, and the beta has it today.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="#connect">See how it works&nbsp;&rarr;</a>
+            <a class="btn btn--ghost" href="beta">Join the beta&nbsp;&rarr;</a>
+          </div>
+        </div>
+        <figure class="newsbar__art newsbar__art--duo">
+          <img src="assets/framed/tvos/navibeat-apple-tv-now-playing-queue-1194.webp?v=20260830"
+               srcset="assets/framed/tvos/navibeat-apple-tv-now-playing-queue-1194.webp?v=20260830 1194w, assets/framed/tvos/navibeat-apple-tv-now-playing-queue-1791.webp?v=20260830 1791w"
+               sizes="(max-width: 1039px) 88vw, 46vw"
+               alt="NaviBeat Now Playing with the Up Next queue on Apple TV."
+               width="1194" height="772" loading="lazy" decoding="async">
+        </figure>
+       </div>
+      </article>
+
+      <!-- SLIDE 3: iPhone Duo. The adaptation is in the public beta since build 327
            (hinge split on in Release, 58ac1d144) and reaches the App Store with 1.5.4. Text gated on the `site`
            surface, evidence in docs/app-review/evidence/. -->
-      <article class="herodeck__slide" data-slide="1" aria-roledescription="slide" aria-label="2 of 4: NaviBeat on iPhone Duo">
+      <article class="herodeck__slide" data-slide="2" aria-roledescription="slide" aria-label="3 of 5: NaviBeat on iPhone Duo">
        <div class="wrap newsbar">
         <div class="newsbar__copy">
           <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>On the App Store</p>
@@ -537,8 +564,8 @@
        </div>
       </article>
 
-      <!-- SLIDE 3: what 1.5 brings, linking into the section further down. -->
-      <article class="herodeck__slide" data-slide="2" aria-roledescription="slide" aria-label="3 of 4: What is new in 1.5">
+      <!-- SLIDE 4: what 1.5 brings, linking into the section further down. -->
+      <article class="herodeck__slide" data-slide="3" aria-roledescription="slide" aria-label="4 of 5: What is new in 1.5">
        <div class="wrap newsbar">
         <div class="newsbar__copy">
           <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>Fresh from the workshop</p>
@@ -559,10 +586,10 @@
        </div>
       </article>
 
-      <!-- SLIDE 4 (2026-10-11, Nenad): NaviBeat for Windows is live. The picture is
+      <!-- SLIDE 5 (2026-10-11, Nenad): NaviBeat for Windows is live. The picture is
            the real Windows 11 desktop with the taskbar, so it reads as Windows at a
            glance. Price and licence are the ones the Windows card below states. -->
-      <article class="herodeck__slide" data-slide="3" aria-roledescription="slide" aria-label="4 of 4: NaviBeat for Windows and Android">
+      <article class="herodeck__slide" data-slide="4" aria-roledescription="slide" aria-label="5 of 5: NaviBeat for Windows and Android">
        <div class="wrap newsbar">
         <div class="newsbar__copy">
           <p class="eyebrow newsbar__eyebrow"><span class="newsbar__pulse" aria-hidden="true"></span>Live now</p>
@@ -586,9 +613,10 @@
 
      <div class="herodeck__nav" role="tablist" aria-label="Hero banner">
        <button class="herodeck__dot is-on" type="button" role="tab" aria-selected="true"  aria-controls="" data-go="0"><span class="visually-hidden">Every Apple screen</span></button>
-       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="1"><span class="visually-hidden">NaviBeat on iPhone Duo</span></button>
-       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="2"><span class="visually-hidden">What is new in 1.5</span></button>
-       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="3"><span class="visually-hidden">NaviBeat for Windows</span></button>
+       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="1"><span class="visually-hidden">Play on and Send to</span></button>
+       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="2"><span class="visually-hidden">NaviBeat on iPhone Duo</span></button>
+       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="3"><span class="visually-hidden">What is new in 1.5</span></button>
+       <button class="herodeck__dot"       type="button" role="tab" aria-selected="false" aria-controls="" data-go="4"><span class="visually-hidden">NaviBeat for Windows</span></button>
      </div>
     </div>
   </section>
@@ -1040,6 +1068,43 @@
     </div>
   </section>
 
+  <!-- ======================================================= CONNECT (1.5.6): Play on, Control, Send to.
+       Copy gated in docs/app-review/2026-10-29-site-connect-156.txt. Never call
+       it Continuity (Apple's name). Send to carries the queue; radio is not sent. -->
+  <section id="connect" aria-labelledby="connect-title">
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">New in 1.5.6</p>
+        <h2 id="connect-title" class="h2">One player on your iPhone, iPad, Mac and Apple TV.</h2>
+        <p class="body-copy" style="font-size:18px;margin-top:10px;">Open Output in Now Playing, or the Now Playing menu on Apple TV. Play on lists every NaviBeat on your Wi-Fi. Pick one to control it, or send your music to it. It works between iPhone, iPad, Mac and Apple TV on the same network. 1.5.6 is in App Store review, and <a href="beta" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">the beta has it today</a>.</p>
+      </div>
+      <div class="features">
+
+        <article class="f-card">
+          <span class="f-card__idx">01 / Play on</span>
+          <h3 class="h3">Control another NaviBeat.</h3>
+          <p>Pick a device in Play on and this one becomes its remote: play, pause, skip, seek, volume and the whole queue. NaviBeat shows which device you control.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">02 / Send to</span>
+          <h3 class="h3">Move the music, keep the second.</h3>
+          <p>Send to moves your queue to another NaviBeat. It goes on from the same second, with the same queue. Start an album on the TV, then take it to the phone.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__idx">03 / Control on Home</span>
+          <h3 class="h3">Control, one tap from Home.</h3>
+          <p>The Continue card on Home has a Control button, so the Mac in the other room is one tap away.</p>
+          <p class="f-card__kicker">On the same Wi-Fi.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <section id="features" aria-labelledby="features-title">
     <div class="wrap">
       <div class="sec-head reveal-stagger">
@@ -1093,10 +1158,46 @@
       <div class="sec-head reveal-stagger">
         <p class="eyebrow eyebrow--accent">Fresh from the workshop</p>
         <h2 id="whats-new-title" class="h2">New, and shipping fast.</h2>
-        <p class="body-copy" style="font-size:18px;margin-top:10px;"><strong style="color:var(--text-0);">1.5.5 is on the App Store, on every platform.</strong> Development is fast and continuous: the beta gets new builds near-daily, this is what 1.5 brings, and the <a href="features" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">full feature list is here</a>.</p>
+        <p class="body-copy" style="font-size:18px;margin-top:10px;"><strong style="color:var(--text-0);">1.5.5 is on the App Store, on every platform, and 1.5.6 is in App Store review.</strong> Development is fast and continuous: the beta gets new builds near-daily, this is what 1.5 brings, and the <a href="features" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">full feature list is here</a>.</p>
       </div>
       <div class="features">
 
+        <article class="f-card">
+          <span class="f-card__idx">New in 1.5.6 / Play on and Send to</span>
+          <h3 class="h3">Play on, Control and Send to.</h3>
+          <p>Your iPhone, iPad, Mac and Apple TV now see each other on your Wi-Fi. Control another NaviBeat from this one, or send your queue to it and it goes on from the same second. <a href="#connect" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">How it works</a>.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV. In 1.5.6, in App Store review.</p>
+        </article>
+        <article class="f-card">
+          <span class="f-card__idx">New in 1.5.6 / Library</span>
+          <h3 class="h3">Keep library on this device.</h3>
+          <p>Settings, Library &amp; Data saves your library list and covers. With it on, Offline Mode shows the whole library and greys out what is not downloaded.</p>
+          <p class="f-card__kicker">iPhone, iPad and Mac. In 1.5.6, in App Store review.</p>
+        </article>
+        <article class="f-card">
+          <span class="f-card__idx">New in 1.5.6 / Home</span>
+          <h3 class="h3">Home rows you name yourself.</h3>
+          <p>My Playlist Rows you name and fill yourself, a Pinned Playlists row, Radio Stations, and &ldquo;N new&rdquo; on Recently Added. On iPhone, iPad and Mac, Radio Stations can show as a grid.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV. In 1.5.6, in App Store review.</p>
+        </article>
+        <article class="f-card">
+          <span class="f-card__idx">New in 1.5.6 / Accounts</span>
+          <h3 class="h3">A second account, shared settings.</h3>
+          <p>Add Account on This Server, for a second user on the same server. Share Settings sends your settings as a link or QR code, with Undo.</p>
+          <p class="f-card__kicker">iPhone, iPad and Mac; Add Account also on Apple TV. In 1.5.6, in App Store review.</p>
+        </article>
+        <article class="f-card">
+          <span class="f-card__idx">New in 1.5.6 / Servers</span>
+          <h3 class="h3">Classic Subsonic servers fill in.</h3>
+          <p>On a classic Subsonic server the Songs list fills, and search finds part of a word. Checked against Subsonic 6.1.6.</p>
+          <p class="f-card__kicker">iPhone, iPad, Mac and Apple TV. In 1.5.6, in App Store review.</p>
+        </article>
+        <article class="f-card">
+          <span class="f-card__idx">New in 1.5.6 / And more</span>
+          <h3 class="h3">And more in 1.5.6.</h3>
+          <p>Play the Artist&rsquo;s Next Album when an album ends. Lyrics with background singers and Furigana for Japanese. Similar Artists on album pages. On Apple Watch, double tap plays and pauses (Series 9, Ultra 2 and later). NaviBeat now speaks Catalan.</p>
+          <p class="f-card__kicker">In 1.5.6, in App Store review.</p>
+        </article>
         <article class="f-card">
           <span class="f-card__idx">New in 1.5.4 / Library Doctor</span>
           <h3 class="h3">Library Doctor checks your library.</h3>
