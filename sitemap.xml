@@ -5,7 +5,7 @@
 
   <url>
     <loc>https://navibeat.app/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/" />
@@ -34,7 +34,7 @@
 
   <url>
     <loc>https://navibeat.app/appletv</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/appletv" />
@@ -96,7 +96,7 @@
   </url>
   <url>
     <loc>https://navibeat.app/macos</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/macos" />
@@ -144,7 +144,7 @@
 
   <url>
     <loc>https://navibeat.app/iphone</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/iphone" />
@@ -164,7 +164,7 @@
 
   <url>
     <loc>https://navibeat.app/ipad</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/ipad" />
@@ -204,7 +204,7 @@
 
   <url>
     <loc>https://navibeat.app/applewatch</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/applewatch" />
@@ -248,7 +248,7 @@
 
   <url>
     <loc>https://navibeat.app/features</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/features" />
