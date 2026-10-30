@@ -1,28 +1,45 @@
-  /* Self-hosted 2026-07-30: Google Fonts cost two extra origins (DNS+TLS+CSS
-     +woff2), which on a high-RTT cellular link delayed the real typography by
-     up to a second. Same latin variable fonts, now first-party and immutable-
-     cached under /assets. Non-latin glyphs fall back to the system stack. */
+  /* Typography, 2026-10-30: Big Shoulders Display for headings, Atkinson
+     Hyperlegible Next for text, Martian Mono for labels. Self-hosted latin
+     variable fonts, as since 2026-07-30; non-latin glyphs fall back to the
+     stacks in :root. */
   @font-face {
-    font-family: 'Manrope';
+    font-family: 'Big Shoulders Display';
     font-style: normal;
-    font-weight: 400 800;
+    font-weight: 100 900;
     font-display: swap;
-    src: url('assets/fonts/manrope-latin-var.woff2') format('woff2');
+    src: url('assets/fonts/bigshouldersdisplay-latin-var.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
   @font-face {
-    font-family: 'Oswald';
+    font-family: 'Atkinson Hyperlegible Next';
     font-style: normal;
-    font-weight: 400 700;
+    font-weight: 200 800;
     font-display: swap;
-    src: url('assets/fonts/oswald-latin-var.woff2') format('woff2');
+    src: url('assets/fonts/atkinsonhyperlegiblenext-latin-var.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Atkinson Hyperlegible Next';
+    font-style: italic;
+    font-weight: 200 800;
+    font-display: swap;
+    src: url('assets/fonts/atkinsonhyperlegiblenext-italic-latin-var.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Martian Mono';
+    font-style: normal;
+    font-weight: 100 800;
+    font-stretch: 75% 112.5%;
+    font-display: swap;
+    src: url('assets/fonts/martianmono-latin-var.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
 /* =============================================================================
    NaviBeat marketing site v3 - Vinyl / audiophile identity
    Design direction: VinylBeat Brand Identity (differentiates from embertide.app).
-   Neutral carbon canvas, vinyl-orange accent on copper gradients, Oswald display,
-   Manrope body. Spinning vinyl, live EQ waveforms, speaker-mesh texture.
+   Neutral carbon canvas, vinyl-orange accent on copper gradients, Big Shoulders
+   display, Atkinson Hyperlegible body. Spinning vinyl, live EQ waveforms, speaker-mesh texture.
    App NAME and ICON are unchanged: this is a marketing-site skin only.
    ============================================================================= */
 
@@ -52,9 +69,9 @@
   --copper:   #C97C45;     /* metallic copper secondary */
 
   /* ---- Typography ---- */
-  --font-display: "Oswald", Impact, "Haettenschweiler", "Arial Narrow", sans-serif;
-  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-mono: ui-monospace, "SF Mono", Menlo, "Cascadia Code", monospace;
+  --font-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --font-sans: "Atkinson Hyperlegible Next", Verdana, "Segoe UI", Arial, sans-serif;
+  --font-mono: "Martian Mono", "Courier New", monospace;
 
   /* ---- Layout ---- */
   --max-w: 1280px;
@@ -3288,28 +3305,10 @@ code { overflow-wrap: anywhere; }
 
 /* ---------------------------------------------------------------------------
    1. THE DISPLAY FACE.
-   --font-display was Oswald, a condensed face used at every heading size. It is
-   referenced throughout both stylesheets, so redefining it here replaces the
-   condensed all-caps display type on all 34 pages in one declaration.
-   Archivo carries a width axis (wdth 62..125, verified in the shipped woff2),
-   so one file gives both a display cut and a text cut.
+   The faces themselves are declared at the top of this file and reach every
+   page through --font-display, --font-sans and --font-mono.
    --------------------------------------------------------------------------- */
-@font-face {
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 400 700;
-  font-stretch: 62% 125%;
-  font-display: swap;
-  src: url('assets/fonts/archivo-latin-var.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 :root {
-  --font-display: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-sans:    "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-
   /* Measure. Apple's reading column is 980px, its wide media track 1260px.
      Both sites currently use 1280px for everything, prose included. */
   --max-w: 1260px;
@@ -3356,15 +3355,9 @@ h1, h2, h3, h4, h5, h6,
 /* The tracking ladder, measured on Apple: display tracking is a function of
    size and crosses zero at exactly 40px. Negative above, positive below.
    The production rules run POSITIVE at large sizes, which is the opposite. */
-h1, .display, .hero__h1 { letter-spacing: -0.028em; line-height: 1.02; font-weight: 600; }
-h2, .h2                 { letter-spacing: -0.024em; line-height: 1.06; font-weight: 600; }
-h3, .h3                 { letter-spacing: -0.018em; line-height: 1.2;  font-weight: 600; }
-
-/* Archivo's width axis, set slightly narrow on display and normal on text, so
-   one family yields two genuinely different cuts. */
-h1, h2, .display, .h2, .hero__h1, .price__amount, .stat__n {
-  font-variation-settings: "wdth" 92;
-}
+h1, .display, .hero__h1 { letter-spacing: 0.002em; line-height: 0.96; font-weight: 600; }
+h2, .h2                 { letter-spacing: 0.004em; line-height: 1.02; font-weight: 600; }
+h3, .h3                 { letter-spacing: 0.006em; line-height: 1.15; font-weight: 600; }
 
 /* Weight discipline. A census of Apple's compiled stylesheets found 600 and 400
    only, across 282 declarations on AirPods and 287 on MacBook Pro. Zero uses of
@@ -3531,7 +3524,7 @@ body { background-image: none; }
 
 
 /* The hero subhead. Supersedes `.hero__sub` at styles.css:925, which set
-   italic + Oswald 700 + margin auto, so it was a centred italic display face
+   italic + the old display face at 700 + margin auto, so it was a centred italic display face
    used as body copy. Three tells in one rule. Now a normal-weight sans,
    flush left, sized as the lede it actually is. */
 .hero__sub {
@@ -3539,7 +3532,6 @@ body { background-image: none; }
   font-style: normal;
   font-family: var(--font-sans);
   font-weight: 400;
-  font-variation-settings: "wdth" 100;
   letter-spacing: 0.011em;
   color: var(--text-1);
   max-width: 54ch;
@@ -3578,7 +3570,6 @@ body { background-image: none; }
 }
 .theater__title-h, .act__caption-h {
   font-family: var(--font-display);
-  font-variation-settings: "wdth" 92;
   font-weight: 600;
   letter-spacing: -0.024em;
   text-transform: none;
@@ -3645,13 +3636,13 @@ th, .cmp th {
   letter-spacing: -0.014em !important;
 }
 
-/* The ladder, restored. Measured on Apple: display tracking is a function of
-   size and crosses zero at 40px, negative above and positive below. */
+/* The ladder, restored. Big Shoulders is already condensed, so its headings
+   sit at zero or a hair open; the negative Apple ladder made it a solid block. */
 h1, .display, .hero__h1, .theater__title-h, .act__caption-h {
-  letter-spacing: -0.028em !important;
+  letter-spacing: 0.002em !important;
 }
-h2, .h2                       { letter-spacing: -0.024em !important; }
-h3, .h3                       { letter-spacing: -0.018em !important; }
+h2, .h2                       { letter-spacing: 0.004em !important; }
+h3, .h3                       { letter-spacing: 0.006em !important; }
 .lede, .body-copy, .hero__sub { letter-spacing:  0.011em !important; }
 .eyebrow, .eyebrow--accent, th, dt, .p-stat__label, .proofbar__item,
 .f-card__kicker, .strip__caption, .crumb, .nav__link {
@@ -3872,7 +3863,6 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
 .brand-beat, .brand-fin { color: var(--mark-b); }
 .nav__brand-text {
   font-family: var(--font-display);
-  font-variation-settings: "wdth" 88;
   font-weight: 600;
   letter-spacing: -0.03em;
   text-transform: none;

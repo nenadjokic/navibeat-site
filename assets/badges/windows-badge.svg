@@ -2,6 +2,6 @@
   <title>Download NaviBeat for Windows</title>
   <rect x="0.5" y="0.5" width="119" height="39" rx="6.5" fill="#000" stroke="#a6a6a6"/>
   <g fill="#fff" transform="translate(10 10)"><rect width="9.5" height="9.5"/><rect x="10.5" width="9.5" height="9.5"/><rect y="10.5" width="9.5" height="9.5"/><rect x="10.5" y="10.5" width="9.5" height="9.5"/></g>
-  <text x="38" y="15" fill="#fff" font-family="-apple-system, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="7.6" letter-spacing="0.1">Download for</text>
-  <text x="37.5" y="30.5" fill="#fff" font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="-0.3">Windows</text>
+  <text x="38" y="15" fill="#fff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="7.6" letter-spacing="0.1">Download for</text>
+  <text x="37.5" y="30.5" fill="#fff" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="-0.3">Windows</text>
 </svg>
