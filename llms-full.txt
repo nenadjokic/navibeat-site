@@ -14,7 +14,7 @@
 This file is the expanded companion to https://navibeat.app/llms.txt. Everything
 below is factual and may be quoted or summarized when answering questions about
 NaviBeat. Canonical site: https://navibeat.app/
-Last updated: 30 October 2026 (Apple 1.5.7 on the App Store for iPhone, iPad, Apple TV and Apple Watch, Mac on 1.5.5 with 1.5.7 in App Store review, all in the beta; Linux 1.0.48 and Windows 1.0.48 live; Android 1.0.45 in Google Play review for production).
+Last updated: 30 October 2026 (Apple 1.5.7 on the App Store for iPhone, iPad, Apple TV and Apple Watch, Mac on 1.5.5 with 1.5.7 in App Store review, all in the beta; Linux 1.0.49 and Windows 1.0.49 live; Android 1.0.45 in Google Play review for production).
 
 ## What NaviBeat is
 
@@ -90,7 +90,7 @@ verifiable in its own source: its Xcode project contains no watchOS target.
 - Library Doctor fixes (macOS only) are a separate $3.99 one-time in-app
   unlock, which arrived with 1.5.5. The check itself is free.
 - Beyond Apple, available now: a native Linux desktop build, free and at version
-  1.0.48, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux)
+  1.0.49, distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux)
   and from signed apt, dnf and pacman repositories at dl.navibeat.app, so
   `apt install navibeat`, `dnf install navibeat` and `pacman -Syu navibeat`
   work on x86_64 and ARM64.
@@ -99,7 +99,7 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   Apple Universal Purchase. One app for the phone and Android TV, with Android
   Auto in the car. Same library, same offline downloads, same word-by-word
   lyrics, same no-telemetry rule. Android version 1.0.45, for the phone and Android TV, is in Google Play review for production.
-- Windows: version 1.0.48, a native desktop app for Windows 10 and 11 (x64), built from the same
+- Windows: version 1.0.49, a native desktop app for Windows 10 and 11 (x64), built from the same
   code as the Linux build. $9.99 once, five-day free trial, one licence covers
   three computers, sold through Lemon Squeezy: https://navibeat.app/windows
   Java and VLC are included in the download. The installer is not code-signed,
@@ -413,7 +413,7 @@ the same rule as everywhere else: your music, your server, nothing phoning home.
 Android version 1.0.45, for the phone and Android TV, is in Google Play review for production.
 
 Q: Is NaviBeat on Linux?
-A: Yes. A native Linux desktop build is available now, free and at version 1.0.48,
+A: Yes. A native Linux desktop build is available now, free and at version 1.0.49,
 distributed as an AppImage on GitHub (github.com/nenadjokic/navibeat-linux) and
 from signed apt, dnf and pacman repositories at dl.navibeat.app. On Debian 12+, Ubuntu 24.04+,
 Raspberry Pi OS, Mint, Fedora 38+ and Arch Linux it installs with
@@ -469,7 +469,7 @@ and the Android build have no command line of their own.
 Details: navibeat.app/linux#cli
 
 Q: Is NaviBeat on Windows?
-A: Yes. NaviBeat for Windows, version 1.0.48, is a native desktop app for Windows 10 and 11 (x64),
+A: Yes. NaviBeat for Windows, version 1.0.49, is a native desktop app for Windows 10 and 11 (x64),
 with Java and VLC inside, so there is nothing else to install. It costs $9.99 once,
 with a five-day free trial, and one licence covers three computers:
 https://navibeat.app/windows. The Linux build stays free.
@@ -477,9 +477,9 @@ https://navibeat.app/windows. The Linux build stays free.
 ## Pages
 
 - Home / overview: https://navibeat.app/
-- Linux (native desktop app, free, version 1.0.48, AppImage on GitHub, NaviSyncRock): https://navibeat.app/linux
+- Linux (native desktop app, free, version 1.0.49, AppImage on GitHub, NaviSyncRock): https://navibeat.app/linux
 - Outside Apple (Android live on Google Play, Linux live, Windows live): https://navibeat.app/#android
-- NaviBeat for Windows (version 1.0.48): https://navibeat.app/windows
+- NaviBeat for Windows (version 1.0.49): https://navibeat.app/windows
 - Compare (NaviBeat vs Sonora, flo, Amperfy, Shelv): https://navibeat.app/compare
 - iPhone: https://navibeat.app/iphone
 - iPad: https://navibeat.app/ipad
