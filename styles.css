@@ -6,6 +6,9 @@
     font-family: 'Big Shoulders Display';
     font-style: normal;
     font-weight: 100 900;
+    /* Condensed with a small x-height, so at the sizes tuned for the old faces
+       it read small; scaled once here so every heading grows together. */
+    size-adjust: 116%;
     font-display: swap;
     src: url('assets/fonts/bigshouldersdisplay-latin-var.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
@@ -3355,14 +3358,16 @@ h1, h2, h3, h4, h5, h6,
 /* The tracking ladder, measured on Apple: display tracking is a function of
    size and crosses zero at exactly 40px. Negative above, positive below.
    The production rules run POSITIVE at large sizes, which is the opposite. */
-h1, .display, .hero__h1 { letter-spacing: 0.002em; line-height: 0.96; font-weight: 600; }
-h2, .h2                 { letter-spacing: 0.004em; line-height: 1.02; font-weight: 600; }
-h3, .h3                 { letter-spacing: 0.006em; line-height: 1.15; font-weight: 600; }
+h1, .display, .hero__h1 { letter-spacing: 0.002em; line-height: 0.96; font-weight: 800; }
+h2, .h2                 { letter-spacing: 0.004em; line-height: 1.02; font-weight: 800; }
+h3, .h3                 { letter-spacing: 0.006em; line-height: 1.15; font-weight: 800; }
 
 /* Weight discipline. A census of Apple's compiled stylesheets found 600 and 400
    only, across 282 declarations on AirPods and 287 on MacBook Pro. Zero uses of
    800 or 900 in 3.2 MB of CSS. Emphasis comes from size, never from weight. */
-.display, .h2, .h3, h1, h2, h3, .hero__h1 { font-weight: 600; }
+/* 2026-10-30: Big Shoulders is a thin condensed face, and at 600 the headings
+   looked light; Nenad asked for them bold. */
+.display, .h2, .h3, h1, h2, h3, .hero__h1 { font-weight: 800; }
 
 /* Tell 3: the accent-coloured word inside the headline. This is the single most
    recognisable generic-hero marker. Supersedes
@@ -4226,3 +4231,21 @@ code, pre, kbd, samp, .mono { letter-spacing: 0 !important; }
   .store-badges { justify-content: center; }
   .store-badge img { height: 40px; }
 }
+
+/* 2026-10-30: every title is bold. Big Shoulders is a thin condensed face, and
+   the 400-700 weights tuned for the old display faces read light in it. This
+   block is last so it wins over the per-component weights above. */
+h1, h2, h3, h4,
+.display, .h2, .h3, .hero__h1, .p-hero h1, .prose h1,
+.platforms__title, .maker__title, .price__h, .xcard__h, .p-shot__copy h3,
+.theater__title-h, .act__caption-h, .sibling-card__name, .lineup__caption,
+.faq__q, .manifesto__nos {
+  font-weight: 800;
+}
+
+/* The bigger, bolder face needs a little more leading, or descenders touch the
+   accent underline on the next line. And the product pages add 0.22em between
+   headline words on top of the collapsed space already in the markup, which
+   the home hero stopped doing long ago; same fix here. */
+h1, .display, .hero__h1, .p-hero h1 { line-height: 1.04; }
+.p-hero h1 .word + .word { margin-left: 0; }
