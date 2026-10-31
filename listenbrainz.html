@@ -36,7 +36,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bigshouldersdisplay-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/atkinsonhyperlegiblenext-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=202610312124">
+  <link rel="stylesheet" href="styles.css?v=202611010021">
 
   <script type="application/ld+json">
   {
@@ -141,7 +141,7 @@
     .lfm-hero { padding: 96px 0 48px; position: relative; overflow: hidden; }
     .lfm-hero__inner { max-width: 760px; }
     .lfm-hero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: 0.01em; margin: 14px 0 22px; }
-    .lfm-hero h1 em { font-style: italic; color: var(--accent); }
+    .lfm-hero h1 em { font-style: normal; color: inherit; }
     .lfm-hero p.lfm-sub { color: var(--text-1); font-size: 19px; line-height: 1.6; max-width: 60ch; }
 
     /* Trust banner */
@@ -164,8 +164,8 @@
       border-radius: 12px;
       padding: 24px 26px;
     }
-    .lfm-sync__card--syncs { border-left: 3px solid var(--accent); }
-    .lfm-sync__card--server { border-left: 3px solid var(--text-2); }
+    .lfm-sync__card--syncs { border:1px solid var(--border); }
+    .lfm-sync__card--server { border:1px solid var(--border); }
     .lfm-sync__card h3 {
       font-family: var(--font-sans);
       font-size: 13px;
@@ -379,7 +379,7 @@
         <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">Open &middot; Opt-in &middot; You&rsquo;re in control</p>
         <h1 id="listenbrainz">The open <em>ListenBrainz integration</em>, done right.</h1>
 
-        <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
+        <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border:1px solid var(--border); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
           <strong style="color: var(--text-0);">TL;DR.</strong> ListenBrainz is the open, self-hostable listening service from <a href="https://metabrainz.org" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:2px;">MetaBrainz</a>, the same nonprofit behind the MusicBrainz music database. Connecting it in NaviBeat is opt-in. NaviBeat <strong>never submits listens to ListenBrainz</strong>: your plays go to your own Navidrome server, and it forwards them only if you set that up. The one thing NaviBeat writes back is a love when you star a track, and you can switch that off. NaviBeat <em>reads</em> ListenBrainz data for a Your ListenBrainz Home shelf, Your Mixes (Weekly &amp; Daily Jams), Show on ListenBrainz, and star-first loved-track sync. Prefer Last.fm, or want the deeper Year-in-Review and Time Machine stats? See the <a href="lastfm" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Last.fm page</a>.
         </aside>
 
@@ -605,19 +605,19 @@
       <p class="eyebrow eyebrow--accent">Questions</p>
       <h2 id="lb-faq-title" class="h2">Frequently asked questions</h2>
       <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
-        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+        <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat submit listens directly to ListenBrainz?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. NaviBeat never submits listens to ListenBrainz. Your plays go to your own Navidrome server, and ListenBrainz sees them only if you configured your server to forward them. NaviBeat writes to ListenBrainz in exactly one place: when you star a track it loves that track, and you can turn that off in Settings. Everything else it does with ListenBrainz is reading.</p>
         </div>
-        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+        <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do I have to connect ListenBrainz to use NaviBeat?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. ListenBrainz is fully optional. Don't connect it and NaviBeat works exactly the same: same player, same library, and no requests to ListenBrainz. Connecting it is one guided flow in Settings.</p>
         </div>
-        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+        <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I use ListenBrainz and Last.fm at the same time?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Several features (listener counts, artist tags, similar tracks, AutoMix) are source-neutral: connect ListenBrainz, Last.fm, or both, and NaviBeat arbitrates through your Preferred Source in Settings, Music Data, so nothing renders twice.</p>
         </div>
-        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+        <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Why ListenBrainz instead of only Last.fm?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">ListenBrainz is not a brand you have to trust, it is an open project from MetaBrainz. A few surfaces belong to ListenBrainz alone, while a few deep-history features are still Last.fm-only today. This page shows a transparent roadmap of what is done, in progress, and planned.</p>
         </div>

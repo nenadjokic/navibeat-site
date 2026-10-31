@@ -36,7 +36,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bigshouldersdisplay-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/atkinsonhyperlegiblenext-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=202610312124">
+  <link rel="stylesheet" href="styles.css?v=202611010021">
 
   <script type="application/ld+json">
 {
@@ -159,7 +159,7 @@
     .lfm-hero { padding: 96px 0 48px; position: relative; overflow: hidden; }
     .lfm-hero__inner { max-width: 760px; }
     .lfm-hero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 5vw, 68px); line-height: 1.05; letter-spacing: 0.01em; margin: 14px 0 22px; }
-    .lfm-hero h1 em { font-style: italic; color: var(--accent); }
+    .lfm-hero h1 em { font-style: normal; color: inherit; }
     .lfm-sub { color: var(--text-1); font-size: 17px; max-width: 60ch; line-height: 1.6; margin: 0 0 36px; }
     .lfm-hero p.lfm-sub { color: var(--text-1); font-size: 19px; line-height: 1.6; max-width: 60ch; }
 
@@ -183,7 +183,7 @@
       border-radius: 12px;
       padding: 24px 26px;
     }
-    .lfm-sync__card--syncs { border-left: 3px solid var(--accent); }
+    .lfm-sync__card--syncs { border:1px solid var(--border); }
     .lfm-sync__card h3 {
       font-family: var(--font-sans);
       font-size: 13px;
@@ -282,7 +282,7 @@
         <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">Live now &middot; iOS 17 &middot; macOS 15</p>
         <h1 id="widgets">Native widgets across <em>every Apple surface</em>.</h1>
 
-        <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border-left: 3px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
+        <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 24px 0 24px; padding: 18px 22px; background: var(--bg-1); border:1px solid var(--border); border-radius: 8px; font-size: 15px; line-height: 1.65; color: var(--text-1);">
           <strong style="color: var(--text-0);">TL;DR.</strong> NaviBeat ships eleven widgets across four surfaces: the iPhone and iPad Home Screen (Now Playing, Playback Controls, Recently Played, Playlists, Radio), the Lock Screen and StandBy (one widget in three accessory families), the Mac desktop (Now Playing, Recently Played, Playlists, Radio), and the Apple Watch face (a complication in four shapes). Every one reads from a sandboxed App Group container the player writes to, so they stay quick without ever phoning home.
         </aside>
 
@@ -421,19 +421,19 @@
       <p class="eyebrow eyebrow--accent">Questions</p>
       <h2 id="widgets-faq-title" class="h2">Frequently asked questions</h2>
       <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
-        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+        <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How many widgets does NaviBeat ship?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Eleven, across four surfaces: the iPhone and iPad Home Screen, the Lock Screen and StandBy, the Mac desktop, and the Apple Watch face.</p>
         </div>
-        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+        <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I control playback from a widget?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Tap play, pause, next or previous and NaviBeat carries it out. Tapping the widget itself goes straight to the album.</p>
         </div>
-        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+        <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Do the widgets send anything to a server?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. Every widget reads from a sandboxed App Group container that the player writes to, so they stay quick without phoning home.</p>
         </div>
-        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+        <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I choose what a widget shows?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. You pick which playlists and which radio stations appear.</p>
         </div>
