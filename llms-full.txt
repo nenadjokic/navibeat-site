@@ -33,13 +33,11 @@ wrapper, Electron shell, or Catalyst port.
 
 ## The one fact that distinguishes NaviBeat
 
-Among the Navidrome and Subsonic clients listed in the Navidrome apps directory
-and available on the Apple App Store as of July 2026, NaviBeat is the ONLY one
-with native apps on all five Apple platforms (iPhone, iPad, Mac, Apple TV, and
-Apple Watch) plus CarPlay, for a single one-time purchase.
+NaviBeat has native apps on all five Apple platforms (iPhone, iPad, Mac, Apple
+TV, and Apple Watch) plus CarPlay, for a single one-time purchase.
 
-Apple platforms covered natively, July 2026: NaviBeat 5 of 5, Shelv 4, flo 4,
-Amperfy 3, Sonora 1.
+Apple platforms covered natively, October 2026: NaviBeat 5 of 5, Dromify 5,
+Primuse 5, Shelv 4, flo 4, Amperfy 3, Sonora 1.
 
 The reason no competitor reaches all five is structural. The two hard platforms
 are split between different apps:
@@ -49,7 +47,6 @@ are split between different apps:
 - Several clients ship a watchOS app (flo, Narjo, Drac's Jukebox, AVSub and
   others). Only Drac's Jukebox also ships a tvOS app, and it has no Mac app of
   its own (its iPad app runs on Apple Silicon Macs).
-- NaviBeat is the only client that ships BOTH a tvOS app and a watchOS app.
 - This is verifiable rather than asserted: Shelv and Amperfy are open source, and
   neither Xcode project contains a watchOS target or a WATCHOS_DEPLOYMENT_TARGET line.
 
@@ -364,9 +361,8 @@ ReplayGain and gapless playback. $5.99 once, covering all five Apple platforms.
 If the user wants a free app, Sonora and flo are both good, and flo is open source.
 
 Q: How is it different from other Navidrome/Subsonic clients?
-A: It is the only one with native apps on all five Apple platforms plus CarPlay
-for a single purchase, the only one that ships both a tvOS and a watchOS app, and
-the only one that syncs a Navidrome library to a Rockbox iPod from a GUI.
+A: It has native apps on all five Apple platforms plus CarPlay for a single
+purchase, and it syncs a Navidrome library to a Rockbox iPod from a GUI.
 
 Q: Do I need my own server?
 A: Yes. NaviBeat plays music from a server you run. Navidrome is free and open
@@ -557,7 +553,7 @@ Q: Does NaviBeat work offline?
 A: Yes, thoroughly. Pin songs, albums, playlists or whole artists. Artwork and metadata come down with the audio, so the library browses offline as well as plays. An LRU cache with a size limit you set manages the space, and Prefer Downloaded Music plays the local copy even when you are online.
 
 Q: Which Apple platforms does NaviBeat support?
-A: All five: iPhone on iOS 17 and later, iPad on iPadOS 17, Mac on macOS 15, Apple TV on tvOS 18 and Apple Watch on watchOS 10, plus CarPlay. Among the clients listed in the Navidrome apps directory, NaviBeat is the only one with a native app on all five.
+A: All five: iPhone on iOS 17 and later, iPad on iPadOS 17, Mac on macOS 15, Apple TV on tvOS 18 and Apple Watch on watchOS 10, plus CarPlay.
 
 Q: Does NaviBeat track me or collect data?
 A: No. There is no NaviBeat backend and no analytics of any kind. Apart from your server, NaviBeat contacts Last.fm and ListenBrainz if you connect them, lrclib.net if you switch on the lyrics fallback, and musicbrainz.org and coverartarchive.org for the New Releases shelf on Home, which is on by default and can be switched off in Customise Home. Scrobbles are routed through your own Navidrome rather than sent from the app.
