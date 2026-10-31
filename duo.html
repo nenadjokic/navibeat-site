@@ -106,7 +106,7 @@
     {
       "@type": "FAQPage",
       "@id": "https://navibeat.app/duo#faq",
-      "mainEntity": [
+      "mainEntity": [{"@type": "Question", "name": "What happens to the music when I unfold the iPhone Duo?", "acceptedAnswer": {"@type": "Answer", "text": "NaviBeat changes layout with the screen. On the open Duo, Now Playing moves to two pages, and the cover and controls stay on one side."}},{"@type": "Question", "name": "Does NaviBeat show lyrics on the second page?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Half open, the cover and controls are on the left page and lyrics are on the right. Up Next opens on that same page."}},{"@type": "Question", "name": "Does iPhone Duo play Hi-Res and lossless from my server?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. NaviBeat can stream the original file from your own server, folded or open. Streaming quality is set separately for Wi-Fi and cellular."}},
         {
           "@type": "Question",
           "name": "Does NaviBeat work on iPhone Duo?",
@@ -325,6 +325,54 @@
   </section>
 
   <!-- PRICE -->
+  <section aria-labelledby="duo-positions-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Three positions</p>
+      <h2 id="duo-positions-title" class="h2">What NaviBeat does in each one.</h2>
+      <p style="max-width:62ch; color:var(--text-1); font-size:16px; line-height:1.7; margin:14px 0 0;">The iPhone Duo has a 5.4 inch outer screen and a 7.6 inch inner screen. NaviBeat treats each position as its own layout, so you never get a stretched phone screen.</p>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Folded</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">The outer screen runs the whole app. The tab bar moves to the trailing edge of the screen, where your thumb already is.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Half open, like a book</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Now Playing splits on the hinge. The cover and controls sit on one page, and lyrics or Up Next sit on the other, so nothing lands in the fold. The player bar runs along the bottom.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Fully open, flat</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">The inner screen is a small tablet with your whole collection. Album and artist pages keep their two-page split, with About and the action buttons on the left and the tracks on the right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="duo-same-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Same app</p>
+      <h2 id="duo-same-title" class="h2">Everything else NaviBeat does comes along.</h2>
+      <p style="max-width:62ch; color:var(--text-1); font-size:16px; line-height:1.7; margin:14px 0 0;">The Duo layout is NaviBeat on one more shape of screen. You keep everything the iPhone app does.</p>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Offline</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Keep a song, an album, a playlist or a whole artist on the device.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Sound</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">A 10-band equalizer with presets, ReplayGain, gapless playback, and streaming quality set separately for Wi-Fi and cellular, or the original file untouched.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Lyrics</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Synced lyrics in Now Playing, on their own page when the Duo is open.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">CarPlay and Apple Watch</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Both are included in the same purchase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="price" id="buy" aria-labelledby="duo-price-title">
     <div class="wrap reveal">
       <p class="eyebrow eyebrow--accent">One price</p>
@@ -349,6 +397,18 @@
       <p class="eyebrow eyebrow--accent">Questions</p>
       <h2 id="duo-faq-title" class="h2">Frequently asked questions</h2>
       <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What happens to the music when I unfold the iPhone Duo?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">NaviBeat changes layout with the screen. On the open Duo, Now Playing moves to two pages, and the cover and controls stay on one side.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat show lyrics on the second page?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Half open, the cover and controls are on the left page and lyrics are on the right. Up Next opens on that same page.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does iPhone Duo play Hi-Res and lossless from my server?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. NaviBeat can stream the original file from your own server, folded or open. Streaming quality is set separately for Wi-Fi and cellular.</p>
+        </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat work on iPhone Duo?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. NaviBeat uses the outer screen when the Duo is folded and both pages when it is open. Now Playing, album pages and artist pages split on the hinge, so one page never covers the other.</p>

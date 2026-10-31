@@ -114,7 +114,7 @@
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
+      "mainEntity": [{"@type": "Question", "name": "Can I try NaviBeat for Android without my own server?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Point the app at the official Navidrome demo: server https://demo.navidrome.org, user demo, password demo. The app itself is $5.99 on Google Play."}},{"@type": "Question", "name": "Does NaviBeat for Android work with Airsonic or Gonic?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Any OpenSubsonic-compatible server works, including Airsonic-Advanced and Gonic, as well as Navidrome."}},{"@type": "Question", "name": "Is NaviBeat on Android the same app as on iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "It is written natively for Android with the same library, offline downloads and word-by-word lyrics. It is a separate purchase from the Apple apps."}},{"@type": "Question", "name": "Does the app track me?", "acceptedAnswer": {"@type": "Answer", "text": "No. There is no NaviBeat account, no backend, no analytics and no tracking. Nothing leaves your device except requests to your own server, and to Last.fm or ListenBrainz if you connect them yourself."}},
         {
           "@type": "Question",
           "name": "How much does NaviBeat for Android cost?",
@@ -296,6 +296,98 @@
     </div>
   </section>
 
+  <section id="screens" aria-labelledby="android-screens-title">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Every screen</p>
+      <h2 id="android-screens-title" class="h2">On the phone.</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; margin-top:26px;">
+        <figure style="margin:0;">
+          <img src="assets/screenshots/android/android-phone-01-home.webp" alt="NaviBeat Home on an Android phone: a pick-up-where-you-left-off card, Shuffle Mix, Random Album and your playlists." width="720" height="1280" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius:14px; border:1px solid var(--border);">
+          <figcaption style="padding:10px 0 0; color:var(--text-1); font-size:14px;">Home</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="assets/screenshots/android/android-phone-02-albums.webp" alt="The Albums grid on Android with a letter index down the edge." width="720" height="1280" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius:14px; border:1px solid var(--border);">
+          <figcaption style="padding:10px 0 0; color:var(--text-1); font-size:14px;">Albums</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="assets/screenshots/android/android-phone-03-album.webp" alt="An album page on Android with Play, Shuffle, favourite and the track list." width="720" height="1280" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius:14px; border:1px solid var(--border);">
+          <figcaption style="padding:10px 0 0; color:var(--text-1); font-size:14px;">Album</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="assets/screenshots/android/android-phone-04-player.webp" alt="Now Playing on Android with large cover art, star rating and playback controls." width="720" height="1280" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius:14px; border:1px solid var(--border);">
+          <figcaption style="padding:10px 0 0; color:var(--text-1); font-size:14px;">Now Playing</figcaption>
+        </figure>
+      </div>
+      <h3 class="h3" style="margin:40px 0 0; font-size:clamp(24px,3vw,34px);">On Android TV.</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:20px;">
+        <figure style="margin:0;">
+          <img src="assets/screenshots/android/android-tv-01-home.webp" alt="NaviBeat Home on Android TV with a featured album and Favorites, Shuffle Mix, Random Album and Random Artist tiles." width="1280" height="720" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius:14px; border:1px solid var(--border);">
+          <figcaption style="padding:10px 0 0; color:var(--text-1); font-size:14px;">Home</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img src="assets/screenshots/android/android-tv-04-now-playing.webp" alt="Now Playing on Android TV with the cover on the left and Up Next on the right." width="1280" height="720" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; border-radius:14px; border:1px solid var(--border);">
+          <figcaption style="padding:10px 0 0; color:var(--text-1); font-size:14px;">Now Playing</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="android-more-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">And the rest</p>
+      <h2 id="android-more-title" class="h2">The small things you use every day.</h2>
+      
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Play on another device</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Control NaviBeat on another device from your phone, or send your music to a speaker with Google Cast.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Home screen widget</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">A NaviBeat widget for your home screen.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Listening stats</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Stats from your own history. Nothing goes anywhere else.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Sleep timer, crossfade and a queue you can reorder</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Fall asleep to an album, blend tracks together, or reorder what plays next. Gapless playback keeps albums whole.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Folders too</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Browse your library by directory when your folders mean more than your tags.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="android-hosters-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">For self-hosters</p>
+      <h2 id="android-hosters-title" class="h2">Built for the server you already run.</h2>
+      <p style="max-width:62ch; color:var(--text-1); font-size:16px; line-height:1.7; margin:14px 0 0;">NaviBeat is only a client. There is no NaviBeat account, no backend, no analytics and no tracking. The app talks to your server and to nobody else, unless you connect Last.fm or ListenBrainz yourself.</p>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Several servers</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Pair more than one server and switch between them.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Behind a proxy</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Servers behind a reverse proxy, Cloudflare Access, Authelia or Basic Auth all work.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Client certificates</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">mTLS is supported, for servers that ask the device to prove who it is.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">No server yet?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Try the official Navidrome demo: server https://demo.navidrome.org, user demo, password demo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="price" id="buy" aria-labelledby="android-price-title">
     <div class="wrap reveal">
       <p class="eyebrow eyebrow--accent">One price</p>
@@ -314,6 +406,22 @@
       <p class="eyebrow eyebrow--accent">Questions</p>
       <h2 id="android-faq-title" class="h2">Frequently asked questions</h2>
       <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I try NaviBeat for Android without my own server?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Point the app at the official Navidrome demo: server https://demo.navidrome.org, user demo, password demo. The app itself is $5.99 on Google Play.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat for Android work with Airsonic or Gonic?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Any OpenSubsonic-compatible server works, including Airsonic-Advanced and Gonic, as well as Navidrome.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Is NaviBeat on Android the same app as on iPhone?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">It is written natively for Android with the same library, offline downloads and word-by-word lyrics. It is a separate purchase from the Apple apps.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does the app track me?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. There is no NaviBeat account, no backend, no analytics and no tracking. Nothing leaves your device except requests to your own server, and to Last.fm or ListenBrainz if you connect them yourself.</p>
+        </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How much does NaviBeat for Android cost?</h3>
           <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">$5.99, once, on Google Play. It is a separate purchase from the Apple apps, and there is no subscription.</p>
