@@ -4358,3 +4358,23 @@ aside.tldr { background: none !important; border: 0 !important; border-top: 1px 
 /* The price is set as large as the headline. */
 .price__num { font-size: clamp(120px, 22vw, 320px); line-height: 1.04; margin: 8px 0 18px; }
 .price__h { margin-bottom: 0; }
+
+/* Every hero slide uses the first slide's frame: full-width headline, copy and
+   picture side by side under it, one height for all five. No halo anywhere. */
+.hero::before, .hero::after { display: none; }
+.proofbar__item--accent::after { box-shadow: none; animation: none; }
+.newsbar__art img, .newsbar__art--duo img, .newsbar__art--windows img { filter: none; }
+.lineup__stage, .lineup__device { filter: none; }
+.newsbar__h { font-size: clamp(56px, 13vw, 92px); line-height: 0.98; letter-spacing: 0.002em; max-width: none; margin: 22px 0 0; }
+.newsbar__h em { font-style: normal; color: inherit; text-decoration: none; }
+.newsbar__eyebrow { color: var(--accent); }
+@media (min-width: 1040px) {
+  .newsbar { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 48px; row-gap: 0; align-items: start; }
+  .newsbar__copy { display: contents; }
+  .newsbar__eyebrow, .newsbar__h { grid-column: 1 / -1; }
+  .newsbar__h { font-size: clamp(72px, 6.6vw, 104px); margin: 34px 0 20px; }
+  .newsbar__p, .newsbar .hero__ctas { grid-column: 1; }
+  .newsbar__art { grid-column: 2; grid-row: 3 / span 2; }
+  .newsbar__art img { max-height: 400px; width: auto; max-width: 100%; margin-left: auto; object-fit: contain; }
+}
+
