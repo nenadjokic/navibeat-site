@@ -358,6 +358,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/navidrome-remote-access" />
   </url>
   <url>
+    <loc>https://navibeat.app/play-on</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/play-on" />
+  </url>
+  <url>
     <loc>https://navibeat.app/compare</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>

@@ -42,6 +42,7 @@ The closest competitor on reach is Shelv (free, GPL-3.0 open source): native iPh
 
 ## Guides
 
+- [How Play on works](https://navibeat.app/play-on)
 - [How to replace Spotify with your own music server](https://navibeat.app/self-hosted-spotify)
 - [Navidrome remote access without port forwarding](https://navibeat.app/navidrome-remote-access)
 - [Which Navidrome client should you use](https://navibeat.app/compare)
