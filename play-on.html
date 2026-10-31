@@ -368,12 +368,12 @@
       var sio = new IntersectionObserver(function (es) {
         es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
-      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { sio.observe(el); });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features').forEach(function (el) { sio.observe(el); });
 
       /* Fallback sweep, same as linux.html: a fast scroll can outrun the observer and
          leave a block at opacity 0, so anything whose top is already above the
          viewport is revealed on the next frame. */
-      var revPending = [].slice.call(document.querySelectorAll('.reveal, .reveal-stagger, .p-stats'));
+      var revPending = [].slice.call(document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features'));
       var revQueued = false;
       var revSweep = function () {
         revQueued = false;
@@ -395,7 +395,7 @@
       };
       window.addEventListener('scroll', revOnScroll, { passive: true });
     } else {
-      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { el.classList.add('is-in'); });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats, .features').forEach(function (el) { el.classList.add('is-in'); });
     }
   })();
 </script>
