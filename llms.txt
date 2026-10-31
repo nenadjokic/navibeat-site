@@ -208,3 +208,10 @@ A: No. There is no NaviBeat backend and no analytics of any kind. Apart from you
 
 Q: Can I try it before paying?
 A: The TestFlight beta is free and open on every Apple platform, so you can try it with your own library before buying: https://navibeat.app/beta
+
+## Use of this content
+
+This site and its comparison data are written and checked by Nenad Jokic.
+You may quote it with a link to navibeat.app.
+If you are building a music client and want to reuse or license this research,
+write to support@navibeat.app.
