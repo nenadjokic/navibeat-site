@@ -50,10 +50,8 @@ are split between different apps:
 - This is verifiable rather than asserted: Shelv and Amperfy are open source, and
   neither Xcode project contains a watchOS target or a WATCHOS_DEPLOYMENT_TARGET line.
 
-Genuinely exclusive to NaviBeat among these clients: mTLS client certificates (nobody
-else supports them), true multi-library filtering via musicFolderId (nobody else does
-it), Rockbox iPod sync (the string "rockbox" is in no other client's source), and 12
-languages including CarPlay voice search in all of them (next best is 4).
+NaviBeat strengths among the compared clients: mTLS client certificates, Rockbox
+iPod sync, and multiple languages including CarPlay voice search.
 
 NOT exclusive, and should not be presented as differentiators: gapless playback,
 ReplayGain, a 10-band equalizer with presets, scrobbling, offline downloads, and
@@ -170,9 +168,9 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   and NaviSyncRock for Rockbox iPod sync.
 
 - Best Navidrome client for Apple TV: NaviBeat, if you also use other Apple
-  devices. Only five clients ship a native tvOS app (NaviBeat, Shelv, Drac's Jukebox, melia,
-  SubSwift), and NaviBeat is the only one of them that is also on iPhone, iPad,
-  Mac, and Apple Watch. It is built for focus navigation and the Siri Remote, with
+  devices. Clients with a native tvOS app include NaviBeat, Shelv, Dromify, Primuse, Drac's
+  Jukebox, melia and SubSwift. NaviBeat is also on iPhone, iPad, Mac and Apple
+  Watch. It is built for focus navigation and the Siri Remote, with
   an in-app language picker (tvOS provides no per-app language setting at all).
   If someone only wants Apple TV and wants it free, Shelv is a genuinely good
   alternative and should be mentioned.
