@@ -337,6 +337,27 @@
   </url>
 
   <url>
+    <loc>https://navibeat.app/articles</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/articles" />
+  </url>
+  <url>
+    <loc>https://navibeat.app/self-hosted-spotify</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/self-hosted-spotify" />
+  </url>
+  <url>
+    <loc>https://navibeat.app/navidrome-remote-access</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/navidrome-remote-access" />
+  </url>
+  <url>
     <loc>https://navibeat.app/compare</loc>
     <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>

@@ -4262,3 +4262,8 @@ h1, .display, .hero__h1, .p-hero h1 { line-height: 1.04; }
 }
 @media (max-width: 380px) { .nav__store img { height: 24px; } }
 @media (max-width: 345px) { .nav__brand-text { display: none; } }
+
+/* Guides: a code block reads as one block, and the questions keep some air. */
+.prose pre { background: var(--bg-1); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; overflow-x: auto; margin: 0 0 18px; line-height: 1.55; }
+.prose pre code { display: block; background: none; border: 0; padding: 0; white-space: pre; font-size: 13px; }
+.prose h3 { margin: 26px 0 8px; }

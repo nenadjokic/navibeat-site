@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Self-Hosted Spotify Alternative: Run Your Own Music Server</title>
+  <meta name="description" content="How to replace Spotify with your own music server: what you need, installing Navidrome with Docker, tags, players, remote access and discovery.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/self-hosted-spotify">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/self-hosted-spotify">
+
+  <meta property="og:title" content="Self-Hosted Spotify Alternative: Run Your Own Music Server">
+  <meta property="og:description" content="How to replace Spotify with your own music server: what you need, installing Navidrome with Docker, tags, players, remote access and discovery.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://navibeat.app/self-hosted-spotify">
+  <meta property="og:image" content="https://navibeat.app/assets/icon-512.png">
+  <meta property="og:image:alt" content="NaviBeat icon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Self-Hosted Spotify Alternative: Run Your Own Music Server">
+  <meta name="twitter:description" content="How to replace Spotify with your own music server: what you need, installing Navidrome with Docker, tags, players, remote access and discovery.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/icon-512.png">
+  <meta name="twitter:image:alt" content="NaviBeat icon">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bigshouldersdisplay-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/atkinsonhyperlegiblenext-latin-var.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=202610312124">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
+        ]
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
+      },
+      "sameAs": [
+        "https://www.navidrome.org/apps/",
+        "https://play.google.com/store/apps/details?id=app.navibeat.android",
+        "https://apps.apple.com/app/navibeat/id6763518834"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NaviBeat",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://navibeat.app/articles"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Self-hosted Spotify",
+          "item": "https://navibeat.app/self-hosted-spotify"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "How to replace Spotify with your own music server.",
+      "description": "How to replace Spotify with your own music server: what you need, installing Navidrome with Docker, tags, players, remote access and discovery.",
+      "url": "https://navibeat.app/self-hosted-spotify",
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31",
+      "author": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "url": "https://navibeat.app/#maker"
+      },
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I really replace Spotify with a self-hosted server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if you own your music as files. You keep your library on every device, playlists and offline listening. You lose the Spotify catalogue and most of its discovery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best self-hosted music server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Navidrome is a good start: it is free, open source, light enough for a Raspberry Pi, and many client apps work with it through the Subsonic API."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a self-hosted Spotify cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Navidrome is free. You pay for the hardware and the music you buy, and a paid client if you choose one."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <span class="nav__mark-ic"></span>
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features">
+          Features<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-features">
+          <a href="features">Overview</a>
+          <a href="multi-library">Multi-Library</a>
+          <a href="widgets">Widgets</a>
+          <a href="lastfm">Last.fm</a>
+          <a href="listenbrainz">ListenBrainz</a>
+          <a href="rockbox">Rockbox</a>
+        </div>
+      </div>
+      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><span class="nav__navifin-ic" aria-hidden="true"></span>NaviFin</a>
+
+      <div class="nav__stores"><a class="nav__store" href="https://apps.apple.com/app/navibeat/id6763518834?pt=128824034&ct=site-articles&mt=8" target="_blank" rel="noopener"><img src="assets/badges/app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></a><a class="nav__store" href="android"><img src="assets/badges/google-play-badge.png" alt="Get it on Google Play" width="134" height="40"></a></div>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="p-hero" style="padding-bottom:0;">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <a href="articles">Articles</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">Self-hosted Spotify</span>
+      </nav>
+      <h1 style="max-width:22ch; margin-top:18px;">How to replace Spotify with your own music server.</h1>
+      <p class="p-hero__sub" style="max-width:62ch;">A plain guide: what you need, how to install Navidrome, and what you give up.</p>
+      <p style="margin:14px 0 0; color:var(--text-2); font-size:14px;">By Nenad Jokic, who makes NaviBeat. <time datetime="2026-10-31">31 October 2026</time></p>
+    </div>
+  </section>
+
+  <section style="padding-top:clamp(28px,4vh,48px);">
+    <div class="wrap"><div class="prose" style="max-width:760px; margin:0;">
+<p>You can replace Spotify with your own music server and keep most of what you use it for: your library on every device, playlists, lyrics, offline music. You give up the catalogue. You own the files, so you only have what you own.</p>
+<h2>What you need</h2>
+<ul>
+<li>Your music as files. MP3, FLAC, whatever you have.</li>
+<li>Something that stays on: a NAS, a Raspberry Pi, an old PC, or a small VPS.</li>
+<li>A server program. This guide uses Navidrome, which is free and open source.</li>
+<li>A player on each device.</li>
+</ul>
+<h2>Install Navidrome</h2>
+<p>Docker is the short way. Point the music volume at your folder and start it:</p>
+<pre><code>services:
+  navidrome:
+    image: deluan/navidrome:latest
+    restart: unless-stopped
+    ports:
+      - "4533:4533"
+    volumes:
+      - "navidrome_data:/data"
+      - "/path/to/music:/music:ro"
+
+volumes:
+  navidrome_data:</code></pre>
+<p>Open <code>http://your-server:4533</code>, create the admin user, and wait for the first scan.</p>
+<h2>Fix your tags first</h2>
+<p>Navidrome builds the library from the tags in your files, so a bad tag is a bad library. An album that shows up twice usually has two spellings of the album artist. Run the files through MusicBrainz Picard or beets once, before you judge the result.</p>
+<h2>Pick a player</h2>
+<p>Navidrome has its own web player. On phones and desktops you want a client, and there are many. The <a href="https://www.navidrome.org/apps/" target="_blank" rel="noopener">official apps directory</a> lists them, and our <a href="compare">comparison</a> goes through the ones people ask about most. NaviBeat is one of them, and I make it.</p>
+<h2>Reach it from outside the house</h2>
+<p>At home the server is on your network. Outside you need a way in, and it does not have to mean opening a port. See <a href="navidrome-remote-access">Navidrome remote access without port forwarding</a>.</p>
+<h2>What about discovery?</h2>
+<p>This is the part you lose. Spotify knows millions of songs, your server knows yours. Three things bring some of it back:</p>
+<ul>
+<li>Last.fm or ListenBrainz keep your listening history and show you similar artists.</li>
+<li>AudioMuse-AI analyses how your songs sound, so a mix can follow the sound and the genre tag does not decide alone.</li>
+<li><a href="https://github.com/nenadjokic/navibeat-mixes" target="_blank" rel="noopener">NaviBeat Mixes</a> is a free Navidrome plugin that builds daily mixes and a Rediscover list as normal playlists, so they show up in every client.</li>
+</ul>
+<h2>Questions</h2>
+<h3>Can I really replace Spotify with a self-hosted server?</h3>
+<p>Yes, if you own your music as files. You keep your library on every device, playlists and offline listening. You lose the Spotify catalogue and most of its discovery.</p>
+<h3>What is the best self-hosted music server?</h3>
+<p>Navidrome is a good start: it is free, open source, light enough for a Raspberry Pi, and many client apps work with it through the Subsonic API.</p>
+<h3>How much does a self-hosted Spotify cost?</h3>
+<p>Navidrome is free. You pay for the hardware and the music you buy, and a paid client if you choose one.</p>
+    </div></div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="/">
+          <span class="footer__brand-ic" aria-hidden="true"></span>
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native player for Navidrome and Subsonic, across the Apple ecosystem, Android, Linux and Windows. Built in Belgrade.</p>
+        <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img decoding="async" class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Platforms</h3>
+        <ul>
+          <li><a href="appletv">Apple TV</a></li>
+          <li><a href="macos">Mac</a></li>
+          <li><a href="android">Android</a></li>
+          <li><a href="linux">Linux</a></li>
+          <li><a href="windows">Windows</a></li>
+          <li><a href="rockbox">Rockbox</a></li>
+          <li><a href="iphone">iPhone</a></li>
+          <li><a href="ipad">iPad</a></li>
+          <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="carplay">CarPlay</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support">Help center</a></li>
+          <li><a href="articles">Guides</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="support">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { sio.observe(el); });
+
+      /* Fallback sweep, same as linux.html: a fast scroll can outrun the observer and
+         leave a block at opacity 0, so anything whose top is already above the
+         viewport is revealed on the next frame. */
+      var revPending = [].slice.call(document.querySelectorAll('.reveal, .reveal-stagger, .p-stats'));
+      var revQueued = false;
+      var revSweep = function () {
+        revQueued = false;
+        var revLate = [], revRest = [], revI, revEl;
+        for (revI = 0; revI < revPending.length; revI++) {
+          revEl = revPending[revI];
+          (revEl.classList.contains('is-in') || revEl.getBoundingClientRect().top < 0
+            ? revLate : revRest).push(revEl);
+        }
+        for (revI = 0; revI < revLate.length; revI++) {
+          revLate[revI].classList.add('is-in');
+          sio.unobserve(revLate[revI]);
+        }
+        revPending = revRest;
+        if (!revPending.length) { window.removeEventListener('scroll', revOnScroll); }
+      };
+      var revOnScroll = function () {
+        if (!revQueued) { revQueued = true; requestAnimationFrame(revSweep); }
+      };
+      window.addEventListener('scroll', revOnScroll, { passive: true });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { el.classList.add('is-in'); });
+    }
+  })();
+</script>
+
+  <script defer src="lightbox.js?v=202609061417"></script>
+<script src="nav-menu.js?v=202609061100" defer></script>
+</body>
+</html>
