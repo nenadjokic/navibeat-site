@@ -4249,3 +4249,16 @@ h1, h2, h3, h4,
    the home hero stopped doing long ago; same fix here. */
 h1, .display, .hero__h1, .p-hero h1 { line-height: 1.04; }
 .p-hero h1 .word + .word { margin-left: 0; }
+
+/* 2026-10-31: the store badges replace the App Store pill in the nav. On the
+   home page side Google Play opens /android; the Android page links out to Play. */
+.nav__stores { display: flex; align-items: center; gap: 8px; flex: none; }
+.nav__store { display: inline-flex; border-radius: 7px; transition: transform .15s var(--ease), opacity .15s; }
+.nav__store:hover { transform: translateY(-1px); opacity: .9; }
+.nav__store img { display: block; height: 34px; width: auto; }
+@media (max-width: 480px) {
+  .nav__stores { gap: 6px; }
+  .nav__store img { height: 28px; }
+}
+@media (max-width: 380px) { .nav__store img { height: 24px; } }
+@media (max-width: 345px) { .nav__brand-text { display: none; } }
