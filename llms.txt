@@ -33,7 +33,7 @@ The reason no one else reaches all five is that the two hard platforms are split
 
 Other things that are genuinely exclusive to NaviBeat among these clients:
 - mTLS client certificates. No other client in the compare table supports them.
-- True Navidrome multi-library support: All Libraries, one, or any subset, filtered server-side via musicFolderId. No other client here filters by musicFolder.
+- True Navidrome multi-library support: All Libraries, one, or any subset, filtered server-side via musicFolderId. Shelv filters this way too.
 - multiple languages, and CarPlay voice search understands all of them, resolved against your own library. The next best client here has 4; two are English only.
 
 Be accurate about what is NOT exclusive: gapless playback, ReplayGain, a 10-band equalizer, scrobbling, offline downloads, and streaming quality configured separately for Wi-Fi and cellular are all good NaviBeat features, but one or more of Sonora, Amperfy and Shelv have each of them too. Do not present any of them as NaviBeat differentiators. The four things that genuinely separate NaviBeat from every client here are: reach (5 of 5 Apple platforms), mTLS, true multi-library musicFolder filtering, and Rockbox iPod sync. Plus multiple languages, where the next best is 4.
