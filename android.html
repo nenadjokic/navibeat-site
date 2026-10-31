@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaviBeat for Android: Navidrome Client for Phone and TV</title>
+  <meta name="description" content="Native Navidrome and OpenSubsonic player for Android phones and Android TV, with Android Auto. Karaoke lyrics, offline, 10-band EQ. $5.99 once on Google Play.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/android">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/android">
+
+  <meta property="og:title" content="NaviBeat for Android: Navidrome client for phone and TV">
+  <meta property="og:description" content="Native Navidrome and OpenSubsonic player for Android phones and Android TV, with Android Auto. Karaoke lyrics, offline, 10-band EQ. $5.99 once on Google Play.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navibeat.app/android">
+  <meta property="og:image" content="https://navibeat.app/assets/screenshots/android/android-home.webp">
+  <meta property="og:image:alt" content="NaviBeat Home on an Android device.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NaviBeat for Android: Navidrome client">
+  <meta name="twitter:description" content="Native Navidrome and OpenSubsonic player for Android phones and Android TV, with Android Auto. Karaoke lyrics, offline, 10-band EQ. $5.99 once on Google Play.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/android/android-home.webp">
+  <meta name="twitter:image:alt" content="NaviBeat Home on an Android device.">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bigshouldersdisplay-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/atkinsonhyperlegiblenext-latin-var.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=202610302033">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
+        ]
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
+      },
+      "sameAs": [
+        "https://www.navidrome.org/apps/",
+        "https://play.google.com/store/apps/details?id=app.navibeat.android",
+        "https://apps.apple.com/app/navibeat/id6763518834"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://navibeat.app/android#webpage",
+      "url": "https://navibeat.app/android",
+      "name": "NaviBeat for Android: Navidrome Client for Phone and TV",
+      "isPartOf": {
+        "@id": "https://navibeat.app/#website"
+      },
+      "dateModified": "2026-10-31",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NaviBeat",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Android",
+          "item": "https://navibeat.app/android"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "NaviBeat for Android",
+      "operatingSystem": "Android 8.0+",
+      "applicationCategory": "MusicApplication",
+      "url": "https://navibeat.app/android",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=app.navibeat.android",
+      "screenshot": "https://navibeat.app/assets/screenshots/android/android-home.webp",
+      "description": "A native Android music player for Navidrome, Airsonic, Gonic, or any OpenSubsonic server. Karaoke lyrics, offline downloads, a 10-band equalizer, Android TV and Android Auto, for $5.99 once on Google Play.",
+      "offers": {
+        "@type": "Offer",
+        "price": "5.99",
+        "priceCurrency": "USD",
+        "url": "https://play.google.com/store/apps/details?id=app.navibeat.android"
+      },
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does NaviBeat for Android cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "$5.99, once, on Google Play. It is a separate purchase from the Apple apps, and there is no subscription."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does NaviBeat work on Android TV and Android Auto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. One app covers the phone and Android TV, and Android Auto lets you browse and play in the car: Shuffle All, Favourites, Recently Played, Albums, Artists, Playlists and Radio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What music server does NaviBeat for Android need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic server, including Airsonic-Advanced and Gonic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I listen offline on Android?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Download whole files, and an Offline Mode keeps the app from touching the network. Metadata and artwork are cached on the phone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Android version do I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Android 8.0 or newer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does NaviBeat scrobble to Last.fm or ListenBrainz from Android?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Plays go to your own server. Last.fm and ListenBrainz are read-only extras that add detail to the app."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <span class="nav__mark-ic"></span>
+        <span class="nav__pulse"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features">
+          Features<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-features">
+          <a href="features">Overview</a>
+          <a href="multi-library">Multi-Library</a>
+          <a href="widgets">Widgets</a>
+          <a href="lastfm">Last.fm</a>
+          <a href="listenbrainz">ListenBrainz</a>
+          <a href="rockbox">Rockbox</a>
+        </div>
+      </div>
+      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><span class="nav__navifin-ic" aria-hidden="true"></span>NaviFin</a>
+
+      <a class="btn btn--primary btn--compact" href="https://play.google.com/store/apps/details?id=app.navibeat.android" target="_blank" rel="noopener">Google&nbsp;Play</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="p-hero">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span>Platforms</span>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">Android</span>
+      </nav>
+
+      <div class="p-hero__wrap">
+        <div class="p-hero__copy">
+          <p class="eyebrow eyebrow--accent" style="margin-bottom:18px;">NaviBeat <span aria-hidden="true">&middot;</span> Android</p>
+          <h1>
+            <span class="word" style="animation-delay:0ms">The</span>
+            <span class="word" style="animation-delay:70ms">Navidrome</span>
+            <span class="word" style="animation-delay:140ms">client</span>
+            <span class="word" style="animation-delay:210ms">for</span>
+            <span class="word" style="animation-delay:280ms">Android.</span>
+          </h1>
+          <p class="p-hero__sub">
+            A native Android music player for Navidrome, Airsonic, Gonic, or any OpenSubsonic server. Karaoke lyrics, offline downloads, a 10-band equalizer, Android TV and Android Auto, for $5.99 once on Google Play.
+          </p>
+          <div class="p-hero__ctas">
+            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=app.navibeat.android" target="_blank" rel="noopener">Get it on Google Play</a>
+          </div>
+
+          <dl class="key-facts" aria-label="NaviBeat for Android key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; font-size: 14px;">
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Platform</dt>
+            <dd style="margin: 0; color: var(--text-1);">Android 8.0 or newer, phone and Android TV, plus Android Auto</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Price</dt>
+            <dd style="margin: 0; color: var(--text-1);">$5.99 once, separate from the Apple apps</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Server</dt>
+            <dd style="margin: 0; color: var(--text-1);">Navidrome v0.50+, OpenSubsonic, Airsonic-Advanced, Gonic</dd>
+            <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Get it</dt>
+            <dd style="margin: 0; color: var(--text-1);">Google Play</dd>
+          </dl>
+        </div>
+
+        <div class="p-hero__shot">
+          <img src="assets/screenshots/android/android-home.webp"
+               alt="NaviBeat Home on Android with a pick-up-where-you-left-off hero and Quick Play row."
+               width="1180" height="738" loading="eager" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" aria-labelledby="android-features-title">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">What you get</p>
+      <h2 id="android-features-title" class="h2">Your server, as a real Android app.</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Karaoke lyrics</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Real word and syllable timing from the OpenSubsonic lyrics extension, with instrumental-break dots. It falls back to line highlighting when a track has no word timing.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Offline that holds up</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Whole-file downloads, a metadata cache, an artwork cache and an Offline Mode that never touches the network.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Sound you control</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">ReplayGain with four modes and peak limiting, a ten-band equalizer, and streaming quality set separately for Wi-Fi, mobile and downloads.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">In the car</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Android Auto: Shuffle All, Favourites, Recently Played, Albums, Artists, Playlists and Radio.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">On the big screen</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">One app for the phone and Android TV, one purchase.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Your whole library</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Artists, albums, songs, genres, playlists, internet radio, star ratings written back to your server, and AutoMix.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="price" id="buy" aria-labelledby="android-price-title">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">One price</p>
+      <p class="price__h" id="android-price-title">Pay once. Keep it.</p>
+      <div class="price__num">$5.99</div>
+      <p class="price__sub">Once, on Google Play. No subscription.</p>
+      <div class="price__ctas">
+        <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=app.navibeat.android" target="_blank" rel="noopener">Get it on Google Play</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="android-faq-title" style="padding-top:0;">
+    <div class="wrap reveal">
+      <p class="eyebrow eyebrow--accent">Questions</p>
+      <h2 id="android-faq-title" class="h2">Frequently asked questions</h2>
+      <div class="faq" style="max-width:760px; margin-top:26px; display:grid; gap:14px;">
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">How much does NaviBeat for Android cost?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">$5.99, once, on Google Play. It is a separate purchase from the Apple apps, and there is no subscription.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat work on Android TV and Android Auto?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. One app covers the phone and Android TV, and Android Auto lets you browse and play in the car: Shuffle All, Favourites, Recently Played, Albums, Artists, Playlists and Radio.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What music server does NaviBeat for Android need?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">NaviBeat is a client, so it connects to your own server. It works with Navidrome v0.50 or later, or any OpenSubsonic server, including Airsonic-Advanced and Gonic.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Can I listen offline on Android?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Yes. Download whole files, and an Offline Mode keeps the app from touching the network. Metadata and artwork are cached on the phone.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Which Android version do I need?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Android 8.0 or newer.</p>
+        </div>
+        <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
+          <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat scrobble to Last.fm or ListenBrainz from Android?</h3>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">No. Plays go to your own server. Last.fm and ListenBrainz are read-only extras that add detail to the app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="/">
+          <span class="footer__brand-ic" aria-hidden="true"></span>
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native player for Navidrome and Subsonic, across the Apple ecosystem, Android, Linux and Windows. Built in Belgrade.</p>
+        <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img decoding="async" class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Platforms</h3>
+        <ul>
+          <li><a href="appletv">Apple TV</a></li>
+          <li><a href="macos">Mac</a></li>
+          <li><a href="android" aria-current="page">Android</a></li>
+          <li><a href="linux">Linux</a></li>
+          <li><a href="windows">Windows</a></li>
+          <li><a href="rockbox">Rockbox</a></li>
+          <li><a href="iphone">iPhone</a></li>
+          <li><a href="ipad">iPad</a></li>
+          <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="carplay">CarPlay</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support">Help center</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="support">Terms &amp; FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      <span>Android</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { sio.observe(el); });
+
+      /* Fallback sweep, same as linux.html: a fast scroll can outrun the observer and
+         leave a block at opacity 0, so anything whose top is already above the
+         viewport is revealed on the next frame. */
+      var revPending = [].slice.call(document.querySelectorAll('.reveal, .reveal-stagger, .p-stats'));
+      var revQueued = false;
+      var revSweep = function () {
+        revQueued = false;
+        var revLate = [], revRest = [], revI, revEl;
+        for (revI = 0; revI < revPending.length; revI++) {
+          revEl = revPending[revI];
+          (revEl.classList.contains('is-in') || revEl.getBoundingClientRect().top < 0
+            ? revLate : revRest).push(revEl);
+        }
+        for (revI = 0; revI < revLate.length; revI++) {
+          revLate[revI].classList.add('is-in');
+          sio.unobserve(revLate[revI]);
+        }
+        revPending = revRest;
+        if (!revPending.length) { window.removeEventListener('scroll', revOnScroll); }
+      };
+      var revOnScroll = function () {
+        if (!revQueued) { revQueued = true; requestAnimationFrame(revSweep); }
+      };
+      window.addEventListener('scroll', revOnScroll, { passive: true });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { el.classList.add('is-in'); });
+    }
+  })();
+</script>
+
+  <script defer src="lightbox.js?v=202609061417"></script>
+<script src="nav-menu.js?v=202609061100" defer></script>
+</body>
+</html>

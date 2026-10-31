@@ -53,8 +53,10 @@
         "founder": { "@type": "Person", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"] },
         "foundingLocation": { "@type": "Place", "name": "Belgrade, Serbia" },
         "sameAs": [
-          "https://www.navidrome.org/apps/"
-        ]
+        "https://www.navidrome.org/apps/",
+        "https://play.google.com/store/apps/details?id=app.navibeat.android",
+        "https://apps.apple.com/app/navibeat/id6763518834"
+      ]
       },
       {
         "@type": "WebSite",
@@ -72,7 +74,7 @@
         "description": "How to sync your Navidrome library to a Rockbox iPod from a real Mac app instead of terminal scripts. NaviSyncRock transcodes the audio on your own server, re-encodes album art so Rockbox renders it, writes correct .m3u8 playlists, and installs two custom iPod themes. Send-to, not two-way sync. Available now in NaviBeat for Mac.",
         "url": "https://navibeat.app/rockbox",
         "datePublished": "2026-07-01",
-        "dateModified": "2026-09-06",
+        "dateModified": "2026-10-31",
         "inLanguage": "en",
         "keywords": "sync navidrome to rockbox, navidrome rockbox sync, navidrome ipod, put navidrome music on a rockbox ipod, gui alternative to terminal scripts",
         "author": { "@type": "Person", "@id": "https://navibeat.app/#nenad", "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"], "url": "https://navibeat.app/#maker" },
@@ -923,6 +925,10 @@
       <p class="eyebrow eyebrow--accent">FAQ</p>
       <h2>Syncing Navidrome to a Rockbox iPod</h2>
       <details class="rbx-faq__item">
+        <summary><h3 class="faq__h">Why is album art so hard to get onto a Rockbox iPod, and does NaviSyncRock fix it?</h3></summary>
+        <p>Old Rockbox hardware cannot read progressive or oversized JPEGs, which is why album art often does not show. NaviSyncRock re-encodes each cover to a baseline JPEG sized for the iPod screen and names it cover.jpg per album folder, which is the format Rockbox actually renders. It ships with NaviBeat themes tuned so the art displays correctly.</p>
+      </details>
+      <details class="rbx-faq__item">
         <summary><h3 class="faq__h">Can you sync a Navidrome library to a Rockbox iPod?</h3></summary>
         <p>Yes. NaviSyncRock, a paid feature of the NaviBeat macOS app, sends music from your own Navidrome server onto a Rockbox iPod. It asks your server to transcode each track to an iPod-friendly format and to resize the album art to a baseline JPEG Rockbox can read, then lays the files out in <code>/Music/Artist/Album</code> folders with a <code>cover.jpg</code> per album and writes <code>.m3u8</code> playlists with correct on-device paths. It is a one-way send-to, not a two-way sync, and nothing leaves your own server.</p>
       </details>
@@ -1000,6 +1006,7 @@
           <li><a href="rockbox">Rockbox</a></li>
           <li><a href="appletv">Apple TV</a></li>
           <li><a href="macos">Mac</a></li>
+          <li><a href="android">Android</a></li>
           <li><a href="linux">Linux</a></li>
           <li><a href="windows">Windows</a></li>
           <li><a href="iphone">iPhone</a></li>

@@ -526,7 +526,7 @@ https://navibeat.app/windows. The Linux build stays free.
 - Popular songs on albums (iPhone, iPad, Mac and Apple TV, in 1.5.5, on the App Store): a flame in front of the track number of up to three popular songs on each album, like Plex's hot tracks. The default ranking comes from the user's own Navidrome server (Subsonic getTopSongs, answered by Navidrome's Last.fm agent, which needs LastFM.ApiKey and LastFM.Secret set on the server), so the app opens no new connection and needs no Last.fm login. Settings, Popular songs can switch the source to Last.fm (with the user's own Last.fm session), ListenBrainz (with the user's token) or off.
 - iPhone Duo (in 1.5.4): folded, the whole app runs on the outer screen; half open, Now Playing splits on the hinge with cover and controls on one page and lyrics or Up Next on the other, and album and artist pages split too. https://navibeat.app/duo
 - Manage Playlists and Shuffle Mix (iPhone, iPad and Mac, in 1.5.4): Add to Playlist shows which playlists already hold a song and lets you check or uncheck several at once; Shuffle Mix can show five random songs to pick the first one from.
-- Outside Apple: NaviBeat for Windows (https://navibeat.app/windows) and NaviBeat for Linux (https://navibeat.app/linux) are out, and NaviBeat for Android is on Google Play (https://play.google.com/store/apps/details?id=app.navibeat.android).
+- Outside Apple: NaviBeat for Windows (https://navibeat.app/windows) and NaviBeat for Linux (https://navibeat.app/linux) are out, and NaviBeat for Android is on Google Play (https://navibeat.app/android).
 
 ## Added in 1.4 (on the App Store)
 
