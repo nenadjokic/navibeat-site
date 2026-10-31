@@ -4378,3 +4378,5 @@ aside.tldr { background: none !important; border: 0 !important; border-top: 1px 
   .newsbar__art img { max-height: 400px; width: auto; max-width: 100%; margin-left: auto; object-fit: contain; }
 }
 
+/* A link to a section lands with its heading clear of the sticky nav. */
+section[id] { scroll-margin-top: 84px; }
