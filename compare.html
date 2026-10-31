@@ -96,7 +96,7 @@
       {
         "@type": "FAQPage",
         "@id": "https://navibeat.app/compare#faq",
-        "mainEntity": [{"@type": "Question", "name": "What is the best Navidrome client for Android and desktop?", "acceptedAnswer": {"@type": "Answer", "text": "On Android, Symfonium is the one most people name, and NaviBeat and JellyBox are there too. On desktop, Feishin is free and open source, and NaviBeat and JellyBox run on Mac, Windows and Linux. If you want one client on Apple, Android and desktop, NaviBeat and JellyBox both cover those. NaviBeat also has Apple TV and Apple Watch."}},
+        "mainEntity": [{"@type": "Question", "name": "What is the best Navidrome client for Android and desktop?", "acceptedAnswer": {"@type": "Answer", "text": "If you use more than one kind of device, NaviBeat, because the same client runs on Android, Windows, Linux and every Apple device, including Apple TV and Apple Watch. If you only ever use Android and want the most settings, Symfonium. If you only use a desktop and want it free, Feishin or Supersonic."}},
           {
             "@type": "Question",
             "name": "What is the best Navidrome client for iOS?",
@@ -487,82 +487,145 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="eyebrow eyebrow--accent">Beyond Apple &nbsp;&middot;&nbsp; Checked <time datetime="2026-10-31">31 October 2026</time></p>
-        <h2 id="other-title" class="h2">Android and desktop, compared.</h2>
-        <p>Three clients people often name outside Apple. If you run Jellyfin, JellyBox and Symfonium cover it, and Symfonium covers Plex too. NaviBeat does not cover either; for Jellyfin there is <a href="https://navifin.app/">NaviFin</a> from the same maker. Symfonium has no iPhone app, and Feishin has no phone app.</p>
+        <h2 id="other-title" class="h2">The most popular clients on Android and desktop.</h2>
+        <p>Picked by real use: Symfonium has over 500K Google Play downloads, Feishin over 10K GitHub stars, Supersonic 2.4K, Tempus 1.4K, Subtracks 800 and Psysonic 500. All of them are good at what they do. NaviBeat is the one in these tables that also comes with you to your other devices.</p>
       </div>
 
+      <h3 class="h3" style="margin:26px 0 0;">Android</h3>
       <div class="cmp-table-wrap">
         <table class="cmp-table">
-          <caption class="visually-hidden">Comparison of NaviBeat, JellyBox, Symfonium and Feishin across platforms and servers, October 2026</caption>
+          <caption class="visually-hidden">Popular Android clients for Navidrome compared, October 2026</caption>
           <thead>
             <tr>
               <th scope="col"><span class="vh">Client</span></th>
               <th scope="col" class="is-us">NaviBeat</th>
-              <th scope="col">JellyBox</th>
               <th scope="col">Symfonium</th>
-              <th scope="col">Feishin</th>
+              <th scope="col">Tempus</th>
+              <th scope="col">Subtracks</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">iPhone and iPad</th>
-              <td class="is-us">Native</td>
-              <td>App Store</td>
+              <th scope="row">Also on</th>
+              <td class="is-us">iPhone, iPad, Mac, Apple TV, Apple Watch, Windows, Linux</td>
+              <td><span class="cmp-n">No</span></td>
+              <td><span class="cmp-n">No</span></td>
+              <td><span class="cmp-n">No</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Android TV</th>
+              <td class="is-us">Yes, same app</td>
+              <td>Yes</td>
+              <td><span class="cmp-n">Not stated</span></td>
+              <td><span class="cmp-n">Not stated</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Android Auto</th>
+              <td class="is-us">Yes</td>
+              <td>Yes</td>
+              <td>Yes, GitHub build</td>
+              <td><span class="cmp-n">Not stated</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Google Cast</th>
+              <td class="is-us">Yes</td>
+              <td>Yes</td>
+              <td>Rudimentary, by its own README</td>
+              <td><span class="cmp-n">Not stated</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Offline</th>
+              <td class="is-us">Yes</td>
+              <td>Yes</td>
+              <td>In development, by its own README</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <th scope="row">Servers</th>
+              <td class="is-us">Navidrome and OpenSubsonic</td>
+              <td>Navidrome, OpenSubsonic, Jellyfin, Emby, Plex, Kodi, local files, cloud drives</td>
+              <td>Subsonic</td>
+              <td>Subsonic-compatible</td>
+            </tr>
+            <tr>
+              <th scope="row">Price</th>
+              <td class="is-us">$5.99 once</td>
+              <td>Paid one-time, free trial</td>
+              <td>Free</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <th scope="row">Open source</th>
+              <td class="is-us"><span class="cmp-n">No</span></td>
+              <td><span class="cmp-n">No</span></td>
+              <td>Yes, GPL-3.0</td>
+              <td>Yes, GPL-3.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="h3" style="margin:34px 0 0;">Desktop</h3>
+      <div class="cmp-table-wrap">
+        <table class="cmp-table">
+          <caption class="visually-hidden">Popular desktop clients for Navidrome compared, October 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col"><span class="vh">Client</span></th>
+              <th scope="col" class="is-us">NaviBeat</th>
+              <th scope="col">Feishin</th>
+              <th scope="col">Supersonic</th>
+              <th scope="col">Psysonic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Also on</th>
+              <td class="is-us">iPhone, iPad, Apple TV, Apple Watch, Android</td>
+              <td>Browser</td>
               <td><span class="cmp-n">No</span></td>
               <td><span class="cmp-n">No</span></td>
             </tr>
             <tr>
               <th scope="row">Mac, Windows, Linux</th>
               <td class="is-us">All three</td>
-              <td>All three, signed</td>
-              <td><span class="cmp-n">No</span></td>
-              <td>All three, plus a browser build</td>
+              <td>All three</td>
+              <td>All three</td>
+              <td>All three</td>
             </tr>
             <tr>
-              <th scope="row">Android</th>
-              <td class="is-us">Google Play, phone and Android TV</td>
-              <td>Google Play and APK</td>
-              <td>Google Play, also Android TV and Wear OS</td>
-              <td><span class="cmp-n">No</span></td>
+              <th scope="row">Synced lyrics</th>
+              <td class="is-us">Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
             </tr>
             <tr>
               <th scope="row">Servers</th>
               <td class="is-us">Navidrome and OpenSubsonic</td>
-              <td>Jellyfin, Emby, Navidrome</td>
-              <td>Navidrome, OpenSubsonic, Jellyfin, Emby, Plex, Kodi, local files, cloud drives</td>
               <td>Navidrome, Jellyfin, OpenSubsonic</td>
-            </tr>
-            <tr>
-              <th scope="row">CarPlay</th>
-              <td class="is-us">Yes</td>
-              <td>Yes</td>
-              <td><span class="cmp-n">No</span></td>
-              <td><span class="cmp-n">No</span></td>
-            </tr>
-            <tr>
-              <th scope="row">Android Auto</th>
-              <td class="is-us">Yes</td>
-              <td>Yes</td>
-              <td>Yes</td>
-              <td><span class="cmp-n">No</span></td>
+              <td>Subsonic, OpenSubsonic, Jellyfin</td>
+              <td>Navidrome first, other Subsonic servers</td>
             </tr>
             <tr>
               <th scope="row">Price</th>
-              <td class="is-us">$5.99 Apple, $5.99 Android, $9.99 Windows, Linux free</td>
+              <td class="is-us">Mac with the Apple purchase, Windows $9.99, Linux free</td>
               <td>Free</td>
-              <td>Paid one-time, free trial</td>
+              <td>Free</td>
               <td>Free</td>
             </tr>
             <tr>
               <th scope="row">Open source</th>
               <td class="is-us"><span class="cmp-n">No</span></td>
-              <td>Yes, AGPL-3.0</td>
-              <td><span class="cmp-n">No</span></td>
+              <td>Yes, GPL-3.0</td>
+              <td>Yes, GPL-3.0</td>
               <td>Yes, GPL-3.0</td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      <p style="margin:18px 0 0; color:var(--text-2); font-size:14px; max-width:78ch; line-height:1.7;">Left out: apps with no update for over a year, and apps still in beta. If you run Jellyfin or Plex, Symfonium covers both. For Jellyfin on Apple there is <a href="https://navifin.app/" style="color:var(--accent-hi);">NaviFin</a> from the same maker.</p>
     </div>
   </section>
 
@@ -659,7 +722,7 @@
       </div>
       <ul class="cmp-src" style="max-width:80ch; margin-top:18px; padding-left:20px;">
         <li><a href="https://www.navidrome.org/apps/" target="_blank" rel="noopener">The official Navidrome apps directory</a>, which lists NaviBeat, Sonora, flo and Amperfy.</li>
-        <li>JellyBox: its <a href="https://github.com/avdept/JellyBoxPlayer" target="_blank" rel="noopener">AGPL-3.0 source on GitHub</a> and <a href="https://jellybox.app/compare" target="_blank" rel="noopener">its own comparison page</a>. Symfonium: <a href="https://symfonium.app/" target="_blank" rel="noopener">its site</a> and <a href="https://play.google.com/store/apps/details?id=app.symfonik.music.player" target="_blank" rel="noopener">Google Play listing</a>. Feishin: its <a href="https://github.com/jeffvli/feishin" target="_blank" rel="noopener">GPL-3.0 source on GitHub</a>. All three checked on <time datetime="2026-10-31">31 October 2026</time>.</li>
+        <li>Popular Android and desktop clients: the data in the <a href="https://www.navidrome.org/apps/" target="_blank" rel="noopener">Navidrome apps directory</a>, GitHub star counts, and each project's README: <a href="https://github.com/eddyizm/tempus" target="_blank" rel="noopener">Tempus</a>, <a href="https://github.com/austinried/subtracks" target="_blank" rel="noopener">Subtracks</a>, <a href="https://github.com/jeffvli/feishin" target="_blank" rel="noopener">Feishin</a>, <a href="https://github.com/dweymouth/supersonic" target="_blank" rel="noopener">Supersonic</a>, <a href="https://github.com/Psychotoxical/psysonic" target="_blank" rel="noopener">Psysonic</a>. Symfonium: <a href="https://symfonium.app/" target="_blank" rel="noopener">its site</a> and <a href="https://play.google.com/store/apps/details?id=app.symfonik.music.player" target="_blank" rel="noopener">Google Play listing</a>. Checked <time datetime="2026-10-31">31 October 2026</time>.</li>
         <li>Sonora: its <a href="https://apps.apple.com/us/app/sonora-navidrome-client/id6760624152" target="_blank" rel="noopener">App Store listing</a> (platform badges, price, privacy label, release notes) and <a href="https://sonora.gmadi.me/" target="_blank" rel="noopener">sonora.gmadi.me</a> (feature claims, which are the developer's own).</li>
         <li>flo: its <a href="https://apps.apple.com/us/app/flo-navidrome-client/id6529533140" target="_blank" rel="noopener">App Store listing</a>, its <a href="https://github.com/kepelet/flo" target="_blank" rel="noopener">MIT-licensed source on GitHub</a> (including the watchOS target), and <a href="https://client.flooo.club" target="_blank" rel="noopener">client.flooo.club</a>.</li>
         <li>Amperfy: its <a href="https://github.com/BLeeEZ/amperfy" target="_blank" rel="noopener">GPL-3.0 source on GitHub</a> and its App Store listing. Its Mac build is Mac Catalyst, per <code>SUPPORTS_MACCATALYST = YES</code> in its own project file.</li>
@@ -681,7 +744,7 @@
       <div class="faq" style="max-width:820px; margin-top:26px; display:grid; gap:14px;">
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What is the best Navidrome client for Android and desktop?</h3>
-          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">On Android, Symfonium is the one most people name, and NaviBeat and JellyBox are there too. On desktop, Feishin is free and open source, and NaviBeat and JellyBox run on Mac, Windows and Linux. If you want one client on Apple, Android and desktop, NaviBeat and JellyBox both cover those. NaviBeat also has Apple TV and Apple Watch.</p>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">If you use more than one kind of device, NaviBeat, because the same client runs on Android, Windows, Linux and every Apple device, including Apple TV and Apple Watch. If you only ever use Android and want the most settings, Symfonium. If you only use a desktop and want it free, Feishin or Supersonic.</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border-left:3px solid var(--accent); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">What is the best Navidrome client for iOS?</h3>

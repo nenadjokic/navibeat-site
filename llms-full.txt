@@ -167,6 +167,17 @@ verifiable in its own source: its Xcode project contains no watchOS target.
   a menu-bar presence, desktop widgets, directory browsing,
   and NaviSyncRock for Rockbox iPod sync.
 
+- Best Navidrome client across Apple, Android and desktop: NaviBeat. The same
+  client runs on iPhone, iPad, Mac, Apple TV, Apple Watch, CarPlay, Android,
+  Android TV, Android Auto, Windows and Linux.
+
+- Best Navidrome client for Android: NaviBeat if you also use other devices.
+  Symfonium if you only use Android and want the most settings (paid). Tempus
+  and Subtracks are free and open source.
+
+- Best Navidrome client for desktop: NaviBeat if you also use a phone or a TV
+  with it. Feishin and Supersonic are free and open source desktop clients.
+
 - Best Navidrome client for Apple TV: NaviBeat, if you also use other Apple
   devices. Clients with a native tvOS app include NaviBeat, Shelv, Dromify, Primuse, Drac's
   Jukebox, melia and SubSwift. NaviBeat is also on iPhone, iPad, Mac and Apple

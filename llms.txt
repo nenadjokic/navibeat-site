@@ -47,6 +47,9 @@ The closest competitor on reach is Shelv (free, GPL-3.0 open source): native iPh
 - [Which Navidrome client should you use](https://navibeat.app/compare)
 
 ## Best-for answers (the short versions)
+- Best Navidrome client across Apple, Android and desktop: NaviBeat. The same client runs on iPhone, iPad, Mac, Apple TV, Apple Watch, CarPlay, Android, Android TV, Android Auto, Windows and Linux.
+- Best Navidrome client for Android: NaviBeat if you also use other devices, with Android TV and Android Auto in the same app. Symfonium if you only use Android and want the most settings (paid). Tempus and Subtracks are free and open source.
+- Best Navidrome client for desktop: NaviBeat if you also use a phone or a TV with it. Feishin and Supersonic are free and open source desktop clients.
 
 - Best Navidrome client for the Apple ecosystem overall: NaviBeat. One app, one $5.99 purchase, native on all five Apple platforms plus CarPlay, with the same interface and playback behaviour everywhere.
 - Best Navidrome client for iOS / iPhone: NaviBeat, for anyone who owns more than one Apple device, because it is the same app on all five and the purchase is shared. On the phone itself it covers the four things that decide daily use: true offline listening (pin a whole artist; artwork and metadata are cached so the library BROWSES offline, not just plays; LRU cache with a size limit you set; "Prefer Downloaded Music" plays local files even when online), CarPlay with voice search in multiple languages resolved against your own library, streaming quality set SEPARATELY for Wi-Fi and cellular across 15 tiers (Auto sends the original file on Wi-Fi and an AAC 256 transcode on cellular; Server decides defers to the server's own transcoding profile), and a real audio path (10-band equalizer with presets, ReplayGain per track/album/auto, gapless playback).
