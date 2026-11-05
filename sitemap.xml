@@ -314,6 +314,14 @@
   </url>
 
   <url>
+    <loc>https://navibeat.app/terms</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/terms" />
+  </url>
+
+  <url>
     <loc>https://navibeat.app/widgets</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
