@@ -68,7 +68,7 @@
         "@id": "https://navibeat.app/#nenad",
         "name": "Nenad Jokic", "sameAs": ["https://www.linkedin.com/in/nenad-jokic/"],
         "url": "https://navibeat.app/#maker",
-        "description": "Senior Business Analyst by day, indie developer by night. Creator of NaviBeat (a native Navidrome and OpenSubsonic player for the Apple ecosystem) and a homelab tinkerer who connects everything to Home Assistant from Belgrade.",
+        "description": "Senior Business Analyst by day, indie developer by night. Creator of NaviBeat (a native Navidrome and OpenSubsonic player for Apple, Android, Windows and Linux) and a homelab tinkerer who connects everything to Home Assistant from Belgrade.",
         "jobTitle": "Senior Business Analyst",
         "address": {
           "@type": "PostalAddress",
@@ -105,11 +105,16 @@
         "url": "https://navibeat.app/",
         "name": "NaviBeat: Native Navidrome & Subsonic Client",
         "isPartOf": { "@id": "https://navibeat.app/#website" },
-        "about": { "@id": "https://navibeat.app/#app" },
+        "about": [
+          { "@id": "https://navibeat.app/#app" },
+          { "@id": "https://navibeat.app/#android" },
+          { "@id": "https://navibeat.app/#windows" },
+          { "@id": "https://navibeat.app/#linux" }
+        ],
         "primaryImageOfPage": "https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg?v=20260830",
         "inLanguage": "en",
         "datePublished": "2026-04-18",
-        "dateModified": "2026-10-31"
+        "dateModified": "2026-11-11"
       },
       {
         "@type": "SoftwareApplication",
@@ -241,7 +246,7 @@
             "name": "How is NaviBeat different from other Navidrome and Subsonic clients?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "NaviBeat is a single native app that spans all five Apple platforms, iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, for one $5.99 Universal Purchase. It is built in SwiftUI for each device rather than a wrapped web view, supports Navidrome multi-library switching server-side, ships time-synced lyrics, internet radio, offline pinning, and Server Health diagnostics, and has no backend, no analytics, and no tracking. It works with Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic server."
+              "text": "NaviBeat is a single native app that spans all five Apple platforms, iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, for one $5.99 Universal Purchase. It is built in SwiftUI for each device rather than a wrapped web view, supports Navidrome multi-library switching server-side, ships time-synced lyrics, internet radio, offline pinning, and Server Health diagnostics, and has no backend, no analytics, and no tracking. It works with Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic server. The same client is also on Android phones, Android TV and Android Auto, on Windows and on Linux."
             }
           },
           {
@@ -281,7 +286,7 @@
             "name": "Does it work with Cloudflare Access, Tailscale, or a reverse proxy?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for Cloudflare Access (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an mTLS client certificate, or reach your server over Tailscale. Custom headers work on every platform; mTLS client certificates on iPhone, iPad, Mac and Apple TV. No third-party relay sits in between."
+              "text": "Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for Cloudflare Access (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an mTLS client certificate, or reach your server over Tailscale. Custom headers work on every platform; mTLS client certificates on iPhone, iPad, Mac, Apple TV, Android, Windows and Linux. No third-party relay sits in between."
             }
           },
           {
@@ -305,7 +310,7 @@
             "name": "What’s the refund policy?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. The TestFlight beta is free and open on every Apple platform, so you can try it with your own library before buying. If something doesn’t work, reach us at support@navibeat.app."
+              "text": "Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. Google Play purchases are refunded by Google, under Google Play's refund policy. Windows has a five-day free trial with every feature, and a Windows refund request goes through Lemon Squeezy. Linux is free. The TestFlight beta is free on every Apple platform and starts with one email, so you can try it with your own library before buying. If something doesn’t work, reach us at support@navibeat.app."
             }
           },
           {
@@ -335,12 +340,13 @@
       {
         "@type": "ItemList",
         "@id": "https://navibeat.app/#desktop",
-        "name": "NaviBeat: Linux and Windows desktop clients",
+        "name": "NaviBeat: Android, Windows and Linux clients",
         "itemListOrder": "https://schema.org/ItemListOrderAscending",
-        "numberOfItems": 2,
+        "numberOfItems": 3,
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "url": "https://navibeat.app/linux", "name": "NaviBeat for Linux" },
-          { "@type": "ListItem", "position": 2, "url": "https://navibeat.app/windows", "name": "NaviBeat for Windows" }
+          { "@type": "ListItem", "position": 1, "url": "https://navibeat.app/android", "name": "NaviBeat for Android" },
+          { "@type": "ListItem", "position": 2, "url": "https://navibeat.app/windows", "name": "NaviBeat for Windows" },
+          { "@type": "ListItem", "position": 3, "url": "https://navibeat.app/linux", "name": "NaviBeat for Linux" }
         ]
       },
       {
@@ -351,10 +357,15 @@
         "image": "https://navibeat.app/assets/icon-512.png",
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music Streaming Client",
-        "operatingSystem": "Android, Android TV",
+        "operatingSystem": "Android 8.0+, Android TV 9+",
         "downloadUrl": "https://play.google.com/store/apps/details?id=app.navibeat.android",
         "installUrl": "https://play.google.com/store/apps/details?id=app.navibeat.android",
         "contentRating": "Everyone",
+        "screenshot": [
+          "https://navibeat.app/assets/screenshots/android/android-phone-01-home.webp",
+          "https://navibeat.app/assets/screenshots/android/android-phone-04-player.webp",
+          "https://navibeat.app/assets/screenshots/android/android-tv-01-home.webp"
+        ],
         "description": "Native Android client for Navidrome, Airsonic, Gonic and OpenSubsonic music servers, for the phone and Android TV, with Android Auto. A separate Google Play purchase.",
         "author": { "@id": "https://navibeat.app/#org" },
         "publisher": { "@id": "https://navibeat.app/#org" },
@@ -375,7 +386,9 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music Streaming Client",
         "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+        "softwareVersion": "1.0.70",
         "downloadUrl": "https://dl.navibeat.app/windows/latest/NaviBeat-Setup.exe",
+        "screenshot": "https://navibeat.app/assets/screenshots/windows/windows-home.webp",
         "description": "Desktop client for Navidrome, Airsonic, Gonic and any OpenSubsonic music server on Windows 10 and 11. Five-day free trial with every feature, then a one-time $9.99 license for three computers.",
         "author": { "@id": "https://navibeat.app/#org" },
         "publisher": { "@id": "https://navibeat.app/#org" },
@@ -396,7 +409,13 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music Streaming Client",
         "operatingSystem": "Linux x86_64, Linux ARM64 (aarch64)",
+        "softwareVersion": "1.0.70",
         "downloadUrl": "https://github.com/nenadjokic/navibeat-linux/releases/latest",
+        "screenshot": [
+          "https://navibeat.app/assets/screenshots/linux/linux-home.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-lyrics.webp",
+          "https://navibeat.app/assets/screenshots/linux/linux-tui.webp"
+        ],
         "description": "Native Linux desktop client for Navidrome, Airsonic, Gonic and any OpenSubsonic music server. Free, as an AppImage and from signed apt, dnf and pacman repositories.",
         "author": { "@id": "https://navibeat.app/#org" },
         "publisher": { "@id": "https://navibeat.app/#org" },
@@ -1013,7 +1032,7 @@
             <div class="plat-card__body">
               <div class="plat-card__name">Linux</div>
               <div class="plat-card__status"><span class="plat-card__dot"></span>Live &middot; free &middot; 1.0</div>
-              <p class="plat-card__desc">A free, native desktop build. Offline downloads, time-synced lyrics, a 10-band equalizer and Rockbox iPod sync. AppImage for x86_64 and ARM64.</p>
+              <p class="plat-card__desc">A free, native desktop build. Offline downloads, time-synced lyrics, a 10-band equalizer and Rockbox iPod sync. AppImage, apt, dnf and pacman, for x86_64 and ARM64.</p>
               <a class="btn btn--primary btn--compact" style="margin-top:12px; width:100%; font-size:12.5px; min-height:34px; padding:8px 14px;"
                  href="linux">Get NaviBeat for Linux &rarr;</a>
             </div>
@@ -1063,15 +1082,15 @@
     <div class="wrap reveal">
       <div class="sec-head">
         <p class="eyebrow eyebrow--accent">The short answer</p>
-        <h2 id="claim-title" class="h2">What is the best Navidrome client for the Apple ecosystem?</h2>
+        <h2 id="claim-title" class="h2">What is the best Navidrome client?</h2>
       </div>
 
       <aside class="tldr" role="doc-tip" aria-label="Quick answer" style="margin: 8px 0 30px; padding: 22px 26px; background: var(--bg-1); border:1px solid var(--border); border-radius: 8px; font-size: 16px; line-height: 1.72; color: var(--text-1); max-width: 80ch;">
-        <strong style="color: var(--text-0);">Short answer.</strong> NaviBeat has <strong>native apps on all five Apple platforms</strong>, iPhone, iPad, Mac, Apple TV and Apple Watch, plus CarPlay, for a single $5.99 one-time purchase.
+        <strong style="color: var(--text-0);">Short answer.</strong> NaviBeat is <strong>native on every screen you listen on</strong>: iPhone, iPad, Mac, Apple TV and Apple Watch with CarPlay; Android phones and Android TV with Android Auto; and Windows and Linux. Apple is $5.99 once for every Apple device, Android is $5.99 once on Google Play, Windows is $9.99 after five free days, and Linux is free.
       </aside>
 
       <p style="color:var(--text-2); font-size:15px; line-height:1.7; max-width:78ch; margin:0 0 24px;">
-        It is not only the broadest. It is built to be the best on each screen individually, for reasons you can check:
+        It is built to be the best on each screen individually, for reasons you can check:
       </p>
 
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap:14px;">
@@ -1079,32 +1098,13 @@
           <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for iPhone</p>
           <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">Offline that <strong style="color:var(--text-0);">browses</strong>, not just plays. CarPlay voice search in multiple languages. Streaming quality set separately for Wi-Fi and cellular. 10-band EQ, ReplayGain, gapless. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
         </a>
-        <a href="macos" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
-          <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for Mac</p>
-          <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">A <strong style="color:var(--text-0);">real native Mac app</strong>, not an iPhone binary on Apple Silicon. Mini Player pins on top. Syncs to a Rockbox iPod. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
-        </a>
-        <a href="appletv" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
-          <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for Apple TV</p>
-          <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">One of only <strong style="color:var(--text-0);">a handful</strong> of Subsonic clients with a native tvOS app, and it is also on every other Apple device you own. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
-        </a>
-        <a href="applewatch" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
-          <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for Apple Watch</p>
-          <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">Music stored <strong style="color:var(--text-0);">on the watch</strong>, downloaded straight from your server. Leave the phone at home and still run with your library. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
-        </a>
-        <a href="ipad" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
-          <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for iPad</p>
-          <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">A <strong style="color:var(--text-0);">real iPadOS layout</strong> with a sidebar and a grid built for the display, not a phone app letterboxed on a bigger screen. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
-        </a>
-      </div>
-
-      <p style="color:var(--text-2); font-size:15px; line-height:1.7; max-width:78ch; margin:30px 0 24px;">
-        Not only Apple. The same NaviBeat runs on Android, Windows and Linux:
-      </p>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap:14px;">
         <a href="android" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
           <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for Android</p>
           <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">A <strong style="color:var(--text-0);">native</strong> player for Android phones and Android TV, with Android Auto. Karaoke lyrics, offline, 10-band EQ. $5.99 once on Google Play. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
+        </a>
+        <a href="macos" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for Mac</p>
+          <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">A <strong style="color:var(--text-0);">real native Mac app</strong>, not an iPhone binary on Apple Silicon. Mini Player pins on top. Syncs to a Rockbox iPod. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
         </a>
         <a href="windows" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
           <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for Windows</p>
@@ -1114,7 +1114,20 @@
           <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for Linux</p>
           <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">A <strong style="color:var(--text-0);">native Linux desktop</strong> client. Time-synced lyrics, Mini Player, downloads, 10-band EQ and Rockbox iPod sync. Free. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
         </a>
+        <a href="ipad" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for iPad</p>
+          <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">A <strong style="color:var(--text-0);">real iPadOS layout</strong> with a sidebar and a grid built for the display, not a phone app letterboxed on a bigger screen. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
+        </a>
+        <a href="appletv" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for Apple TV</p>
+          <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">One of only <strong style="color:var(--text-0);">a handful</strong> of Subsonic clients with a native tvOS app, and it is also on every other Apple device you own. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
+        </a>
+        <a href="applewatch" style="display:block; background:var(--bg-1); border:1px solid var(--border); border-radius:12px; padding:20px; text-decoration:none;">
+          <p class="eyebrow eyebrow--accent" style="margin:0 0 8px;">Best for Apple Watch</p>
+          <p style="margin:0; color:var(--text-1); font-size:14.5px; line-height:1.65;">Music stored <strong style="color:var(--text-0);">on the watch</strong>, downloaded straight from your server. Leave the phone at home and still run with your library. <span style="color:var(--accent-hi);">See why &rarr;</span></p>
+        </a>
       </div>
+
 
       <div style="margin-top:34px; padding-top:26px; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; align-items:center; gap:18px; justify-content:space-between;">
         <p style="margin:0; color:var(--text-2); font-size:14.5px; line-height:1.7; max-width:62ch;">
@@ -1464,7 +1477,7 @@
         </button></h3>
         <div class="faq__panel" id="faq-diff" inert>
           <div class="faq__a">
-            NaviBeat is a single native app that spans all five Apple platforms, iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, for one $5.99 Universal Purchase. It is built in SwiftUI for each device rather than a wrapped web view, supports Navidrome multi-library switching server-side, ships time-synced lyrics, internet radio, offline pinning, and Server Health diagnostics, and has no backend, no analytics, and no tracking. It works with Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic server.
+            NaviBeat is a single native app that spans all five Apple platforms, iPhone, iPad, Mac, Apple TV, and Apple Watch, plus CarPlay, for one $5.99 Universal Purchase. It is built in SwiftUI for each device rather than a wrapped web view, supports Navidrome multi-library switching server-side, ships time-synced lyrics, internet radio, offline pinning, and Server Health diagnostics, and has no backend, no analytics, and no tracking. It works with Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic server. The same client is also on Android phones, Android TV and Android Auto, on Windows and on Linux.
           </div>
         </div>
       </div>
@@ -1524,7 +1537,7 @@
         </button></h3>
         <div class="faq__panel" id="faq-6" inert>
           <div class="faq__a">
-            Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for <strong>Cloudflare Access</strong> (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an <strong>mTLS client certificate</strong>, or simply reach your server over <strong>Tailscale</strong>. Custom headers work on every platform; mTLS client certificates on iPhone, iPad, Mac and Apple TV. No third-party relay sits in between.
+            Yes. NaviBeat is built for self-hosters who lock their server down. On the connection screen you can add custom HTTP headers for <strong>Cloudflare Access</strong> (your CF-Access-Client-Id and CF-Access-Client-Secret) or Authelia, attach an <strong>mTLS client certificate</strong>, or simply reach your server over <strong>Tailscale</strong>. Custom headers work on every platform; mTLS client certificates on iPhone, iPad, Mac, Apple TV, Android, Windows and Linux. No third-party relay sits in between.
           </div>
         </div>
       </div>
@@ -1560,7 +1573,7 @@
         </button></h3>
         <div class="faq__panel" id="faq-5" inert>
           <div class="faq__a">
-            Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. The TestFlight beta is free and open on every Apple platform, so you can try it with your own library before buying. If something doesn&rsquo;t work, reach us at <a href="mailto:support@navibeat.app">support@navibeat.app</a>.
+            Apple handles refunds directly, through reportaproblem.apple.com, with a standard 90-day window. Google Play purchases are refunded by Google, under Google Play's refund policy. Windows has a five-day free trial with every feature, and a Windows refund request goes through Lemon Squeezy. Linux is free. The TestFlight beta is free on every Apple platform and starts with one email, so you can try it with your own library before buying. If something doesn&rsquo;t work, reach us at <a href="mailto:support@navibeat.app">support@navibeat.app</a>.
           </div>
         </div>
       </div>
@@ -1607,7 +1620,7 @@
           <span class="footer__brand-ic" aria-hidden="true"></span>
           <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
         </a>
-        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native Apple-ecosystem player for Navidrome and Subsonic. Built in Belgrade.</p>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native player for Navidrome and Subsonic, across the Apple ecosystem, Android, Linux and Windows. Built in Belgrade.</p>
         <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
         <div style="margin:16px 0 4px;">
           <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>

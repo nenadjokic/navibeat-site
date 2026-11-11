@@ -73,7 +73,10 @@
       "isPartOf": {
         "@id": "https://navibeat.app/#website"
       },
-      "dateModified": "2026-10-31",
+      "about": {
+        "@id": "https://navibeat.app/android#app"
+      },
+      "dateModified": "2026-11-11",
       "inLanguage": "en"
     },
     {
@@ -95,18 +98,26 @@
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://navibeat.app/android#app",
       "name": "NaviBeat for Android",
-      "operatingSystem": "Android 8.0+",
-      "applicationCategory": "MusicApplication",
+      "operatingSystem": "Android 8.0+, Android TV 9+",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Music Streaming Client",
+      "image": "https://navibeat.app/assets/icon-512.png",
       "url": "https://navibeat.app/android",
       "downloadUrl": "https://play.google.com/store/apps/details?id=app.navibeat.android",
+      "installUrl": "https://play.google.com/store/apps/details?id=app.navibeat.android",
       "screenshot": "https://navibeat.app/assets/screenshots/android/android-home.webp",
       "description": "A native Android music player for Navidrome, Airsonic, Gonic, or any OpenSubsonic server. Karaoke lyrics, offline downloads, a 10-band equalizer, Android TV and Android Auto, for $5.99 once on Google Play.",
       "offers": {
         "@type": "Offer",
         "price": "5.99",
         "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
         "url": "https://play.google.com/store/apps/details?id=app.navibeat.android"
+      },
+      "author": {
+        "@id": "https://navibeat.app/#org"
       },
       "publisher": {
         "@id": "https://navibeat.app/#org"
@@ -152,7 +163,7 @@
           "name": "Which Android version do I need?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Android 8.0 or newer."
+            "text": "Android 8.0 or newer on a phone, and Android 9 or newer on Android TV."
           }
         },
         {
@@ -243,7 +254,7 @@
 
           <dl class="key-facts" aria-label="NaviBeat for Android key facts" style="margin: 28px 0 0; padding: 18px 0 0; border-top: 1px solid var(--border); display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; font-size: 14px;">
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Platform</dt>
-            <dd style="margin: 0; color: var(--text-1);">Android 8.0 or newer, phone and Android TV, plus Android Auto</dd>
+            <dd style="margin: 0; color: var(--text-1);">Android 8.0 or newer on a phone, Android 9 or newer on Android TV, plus Android Auto</dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Price</dt>
             <dd style="margin: 0; color: var(--text-1);">$5.99 once, separate from the Apple apps</dd>
             <dt style="color: var(--text-2); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; align-self: center;">Server</dt>
@@ -439,7 +450,7 @@
         </div>
         <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Which Android version do I need?</h3>
-          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Android 8.0 or newer.</p>
+          <p style="margin:0; color:var(--text-1); font-size:15px; line-height:1.65;">Android 8.0 or newer on a phone, and Android 9 or newer on Android TV.</p>
         </div>
         <div class="faq__item" style="background:var(--bg-1); border:1px solid var(--border); border-radius:8px; padding:18px 22px;">
           <h3 style="font-size:17px; margin:0 0 8px; color:var(--text-0);">Does NaviBeat scrobble to Last.fm or ListenBrainz from Android?</h3>
