@@ -779,6 +779,13 @@ section { padding-block: var(--rhythm); }
     border-bottom: 1px solid var(--border);
     box-shadow: 0 22px 44px rgba(0, 0, 0, 0.42);
     padding: 6px 22px 18px;
+    /* With the Features and Platforms menus flattened into it, the panel is
+       taller than a phone screen. It scrolls inside itself so the last rows
+       and the store badges can always be reached. */
+    max-height: calc(100vh - 90px);
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   .nav--open .nav__links a.nav__link-hide-sm,
   .nav--open .nav__links .nav__link--navifin {

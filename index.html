@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>NaviBeat: Navidrome App for Apple, Android, Windows, Linux</title>
-  <meta name="description" content="Native Navidrome client for Apple TV, Mac, iPhone, iPad and Apple Watch, one $5.99 Universal Purchase. Also on Android ($5.99), Linux (free), Windows ($9.99).">
+  <meta name="description" content="Native Navidrome client for iPhone, iPad, Mac, Apple TV, Apple Watch, Android, Android TV, Windows and Linux. $5.99 on Apple and Android, $9.99 Windows, Linux free.">
   <meta name="theme-color" content="#0C0C0E">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="apple-itunes-app" content="app-id=6763518834">
@@ -15,7 +15,7 @@
   <link rel="alternate" hreflang="x-default" href="https://navibeat.app/">
 
   <meta property="og:title" content="NaviBeat: Navidrome &amp; Subsonic client for Apple, Android, Windows and Linux">
-  <meta property="og:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. Native SwiftUI Navidrome client with time-synced lyrics, internet radio, Mini Player, AutoMix, and sleep timer. One $5.99 Universal Purchase. Also on Android, Linux and Windows.">
+  <meta property="og:description" content="One Navidrome and OpenSubsonic player on iPhone, iPad, Mac, Apple TV, Apple Watch and CarPlay, Android phones, Android TV and Android Auto, Windows and Linux.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/">
   <meta property="og:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg?v=20260830">
@@ -27,7 +27,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NaviBeat: Navidrome client for Apple, Android, Windows and Linux">
-  <meta name="twitter:description" content="Apple TV, Mac, iPhone, iPad, Apple Watch. One $5.99 Universal Purchase. Also on Android, Linux and Windows.">
+  <meta name="twitter:description" content="One Navidrome and OpenSubsonic player on iPhone, iPad, Mac, Apple TV, Apple Watch and CarPlay, Android phones, Android TV and Android Auto, Windows and Linux.">
   <meta name="twitter:image" content="https://navibeat.app/assets/screenshots/tvos/navibeat-apple-tv-home-featured-album.jpg?v=20260830">
   <meta name="twitter:image:alt" content="NaviBeat on Apple TV 4K, Featured Album hero on the home screen.">
 
@@ -40,7 +40,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bigshouldersdisplay-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/atkinsonhyperlegiblenext-latin-var.woff2" crossorigin>
 
-  <link rel="stylesheet" href="styles.css?v=202611010030">
+  <link rel="stylesheet" href="styles.css?v=20261111">
   <link rel="stylesheet" href="artifact.css?v=202611010021">
   <link rel="preload" as="image"
         imagesrcset="assets/screenshots/macos/navibeat-mac-home-1000.webp?v=20260830 1000w, assets/screenshots/macos/navibeat-mac-home-2000.webp?v=20260830 2000w"
@@ -88,7 +88,8 @@
         "sameAs": [
           "https://www.navidrome.org/apps/",
           "https://play.google.com/store/apps/details?id=app.navibeat.android",
-          "https://apps.apple.com/app/navibeat/id6763518834"
+          "https://apps.apple.com/app/navibeat/id6763518834",
+          "https://github.com/nenadjokic/navibeat-linux"
         ]
       },
       {
@@ -456,7 +457,23 @@
           <a href="rockbox">Rockbox</a>
         </div>
       </div>
-      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-platforms">
+          Platforms<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-platforms">
+          <a href="/#platforms">All platforms</a>
+          <a href="iphone">iPhone</a>
+          <a href="ipad">iPad</a>
+          <a href="macos">Mac</a>
+          <a href="appletv">Apple TV</a>
+          <a href="applewatch">Apple Watch</a>
+          <a href="carplay">CarPlay</a>
+          <a href="android">Android</a>
+          <a href="windows">Windows</a>
+          <a href="linux">Linux</a>
+        </div>
+      </div>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
       <a href="https://navifin.app/" class="nav__link nav__link--navifin"><span class="nav__navifin-ic" aria-hidden="true"></span>NaviFin</a>
@@ -502,7 +519,7 @@
           <span class="word" style="animation-delay:390ms">own.</span>
         </h1>
         <p class="hero__sub">
-          NaviBeat is a native Navidrome and OpenSubsonic player for Apple TV, Mac, iPhone, iPad and Apple Watch. It is <strong style="color:var(--text-1);font-weight:600;">live on the App Store across all five Apple platforms</strong> at <span style="color:var(--accent);font-style:normal;">$5.99</span>, one purchase for every Apple device, forever. And now NaviBeat is <strong style="color:var(--text-1);font-weight:600;">on every platform</strong>: Android, Windows and Linux too.
+          NaviBeat is a native Navidrome and OpenSubsonic player for iPhone, iPad, Mac, Apple TV and Apple Watch, for Android phones and Android TV, and for Windows and Linux. <strong style="color:var(--text-1);font-weight:600;">$5.99 once for every Apple device</strong>, $5.99 once on Google Play, $9.99 on Windows after five free days, and free on Linux.
         </p>
         <div class="hero__ctas hero__ctas--stores">
           <div class="store-badges">
@@ -895,12 +912,22 @@
     </div>
   </section>
 
+  <!-- ======================================================= PLATFORMS: one section for every platform
+       The nav item "Platforms" lands here (/#platforms), so this wrapper starts above both
+       grids: the Apple grid first, then the Android, Windows and Linux grid. The JSON-LD
+       ItemList "#platforms" is a separate identifier and still lists the five Apple apps. -->
+  <section class="platforms-all" id="platforms" aria-labelledby="platforms-all-title">
+
   <!-- ======================================================= PLATFORMS BAND: real screenshot thumbnails -->
-  <section class="platforms" id="platforms" aria-labelledby="platforms-title">
+  <section class="platforms" id="apple" aria-labelledby="platforms-title">
     <div class="wrap">
       <div class="platforms__eyebrow reveal-stagger">
-        <p class="eyebrow eyebrow--accent">One purchase, five devices</p>
-        <h2 id="platforms-title" class="platforms__title">Every screen Apple makes. One receipt.</h2>
+        <p class="eyebrow eyebrow--accent">Platforms</p>
+        <h2 id="platforms-all-title" class="platforms__title">Every screen you listen on.</h2>
+      </div>
+      <div class="platforms__eyebrow reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Apple: one purchase, five devices</p>
+        <h3 id="platforms-title" class="h3">Every screen Apple makes. One receipt.</h3>
       </div>
 
       <ul class="plat-grid reveal-stagger" role="list">
@@ -1008,7 +1035,7 @@
     </div>
   </section>
 
-  <!-- ======================================================= WHAT'S NEXT: beyond Apple
+  <!-- ======================================================= ANDROID, WINDOWS AND LINUX
        A SEPARATE platform grid from the Apple one above, on purpose. The Apple section's
        thesis ("Every screen Apple makes. One receipt.") and the five-Apple-platforms
        JSON-LD / llms claim stay untouched. This grid is the non-Apple line: Linux (live,
@@ -1017,8 +1044,8 @@
   <section class="platforms platforms--next" id="android" aria-labelledby="next-title">
     <div class="wrap">
       <div class="platforms__eyebrow reveal-stagger">
-        <p class="eyebrow eyebrow--accent">What's next</p>
-        <h2 id="next-title" class="platforms__title">NaviBeat is on Android, Linux and Windows now. And it keeps going.</h2>
+        <p class="eyebrow eyebrow--accent">Android, Windows and Linux</p>
+        <h3 id="next-title" class="h3">The same player on Android, Windows and Linux.</h3>
       </div>
 
       <ul class="plat-grid plat-grid--trio reveal-stagger" role="list">
@@ -1074,6 +1101,8 @@
       </ul>
 
     </div>
+  </section>
+
   </section>
 
   <!-- ======================================================= FEATURES: 4 selling points -->
@@ -1308,7 +1337,7 @@
         <article class="f-card">
           <span class="f-card__idx">Always / Near-daily builds</span>
           <h3 class="h3">Built in the open, fixed within hours.</h3>
-          <p>Tester reports regularly turn into fixes the same day. Want the newest features months before the App Store release? <a href="beta" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Join the beta</a>, every platform is covered by one TestFlight link.</p>
+          <p>Tester reports regularly turn into fixes the same day. Want the newest features months before the App Store release? <a href="beta" style="color:var(--accent);border-bottom:1px solid var(--accent-dim)">Join the beta</a>: TestFlight on Apple and a Google Play tester list on Android, both by email.</p>
           <p class="f-card__kicker">Report it today, test the fix tomorrow.</p>
         </article>
 
@@ -1397,17 +1426,56 @@
   <!-- ======================================================= PRICE -->
   <section class="price" id="buy" aria-labelledby="price-title">
     <div class="wrap reveal">
-      <p class="eyebrow eyebrow--accent">Launch price</p>
-      <p class="price__h" id="price-title">One purchase. Every device.</p>
-      <div class="price__num" aria-label="Five dollars and ninety-nine cents">$5.99</div>
-      <p class="price__sub">One purchase. Every device. Forever.</p>
-      <div class="price__ctas">
-        <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834?pt=128824034&ct=site-index&mt=8" target="_blank" rel="noopener" aria-label="Get NaviBeat on the App Store">
-          <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-          </svg>
-          Get it on the App Store
-        </a>
+      <p class="eyebrow eyebrow--accent">Prices</p>
+      <p class="price__h" id="price-title">One price per platform. Paid once.</p>
+      <div class="features" style="margin-top:36px;">
+        <article class="f-card">
+          <span class="f-card__idx">Apple / iPhone, iPad, Mac, Apple TV, Apple Watch</span>
+          <h3 class="h3">$5.99 once</h3>
+          <div style="grid-column:2;grid-row:1 / span 3;">
+            <p>One Universal Purchase on the App Store. One purchase, every Apple device, forever.</p>
+            <div class="price__ctas" style="margin-top:16px;">
+              <a class="btn btn--primary" href="https://apps.apple.com/app/navibeat/id6763518834?pt=128824034&ct=site-index&mt=8" target="_blank" rel="noopener" aria-label="Get NaviBeat on the App Store">
+                <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                </svg>
+                Get it on the App Store
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="f-card">
+          <span class="f-card__idx">Android / Phone, Android TV, Android Auto</span>
+          <h3 class="h3">$5.99 once</h3>
+          <div style="grid-column:2;grid-row:1 / span 3;">
+            <p>On Google Play. A separate purchase from the Apple apps.</p>
+            <div class="price__ctas" style="margin-top:16px;">
+              <a class="btn btn--ghost" href="android" aria-label="Get NaviBeat for Android on Google Play">Get it on Google Play</a>
+            </div>
+          </div>
+        </article>
+        <article class="f-card">
+          <span class="f-card__idx">Windows / Windows 10 and 11</span>
+          <h3 class="h3">$9.99 once</h3>
+          <div style="grid-column:2;grid-row:1 / span 3;">
+            <p>Five days free with every feature. Then one licence key, for up to three computers.</p>
+            <div class="price__ctas" style="margin-top:16px;">
+              <a class="btn btn--ghost" href="windows" aria-label="Download NaviBeat for Windows">Download for Windows</a>
+            </div>
+          </div>
+        </article>
+        <article class="f-card">
+          <span class="f-card__idx">Linux / AppImage, apt, dnf, pacman</span>
+          <h3 class="h3">Free</h3>
+          <div style="grid-column:2;grid-row:1 / span 3;">
+            <p>An AppImage on GitHub, and signed apt, dnf and pacman repositories.</p>
+            <div class="price__ctas" style="margin-top:16px;">
+              <a class="btn btn--ghost" href="linux" aria-label="Download NaviBeat for Linux">Download for Linux</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="price__ctas" style="margin-top:32px;">
         <a class="link-quiet" href="https://www.navidrome.org" target="_blank" rel="noopener">Set up your Navidrome server&nbsp;&rarr;</a>
       </div>
     </div>
@@ -1418,7 +1486,7 @@
     <div class="wrap reveal">
       <p class="eyebrow eyebrow--accent">Beta program</p>
       <h2 class="h2" id="beta-cta-title" style="margin-bottom:14px;">Do you want to help test NaviBeat?</h2>
-      <p class="price__sub">If you are willing to share what you find, we would love to have you on the TestFlight group. iPhone, iPad, Mac, Apple TV, Apple Watch.</p>
+      <p class="price__sub">If you are willing to share what you find, we would love to have you testing. On Apple it is TestFlight, on Android a Google Play tester list. Both start with one email.</p>
       <div class="price__ctas">
         <a class="btn btn--ghost" href="beta" aria-label="Join the NaviBeat beta program">I want to be a beta tester</a>
         <a class="link-quiet" href="beta">How the program works&nbsp;&rarr;</a>
@@ -1684,7 +1752,7 @@
     </div>
     <div class="footer__bar">
       <span>&copy; 2026 Nenad Jokic &middot; <a href="https://navitech.dev/">navitech.dev</a> &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>Live on the App Store &middot; 1.5.9 out now</span>
+      <span>App Store 1.5.9 &middot; Google Play &middot; Windows and Linux 1.0.70</span>
     </div>
   </div>
 </footer>

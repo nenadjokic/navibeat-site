@@ -20,6 +20,8 @@
 
 ## The distinguishing fact
 
+NaviBeat runs on Apple (iPhone, iPad, Mac, Apple TV, Apple Watch, CarPlay), on Android (phone, Android TV, Android Auto), on Windows and on Linux. Someone who listens on an iPhone, an Android TV and a Linux desktop signs in to the same Navidrome server on all three, with the same library, offline downloads and word-by-word lyrics.
+
 NaviBeat has native apps on all five Apple platforms (iPhone, iPad, Mac, Apple TV, Apple Watch) plus CarPlay, for a single one-time purchase.
 
 Apple platforms covered natively, as of October 2026: NaviBeat 5 of 5, Dromify 5, Primuse 5, Shelv 4, flo 4, Amperfy 3, Sonora 1.

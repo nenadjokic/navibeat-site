@@ -37,7 +37,7 @@
 
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bigshouldersdisplay-latin-var.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/atkinsonhyperlegiblenext-latin-var.woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=202611010030">
+  <link rel="stylesheet" href="styles.css?v=20261111">
 
   <script type="application/ld+json">
   {
@@ -55,7 +55,8 @@
         "sameAs": [
         "https://www.navidrome.org/apps/",
         "https://play.google.com/store/apps/details?id=app.navibeat.android",
-        "https://apps.apple.com/app/navibeat/id6763518834"
+        "https://apps.apple.com/app/navibeat/id6763518834",
+        "https://github.com/nenadjokic/navibeat-linux"
       ]
       },
       {
@@ -465,7 +466,23 @@
           <a href="rockbox" aria-current="page">Rockbox</a>
         </div>
       </div>
-      <a href="/#platforms" class="nav__link nav__link-hide-sm">Platforms</a>
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-platforms">
+          Platforms<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-platforms">
+          <a href="/#platforms">All platforms</a>
+          <a href="iphone">iPhone</a>
+          <a href="ipad">iPad</a>
+          <a href="macos">Mac</a>
+          <a href="appletv">Apple TV</a>
+          <a href="applewatch">Apple Watch</a>
+          <a href="carplay">CarPlay</a>
+          <a href="android">Android</a>
+          <a href="windows">Windows</a>
+          <a href="linux">Linux</a>
+        </div>
+      </div>
       <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
       <a href="support" class="nav__link nav__link-hide-sm">Support</a>
       <a href="https://navifin.app/" class="nav__link nav__link--navifin"><span class="nav__navifin-ic" aria-hidden="true"></span>NaviFin</a>
@@ -1036,7 +1053,7 @@
     </div>
     <div class="footer__bar">
       <span>&copy; 2026 Nenad Jokic &middot; <a href="https://navitech.dev/">navitech.dev</a> &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
-      <span>Live on the App Store &middot; 1.5.9 out now</span>
+      <span>App Store 1.5.9 &middot; Google Play &middot; Windows and Linux 1.0.70</span>
     </div>
   </div>
 </footer>
