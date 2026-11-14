@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sound in NaviBeat: Gapless, Crossfade, ReplayGain and EQ</title>
+  <meta name="description" content="How NaviBeat plays your music: gapless playback, crossfade, ReplayGain, a 10-band equalizer with presets, Direct Playback and the format badges.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/sound">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/sound">
+
+  <meta property="og:title" content="Sound in NaviBeat: Gapless, Crossfade, ReplayGain and EQ">
+  <meta property="og:description" content="How NaviBeat plays your music: gapless playback, crossfade, ReplayGain, a 10-band equalizer with presets, Direct Playback and the format badges.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://navibeat.app/sound">
+  <meta property="og:image" content="https://navibeat.app/assets/icon-512.png">
+  <meta property="og:image:alt" content="NaviBeat icon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sound in NaviBeat: Gapless, Crossfade, ReplayGain and EQ">
+  <meta name="twitter:description" content="How NaviBeat plays your music: gapless playback, crossfade, ReplayGain, a 10-band equalizer with presets, Direct Playback and the format badges.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/icon-512.png">
+  <meta name="twitter:image:alt" content="NaviBeat icon">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bigshouldersdisplay-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/atkinsonhyperlegiblenext-latin-var.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261111">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
+        ]
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
+      },
+      "sameAs": [
+        "https://www.navidrome.org/apps/",
+        "https://play.google.com/store/apps/details?id=app.navibeat.android",
+        "https://apps.apple.com/app/navibeat/id6763518834",
+        "https://github.com/nenadjokic/navibeat-linux"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NaviBeat",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Features",
+          "item": "https://navibeat.app/features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sound",
+          "item": "https://navibeat.app/sound"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Sound in NaviBeat.",
+      "description": "How NaviBeat plays your music: gapless playback, crossfade, ReplayGain, a 10-band equalizer with presets, Direct Playback and the format badges.",
+      "url": "https://navibeat.app/sound",
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "author": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "url": "https://navibeat.app/#maker"
+      },
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does NaviBeat play gapless?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Gapless playback is on by default, and on the System engine NaviBeat trims the encoder silence in MP3 files so live albums join without a gap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does crossfade work on streamed songs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, once the whole file has arrived on the device. NaviBeat fetches it in the background while the song plays. A downloaded song already has the whole file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import an AutoEQ profile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In the equalizer, Import from text takes an AutoEQ ParametricEQ file. Shelf filters come in as shelves."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <span class="nav__mark-ic"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features">
+          Features<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-features">
+          <a href="features">Overview</a>
+          <a href="multi-library">Multi-Library</a>
+          <a href="widgets">Widgets</a>
+          <a href="lastfm">Last.fm</a>
+          <a href="listenbrainz">ListenBrainz</a>
+          <a href="rockbox">Rockbox</a>
+        </div>
+      </div>
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-platforms">
+          Platforms<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-platforms">
+          <a href="/#platforms">All platforms</a>
+          <a href="iphone">iPhone</a>
+          <a href="ipad">iPad</a>
+          <a href="macos">Mac</a>
+          <a href="appletv">Apple TV</a>
+          <a href="applewatch">Apple Watch</a>
+          <a href="carplay">CarPlay</a>
+          <a href="android">Android</a>
+          <a href="windows">Windows</a>
+          <a href="linux">Linux</a>
+        </div>
+      </div>
+      <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><span class="nav__navifin-ic" aria-hidden="true"></span>NaviFin</a>
+
+      <div class="nav__stores"><a class="nav__store" href="https://apps.apple.com/app/navibeat/id6763518834?pt=128824034&ct=site-articles&mt=8" target="_blank" rel="noopener"><img src="assets/badges/app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></a><a class="nav__store" href="android"><img src="assets/badges/google-play-badge.png" alt="Get it on Google Play" width="134" height="40"></a></div>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="p-hero" style="padding-bottom:0;">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <a href="features">Features</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">Sound</span>
+      </nav>
+      <h1 style="max-width:22ch; margin-top:18px;">Sound in NaviBeat.</h1>
+      <p class="p-hero__sub" style="max-width:62ch;">Gapless playback, crossfade, ReplayGain, the equalizer, and the badges that say what you hear.</p>
+      <p style="margin:14px 0 0; color:var(--text-2); font-size:14px;">By Nenad Jokic, who makes NaviBeat. <time datetime="2026-11-14">14 November 2026</time></p>
+    </div>
+  </section>
+
+  <section style="padding-top:clamp(28px,4vh,48px);">
+    <div class="wrap"><div class="prose" style="max-width:760px; margin:0;">
+<p>NaviBeat plays the files your Navidrome or Subsonic server holds. This page lists what it does with the sound on the way to your ears, and where each setting lives. Most of it is in Settings, Playback &amp; Audio, on iPhone, iPad, Mac and Apple TV.</p>
+
+<h2 id="gapless">Gapless playback</h2>
+<p>Gapless playback is on from the start. NaviBeat loads the next song before the current one ends, so songs from one album run into each other with no silence between them. The switch is Settings, Playback &amp; Audio, Gapless playback.</p>
+<p>MP3 files carry a little silence that the encoder added at the start and the end. The file's own header says how much. On the System engine, NaviBeat reads that header and ends the song where the music ends, so a live album joins without a click of silence.</p>
+    </div></div>
+  </section>
+
+  <section id="listen" aria-labelledby="listen-title">
+    <style>
+      .nb-vphone{position:relative;width:100%;max-width:340px;margin:0 auto;aspect-ratio:1470/3000}
+      .nb-vphone__screen{position:absolute;left:5.102%;top:2.2%;width:89.796%;height:95.6%;object-fit:cover;background:#000;border-radius:11%/5.2%;display:block}
+      .nb-vphone__bezel{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+      .nb-vphone__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;border:0;cursor:pointer;color:#fff;background:rgba(12,12,14,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:grid;place-items:center;box-shadow:0 6px 24px rgba(0,0,0,.45);transition:transform .15s ease,opacity .2s ease}
+      .nb-vphone__play svg{margin-left:4px}
+      .nb-vphone__play:hover{transform:translate(-50%,-50%) scale(1.06)}
+      .nb-vphone__play:focus-visible{outline:2px solid var(--accent,#ff8a2a);outline-offset:3px}
+      .nb-vphone.is-playing .nb-vphone__play{opacity:0;pointer-events:none}
+    </style>
+    <div class="wrap">
+      <div class="sec-head reveal-stagger">
+        <p class="eyebrow eyebrow--accent">Listen to it</p>
+        <h2 id="listen-title" class="h2">No gap, or a smooth fade.</h2>
+        <p class="body-copy" style="font-size:18px;margin-top:10px;">Two short recordings from an iPhone, with sound. Tap Play.</p>
+      </div>
+
+      <div class="p-shots">
+
+        <article class="p-shot reveal">
+          <figure class="p-shot__media">
+            <div class="nb-vphone">
+              <video class="nb-vphone__screen" src="/media/video/navibeat-iphone-gapless.mp4?v=20261027" poster="assets/video/navibeat-iphone-gapless-poster.webp?v=20261027" playsinline preload="none" aria-label="NaviBeat on iPhone playing an album in order with gapless playback"></video>
+              <img class="nb-vphone__bezel" src="assets/video/iphone-18-pro-max-bezel-760.webp?v=20261027" alt="iPhone frame around the gapless playback video" width="760" height="1551" aria-hidden="true">
+              <button class="nb-vphone__play" type="button" aria-label="Play the gapless video with sound"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            </div>
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">Playback / Gapless</p>
+            <h3>An album plays straight through.</h3>
+            <p>Songs from one album, played in order, with Gapless playback on.</p>
+            <p class="f-card__kicker">Recorded on an iPhone. Turn the sound on.</p>
+          </div>
+        </article>
+
+        <article class="p-shot p-shot--reverse reveal">
+          <figure class="p-shot__media">
+            <div class="nb-vphone">
+              <video class="nb-vphone__screen" src="/media/video/navibeat-iphone-crossfade.mp4?v=20261027" poster="assets/video/navibeat-iphone-crossfade-poster.webp?v=20261027" playsinline preload="none" aria-label="NaviBeat on iPhone crossfading between songs on shuffle"></video>
+              <img class="nb-vphone__bezel" src="assets/video/iphone-18-pro-max-bezel-760.webp?v=20261027" alt="iPhone frame around the crossfade playback video" width="760" height="1551" aria-hidden="true">
+              <button class="nb-vphone__play" type="button" aria-label="Play the crossfade video with sound"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button>
+            </div>
+          </figure>
+          <div class="p-shot__copy">
+            <p class="eyebrow">Playback / Crossfade</p>
+            <h3>One song fades into the next.</h3>
+            <p>Songs on shuffle, with Overlap tracks on.</p>
+            <p class="f-card__kicker">Recorded on an iPhone. Turn the sound on.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('.nb-vphone').forEach(function (box) {
+        var v = box.querySelector('video'), b = box.querySelector('.nb-vphone__play');
+        function toggle() { if (v.paused) { document.querySelectorAll('.nb-vphone video').forEach(function (o) { if (o !== v) o.pause(); }); v.play(); } else { v.pause(); } }
+        b.addEventListener('click', toggle);
+        v.addEventListener('click', toggle);
+        v.addEventListener('play', function () { box.classList.add('is-playing'); });
+        v.addEventListener('pause', function () { box.classList.remove('is-playing'); });
+        v.addEventListener('ended', function () { box.classList.remove('is-playing'); v.currentTime = 0; });
+      });
+    </script>
+  </section>
+
+  <section style="padding-top:clamp(28px,4vh,48px);">
+    <div class="wrap"><div class="prose" style="max-width:760px; margin:0;">
+<h2 id="crossfade">Crossfade</h2>
+<p>Turn on Overlap tracks in Settings, Playback &amp; Audio, Crossfade, and pick a Duration from 1 to 12 seconds. It starts at 5. The end of one song fades out while the next one fades in.</p>
+<p>The fade needs the whole song on the device. It works on downloaded songs, and on streamed songs once NaviBeat has fetched the full file in the background. On a slow connection, or with Low Data Mode on, a song can still end the normal way.</p>
+<p>Some songs are played the normal way on purpose:</p>
+<ul>
+<li>Songs from one album played in order, so the album runs as it was recorded. With Gapless playback off, they are crossfaded too. A shuffled queue is crossfaded.</li>
+<li>Songs shorter than three times the overlap.</li>
+<li>Live radio, the last song in the queue, and Repeat One.</li>
+</ul>
+<p>Crossfade runs on the System (AVPlayer) engine. On the AudioStreaming (beta) engine songs play one after another with no overlap. A server that needs a client certificate always plays on AudioStreaming, so crossfade does not apply there.</p>
+
+<h2 id="replaygain">ReplayGain</h2>
+<p>ReplayGain evens out loudness between songs. Your server reads the gain values from the file tags, and NaviBeat applies them. Settings, Playback &amp; Audio, ReplayGain has four modes:</p>
+<ul>
+<li><strong>Auto</strong>, the default: album gain when the queue is one album, track gain for playlists, shuffled queues and favorites.</li>
+<li><strong>Track</strong>: each song is brought to the same loudness.</li>
+<li><strong>Album</strong>: the album's own loud and quiet parts are kept. A song with no album value uses its track value.</li>
+<li><strong>Off</strong>.</li>
+</ul>
+<p>A Preamp from -15 to +15 dB, in half-dB steps, is added on top. When the file says how loud its peak is, NaviBeat lowers the gain so the song does not clip.</p>
+
+<h2 id="equalizer">Equalizer</h2>
+<p>A 10-band equalizer, from 31.5 Hz to 16 kHz, with up to 12 dB of boost or cut per band. It works on both playback engines. Open it in Settings, Playback &amp; Audio, Equalizer, or from the ... menu in Now Playing.</p>
+<ul>
+<li>Seven presets: Flat, Rock, Pop, Jazz, Vocal, Bass Boost and Treble Boost.</li>
+<li>Save your own curve as a preset, as many as you like. A preset keeps its own preamp, for headroom when a curve boosts.</li>
+<li>Parametric mode moves each band's frequency and width (Q). A band can be a peak, a low shelf or a high shelf.</li>
+<li>Import from text takes an AutoEQ ParametricEQ file for your headphones. Copy as text gives you a preset to paste on another device.</li>
+<li>Off in CarPlay steps the equalizer aside while the car is the output, for a car that has its own. It comes back when you leave the car.</li>
+</ul>
+<p class="f-card__kicker">The equalizer screen is on iPhone, iPad and Mac.</p>
+
+<h2 id="direct-playback">Direct Playback</h2>
+<p>Direct Playback plays the file exactly as it is stored. It turns off the equalizer, ReplayGain and crossfade, and asks your server for the untouched file on Wi-Fi and on mobile data alike. Songs you already downloaded keep playing as they were downloaded.</p>
+<p>NaviBeat then asks the system to play at the file's own sample rate. On the Mac it sets your output device to each song's sample rate when the device supports it, and puts your own rate back afterwards. Your output device and how it is connected decide the rest. Direct Playback runs on the System (AVPlayer) engine.</p>
+
+<h2 id="badges">What the badges say</h2>
+<p>A small badge in Now Playing says what you are hearing:</p>
+<ul>
+<li>The format and bitrate, for example <code>MP3 &middot; 320 KBPS</code>.</li>
+<li><code>HI-RES</code> with the bit depth and sample rate, for example <code>HI-RES &middot; 24/96</code>.</li>
+<li><code>TRANSCODE</code> when your server converts the song as it streams.</li>
+<li><code>DOWNLOAD</code> when the song plays from a file on the device.</li>
+</ul>
+<p>On iPhone, iPad and Mac, tap the badge in Now Playing to switch between the detailed and the simple look.</p>
+<p>On Apple TV, Now Playing shows two badges. One says what the file is, such as Lossless or Hi-Res Lossless. The other says what happened to it on the way out: Direct, a new output rate such as Output 48 kHz, Downmixed to stereo, or Processed.</p>
+
+<h2 id="engines">Two playback engines</h2>
+<p>Settings, Playback &amp; Audio, Advanced, Playback engine picks System (AVPlayer) or AudioStreaming (beta). Quit and relaunch NaviBeat after a change. AudioStreaming reads the stream in byte ranges, so a stalled mobile connection does not send the song back to the start.</p>
+
+<h2 id="airplay">AirPlay</h2>
+<p>On the Mac, AirPlay plays from the System engine. If you are on AudioStreaming and pick AirPlay, NaviBeat moves the music to the System engine first and goes on from the same place. On the Mac, AirPlay does not work with a client certificate, because the certificate keeps playback on AudioStreaming. The AirPlay row says so.</p>
+
+<h2>Questions</h2>
+<h3>Does NaviBeat play gapless?</h3>
+<p>Yes. Gapless playback is on by default, and on the System engine NaviBeat trims the encoder silence in MP3 files so live albums join without a gap.</p>
+<h3>Does crossfade work on streamed songs?</h3>
+<p>Yes, once the whole file has arrived on the device. NaviBeat fetches it in the background while the song plays. A downloaded song already has the whole file.</p>
+<h3>Can I import an AutoEQ profile?</h3>
+<p>Yes. In the equalizer, Import from text takes an AutoEQ ParametricEQ file. Shelf filters come in as shelves.</p>
+
+<p style="margin-top:28px;">More on the rest of the app: <a href="features">all features</a>, and <a href="changelog">what changed in each version</a>.</p>
+    </div></div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="/">
+          <span class="footer__brand-ic" aria-hidden="true"></span>
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native player for Navidrome and Subsonic, across the Apple ecosystem, Android, Linux and Windows. Built in Belgrade.</p>
+        <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img decoding="async" class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Platforms</h3>
+        <ul>
+          <li><a href="appletv">Apple TV</a></li>
+          <li><a href="macos">Mac</a></li>
+          <li><a href="android">Android</a></li>
+          <li><a href="linux">Linux</a></li>
+          <li><a href="windows">Windows</a></li>
+          <li><a href="rockbox">Rockbox</a></li>
+          <li><a href="iphone">iPhone</a></li>
+          <li><a href="ipad">iPad</a></li>
+          <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="carplay">CarPlay</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support">Help center</a></li>
+          <li><a href="articles">Guides</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="terms">Terms of Service</a></li>
+          <li><a href="support">FAQ</a></li>
+        </ul>
+        <h3 style="margin-top:28px;">Navidrome client</h3>
+        <ul>
+          <li><a href="iphone">Navidrome client for iPhone</a></li>
+          <li><a href="macos">Navidrome client for Mac</a></li>
+          <li><a href="appletv">Navidrome client for Apple TV</a></li>
+          <li><a href="android">Navidrome client for Android</a></li>
+          <li><a href="windows">Navidrome client for Windows</a></li>
+          <li><a href="linux">Navidrome client for Linux</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; <a href="https://navitech.dev/">navitech.dev</a> &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { sio.observe(el); });
+
+      /* Fallback sweep, same as linux.html: a fast scroll can outrun the observer and
+         leave a block at opacity 0, so anything whose top is already above the
+         viewport is revealed on the next frame. */
+      var revPending = [].slice.call(document.querySelectorAll('.reveal, .reveal-stagger, .p-stats'));
+      var revQueued = false;
+      var revSweep = function () {
+        revQueued = false;
+        var revLate = [], revRest = [], revI, revEl;
+        for (revI = 0; revI < revPending.length; revI++) {
+          revEl = revPending[revI];
+          (revEl.classList.contains('is-in') || revEl.getBoundingClientRect().top < 0
+            ? revLate : revRest).push(revEl);
+        }
+        for (revI = 0; revI < revLate.length; revI++) {
+          revLate[revI].classList.add('is-in');
+          sio.unobserve(revLate[revI]);
+        }
+        revPending = revRest;
+        if (!revPending.length) { window.removeEventListener('scroll', revOnScroll); }
+      };
+      var revOnScroll = function () {
+        if (!revQueued) { revQueued = true; requestAnimationFrame(revSweep); }
+      };
+      window.addEventListener('scroll', revOnScroll, { passive: true });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { el.classList.add('is-in'); });
+    }
+  })();
+</script>
+
+  <script defer src="lightbox.js?v=202609061417"></script>
+<script src="nav-menu.js?v=202609061100" defer></script>
+</body>
+</html>

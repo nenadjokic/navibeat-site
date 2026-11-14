@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Connect NaviBeat to Navidrome: Setup and Troubleshooting</title>
+  <meta name="description" content="How to connect NaviBeat to your Navidrome server on iPhone, iPad, Mac and Apple TV, and what to do when it does not connect.">
+  <meta name="theme-color" content="#0C0C0E">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <link rel="canonical" href="https://navibeat.app/connect-navidrome">
+  <link rel="alternate" hreflang="en" href="https://navibeat.app/connect-navidrome">
+
+  <meta property="og:title" content="Connect NaviBeat to Navidrome: Setup and Troubleshooting">
+  <meta property="og:description" content="How to connect NaviBeat to your Navidrome server on iPhone, iPad, Mac and Apple TV, and what to do when it does not connect.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://navibeat.app/connect-navidrome">
+  <meta property="og:image" content="https://navibeat.app/assets/icon-512.png">
+  <meta property="og:image:alt" content="NaviBeat icon">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="NaviBeat">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Connect NaviBeat to Navidrome: Setup and Troubleshooting">
+  <meta name="twitter:description" content="How to connect NaviBeat to your Navidrome server on iPhone, iPad, Mac and Apple TV, and what to do when it does not connect.">
+  <meta name="twitter:image" content="https://navibeat.app/assets/icon-512.png">
+  <meta name="twitter:image:alt" content="NaviBeat icon">
+
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/bigshouldersdisplay-latin-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/atkinsonhyperlegiblenext-latin-var.woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261111">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://navibeat.app/#org",
+      "name": "NaviBeat",
+      "url": "https://navibeat.app/",
+      "logo": "https://navibeat.app/assets/icon-512.png",
+      "email": "support@navibeat.app",
+      "founder": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "sameAs": [
+          "https://www.linkedin.com/in/nenad-jokic/"
+        ]
+      },
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Belgrade, Serbia"
+      },
+      "sameAs": [
+        "https://www.navidrome.org/apps/",
+        "https://play.google.com/store/apps/details?id=app.navibeat.android",
+        "https://apps.apple.com/app/navibeat/id6763518834",
+        "https://github.com/nenadjokic/navibeat-linux"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "NaviBeat",
+          "item": "https://navibeat.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://navibeat.app/articles"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Connect to Navidrome",
+          "item": "https://navibeat.app/connect-navidrome"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Connect NaviBeat to Navidrome.",
+      "description": "How to connect NaviBeat to your Navidrome server on iPhone, iPad, Mac and Apple TV, and what to do when it does not connect.",
+      "url": "https://navibeat.app/connect-navidrome",
+      "datePublished": "2026-11-14",
+      "dateModified": "2026-11-14",
+      "author": {
+        "@type": "Person",
+        "name": "Nenad Jokic",
+        "url": "https://navibeat.app/#maker"
+      },
+      "publisher": {
+        "@id": "https://navibeat.app/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What address do I type for Navidrome?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The address you use in a browser. At home that is usually http://, the computer's address and port 4533. Away from home it is your public https address."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can NaviBeat not find my server on Wi-Fi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most often Local Network access is off for NaviBeat. On iPhone and iPad it is in Settings > NaviBeat > Local Network, and on the Mac in System Settings > Privacy & Security > Local Network."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does NaviBeat work with a self-signed certificate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Use a certificate from a public authority, such as Let's Encrypt or Tailscale HTTPS, or plain http on your home network."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="/" aria-label="NaviBeat home">
+      <span class="nav__mark" aria-hidden="true">
+        <span class="nav__mark-ic"></span>
+      </span>
+      <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+    </a>
+    <nav class="nav__links" id="primary-nav" aria-label="Primary">
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-features">
+          Features<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-features">
+          <a href="features">Overview</a>
+          <a href="multi-library">Multi-Library</a>
+          <a href="widgets">Widgets</a>
+          <a href="lastfm">Last.fm</a>
+          <a href="listenbrainz">ListenBrainz</a>
+          <a href="rockbox">Rockbox</a>
+        </div>
+      </div>
+      <div class="nav__group nav__link-hide-sm">
+        <button class="nav__trigger nav__link" type="button" aria-expanded="false" aria-controls="nav-menu-platforms">
+          Platforms<span class="nav__caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav__menu" id="nav-menu-platforms">
+          <a href="/#platforms">All platforms</a>
+          <a href="iphone">iPhone</a>
+          <a href="ipad">iPad</a>
+          <a href="macos">Mac</a>
+          <a href="appletv">Apple TV</a>
+          <a href="applewatch">Apple Watch</a>
+          <a href="carplay">CarPlay</a>
+          <a href="android">Android</a>
+          <a href="windows">Windows</a>
+          <a href="linux">Linux</a>
+        </div>
+      </div>
+      <a href="roadmap" class="nav__link nav__link-hide-sm">Roadmap</a>
+      <a href="support" class="nav__link nav__link-hide-sm">Support</a>
+      <a href="https://navifin.app/" class="nav__link nav__link--navifin"><span class="nav__navifin-ic" aria-hidden="true"></span>NaviFin</a>
+
+      <div class="nav__stores"><a class="nav__store" href="https://apps.apple.com/app/navibeat/id6763518834?pt=128824034&ct=site-articles&mt=8" target="_blank" rel="noopener"><img src="assets/badges/app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></a><a class="nav__store" href="android"><img src="assets/badges/google-play-badge.png" alt="Get it on Google Play" width="134" height="40"></a></div>
+    </nav>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="p-hero" style="padding-bottom:0;">
+    <div class="p-hero__ambient" aria-hidden="true">
+      <span class="p-hero__glow"></span>
+      <span class="p-hero__grid-lines"></span>
+    </div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="/">NaviBeat</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <a href="articles">Articles</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb__current">Connect to Navidrome</span>
+      </nav>
+      <h1 style="max-width:22ch; margin-top:18px;">Connect NaviBeat to Navidrome.</h1>
+      <p class="p-hero__sub" style="max-width:62ch;">The steps on iPhone, iPad, Mac and Apple TV, and what each error means when it does not work.</p>
+      <p style="margin:14px 0 0; color:var(--text-2); font-size:14px;">By Nenad Jokic, who makes NaviBeat. <time datetime="2026-11-14">14 November 2026</time></p>
+    </div>
+  </section>
+
+  <section style="padding-top:clamp(28px,4vh,48px);">
+    <div class="wrap"><div class="prose" style="max-width:760px; margin:0;">
+<p>NaviBeat needs three things from you: your server's address, a username and a password. This guide walks through the sign-in screen, then lists what each error means. It works the same for Navidrome and for other Subsonic servers.</p>
+
+<h2 id="before">Before you start</h2>
+<ul>
+<li>Navidrome is running, and you can open its web page from a browser.</li>
+<li>You know its address. At home that is usually the computer's address and port 4533, for example <code>http://192.168.1.20:4533</code>. Away from home it is your public address, for example <code>https://music.example.com</code>.</li>
+<li>You have a Navidrome user and its password.</li>
+</ul>
+
+<h2 id="iphone-mac">On iPhone, iPad and Mac</h2>
+<ol>
+<li>Open NaviBeat. With no server yet, it shows <strong>Connect to your Navidrome server</strong>.</li>
+<li>Type the address in <strong>Server URL</strong>. If you leave out <code>http://</code> or <code>https://</code>, NaviBeat uses http for a home address and https for anything else.</li>
+<li>If you have a public address and a home address for the same server, put the public one in Server URL and the home one in <strong>Local network URL (optional)</strong>. NaviBeat uses the home address on your Wi-Fi and the public one when you are away.</li>
+<li>Type your <strong>Username</strong> and <strong>Password</strong>. When your server offers API keys, NaviBeat says <em>This server accepts API keys.</em> and you can tap <strong>Sign in with an API key</strong> instead.</li>
+<li>If a login page such as Cloudflare Access or Authelia sits in front of Navidrome, open <strong>Advanced (custom HTTP headers)</strong> and use <strong>Add header</strong> for each header it needs. <a href="navidrome-remote-access#reverse-proxy">More on reverse proxies</a>.</li>
+<li>If your server needs a client certificate (mTLS), open <strong>Client certificate (mTLS)</strong>, type the <strong>Certificate password</strong>, then tap <strong>Import certificate (.p12)</strong>.</li>
+<li>Tap <strong>Connect</strong>. After the first sign-in, a short setup follows.</li>
+</ol>
+<p>Your password is kept in the Keychain and sent only to your own server. <a href="privacy">The privacy policy</a> says how it syncs to your other Apple devices.</p>
+
+<h2 id="apple-tv">On Apple TV</h2>
+<ol>
+<li>Open NaviBeat. It shows <strong>Connect to your Navidrome</strong>.</li>
+<li>Fill in <strong>Server URL</strong>, <strong>Username</strong> and <strong>Password</strong>. Typing is faster with the Apple TV Remote on your iPhone: open Control Center, tap the Apple TV Remote, and use its keyboard.</li>
+<li>Behind a reverse proxy, add the headers under <strong>Advanced (custom HTTP headers)</strong>. Headers set on iPhone or Mac do not carry over to the Apple TV, so type them here.</li>
+<li>Choose <strong>Connect</strong>.</li>
+</ol>
+<p>The Apple TV form has no home address field, because an Apple TV stays at home. Certificate import is on iPhone, iPad and Mac.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>When a sign-in fails, NaviBeat shows the error and, under it, the address it tried. <strong>Copy details</strong> puts both on the clipboard for a support mail, without your username or password.</p>
+
+<h3 id="no-answer">"That address did not answer"</h3>
+<p>NaviBeat waited 8 seconds and nothing answered. The line under it reads <em>Tried &hellip;, nothing answered in 8 seconds.</em> The address may be right and just out of reach from where you are. Check these, in this order:</p>
+<ul>
+<li><strong>Local Network permission.</strong> iPhone and iPad: Settings &gt; NaviBeat &gt; Local Network. Mac: System Settings &gt; Privacy &amp; Security &gt; Local Network &gt; NaviBeat. It must be on to reach a server on your home Wi-Fi. When it is off, NaviBeat says so and offers <strong>Open Settings</strong>. Apple TV has no such switch.</li>
+<li><strong>iCloud Private Relay.</strong> If your server is on a private address (192.168.x.x, 10.x.x.x, .local or Tailscale), turn Private Relay off and try again.</li>
+<li><strong>VPN.</strong> A VPN that routes all traffic can block addresses on your home network. Disconnect it and try again.</li>
+</ul>
+
+<h3 id="https-http">https or http on a home address</h3>
+<p>Navidrome on a home network usually speaks plain http on port 4533, with no certificate. If you type <code>https://</code> in front of a home address and the secure connection fails, NaviBeat tries once more with <code>http://</code> and keeps that. This covers 192.168.x.x, 10.x.x.x, 172.16 to 172.31, Tailscale addresses (100.64 to 100.127), and names that end in .local, .lan, .home or .internal.</p>
+<p>A public address gets no second try, so a real certificate problem shows. If the certificate is self-signed, NaviBeat says: <em>This device does not trust the server's certificate. A certificate from a public authority, for example Let's Encrypt, works, and so does plain http on your home network.</em> NaviBeat has no switch to trust a self-signed certificate, because that would also accept a stranger's certificate for the same address.</p>
+
+<h3 id="proxy-page">A reverse proxy that answers with a sign-in page</h3>
+<p>A login page such as Cloudflare Access or Authelia answers NaviBeat with a web page meant for a browser. NaviBeat then shows <em>Server returned an unexpected (non-JSON) response. A proxy, VPN, or iCloud Private Relay may be intercepting the connection.</em> If the proxy refuses outright, the error reads <em>HTTP 401</em> or <em>HTTP 403</em>.</p>
+<p>Two ways out. Add the headers your login page accepts, in Advanced (custom HTTP headers). Or let the path NaviBeat uses, <code>/rest/</code>, through the proxy without the login page. NaviBeat sends the headers only to the Server URL, never to the home address.</p>
+
+<h3 id="password">Wrong password, or a server that refuses tokens</h3>
+<p><em>Wrong username or password.</em> comes from your server. Type the password again. If it starts or ends with a space, NaviBeat warns you, because the space is sent as typed.</p>
+<p>NaviBeat signs in with a token first. Some servers do not accept tokens, for example when the password is checked against LDAP, or when Navidrome has token sign-in turned off. When the server answers that, NaviBeat signs in with the password instead and remembers that for the server. If the server refuses that too, NaviBeat says <em>This server refused both of the ways NaviBeat sends a password.</em> Then sign in with an API key, if your server offers one.</p>
+
+<h2>Questions</h2>
+<h3>What address do I type for Navidrome?</h3>
+<p>The address you use in a browser. At home that is usually <code>http://</code>, the computer's address and port 4533. Away from home it is your public https address.</p>
+<h3>Why can NaviBeat not find my server on Wi-Fi?</h3>
+<p>Most often Local Network access is off for NaviBeat. On iPhone and iPad it is in Settings &gt; NaviBeat &gt; Local Network, and on the Mac in System Settings &gt; Privacy &amp; Security &gt; Local Network.</p>
+<h3>Does NaviBeat work with a self-signed certificate?</h3>
+<p>No. Use a certificate from a public authority, such as Let's Encrypt or Tailscale HTTPS, or plain http on your home network.</p>
+
+<p style="margin-top:28px;">Away from home? Read <a href="navidrome-remote-access">Navidrome remote access without port forwarding</a>. Still stuck? <a href="support">The help center</a> has more, and <a href="mailto:support@navibeat.app">support@navibeat.app</a> reaches me.</p>
+    </div></div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="/">
+          <span class="footer__brand-ic" aria-hidden="true"></span>
+          <span class="nav__brand-text">Navi<span class="brand-beat">Beat</span></span>
+        </a>
+        <p style="max-width: 34ch; color: var(--text-1); font-size:14px; line-height:1.65;">A native player for Navidrome and Subsonic, across the Apple ecosystem, Android, Linux and Windows. Built in Belgrade.</p>
+        <!-- Support / tip jar: the same two links as the in-app tip jar (Buy Me a Coffee + PayPal.me). -->
+        <div style="margin:16px 0 4px;">
+          <span style="display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-2); margin-bottom:9px;">Support the developer</span>
+          <span style="display:inline-flex; flex-wrap:wrap; gap:8px;">
+            <a href="https://buymeacoffee.com/nenadjokic" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#000; background:#FFDD00; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#9749;</span> Buy Me a Coffee</a>
+            <a href="https://paypal.me/nenadjokicRS" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#fff; background:#0070BA; border-radius:8px; padding:7px 12px; text-decoration:none;"><span aria-hidden="true">&#10084;&#65039;</span> PayPal</a>
+          </span>
+        </div>
+        <!-- Sister app cross-promo: mirrors the NaviBeat card on navifin.app -->
+        <a class="sibling-card" href="https://navifin.app/" aria-label="NaviFin, the native Jellyfin player for the Apple ecosystem, from the same maker">
+          <img decoding="async" class="sibling-card__icon" src="assets/navifin/navifin-icon-88.png" alt="NaviFin" width="44" height="44">
+          <span class="sibling-card__text">
+            <span class="sibling-card__label">From the same maker</span>
+            <span class="sibling-card__name">NaviFin <span aria-hidden="true">&rarr;</span></span>
+            <span class="sibling-card__desc">The native Jellyfin video client.</span>
+          </span>
+        </a>
+      </div>
+      <div>
+        <h3>Platforms</h3>
+        <ul>
+          <li><a href="appletv">Apple TV</a></li>
+          <li><a href="macos">Mac</a></li>
+          <li><a href="android">Android</a></li>
+          <li><a href="linux">Linux</a></li>
+          <li><a href="windows">Windows</a></li>
+          <li><a href="rockbox">Rockbox</a></li>
+          <li><a href="iphone">iPhone</a></li>
+          <li><a href="ipad">iPad</a></li>
+          <li><a href="applewatch">Apple Watch</a></li>
+          <li><a href="carplay">CarPlay</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="support">Help center</a></li>
+          <li><a href="articles">Guides</a></li>
+          <li><a href="mailto:support@navibeat.app">Email us</a></li>
+          <li><a href="https://www.navidrome.org" target="_blank" rel="noopener">Navidrome setup</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy">Privacy</a></li>
+          <li><a href="terms">Terms of Service</a></li>
+          <li><a href="support">FAQ</a></li>
+        </ul>
+        <h3 style="margin-top:28px;">Navidrome client</h3>
+        <ul>
+          <li><a href="iphone">Navidrome client for iPhone</a></li>
+          <li><a href="macos">Navidrome client for Mac</a></li>
+          <li><a href="appletv">Navidrome client for Apple TV</a></li>
+          <li><a href="android">Navidrome client for Android</a></li>
+          <li><a href="windows">Navidrome client for Windows</a></li>
+          <li><a href="linux">Navidrome client for Linux</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>&copy; 2026 Nenad Jokic &middot; <a href="https://navitech.dev/">navitech.dev</a> &middot; Made with <span class="footer__heart">&#10084;</span> in Belgrade</span>
+      
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('reveal-ready');
+  (function () {
+    var nav = document.getElementById('nav');
+    if (nav) {
+      var navS = function () { nav.classList.toggle('is-scrolled', window.scrollY > 24); };
+      navS(); window.addEventListener('scroll', navS, { passive: true });
+      var navToggle = nav.querySelector('.nav__toggle');
+      if (navToggle) {
+        var setNav = function (open) {
+          nav.classList.toggle('nav--open', open);
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        };
+        navToggle.addEventListener('click', function () { setNav(!nav.classList.contains('nav--open')); });
+        nav.querySelectorAll('.nav__links a').forEach(function (a) { a.addEventListener('click', function () { setNav(false); }); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
+      }
+    }
+    if ('IntersectionObserver' in window) {
+      var sio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); sio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.07 });
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { sio.observe(el); });
+
+      /* Fallback sweep, same as linux.html: a fast scroll can outrun the observer and
+         leave a block at opacity 0, so anything whose top is already above the
+         viewport is revealed on the next frame. */
+      var revPending = [].slice.call(document.querySelectorAll('.reveal, .reveal-stagger, .p-stats'));
+      var revQueued = false;
+      var revSweep = function () {
+        revQueued = false;
+        var revLate = [], revRest = [], revI, revEl;
+        for (revI = 0; revI < revPending.length; revI++) {
+          revEl = revPending[revI];
+          (revEl.classList.contains('is-in') || revEl.getBoundingClientRect().top < 0
+            ? revLate : revRest).push(revEl);
+        }
+        for (revI = 0; revI < revLate.length; revI++) {
+          revLate[revI].classList.add('is-in');
+          sio.unobserve(revLate[revI]);
+        }
+        revPending = revRest;
+        if (!revPending.length) { window.removeEventListener('scroll', revOnScroll); }
+      };
+      var revOnScroll = function () {
+        if (!revQueued) { revQueued = true; requestAnimationFrame(revSweep); }
+      };
+      window.addEventListener('scroll', revOnScroll, { passive: true });
+    } else {
+      document.querySelectorAll('.reveal, .reveal-stagger, .p-stats').forEach(function (el) { el.classList.add('is-in'); });
+    }
+  })();
+</script>
+
+  <script defer src="lightbox.js?v=202609061417"></script>
+<script src="nav-menu.js?v=202609061100" defer></script>
+</body>
+</html>

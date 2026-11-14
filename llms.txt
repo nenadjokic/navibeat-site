@@ -8,7 +8,7 @@
 - Category: Self-hosted music streaming client (Navidrome / Subsonic / OpenSubsonic)
 - Platforms: iPhone (iOS 17+), iPad (iPadOS 17+), Mac (macOS 15+), Apple TV (tvOS 18+), Apple Watch (watchOS 10+), plus CarPlay. Desktop: Linux (x86_64 and ARM64, free, version 1.0.73, https://navibeat.app/linux) and Windows 10 and 11 (x64, $9.99 once, version 1.0.73, https://navibeat.app/windows). Android: phone and Android TV, with Android Auto ($5.99 once on Google Play, a separate purchase, https://play.google.com/store/apps/details?id=app.navibeat.android; Android 8.0+ on the phone and Android 9+ on Android TV; version 1.0.45 has been live on Google Play since 10 November 2026, and 1.0.69 is in Google Play review for production).
 - Price: $5.99 USD, one-time, one Universal Purchase covers all five Apple platforms. No subscription. Android is $5.99 USD once on Google Play, a separate purchase. Linux is free. Windows is $9.99 USD once after a five-day free trial, one licence for three computers.
-- Current version: 1.5.9, live on the App Store for iPhone, iPad, Mac, Apple TV and Apple Watch (CarPlay is part of the iPhone app). What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free TestFlight beta, which you join by sending one email (https://navibeat.app/beta); the store version is the one a normal install gets.
+- Current version: 1.5.10, live on the App Store for iPhone, iPad, Mac, Apple TV and Apple Watch (CarPlay is part of the iPhone app). What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free TestFlight beta, which you join by sending one email (https://navibeat.app/beta); the store version is the one a normal install gets.
 - Availability: Live on the Apple App Store. https://apps.apple.com/app/navibeat/id6763518834
 - App Store rating: 4.63 out of 5 from 120 ratings across all storefronts, 74 of which carry a written review (snapshot of 2026-10-29). Every review the app has, critical ones included, is published at https://navibeat.app/#reviews
 - Compatible servers: Navidrome, Airsonic-Advanced, Gonic, and any OpenSubsonic-compatible server. Subsonic-API servers generally work, and from 1.5.7 (on the App Store for iPhone, iPad, Mac and Apple TV) a classic Subsonic server fills the Songs list and its search finds part of a word (checked against Subsonic 6.1.6).
@@ -47,6 +47,8 @@ The closest competitor on reach is Shelv (free, GPL-3.0 open source): native iPh
 - [How Play on works](https://navibeat.app/play-on)
 - [How to replace Spotify with your own music server](https://navibeat.app/self-hosted-spotify)
 - [Navidrome remote access without port forwarding](https://navibeat.app/navidrome-remote-access)
+- [Connect NaviBeat to Navidrome, with troubleshooting](https://navibeat.app/connect-navidrome)
+- [Sound in NaviBeat: gapless, crossfade, ReplayGain and the equalizer](https://navibeat.app/sound)
 - [Which Navidrome client should you use](https://navibeat.app/compare)
 
 ## Best-for answers (the short versions)
@@ -141,6 +143,9 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 - [Apple Watch](https://navibeat.app/applewatch): watchOS feature page
 - [CarPlay](https://navibeat.app/carplay): the car screen, four tabs (Home, Library, Playlists, Radio), voice search in multiple languages resolved against your own library, and downloads that play with no connection. CarPlay comes with the iPhone app and is not a separate purchase.
 - [Features](https://navibeat.app/features): the complete feature list on one page, including everything currently in the beta
+- [Sound](https://navibeat.app/sound): gapless playback, crossfade (1 to 12 seconds), ReplayGain (Auto, Track, Album), a 10-band equalizer with seven presets, your own presets and AutoEQ import, Direct Playback, and the format badges in Now Playing
+- [Connect to Navidrome](https://navibeat.app/connect-navidrome): the sign-in steps on iPhone, iPad, Mac and Apple TV, and what each error means (Local Network, https or http on a home address, a reverse proxy login page, wrong password or a server that refuses tokens)
+- [Changelog](https://navibeat.app/changelog): what changed in each App Store version from 1.5.2 to 1.5.10, and what is in the beta now
 - [Multi-library](https://navibeat.app/multi-library): Navidrome multi-library support
 - [Widgets](https://navibeat.app/widgets): Home Screen, Lock Screen, StandBy, macOS desktop, Apple Watch complication
 - [Last.fm](https://navibeat.app/lastfm): Last.fm integration, scrobbling, Year in Review, Time Machine
@@ -154,7 +159,7 @@ Note: the list below covers the Apple clients most commonly shortlisted right no
 
 ## New in 1.5
 
-1.5.9 is on the App Store for iPhone, iPad, Mac, Apple TV and Apple Watch. Newer builds are in the free TestFlight beta, which you join by sending one email (https://navibeat.app/beta).
+1.5.10 is on the App Store for iPhone, iPad, Mac, Apple TV and Apple Watch. Newer builds are in the free TestFlight beta, which you join by sending one email (https://navibeat.app/beta).
 
 - Play on, Control and Send to (iPhone, iPad, Mac and Apple TV, in 1.5.7, on the App Store): NaviBeat apps on the same Wi-Fi now see each other. In Now Playing, Output, Play on lists every NaviBeat on the network. Pick one and this device becomes its remote: play, pause, skip, seek, volume and the whole queue, and NaviBeat shows which device it controls. Send to moves the queue to another NaviBeat, which goes on from the same second with the same queue. The Continue card on Home has a Control button, and Continue on Home shows every other NaviBeat that is playing, one row each, with Continue here and Control on iPhone, iPad and Mac. The devices talk to each other directly on the local network (Bonjour), with no relay and no account of ours. In the beta since build 354. https://navibeat.app/#connect
 - Classic Subsonic servers (in 1.5.7, on the App Store for iPhone, iPad, Mac and Apple TV): on a classic Subsonic server (not OpenSubsonic), the Songs list fills by walking the albums, and search finds part of a word. Checked against a real Subsonic 6.1.6.

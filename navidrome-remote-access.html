@@ -95,7 +95,7 @@
       "description": "Reach Navidrome away from home without opening a port: Tailscale or Cloudflare Tunnel, which one to pick, and how it works behind CGNAT.",
       "url": "https://navibeat.app/navidrome-remote-access",
       "datePublished": "2026-10-31",
-      "dateModified": "2026-10-31",
+      "dateModified": "2026-11-14",
       "author": {
         "@type": "Person",
         "name": "Nenad Jokic",
@@ -234,8 +234,22 @@
 <h2>Which one should you pick?</h2>
 <p>If only you listen and you are mostly on Wi-Fi, take Tailscale. If you listen in the car, or other people use the server, take the tunnel.</p>
 <h2>Using it in NaviBeat</h2>
-<p>NaviBeat works with both. For a Cloudflare Access or Authelia login, add custom HTTP headers to the server. mTLS client certificates work too. You can set a home address and a remote address on one server, and Settings &gt; Server &amp; Library &gt; Server addresses shows which route is active. All of this goes straight to your server, with no relay of mine in between.</p>
+<p>NaviBeat works with both. All of the settings below go straight to your server, with no relay of mine in between. The sign-in steps are in <a href="connect-navidrome">Connect NaviBeat to Navidrome</a>.</p>
 <p>If the car is the problem whatever you choose, download the album before you leave. <a href="support#vpn-cellular-stutter">More on stutter over a VPN</a>.</p>
+<h2 id="reverse-proxy">Behind a reverse proxy</h2>
+<h3 id="custom-headers">Custom headers</h3>
+<p>A login page such as Cloudflare Access or Authelia stops any request without its token. On the sign-in screen, open Advanced (custom HTTP headers) and add each header it needs, for example <code>CF-Access-Client-Id</code> and <code>CF-Access-Client-Secret</code> for a Cloudflare Access service token. NaviBeat sends them on every request to your Server URL, covers included. It never sends them to your home address or to any other site. On Apple TV, type the headers on the TV: headers set on iPhone or Mac do not carry over.</p>
+<p>Without the headers, a login page answers with a web page, and NaviBeat says the server returned an unexpected (non-JSON) response. You can also let the path <code>/rest/</code> through the proxy without the login page.</p>
+<h3 id="client-certificate">Client certificate (mTLS)</h3>
+<p>If your proxy asks for a client certificate, import it on iPhone, iPad or Mac: open Client certificate (mTLS), type the certificate password, then Import certificate (.p12). NaviBeat presents it on every connection. Playback then runs on the AudioStreaming engine, because Apple's standard player cannot present a certificate to a live stream. An Apple Watch gets the certificate from the iPhone.</p>
+<h3 id="server-certificate">The server's own certificate</h3>
+<p>Use a real certificate, for example from Let's Encrypt, or Tailscale HTTPS on a tailnet name. NaviBeat does not offer a switch to trust a self-signed certificate, because that switch would also accept anyone else's certificate for the same address. On your home network, plain http works too.</p>
+<h3 id="tailscale">Tailscale</h3>
+<p>A Tailscale address such as <code>http://100.101.102.103:4533</code> works as typed. If you type https in front of it and the server has no certificate, NaviBeat tries once more with http. When the only address you saved is a Tailscale address, NaviBeat does not count it as your home network, so it treats you as away from home.</p>
+<h3 id="home-away">Home and away on one server</h3>
+<p>Put the public address in Server URL and the home one in Local network URL (optional). NaviBeat uses the home address only after your own Navidrome has answered there, and only on Wi-Fi or a wired network. On mobile data it goes to the public address without trying the home one. Settings &gt; Server &amp; Library &gt; Server addresses shows which one is active now: Home network or Primary.</p>
+<p>The switch applies to the next request. A song that was streaming from home when you walk out can stall for a moment and then go on from the public address.</p>
+<p>One address for both, with split DNS, works as well. When your server answers at a private address, NaviBeat knows you are home, and your home quality applies.</p>
 <h2>Questions</h2>
 <h3>Can I use Navidrome outside my home without port forwarding?</h3>
 <p>Yes. Tailscale and Cloudflare Tunnel both work without opening a port on your router, and both work behind CGNAT.</p>
@@ -305,6 +319,15 @@
           <li><a href="privacy">Privacy</a></li>
           <li><a href="terms">Terms of Service</a></li>
           <li><a href="support">FAQ</a></li>
+        </ul>
+        <h3 style="margin-top:28px;">Navidrome client</h3>
+        <ul>
+          <li><a href="iphone">Navidrome client for iPhone</a></li>
+          <li><a href="macos">Navidrome client for Mac</a></li>
+          <li><a href="appletv">Navidrome client for Apple TV</a></li>
+          <li><a href="android">Navidrome client for Android</a></li>
+          <li><a href="windows">Navidrome client for Windows</a></li>
+          <li><a href="linux">Navidrome client for Linux</a></li>
         </ul>
       </div>
     </div>
