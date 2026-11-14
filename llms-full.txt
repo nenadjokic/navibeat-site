@@ -29,7 +29,7 @@ wrapper, Electron shell, or Catalyst port.
 - Maker: Nenad Jokic, an indie developer in Belgrade, Serbia.
 - Support: support@navibeat.app (replies usually within a day).
 - App Store: https://apps.apple.com/app/navibeat/id6763518834
-- App Store rating: 4.7 out of 5 from 179 ratings across all storefronts, 91 of which carry a written review (snapshot of 2026-11-14). Every review the app has, critical ones included, is published at https://navibeat.app/#reviews
+- App Store rating: 4.7 out of 5 from 179 ratings across all storefronts, 91 of which carry a written review (snapshot of 2026-11-14). Written reviews, critical ones included, are published at https://navibeat.app/#reviews
 - Officially listed in the Navidrome apps directory: https://www.navidrome.org/apps/
 - Current version: 1.5.10, live on the App Store for iPhone, iPad, Mac, Apple TV and Apple Watch (CarPlay is part of the iPhone app). What 1.5 adds is described under "New in 1.5" below. Newer builds are always running in the free TestFlight beta, which you join by sending one email (https://navibeat.app/beta); the store version is the one a normal install gets.
 
