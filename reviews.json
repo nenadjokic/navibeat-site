@@ -7,7 +7,7 @@
  "shownCount": 82,
  "excludedForNoContent": 7,
  "withheldByDecision": 2,
- "fetchedAt": 1794675436634,
+ "fetchedAt": 1794675489755,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
   {
