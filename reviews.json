@@ -1,15 +1,135 @@
 {
- "count": 120,
- "average": 4.63,
+ "count": 179,
+ "average": 4.7,
  "headlineSource": "iTunes lookup ratings aggregate, all storefronts",
- "writtenCount": 74,
- "writtenAverage": 4.47,
- "shownCount": 69,
- "excludedForNoContent": 5,
- "withheldByDecision": 0,
- "fetchedAt": 1793301731431,
+ "writtenCount": 91,
+ "writtenAverage": 4.44,
+ "shownCount": 82,
+ "excludedForNoContent": 7,
+ "withheldByDecision": 2,
+ "fetchedAt": 1794675436634,
  "source": "App Store Connect snapshot (scripts/gen-reviews-snapshot.py)",
  "reviews": [
+  {
+   "author": "mrbrenthoover",
+   "rating": 5,
+   "title": "Great player with tons of features",
+   "body": "I have a Navidrome server that I spend a lot of time loading with new music. This app really opens up the possibilities of enjoying listening to music. I especially enjoy the ability to create your own playlists that will play in any Navidrome client!\n\nI have had a couple of interactions with the developer and they have been very responsive and kind.\n\nKeep up the great work!",
+   "territory": "USA",
+   "date": "2026-11-12T17:00:28-08:00"
+  },
+  {
+   "author": "Alois v.R.",
+   "rating": 5,
+   "title": "Good app, but no sorting for songs in genres",
+   "body": "Please add sorting for songs in each genre.",
+   "territory": "DEU",
+   "date": "2026-11-12T13:46:23-08:00"
+  },
+  {
+   "author": "Jeff.Avery",
+   "rating": 5,
+   "title": "Great app",
+   "body": "I’ve been using it for a while now and it really is well developed and maintained.  Worth the price for sure.",
+   "territory": "USA",
+   "date": "2026-11-10T08:10:54-08:00"
+  },
+  {
+   "author": "Magregar",
+   "rating": 5,
+   "title": "Exceptional Quality",
+   "body": "The app is top notch, packed with features, and actively developed. Well worth the price, considering how good it is, and how many platforms it supports",
+   "territory": "GBR",
+   "date": "2026-11-09T03:53:37-08:00"
+  },
+  {
+   "author": "Steam",
+   "rating": 5,
+   "title": "One of the best Navidrome players",
+   "body": "Fantastic app, brilliantly supported! Great for a music nerd like me!",
+   "territory": "GBR",
+   "date": "2026-11-07T16:41:30-08:00"
+  },
+  {
+   "author": "Nianhbg",
+   "rating": 5,
+   "title": "Great app",
+   "body": "Wow best client for naviddrome that i could find. Using it daily. Thanks alot. Keep up a great work",
+   "territory": "SWE",
+   "date": "2026-11-07T10:53:23-08:00"
+  },
+  {
+   "author": "Wehrmont",
+   "rating": 5,
+   "title": "What a great music organizer!",
+   "body": "I love this app. Be carefully organizes all your music which reinvented my music library for me.  Previously, I had to use a simple music player and it was only good on one computer. Now, with a VPN connection back to my home, I can stream my music from anywhere on earth. It’s amazing.",
+   "territory": "USA",
+   "date": "2026-11-07T10:33:38-08:00"
+  },
+  {
+   "author": "Cory Trever",
+   "rating": 5,
+   "title": "Best Option Available",
+   "body": "Works fantastic on all Apple devices and presents your music exactly how it should. Tried them all this is the one.",
+   "territory": "AUS",
+   "date": "2026-11-03T14:28:11-08:00"
+  },
+  {
+   "author": "Angelmtzp",
+   "rating": 5,
+   "title": "The music app for Navidrome",
+   "body": "If you have a home lab and want to get the closest experience to a paid music app this is it. I got this app yesterday and I am very impressed with the amount of features that it has, is polished and after using all the free apps to stream my music, I would say this is the best.\n\nFew things I would add to make it perfect:\n\n1. Add a speed dial like YouTube music so you can choose random songs on the go.\n\n2. Merge albums that contain multiple discs, or give the user an option to do it.\n\n3. A normalize audio option would be nice, some of my songs are louder than others, I couldn't find an option for this but it would be nice for people with different music quality.\n\nGreat work and I am very excited to see any new features in the future!",
+   "territory": "USA",
+   "date": "2026-11-03T10:21:28-08:00"
+  },
+  {
+   "author": "Benicchio",
+   "rating": 5,
+   "title": "My main navidrome player on every device",
+   "body": "The interface is great, integration with Last.fm is amazing, it’s  blazing fast, fully customizable, allows multiple servers, it has everything. My main player on every device.",
+   "territory": "BRA",
+   "date": "2026-11-02T19:29:52-08:00"
+  },
+  {
+   "author": "ChesterDKat",
+   "rating": 5,
+   "title": "Fantastic application!",
+   "body": "This app is near flawless and the best app for playing from a Navidrome server. Genius!",
+   "territory": "USA",
+   "date": "2026-11-02T18:17:02-08:00"
+  },
+  {
+   "author": "Jt0#0",
+   "rating": 5,
+   "title": "Great app!",
+   "body": "Works perfectly! Love the app. Very responsive developer",
+   "territory": "USA",
+   "date": "2026-10-31T18:08:47-07:00"
+  },
+  {
+   "author": "Aaron L. Duy",
+   "rating": 5,
+   "title": "Awesome App. Best purchase I made in a while !",
+   "body": "This app is the first time that makes me feel I do not need a Spotify subscription due to the sheer amount of features it have. I really look forward for it to grow and more features are added.",
+   "territory": "USA",
+   "date": "2026-10-31T07:41:01-07:00"
+  },
+  {
+   "author": "Ilyasidorov_",
+   "rating": 5,
+   "title": "This is the best music player!",
+   "body": "A huge number of functions and useful features",
+   "territory": "TUR",
+   "date": "2026-10-30T12:51:35-07:00"
+  },
+  {
+   "author": "Eivind_",
+   "rating": 1,
+   "title": "Feels a bit like slopware",
+   "body": "E.g., I can’t continue playing an offline playlist, even though I last played it offline\n\nAnd the most recent update introduce new paid features",
+   "territory": "NOR",
+   "date": "2026-10-29T10:41:54-07:00"
+  },
   {
    "author": "EnigmaForsaken",
    "rating": 5,
@@ -171,14 +291,6 @@
    "date": "2026-10-04T02:34:37-07:00"
   },
   {
-   "author": "Benicchio",
-   "rating": 5,
-   "title": "My main navidrome player",
-   "body": "Finally it’s mature! Fully customizable, allows multiple servers, quality configuration on Wi-Fi and mobile, light and the integration with last.fm rocks.",
-   "territory": "BRA",
-   "date": "2026-10-03T20:31:04-07:00"
-  },
-  {
    "author": "otonielguajardo",
    "rating": 5,
    "title": "Unbeatable product quality",
@@ -211,7 +323,7 @@
    "date": "2026-09-28T02:05:38-07:00"
   },
   {
-   "author": "didbaizbkalaozoz4646",
+   "author": "ICEEEEE_",
    "rating": 4,
    "title": "才开始用就被惊艳",
    "body": "确实很强，不管是在mac还是在iPad、iPhone上，它支持的功能和设计真的很符合我的需要！",
@@ -233,14 +345,6 @@
    "body": "Super mooi en strak design. En eindelijk een app die de radio sectie van navidrome eindelijk goed weer geeft met logo’s van de radiozenders. Top App keep up de good work 🥹",
    "territory": "NLD",
    "date": "2026-09-24T00:45:14-07:00"
-  },
-  {
-   "author": "Alois v.R.",
-   "rating": 5,
-   "title": "Good app",
-   "body": "Nice features, i use it everyday for my large collection",
-   "territory": "DEU",
-   "date": "2026-09-24T00:13:50-07:00"
   },
   {
    "author": "ReviewBot909",
