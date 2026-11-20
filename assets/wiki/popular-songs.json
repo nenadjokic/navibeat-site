@@ -1,0 +1,18 @@
+{
+ "file": "popular-songs.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Artists & Albums > Popular songs, with Popular songs marked",
+ "caption": "iPhone, Settings > Appearance & Language > Artists & Albums > Popular songs.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 49.06,
+   "w": 27.42,
+   "h": 3.38,
+   "label": "Popular songs",
+   "text": "A flame marks up to three popular songs on each album."
+  }
+ ],
+ "found": true
+}

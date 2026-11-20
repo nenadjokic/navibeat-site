@@ -1,0 +1,18 @@
+{
+ "file": "pause-other-devices-on-handoff.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Pause other devices on handoff, with Pause other devices on handoff marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Pause other devices on handoff.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.84,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Pause other devices on handoff",
+   "text": "When you continue on another device, this one stops by itself."
+  }
+ ],
+ "found": true
+}

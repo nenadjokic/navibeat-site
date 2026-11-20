@@ -1,0 +1,18 @@
+{
+ "file": "libraries.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Libraries, with Libraries marked",
+ "caption": "iPhone, Settings > Server & Library > Libraries.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 50.05,
+   "w": 17.65,
+   "h": 3.38,
+   "label": "Libraries",
+   "text": "Picks which of your server's music libraries NaviBeat shows."
+  }
+ ],
+ "found": true
+}

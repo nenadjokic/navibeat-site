@@ -1,0 +1,18 @@
+{
+ "file": "hide-navibeat-mixes-in-playlists.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Hide NaviBeat Mixes in Playlists, with Hide NaviBeat Mixes in Playlists marked",
+ "caption": "iPhone, Settings > Server & Library > Hide NaviBeat Mixes in Playlists.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 65.2,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Hide NaviBeat Mixes in Playlists",
+   "text": "Leaves NaviBeat's own mixes out of the Playlists list."
+  }
+ ],
+ "found": true
+}

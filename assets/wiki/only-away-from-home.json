@@ -1,0 +1,18 @@
+{
+ "file": "only-away-from-home.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Only away from home, with Only away from home marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Only away from home.",
+ "marks": [
+  {
+   "x": 11.36,
+   "y": 82.36,
+   "w": 80.91,
+   "h": 4.18,
+   "label": "Only away from home",
+   "text": "Streams as usual on your home network, and plays downloads everywhere else."
+  }
+ ],
+ "found": true
+}

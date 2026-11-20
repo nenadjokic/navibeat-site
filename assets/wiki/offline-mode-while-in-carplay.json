@@ -1,0 +1,18 @@
+{
+ "file": "offline-mode-while-in-carplay.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Devices > Offline Mode while in CarPlay, with Offline Mode while in CarPlay marked",
+ "caption": "iPhone, Settings > Devices > Offline Mode while in CarPlay.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 21.16,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Offline Mode while in CarPlay",
+   "text": "Switches to downloaded music only while the car is connected."
+  }
+ ],
+ "found": true
+}

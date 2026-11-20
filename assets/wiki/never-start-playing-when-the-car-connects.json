@@ -1,0 +1,18 @@
+{
+ "file": "never-start-playing-when-the-car-connects.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Devices > Never start playing when the car connects, with Never start playing when the car connects marked",
+ "caption": "iPhone, Settings > Devices > Never start playing when the car connects.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 39.26,
+   "w": 84.55,
+   "h": 5.68,
+   "label": "Never start playing when the car connects",
+   "text": "Stops your car from starting NaviBeat by itself when CarPlay connects."
+  }
+ ],
+ "found": true
+}

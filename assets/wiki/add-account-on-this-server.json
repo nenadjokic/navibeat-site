@@ -1,0 +1,18 @@
+{
+ "file": "add-account-on-this-server.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Add Account on This Server, with Add Account on This Server marked",
+ "caption": "iPhone, Settings > Server & Library > Add Account on This Server.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Add Account on This Server",
+   "text": "Signs in with another account on the same server."
+  }
+ ],
+ "found": true
+}

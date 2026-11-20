@@ -1,0 +1,18 @@
+{
+ "file": "show-top-songs-on-artist-pages.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Artists & Albums > Show Top Songs on Artist Pages, with Show Top Songs on Artist Pages marked",
+ "caption": "iPhone, Settings > Appearance & Language > Artists & Albums > Show Top Songs on Artist Pages.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Show Top Songs on Artist Pages",
+   "text": "Shows the artist's top songs on their artist page."
+  }
+ ],
+ "found": true
+}

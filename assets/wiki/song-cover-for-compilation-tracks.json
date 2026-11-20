@@ -1,0 +1,18 @@
+{
+ "file": "song-cover-for-compilation-tracks.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Now Playing > Song cover for compilation tracks, with Song cover for compilation tracks marked",
+ "caption": "iPhone, Settings > Appearance & Language > Now Playing > Song cover for compilation tracks.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 39.23,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Song cover for compilation tracks",
+   "text": "On a compilation, shows each song's own single or album cover from Last.fm."
+  }
+ ],
+ "found": true
+}

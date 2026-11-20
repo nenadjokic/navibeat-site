@@ -52,6 +52,7 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://navibeat.app/sitemap.xml
+Sitemap: https://navibeat.app/sitemap-wiki.xml
 
 # Plain-text summaries of this site for language models, in the llms.txt
 # convention. Not a registered robots.txt directive, so it is a comment: it is

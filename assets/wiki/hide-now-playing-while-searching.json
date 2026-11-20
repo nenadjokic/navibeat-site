@@ -1,0 +1,18 @@
+{
+ "file": "hide-now-playing-while-searching.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Theme & Accent > Hide Now Playing While Searching, with Hide Now Playing While Searching marked",
+ "caption": "iPhone, Settings > Appearance & Language > Theme & Accent > Hide Now Playing While Searching.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 44.6,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Hide Now Playing While Searching",
+   "text": "Hides the mini player while you type a search, so the results get more room."
+  }
+ ],
+ "found": true
+}

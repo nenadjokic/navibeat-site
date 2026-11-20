@@ -1,0 +1,18 @@
+{
+ "file": "saved-servers.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Saved Servers, with Saved Servers marked",
+ "caption": "iPhone, Settings > Server & Library > Saved Servers.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 44.18,
+   "w": 93.64,
+   "h": 5.47,
+   "label": "Saved Servers",
+   "text": "Switch between servers and accounts in two taps."
+  }
+ ],
+ "found": true
+}

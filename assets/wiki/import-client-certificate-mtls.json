@@ -1,0 +1,18 @@
+{
+ "file": "import-client-certificate-mtls.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Import client certificate (mTLS), with Import client certificate (mTLS) marked",
+ "caption": "iPhone, Settings > Server & Library > Import client certificate (mTLS).",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Import client certificate (mTLS)",
+   "text": "Signs in to a server that asks for a client certificate (mutual TLS)."
+  }
+ ],
+ "found": true
+}

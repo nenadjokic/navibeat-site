@@ -1,0 +1,18 @@
+{
+ "file": "album-covers.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Album covers, with Album covers marked",
+ "caption": "iPhone, Settings > Server & Library > Album covers.",
+ "marks": [
+  {
+   "x": 19.55,
+   "y": 50.02,
+   "w": 26.29,
+   "h": 3.38,
+   "label": "Album covers",
+   "text": "Server Health: how many of your albums have a cover on your server."
+  }
+ ],
+ "found": true
+}

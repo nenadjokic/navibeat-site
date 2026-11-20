@@ -1,0 +1,18 @@
+{
+ "file": "accent-color.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Theme & Accent > Accent Color, with Accent Color marked",
+ "caption": "iPhone, Settings > Appearance & Language > Theme & Accent > Accent Color.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 29.62,
+   "w": 25.15,
+   "h": 3.38,
+   "label": "Accent Color",
+   "text": "The highlight color for buttons, sliders and selections."
+  }
+ ],
+ "found": true
+}

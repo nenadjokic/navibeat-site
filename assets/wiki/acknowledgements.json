@@ -1,0 +1,18 @@
+{
+ "file": "acknowledgements.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > About > Acknowledgements, with Acknowledgements marked",
+ "caption": "iPhone, Settings > About > Acknowledgements.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Acknowledgements",
+   "text": "The open source software NaviBeat uses, with their licenses."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "listenbrainz.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Scrobbling & Stats > ListenBrainz, with ListenBrainz marked",
+ "caption": "iPhone, Settings > Scrobbling & Stats > ListenBrainz.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 39.96,
+   "w": 93.64,
+   "h": 5.47,
+   "label": "ListenBrainz",
+   "text": "Connect ListenBrainz for your listen stats, Weekly and Daily Jams, and loved songs."
+  }
+ ],
+ "found": true
+}

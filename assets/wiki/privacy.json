@@ -1,0 +1,18 @@
+{
+ "file": "privacy.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > About > Privacy, with Privacy marked",
+ "caption": "iPhone, Settings > About > Privacy.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Privacy",
+   "text": "What NaviBeat does with your data: it talks only to your own server."
+  }
+ ],
+ "found": true
+}

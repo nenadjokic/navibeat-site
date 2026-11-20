@@ -1,0 +1,18 @@
+{
+ "file": "open-now-playing-when-a-song-starts.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Devices > Open Now Playing when a song starts, with Open Now Playing when a song starts marked",
+ "caption": "iPhone, Settings > Devices > Open Now Playing when a song starts.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 27.79,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Open Now Playing when a song starts",
+   "text": "Opens Now Playing in CarPlay when you start a song."
+  }
+ ],
+ "found": true
+}

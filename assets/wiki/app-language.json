@@ -1,0 +1,18 @@
+{
+ "file": "app-language.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Language > App Language, with App Language marked",
+ "caption": "iPhone, Settings > Appearance & Language > Language > App Language.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 17.38,
+   "w": 27.88,
+   "h": 3.38,
+   "label": "App Language",
+   "text": "Picks the language NaviBeat is shown in, separate from your device language."
+  }
+ ],
+ "found": true
+}

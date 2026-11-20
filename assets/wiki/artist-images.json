@@ -1,0 +1,18 @@
+{
+ "file": "artist-images.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Artist images, with Artist images marked",
+ "caption": "iPhone, Settings > Server & Library > Artist images.",
+ "marks": [
+  {
+   "x": 19.55,
+   "y": 45.82,
+   "w": 25.45,
+   "h": 3.38,
+   "label": "Artist images",
+   "text": "Server Health: how many of your artists have a picture on your server."
+  }
+ ],
+ "found": true
+}

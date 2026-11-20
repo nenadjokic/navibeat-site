@@ -1,0 +1,18 @@
+{
+ "file": "scrobble-after.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Scrobble after, with Scrobble after marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Scrobble after.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 44.98,
+   "w": 27.35,
+   "h": 3.38,
+   "label": "Scrobble after",
+   "text": "How much of a song has to play before it counts as a listen."
+  }
+ ],
+ "found": true
+}

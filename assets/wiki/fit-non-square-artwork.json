@@ -1,0 +1,18 @@
+{
+ "file": "fit-non-square-artwork.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Now Playing > Fit non-square artwork, with Fit non-square artwork marked",
+ "caption": "iPhone, Settings > Appearance & Language > Now Playing > Fit non-square artwork.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Fit non-square artwork",
+   "text": "Shows covers that are not square in full on Now Playing, without cropping."
+  }
+ ],
+ "found": true
+}

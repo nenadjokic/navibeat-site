@@ -1,0 +1,18 @@
+{
+ "file": "reset-pairing.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Reset pairing, with Reset pairing marked",
+ "caption": "iPhone, Settings > Server & Library > Reset pairing.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Reset pairing",
+   "text": "Signs NaviBeat out of your server and goes back to the pairing screen."
+  }
+ ],
+ "found": true
+}

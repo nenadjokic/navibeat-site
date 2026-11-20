@@ -1,0 +1,18 @@
+{
+ "file": "smooth-shuffle.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Smooth shuffle, with Smooth shuffle marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Smooth shuffle.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 45.33,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Smooth shuffle",
+   "text": "Shuffle picks each next song to fit the one before it, using your tags."
+  }
+ ],
+ "found": true
+}

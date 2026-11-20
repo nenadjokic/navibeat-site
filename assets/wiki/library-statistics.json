@@ -1,0 +1,18 @@
+{
+ "file": "library-statistics.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Library statistics, with Library statistics marked",
+ "caption": "iPhone, Settings > Server & Library > Library statistics.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Library statistics",
+   "text": "How many songs, albums and artists you have, total playing time and a genre breakdown."
+  }
+ ],
+ "found": true
+}

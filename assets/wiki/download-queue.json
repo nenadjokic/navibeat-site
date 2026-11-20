@@ -1,0 +1,18 @@
+{
+ "file": "download-queue.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Download queue, with Download queue marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Download queue.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 26.6,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Download queue",
+   "text": "Shows downloads in progress, including songs being sent to your Apple Watch."
+  }
+ ],
+ "found": true
+}

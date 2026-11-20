@@ -1,0 +1,18 @@
+{
+ "file": "remote-streaming-quality.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Remote streaming quality, with Remote streaming quality marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Remote streaming quality.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 44.42,
+   "w": 46.74,
+   "h": 3.38,
+   "label": "Remote streaming quality",
+   "text": "A lighter quality for streaming from your server over the internet, so songs start faster."
+  }
+ ],
+ "found": true
+}

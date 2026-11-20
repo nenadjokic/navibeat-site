@@ -1,0 +1,18 @@
+{
+ "file": "prefer-downloaded-music.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Prefer Downloaded Music, with Prefer Downloaded Music marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Prefer Downloaded Music.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 43.13,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Prefer Downloaded Music",
+   "text": "Plays your downloaded copy of a song when you have one, instead of streaming it again."
+  }
+ ],
+ "found": true
+}

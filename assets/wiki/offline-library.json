@@ -1,0 +1,18 @@
+{
+ "file": "offline-library.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Offline Library, with Offline Library marked",
+ "caption": "iPhone, Settings > Server & Library > Offline Library.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Offline Library",
+   "text": "Keeps your music on this device, so it plays without internet."
+  }
+ ],
+ "found": true
+}

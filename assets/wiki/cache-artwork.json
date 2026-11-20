@@ -1,0 +1,18 @@
+{
+ "file": "cache-artwork.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Cache artwork, with Cache artwork marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Cache artwork.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 57.67,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Cache artwork",
+   "text": "Keeps cover art on the device, so pages load faster and use less data."
+  }
+ ],
+ "found": true
+}

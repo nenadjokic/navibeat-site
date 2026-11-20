@@ -1,0 +1,18 @@
+{
+ "file": "opens-to.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Devices > Opens to, with Opens to marked",
+ "caption": "iPhone, Settings > Devices > Opens to.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 17.38,
+   "w": 18.56,
+   "h": 3.38,
+   "label": "Opens to",
+   "text": "Where NaviBeat starts when your car connects to CarPlay."
+  }
+ ],
+ "found": true
+}

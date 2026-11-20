@@ -1,0 +1,18 @@
+{
+ "file": "year-in-review.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Scrobbling & Stats > Year in Review, with Year in Review marked",
+ "caption": "iPhone, Settings > Scrobbling & Stats > Year in Review.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 65.2,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Year in Review",
+   "text": "A Wrapped-style recap of your year: top artist, top song and listening totals."
+  }
+ ],
+ "found": true
+}

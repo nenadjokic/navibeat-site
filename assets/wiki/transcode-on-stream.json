@@ -1,0 +1,18 @@
+{
+ "file": "transcode-on-stream.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Transcode on stream, with Transcode on stream marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Transcode on stream.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.87,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Transcode on stream",
+   "text": "Makes your server convert the file even when Stream quality is Original."
+  }
+ ],
+ "found": true
+}

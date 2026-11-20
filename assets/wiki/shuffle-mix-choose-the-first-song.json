@@ -1,0 +1,18 @@
+{
+ "file": "shuffle-mix-choose-the-first-song.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Shuffle Mix: choose the first song, with Shuffle Mix: choose the first song marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Shuffle Mix: choose the first song.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.0,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Shuffle Mix: choose the first song",
+   "text": "Shuffle Mix first shows you five songs, and the one you pick plays first."
+  }
+ ],
+ "found": true
+}

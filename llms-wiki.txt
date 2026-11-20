@@ -1,0 +1,1393 @@
+# NaviBeat Wiki (full text)
+
+> Every setting in NaviBeat, the native Navidrome / OpenSubsonic music player for iPhone, iPad, Mac, Apple TV, Apple Watch and CarPlay, explained one by one: what it does, where it is, its default and the platforms that have it. Generated from the app's own Settings index and checked against the code. Human pages: https://navibeat.app/wiki/
+
+## Guides
+
+### Connect your server
+URL: https://navibeat.app/wiki/guide-connect-your-server
+Sign NaviBeat in to your Navidrome or any OpenSubsonic server, at home and away.
+- First sign-in: Open NaviBeat. The first screen asks for your server. Type your Server URL, the address you use to open Navidrome in a browser. Optional: add an Alternative address (home network). NaviBeat uses it at home and the main address everywhere else. Sign in with your Navidrome Username and Password, or with an API key if your server accepts them. iOS asks for Local Network access. Allow it, or a server on your Wi-Fi cannot be reached. A server on the internet works without it.
+- Servers behind Cloudflare Access, Authelia or mTLS: Add the headers your proxy expects under Server addresses, in Custom HTTP headers. If your proxy asks for a client certificate, import it with Import client certificate (mTLS).
+- Your other devices: Sync credentials to your other Apple devices shares the login through iCloud Keychain. For an Apple TV, use Set Up Apple TV on your iPhone, so you never type on the TV.
+- More than one server or account: Save each one under Saved Servers and switch in two taps. Add Account on This Server keeps the address and asks only for a login. That suits a family that shares one server.
+
+### Offline and downloads
+URL: https://navibeat.app/wiki/guide-offline-and-downloads
+Download music, keep your whole library on the device, and know what plays without a network.
+- Download albums and playlists: Use the Download button on an album or playlist, or the long-press menu on a song. The files are saved at your Download quality. Offline downloads in Settings shows how many songs you have and the space they take.
+- Keep your whole library here: Turn on Download my music under Offline Library. New albums download on their own, only on Wi-Fi if you want, and it stops before your device gets too full. Nothing is ever deleted by it.
+- Playing without a network: Prefer Downloaded Music plays your downloaded copy even when you are online. Offline Mode shows only downloaded music and pauses streaming. In the car, Offline Mode while in CarPlay can switch it on for you.
+- Weak signal on the road: On cellular, Songs Kept Ready downloads the next songs while one plays, so the music keeps going through a dead spot. Keep Streamed Songs stores what you stream, so the next play comes from the device.
+- Apple Watch: Songs you send to the watch use Watch Audio Quality. Show downloaded only on Apple Watch keeps the watch Library to what is on it, for runs and flights.
+
+### Made for You and Discover
+URL: https://navibeat.app/wiki/guide-made-for-you
+Mixes built from your own library, your Last.fm history and ListenBrainz.
+- The Made for You shelf: Home shows Discover Mix, Time Machine, Replay and Year in Review. They use your Last.fm history when Last.fm is connected, and your play history on the device otherwise. If your server runs AudioMuse-AI, sonic mixes built from how your songs sound appear on the same shelf.
+- With Last.fm: Connect Last.fm in Scrobbling & Stats. NaviBeat reads your history back: similar songs, albums and artists, listener counts and your top artists. NaviBeat never scrobbles by itself. Your Navidrome forwards your plays to Last.fm when you set that up in Navidrome.
+- With ListenBrainz: Connect ListenBrainz to get your Weekly Jams and Daily Jams on Home, your listen stats and loved songs in sync. It is free, and you can even point it at your own server.
+- Music that never stops: AutoMix adds similar songs when your queue ends, and AutoMix seeds from picks where they come from. Play the Artist's Next Album continues an artist's discography in release order.
+
+### CarPlay
+URL: https://navibeat.app/wiki/guide-carplay
+Set up what the car shows, which buttons it has, and what happens when it connects.
+- Where it starts: Opens to picks the first screen when your car connects: Home, your favorites, artists, albums or downloads. Customize CarPlay Home chooses the shelves and their order, separately from your phone.
+- Buttons: CarPlay Buttons picks the buttons next to the playback controls. For audiobooks and podcasts, turn on Jump Buttons and Use Them on the Lock Screen, and the car gets skip back and skip forward.
+- When the car connects: Some cars start the last music app by themselves. Never start playing when the car connects stops that. Offline Mode while in CarPlay switches to downloaded music for the drive. Pause during navigation prompts pauses the music while Maps speaks and resumes a couple of seconds back.
+
+### Handoff and Connect
+URL: https://navibeat.app/wiki/guide-handoff-and-connect
+Move playback between your iPhone, iPad, Mac and Apple TV, send music to speakers, and listen together.
+- Continue on another device: When NaviBeat plays on one device, the others show a Continue on This Device card on Home. Tap it and the song continues from the same second. Pause other devices on handoff stops the first device, so you do not hear it twice.
+- Send music to another device: With Allow other devices to send music here on, another NaviBeat on the same network and account can send what it plays to this device.
+- Network speakers: Speakers on your network sends music to a UPnP or DLNA speaker, AV receiver or smart TV. The speaker fetches the music from your server, so the server must be reachable from it.
+- Listen Together: Start Listen Together and friends on the same Wi-Fi and server scan the code. They add songs, and you control playback.
+- If something does not connect: Turn on the Connect and Send to channel in Troubleshooting, try again, then prepare and send the log.
+
+### NaviSyncRock
+URL: https://navibeat.app/wiki/guide-navisyncrock
+Copy music from your server to a Rockbox player, from your Mac.
+- What it does: Connect a Rockbox player to your Mac, and NaviSyncRock copies albums and playlists to it. Songs are converted to a format the player plays, and covers are sized for its screen.
+- Getting it: NaviSyncRock is an in-app purchase on the Mac. Restore Purchases brings it back on a new Mac.
+- More: The full story, supported players and themes are on the Rockbox page.
+
+## Server & Library
+
+### Server
+URL: https://navibeat.app/wiki/server
+Where: Settings > Server & Library > Server
+Platforms: iPhone, iPad, Mac, Apple TV, Apple Watch
+The address of the Navidrome or Subsonic server NaviBeat is connected to. What it does. Settings shows the server address in use right now. When NaviBeat is on your home network address, that is the one it shows. To change addresses, open Server addresses. How to change it. Open Settings. Tap Server & Library. Find Server and change it.
+
+### Username
+URL: https://navibeat.app/wiki/username
+Where: Settings > Server & Library > Username
+Platforms: iPhone, iPad, Mac, Apple TV
+The account NaviBeat is signed in with on your server. What it does. To use another account on the same server, see Add Account on This Server. To sign out completely, use Reset pairing. How to change it. Open Settings. Tap Server & Library. Find Username and change it.
+
+### Status
+URL: https://navibeat.app/wiki/status
+Where: Settings > Server & Library > Status
+Platforms: iPhone, iPad, Mac, Apple TV
+Whether NaviBeat can reach your server right now. What it does. Connected means the server answers. Unreachable means NaviBeat cannot reach it at the moment. Checking… is shown while it tries. How to change it. Open Settings. Tap Server & Library. Find Status and change it. Good to know. Unreachable at home but fine away, or the other way round? Check Server addresses.
+
+### Server addresses
+URL: https://navibeat.app/wiki/server-addresses
+Where: Settings > Server & Library > Server addresses
+Platforms: iPhone, iPad, Mac, Apple TV
+Your server's public address, an optional home network address, and custom headers. What it does. Primary server URL is your always-reachable address, like a public domain or a tunnel. It is checked with the server when you change it. Secondary server URL (home network) is an optional LAN address. On Wi-Fi, NaviBeat uses it automatically whenever it can reach it. On cellular it always uses the primary address. Custom HTTP headers are sent with every request. Use them for Cloudflare Access, Authelia or basic-auth in front of Navidrome. How to change it. Open Settings. Tap Server & Library. Find Server addresses and change it. Good to know. Settings shows Home network or Primary, so you can see which one is in use.
+
+### Import client certificate (mTLS)
+URL: https://navibeat.app/wiki/import-client-certificate-mtls
+Where: Settings > Server & Library > Import client certificate (mTLS)
+Platforms: iPhone, iPad, Mac
+Signs in to a server that asks for a client certificate (mutual TLS). What it does. If your reverse proxy only lets in devices with a certificate, import your .p12 file and its password here. Remove certificate takes it away. How to change it. Open Settings. Tap Server & Library. Find Import client certificate (mTLS) and change it. Good to know. While a certificate is in use, playback uses the AudioStreaming engine. Quit and relaunch NaviBeat to apply a certificate change to playback.
+
+### Server information
+URL: https://navibeat.app/wiki/server-information
+Where: Settings > Server & Library > Server information
+Platforms: iPhone, iPad, Mac
+Your server's version and the OpenSubsonic features it supports. What it does. NaviBeat turns on some features only when your server supports them. This screen lists those Supported extensions. Quick Scan and Full Scan ask your server to scan its music folders. How to change it. Open Settings. Tap Server & Library. Find Server information and change it.
+
+### Library statistics
+URL: https://navibeat.app/wiki/library-statistics
+Where: Settings > Server & Library > Library statistics
+Platforms: iPhone, iPad, Mac, Apple TV
+How many songs, albums and artists you have, total playing time and a genre breakdown. What it does. Counts are across every library on your server. Calculate total playing time adds up your albums a page at a time. A library of five thousand albums takes a few seconds. The genre list follows the library you are browsing. A song with several genres counts once in each. How to change it. Open Settings. Tap Server & Library. Find Library statistics and change it.
+
+### Libraries
+URL: https://navibeat.app/wiki/libraries
+Where: Settings > Server & Library > Libraries
+Platforms: iPhone, iPad, Mac, Apple TV
+Picks which of your server's music libraries NaviBeat shows. What it does. If your Navidrome has more than one library, like Music and Audiobooks, choose the ones you want to browse. Settings shows the current choice. How to change it. Open Settings. Tap Server & Library. Find Libraries and change it.
+
+### Reset pairing
+URL: https://navibeat.app/wiki/reset-pairing
+Where: Settings > Server & Library > Reset pairing
+Platforms: iPhone, iPad, Mac, Apple TV, Apple Watch
+Signs NaviBeat out of your server and goes back to the pairing screen. What it does. You will need to pair again to reach your music. Downloads and settings stay on the device. How to change it. Open Settings. Tap Server & Library. Find Reset pairing and change it.
+
+### Set Up Apple TV
+URL: https://navibeat.app/wiki/set-up-apple-tv
+Where: Settings > Server & Library > Set Up Apple TV
+Platforms: iPhone, iPad
+Signs your Apple TV in to your server from your iPhone, without typing on the TV. How to change it. On the Apple TV, open NaviBeat and choose Add from iPhone. It shows a code. On the iPhone, open Settings, tap Server & Library, then Set Up Apple TV. Pick the Apple TV and send the code. The Apple TV signs in. Good to know. Both devices must be on the same Wi-Fi. If the Apple TV does not answer, keep its Add from iPhone screen open and try again.
+
+### Sync credentials to your other Apple devices
+URL: https://navibeat.app/wiki/sync-credentials-to-your-other-apple-devices
+Where: Settings > Server & Library > Sync credentials to your other Apple devices
+Platforms: iPhone, iPad, Mac
+Default: On
+Shares your server login with your other Apple devices through iCloud Keychain. What it does. Sign in once, and your other devices with the same Apple Account can use the same login. How to change it. Open Settings. Tap Server & Library. Find Sync credentials to your other Apple devices and change it.
+
+### Saved Servers
+URL: https://navibeat.app/wiki/saved-servers
+Where: Settings > Server & Library > Saved Servers
+Platforms: iPhone, iPad, Mac, Apple TV
+Switch between servers and accounts in two taps. What it does. Save the server you are connected to, and every saved server becomes a quick switch. Switching uses the saved address, account, password, proxy headers and client certificate. If the switch fails, the current server stays active. How to change it. Open Settings. Tap Server & Library. Find Saved Servers and change it.
+
+### Save Current Server
+URL: https://navibeat.app/wiki/save-current-server
+Where: Settings > Server & Library > Saved Servers > Save Current Server
+Platforms: iPhone, iPad, Mac
+Saves the server you are connected to, so you can switch back to it later. What it does. If it is already saved, the button says Update Saved Entry and stores any change. How to change it. Open Settings. Tap Server & Library. Tap Saved Servers. Find Save Current Server and change it.
+
+### Add Account on This Server
+URL: https://navibeat.app/wiki/add-account-on-this-server
+Where: Settings > Server & Library > Add Account on This Server
+Platforms: iPhone, iPad, Mac, Apple TV
+Signs in with another account on the same server. What it does. NaviBeat keeps the server's address, proxy headers and client certificate, and asks only for a username and password. Use it when each family member has their own account. How to change it. Open Settings. Tap Server & Library. Find Add Account on This Server and change it.
+
+### Add New Server
+URL: https://navibeat.app/wiki/add-new-server
+Where: Settings > Server & Library > Add New Server
+Platforms: iPhone, iPad, Mac, Apple TV
+Connects to a different server. What it does. It asks for an address, a username and a password. The server you are connected to now is saved first, so the way back is one row in the list. How to change it. Open Settings. Tap Server & Library. Find Add New Server and change it.
+
+### Artist images
+URL: https://navibeat.app/wiki/artist-images
+Where: Settings > Server & Library > Artist images
+Platforms: iPhone, iPad, Mac, Apple TV
+Server Health: how many of your artists have a picture on your server. What it does. Server Health checks a small random sample of your library and shows the share that is present. Tap the row for setup help. How to change it. Open Settings. Tap Server & Library. Find Artist images and change it.
+
+### Lyrics
+URL: https://navibeat.app/wiki/lyrics
+Where: Settings > Server & Library > Lyrics
+Platforms: iPhone, iPad, Mac, Apple TV
+Server Health: how many of your songs have lyrics on your server. What it does. A low share means your server has few lyrics. Tap the row for setup help, or turn on Look up missing lyrics online. How to change it. Open Settings. Tap Server & Library. Find Lyrics and change it.
+
+### Album covers
+URL: https://navibeat.app/wiki/album-covers
+Where: Settings > Server & Library > Album covers
+Platforms: iPhone, iPad, Mac, Apple TV
+Server Health: how many of your albums have a cover on your server. What it does. Tap the row for setup help if covers are missing. How to change it. Open Settings. Tap Server & Library. Find Album covers and change it.
+
+### Run check
+URL: https://navibeat.app/wiki/run-check
+Where: Settings > Server & Library > Run check
+Platforms: iPhone, iPad, Mac, Apple TV
+Runs the Server Health check now. What it does. The check looks at a small random sample of your library and is kept for one hour. After the first run the button says Refresh. How to change it. Open Settings. Tap Server & Library. Find Run check and change it.
+
+### Library Sync
+URL: https://navibeat.app/wiki/library-sync
+Where: Settings > Server & Library > Library Sync
+Platforms: iPhone, iPad, Mac, Apple TV
+Asks your Navidrome server to scan its music folders for new, changed or removed files. What it does. Quick Sync picks up new and changed files. Full Sync re-reads the whole library and is slower. How to change it. Open Settings. Tap Server & Library. Find Library Sync and change it. Good to know. Starting a scan usually needs an admin account on the server.
+
+### Offline Library
+URL: https://navibeat.app/wiki/offline-library
+Where: Settings > Server & Library > Offline Library
+Platforms: iPhone, iPad, Mac
+Keeps your music on this device, so it plays without internet. What it does. Turn on Download my music and NaviBeat downloads new albums on its own. Nothing is ever deleted by it. Under Library info, NaviBeat can also keep the names, album info and covers on the device, for fast browsing without a connection. How to change it. Open Settings. Tap Server & Library. Find Offline Library and change it.
+
+### Download my music
+URL: https://navibeat.app/wiki/download-my-music
+Where: Settings > Server & Library > Offline Library > Download my music
+Platforms: iPhone, iPad, Mac
+Downloads your library to this device, so songs play without internet. What it does. New albums on your server are downloaded on their own. Nothing is ever deleted: a song you downloaded yourself stays until you remove it. Download new music now does one pass and stops. Download everything keeps going in batches until your whole library is here, and stops by itself if you leave Wi-Fi or run low on space. How to change it. Open Settings. Tap Server & Library. Tap Offline Library. Find Download my music and change it. Options. OptionWhat it doesDefault. Check for new musicOnly when I ask, or every time you open the app. Only on Wi-FiMusic files wait for Wi-Fi. Cover art always waits for Wi-Fi. Keep free spaceStops before your device gets that close to full. Keep the screen on while downloadingStops the screen from sleeping during a long download.
+
+### Save names and album info
+URL: https://navibeat.app/wiki/save-names-and-album-info
+Where: Settings > Server & Library > Offline Library > Save names and album info
+Platforms: iPhone, iPad, Mac
+Default: Off
+Keeps your library's names and album info on this device, for fast browsing. What it does. Browsing gets fast and works without a connection, but songs still need the server or a download to play. Smooth shuffle needs this to finish its first sync. How to change it. Open Settings. Tap Server & Library. Tap Offline Library. Find Save names and album info and change it.
+
+### Save cover art
+URL: https://navibeat.app/wiki/save-cover-art
+Where: Settings > Server & Library > Offline Library > Save cover art
+Platforms: iPhone, iPad, Mac
+Keeps album covers on this device, so pictures show without internet. What it does. Shown once Save names and album info is on. Cover art always waits for Wi-Fi. How to change it. Open Settings. Tap Server & Library. Tap Offline Library. Find Save cover art and change it.
+
+### Browse Scrobbles
+URL: https://navibeat.app/wiki/browse-scrobbles
+Where: Settings > Server & Library > Browse Scrobbles
+Platforms: iPhone, iPad, Mac, Apple TV
+A list of the songs you played on this device. What it does. Tap a play to play that song again. To see your full history across every device, connect Last.fm. How to change it. Open Settings. Tap Server & Library. Find Browse Scrobbles and change it.
+
+### Manage Exclusions
+URL: https://navibeat.app/wiki/manage-exclusions
+Where: Settings > Server & Library > Manage Exclusions
+Platforms: iPhone, iPad, Mac, Apple TV
+Stops an artist, album, genre or song from being reported to your server. What it does. Add what you do not want in your play history, like a sleep playlist or your kids' music. A genre exclusion covers every song tagged with it. How to change it. Open Settings. Tap Server & Library. Find Manage Exclusions and change it.
+
+### Shuffle Exclusions
+URL: https://navibeat.app/wiki/shuffle-exclusions
+Where: Settings > Server & Library > Shuffle Exclusions
+Platforms: iPhone, iPad, Mac
+Keeps albums or artists out of Random Picks, Shuffle Mix and Album Radio. What it does. Long-press an album or artist and choose Exclude from Shuffle. It still plays in full when you pick it yourself. The same screen lists songs you chose to skip: long-press a song and choose Skip this song when the album plays. How to change it. Open Settings. Tap Server & Library. Find Shuffle Exclusions and change it.
+
+### Metadata Corrections
+URL: https://navibeat.app/wiki/metadata-corrections
+Where: Settings > Server & Library > Metadata Corrections
+Platforms: iPhone, iPad, Mac, Apple TV
+Fixes a wrong title, artist, album, genre or year for a song, on this device only. What it does. The fix shows in your library and on the lock screen. It is never sent to your server. Leave a field blank to keep the original. How to change it. Open Settings. Tap Server & Library. Find Metadata Corrections and change it.
+
+### Group playlists into folders
+URL: https://navibeat.app/wiki/group-playlists-into-folders
+Where: Settings > Server & Library > Group playlists into folders
+Platforms: iPhone, iPad, Mac
+Default: Off, separator /
+Shows playlists in folders, using a separator in their names. What it does. A playlist named Mixes/Summer appears as Summer inside a folder called Mixes. Use the separator more than once for folders inside folders. Pick a separator your playlist names do not already use. How to change it. Open Settings. Tap Server & Library. Find Group playlists into folders and change it.
+
+### Hide NaviBeat Mixes in Playlists
+URL: https://navibeat.app/wiki/hide-navibeat-mixes-in-playlists
+Where: Settings > Server & Library > Hide NaviBeat Mixes in Playlists
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Leaves NaviBeat's own mixes out of the Playlists list. What it does. The mixes stay on Home and in search. Only the Playlists list leaves them out. How to change it. Open Settings. Tap Server & Library. Find Hide NaviBeat Mixes in Playlists and change it.
+
+### Library Doctor
+URL: https://navibeat.app/wiki/library-doctor-librarydata
+Where: Settings > Server & Library > Library Doctor
+Platforms: iPhone, iPad, Mac
+Finds tag problems that split albums, and missing covers, track numbers and damaged text. What it does. Library Doctor reads your server and lists albums Navidrome shows as several, and albums with missing covers or track numbers. On iPhone and iPad the report is read only. Fixes are written by NaviBeat on the Mac, which reaches the files in your music folder. How to change it. Open Settings. Tap Server & Library. Find Library Doctor and change it.
+
+## Playback & Audio
+
+### Direct Playback
+URL: https://navibeat.app/wiki/direct-playback
+Where: Settings > Playback & Audio > Quality & Streaming > Direct Playback
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Plays the file exactly as it is stored on your server, with nothing from NaviBeat in between. What it does. With Direct Playback on, NaviBeat asks your server for the untouched file at full size, on Wi-Fi and on cellular alike. The equalizer, ReplayGain and crossfade are turned off, and the stream quality pickers no longer apply. NaviBeat also asks iOS to play at the file's own sample rate and channel count. How far that goes depends on your output: Apple documents that playback above 48 kHz needs an external DAC, which the built-in speaker and Bluetooth do not provide. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Direct Playback and change it. Good to know. Songs you already downloaded keep playing as they were downloaded, at your Download quality. A change takes effect on the next song. Direct Playback works with the System (AVPlayer) engine. The AudioStreaming (beta) engine always converts to 44.1 kHz stereo, so it cannot play a file untouched.
+
+### Offline Mode
+URL: https://navibeat.app/wiki/offline-mode
+Where: Settings > Playback & Audio > Quality & Streaming > Offline Mode
+Platforms: iPhone, iPad, Mac, Apple Watch
+Default: Off
+Shows only the music you downloaded, and pauses streaming until you turn it off. What it does. Offline Mode limits NaviBeat to downloaded artists, albums, playlists and songs. Streaming and browsing the full library pause until you switch it off. Use it on a plane or anywhere the signal is poor. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Offline Mode and change it. Good to know. On the Apple Watch, Offline Mode is a separate switch in the watch's own Settings. Offline Mode is also available as a Shortcuts action, so an automation can turn it on for you.
+
+### Prefer Downloaded Music
+URL: https://navibeat.app/wiki/prefer-downloaded-music
+Where: Settings > Playback & Audio > Quality & Streaming > Prefer Downloaded Music
+Platforms: iPhone, iPad, Mac
+Default: On
+Plays your downloaded copy of a song when you have one, instead of streaming it again. What it does. When a song is downloaded, NaviBeat plays it from the device even while you are online. That saves data and starts the song at once. Turn on Only away from home below it if you want the normal stream quality at home and the downloads everywhere else. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Prefer Downloaded Music and change it.
+
+### Only away from home
+URL: https://navibeat.app/wiki/only-away-from-home
+Where: Settings > Playback & Audio > Quality & Streaming > Only away from home
+Platforms: iPhone, iPad, Mac
+Default: Off
+Streams as usual on your home network, and plays downloads everywhere else. What it does. On your home network NaviBeat streams, so your quality settings still apply. Anywhere else, a downloaded song plays from the device. On cellular your downloads always play from the device, with or without this switch. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Only away from home and change it. Good to know. The switch appears once Prefer Downloaded Music is on. It needs NaviBeat to have reached your server once from your home network, or a home network address saved under Server. Until then it is greyed out.
+
+### Continue on This Device card
+URL: https://navibeat.app/wiki/continue-on-this-device-card
+Where: Settings > Playback & Audio > Quality & Streaming > Continue on This Device card
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Shows a card on Home when another of your devices is playing, so you can pick up from the same second. What it does. When NaviBeat plays on another of your devices, this device shows a card on Home with that song. Tap it and the music continues here from the same second. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Continue on This Device card and change it.
+
+### Pause other devices on handoff
+URL: https://navibeat.app/wiki/pause-other-devices-on-handoff
+Where: Settings > Playback & Audio > Quality & Streaming > Pause other devices on handoff
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+When you continue on another device, this one stops by itself. What it does. You continue a song on your iPad, and the iPhone that was playing it stops on its own. Without this, both would play the same song. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Pause other devices on handoff and change it.
+
+### Allow other devices to send music here
+URL: https://navibeat.app/wiki/allow-other-devices-to-send-music-here
+Where: Settings > Playback & Audio > Quality & Streaming > Allow other devices to send music here
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Lets another NaviBeat on the same network send what it is playing to this device. What it does. Another NaviBeat on this network, signed in to the same account, can send its music here while NaviBeat is open on this device. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Allow other devices to send music here and change it. Good to know. Turning it on asks for Local Network access, because devices find each other on your network.
+
+### Listen Together
+URL: https://navibeat.app/wiki/listen-together
+Where: Settings > Playback & Audio > Quality & Streaming > Listen Together
+Platforms: iPhone, iPad, Mac
+Lets friends on the same Wi-Fi add songs to what you are playing. What it does. Start Listen Together and NaviBeat shows a code. Guests on the same Wi-Fi and the same server scan it or type it in their NaviBeat. They can add songs to the queue, and only you control playback. Use Join Listen Together to join someone else's session. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Listen Together and change it. Options. OptionWhat it doesDefault. Start Listen TogetherStarts a session on this device and shows its code. Join Listen TogetherJoins a session by its code.
+
+### Stream quality
+URL: https://navibeat.app/wiki/stream-quality
+Where: Settings > Playback & Audio > Quality & Streaming > Stream quality
+Platforms: iPhone, iPad, Mac, Apple TV
+The quality NaviBeat asks your server for when it streams, one choice for Wi-Fi and one for cellular. What it does. Stream quality on WiFi and Stream quality on cellular each pick a format and bitrate. Original streams the file as it is. The MP3, AAC and Opus tiers ask the server to convert the file, which saves data but is no longer the original. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Stream quality and change it. Options. OptionWhat it doesDefault. Stream quality on WiFiQuality while on Wi-Fi.Original. Stream quality on cellularQuality while on mobile data.MP3 192 kbps. Good to know. Tiers your server or the playback engine cannot deliver are greyed out, with the reason under the picker. A red TRANSCODE badge on Now Playing means you hear a converted file.
+
+### Download quality
+URL: https://navibeat.app/wiki/download-quality
+Where: Settings > Playback & Audio > Quality & Streaming > Download quality
+Platforms: iPhone, iPad, Mac
+Default: Original
+The quality of the files NaviBeat saves when you download music. What it does. Original saves the file exactly as it is on your server. A lower quality converts only songs that are above it, so a song already smaller than your choice is saved as it is. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Download quality and change it. Good to know. Already downloaded songs keep the quality they were saved with.
+
+### Remote streaming quality
+URL: https://navibeat.app/wiki/remote-streaming-quality
+Where: Settings > Playback & Audio > Quality & Streaming > Remote streaming quality
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Match Wi-Fi/cellular
+A lighter quality for streaming from your server over the internet, so songs start faster. What it does. When NaviBeat reaches your server from outside your home network, it can use this quality instead of the Wi-Fi or cellular one. Match Wi-Fi/cellular keeps your normal choice. With a converting tier, the first song you start waits briefly while the server converts it. Every song after that starts at once. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Remote streaming quality and change it. Good to know. A red TRANSCODE badge on Now Playing means the server converts the file as it streams. The orange badge is the untouched source. A downloaded song says DOWNLOAD.
+
+### Transcode on stream
+URL: https://navibeat.app/wiki/transcode-on-stream
+Where: Settings > Playback & Audio > Quality & Streaming > Transcode on stream
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Makes your server convert the file even when Stream quality is Original. What it does. This only matters for the Original tier, where it forces a server conversion. MP3 and Opus tiers always convert anyway. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Transcode on stream and change it.
+
+### Submit play history to server
+URL: https://navibeat.app/wiki/submit-play-history-to-server
+Where: Settings > Playback & Audio > Quality & Streaming > Submit play history to server
+Platforms: iPhone, iPad, Mac
+Default: On
+Sends the songs you play to your Navidrome server, which counts them and can pass them on to Last.fm or ListenBrainz. What it does. With this on, every song you play is reported to your server. Navidrome uses it for play counts and Recently Played, and if you set up scrobbling in Navidrome, it forwards your plays from there. NaviBeat never scrobbles to Last.fm by itself. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Submit play history to server and change it.
+
+### Remember position in playlists and albums
+URL: https://navibeat.app/wiki/remember-position-in-playlists-and-albums
+Where: Settings > Playback & Audio > Quality & Streaming > Remember position in playlists and albums
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+When you open a playlist or album again, NaviBeat offers to continue where you stopped. What it does. Re-open a playlist or album and NaviBeat asks whether to continue from the last song you played or start from the beginning. Off always starts from the top. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Remember position in playlists and albums and change it.
+
+### Keep classical works together when shuffling
+URL: https://navibeat.app/wiki/keep-classical-works-together-when-shuffling
+Where: Settings > Playback & Audio > Quality & Streaming > Keep classical works together when shuffling
+Platforms: iPhone, iPad, Mac
+Default: On
+Shuffle moves whole classical works, so a symphony is not scattered across the queue. What it does. With this on, Shuffle treats the movements of one work as a block and keeps them in order. Music with no works is shuffled as before. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Keep classical works together when shuffling and change it.
+
+### Smooth shuffle
+URL: https://navibeat.app/wiki/smooth-shuffle
+Where: Settings > Playback & Audio > Quality & Streaming > Smooth shuffle
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Shuffle picks each next song to fit the one before it, using your tags. What it does. Smooth shuffle looks at a shared genre, a nearby year, tempo and loudness, and avoids the same artist twice in a row when it can. There is still randomness, so the order is different every time. Play on an album or playlist keeps its order. Only Shuffle changes. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Smooth shuffle and change it. Good to know. It starts working once Save names and album info has finished its first sync (Settings, Server & Library, Offline Library). Until then Settings says it is not active yet. It uses only the tags your server already has. A missing tag neither helps nor hurts.
+
+### Group classical works on album pages
+URL: https://navibeat.app/wiki/group-classical-works-on-album-pages
+Where: Settings > Playback & Audio > Quality & Streaming > Group classical works on album pages
+Platforms: iPhone, iPad, Mac
+Default: On
+Album pages gather a work's movements under one heading. What it does. A classical album shows each work as a heading with its movements under it. Off shows the plain track list with disc headers, which follow your files' disc subtitles when they have them. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Group classical works on album pages and change it.
+
+### Gapless playback
+URL: https://navibeat.app/wiki/gapless-playback
+Where: Settings > Playback & Audio > Quality & Streaming > Gapless playback
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Plays the next song with no silence in between, as on live albums and DJ mixes. What it does. NaviBeat prepares the next song before the current one ends, so tracks that run into each other play without a gap. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Gapless playback and change it.
+
+### Play the Artist's Next Album
+URL: https://navibeat.app/wiki/play-the-artist-s-next-album
+Where: Settings > Playback & Audio > Quality & Streaming > Play the Artist's Next Album
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+When an album ends, the same artist's next album follows. What it does. Play an album in order, and when it ends, the artist's next album in release order starts. On the artist's last album, AutoMix carries on if it is on. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Play the Artist's Next Album and change it.
+
+### AutoMix
+URL: https://navibeat.app/wiki/automix
+Where: Settings > Playback & Audio > Quality & Streaming > AutoMix
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Keeps the music going with similar songs when your queue ends. What it does. When the last song in the queue finishes, AutoMix adds similar songs and keeps playing. Where the similar songs come from is set under AutoMix seeds from. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find AutoMix and change it.
+
+### Fade on pause and play
+URL: https://navibeat.app/wiki/fade-on-pause-and-play
+Where: Settings > Playback & Audio > Quality & Streaming > Fade on pause and play
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Pause lowers the sound smoothly before it stops, and Play brings it back up. What it does. Instead of a hard stop, the volume fades out when you pause and fades in when you press Play. A phone call or unplugged headphones never wait for the fade. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Fade on pause and play and change it.
+
+### Fade duration
+URL: https://navibeat.app/wiki/fade-duration
+Where: Settings > Playback & Audio > Quality & Streaming > Fade duration
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: 0.5 seconds
+How long the fade on pause and play takes. What it does. Pick from 0.2 to 2 seconds. The picker appears once Fade on pause and play is on. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Fade duration and change it.
+
+### Keep display awake while playing
+URL: https://navibeat.app/wiki/keep-display-awake-while-playing
+Where: Settings > Playback & Audio > Quality & Streaming > Keep display awake while playing
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Stops the screen from going to sleep while music plays. What it does. Useful when NaviBeat sits on a dock or a stand and you want to see Now Playing all the time. The screen sleeps as usual when nothing plays. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Keep display awake while playing and change it.
+
+### Tap plays only that song
+URL: https://navibeat.app/wiki/tap-plays-only-that-song
+Where: Settings > Playback & Audio > Quality & Streaming > Tap plays only that song
+Platforms: iPhone, iPad, Mac
+Default: Off
+Tapping a song plays just that song, without the rest of the list behind it. What it does. Off, tapping a song plays it and puts the rest of the list in the queue behind it. On, only the song you tapped plays. Play and Shuffle on an album or playlist work the same either way. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Tap plays only that song and change it.
+
+### Shuffle Mix: choose the first song
+URL: https://navibeat.app/wiki/shuffle-mix-choose-the-first-song
+Where: Settings > Playback & Audio > Quality & Streaming > Shuffle Mix: choose the first song
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Shuffle Mix first shows you five songs, and the one you pick plays first. What it does. Off, Shuffle Mix starts playing at once. On, it shows five of its songs first. The one you choose plays first, with the rest of the mix behind it. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Shuffle Mix: choose the first song and change it.
+
+### Song Path stops
+URL: https://navibeat.app/wiki/song-path-stops
+Where: Settings > Playback & Audio > Quality & Streaming > Song Path stops
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: 5
+How many songs Song Path to Here puts between the song playing now and the one you chose. What it does. Song Path to Here builds a short path from the current song to the one you picked. This sets how many songs sit in between, from 2 to 20. You can still change it before you press Play. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Song Path stops and change it.
+
+### Stop at the end
+URL: https://navibeat.app/wiki/stop-at-the-end
+Where: Settings > Playback & Audio > Quality & Streaming > Stop at the end
+Platforms: iPhone, iPad, Mac, Apple TV, Apple Watch
+Default: Off
+When an album or playlist finishes, playback stops and Now Playing closes. What it does. Without this, the last song stays on screen when the queue ends. With it on, NaviBeat stops and leaves Now Playing. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Stop at the end and change it.
+
+### Playback Speed
+URL: https://navibeat.app/wiki/playback-speed
+Where: Settings > Playback & Audio > Quality & Streaming > Playback Speed
+Platforms: iPhone, iPad, Mac
+Default: 1x
+Plays music and audiobooks faster or slower, from 0.5x to 2x. What it does. Drag the slider to change the speed. Reset brings it back to normal. Turn on Keep pitch so voices do not sound higher or lower. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Playback Speed and change it.
+
+### Keep pitch
+URL: https://navibeat.app/wiki/keep-pitch
+Where: Settings > Playback & Audio > Quality & Streaming > Keep pitch
+Platforms: iPhone, iPad, Mac
+Keeps voices and instruments at their normal pitch when you change Playback Speed. What it does. With Keep pitch on, a faster speed sounds faster but not higher. With it off, faster also means higher, like a tape played fast. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Keep pitch and change it.
+
+### Show disc number
+URL: https://navibeat.app/wiki/show-disc-number
+Where: Settings > Playback & Audio > Quality & Streaming > Show disc number
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Shows Disc 1, Disc 2 and so on above each disc on album pages. What it does. Off hides the Disc N label on album pages. A disc with no subtitle then has no header at all. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Show disc number and change it.
+
+### Show track position
+URL: https://navibeat.app/wiki/show-track-position
+Where: Settings > Playback & Audio > Quality & Streaming > Show track position
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Shows a line like Track 3 of 11 on Now Playing, in CarPlay and on the Lock Screen. What it does. The line sits under the album on Now Playing, and after the album name in CarPlay and on the Lock Screen. When you are not playing one whole album, it counts your queue instead and says so. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Show track position and change it.
+
+### Pause during navigation prompts
+URL: https://navibeat.app/wiki/pause-during-navigation-prompts
+Where: Settings > Playback & Audio > Quality & Streaming > Pause during navigation prompts
+Platforms: iPhone, iPad
+Default: On
+Pauses music while a navigation app speaks, then resumes a couple of seconds back. What it does. When Apple Maps, Google Maps or another navigation app gives a spoken direction, NaviBeat pauses, then resumes a couple of seconds before where it stopped, so you do not miss a line. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Pause during navigation prompts and change it.
+
+### Scrobble after
+URL: https://navibeat.app/wiki/scrobble-after
+Where: Settings > Playback & Audio > Quality & Streaming > Scrobble after
+Platforms: iPhone, iPad, Mac, Apple TV
+How much of a song has to play before it counts as a listen. What it does. A song counts once the share you pick has played, or after the time you pick, whichever comes first. The share goes from 25% to 90%, the time from 0:30 to 4:00. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Scrobble after and change it. Options. OptionWhat it doesDefault. Scrobble afterShare of the song.50%. Or afterA fixed time.4:00.
+
+### Output Device
+URL: https://navibeat.app/wiki/output-device
+Where: Settings > Playback & Audio > Quality & Streaming > Output Device
+Platforms: Mac
+Default: System Default
+Picks which speaker or audio interface the Mac plays to. What it does. Choose a device from the list, or System Default to follow macOS. If you unplug the chosen device, the sound goes to the system default until it is back. How to change it. Open Settings. Click Playback & Audio. Click Quality & Streaming. Find Output Device and change it. Good to know. This picker works with the AudioStreaming engine. With the System engine it is greyed out and macOS decides.
+
+### Sleep timer default
+URL: https://navibeat.app/wiki/sleep-timer-default
+Where: Settings > Playback & Audio > Quality & Streaming > Sleep timer default
+Platforms: iPhone, iPad, Mac
+Default: 30 Minutes
+The sleep timer choice that is picked first when you open the Sleep Timer menu. What it does. Open the Sleep Timer from Now Playing and this preset is highlighted first. Choices go from End of Track and 5 minutes up to 4 hours. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Sleep timer default and change it.
+
+### Resume on Bluetooth
+URL: https://navibeat.app/wiki/resume-on-bluetooth
+Where: Settings > Playback & Audio > Quality & Streaming > Resume on Bluetooth
+Platforms: iPhone, iPad
+Default: Off
+Starts the music again when your headphones or speaker connect. What it does. Pick the Bluetooth devices you want below the switch. When one of them connects and you had paused NaviBeat, the music plays on. It works while NaviBeat is open or paused in the background. It does not work in CarPlay. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Resume on Bluetooth and change it. Good to know. When NaviBeat is fully closed, iOS will not start it by itself. See Resume with Shortcuts for that case.
+
+### Add current device
+URL: https://navibeat.app/wiki/add-current-device
+Where: Settings > Playback & Audio > Quality & Streaming > Resume on Bluetooth > Add current device
+Platforms: iPhone, iPad
+Adds the headphones or speaker connected right now to the Resume on Bluetooth list. What it does. Connect the device first, then tap Add current device. Settings shows its name under the button. Each remembered device has a Remove button. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Tap Resume on Bluetooth. Find Add current device and change it.
+
+### Resume with Shortcuts
+URL: https://navibeat.app/wiki/resume-with-shortcuts
+Where: Settings > Playback & Audio > Quality & Streaming > Resume on Bluetooth > Resume with Shortcuts
+Platforms: iPhone, iPad
+Starts NaviBeat when your Bluetooth device connects, even when the app is closed. What it does. iOS does not start a closed app by itself. The Shortcuts app can: it runs an automation when a Bluetooth device connects. How to change it. Open the Shortcuts app and go to Automation. Create a Bluetooth automation for your headphones or speaker. Set it to run without asking. Add the NaviBeat action Resume.
+
+### Mode
+URL: https://navibeat.app/wiki/mode
+Where: Settings > Playback & Audio > Equalizer & Effects > Mode
+Platforms: iPhone, iPad, Mac, Apple TV
+How ReplayGain evens out loudness between songs: by track, by album, or automatically. What it does. ReplayGain reads the gain tags in your files and turns loud songs down and quiet songs up. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Find Mode and change it. Options. OptionWhat it doesDefault. OffSongs play at their own loudness. AutoAlbum gain when the queue is one album, track gain for playlists, shuffle and favorites.Yes. TrackEvery song is levelled on its own. AlbumAn album keeps its loud and quiet songs as mastered. Good to know. Songs without gain tags play as they are. Preamp adds a few dB on top.
+
+### Preamp
+URL: https://navibeat.app/wiki/preamp
+Where: Settings > Playback & Audio > Equalizer & Effects > Preamp
+Platforms: iPhone, iPad, Mac, Apple TV
+ReplayGain evens out loudness between songs. Mode picks how, Preamp adds a few dB on top. What it does. Songs are mastered at different loudness. ReplayGain reads the gain tags in your files and turns loud songs down and quiet songs up, so you do not reach for the volume between tracks. Auto uses album gain when the queue is one album, so the album keeps its own dynamics, and track gain for mixed queues like playlists, shuffle and favorites. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Find Preamp and change it. Options. OptionWhat it doesDefault. ModeOff, Auto, Track or Album.Auto. PreampAdds from -15 to +15 dB on top, in 0.5 dB steps. ReplayGain usually leaves headroom, so a small boost makes up for it.0 dB. Good to know. ReplayGain needs gain tags in your files. Songs without them play as they are. The equalizer has its own, separate Preamp for headroom.
+
+### Overlap tracks
+URL: https://navibeat.app/wiki/overlap-tracks
+Where: Settings > Playback & Audio > Equalizer & Effects > Overlap tracks
+Platforms: iPhone, iPad, Mac, Apple TV
+Crossfade: the end of one song fades out while the next one fades in. What it does. Turn on Overlap tracks and pick how long the two songs overlap, from 1 to 12 seconds. It runs on downloaded songs, and on streamed songs once the whole file has arrived. NaviBeat fetches it in the background while the song plays. On a slow connection, or with Low Data Mode on, a song can still end the normal way. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Find Overlap tracks and change it. Options. OptionWhat it doesDefault. Overlap tracksTurns crossfade on.Off. Duration1 to 12 seconds.5 seconds. Good to know. Songs played in order from one album are not crossfaded, so the album plays as it was recorded. With Gapless playback off, they are crossfaded too. Songs shorter than three times the overlap, live radio, the last song in the queue and Repeat One play the normal way. Crossfade works with the System (AVPlayer) engine. The AudioStreaming (beta) engine plays songs one after another.
+
+### Enabled
+URL: https://navibeat.app/wiki/enabled
+Where: Settings > Playback & Audio > Equalizer & Effects > Equalizer
+Platforms: iPhone, iPad, Mac
+Turns the equalizer on and off. What it does. The equalizer shapes the sound with bands from bass to treble. Pick a preset or drag the bands yourself. Parametric mode lets you move each band's frequency and width. On iPhone and iPad, Off in CarPlay steps the equalizer aside while the car is the output, for a car that has its own. It comes back when you leave the car. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Find Enabled and change it. Good to know. Double tap a band to set it to 0 dB. A curve that boosts needs a negative equalizer Preamp, so it does not clip.
+
+### Presets
+URL: https://navibeat.app/wiki/presets
+Where: Settings > Playback & Audio > Equalizer & Effects > Equalizer > Presets
+Platforms: iPhone, iPad, Mac
+Ready-made and saved equalizer curves, one tap to switch. What it does. Open Presets to pick a built-in curve or one you saved. Save keeps your current curve under a name, Reset sets every band back to 0 dB. Copy as text puts the curve on the clipboard so you can share it. Import from text reads a curve someone shared with you. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Tap Equalizer. Find Presets and change it.
+
+### Playback engine
+URL: https://navibeat.app/wiki/playback-engine
+Where: Settings > Playback & Audio > Advanced > Playback engine
+Platforms: iPhone, iPad, Mac, Apple TV
+Picks the audio engine NaviBeat plays with: Apple's standard player or AudioStreaming (beta). How to change it. Open Settings. Tap Playback & Audio. Tap Advanced. Find Playback engine and change it. Options. OptionWhat it doesDefault. System (AVPlayer)Apple's standard player. Direct Playback and crossfade work with it.Yes. AudioStreaming (beta)NaviBeat's own engine. On the Mac it can pick an output device. Good to know. Quit and relaunch NaviBeat to apply a change. While a client certificate (mTLS) is in use, playback is locked to AudioStreaming, because Apple's standard player cannot present a certificate to a live stream.
+
+### Last engine error
+URL: https://navibeat.app/wiki/last-engine-error
+Where: Settings > Playback & Audio > Advanced > Last engine error
+Platforms: Mac
+Shows the last error from the playback engine on the Mac, so you can send it to support. What it does. If the player hit a problem, its last error appears here. Copy diagnostic log copies the details for a support mail. Clear last error removes it. How to change it. Open Settings. Click Playback & Audio. Click Advanced. Find Last engine error and change it. Good to know. The row appears only when there is an error to show.
+
+## Appearance & Language
+
+### Hide Now Playing While Searching
+URL: https://navibeat.app/wiki/hide-now-playing-while-searching
+Where: Settings > Appearance & Language > Theme & Accent > Hide Now Playing While Searching
+Platforms: iPhone, iPad
+Default: Off
+Hides the mini player while you type a search, so the results get more room. What it does. The mini player comes back as soon as you leave the search. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Hide Now Playing While Searching and change it.
+
+### Artwork
+URL: https://navibeat.app/wiki/artwork
+Where: Settings > Appearance & Language > Theme & Accent > Artwork
+Platforms: iPhone, iPad, Mac
+Picks how covers look at the top of artist pages, album pages and Now Playing. What it does. Each of the three gets its own choice, Squared or Filled. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Artwork and change it. Options. OptionWhat it doesDefault. SquaredThe cover sits as a square card at the top of the page, on the app background.Yes. FilledThe cover fills the top of the page edge to edge, with the name on it.
+
+### Artist pages
+URL: https://navibeat.app/wiki/artist-pages
+Where: Settings > Appearance & Language > Theme & Accent > Artist pages
+Platforms: iPhone, iPad, Mac
+Default: Squared
+Squared or Filled cover at the top of artist pages. What it does. Squared puts the picture as a square card on the app background. Filled spreads it edge to edge across the top, with the name on it. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Artist pages and change it.
+
+### Album pages
+URL: https://navibeat.app/wiki/album-pages
+Where: Settings > Appearance & Language > Theme & Accent > Album pages
+Platforms: iPhone, iPad, Mac
+Default: Squared
+Squared or Filled cover at the top of album pages. What it does. Squared puts the cover as a square card on the app background. Filled spreads it edge to edge across the top, with the album name on it. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Album pages and change it.
+
+### Look & Feel
+URL: https://navibeat.app/wiki/look-and-feel
+Where: Settings > Appearance & Language > Theme & Accent > Look & Feel
+Platforms: iPhone, iPad, Mac
+Lets artist pages, album pages and Now Playing take the color of the cover. What it does. Pick the background for those pages. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Look & Feel and change it. Options. OptionWhat it doesDefault. ClassicPages sit on the plain app background. Artwork colorPages take the blurred color of the cover. Good to know. Until you pick one, Filled covers use Artwork color and Squared covers use Classic. Color intensity sets how strong the color is.
+
+### Show the close arrow in Now Playing
+URL: https://navibeat.app/wiki/show-the-close-arrow-in-now-playing
+Where: Settings > Appearance & Language > Theme & Accent > Show the close arrow in Now Playing
+Platforms: iPhone, iPad
+Default: On
+Shows the down arrow at the top of Now Playing. What it does. Swipe down closes Now Playing with or without the arrow. VoiceOver always shows it. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Show the close arrow in Now Playing and change it.
+
+### Mini player style
+URL: https://navibeat.app/wiki/mini-player-style
+Where: Settings > Appearance & Language > Theme & Accent > Mini player style
+Platforms: iPhone, iPad
+How the mini player at the bottom of the screen looks. What it does. Liquid Glass follows the transparency you set for Liquid Glass in iOS, like the tab bar. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Mini player style and change it. Options. OptionWhat it doesDefault. FrostedA frosted, blurred bar.Yes. Liquid GlassThe iOS Liquid Glass look.
+
+### Larger artwork in grids
+URL: https://navibeat.app/wiki/larger-artwork-in-grids
+Where: Settings > Appearance & Language > Theme & Accent > Larger artwork in grids
+Platforms: iPhone, iPad, Mac
+Default: Off
+Album, artist and playlist grids show fewer, bigger covers. What it does. Useful on a big screen, or when you browse by cover. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Larger artwork in grids and change it.
+
+### Color intensity
+URL: https://navibeat.app/wiki/color-intensity
+Where: Settings > Appearance & Language > Theme & Accent > Color intensity
+Platforms: iPhone, iPad, Mac
+Default: 50%
+How strong the cover color is behind pages when Look & Feel is Artwork color. What it does. Drag from subtle to strong. Reset to default goes back to the middle. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Color intensity and change it.
+
+### Show download button on rows
+URL: https://navibeat.app/wiki/show-download-button-on-rows
+Where: Settings > Appearance & Language > Theme & Accent > Show download button on rows
+Platforms: Mac
+Shows the small download icon on song rows on the Mac. What it does. Off gives a cleaner list. You can still download from the row's right-click menu and the Download buttons on albums and playlists. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Show download button on rows and change it.
+
+### Show favorite button on rows
+URL: https://navibeat.app/wiki/show-favorite-button-on-rows
+Where: Settings > Appearance & Language > Theme & Accent > Show favorite button on rows
+Platforms: iPhone, iPad, Mac
+Default: Off
+Adds a heart to each song row, so you can favorite with one tap. What it does. The long-press menu (right-click on the Mac) still has Favorite. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Show favorite button on rows and change it.
+
+### Show star ratings
+URL: https://navibeat.app/wiki/show-star-ratings
+Where: Settings > Appearance & Language > Theme & Accent > Show star ratings
+Platforms: iPhone, iPad, Mac
+Default: On
+Shows star ratings on song rows, album and artist headers and Now Playing. What it does. Off hides the stars. The context menu still has Rate. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Show star ratings and change it.
+
+### Open Now Playing when you come back
+URL: https://navibeat.app/wiki/open-now-playing-when-you-come-back
+Where: Settings > Appearance & Language > Theme & Accent > Open Now Playing when you come back
+Platforms: iPhone, iPad
+Default: Off
+Opens Now Playing when you return to NaviBeat while music plays. What it does. Off keeps you where you were. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Open Now Playing when you come back and change it.
+
+### Lyrics and queue panel
+URL: https://navibeat.app/wiki/lyrics-and-queue-panel
+Where: Settings > Appearance & Language > Theme & Accent > Lyrics and queue panel
+Platforms: Mac
+How the lyrics and queue panel sits in the Mac window. What it does. Pick whether the panel floats over the content or takes its own column. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Lyrics and queue panel and change it. Options. OptionWhat it doesDefault. Floating cardThe lyrics and queue float over the content, like a card.Yes. Docked columnThe lyrics and queue take their own column, and the content makes room.
+
+### Show menu bar icon
+URL: https://navibeat.app/wiki/show-menu-bar-icon
+Where: Settings > Appearance & Language > Theme & Accent > Show menu bar icon
+Platforms: Mac
+Keeps the NaviBeat icon in the macOS menu bar. What it does. The icon gives you small playback controls in the menu bar. Off removes it, and playback keeps working. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Show menu bar icon and change it.
+
+### Theme
+URL: https://navibeat.app/wiki/theme
+Where: Settings > Appearance & Language > Theme & Accent > Theme
+Platforms: iPhone, iPad, Mac, Apple TV
+Dark, Light or System appearance for NaviBeat. What it does. System follows your device's light or dark mode. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Theme and change it. Options. OptionWhat it doesDefault. DarkAlways dark.Yes. LightAlways light. SystemFollows the device.
+
+### Accent Color
+URL: https://navibeat.app/wiki/accent-color
+Where: Settings > Appearance & Language > Theme & Accent > Accent Color
+Platforms: iPhone, iPad, Mac
+Default: NaviBeat Amber
+The highlight color for buttons, sliders and selections. What it does. Pick a preset, choose any color, or type a hex code. Reset to NaviBeat Amber goes back to the default orange. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Accent Color and change it.
+
+### Album Titles
+URL: https://navibeat.app/wiki/album-titles
+Where: Settings > Appearance & Language > Theme & Accent > Album Titles
+Platforms: iPhone, iPad, Mac
+Shows long album titles on one line or in full. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Album Titles and change it. Options. OptionWhat it doesDefault. ConciseLong titles and artist names are cut to one line.Yes. ExtendedTitles and artist names wrap over as many lines as they need.
+
+### Album Versions
+URL: https://navibeat.app/wiki/album-versions
+Where: Settings > Appearance & Language > Theme & Accent > Album Versions
+Platforms: iPhone, iPad, Mac, Apple TV
+How the version of an album, like Deluxe Edition, is shown. What it does. This reads the albumversion tag and applies to grids, lists, Now Playing, the mini player and CarPlay. The album page always shows it. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Album Versions and change it. Options. OptionWhat it doesDefault. ShowThe version is shown as it is.Yes. Show SubtlyThe version is shown, lighter. HideThe version is left out.
+
+### Dim version text in song and album titles
+URL: https://navibeat.app/wiki/dim-version-text-in-song-and-album-titles
+Where: Settings > Appearance & Language > Theme & Accent > Dim version text in song and album titles
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Draws the part after a title, like (Live) or [Deluxe Edition], lighter and a little smaller. What it does. It applies in song lists, album grids, album pages and Now Playing, so the main title stands out. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Dim version text in song and album titles and change it.
+
+### Home Tiles
+URL: https://navibeat.app/wiki/home-tiles
+Where: Settings > Appearance & Language > Theme & Accent > Home Tiles
+Platforms: iPhone, iPad, Mac
+Large or Compact tiles on the Home screen. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Home Tiles and change it. Options. OptionWhat it doesDefault. LargeBigger tiles, fewer per row.Yes. CompactSmaller tiles, more per row.
+
+### Frosted glass window
+URL: https://navibeat.app/wiki/frosted-glass-window
+Where: Settings > Appearance & Language > Theme & Accent > Frosted glass window
+Platforms: Mac
+Lets your Mac desktop show through a dark, blurred window. What it does. The NaviBeat window gets a dark-tinted blur, and the Now Playing pill frosts the album art behind it. Frost intensity sets how see-through it is. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Frosted glass window and change it.
+
+### Frost intensity
+URL: https://navibeat.app/wiki/frost-intensity
+Where: Settings > Appearance & Language > Theme & Accent > Frost intensity
+Platforms: Mac
+Default: 55%
+How see-through the frosted Mac window is. What it does. Drag from see-through to opaque. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Frost intensity and change it.
+
+### Open in Mini Player on launch
+URL: https://navibeat.app/wiki/open-in-mini-player-on-launch
+Where: Settings > Appearance & Language > Theme & Accent > Open in Mini Player on launch
+Platforms: Mac
+Starts NaviBeat on the Mac in the compact Mini Player instead of the full window. What it does. Switch back any time with the Window menu or Cmd-Shift-M. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Open in Mini Player on launch and change it.
+
+### Text size
+URL: https://navibeat.app/wiki/text-size
+Where: Settings > Appearance & Language > Theme & Accent > Text size
+Platforms: Mac
+Default: 100%
+Makes the text in the Mac app bigger or smaller. What it does. Pick from 85% to 150%. The same control is in the View menu: Cmd-Plus, Cmd-Minus, and Cmd-0 to reset. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Text size and change it. Good to know. Lyrics have their own size, under Lyrics in the same group.
+
+### Now Playing
+URL: https://navibeat.app/wiki/now-playing
+Where: Settings > Appearance & Language > Theme & Accent > Artwork > Now Playing
+Platforms: iPhone
+Default: Squared
+Squared or Filled cover on the iPhone Now Playing screen. What it does. Filled lets the cover fill the top of Now Playing. Two more switches appear with it: Fade the cover into the page and Cover under the status bar. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Tap Artwork. Find Now Playing and change it.
+
+### Fade the cover into the page
+URL: https://navibeat.app/wiki/fade-the-cover-into-the-page
+Where: Settings > Appearance & Language > Theme & Accent > Fade the cover into the page
+Platforms: iPhone
+Default: On
+With a Filled Now Playing cover, the bottom of the cover fades into the page. What it does. The cover blends into the background instead of ending with a hard edge. Shown only when Now Playing is set to Filled. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Fade the cover into the page and change it.
+
+### Cover under the status bar
+URL: https://navibeat.app/wiki/cover-under-the-status-bar
+Where: Settings > Appearance & Language > Theme & Accent > Cover under the status bar
+Platforms: iPhone
+Default: On
+With a Filled Now Playing cover, the cover starts at the very top, under the clock. What it does. On, the cover runs up under the clock and battery. Off, it starts below them. Shown only when Now Playing is set to Filled. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Cover under the status bar and change it.
+
+### Jump Buttons
+URL: https://navibeat.app/wiki/jump-buttons
+Where: Settings > Appearance & Language > Now Playing > Jump Buttons
+Platforms: iPhone, iPad, Mac, Apple TV
+Adds skip-back and skip-forward buttons next to Play, for 10, 15 or 30 seconds. Useful for audiobooks and podcasts. What you see. Skip back: Jumps back by the time you picked. The number on the button shows it, here 15 seconds. Skip forward: Jumps ahead by the same time. Previous and Next stay: Turning jump buttons on does not take anything away inside the app. Both pairs are always there. iPhone, Now Playing, Jump Buttons set to 15 seconds. How to turn it on. Open Settings and tap Appearance & Language. Tap Now Playing. Under Jump Buttons, pick 10 seconds, 15 seconds or 30 seconds. The buttons show up everywhere NaviBeat draws its own player. Pick Off to remove them again. Options. OptionWhat it doesDefault. Jump ButtonsOff, 10, 15 or 30 seconds.Off. Use Them on the Lock ScreenPuts the jump buttons on the lock screen and in CarPlay. Appears once Jump Buttons is on.Off. Your librariesLimits the buttons to the libraries you tick. Appears only when your server has more than one library.None ticked, so everywhere. Lock screen and CarPlay. The lock screen and CarPlay have room for one pair of side buttons. With Use Them on the Lock Screen on, that pair becomes skip back and skip forward, and Next and Previous are gone from the lock screen and CarPlay. Inside the app nothing changes. Only for audiobooks. Keep audiobooks in their own library on your server? Tick only that library under Jump Buttons. The buttons then appear while you browse that library and stay hidden in your music. While you browse All Libraries with a library ticked, the buttons stay hidden, so they cannot follow you into music.
+
+### Show All Album Artists
+URL: https://navibeat.app/wiki/show-all-album-artists
+Where: Settings > Appearance & Language > Artists & Albums > Show All Album Artists
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Lists every artist on an album, or only its album artist. What it does. On, an album shows every artist who appears on it. Off credits the album to its album artist tag alone. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Show All Album Artists and change it.
+
+### Artist On Every Track
+URL: https://navibeat.app/wiki/artist-on-every-track
+Where: Settings > Appearance & Language > Artists & Albums > Artist On Every Track
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Shows the artist under every song, even when it only repeats the album artist. What it does. Off drops the artist under each song when it is the same as the album artist. Songs by someone else, like on a compilation, keep theirs. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Artist On Every Track and change it.
+
+### Find in Spotlight
+URL: https://navibeat.app/wiki/find-in-spotlight
+Where: Settings > Appearance & Language > Artists & Albums > Find in Spotlight
+Platforms: iPhone, iPad, Mac
+Default: Off
+Lets you find your music from Spotlight search on your device. What it does. Swipe down on the Home Screen, type an album or song, and NaviBeat results appear. Index picks what Spotlight learns: only your downloads, or your whole library. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Find in Spotlight and change it.
+
+### Index
+URL: https://navibeat.app/wiki/index-artistdisplay
+Where: Settings > Appearance & Language > Artists & Albums > Index
+Platforms: iPhone, iPad, Mac
+What Find in Spotlight adds to Spotlight: your downloads only, or your whole library. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Index and change it. Options. OptionWhat it doesDefault. Downloads onlyOnly downloaded music.Yes. Whole libraryEverything on your server. Good to know. Shown once Find in Spotlight is on.
+
+### Genre Tree From Tags
+URL: https://navibeat.app/wiki/genre-tree-from-tags
+Where: Settings > Appearance & Language > Artists & Albums > Genre Tree From Tags
+Platforms: iPhone, iPad, Mac
+Default: Off
+Turns layered genre tags like Rock - Metal - Alternative into a genre tree you can browse. What it does. Each genre tag is split into levels, so you browse from Rock to Metal to Alternative. Tags without the separator are left alone. Split On picks how levels are marked: one repeated Separator, or Symbols when your tags start each level with a symbol. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Genre Tree From Tags and change it.
+
+### Split On
+URL: https://navibeat.app/wiki/split-on
+Where: Settings > Appearance & Language > Artists & Albums > Split On
+Platforms: iPhone, iPad, Mac
+How Genre Tree From Tags finds the levels in a genre tag. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Split On and change it. Options. OptionWhat it doesDefault. SeparatorSplits on the separator you type, like a dash.Yes. SymbolsReads symbols that start each level, as in tags like ⚙ EM ⊛ CLUB. The symbols are left out of the names. Good to know. Ordinary genre names are not changed either way.
+
+### Mark Played Albums
+URL: https://navibeat.app/wiki/mark-played-albums
+Where: Settings > Appearance & Language > Artists & Albums > Mark Played Albums
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Adds a small checkmark to albums your server has plays for. What it does. You see at a glance which albums you have already heard. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Mark Played Albums and change it.
+
+### Show streaming source badges
+URL: https://navibeat.app/wiki/show-streaming-source-badges
+Where: Settings > Appearance & Language > Artists & Albums > Show streaming source badges
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Marks music that an octo-fiesta server brings in from a streaming service. What it does. If your server uses octo-fiesta to add music from a streaming service, those albums, artists and songs get a small badge, so you can tell them from your own files. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Show streaming source badges and change it.
+
+### Show Bio on Artist Pages
+URL: https://navibeat.app/wiki/show-bio-on-artist-pages
+Where: Settings > Appearance & Language > Artists & Albums > Show Bio on Artist Pages
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Shows the artist's biography on their artist page. What it does. The biography comes from your server or from Last.fm. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Show Bio on Artist Pages and change it.
+
+### Show Top Songs on Artist Pages
+URL: https://navibeat.app/wiki/show-top-songs-on-artist-pages
+Where: Settings > Appearance & Language > Artists & Albums > Show Top Songs on Artist Pages
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Shows the artist's top songs on their artist page. What it does. A short list of the artist's best-known songs sits near the top of the page, ready to play. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Show Top Songs on Artist Pages and change it.
+
+### Show Most Played on Artist Pages
+URL: https://navibeat.app/wiki/show-most-played-on-artist-pages
+Where: Settings > Appearance & Language > Artists & Albums > Show Most Played on Artist Pages
+Platforms: iPhone, iPad, Mac, Apple TV
+Shows the artist's songs you play most, on their artist page. What it does. Until you change it, this follows Show Top Songs on Artist Pages. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Show Most Played on Artist Pages and change it.
+
+### Show Bio on Album Pages
+URL: https://navibeat.app/wiki/show-bio-on-album-pages
+Where: Settings > Appearance & Language > Artists & Albums > Show Bio on Album Pages
+Platforms: iPhone, iPad, Mac
+Default: On
+Shows the album's description on its album page. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Show Bio on Album Pages and change it.
+
+### Popular songs
+URL: https://navibeat.app/wiki/popular-songs
+Where: Settings > Appearance & Language > Artists & Albums > Popular songs
+Platforms: iPhone, iPad, Mac, Apple TV
+A flame marks up to three popular songs on each album. What it does. Pick where NaviBeat learns which songs are popular. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Popular songs and change it. Options. OptionWhat it doesDefault. Your serverPopular songs from your Navidrome.Yes. Last.fmPopular songs by Last.fm listeners. ListenBrainzPopular songs by ListenBrainz listeners. OffNo flames.
+
+### Group discography by release type
+URL: https://navibeat.app/wiki/group-discography-by-release-type
+Where: Settings > Appearance & Language > Artists & Albums > Group discography by release type
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Splits an artist's releases into Albums, EPs, Singles and Live. What it does. Off shows every release in one list, in your album sort order, without sections. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Group discography by release type and change it.
+
+### Combine Compilations
+URL: https://navibeat.app/wiki/combine-compilations
+Where: Settings > Appearance & Language > Artists & Albums > Combine Compilations
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Shows a compilation as one album, even when your files have no album artist tag. What it does. Without an album artist tag, a server can split a compilation into one album per artist. This puts it back together as one album. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Combine Compilations and change it.
+
+### Show Play Counts
+URL: https://navibeat.app/wiki/show-play-counts
+Where: Settings > Appearance & Language > Artists & Albums > Show Play Counts
+Platforms: iPhone, iPad, Mac
+Default: Off
+Shows how many times you played each song, on song rows. What it does. The count comes from your server. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Show Play Counts and change it.
+
+### Show Upcoming Concerts on Artist Pages
+URL: https://navibeat.app/wiki/show-upcoming-concerts-on-artist-pages
+Where: Settings > Appearance & Language > Artists & Albums > Show Upcoming Concerts on Artist Pages
+Platforms: iPhone, iPad, Mac
+Default: On
+Shows the artist's upcoming concerts on their artist page. How to change it. Open Settings. Tap Appearance & Language. Tap Artists & Albums. Find Show Upcoming Concerts on Artist Pages and change it.
+
+### Library items
+URL: https://navibeat.app/wiki/library-items
+Where: Settings > Appearance & Language > Theme & Accent > Library items
+Platforms: Mac
+Chooses which rows the Mac sidebar shows under Library. What it does. Turn off the rows you never use. You can also right-click the sidebar to hide a row, and drag rows there to change the order. Show All brings every row back. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Library items and change it.
+
+### Library Doctor
+URL: https://navibeat.app/wiki/library-doctor
+Where: Settings > Appearance & Language > Theme & Accent > Library Doctor
+Platforms: Mac
+Default: On
+Shows or hides the Library Doctor row in the Mac sidebar. What it does. Hiding it removes only the sidebar row. The checks, the note on album pages and the badge on album covers stay. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Library Doctor and change it.
+
+### Show Library Doctor in the sidebar
+URL: https://navibeat.app/wiki/show-library-doctor-in-the-sidebar
+Where: Settings > Appearance & Language > Theme & Accent > Sidebar > Library Doctor
+Platforms: Mac
+The switch that puts Library Doctor in the Mac sidebar. What it does. It is the Library Doctor switch at the end of the Sidebar section. Hiding the row keeps the checks, the album page note and the cover badges. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Click Sidebar. Find Show Library Doctor in the sidebar and change it.
+
+### Show filter button
+URL: https://navibeat.app/wiki/show-filter-button
+Where: Settings > Appearance & Language > Theme & Accent > Show filter button
+Platforms: Mac
+Default: On
+Shows the button beside Library in the Mac sidebar that switches between All Music, Favorites and Downloads. What it does. The filter button lets you browse only your favorites or only your downloads. Hiding it switches back to All Music. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Show filter button and change it.
+
+### Open Now Playing when you press play
+URL: https://navibeat.app/wiki/open-now-playing-when-you-press-play
+Where: Settings > Appearance & Language > Now Playing > Open Now Playing when you press play
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Opens Now Playing when you start a song or an album yourself. What it does. Tap a song or press Play on an album, and Now Playing opens. It stays closed when the queue moves on by itself. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Open Now Playing when you press play and change it.
+
+### Look up missing lyrics online
+URL: https://navibeat.app/wiki/look-up-missing-lyrics-online
+Where: Settings > Appearance & Language > Now Playing > Look up missing lyrics online
+Platforms: iPhone, iPad, Mac
+Default: Off
+Finds lyrics on LRCLIB when your server has none for a song. What it does. When your Navidrome has no lyrics for the song playing, NaviBeat asks LRCLIB, a free public lyrics database, and shows synced lyrics when it finds them. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Look up missing lyrics online and change it. Good to know. With it off, NaviBeat only shows lyrics your server sends.
+
+### Show quality badge
+URL: https://navibeat.app/wiki/show-quality-badge
+Where: Settings > Appearance & Language > Now Playing > Show quality badge
+Platforms: iPhone, iPad, Mac
+Default: On
+Shows the format and quality of the playing song on Now Playing, like HI-RES 24/96. What it does. The badge tells you what you hear: the original file, a converted stream (TRANSCODE) or a download (DOWNLOAD). Tap it on Now Playing to switch between Detailed and Simple. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Show quality badge and change it.
+
+### Player badge style
+URL: https://navibeat.app/wiki/player-badge-style
+Where: Settings > Appearance & Language > Now Playing > Player badge style
+Platforms: iPhone, iPad, Mac
+How much the quality badge on Now Playing says. What it does. Tap the badge on Now Playing to switch between the two styles at any time. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Player badge style and change it. Options. OptionWhat it doesDefault. DetailedShows the format and the numbers.Yes. SimpleShows only Lossless or Hi-Res.
+
+### Bit depth and sample rate for Lossless
+URL: https://navibeat.app/wiki/bit-depth-and-sample-rate-for-lossless
+Where: Settings > Appearance & Language > Now Playing > Bit depth and sample rate for Lossless
+Platforms: iPhone, iPad, Mac
+Default: Off
+Adds the bit depth and sample rate to the badge for CD-quality lossless files too. What it does. Hi-Res files always show their numbers. With this on, CD-quality lossless files show them too, like 16/44.1. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Bit depth and sample rate for Lossless and change it.
+
+### Show "Download" on the badge
+URL: https://navibeat.app/wiki/show-download-on-the-badge
+Where: Settings > Appearance & Language > Now Playing > Show "Download" on the badge
+Platforms: iPhone, iPad, Mac
+Default: On
+Shows the word DOWNLOAD on the quality badge when a song plays from a download. What it does. When the song plays from a file on your device, the badge says DOWNLOAD. Off leaves the word out and shows only the quality. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Show "Download" on the badge and change it.
+
+### Show quality in song lists
+URL: https://navibeat.app/wiki/show-quality-in-song-lists
+Where: Settings > Appearance & Language > Now Playing > Show quality in song lists
+Platforms: iPhone, iPad, Mac
+Default: On
+Shows the quality tier on song rows in album and playlist lists. What it does. Each song row shows a small quality label, so you can see Hi-Res and lossless songs at a glance. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Show quality in song lists and change it.
+
+### Show quality on album pages
+URL: https://navibeat.app/wiki/show-quality-on-album-pages
+Where: Settings > Appearance & Language > Now Playing > Show quality on album pages
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Shows the album's quality on its album page. What it does. The album header shows a quality badge, like Hi-Res or Lossless. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Show quality on album pages and change it.
+
+### Show quality in album grids
+URL: https://navibeat.app/wiki/show-quality-in-album-grids
+Where: Settings > Appearance & Language > Now Playing > Show quality in album grids
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Shows a quality badge on album covers in grids. What it does. Album grids mark each cover with its quality, so Hi-Res albums stand out. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Show quality in album grids and change it.
+
+### Fit non-square artwork
+URL: https://navibeat.app/wiki/fit-non-square-artwork
+Where: Settings > Appearance & Language > Now Playing > Fit non-square artwork
+Platforms: iPhone, iPad, Apple TV
+Shows covers that are not square in full on Now Playing, without cropping. What it does. Some covers are wider or taller than square. With this on, Now Playing fits the whole cover. Off fills the square and crops the edges. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Fit non-square artwork and change it.
+
+### Swipe the cover to change track
+URL: https://navibeat.app/wiki/swipe-the-cover-to-change-track
+Where: Settings > Appearance & Language > Now Playing > Swipe the cover to change track
+Platforms: iPhone, iPad
+Default: On
+Swipe left or right on the Now Playing cover to skip to the next or previous song. What it does. Off, the cover does not react to a sideways swipe, so you cannot skip by accident. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Swipe the cover to change track and change it.
+
+### Track artwork on radio
+URL: https://navibeat.app/wiki/track-artwork-on-radio
+Where: Settings > Appearance & Language > Now Playing > Track artwork on radio
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Shows the cover of the song a radio station is playing, instead of only the station logo. What it does. When a radio station names the song it plays, NaviBeat shows that song's cover: from your library first, then Last.fm when it is connected. The station logo stays when neither knows the song. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Track artwork on radio and change it.
+
+### Song cover for compilation tracks
+URL: https://navibeat.app/wiki/song-cover-for-compilation-tracks
+Where: Settings > Appearance & Language > Now Playing > Song cover for compilation tracks
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+On a compilation, shows each song's own single or album cover from Last.fm. What it does. A compilation has one cover for every song. With this on, Now Playing shows the cover of the song's original single or album instead, from Last.fm. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Song cover for compilation tracks and change it. Good to know. Needs Last.fm connected.
+
+### Player Buttons
+URL: https://navibeat.app/wiki/player-buttons
+Where: Settings > Appearance & Language > Now Playing > Player Buttons
+Platforms: iPhone, iPad, Mac
+Choose and order the buttons on the Now Playing screen. What it does. Open Player Buttons to pick which extra buttons Now Playing shows, like shuffle, repeat, favorite or AutoMix, and drag them into the order you want. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Player Buttons and change it.
+
+### CarPlay Buttons
+URL: https://navibeat.app/wiki/carplay-buttons
+Where: Settings > Appearance & Language > Now Playing > CarPlay Buttons
+Platforms: iPhone, iPad
+Choose and order the buttons on the CarPlay Now Playing screen. What it does. CarPlay has room for a few buttons next to the playback controls. Pick which ones it shows and in what order. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find CarPlay Buttons and change it.
+
+### Active-line style
+URL: https://navibeat.app/wiki/active-line-style
+Where: Settings > Appearance & Language > Lyrics > Active-line style
+Platforms: iPhone, iPad, Mac, Apple TV
+How the line being sung lights up in synced lyrics. What it does. Pick how the active line is highlighted while a song plays. How to change it. Open Settings. Tap Appearance & Language. Tap Lyrics. Find Active-line style and change it. Options. OptionWhat it doesDefault. AutoWord by word when the lyrics have word timing, otherwise the whole line.Yes. Word by word (karaoke)Each word in the active line lights up as it is sung. Highlight whole lineThe whole line lights up at once. Cleaner, less motion.
+
+### Second line
+URL: https://navibeat.app/wiki/second-line
+Where: Settings > Appearance & Language > Lyrics > Second line
+Platforms: iPhone, iPad, Mac, Apple TV
+Adds a second line under each lyric line: a pronunciation, a reading, furigana or a translation. What it does. Useful for songs in a language or script you do not read. How to change it. Open Settings. Tap Appearance & Language. Tap Lyrics. Find Second line and change it. Options. OptionWhat it doesDefault. OffLyrics show exactly as your server sends them.Yes. Pronunciation (romanized)Japanese, Korean, Chinese and other non-Latin lyrics get a Latin line underneath. Reading (kana)Japanese lyrics get the hiragana reading of every kanji underneath. FuriganaSmall hiragana above each kanji. TranslationEach line is translated into your language with Apple's on-device translation. Good to know. Everything runs on your device. Nothing is sent anywhere.
+
+### Blur distant lines
+URL: https://navibeat.app/wiki/blur-distant-lines
+Where: Settings > Appearance & Language > Lyrics > Blur distant lines
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Softly blurs lyric lines far from the one being sung. What it does. Your eye stays on the current line. Off, every line is sharp. How to change it. Open Settings. Tap Appearance & Language. Tap Lyrics. Find Blur distant lines and change it.
+
+### Hide section title on widgets
+URL: https://navibeat.app/wiki/hide-section-title-on-widgets
+Where: Settings > Appearance & Language > Widgets > Hide section title on widgets
+Platforms: iPhone, iPad, Mac
+Default: Off
+Removes the small PLAYLISTS or RECENTLY PLAYED header from those Home Screen widgets. What it does. The widget looks cleaner, and the tiles use the space the header took. How to change it. Open Settings. Tap Appearance & Language. Tap Widgets. Find Hide section title on widgets and change it.
+
+### App Language
+URL: https://navibeat.app/wiki/app-language
+Where: Settings > Appearance & Language > Language > App Language
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: System
+Picks the language NaviBeat is shown in, separate from your device language. What it does. NaviBeat follows your device language unless you pick one here. System goes back to following the device. How to change it. Open Settings. Tap Appearance & Language. Tap Language. Find App Language and change it. Good to know. Quit and reopen NaviBeat to apply the new language.
+
+### Sync Settings
+URL: https://navibeat.app/wiki/sync-settings
+Where: Settings > Appearance & Language > Language > Sync Settings
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Keeps your NaviBeat settings the same on all your Apple devices, through iCloud. What it does. Change a setting on one device and your other devices signed in to the same Apple Account get it too. If two devices change the same setting, the newest change wins. A new device takes the settings that are already in iCloud, instead of pushing its own defaults over them. How to change it. Open Settings. Tap Appearance & Language. Tap Language. Find Sync Settings and change it. Good to know. Turn it off on one device to keep that device as it is.
+
+## Scrobbling & Stats
+
+### Last.fm
+URL: https://navibeat.app/wiki/last-fm
+Where: Settings > Scrobbling & Stats > Last.fm
+Platforms: iPhone, iPad, Mac, Apple TV, Apple Watch
+Connect your Last.fm account for listener counts, similar music, your stats, mixes and Year in Review. What it does. Last.fm is optional. Once connected, NaviBeat reads your Last.fm data back into the player: listener counts, similar songs and artists, your top artists and songs, and Discover Mix. NaviBeat never scrobbles to Last.fm by itself. Your plays go to your Navidrome server, which forwards them to Last.fm if you set that up in Navidrome. How to change it. Open Settings and tap Scrobbling & Stats. Tap Last.fm and sign in on last.fm. Come back to NaviBeat. The switches under it choose what Last.fm adds. Good to know. Disconnecting stops NaviBeat from reading your Last.fm data. You can also remove NaviBeat at last.fm, Settings, Applications.
+
+### Similar Albums on Album Detail
+URL: https://navibeat.app/wiki/similar-albums-on-album-detail
+Where: Settings > Scrobbling & Stats > Similar Albums on Album Detail
+Platforms: iPhone, iPad, Mac
+Shows a shelf of similar albums at the bottom of each album page, from Last.fm. How to change it. Open Settings. Tap Scrobbling & Stats. Find Similar Albums on Album Detail and change it.
+
+### Similar Artists on Artist and Album pages
+URL: https://navibeat.app/wiki/similar-artists-on-artist-and-album-pages
+Where: Settings > Scrobbling & Stats > Similar Artists on Artist and Album pages
+Platforms: iPhone, iPad, Mac
+Shows a shelf of similar artists at the bottom of artist and album pages. What it does. The artists come from Last.fm or ListenBrainz, whichever you connected. How to change it. Open Settings. Tap Scrobbling & Stats. Find Similar Artists on Artist and Album pages and change it.
+
+### Listener counts on Now Playing
+URL: https://navibeat.app/wiki/listener-counts-on-now-playing
+Where: Settings > Scrobbling & Stats > Listener counts on Now Playing
+Platforms: iPhone, iPad, Mac, Apple TV
+Shows how many people listen to the song worldwide, under the song on Now Playing. How to change it. Open Settings. Tap Scrobbling & Stats. Find Listener counts on Now Playing and change it.
+
+### Show my play count
+URL: https://navibeat.app/wiki/show-my-play-count
+Where: Settings > Scrobbling & Stats > Show my play count
+Platforms: iPhone, iPad, Mac
+Shows how many times you played the song, next to the listener count. How to change it. Open Settings. Tap Scrobbling & Stats. Find Show my play count and change it.
+
+### Similar Tracks on Now Playing
+URL: https://navibeat.app/wiki/similar-tracks-on-now-playing
+Where: Settings > Scrobbling & Stats > Similar Tracks on Now Playing
+Platforms: iPhone, iPad, Mac
+Shows a shelf of similar songs under the song on Now Playing, from Last.fm. How to change it. Open Settings. Tap Scrobbling & Stats. Find Similar Tracks on Now Playing and change it.
+
+### Show on Last.fm context menu
+URL: https://navibeat.app/wiki/show-on-last-fm-context-menu
+Where: Settings > Scrobbling & Stats > Show on Last.fm context menu
+Platforms: iPhone, iPad, Mac, Apple TV
+Adds Show on Last.fm to the long-press menu of songs, albums and artists. How to change it. Open Settings. Tap Scrobbling & Stats. Find Show on Last.fm context menu and change it.
+
+### Made for You shelf
+URL: https://navibeat.app/wiki/made-for-you-shelf
+Where: Settings > Scrobbling & Stats > Made for You shelf
+Platforms: iPhone, iPad, Mac
+Shows Discover Mix, Time Machine, Replay and Year in Review on Home, and Made for You in Library. What it does. The mixes use your Last.fm history when Last.fm is connected, and your local play history otherwise. How to change it. Open Settings. Tap Scrobbling & Stats. Find Made for You shelf and change it.
+
+### Your Last.fm shelf
+URL: https://navibeat.app/wiki/your-last-fm-shelf
+Where: Settings > Scrobbling & Stats > Your Last.fm shelf
+Platforms: iPhone, iPad, Mac, Apple TV
+Shows your Last.fm top artists and top songs on Home. How to change it. Open Settings. Tap Scrobbling & Stats. Find Your Last.fm shelf and change it.
+
+### Sync favorites with Last.fm
+URL: https://navibeat.app/wiki/sync-favorites-with-last-fm
+Where: Settings > Scrobbling & Stats > Sync favorites with Last.fm
+Platforms: iPhone, iPad, Mac, Apple TV
+Keeps your NaviBeat favorites and your Last.fm loved songs in sync, both ways. What it does. Favorite a song in NaviBeat and it is loved on Last.fm, and the other way round. Songs not yet in your library are remembered and applied when they appear. Sync now runs it at once and shows how many songs matched. How to change it. Open Settings. Tap Scrobbling & Stats. Find Sync favorites with Last.fm and change it.
+
+### Last.fm gateway
+URL: https://navibeat.app/wiki/last-fm-gateway
+Where: Settings > Scrobbling & Stats > Last.fm gateway
+Platforms: iPhone, iPad, Mac
+Sends NaviBeat's Last.fm requests to another address, like a self-hosted gateway. What it does. Type the gateway address and tap Use this gateway. Use last.fm goes back to Last.fm itself. Signing in still opens last.fm, because that page is their login screen. How to change it. Open Settings. Tap Scrobbling & Stats. Find Last.fm gateway and change it.
+
+### ListenBrainz
+URL: https://navibeat.app/wiki/listenbrainz
+Where: Settings > Scrobbling & Stats > ListenBrainz
+Platforms: iPhone, iPad, Mac, Apple TV
+Connect ListenBrainz for your listen stats, Weekly and Daily Jams, and loved songs. What it does. ListenBrainz is optional and free. NaviBeat reads your listen count, top artists and mixes. It writes one thing: favoriting a song loves it on ListenBrainz, which you can switch off. NaviBeat never submits your listens. Your plays go to your Navidrome server, which can forward them to ListenBrainz if you set that up. How to change it. Open Settings. Tap Scrobbling & Stats. Find ListenBrainz and change it. Good to know. Connect once and it syncs to your other devices.
+
+### Your ListenBrainz shelf
+URL: https://navibeat.app/wiki/your-listenbrainz-shelf
+Where: Settings > Scrobbling & Stats > Your ListenBrainz shelf
+Platforms: iPhone, iPad, Mac, Apple TV
+Shows your ListenBrainz listen stats on Home. How to change it. Open Settings. Tap Scrobbling & Stats. Find Your ListenBrainz shelf and change it.
+
+### Show on ListenBrainz in menus
+URL: https://navibeat.app/wiki/show-on-listenbrainz-in-menus
+Where: Settings > Scrobbling & Stats > Show on ListenBrainz in menus
+Platforms: iPhone, iPad, Mac, Apple TV
+Adds Show on ListenBrainz to the menus of songs, albums and artists. How to change it. Open Settings. Tap Scrobbling & Stats. Find Show on ListenBrainz in menus and change it.
+
+### Your Mixes on Home
+URL: https://navibeat.app/wiki/your-mixes-on-home
+Where: Settings > Scrobbling & Stats > Your Mixes on Home
+Platforms: iPhone, iPad, Mac, Apple TV
+Shows your ListenBrainz Weekly Jams and Daily Jams on Home. How to change it. Open Settings. Tap Scrobbling & Stats. Find Your Mixes on Home and change it.
+
+### Sync favorites with ListenBrainz
+URL: https://navibeat.app/wiki/sync-favorites-with-listenbrainz
+Where: Settings > Scrobbling & Stats > Sync favorites with ListenBrainz
+Platforms: iPhone, iPad, Mac, Apple TV
+Keeps your NaviBeat favorites and your ListenBrainz loved songs in sync. What it does. Songs not yet in your library are remembered and applied when they appear. Removing a favorite in NaviBeat never removes a ListenBrainz love. How to change it. Open Settings. Tap Scrobbling & Stats. Find Sync favorites with ListenBrainz and change it.
+
+### Use my own server
+URL: https://navibeat.app/wiki/use-my-own-server
+Where: Settings > Scrobbling & Stats > Use my own server
+Platforms: iPhone, iPad, Mac, Apple TV
+Connects NaviBeat to your own ListenBrainz-compatible server instead of listenbrainz.org. What it does. Type your server's name and address, then Connect. Similar artists from the ListenBrainz Labs service are not requested for a server you host yourself. How to change it. Open Settings. Tap Scrobbling & Stats. Find Use my own server and change it.
+
+### Top tags on Artist pages
+URL: https://navibeat.app/wiki/top-tags-on-artist-pages
+Where: Settings > Scrobbling & Stats > Top tags on Artist pages
+Platforms: iPhone, iPad, Mac, Apple TV
+Shows up to 3 popular tags under the artist name. What it does. The tags come from Last.fm or ListenBrainz, whichever is connected. How to change it. Open Settings. Tap Scrobbling & Stats. Find Top tags on Artist pages and change it.
+
+### Preferred source
+URL: https://navibeat.app/wiki/preferred-source
+Where: Settings > Scrobbling & Stats > Preferred source
+Platforms: iPhone, iPad, Mac, Apple TV
+Which service fills in listener counts, tags and similar artists when you have more than one connected. What it does. When both are connected, Best available prefers Last.fm and lets ListenBrainz fill in. How to change it. Open Settings. Tap Scrobbling & Stats. Find Preferred source and change it. Options. OptionWhat it doesDefault. Best availableLast.fm first, ListenBrainz fills in.Yes. Last.fmOnly Last.fm. ListenBrainzOnly ListenBrainz.
+
+### AutoMix seeds from
+URL: https://navibeat.app/wiki/automix-seeds-from
+Where: Settings > Scrobbling & Stats > AutoMix seeds from
+Platforms: iPhone, iPad, Mac, Apple TV
+Where AutoMix finds the similar songs it adds when your queue ends. How to change it. Open Settings. Tap Scrobbling & Stats. Find AutoMix seeds from and change it. Options. OptionWhat it doesDefault. Best availableLast.fm first, ListenBrainz fills in.Yes. Last.fmSimilar songs from Last.fm. ListenBrainzSimilar songs from ListenBrainz. Your serverSimilar songs from your Navidrome. Good to know. If the service you picked is disconnected, Settings says so under the picker.
+
+### Show source in shelf titles
+URL: https://navibeat.app/wiki/show-source-in-shelf-titles
+Where: Settings > Scrobbling & Stats > Show source in shelf titles
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Adds the source to shelf titles, like Similar Albums · Last.fm. What it does. Off shows only the shelf name. How to change it. Open Settings. Tap Scrobbling & Stats. Find Show source in shelf titles and change it.
+
+### Year in Review
+URL: https://navibeat.app/wiki/year-in-review
+Where: Settings > Scrobbling & Stats > Year in Review
+Platforms: iPhone, iPad, Mac, Apple TV
+A Wrapped-style recap of your year: top artist, top song and listening totals. What it does. Open it from Settings or the banner on Home. The recap gets better once Last.fm is connected and you have built up play history. How to change it. Open Settings. Tap Scrobbling & Stats. Find Year in Review and change it.
+
+## Devices
+
+### Opens to
+URL: https://navibeat.app/wiki/opens-to
+Where: Settings > Devices > Opens to
+Platforms: iPhone, iPad
+Default: Home
+Where NaviBeat starts when your car connects to CarPlay. What it does. Pick Home, your favorite artists, albums or songs, all artists, all albums, or downloads. Back always returns to the normal CarPlay Home. How to change it. Open Settings. Tap Devices. Find Opens to and change it.
+
+### Offline Mode while in CarPlay
+URL: https://navibeat.app/wiki/offline-mode-while-in-carplay
+Where: Settings > Devices > Offline Mode while in CarPlay
+Platforms: iPhone, iPad
+Default: Off
+Switches to downloaded music only while the car is connected. What it does. Connecting to the car turns on Offline Mode, and disconnecting turns it off again. Useful if your car drives through areas with no signal. How to change it. Open Settings. Tap Devices. Find Offline Mode while in CarPlay and change it.
+
+### Open Now Playing when a song starts
+URL: https://navibeat.app/wiki/open-now-playing-when-a-song-starts
+Where: Settings > Devices > Open Now Playing when a song starts
+Platforms: iPhone, iPad
+Default: On
+Opens Now Playing in CarPlay when you start a song. What it does. When this is off, a song you start in the car plays and the list you were in stays on screen. The Now Playing button still opens it. How to change it. Open Settings. Tap Devices. Find Open Now Playing when a song starts and change it.
+
+### Never start playing when the car connects
+URL: https://navibeat.app/wiki/never-start-playing-when-the-car-connects
+Where: Settings > Devices > Never start playing when the car connects
+Platforms: iPhone, iPad
+Default: Off
+Stops your car from starting NaviBeat by itself when CarPlay connects. What it does. Some cars tell the last music app to play as soon as CarPlay comes up. With this on, NaviBeat ignores a play command in the first few seconds after the car connects. A song you pick on the car screen still plays. How to change it. Open Settings. Tap Devices. Find Never start playing when the car connects and change it.
+
+### Customize CarPlay Home
+URL: https://navibeat.app/wiki/customize-carplay-home
+Where: Settings > Devices > Customize CarPlay Home
+Platforms: iPhone, iPad
+Picks which shelves CarPlay Home shows, and in what order. What it does. This is separate from your phone's Home, so the car can show only what you want while driving. How to change it. Open Settings. Tap Devices. Find Customize CarPlay Home and change it.
+
+### Speakers on your network
+URL: https://navibeat.app/wiki/speakers-on-your-network
+Where: Settings > Devices > Speakers on your network
+Platforms: iPhone, iPad, Mac
+Sends what you play to a UPnP or DLNA speaker: a network streamer, an AV receiver or a smart TV. What it does. The speaker fetches the music from your server itself, so your server has to be reachable from the speaker. The queue moves on by itself while NaviBeat is open. How to change it. Open Settings. Tap Devices. Find Speakers on your network and change it.
+
+### Watch Audio Quality
+URL: https://navibeat.app/wiki/watch-audio-quality
+Where: Settings > Devices > Watch Audio Quality
+Platforms: iPhone, iPad
+The format songs are sent to your Apple Watch in. How to change it. Open Settings. Tap Devices. Find Watch Audio Quality and change it. Options. OptionWhat it doesDefault. OriginalLossless, and huge. One FLAC can be 80 MB. AAC 256 kbpsAbout 11 MB per song. Excellent quality. AAC 128 kbpsAbout 6 MB per song. The best balance for a watch.Yes. MP3 128 kbpsAbout 5 MB per song, for the widest compatibility. MP3 96 kbpsThe smallest files.
+
+### Show downloaded only on Apple Watch
+URL: https://navibeat.app/wiki/show-downloaded-only-on-apple-watch
+Where: Settings > Devices > Show downloaded only on Apple Watch
+Platforms: iPhone, iPad
+Default: Off
+Shows only downloaded music in the watch Library. What it does. Turn it on for workouts or flights where streaming is not available. The watch Library then shows only items with at least one downloaded song. How to change it. Open Settings. Tap Devices. Find Show downloaded only on Apple Watch and change it.
+
+### NaviSyncRock
+URL: https://navibeat.app/wiki/navisyncrock
+Where: Settings > Devices > NaviSyncRock
+Platforms: Mac
+Sends music from your library to a Rockbox player connected to your Mac. What it does. NaviSyncRock copies albums and playlists to a Rockbox player, converted to a format it plays and with artwork sized for it. The player's own settings are under Devices. How to change it. Open Settings. Click Devices. Find NaviSyncRock and change it.
+
+## In-App Purchases
+
+### Library Doctor
+URL: https://navibeat.app/wiki/library-doctor-inapppurchases
+Where: Settings > In-App Purchases > Library Doctor
+Platforms: Mac
+The in-app purchase that lets Library Doctor write its fixes into your files, on the Mac. What it does. Library Doctor's checks and report are free on every device. The purchase adds writing the fixes into your files, through a review sheet where you approve each one. How to change it. Open Settings. Click In-App Purchases. Find Library Doctor and change it.
+
+### NaviSyncRock
+URL: https://navibeat.app/wiki/navisyncrock-inapppurchases
+Where: Settings > In-App Purchases > NaviSyncRock
+Platforms: Mac
+The in-app purchase that unlocks NaviSyncRock on the Mac. How to change it. Open Settings. Click In-App Purchases. Find NaviSyncRock and change it.
+
+### Restore Purchases
+URL: https://navibeat.app/wiki/restore-purchases
+Where: Settings > In-App Purchases > Restore Purchases
+Platforms: Mac
+Brings back in-app purchases you already made, on a new Mac or after a reinstall. How to change it. Open Settings. Click In-App Purchases. Find Restore Purchases and change it.
+
+## Downloads & Storage
+
+### Offline downloads
+URL: https://navibeat.app/wiki/offline-downloads
+Where: Settings > Downloads & Storage > Offline downloads
+Platforms: iPhone, iPad, Mac
+How many songs you downloaded and how much space they take. What it does. The row shows the number of downloaded songs and their total size. Remove them with Delete all downloads. How to change it. Open Settings. Tap Downloads & Storage. Find Offline downloads and change it.
+
+### Download queue
+URL: https://navibeat.app/wiki/download-queue
+Where: Settings > Downloads & Storage > Download queue
+Platforms: iPhone, iPad, Mac
+Shows downloads in progress, including songs being sent to your Apple Watch. What it does. You see how many songs of the current batch are done, or Idle when nothing downloads. How to change it. Open Settings. Tap Downloads & Storage. Find Download queue and change it.
+
+### Concurrent downloads
+URL: https://navibeat.app/wiki/concurrent-downloads
+Where: Settings > Downloads & Storage > Concurrent downloads
+Platforms: iPhone, iPad, Mac
+Default: 1
+How many songs download at the same time, from 1 to 4. What it does. Higher values download faster but load your server harder, because downloads may be converted. How to change it. Open Settings. Tap Downloads & Storage. Find Concurrent downloads and change it.
+
+### Cache size limit
+URL: https://navibeat.app/wiki/cache-size-limit
+Where: Settings > Downloads & Storage > Cache size limit
+Platforms: iPhone, iPad, Mac
+Default: 5 GB
+How much space songs kept from streaming may use. What it does. When the limit is passed, songs kept automatically from streaming are removed first, oldest first. Downloads you made yourself are never deleted automatically. How to change it. Open Settings. Tap Downloads & Storage. Find Cache size limit and change it. Good to know. If your own downloads are already over the limit, Settings says so. Raise the limit or remove downloads by hand.
+
+### Keep Streamed Songs
+URL: https://navibeat.app/wiki/keep-streamed-songs
+Where: Settings > Downloads & Storage > Keep Streamed Songs
+Platforms: iPhone, iPad, Mac
+Default: Off
+Saves songs you stream, so the next play comes from this device. What it does. Every streamed song is also stored on the device. It counts toward the Cache size limit. How to change it. Open Settings. Tap Downloads & Storage. Find Keep Streamed Songs and change it.
+
+### Artwork cache
+URL: https://navibeat.app/wiki/artwork-cache
+Where: Settings > Downloads & Storage > Artwork cache
+Platforms: iPhone, iPad, Mac
+How much space saved cover art takes. How to change it. Open Settings. Tap Downloads & Storage. Find Artwork cache and change it.
+
+### Cache
+URL: https://navibeat.app/wiki/cache
+Where: Settings > Downloads & Storage > Cache
+Platforms: iPhone, iPad, Mac
+Opens the cache screen, with what NaviBeat keeps on the device and how to clear it. How to change it. Open Settings. Tap Downloads & Storage. Find Cache and change it.
+
+### Cache artwork
+URL: https://navibeat.app/wiki/cache-artwork
+Where: Settings > Downloads & Storage > Cache artwork
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Keeps cover art on the device, so pages load faster and use less data. How to change it. Open Settings. Tap Downloads & Storage. Find Cache artwork and change it.
+
+### Delete all downloads
+URL: https://navibeat.app/wiki/delete-all-downloads
+Where: Settings > Downloads & Storage > Delete all downloads
+Platforms: iPhone, iPad, Mac
+Deletes every downloaded song from this device. What it does. NaviBeat asks first. You can download anything again from the library. How to change it. Open Settings. Tap Downloads & Storage. Find Delete all downloads and change it.
+
+### Delete artwork only
+URL: https://navibeat.app/wiki/delete-artwork-only
+Where: Settings > Downloads & Storage > Delete artwork only
+Platforms: iPhone, iPad, Mac
+Clears saved cover art, and keeps your music. What it does. Cover art downloads again the next time you browse. Your music files are not touched. How to change it. Open Settings. Tap Downloads & Storage. Find Delete artwork only and change it.
+
+### Download folder
+URL: https://navibeat.app/wiki/download-folder
+Where: Settings > Downloads & Storage > Download folder
+Platforms: Mac
+Picks where the Mac keeps downloaded music, for example on an external drive. What it does. Choose a new folder and NaviBeat moves your downloads there. It is available when no downloads are running. How to change it. Open Settings. Click Downloads & Storage. Find Download folder and change it. Good to know. If the old folder is not connected, its files stay where they are, and new downloads go to the new folder.
+
+### Songs Kept Ready
+URL: https://navibeat.app/wiki/songs-kept-ready
+Where: Settings > Downloads & Storage > Songs Kept Ready
+Platforms: iPhone, iPad
+Default: 2
+On cellular, downloads the next few songs while one plays, so music keeps going where the signal drops. What it does. Pick 2, 3, 5, 10, 25 or 50 songs. More songs use more data. How to change it. Open Settings. Tap Downloads & Storage. Find Songs Kept Ready and change it.
+
+## About
+
+### Share Settings
+URL: https://navibeat.app/wiki/share-settings
+Where: Settings > About > Share Settings
+Platforms: iPhone, iPad, Mac
+Shares your NaviBeat settings with someone else as a link or a QR code. What it does. Pick the groups of settings to share. Send the link, or let the other person scan the code. NaviBeat opens it on iPhone, iPad and Mac, and they see every change before they apply it. The link never carries your server address, account, password, Last.fm or ListenBrainz login, certificate or downloads. How to change it. Open Settings. Tap About. Find Share Settings and change it.
+
+### What's New & Tips
+URL: https://navibeat.app/wiki/what-s-new-and-tips
+Where: Settings > About > What's New & Tips
+Platforms: iPhone, iPad, Mac
+What changed in recent versions, and tips for features you may have missed. How to change it. Open Settings. Tap About. Find What's New & Tips and change it.
+
+### Acknowledgements
+URL: https://navibeat.app/wiki/acknowledgements
+Where: Settings > About > Acknowledgements
+Platforms: iPhone, iPad, Mac, Apple TV, Apple Watch
+The open source software NaviBeat uses, with their licenses. How to change it. Open Settings. Tap About. Find Acknowledgements and change it.
+
+### More From Nenad Jokic
+URL: https://navibeat.app/wiki/more-from-nenad-jokic
+Where: Settings > About > More From Nenad Jokic
+Platforms: iPhone, iPad, Mac, Apple TV
+Other apps by the developer of NaviBeat. How to change it. Open Settings. Tap About. Find More From Nenad Jokic and change it.
+
+### Privacy
+URL: https://navibeat.app/wiki/privacy
+Where: Settings > About > Privacy
+Platforms: iPhone, iPad, Mac
+What NaviBeat does with your data: it talks only to your own server. What it does. There is no NaviBeat backend, no analytics, no telemetry and no third-party SDK in the app. Your server password is kept in the device Keychain. How to change it. Open Settings. Tap About. Find Privacy and change it.
+
+### Run Setup Again
+URL: https://navibeat.app/wiki/run-setup-again
+Where: Settings > About > Run Setup Again
+Platforms: iPhone, iPad, Mac, Apple TV
+Opens the setup wizard again, to go through the main choices one by one. How to change it. Open Settings. Tap About. Find Run Setup Again and change it.
+
+### Export Settings…
+URL: https://navibeat.app/wiki/export-settings
+Where: Settings > About > Export Settings…
+Platforms: iPhone, iPad, Mac
+Saves all your NaviBeat settings to a file, as a backup. What it does. Keep the file somewhere safe, and use Import Settings… to restore it later. Servers, accounts and downloads are not part of a backup. How to change it. Open Settings. Tap About. Find Export Settings… and change it.
+
+### Import Settings…
+URL: https://navibeat.app/wiki/import-settings
+Where: Settings > About > Import Settings…
+Platforms: iPhone, iPad, Mac
+Restores your settings from a backup file. What it does. NaviBeat tells you how many settings the file replaces before it applies them. Quit and reopen NaviBeat afterwards so every setting takes effect. How to change it. Open Settings. Tap About. Find Import Settings… and change it. Good to know. A backup from a newer version of NaviBeat needs the app updated first.
+
+### Troubleshooting
+URL: https://navibeat.app/wiki/troubleshooting
+Where: Settings > About > Troubleshooting
+Platforms: iPhone, iPad, Mac, Apple TV
+Records a log of one part of the app, so you can send it to support. What it does. Recording is off by default. Turn on the channel that matches your problem, make it happen again, then come back and prepare the log. Record everything turns every channel on when you are not sure which one to pick. How to change it. Open Settings. Tap About. Find Troubleshooting and change it. Good to know. Recording costs battery, so turn it off once you have the log. Your server address and username are removed from the log automatically. If the app crashed, the log is empty. Send the crash report from iOS Settings, Privacy & Security, Analytics & Improvements instead.
+
+### Prepare log
+URL: https://navibeat.app/wiki/prepare-log
+Where: Settings > About > Troubleshooting > Prepare log
+Platforms: iPhone, iPad, Mac, Apple TV
+Collects what the recording channels wrote, ready to send. What it does. After Prepare log, NaviBeat shows how many lines are ready, and Send log appears. How to change it. Open Settings. Tap About. Tap Troubleshooting. Find Prepare log and change it.
+
+### Send log
+URL: https://navibeat.app/wiki/send-log
+Where: Settings > About > Troubleshooting > Send log
+Platforms: iPhone, iPad, Mac, Apple TV
+Sends the prepared log, by mail or any app in the share sheet. How to change it. Open Settings. Tap About. Tap Troubleshooting. Find Send log and change it.
+
+### Connect and Send to
+URL: https://navibeat.app/wiki/connect-and-send-to
+Where: Settings > About > Troubleshooting > Connect and Send to
+Platforms: iPhone, iPad, Mac, Apple TV
+The Troubleshooting channel for playing on and controlling your other NaviBeat devices. What it does. Turn it on when handoff, the Continue card or sending music to another device does not work, then prepare and send the log. How to change it. Open Settings. Tap About. Tap Troubleshooting. Find Connect and Send to and change it.
+

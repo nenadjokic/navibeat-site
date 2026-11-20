@@ -1,0 +1,18 @@
+{
+ "file": "artwork-cache.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Artwork cache, with Artwork cache marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Artwork cache.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 50.02,
+   "w": 27.8,
+   "h": 3.38,
+   "label": "Artwork cache",
+   "text": "How much space saved cover art takes."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "library-sync.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Library Sync, with Library Sync marked",
+ "caption": "iPhone, Settings > Server & Library > Library Sync.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Library Sync",
+   "text": "Asks your Navidrome server to scan its music folders for new, changed or removed files."
+  }
+ ],
+ "found": true
+}

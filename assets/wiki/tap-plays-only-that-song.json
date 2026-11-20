@@ -1,0 +1,18 @@
+{
+ "file": "tap-plays-only-that-song.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Tap plays only that song, with Tap plays only that song marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Tap plays only that song.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.0,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Tap plays only that song",
+   "text": "Tapping a song plays just that song, without the rest of the list behind it."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "mini-player-style.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Theme & Accent > Mini player style, with Mini player style marked",
+ "caption": "iPhone, Settings > Appearance & Language > Theme & Accent > Mini player style.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 52.72,
+   "w": 30.61,
+   "h": 3.38,
+   "label": "Mini player style",
+   "text": "How the mini player at the bottom of the screen looks."
+  }
+ ],
+ "found": true
+}

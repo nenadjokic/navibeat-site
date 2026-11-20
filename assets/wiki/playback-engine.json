@@ -1,0 +1,18 @@
+{
+ "file": "playback-engine.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Advanced > Playback engine, with Playback engine marked",
+ "caption": "iPhone, Settings > Playback & Audio > Advanced > Playback engine.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 17.38,
+   "w": 30.98,
+   "h": 3.38,
+   "label": "Playback engine",
+   "text": "Picks the audio engine NaviBeat plays with: Apple's standard player or AudioStreaming (beta)."
+  }
+ ],
+ "found": true
+}

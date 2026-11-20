@@ -1,0 +1,18 @@
+{
+ "file": "offline-downloads.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Offline downloads, with Offline downloads marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Offline downloads.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 17.38,
+   "w": 33.94,
+   "h": 3.38,
+   "label": "Offline downloads",
+   "text": "How many songs you downloaded and how much space they take."
+  }
+ ],
+ "found": true
+}

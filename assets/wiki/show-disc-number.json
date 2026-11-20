@@ -1,0 +1,18 @@
+{
+ "file": "show-disc-number.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Show disc number, with Show disc number marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Show disc number.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.84,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Show disc number",
+   "text": "Shows Disc 1, Disc 2 and so on above each disc on album pages."
+  }
+ ],
+ "found": true
+}

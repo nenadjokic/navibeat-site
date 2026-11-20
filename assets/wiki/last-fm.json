@@ -1,0 +1,18 @@
+{
+ "file": "last-fm.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Scrobbling & Stats > Last.fm, with Last.fm marked",
+ "caption": "iPhone, Settings > Scrobbling & Stats > Last.fm.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 11.51,
+   "w": 93.64,
+   "h": 5.47,
+   "label": "Last.fm",
+   "text": "Connect your Last.fm account for listener counts, similar music, your stats, mixes and Year in Review."
+  }
+ ],
+ "found": true
+}

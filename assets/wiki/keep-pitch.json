@@ -1,0 +1,18 @@
+{
+ "file": "keep-pitch.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Keep pitch, with Keep pitch marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Keep pitch.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 36.96,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Keep pitch",
+   "text": "Keeps voices and instruments at their normal pitch when you change Playback Speed."
+  }
+ ],
+ "found": true
+}

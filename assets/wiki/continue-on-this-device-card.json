@@ -1,0 +1,18 @@
+{
+ "file": "continue-on-this-device-card.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Continue on This Device card, with Continue on This Device card marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Continue on This Device card.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.84,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Continue on This Device card",
+   "text": "Shows a card on Home when another of your devices is playing, so you can pick up from the same second."
+  }
+ ],
+ "found": true
+}

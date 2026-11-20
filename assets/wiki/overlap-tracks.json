@@ -1,0 +1,18 @@
+{
+ "file": "overlap-tracks.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Equalizer & Effects > Overlap tracks, with Overlap tracks marked",
+ "caption": "iPhone, Settings > Playback & Audio > Equalizer & Effects > Overlap tracks.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 43.1,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Overlap tracks",
+   "text": "Crossfade: the end of one song fades out while the next one fades in."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "bit-depth-and-sample-rate-for-lossless.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Now Playing > Bit depth and sample rate for Lossless, with Bit depth and sample rate for Lossless marked",
+ "caption": "iPhone, Settings > Appearance & Language > Now Playing > Bit depth and sample rate for Lossless.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Bit depth and sample rate for Lossless",
+   "text": "Adds the bit depth and sample rate to the badge for CD-quality lossless files too."
+  }
+ ],
+ "found": true
+}

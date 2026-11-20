@@ -1,0 +1,18 @@
+{
+ "file": "songs-kept-ready.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Songs Kept Ready, with Songs Kept Ready marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Songs Kept Ready.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.49,
+   "w": 34.39,
+   "h": 3.38,
+   "label": "Songs Kept Ready",
+   "text": "On cellular, downloads the next few songs while one plays, so music keeps going where the signal drops."
+  }
+ ],
+ "found": true
+}

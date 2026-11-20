@@ -1,0 +1,18 @@
+{
+ "file": "server.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Server, with Server marked",
+ "caption": "iPhone, Settings > Server & Library > Server.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 11.51,
+   "w": 93.64,
+   "h": 5.47,
+   "label": "Server",
+   "text": "The address of the Navidrome or Subsonic server NaviBeat is connected to."
+  }
+ ],
+ "found": true
+}

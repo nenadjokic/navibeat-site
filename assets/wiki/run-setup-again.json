@@ -1,0 +1,18 @@
+{
+ "file": "run-setup-again.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > About > Run Setup Again, with Run Setup Again marked",
+ "caption": "iPhone, Settings > About > Run Setup Again.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 42.92,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Run Setup Again",
+   "text": "Opens the setup wizard again, to go through the main choices one by one."
+  }
+ ],
+ "found": true
+}

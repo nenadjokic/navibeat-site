@@ -1,0 +1,18 @@
+{
+ "file": "fade-on-pause-and-play.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Fade on pause and play, with Fade on pause and play marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Fade on pause and play.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.04,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Fade on pause and play",
+   "text": "Pause lowers the sound smoothly before it stops, and Play brings it back up."
+  }
+ ],
+ "found": true
+}

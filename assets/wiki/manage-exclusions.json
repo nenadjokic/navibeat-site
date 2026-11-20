@@ -1,0 +1,18 @@
+{
+ "file": "manage-exclusions.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Manage Exclusions, with Manage Exclusions marked",
+ "caption": "iPhone, Settings > Server & Library > Manage Exclusions.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Manage Exclusions",
+   "text": "Stops an artist, album, genre or song from being reported to your server."
+  }
+ ],
+ "found": true
+}

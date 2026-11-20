@@ -1,0 +1,18 @@
+{
+ "file": "speakers-on-your-network.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Devices > Speakers on your network, with Speakers on your network marked",
+ "caption": "iPhone, Settings > Devices > Speakers on your network.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Speakers on your network",
+   "text": "Sends what you play to a UPnP or DLNA speaker: a network streamer, an AV receiver or a smart TV."
+  }
+ ],
+ "found": true
+}

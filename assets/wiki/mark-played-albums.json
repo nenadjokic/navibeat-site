@@ -1,0 +1,18 @@
+{
+ "file": "mark-played-albums.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Artists & Albums > Mark Played Albums, with Mark Played Albums marked",
+ "caption": "iPhone, Settings > Appearance & Language > Artists & Albums > Mark Played Albums.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 35.25,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Mark Played Albums",
+   "text": "Adds a small checkmark to albums your server has plays for."
+  }
+ ],
+ "found": true
+}

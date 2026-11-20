@@ -1,0 +1,18 @@
+{
+ "file": "combine-compilations.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Artists & Albums > Combine Compilations, with Combine Compilations marked",
+ "caption": "iPhone, Settings > Appearance & Language > Artists & Albums > Combine Compilations.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 26.6,
+   "w": 93.64,
+   "h": 9.9,
+   "label": "Combine Compilations",
+   "text": "Shows a compilation as one album, even when your files have no album artist tag."
+  }
+ ],
+ "found": true
+}

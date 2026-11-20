@@ -1,0 +1,18 @@
+{
+ "file": "watch-audio-quality.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Devices > Watch Audio Quality, with Watch Audio Quality marked",
+ "caption": "iPhone, Settings > Devices > Watch Audio Quality.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 54.85,
+   "w": 37.73,
+   "h": 3.38,
+   "label": "Watch Audio Quality",
+   "text": "The format songs are sent to your Apple Watch in."
+  }
+ ],
+ "found": true
+}

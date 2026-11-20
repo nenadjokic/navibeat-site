@@ -1,0 +1,18 @@
+{
+ "file": "concurrent-downloads.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Concurrent downloads, with Concurrent downloads marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Concurrent downloads.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 33.61,
+   "w": 42.05,
+   "h": 3.38,
+   "label": "Concurrent downloads",
+   "text": "How many songs download at the same time, from 1 to 4."
+  }
+ ],
+ "found": true
+}

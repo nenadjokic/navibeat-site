@@ -1,0 +1,18 @@
+{
+ "file": "allow-other-devices-to-send-music-here.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Allow other devices to send music here, with Allow other devices to send music here marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Allow other devices to send music here.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 46.23,
+   "w": 84.55,
+   "h": 5.68,
+   "label": "Allow other devices to send music here",
+   "text": "Lets another NaviBeat on the same network send what it is playing to this device."
+  }
+ ],
+ "found": true
+}

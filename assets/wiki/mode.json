@@ -1,0 +1,18 @@
+{
+ "file": "mode.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Equalizer & Effects > Mode, with Mode marked",
+ "caption": "iPhone, Settings > Playback & Audio > Equalizer & Effects > Mode.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 17.38,
+   "w": 12.58,
+   "h": 3.38,
+   "label": "Mode",
+   "text": "How ReplayGain evens out loudness between songs: by track, by album, or automatically."
+  }
+ ],
+ "found": true
+}

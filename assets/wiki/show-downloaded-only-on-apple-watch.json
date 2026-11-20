@@ -1,0 +1,18 @@
+{
+ "file": "show-downloaded-only-on-apple-watch.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Devices > Show downloaded only on Apple Watch, with Show downloaded only on Apple Watch marked",
+ "caption": "iPhone, Settings > Devices > Show downloaded only on Apple Watch.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 65.52,
+   "w": 93.64,
+   "h": 14.5,
+   "label": "Show downloaded only on Apple Watch",
+   "text": "Shows only downloaded music in the watch Library."
+  }
+ ],
+ "found": true
+}

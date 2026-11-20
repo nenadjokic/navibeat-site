@@ -1,0 +1,18 @@
+{
+ "file": "show-track-position.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Show track position, with Show track position marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Show track position.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 46.16,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Show track position",
+   "text": "Shows a line like Track 3 of 11 on Now Playing, in CarPlay and on the Lock Screen."
+  }
+ ],
+ "found": true
+}

@@ -595,3 +595,7 @@ This site and its comparison data are written and checked by Nenad Jokic.
 You may quote it with a link to navibeat.app.
 If you are building a music client and want to reuse or license this research,
 write to support@navibeat.app.
+
+## Wiki
+
+Every setting in NaviBeat has its own page at https://navibeat.app/wiki/ (what it does, where it is, its default, the platforms that have it). The full text of every article is at https://navibeat.app/llms-wiki.txt

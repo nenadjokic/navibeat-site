@@ -1,0 +1,18 @@
+{
+ "file": "share-settings.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > About > Share Settings, with Share Settings marked",
+ "caption": "iPhone, Settings > About > Share Settings.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 21.16,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Share Settings",
+   "text": "Shares your NaviBeat settings with someone else as a link or a QR code."
+  }
+ ],
+ "found": true
+}

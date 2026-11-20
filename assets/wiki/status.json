@@ -1,0 +1,18 @@
+{
+ "file": "status.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Status, with Status marked",
+ "caption": "iPhone, Settings > Server & Library > Status.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 28.26,
+   "w": 13.86,
+   "h": 3.38,
+   "label": "Status",
+   "text": "Whether NaviBeat can reach your server right now."
+  }
+ ],
+ "found": true
+}

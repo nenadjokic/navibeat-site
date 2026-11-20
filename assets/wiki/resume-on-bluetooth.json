@@ -1,0 +1,18 @@
+{
+ "file": "resume-on-bluetooth.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Resume on Bluetooth, with Resume on Bluetooth marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Resume on Bluetooth.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.0,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Resume on Bluetooth",
+   "text": "Starts the music again when your headphones or speaker connect."
+  }
+ ],
+ "found": true
+}

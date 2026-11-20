@@ -1,0 +1,18 @@
+{
+ "file": "album-titles.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Theme & Accent > Album Titles, with Album Titles marked",
+ "caption": "iPhone, Settings > Appearance & Language > Theme & Accent > Album Titles.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 50.05,
+   "w": 24.24,
+   "h": 3.38,
+   "label": "Album Titles",
+   "text": "Shows long album titles on one line or in full."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "swipe-the-cover-to-change-track.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Now Playing > Swipe the cover to change track, with Swipe the cover to change track marked",
+ "caption": "iPhone, Settings > Appearance & Language > Now Playing > Swipe the cover to change track.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Swipe the cover to change track",
+   "text": "Swipe left or right on the Now Playing cover to skip to the next or previous song."
+  }
+ ],
+ "found": true
+}

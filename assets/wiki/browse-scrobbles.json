@@ -1,0 +1,18 @@
+{
+ "file": "browse-scrobbles.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Browse Scrobbles, with Browse Scrobbles marked",
+ "caption": "iPhone, Settings > Server & Library > Browse Scrobbles.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Browse Scrobbles",
+   "text": "A list of the songs you played on this device."
+  }
+ ],
+ "found": true
+}

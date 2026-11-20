@@ -1,0 +1,18 @@
+{
+ "file": "delete-artwork-only.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Delete artwork only, with Delete artwork only marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Delete artwork only.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 68.55,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Delete artwork only",
+   "text": "Clears saved cover art, and keeps your music."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "active-line-style.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Lyrics > Active-line style, with Active-line style marked",
+ "caption": "iPhone, Settings > Appearance & Language > Lyrics > Active-line style.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 17.38,
+   "w": 30.38,
+   "h": 3.38,
+   "label": "Active-line style",
+   "text": "How the line being sung lights up in synced lyrics."
+  }
+ ],
+ "found": true
+}

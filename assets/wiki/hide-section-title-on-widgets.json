@@ -1,0 +1,18 @@
+{
+ "file": "hide-section-title-on-widgets.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Widgets > Hide section title on widgets, with Hide section title on widgets marked",
+ "caption": "iPhone, Settings > Appearance & Language > Widgets > Hide section title on widgets.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 16.91,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Hide section title on widgets",
+   "text": "Removes the small PLAYLISTS or RECENTLY PLAYED header from those Home Screen widgets."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "shuffle-exclusions.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Shuffle Exclusions, with Shuffle Exclusions marked",
+ "caption": "iPhone, Settings > Server & Library > Shuffle Exclusions.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Shuffle Exclusions",
+   "text": "Keeps albums or artists out of Random Picks, Shuffle Mix and Album Radio."
+  }
+ ],
+ "found": true
+}

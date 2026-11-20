@@ -1,0 +1,18 @@
+{
+ "file": "metadata-corrections.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Metadata Corrections, with Metadata Corrections marked",
+ "caption": "iPhone, Settings > Server & Library > Metadata Corrections.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.88,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Metadata Corrections",
+   "text": "Fixes a wrong title, artist, album, genre or year for a song, on this device only."
+  }
+ ],
+ "found": true
+}

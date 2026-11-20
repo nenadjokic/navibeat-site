@@ -1,0 +1,18 @@
+{
+ "file": "show-favorite-button-on-rows.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Theme & Accent > Show favorite button on rows, with Show favorite button on rows marked",
+ "caption": "iPhone, Settings > Appearance & Language > Theme & Accent > Show favorite button on rows.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.0,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Show favorite button on rows",
+   "text": "Adds a heart to each song row, so you can favorite with one tap."
+  }
+ ],
+ "found": true
+}

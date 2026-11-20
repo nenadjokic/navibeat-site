@@ -1,0 +1,18 @@
+{
+ "file": "server-information.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Server information, with Server information marked",
+ "caption": "iPhone, Settings > Server & Library > Server information.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 42.92,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Server information",
+   "text": "Your server's version and the OpenSubsonic features it supports."
+  }
+ ],
+ "found": true
+}

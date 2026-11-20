@@ -1,0 +1,18 @@
+{
+ "file": "player-badge-style.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Now Playing > Player badge style, with Player badge style marked",
+ "caption": "iPhone, Settings > Appearance & Language > Now Playing > Player badge style.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 50.05,
+   "w": 34.47,
+   "h": 3.38,
+   "label": "Player badge style",
+   "text": "How much the quality badge on Now Playing says."
+  }
+ ],
+ "found": true
+}

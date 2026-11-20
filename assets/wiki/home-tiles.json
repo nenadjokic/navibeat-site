@@ -1,0 +1,18 @@
+{
+ "file": "home-tiles.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Theme & Accent > Home Tiles, with Home Tiles marked",
+ "caption": "iPhone, Settings > Appearance & Language > Theme & Accent > Home Tiles.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 50.02,
+   "w": 22.2,
+   "h": 3.38,
+   "label": "Home Tiles",
+   "text": "Large or Compact tiles on the Home screen."
+  }
+ ],
+ "found": true
+}

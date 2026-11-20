@@ -1,0 +1,18 @@
+{
+ "file": "import-settings.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > About > Import Settings\u2026, with Import Settings\u2026 marked",
+ "caption": "iPhone, Settings > About > Import Settings\u2026.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 32.04,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Import Settings\u2026",
+   "text": "Restores your settings from a backup file."
+  }
+ ],
+ "found": true
+}

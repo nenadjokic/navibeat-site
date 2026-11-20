@@ -1,0 +1,18 @@
+{
+ "file": "artist-on-every-track.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Artists & Albums > Artist On Every Track, with Artist On Every Track marked",
+ "caption": "iPhone, Settings > Appearance & Language > Artists & Albums > Artist On Every Track.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 21.16,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Artist On Every Track",
+   "text": "Shows the artist under every song, even when it only repeats the album artist."
+  }
+ ],
+ "found": true
+}

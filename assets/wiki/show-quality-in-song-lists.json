@@ -1,0 +1,18 @@
+{
+ "file": "show-quality-in-song-lists.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Now Playing > Show quality in song lists, with Show quality in song lists marked",
+ "caption": "iPhone, Settings > Appearance & Language > Now Playing > Show quality in song lists.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Show quality in song lists",
+   "text": "Shows the quality tier on song rows in album and playlist lists."
+  }
+ ],
+ "found": true
+}

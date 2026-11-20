@@ -1,0 +1,18 @@
+{
+ "file": "preamp.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Equalizer & Effects > Preamp, with Preamp marked",
+ "caption": "iPhone, Settings > Playback & Audio > Equalizer & Effects > Preamp.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 22.82,
+   "w": 16.14,
+   "h": 3.38,
+   "label": "Preamp",
+   "text": "ReplayGain evens out loudness between songs. Mode picks how, Preamp adds a few dB on top."
+  }
+ ],
+ "found": true
+}

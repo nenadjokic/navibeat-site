@@ -1,0 +1,18 @@
+{
+ "file": "pause-during-navigation-prompts.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Pause during navigation prompts, with Pause during navigation prompts marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Pause during navigation prompts.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.84,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Pause during navigation prompts",
+   "text": "Pauses music while a navigation app speaks, then resumes a couple of seconds back."
+  }
+ ],
+ "found": true
+}

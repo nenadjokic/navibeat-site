@@ -1,0 +1,18 @@
+{
+ "file": "remember-position-in-playlists-and-albums.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Remember position in playlists and albums, with Remember position in playlists and albums marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Remember position in playlists and albums.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 46.23,
+   "w": 84.55,
+   "h": 5.68,
+   "label": "Remember position in playlists and albums",
+   "text": "When you open a playlist or album again, NaviBeat offers to continue where you stopped."
+  }
+ ],
+ "found": true
+}

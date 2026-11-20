@@ -1,0 +1,18 @@
+{
+ "file": "server-addresses.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Server addresses, with Server addresses marked",
+ "caption": "iPhone, Settings > Server & Library > Server addresses.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 33.7,
+   "w": 32.88,
+   "h": 3.38,
+   "label": "Server addresses",
+   "text": "Your server's public address, an optional home network address, and custom headers."
+  }
+ ],
+ "found": true
+}

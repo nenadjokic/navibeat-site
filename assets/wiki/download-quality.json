@@ -1,0 +1,18 @@
+{
+ "file": "download-quality.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Download quality, with Download quality marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Download quality.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 48.26,
+   "w": 32.5,
+   "h": 3.38,
+   "label": "Download quality",
+   "text": "The quality of the files NaviBeat saves when you download music."
+  }
+ ],
+ "found": true
+}

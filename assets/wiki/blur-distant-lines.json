@@ -1,0 +1,18 @@
+{
+ "file": "blur-distant-lines.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Lyrics > Blur distant lines, with Blur distant lines marked",
+ "caption": "iPhone, Settings > Appearance & Language > Lyrics > Blur distant lines.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 38.35,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Blur distant lines",
+   "text": "Softly blurs lyric lines far from the one being sung."
+  }
+ ],
+ "found": true
+}

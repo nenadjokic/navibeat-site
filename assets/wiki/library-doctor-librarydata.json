@@ -1,0 +1,18 @@
+{
+ "file": "library-doctor-librarydata.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Library Doctor, with Library Doctor marked",
+ "caption": "iPhone, Settings > Server & Library > Library Doctor.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 54.32,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Library Doctor",
+   "text": "Finds tag problems that split albums, and missing covers, track numbers and damaged text."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "what-s-new-and-tips.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > About > What's New & Tips, with What's New & Tips marked",
+ "caption": "iPhone, Settings > About > What's New & Tips.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 37.48,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "What's New & Tips",
+   "text": "What changed in recent versions, and tips for features you may have missed."
+  }
+ ],
+ "found": true
+}

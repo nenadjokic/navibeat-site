@@ -1,0 +1,18 @@
+{
+ "file": "dim-version-text-in-song-and-album-titles.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Theme & Accent > Dim version text in song and album titles, with Dim version text in song and album titles marked",
+ "caption": "iPhone, Settings > Appearance & Language > Theme & Accent > Dim version text in song and album titles.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 46.27,
+   "w": 84.55,
+   "h": 5.68,
+   "label": "Dim version text in song and album titles",
+   "text": "Draws the part after a title, like (Live) or [Deluxe Edition], lighter and a little smaller."
+  }
+ ],
+ "found": true
+}

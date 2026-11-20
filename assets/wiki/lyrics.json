@@ -1,0 +1,18 @@
+{
+ "file": "lyrics.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Lyrics, with Lyrics marked",
+ "caption": "iPhone, Settings > Server & Library > Lyrics.",
+ "marks": [
+  {
+   "x": 8.86,
+   "y": 50.31,
+   "w": 6.82,
+   "h": 2.86,
+   "label": "Lyrics",
+   "text": "Server Health: how many of your songs have lyrics on your server."
+  }
+ ],
+ "found": true
+}

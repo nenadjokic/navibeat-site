@@ -1,0 +1,18 @@
+{
+ "file": "delete-all-downloads.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Delete all downloads, with Delete all downloads marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Delete all downloads.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 63.11,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Delete all downloads",
+   "text": "Deletes every downloaded song from this device."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "direct-playback.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Direct Playback, with Direct Playback marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Direct Playback.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 39.12,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Direct Playback",
+   "text": "Plays the file exactly as it is stored on your server, with nothing from NaviBeat in between."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "show-star-ratings.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Theme & Accent > Show star ratings, with Show star ratings marked",
+ "caption": "iPhone, Settings > Appearance & Language > Theme & Accent > Show star ratings.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.84,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Show star ratings",
+   "text": "Shows star ratings on song rows, album and artist headers and Now Playing."
+  }
+ ],
+ "found": true
+}

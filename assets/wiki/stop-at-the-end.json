@@ -1,0 +1,18 @@
+{
+ "file": "stop-at-the-end.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Stop at the end, with Stop at the end marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Stop at the end.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 15.73,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Stop at the end",
+   "text": "When an album or playlist finishes, playback stops and Now Playing closes."
+  }
+ ],
+ "found": true
+}

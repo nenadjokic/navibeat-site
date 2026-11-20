@@ -1,0 +1,18 @@
+{
+ "file": "keep-display-awake-while-playing.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Keep display awake while playing, with Keep display awake while playing marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Keep display awake while playing.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Keep display awake while playing",
+   "text": "Stops the screen from going to sleep while music plays."
+  }
+ ],
+ "found": true
+}

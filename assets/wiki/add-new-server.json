@@ -1,0 +1,18 @@
+{
+ "file": "add-new-server.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Add New Server, with Add New Server marked",
+ "caption": "iPhone, Settings > Server & Library > Add New Server.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Add New Server",
+   "text": "Connects to a different server."
+  }
+ ],
+ "found": true
+}

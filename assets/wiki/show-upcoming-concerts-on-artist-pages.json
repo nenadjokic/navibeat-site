@@ -1,0 +1,18 @@
+{
+ "file": "show-upcoming-concerts-on-artist-pages.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Artists & Albums > Show Upcoming Concerts on Artist Pages, with Show Upcoming Concerts on Artist Pages marked",
+ "caption": "iPhone, Settings > Appearance & Language > Artists & Albums > Show Upcoming Concerts on Artist Pages.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 52.16,
+   "w": 93.64,
+   "h": 8.82,
+   "label": "Show Upcoming Concerts on Artist Pages",
+   "text": "Shows the artist's upcoming concerts on their artist page."
+  }
+ ],
+ "found": true
+}

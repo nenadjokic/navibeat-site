@@ -1,0 +1,18 @@
+{
+ "file": "export-settings.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > About > Export Settings\u2026, with Export Settings\u2026 marked",
+ "caption": "iPhone, Settings > About > Export Settings\u2026.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 26.6,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Export Settings\u2026",
+   "text": "Saves all your NaviBeat settings to a file, as a backup."
+  }
+ ],
+ "found": true
+}

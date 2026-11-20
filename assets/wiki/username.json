@@ -1,0 +1,18 @@
+{
+ "file": "username.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Username, with Username marked",
+ "caption": "iPhone, Settings > Server & Library > Username.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 22.82,
+   "w": 20.53,
+   "h": 3.38,
+   "label": "Username",
+   "text": "The account NaviBeat is signed in with on your server."
+  }
+ ],
+ "found": true
+}

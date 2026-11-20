@@ -1,0 +1,18 @@
+{
+ "file": "play-the-artist-s-next-album.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Play the Artist's Next Album, with Play the Artist's Next Album marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Play the Artist's Next Album.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.0,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Play the Artist's Next Album",
+   "text": "When an album ends, the same artist's next album follows."
+  }
+ ],
+ "found": true
+}

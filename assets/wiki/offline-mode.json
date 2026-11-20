@@ -1,0 +1,18 @@
+{
+ "file": "offline-mode.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Offline Mode, with Offline Mode marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Offline Mode.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 47.0,
+   "w": 84.55,
+   "h": 4.15,
+   "label": "Offline Mode",
+   "text": "Shows only the music you downloaded, and pauses streaming until you turn it off."
+  }
+ ],
+ "found": true
+}

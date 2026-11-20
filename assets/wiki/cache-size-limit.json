@@ -1,0 +1,18 @@
+{
+ "file": "cache-size-limit.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Cache size limit, with Cache size limit marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Cache size limit.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 42.47,
+   "w": 29.77,
+   "h": 3.38,
+   "label": "Cache size limit",
+   "text": "How much space songs kept from streaming may use."
+  }
+ ],
+ "found": true
+}

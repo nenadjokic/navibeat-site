@@ -1,0 +1,18 @@
+{
+ "file": "keep-streamed-songs.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Keep Streamed Songs, with Keep Streamed Songs marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Keep Streamed Songs.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 45.92,
+   "w": 93.64,
+   "h": 11.58,
+   "label": "Keep Streamed Songs",
+   "text": "Saves songs you stream, so the next play comes from this device."
+  }
+ ],
+ "found": true
+}

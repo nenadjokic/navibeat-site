@@ -1,0 +1,18 @@
+{
+ "file": "song-path-stops.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Song Path stops, with Song Path stops marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Song Path stops.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 49.48,
+   "w": 31.06,
+   "h": 3.38,
+   "label": "Song Path stops",
+   "text": "How many songs Song Path to Here puts between the song playing now and the one you chose."
+  }
+ ],
+ "found": true
+}

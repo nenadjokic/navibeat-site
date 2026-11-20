@@ -1,0 +1,18 @@
+{
+ "file": "troubleshooting.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > About > Troubleshooting, with Troubleshooting marked",
+ "caption": "iPhone, Settings > About > Troubleshooting.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 58.19,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Troubleshooting",
+   "text": "Records a log of one part of the app, so you can send it to support."
+  }
+ ],
+ "found": true
+}

@@ -1,0 +1,18 @@
+{
+ "file": "show-quality-badge.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Now Playing > Show quality badge, with Show quality badge marked",
+ "caption": "iPhone, Settings > Appearance & Language > Now Playing > Show quality badge.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Show quality badge",
+   "text": "Shows the format and quality of the playing song on Now Playing, like HI-RES 24/96."
+  }
+ ],
+ "found": true
+}

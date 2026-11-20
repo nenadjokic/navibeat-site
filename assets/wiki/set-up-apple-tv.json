@@ -1,0 +1,18 @@
+{
+ "file": "set-up-apple-tv.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Server & Library > Set Up Apple TV, with Set Up Apple TV marked",
+ "caption": "iPhone, Settings > Server & Library > Set Up Apple TV.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 37.48,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Set Up Apple TV",
+   "text": "Signs your Apple TV in to your server from your iPhone, without typing on the TV."
+  }
+ ],
+ "found": true
+}

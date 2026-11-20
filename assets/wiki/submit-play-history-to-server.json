@@ -1,0 +1,18 @@
+{
+ "file": "submit-play-history-to-server.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Submit play history to server, with Submit play history to server marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Submit play history to server.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.36,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Submit play history to server",
+   "text": "Sends the songs you play to your Navidrome server, which counts them and can pass them on to Last.fm or ListenBrainz."
+  }
+ ],
+ "found": true
+}

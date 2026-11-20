@@ -1,0 +1,18 @@
+{
+ "file": "show-bio-on-album-pages.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Artists & Albums > Show Bio on Album Pages, with Show Bio on Album Pages marked",
+ "caption": "iPhone, Settings > Appearance & Language > Artists & Albums > Show Bio on Album Pages.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 48.4,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Show Bio on Album Pages",
+   "text": "Shows the album's description on its album page."
+  }
+ ],
+ "found": true
+}

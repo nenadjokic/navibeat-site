@@ -1,0 +1,18 @@
+{
+ "file": "cache.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Downloads & Storage > Cache, with Cache marked",
+ "caption": "iPhone, Settings > Downloads & Storage > Cache.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 52.23,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Cache",
+   "text": "Opens the cache screen, with what NaviBeat keeps on the device and how to clear it."
+  }
+ ],
+ "found": true
+}

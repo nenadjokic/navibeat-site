@@ -1,0 +1,18 @@
+{
+ "file": "find-in-spotlight.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Appearance & Language > Artists & Albums > Find in Spotlight, with Find in Spotlight marked",
+ "caption": "iPhone, Settings > Appearance & Language > Artists & Albums > Find in Spotlight.",
+ "marks": [
+  {
+   "x": 3.18,
+   "y": 59.73,
+   "w": 93.64,
+   "h": 6.69,
+   "label": "Find in Spotlight",
+   "text": "Lets you find your music from Spotlight search on your device."
+  }
+ ],
+ "found": true
+}

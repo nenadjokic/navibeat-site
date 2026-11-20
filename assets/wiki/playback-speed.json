@@ -1,0 +1,18 @@
+{
+ "file": "playback-speed.webp",
+ "width": 760,
+ "height": 1651,
+ "alt": "NaviBeat on iPhone, Settings > Playback & Audio > Quality & Streaming > Playback Speed, with Playback Speed marked",
+ "caption": "iPhone, Settings > Playback & Audio > Quality & Streaming > Playback Speed.",
+ "marks": [
+  {
+   "x": 7.73,
+   "y": 29.39,
+   "w": 30.45,
+   "h": 3.38,
+   "label": "Playback Speed",
+   "text": "Plays music and audiobooks faster or slower, from 0.5x to 2x."
+  }
+ ],
+ "found": true
+}
