@@ -256,6 +256,12 @@ Where: Settings > Server & Library > Library Doctor
 Platforms: iPhone, iPad, Mac
 Finds tag problems that split albums, and missing covers, track numbers and damaged text. What it does. Library Doctor reads your server and lists albums Navidrome shows as several, and albums with missing covers or track numbers. On iPhone and iPad the report is read only. Fixes are written by NaviBeat on the Mac, which reaches the files in your music folder. How to change it. Open Settings. Tap Server & Library. Find Library Doctor and change it.
 
+### Import Listening History
+URL: https://navibeat.app/wiki/import-listening-history
+Where: Settings > Server & Library > Import Listening History
+Platforms: iPhone, iPad, Mac
+Brings your plays, liked songs and playlists from Spotify or Last.fm into your Navidrome, so Home and your mixes know what you listen to from the first day. What it does. Spotify: choose the ZIP from Spotify's Download your data page, or the JSON files inside it. Account data (the past year) and Extended streaming history (your whole account) both work; when both are there, Extended is used. Last.fm: when Last.fm is connected, Read History reads your scrobbles and loved tracks. Each play keeps its original date. Plays shorter than 30 seconds, podcasts and episodes are left out. Before adding anything you see how many plays matched your library, and a list of the songs that are not in it. Plays go in through a player of their own whose forwarding to Last.fm and ListenBrainz is turned off first, so nothing is scrobbled twice. That needs a Navidrome server and a password sign-in; without them, liked songs and playlists still import. Liked songs are starred on your server. With Sync favorites with Last.fm on, they also become loved on Last.fm, like any song you star. Running an import again adds only plays that are new. A playlist that already exists is never changed; the new one gets a number after its name. Not on Apple TV or Apple Watch, which have no file picker. The plays reach them through your server. How to change it. Open Settings. Tap Server & Library. Find Import Listening History and change it.
+
 ### Pinned Tags
 URL: https://navibeat.app/wiki/pinned-tags-librarydata
 Where: Settings > Server & Library > Pinned Tags
