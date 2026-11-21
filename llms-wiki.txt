@@ -216,7 +216,19 @@ Stops an artist, album, genre or song from being reported to your server. What i
 URL: https://navibeat.app/wiki/shuffle-exclusions
 Where: Settings > Server & Library > Shuffle Exclusions
 Platforms: iPhone, iPad, Mac
-Keeps albums or artists out of Random Picks, Shuffle Mix and Album Radio. What it does. Long-press an album or artist and choose Exclude from Shuffle. It still plays in full when you pick it yourself. The same screen lists songs you chose to skip: long-press a song and choose Skip this song when the album plays. How to change it. Open Settings. Tap Server & Library. Find Shuffle Exclusions and change it.
+Keeps albums, artists or genres out of Random Picks, Shuffle Mix and Album Radio, all year or outside dates you pick. What it does. Long-press an album or artist and choose Exclude from Shuffle. It still plays in full when you pick it yourself. Type a genre under Exclude a genre to keep every song and album with that genre out of shuffle. Open any rule and turn on Only between to let it back into shuffle only between two dates, every year (for example Christmas music only in December). The same screen lists songs you chose to skip: long-press a song and choose Skip this song when the album plays. How to change it. Open Settings. Tap Server & Library. Find Shuffle Exclusions and change it.
+
+### Exclude a genre
+URL: https://navibeat.app/wiki/exclude-a-genre
+Where: Settings > Server & Library > Shuffle Exclusions > Exclude a genre
+Platforms: iPhone, iPad, Mac
+Keeps every song and album with a genre out of Random Picks, Shuffle Mix and Album Radio. What it does. Type the genre name as your server shows it and choose Add. Upper and lower case do not matter. A song is kept out when any of its genre tags matches. An album is kept out when its genre matches. The genre still plays in full when you open it, or one of its albums, yourself. Open the genre's row to give it dates with Only between. How to change it. Open Settings. Tap Server & Library. Tap Shuffle Exclusions. Find Exclude a genre and change it.
+
+### Only between
+URL: https://navibeat.app/wiki/only-between
+Where: Settings > Server & Library > Shuffle Exclusions > Only between
+Platforms: iPhone, iPad, Mac
+Lets an excluded album, artist or genre back into shuffle only between two dates, every year. What it does. Open a rule in Shuffle Exclusions (on the Mac, click the calendar next to it) and turn on Only between, then pick the first and the last day. Between those days, both included, the item can come up in shuffle, Random Picks, Shuffle Mix and Album Radio again. On every other day it stays out. The dates repeat every year. A range can cross New Year, for example 1 December to 6 January. Turn Only between off and the item stays out of shuffle all year, as before. How to change it. Open Settings. Tap Server & Library. Tap Shuffle Exclusions. Find Only between and change it.
 
 ### Metadata Corrections
 URL: https://navibeat.app/wiki/metadata-corrections
@@ -243,6 +255,13 @@ URL: https://navibeat.app/wiki/library-doctor-librarydata
 Where: Settings > Server & Library > Library Doctor
 Platforms: iPhone, iPad, Mac
 Finds tag problems that split albums, and missing covers, track numbers and damaged text. What it does. Library Doctor reads your server and lists albums Navidrome shows as several, and albums with missing covers or track numbers. On iPhone and iPad the report is read only. Fixes are written by NaviBeat on the Mac, which reaches the files in your music folder. How to change it. Open Settings. Tap Server & Library. Find Library Doctor and change it.
+
+### Pinned Tags
+URL: https://navibeat.app/wiki/pinned-tags-librarydata
+Where: Settings > Server & Library > Pinned Tags
+Platforms: iPhone, iPad
+Default: No tag pinned
+Picks which of your Navidrome album tags get their own row in Library, next to Genres. What it does. The list names the custom album tags your server's albums carry, beyond genre and label, such as Platform or Franchise. Each has a switch. A tag you switch on is a row next to Genres in the Library tab on iPhone and in the sidebar on iPad. It lists the tag's values with their album counts, and a value opens its albums. The row shows only when the server is Navidrome and answers its own web API for your sign-in. How to change it. Open Settings. Tap Server & Library. Find Pinned Tags and change it.
 
 ## Playback & Audio
 
@@ -327,6 +346,13 @@ Where: Settings > Playback & Audio > Quality & Streaming > Transcode on stream
 Platforms: iPhone, iPad, Mac, Apple TV
 Default: Off
 Makes your server convert the file even when Stream quality is Original. What it does. This only matters for the Original tier, where it forces a server conversion. MP3 and Opus tiers always convert anyway. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Transcode on stream and change it.
+
+### Don't convert lossy files
+URL: https://navibeat.app/wiki/don-t-convert-lossy-files
+Where: Settings > Playback & Audio > Quality & Streaming > Don't convert lossy files
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: Off
+Lossy files such as MP3 and AAC stream and download as they are. Lossless files are still converted to the quality you picked. What it does. Applies to every quality you pick: Wi-Fi, cellular, remote streaming and downloads. A file this device cannot play, such as Opus on an engine without Opus or WMA, is still converted so it plays. With Direct Playback on, Direct Playback decides instead. Apple TV has no downloads, so there the switch covers streaming only. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Don't convert lossy files and change it.
 
 ### Submit play history to server
 URL: https://navibeat.app/wiki/submit-play-history-to-server
@@ -623,6 +649,20 @@ Platforms: iPhone, iPad, Mac
 Default: Off
 Adds a heart to each song row, so you can favorite with one tap. What it does. The long-press menu (right-click on the Mac) still has Favorite. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Show favorite button on rows and change it.
 
+### Compact song rows
+URL: https://navibeat.app/wiki/compact-song-rows
+Where: Settings > Appearance & Language > Theme & Accent > Compact song rows
+Platforms: iPhone, iPad, Mac
+Default: Off
+Playlist rows leave out the cover and the duration, so each song shows its title and artist. What it does. Works on playlists and smart playlists. Songs, Favorites, search and album pages stay as they are. The heart, the star ratings and the quality badge still follow their own switches. The track number takes the cover's place, and the song that is playing shows its bars there. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Compact song rows and change it.
+
+### Show composers
+URL: https://navibeat.app/wiki/show-composers
+Where: Settings > Appearance & Language > Theme & Accent > Show composers
+Platforms: iPhone, iPad, Mac, Apple TV
+Default: On
+Shows who composed each song: before the artist on album pages, and under the artist on Now Playing. What it does. Works on album pages, downloaded albums included, on Now Playing and on the Mac mini player. A song with no composer, or whose composer is the artist, looks the same either way. On Apple TV the composer leads the line under the artist on Now Playing. Off, every song shows only its artist, as it did before composers were shown. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Show composers and change it.
+
 ### Show star ratings
 URL: https://navibeat.app/wiki/show-star-ratings
 Where: Settings > Appearance & Language > Theme & Accent > Show star ratings
@@ -873,6 +913,13 @@ URL: https://navibeat.app/wiki/show-library-doctor-in-the-sidebar
 Where: Settings > Appearance & Language > Theme & Accent > Sidebar > Library Doctor
 Platforms: Mac
 The switch that puts Library Doctor in the Mac sidebar. What it does. It is the Library Doctor switch at the end of the Sidebar section. Hiding the row keeps the checks, the album page note and the cover badges. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Click Sidebar. Find Show Library Doctor in the sidebar and change it.
+
+### Pinned Tags
+URL: https://navibeat.app/wiki/pinned-tags
+Where: Settings > Appearance & Language > Theme & Accent > Pinned Tags
+Platforms: Mac
+Default: No tag pinned
+Picks which of your Navidrome album tags get their own row in the Mac sidebar, next to Genres. What it does. The list names the custom album tags your server's albums carry, beyond genre and label, such as Platform or Franchise. Each has a switch. A tag you switch on is a sidebar row next to Genres. Clicking it lists the tag's values with their album counts, and a value opens its albums. The block shows only when the server is Navidrome and answers its own web API for your sign-in. Right-click a pinned row to unpin it. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Pinned Tags and change it.
 
 ### Show filter button
 URL: https://navibeat.app/wiki/show-filter-button
@@ -1193,6 +1240,13 @@ Where: Settings > Devices > Customize CarPlay Home
 Platforms: iPhone, iPad
 Picks which shelves CarPlay Home shows, and in what order. What it does. This is separate from your phone's Home, so the car can show only what you want while driving. How to change it. Open Settings. Tap Devices. Find Customize CarPlay Home and change it.
 
+### Album Lists as Covers
+URL: https://navibeat.app/wiki/album-lists-as-covers
+Where: Settings > Devices > Album Lists as Covers
+Platforms: iPhone
+Default: On
+Shows long album lists in CarPlay as rows of covers, several albums per row, so you scroll less while driving. What it does. The Albums tab, an artist's albums, a genre's albums, Favorite Albums and the full list behind a Home shelf are drawn as strips of covers. Tap a cover to open that album. Tap a strip's header to see the same albums as a plain list with titles. Strips need iOS 26 or later on the iPhone. On older iOS, and with this off, the car shows one album per line. How to change it. Open Settings. Tap Devices. Find Album Lists as Covers and change it.
+
 ### Speakers on your network
 URL: https://navibeat.app/wiki/speakers-on-your-network
 Where: Settings > Devices > Speakers on your network
@@ -1390,4 +1444,11 @@ URL: https://navibeat.app/wiki/connect-and-send-to
 Where: Settings > About > Troubleshooting > Connect and Send to
 Platforms: iPhone, iPad, Mac, Apple TV
 The Troubleshooting channel for playing on and controlling your other NaviBeat devices. What it does. Turn it on when handoff, the Continue card or sending music to another device does not work, then prepare and send the log. How to change it. Open Settings. Tap About. Tap Troubleshooting. Find Connect and Send to and change it.
+
+### Keyboard Shortcuts
+URL: https://navibeat.app/wiki/keyboard-shortcuts
+Where: Settings > About > Keyboard Shortcuts
+Platforms: iPad, Mac
+Default: The built-in shortcuts
+Lists every keyboard shortcut, and on the Mac lets you change any of them. What it does. On the Mac, click a shortcut to record a new one. Esc cancels, Delete removes the shortcut. A shortcut needs Command or Control. Only Space and F1 to F12 work with no modifier. If the keys already belong to another action, a bar asks before it moves them: Use here or Cancel. A changed row says Changed and has a reset button. Restore Defaults puts every shortcut back. Settings (Command comma) and the bare arrow keys cannot be changed. Keys the system uses are refused. Your shortcuts stay on this Mac. They travel in an exported settings file, not in Settings Sync. On the iPad the page is a list of the shortcuts, without editing. How to change it. Open Settings. Tap About. Find Keyboard Shortcuts and change it.
 
