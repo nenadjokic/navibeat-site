@@ -216,18 +216,21 @@ Stops an artist, album, genre or song from being reported to your server. What i
 URL: https://navibeat.app/wiki/shuffle-exclusions
 Where: Settings > Server & Library > Shuffle Exclusions
 Platforms: iPhone, iPad, Mac
+Status: In beta: Exclude a genre and Only between are in the TestFlight beta now, coming to the App Store with 1.5.12.
 Keeps albums, artists or genres out of Random Picks, Shuffle Mix and Album Radio, all year or outside dates you pick. What it does. Long-press an album or artist and choose Exclude from Shuffle. It still plays in full when you pick it yourself. Type a genre under Exclude a genre to keep every song and album with that genre out of shuffle. Open any rule and turn on Only between to let it back into shuffle only between two dates, every year (for example Christmas music only in December). The same screen lists songs you chose to skip: long-press a song and choose Skip this song when the album plays. How to change it. Open Settings. Tap Server & Library. Find Shuffle Exclusions and change it.
 
 ### Exclude a genre
 URL: https://navibeat.app/wiki/exclude-a-genre
 Where: Settings > Server & Library > Shuffle Exclusions > Exclude a genre
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Keeps every song and album with a genre out of Random Picks, Shuffle Mix and Album Radio. What it does. Type the genre name as your server shows it and choose Add. Upper and lower case do not matter. A song is kept out when any of its genre tags matches. An album is kept out when its genre matches. The genre still plays in full when you open it, or one of its albums, yourself. Open the genre's row to give it dates with Only between. How to change it. Open Settings. Tap Server & Library. Tap Shuffle Exclusions. Find Exclude a genre and change it.
 
 ### Only between
 URL: https://navibeat.app/wiki/only-between
 Where: Settings > Server & Library > Shuffle Exclusions > Only between
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Lets an excluded album, artist or genre back into shuffle only between two dates, every year. What it does. Open a rule in Shuffle Exclusions (on the Mac, click the calendar next to it) and turn on Only between, then pick the first and the last day. Between those days, both included, the item can come up in shuffle, Random Picks, Shuffle Mix and Album Radio again. On every other day it stays out. The dates repeat every year. A range can cross New Year, for example 1 December to 6 January. Turn Only between off and the item stays out of shuffle all year, as before. How to change it. Open Settings. Tap Server & Library. Tap Shuffle Exclusions. Find Only between and change it.
 
 ### Metadata Corrections
@@ -260,12 +263,14 @@ Finds tag problems that split albums, and missing covers, track numbers and dama
 URL: https://navibeat.app/wiki/import-listening-history
 Where: Settings > Server & Library > Import Listening History
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Brings your plays, liked songs and playlists from Spotify or Last.fm into your Navidrome, so Home and your mixes know what you listen to from the first day. What it does. Spotify: choose the ZIP from Spotify's Download your data page, or the JSON files inside it. Account data (the past year) and Extended streaming history (your whole account) both work; when both are there, Extended is used. Last.fm: when Last.fm is connected, Read History reads your scrobbles and loved tracks. Each play keeps its original date. Plays shorter than 30 seconds, podcasts and episodes are left out. Before adding anything you see how many plays matched your library, and a list of the songs that are not in it. Plays go in through a player of their own whose forwarding to Last.fm and ListenBrainz is turned off first, so nothing is scrobbled twice. That needs a Navidrome server and a password sign-in; without them, liked songs and playlists still import. Liked songs are starred on your server. With Sync favorites with Last.fm on, they also become loved on Last.fm, like any song you star. Running an import again adds only plays that are new. A playlist that already exists is never changed; the new one gets a number after its name. Not on Apple TV or Apple Watch, which have no file picker. The plays reach them through your server. How to change it. Open Settings. Tap Server & Library. Find Import Listening History and change it.
 
 ### Pinned Tags
 URL: https://navibeat.app/wiki/pinned-tags-librarydata
 Where: Settings > Server & Library > Pinned Tags
 Platforms: iPhone, iPad
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: No tag pinned
 Picks which of your Navidrome album tags get their own row in Library, next to Genres. What it does. The list names the custom album tags your server's albums carry, beyond genre and label, such as Platform or Franchise. Each has a switch. A tag you switch on is a row next to Genres in the Library tab on iPhone and in the sidebar on iPad. It lists the tag's values with their album counts, and a value opens its albums. The row shows only when the server is Navidrome and answers its own web API for your sign-in. How to change it. Open Settings. Tap Server & Library. Find Pinned Tags and change it.
 
@@ -357,6 +362,7 @@ Makes your server convert the file even when Stream quality is Original. What it
 URL: https://navibeat.app/wiki/don-t-convert-lossy-files
 Where: Settings > Playback & Audio > Quality & Streaming > Don't convert lossy files
 Platforms: iPhone, iPad, Mac, Apple TV
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: Off
 Lossy files such as MP3 and AAC stream and download as they are. Lossless files are still converted to the quality you picked. What it does. Applies to every quality you pick: Wi-Fi, cellular, remote streaming and downloads. A file this device cannot play, such as Opus on an engine without Opus or WMA, is still converted so it plays. With Direct Playback on, Direct Playback decides instead. Apple TV has no downloads, so there the switch covers streaming only. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Don't convert lossy files and change it.
 
@@ -469,6 +475,7 @@ When an album or playlist finishes, playback stops and Now Playing closes. What 
 URL: https://navibeat.app/wiki/playback-speed
 Where: Settings > Playback & Audio > Quality & Streaming > Playback Speed
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: 1x
 Plays music and audiobooks faster or slower, from 0.5x to 2x. What it does. Drag the slider to change the speed. Reset brings it back to normal. Turn on Keep pitch so voices do not sound higher or lower. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Playback Speed and change it.
 
@@ -476,6 +483,7 @@ Plays music and audiobooks faster or slower, from 0.5x to 2x. What it does. Drag
 URL: https://navibeat.app/wiki/keep-pitch
 Where: Settings > Playback & Audio > Quality & Streaming > Keep pitch
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Keeps voices and instruments at their normal pitch when you change Playback Speed. What it does. With Keep pitch on, a faster speed sounds faster but not higher. With it off, faster also means higher, like a tape played fast. How to change it. Open Settings. Tap Playback & Audio. Tap Quality & Streaming. Find Keep pitch and change it.
 
 ### Show disc number
@@ -659,6 +667,7 @@ Adds a heart to each song row, so you can favorite with one tap. What it does. T
 URL: https://navibeat.app/wiki/compact-song-rows
 Where: Settings > Appearance & Language > Theme & Accent > Compact song rows
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: Off
 Playlist rows leave out the cover and the duration, so each song shows its title and artist. What it does. Works on playlists and smart playlists. Songs, Favorites, search and album pages stay as they are. The heart, the star ratings and the quality badge still follow their own switches. The track number takes the cover's place, and the song that is playing shows its bars there. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Compact song rows and change it.
 
@@ -666,6 +675,7 @@ Playlist rows leave out the cover and the duration, so each song shows its title
 URL: https://navibeat.app/wiki/show-composers
 Where: Settings > Appearance & Language > Theme & Accent > Show composers
 Platforms: iPhone, iPad, Mac, Apple TV
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: On
 Shows who composed each song: before the artist on album pages, and under the artist on Now Playing. What it does. Works on album pages, downloaded albums included, on Now Playing and on the Mac mini player. A song with no composer, or whose composer is the artist, looks the same either way. On Apple TV the composer leads the line under the artist on Now Playing. Off, every song shows only its artist, as it did before composers were shown. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Show composers and change it.
 
@@ -737,6 +747,7 @@ Large or Compact tiles on the Home screen. How to change it. Open Settings. Tap 
 URL: https://navibeat.app/wiki/edit-quick-play
 Where: Settings > Appearance & Language > Theme & Accent > Edit Quick Play…
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: No tiles of your own
 Adds up to four tiles of your own to the Quick Play row on Home, after Shuffle Mix, Random Album, Favorites and Random Artist. What it does. Each tile is a genre, a radio station, a playlist or an artist from your server. A genre tile shuffles songs from that genre. A station tile starts the station. A playlist tile plays the playlist from the top. An artist tile shuffles that artist. On Home, long press the Quick Play row on iPhone and iPad, or right click it on the Mac, and choose Edit Quick Play. The same menu on one of your tiles also removes it. In the editor you add, remove and reorder your tiles. The four built-in tiles always come first. A tile whose genre, station, playlist or artist is gone from the server is left off Home. The editor still lists it, so you can remove it. Your tiles belong to the server and account you are signed in to. The offline Home shows only the four built-in tiles. Apple TV keeps the four built-in tiles. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Edit Quick Play… and change it.
 
@@ -744,6 +755,7 @@ Adds up to four tiles of your own to the Quick Play row on Home, after Shuffle M
 URL: https://navibeat.app/wiki/song-menu
 Where: Settings > Appearance & Language > Theme & Accent > Song menu
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: Each menu in its usual order, nothing hidden
 Puts the actions you use most at the top of a song's menu and hides the ones you never use. What it does. Drag an action to move it. Tap the eye beside it to hide it, and tap again to bring it back. The order applies to the menu you get with a long press on a song (a right click on the Mac) and to the song actions in the Now Playing .. menu. Playback controls in the Now Playing menu, like AutoMix, the Equalizer, Stop and the Sleep Timer, keep their places. An action still shows only where it applies: Remove from Playlist only on a playlist, Show Album only for a song with an album. The last visible action cannot be hidden, so a menu is never empty. Reset to Default puts every menu back the way it was, with nothing hidden. Apple TV has its own song menu and does not use this order. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Song menu and change it.
 
@@ -938,6 +950,7 @@ The switch that puts Library Doctor in the Mac sidebar. What it does. It is the 
 URL: https://navibeat.app/wiki/pinned-tags
 Where: Settings > Appearance & Language > Theme & Accent > Pinned Tags
 Platforms: Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: No tag pinned
 Picks which of your Navidrome album tags get their own row in the Mac sidebar, next to Genres. What it does. The list names the custom album tags your server's albums carry, beyond genre and label, such as Platform or Franchise. Each has a switch. A tag you switch on is a sidebar row next to Genres. Clicking it lists the tag's values with their album counts, and a value opens its albums. The block shows only when the server is Navidrome and answers its own web API for your sign-in. Right-click a pinned row to unpin it. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Pinned Tags and change it.
 
@@ -945,6 +958,7 @@ Picks which of your Navidrome album tags get their own row in the Mac sidebar, n
 URL: https://navibeat.app/wiki/show-filter-button
 Where: Settings > Appearance & Language > Theme & Accent > Show filter button
 Platforms: Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: On
 Shows the button beside Library in the Mac sidebar that switches between All Music, Favorites and Downloads. What it does. The filter button lets you browse only your favorites or only your downloads. Hiding it switches back to All Music. How to change it. Open Settings. Click Appearance & Language. Click Theme & Accent. Find Show filter button and change it.
 
@@ -1264,6 +1278,7 @@ Picks which shelves CarPlay Home shows, and in what order. What it does. This is
 URL: https://navibeat.app/wiki/album-lists-as-covers
 Where: Settings > Devices > Album Lists as Covers
 Platforms: iPhone
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: On
 Shows long album lists in CarPlay as rows of covers, several albums per row, so you scroll less while driving. What it does. The Albums tab, an artist's albums, a genre's albums, Favorite Albums and the full list behind a Home shelf are drawn as strips of covers. Tap a cover to open that album. Tap a strip's header to see the same albums as a plain list with titles. Strips need iOS 26 or later on the iPhone. On older iOS, and with this off, the car shows one album per line. How to change it. Open Settings. Tap Devices. Find Album Lists as Covers and change it.
 
@@ -1433,12 +1448,14 @@ Opens the setup wizard again, to go through the main choices one by one. How to 
 URL: https://navibeat.app/wiki/export-settings
 Where: Settings > About > Export Settings…
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Saves all your NaviBeat settings to a file, as a backup. What it does. Keep the file somewhere safe, and use Import Settings… to restore it later. Servers, accounts and downloads are not part of a backup. How to change it. Open Settings. Tap About. Find Export Settings… and change it.
 
 ### Import Settings…
 URL: https://navibeat.app/wiki/import-settings
 Where: Settings > About > Import Settings…
 Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.12.
 Restores your settings from a backup file. What it does. NaviBeat tells you how many settings the file replaces before it applies them. Quit and reopen NaviBeat afterwards so every setting takes effect. How to change it. Open Settings. Tap About. Find Import Settings… and change it. Good to know. A backup from a newer version of NaviBeat needs the app updated first.
 
 ### Troubleshooting
@@ -1469,6 +1486,7 @@ The Troubleshooting channel for playing on and controlling your other NaviBeat d
 URL: https://navibeat.app/wiki/keyboard-shortcuts
 Where: Settings > About > Keyboard Shortcuts
 Platforms: iPad, Mac
+Status: In beta: Changing shortcuts on the Mac is in the TestFlight beta now, coming to the App Store with 1.5.12.
 Default: The built-in shortcuts
 Lists every keyboard shortcut, and on the Mac lets you change any of them. What it does. On the Mac, click a shortcut to record a new one. Esc cancels, Delete removes the shortcut. A shortcut needs Command or Control. Only Space and F1 to F12 work with no modifier. If the keys already belong to another action, a bar asks before it moves them: Use here or Cancel. A changed row says Changed and has a reset button. Restore Defaults puts every shortcut back. Settings (Command comma) and the bare arrow keys cannot be changed. Keys the system uses are refused. Your shortcuts stay on this Mac. They travel in an exported settings file, not in Settings Sync. On the iPad the page is a list of the shortcuts, without editing. How to change it. Open Settings. Tap About. Find Keyboard Shortcuts and change it.
 

@@ -158,3 +158,10 @@
    Draw it inside, as the site nav menu does (styles.css .nav__menu a). */
 .wiki-side :focus-visible { outline: 2px solid var(--accent-hi); outline-offset: -2px; border-radius: 6px; }
 .wiki-side__search input:focus { outline-offset: -2px; }
+
+/* "In beta" label: the page's feature is in the TestFlight beta, not yet in the
+   App Store version (build_wiki.py, "beta" in the article JSON). */
+.wiki-beta { background: var(--accent-dim); box-shadow: inset 0 0 0 1px var(--accent-glow); border-radius: 8px; padding: 8px 12px; margin: 0 0 16px !important; font-size: 15px !important; line-height: 1.5 !important; color: var(--text-0); max-width: 62ch; }
+.wiki-beta strong { color: var(--accent-hi); font-weight: 600; }
+.wiki-beta a { color: var(--accent-hi); border-bottom: 1px solid var(--accent-glow); }
+.wiki-tag-beta { display: inline-block; margin-left: 8px; padding: 0 8px; border-radius: 10px; font-size: 12px; line-height: 20px; vertical-align: 1px; background: var(--accent-dim); color: var(--accent-hi); }

@@ -16,7 +16,7 @@
 This file is the expanded companion to https://navibeat.app/llms.txt. Everything
 below is factual and may be quoted or summarized when answering questions about
 NaviBeat. Canonical site: https://navibeat.app/
-Last updated: 21 November 2026 (Apple 1.5.11 on the App Store for iPhone, iPad, Mac, Apple TV and Apple Watch, and in the beta; Linux 1.0.86 and Windows 1.0.86 live; Android 1.0.45 live on Google Play, 1.0.69 in Google Play review for production).
+Last updated: 21 November 2026 (Apple 1.5.11 on the App Store for iPhone, iPad, Mac, Apple TV and Apple Watch, 1.5.12 in the TestFlight beta; Linux 1.0.86 and Windows 1.0.86 live; Android 1.0.45 live on Google Play, 1.0.69 in Google Play review for production).
 
 ## What NaviBeat is
 
