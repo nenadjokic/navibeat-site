@@ -733,6 +733,20 @@ Where: Settings > Appearance & Language > Theme & Accent > Home Tiles
 Platforms: iPhone, iPad, Mac
 Large or Compact tiles on the Home screen. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Home Tiles and change it. Options. OptionWhat it doesDefault. LargeBigger tiles, fewer per row.Yes. CompactSmaller tiles, more per row.
 
+### Edit Quick Play…
+URL: https://navibeat.app/wiki/edit-quick-play
+Where: Settings > Appearance & Language > Theme & Accent > Edit Quick Play…
+Platforms: iPhone, iPad, Mac
+Default: No tiles of your own
+Adds up to four tiles of your own to the Quick Play row on Home, after Shuffle Mix, Random Album, Favorites and Random Artist. What it does. Each tile is a genre, a radio station, a playlist or an artist from your server. A genre tile shuffles songs from that genre. A station tile starts the station. A playlist tile plays the playlist from the top. An artist tile shuffles that artist. On Home, long press the Quick Play row on iPhone and iPad, or right click it on the Mac, and choose Edit Quick Play. The same menu on one of your tiles also removes it. In the editor you add, remove and reorder your tiles. The four built-in tiles always come first. A tile whose genre, station, playlist or artist is gone from the server is left off Home. The editor still lists it, so you can remove it. Your tiles belong to the server and account you are signed in to. The offline Home shows only the four built-in tiles. Apple TV keeps the four built-in tiles. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Edit Quick Play… and change it.
+
+### Song menu
+URL: https://navibeat.app/wiki/song-menu
+Where: Settings > Appearance & Language > Theme & Accent > Song menu
+Platforms: iPhone, iPad, Mac
+Default: Each menu in its usual order, nothing hidden
+Puts the actions you use most at the top of a song's menu and hides the ones you never use. What it does. Drag an action to move it. Tap the eye beside it to hide it, and tap again to bring it back. The order applies to the menu you get with a long press on a song (a right click on the Mac) and to the song actions in the Now Playing .. menu. Playback controls in the Now Playing menu, like AutoMix, the Equalizer, Stop and the Sleep Timer, keep their places. An action still shows only where it applies: Remove from Playlist only on a playlist, Show Album only for a song with an album. The last visible action cannot be hidden, so a menu is never empty. Reset to Default puts every menu back the way it was, with nothing hidden. Apple TV has its own song menu and does not use this order. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Song menu and change it.
+
 ### Frosted glass window
 URL: https://navibeat.app/wiki/frosted-glass-window
 Where: Settings > Appearance & Language > Theme & Accent > Frosted glass window
