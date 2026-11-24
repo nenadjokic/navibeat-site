@@ -1,0 +1,224 @@
+/* bf2026.css: Black Friday 2026 promotion (Apple $5.99 -> $3.99, Nov 27 to Dec 1).
+   Self-contained on purpose. Removing the promotion = delete this file, bf2026.js,
+   and every line containing "bf2026" in the HTML pages. Nothing else on the site
+   depends on it. bf2026.js also stops drawing anything after the sale ends. */
+
+/* ---------- ribbon above the nav, every page ---------- */
+.bf-ribbon {
+  position: relative;
+  z-index: 51;
+  background: var(--accent, #F47B20);
+  color: #140B04;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 15px;
+  line-height: 1.35;
+  padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.bf-ribbon__in {
+  max-width: var(--max-w, 1280px);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 18px;
+  text-align: center;
+}
+.bf-ribbon__tag {
+  font-family: var(--font-display, "Arial Narrow", sans-serif);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.bf-ribbon__msg { font-weight: 600; }
+.bf-ribbon__msg s { opacity: .62; font-weight: 500; }
+.bf-ribbon__clock { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.bf-ribbon__cta {
+  color: #140B04;
+  font-weight: 800;
+  text-decoration: none;
+  border: 2px solid #140B04;
+  border-radius: 999px;
+  padding: 4px 14px;
+  white-space: nowrap;
+  transition: background .2s, color .2s;
+}
+.bf-ribbon__cta:hover, .bf-ribbon__cta:focus-visible { background: #140B04; color: var(--accent, #F47B20); }
+
+/* ---------- hero slide on the home page ---------- */
+.bf-slide {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding-block: 56px 40px;
+}
+@media (min-width: 1040px) {
+  .bf-slide { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 56px; padding-block: 56px 40px; }
+}
+.bf-slide__copy { min-width: 0; }
+.bf-slide__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent, #F47B20);
+}
+.bf-slide__dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent, #F47B20);
+  animation: bf-blink 1.6s ease-in-out infinite;
+}
+@keyframes bf-blink { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+.bf-slide__h {
+  margin: 0;
+  font-family: var(--font-display, "Arial Narrow", sans-serif);
+  font-weight: 800;
+  font-size: clamp(48px, 6.6vw, 96px);
+  line-height: 1.04;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--text-0, #EDEDF0);
+  text-wrap: balance;
+}
+.bf-slide__h span { color: var(--accent, #F47B20); display: block; }
+.bf-slide__p {
+  margin: 18px 0 0;
+  max-width: 34em;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text-1, #A6A6AE);
+}
+.bf-slide__p strong { color: var(--text-0, #EDEDF0); font-weight: 700; }
+.bf-clock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+  align-items: stretch;
+}
+.bf-clock__label {
+  flex-basis: 100%;
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-2, #8C8C95);
+}
+.bf-clock__cell {
+  min-width: 78px;
+  padding: 10px 12px 8px;
+  border: 1px solid var(--border-strong, rgba(255,255,255,.16));
+  border-radius: 12px;
+  background: var(--bg-2, #17171B);
+  text-align: center;
+}
+.bf-clock__num {
+  display: block;
+  font-family: var(--font-display, "Arial Narrow", sans-serif);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--text-0, #EDEDF0);
+  font-variant-numeric: tabular-nums;
+}
+.bf-clock__unit {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-2, #8C8C95);
+}
+.bf-slide .hero__ctas { margin-top: 26px; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 14px; }
+.bf-slide .hero__ctas .store-badges { margin: 0; }
+
+/* The price tag on the right. */
+.bf-tag {
+  position: relative;
+  margin: 0 auto;
+  width: min(100%, 380px);
+  padding: 28px 28px 24px;
+  border-radius: 28px;
+  background: var(--accent, #F47B20);
+  color: #140B04;
+  transform: rotate(-3deg);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, .55);
+}
+.bf-tag::before {
+  content: "";
+  position: absolute;
+  top: 26px; right: 30px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--bg-0, #0C0C0E);
+}
+.bf-tag__off {
+  margin: 0;
+  font-family: var(--font-display, "Arial Narrow", sans-serif);
+  font-weight: 800;
+  font-size: clamp(80px, 9vw, 120px);
+  line-height: .85;
+  letter-spacing: -.02em;
+}
+.bf-tag__off small { font-size: .42em; letter-spacing: 0; margin-left: 6px; }
+.bf-tag__price {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 18px 0 0;
+  font-family: var(--font-display, "Arial Narrow", sans-serif);
+  font-weight: 800;
+}
+.bf-tag__now { font-size: 54px; line-height: 1; }
+.bf-tag__was { font-size: 32px; opacity: .55; text-decoration: line-through; text-decoration-thickness: 3px; }
+.bf-tag__line {
+  margin: 16px 0 0;
+  padding-top: 16px;
+  border-top: 2px dashed rgba(20, 11, 4, .35);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.bf-tag__line span { display: block; font-weight: 500; opacity: .8; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bf-slide__dot { animation: none; }
+  .bf-tag { transform: none; }
+}
+
+/* ---------- the Apple price card in #buy ---------- */
+.bf-price s { color: var(--text-2, #8C8C95); font-weight: 500; margin-right: 8px; text-decoration-thickness: 2px; }
+.bf-price b { color: var(--accent, #F47B20); }
+.bf-price-note {
+  display: inline-block;
+  justify-self: start;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent, #F47B20);
+  color: #140B04;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1039px) {
+  .bf-tag { display: none; }
+  .bf-slide { padding-block: 40px 24px; }
+  .bf-clock__cell { min-width: 64px; }
+  .bf-clock__num { font-size: 32px; }
+}
+.bf-slide__h--pre span { font-size: .78em; white-space: nowrap; }
