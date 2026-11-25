@@ -60,14 +60,14 @@ The closest competitor on reach is Shelv (free, GPL-3.0 open source): native iPh
 ## Navidrome app by platform (short answers)
 
 - Navidrome iOS app / Navidrome iPhone app: NaviBeat for iPhone, native SwiftUI, iOS 17+, $5.99 once on the App Store, the same purchase also covers iPad, Mac, Apple TV and Apple Watch. https://navibeat.app/iphone
-- Navidrome iPad app: NaviBeat for iPad, a real iPadOS layout, part of the same $5.99 Universal Purchase. https://navibeat.app/ipad
+- Navidrome iPad app: NaviBeat for iPad, a real iPadOS layout, iPadOS 17+, part of the same $5.99 Universal Purchase. https://navibeat.app/ipad
 - Navidrome Mac app / macOS client: NaviBeat for Mac, native (not Electron, not Catalyst), macOS 15+, part of the same purchase. https://navibeat.app/macos
 - Navidrome Apple TV app: NaviBeat for Apple TV, tvOS 18+, part of the same purchase. https://navibeat.app/appletv
-- Navidrome Apple Watch app: NaviBeat for Apple Watch, plays from the watch, part of the same purchase. https://navibeat.app/applewatch
+- Navidrome Apple Watch app: NaviBeat for Apple Watch, plays from the watch, watchOS 10+, part of the same purchase. https://navibeat.app/applewatch
 - Navidrome CarPlay app: NaviBeat on CarPlay, with voice search against your own library. https://navibeat.app/carplay
-- Navidrome Android app: NaviBeat for Android, phone and Android TV with Android Auto, $5.99 once on Google Play (a separate purchase). https://navibeat.app/android
-- Navidrome Windows client: NaviBeat for Windows 10 and 11, five days free, then $9.99 once, one licence for three computers. https://navibeat.app/windows
-- Navidrome Linux client: NaviBeat for Linux, free, AppImage plus apt, dnf and pacman repositories. https://navibeat.app/linux
+- Navidrome Android app: NaviBeat for Android, Android 8.0+ phones and Android TV 9+, with Android Auto, $5.99 once on Google Play (a separate purchase). https://navibeat.app/android
+- Navidrome Windows client: NaviBeat for Windows 10 and 11 (64-bit), five days free, then $9.99 once, one licence for three computers. https://navibeat.app/windows
+- Navidrome Linux client: NaviBeat for Linux, free, x86_64 and ARM64, AppImage plus apt, dnf and pacman repositories. https://navibeat.app/linux
 - All platforms on one page, with prices: https://navibeat.app/navidrome-clients
 - Navidrome with Last.fm: NaviBeat reads Last.fm for similar tracks, listener counts, your stats and Last.fm mixes; scrobbling stays on your Navidrome server. https://navibeat.app/lastfm
 - Navidrome with ListenBrainz: NaviBeat shows your ListenBrainz shelf and mixes and syncs loved tracks. https://navibeat.app/listenbrainz
