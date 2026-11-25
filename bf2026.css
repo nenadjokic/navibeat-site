@@ -241,3 +241,24 @@
 .bf-slide__more code { color: var(--accent, #F47B20); font-weight: 800; letter-spacing: .04em; }
 .price .price__num.bf-price-big { color: var(--accent, #F47B20); }
 .price .bf-price-note { margin: 8px 0 12px; }
+
+/* ---------- hero tag with three platforms (2026-11-25) ---------- */
+.bf-tag { width: min(100%, 420px); }
+.bf-tag .bf-tag__off { font-size: clamp(44px, 4.4vw, 60px); line-height: 1; padding-right: 40px; white-space: nowrap; }
+.bf-tag__rows { list-style: none; margin: 18px 0 0; padding: 0; }
+.bf-tag__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 2px dashed rgba(20, 11, 4, .35);
+}
+.bf-tag__name { font-weight: 800; font-size: 20px; line-height: 1.1; }
+.bf-tag__name small { display: block; font-size: 12.5px; font-weight: 600; opacity: .75; margin-top: 3px; letter-spacing: .01em; }
+.bf-tag__amt { white-space: nowrap; font-family: var(--font-display, "Arial Narrow", sans-serif); }
+.bf-tag__amt b { font-size: 38px; font-weight: 800; line-height: 1; }
+.bf-tag__amt s { font-size: 20px; opacity: .55; margin-left: 8px; text-decoration-thickness: 2px; }
+.bf-tag .bf-tag__line { margin-top: 12px; padding-top: 12px; border-top: 2px dashed rgba(20, 11, 4, .35); }
+.bf-code { font-family: inherit; color: var(--accent, #F47B20); font-weight: 800; letter-spacing: .04em; }
+.bf-stores .store-badges { display: flex; flex-wrap: wrap; gap: 10px; }

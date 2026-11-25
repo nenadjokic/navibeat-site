@@ -66,7 +66,8 @@
       msg = live
         ? 'Apple and Android <s>$5.99</s> <strong>$3.99</strong>, Windows <strong>50% off</strong> with code <strong>' + CODE + '</strong>. Ends in <span class="bf-ribbon__clock" data-bf-short></span>'
         : 'November 27 to December 1: Apple and Android drop to <strong>$3.99</strong>, Windows is <strong>50% off</strong> with code <strong>' + CODE + '</strong>.';
-      ctaHref = STORE; ctaText = live ? 'Get it for $3.99' : 'See it on the App Store';
+      // Not Apple only: send people to the price list, which has all four platforms.
+      ctaHref = (/^\/(index(\.html)?)?$/.test(path) ? '' : '/') + '#buy'; ctaText = 'See all prices';
     }
     var rib = el('div', 'bf-ribbon');
     rib.setAttribute('role', 'region');
@@ -86,19 +87,23 @@
   var dotsNav = deck && deck.querySelector('.herodeck__nav');
   if (track && dotsNav && !deck.querySelector('.bf-slide')) {
     var eyebrow = live ? 'Black Friday sale &middot; on now' : 'Black Friday &middot; November 27 to December 1';
-    var heading = live ? 'Black Friday.<span>$3.99 once.</span>' : 'Black Friday.<span>$3.99 on Nov 27.</span>';
+    var heading = 'Black Friday.<span>Up to 50% off.</span>';
     var slide = el('article', 'herodeck__slide');
     slide.setAttribute('aria-roledescription', 'slide');
     slide.setAttribute('aria-label', 'Black Friday sale');
+    // One row per paid platform, the same weight for each. Linux is free.
+    function row(name, devices, now, was, extra) {
+      return '<li class="bf-tag__row"><span class="bf-tag__name">' + name + '<small>' + devices + '</small></span>'
+        + '<span class="bf-tag__amt"><b>' + now + '</b><s>' + was + '</s>' + (extra || '') + '</span></li>';
+    }
     slide.innerHTML =
       '<div class="wrap bf-slide">'
       + '<div class="bf-slide__copy">'
       +   '<p class="bf-slide__eyebrow"><span class="bf-slide__dot" aria-hidden="true"></span>' + eyebrow + '</p>'
-      +   '<h2 class="bf-slide__h' + (live ? '' : ' bf-slide__h--pre') + '">' + heading + '</h2>'
-      +   '<p class="bf-slide__p">One Universal Purchase for <strong>iPhone, iPad, Mac, Apple TV and Apple Watch</strong>. '
-      +     'Pay once, keep it on every Apple device you own. The sale runs through December 1.</p>'
-      +   '<p class="bf-slide__more"><a href="android"><strong>Android</strong> <s>$5.99</s> $3.99 on Google Play</a>'
-      +     '<a href="windows"><strong>Windows</strong> <s>$9.99</s> $4.99 with code <code>' + CODE + '</code></a></p>'
+      +   '<h2 class="bf-slide__h">' + heading + '</h2>'
+      +   '<p class="bf-slide__p"><strong>Apple</strong> and <strong>Android</strong> drop from $5.99 to <strong>$3.99</strong>. '
+      +     '<strong>Windows</strong> is <strong>$4.99</strong> instead of $9.99 with code <code class="bf-code">' + CODE + '</code>. '
+      +     'Pay once, keep it. The sale runs through December 1.</p>'
       +   '<div class="bf-clock" aria-live="off">'
       +     '<p class="bf-clock__label" data-bf-label>' + (live ? 'Sale ends in' : 'Sale starts in') + '</p>'
       +     '<div class="bf-clock__cell"><span class="bf-clock__num" data-bf="d">0</span><span class="bf-clock__unit">days</span></div>'
@@ -106,16 +111,24 @@
       +     '<div class="bf-clock__cell"><span class="bf-clock__num" data-bf="m">00</span><span class="bf-clock__unit">min</span></div>'
       +     '<div class="bf-clock__cell"><span class="bf-clock__num" data-bf="s">00</span><span class="bf-clock__unit">sec</span></div>'
       +   '</div>'
-      +   '<div class="hero__ctas hero__ctas--stores">'
-      +     '<div class="store-badges"><a class="store-badge" href="' + STORE + '" target="_blank" rel="noopener">'
-      +       '<img src="assets/badges/app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></a></div>'
-      +     '<a class="btn btn--ghost" href="features">See everything it does&nbsp;&rarr;</a>'
+      +   '<div class="hero__ctas hero__ctas--stores bf-stores">'
+      +     '<div class="store-badges">'
+      +       '<a class="store-badge" href="' + STORE + '" target="_blank" rel="noopener">'
+      +         '<img src="assets/badges/app-store-badge-black.svg" alt="Download on the App Store" width="120" height="40"></a>'
+      +       '<a class="store-badge" href="' + PLAY + '" target="_blank" rel="noopener">'
+      +         '<img src="assets/badges/google-play-badge.png" alt="Get it on Google Play" width="134" height="40"></a>'
+      +     '</div>'
+      +     '<a class="btn btn--ghost bf-win-btn" href="windows">Windows, $4.99&nbsp;&rarr;</a>'
       +   '</div>'
       + '</div>'
-      + '<div class="bf-tag" role="img" aria-label="33 percent off: $3.99 instead of $5.99">'
-      +   '<p class="bf-tag__off">33%<small>off</small></p>'
-      +   '<p class="bf-tag__price"><span class="bf-tag__now">$3.99</span><span class="bf-tag__was">$5.99</span></p>'
-      +   '<p class="bf-tag__line">One purchase, five Apple platforms.<span>iPhone &middot; iPad &middot; Mac &middot; Apple TV &middot; Apple Watch</span></p>'
+      + '<div class="bf-tag" role="img" aria-label="Black Friday prices: Apple $3.99 instead of $5.99, Android $3.99 instead of $5.99, Windows $4.99 instead of $9.99 with code ' + CODE + '">'
+      +   '<p class="bf-tag__off">Up to 50%<small>off</small></p>'
+      +   '<ul class="bf-tag__rows">'
+      +     row('Apple', 'iPhone &middot; iPad &middot; Mac &middot; TV &middot; Watch', '$3.99', '$5.99')
+      +     row('Android', 'Phone &middot; TV &middot; Auto', '$3.99', '$5.99')
+      +     row('Windows', 'code ' + CODE, '$4.99', '$9.99')
+      +   '</ul>'
+      +   '<p class="bf-tag__line">Paid once, no subscription.<span>Linux stays free.</span></p>'
       + '</div>'
       + '</div>';
     track.insertBefore(slide, track.firstElementChild);
