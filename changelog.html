@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>NaviBeat Changelog: What Changed in Each Version</title>
-  <meta name="description" content="What changed in each NaviBeat version on the App Store, from 1.5.2 to 1.5.11, and what is in the beta now.">
+  <meta name="description" content="What changed in each NaviBeat version on the App Store, from 1.5.2 to 1.5.12, and what is in the beta now.">
   <meta name="theme-color" content="#0C0C0E">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
@@ -13,7 +13,7 @@
   <link rel="alternate" hreflang="en" href="https://navibeat.app/changelog">
 
   <meta property="og:title" content="NaviBeat Changelog: What Changed in Each Version">
-  <meta property="og:description" content="What changed in each NaviBeat version on the App Store, from 1.5.2 to 1.5.11, and what is in the beta now.">
+  <meta property="og:description" content="What changed in each NaviBeat version on the App Store, from 1.5.2 to 1.5.12, and what is in the beta now.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://navibeat.app/changelog">
   <meta property="og:image" content="https://navibeat.app/assets/icon-512.png">
@@ -23,7 +23,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NaviBeat Changelog: What Changed in Each Version">
-  <meta name="twitter:description" content="What changed in each NaviBeat version on the App Store, from 1.5.2 to 1.5.11, and what is in the beta now.">
+  <meta name="twitter:description" content="What changed in each NaviBeat version on the App Store, from 1.5.2 to 1.5.12, and what is in the beta now.">
   <meta name="twitter:image" content="https://navibeat.app/assets/icon-512.png">
   <meta name="twitter:image:alt" content="NaviBeat icon">
 
@@ -87,10 +87,10 @@
     {
       "@type": "WebPage",
       "name": "What changed in each version.",
-      "description": "What changed in each NaviBeat version on the App Store, from 1.5.2 to 1.5.11, and what is in the beta now.",
+      "description": "What changed in each NaviBeat version on the App Store, from 1.5.2 to 1.5.12, and what is in the beta now.",
       "url": "https://navibeat.app/changelog",
       "datePublished": "2026-11-14",
-      "dateModified": "2026-11-23",
+      "dateModified": "2026-11-25",
       "author": {
         "@type": "Person",
         "name": "Nenad Jokic",
@@ -184,19 +184,33 @@
 <p>One purchase covers iPhone, iPad, Mac, Apple TV and Apple Watch. Every version below went out on the App Store. The notes follow the iPhone and iPad release notes. A line that starts with <strong>Mac</strong> is for the Mac. Newer builds reach the <a href="beta">TestFlight beta</a> first, almost every day. What is planned is on the <a href="roadmap">roadmap</a>.</p>
 
 <h2 id="beta">In the beta now</h2>
-<p>1.5.12 is in the <a href="beta">TestFlight beta</a> now, build 388. It has everything in 1.5.11, and:</p>
+<p>1.5.13 is in the <a href="beta">TestFlight beta</a> now, build 390. It has everything in 1.5.12, and:</p>
 <ul>
-<li>Import Listening History (Settings, Library; iPhone, iPad, Mac): plays, liked songs and playlists from Spotify (the ZIP Spotify sends you) or Last.fm. Plays go into Navidrome with their original dates and are not sent on to Last.fm or ListenBrainz. Running it again adds only new plays.</li>
-<li>Song menu (Settings, Appearance; iPhone, iPad, Mac): drag to reorder and hide actions in a song's menu and the Now Playing menu.</li>
-<li>Edit Quick Play: long press (Mac: right click) a Quick Play tile to add up to four tiles of your own, a genre, a radio station, a playlist or an artist.</li>
-<li>Albums: the Rating filter has Unrated. Smart playlists: a BPM rule, is at least or is at most.</li>
-<li>Library: Record Labels next to Genres (iPhone, iPad, Mac, Apple TV).</li>
-<li>Appearance: Show composers and Compact song rows. Streaming Quality: Don't convert lossy files.</li>
-<li>Playback Speed in the Now Playing More menu. Now Playing on iPhone: larger artist and album.</li>
-<li>Mood and Context tiles inside Made for You. Exclude from Shuffle: a yearly Only between window.</li>
-<li>CarPlay: album lists as strips of covers. Widget: the medium Now Playing widget shows the next song.</li>
-<li>Mac: keyboard shortcuts you can change, and remove selected songs from a playlist. The sidebar no longer grows a window tiled to half the screen.</li>
-<li>Apple Watch: a downloaded next song no longer stops and starts again. Lyrics: a song whose file has more than one lyrics tag shows the one with the words.</li>
+<li>Artist pages: Library Only or All Sources, in the menu with Sort, for an artist with both your own albums and albums from a streaming service (Octo-Fiesta).</li>
+<li>Popular on an artist page plays the best copy you have of a song, lossless before MP3.</li>
+<li>Equalizer: Auto preamp, on by default, lowers the equalizer by its biggest boost so the curve never goes above 0 dB.</li>
+<li>Crossfade on mobile data also works for MP3, AAC, Ogg and Opus originals.</li>
+<li>A new device whose iCloud already holds NaviBeat settings asks once: Use Them, or Start Fresh.</li>
+<li>iPhone and iPad: an open song menu no longer jumps back to the top while a song plays.</li>
+<li>Mac: a song dragged onto a pinned sidebar playlist is added, and several selected songs drag at once.</li>
+<li>Apple TV: the top bar follows the Accent Color you pick.</li>
+</ul>
+
+<h2 id="v1-5-12">1.5.12</h2>
+<p style="color:var(--text-2); font-size:14px; margin-top:-6px;">November 2026</p>
+<ul>
+<li>Import Listening History: bring plays, liked songs and playlists from Spotify (the ZIP Spotify sends you) or Last.fm into Navidrome. Plays keep their original dates. Settings, Library, Import Listening History.</li>
+<li>Your song menu: drag to reorder and hide the actions in a song's menu and the Now Playing menu. Settings, Appearance, Song menu.</li>
+<li>Your Quick Play: long press (Mac: right click) a Quick Play tile to add up to four of your own, a genre, a radio station, a playlist or an artist.</li>
+<li>Record Labels in Library, next to Genres.</li>
+<li>Albums: the Rating filter has Unrated. Smart Playlists: a BPM rule.</li>
+<li>Show composers and Compact song rows in Appearance. Don't convert lossy files, in Streaming Quality.</li>
+<li>Playback Speed in the Now Playing More menu, and a larger artist and album on Now Playing.</li>
+<li>Mood and Context tiles in Made for You.</li>
+<li>CarPlay shows album lists as rows of covers. The medium Now Playing widget shows the next song.</li>
+<li>Songs with more than one lyrics tag show their lyrics. Apple Watch: a downloaded next song no longer stops and starts again. Siri says "your music" when you ask without a name.</li>
+<li>Mac: keyboard shortcuts you can change, remove selected songs from a playlist, long albums scroll smoothly with the mouse wheel, and a window tiled to half the screen no longer grows when you open the sidebar.</li>
+<li>Apple TV: Accent Color in Settings, Appearance. Now Playing keeps the cover, the title and the buttons on screen when a song lists many artists, and the back button returns to the page you were on.</li>
 </ul>
 
 <h2 id="v1-5-11">1.5.11</h2>

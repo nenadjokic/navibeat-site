@@ -568,13 +568,21 @@ Crossfade: the end of one song fades out while the next one fades in. What it do
 URL: https://navibeat.app/wiki/enabled
 Where: Settings > Playback & Audio > Equalizer & Effects > Equalizer
 Platforms: iPhone, iPad, Mac
-Turns the equalizer on and off. What it does. The equalizer shapes the sound with bands from bass to treble. Pick a preset or drag the bands yourself. Parametric mode lets you move each band's frequency and width. On iPhone and iPad, Off in CarPlay steps the equalizer aside while the car is the output, for a car that has its own. It comes back when you leave the car. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Find Enabled and change it. Good to know. Double tap a band to set it to 0 dB. A curve that boosts needs a negative equalizer Preamp, so it does not clip.
+Turns the equalizer on and off. What it does. The equalizer shapes the sound with bands from bass to treble. Pick a preset or drag the bands yourself. Parametric mode lets you move each band's frequency and width. On iPhone and iPad, Off in CarPlay steps the equalizer aside while the car is the output, for a car that has its own. It comes back when you leave the car. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Find Enabled and change it. Good to know. Double tap a band to set it to 0 dB. A curve that boosts needs headroom, so it does not clip. From 1.5.13 Auto preamp does that for you and is on by default; before that, set a negative equalizer Preamp.
 
 ### Presets
 URL: https://navibeat.app/wiki/presets
 Where: Settings > Playback & Audio > Equalizer & Effects > Equalizer > Presets
 Platforms: iPhone, iPad, Mac
 Ready-made and saved equalizer curves, one tap to switch. What it does. Open Presets to pick a built-in curve or one you saved. Save keeps your current curve under a name, Reset sets every band back to 0 dB. Copy as text puts the curve on the clipboard so you can share it. Import from text reads a curve someone shared with you. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Tap Equalizer. Find Presets and change it.
+
+### Auto preamp
+URL: https://navibeat.app/wiki/auto-preamp
+Where: Settings > Playback & Audio > Equalizer & Effects > Equalizer > Auto preamp
+Platforms: iPhone, iPad, Mac
+Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.13.
+Default: On
+Lowers the whole equalizer by its biggest boost, so the curve never goes above 0 dB and does not clip. What it does. A boost on any band can push loud passages over 0 dB, and that sounds like crackling or distortion. With Auto preamp on, NaviBeat measures the highest point of your curve and lowers everything by that much. The number next to the switch shows how many dB it takes off right now. Your own Preamp is added on top, so you can still nudge the level by hand. A curve that only cuts needs no headroom, so Auto preamp takes off 0 dB. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Tap Equalizer. Find Auto preamp and change it. Good to know. An AutoEQ profile that already carries its own preamp sounds quieter with Auto preamp on, because both are applied. Turn one of them off.
 
 ### Playback engine
 URL: https://navibeat.app/wiki/playback-engine
@@ -1100,8 +1108,9 @@ Picks the language NaviBeat is shown in, separate from your device language. Wha
 URL: https://navibeat.app/wiki/sync-settings
 Where: Settings > Appearance & Language > Language > Sync Settings
 Platforms: iPhone, iPad, Mac, Apple TV
+Status: In beta: the question on a new device in the TestFlight beta now, coming to the App Store with 1.5.13.
 Default: On
-Keeps your NaviBeat settings the same on all your Apple devices, through iCloud. What it does. Change a setting on one device and your other devices signed in to the same Apple Account get it too. If two devices change the same setting, the newest change wins. A new device takes the settings that are already in iCloud, instead of pushing its own defaults over them. How to change it. Open Settings. Tap Appearance & Language. Tap Language. Find Sync Settings and change it. Good to know. Turn it off on one device to keep that device as it is.
+Keeps your NaviBeat settings the same on all your Apple devices, through iCloud. What it does. Change a setting on one device and your other devices signed in to the same Apple Account get it too. If two devices change the same setting, the newest change wins. A new device takes the settings that are already in iCloud, instead of pushing its own defaults over them. From 1.5.13 it asks first, once: Use Them takes those settings, Start Fresh keeps the device as it is and turns Sync Settings off on it. How to change it. Open Settings. Tap Appearance & Language. Tap Language. Find Sync Settings and change it. Good to know. Turn it off on one device to keep that device as it is.
 
 ## Scrobbling & Stats
 
