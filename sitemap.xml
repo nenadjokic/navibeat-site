@@ -390,6 +390,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/navidrome-remote-access" />
   </url>
   <url>
+    <loc>https://navibeat.app/navidrome-clients</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://navibeat.app/navidrome-clients" />
+  </url>
+  <url>
     <loc>https://navibeat.app/connect-navidrome</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>

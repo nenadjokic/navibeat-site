@@ -228,7 +228,7 @@
 <li>Bad: every device needs the VPN on. On a moving phone, each change of cell tower can freeze the tunnel for a while, and you hear that as a stutter.</li>
 </ul>
 <h2>Option 2: Cloudflare Tunnel</h2>
-<p>A small program, <code>cloudflared</code>, runs next to Navidrome and connects out to Cloudflare. You get a public address on your own domain, and it forwards to <code>http://localhost:4533</code>. Nothing opens on your router.</p>
+<p>A small program, <code>cloudflared</code>, runs next to Navidrome and connects out to Cloudflare. You get a public address on your own domain, and it forwards to Navidrome on <code>localhost</code>, port <code>4533</code>. Nothing opens on your router.</p>
 <ul>
 <li>Good: no VPN on the phone, and a public address holds up better on a moving phone.</li>
 <li>Bad: you need a domain, and your server is public, so use a strong password. Add Cloudflare Access if you want a second lock in front of it.</li>
