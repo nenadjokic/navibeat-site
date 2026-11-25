@@ -222,3 +222,22 @@
   .bf-clock__num { font-size: 32px; }
 }
 .bf-slide__h--pre span { font-size: .78em; white-space: nowrap; }
+
+/* ---------- Android and Windows (added 2026-11-25) ---------- */
+.bf-slide__more {
+  margin: 14px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--text-1, #C9C9D1);
+}
+.bf-slide__more a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-2, rgba(255,255,255,.22)); }
+.bf-slide__more a:hover, .bf-slide__more a:focus-visible { color: var(--text-0, #EDEDF0); border-color: var(--accent, #F47B20); }
+.bf-slide__more strong { color: var(--text-0, #EDEDF0); }
+.bf-slide__more s { opacity: .6; }
+.bf-slide__more code, .bf-ribbon__msg strong { font-family: inherit; }
+.bf-slide__more code { color: var(--accent, #F47B20); font-weight: 800; letter-spacing: .04em; }
+.price .price__num.bf-price-big { color: var(--accent, #F47B20); }
+.price .bf-price-note { margin: 8px 0 12px; }
