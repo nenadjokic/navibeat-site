@@ -614,16 +614,16 @@ Picks how covers look at the top of artist pages, album pages and Now Playing. W
 ### Artist pages
 URL: https://navibeat.app/wiki/artist-pages
 Where: Settings > Appearance & Language > Theme & Accent > Artist pages
-Platforms: iPhone, iPad, Mac
+Platforms: iPhone, iPad, Mac, Apple TV
 Default: Squared
-Squared or Filled cover at the top of artist pages. What it does. Squared puts the picture as a square card on the app background. Filled spreads it edge to edge across the top, with the name on it. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Artist pages and change it.
+Squared or Filled cover at the top of artist pages. What it does. Squared puts the picture as a square card on the app background. Filled spreads it edge to edge across the top, with the name on it. On Apple TV the choice is its own, under Settings, Artwork on Artist pages. It does not follow the iPhone, iPad or Mac, and their choice does not follow the TV. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Artist pages and change it.
 
 ### Album pages
 URL: https://navibeat.app/wiki/album-pages
 Where: Settings > Appearance & Language > Theme & Accent > Album pages
-Platforms: iPhone, iPad, Mac
+Platforms: iPhone, iPad, Mac, Apple TV
 Default: Squared
-Squared or Filled cover at the top of album pages. What it does. Squared puts the cover as a square card on the app background. Filled spreads it edge to edge across the top, with the album name on it. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Album pages and change it.
+Squared or Filled cover at the top of album pages. What it does. Squared puts the cover as a square card on the app background. Filled spreads it edge to edge across the top, with the album name on it. On Apple TV the choice is its own, under Settings, Artwork on Album pages. It does not follow the iPhone, iPad or Mac, and their choice does not follow the TV. How to change it. Open Settings. Tap Appearance & Language. Tap Theme & Accent. Find Album pages and change it.
 
 ### Look & Feel
 URL: https://navibeat.app/wiki/look-and-feel
@@ -1439,7 +1439,7 @@ The open source software NaviBeat uses, with their licenses. How to change it. O
 URL: https://navibeat.app/wiki/more-from-nenad-jokic
 Where: Settings > About > More From Nenad Jokic
 Platforms: iPhone, iPad, Mac, Apple TV
-Other apps by the developer of NaviBeat. How to change it. Open Settings. Tap About. Find More From Nenad Jokic and change it.
+Other apps by the developer of NaviBeat. What it does. Cards for NaviFin (a Jellyfin client), NaviPen (a notes app for your own note server), Feltime (a visual timer) and NaviBeat for Linux. Each card opens a page with a description and a link to the App Store or the download page. How to change it. Open Settings. Tap About. Find More From Nenad Jokic and change it.
 
 ### Privacy
 URL: https://navibeat.app/wiki/privacy
