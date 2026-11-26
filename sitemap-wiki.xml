@@ -15,6 +15,7 @@
   <url><loc>https://navibeat.app/wiki/server-information</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/library-statistics</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/libraries</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://navibeat.app/wiki/always-show-libraries</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/reset-pairing</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/sync-credentials-to-your-other-apple-devices</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/saved-servers</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -75,7 +76,7 @@
   <url><loc>https://navibeat.app/wiki/show-quality-badge</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/player-badge-style</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/bit-depth-and-sample-rate-for-lossless</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://navibeat.app/wiki/show-download-on-the-badge</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://navibeat.app/wiki/show-status-on-the-badge</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/show-quality-in-song-lists</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/show-quality-on-album-pages</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://navibeat.app/wiki/show-quality-in-album-grids</loc><lastmod>2026-11-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>

@@ -102,6 +102,13 @@ Where: Settings > Server & Library > Libraries
 Platforms: iPhone, iPad, Mac, Apple TV
 Picks which of your server's music libraries NaviBeat shows. What it does. If your Navidrome has more than one library, like Music and Audiobooks, choose the ones you want to browse. Settings shows the current choice. How to change it. Open Settings. Tap Server & Library. Find Libraries and change it.
 
+### Always Show Libraries
+URL: https://navibeat.app/wiki/always-show-libraries
+Where: Settings > Server & Library > Always Show Libraries
+Platforms: iPhone, iPad, Mac
+Default: Off
+Shows every library as its own row with a checkmark, so switching libraries needs no menu. What it does. When your Navidrome has more than one library, the Libraries menu becomes a list: All Libraries first, then one row per library. Tap a library to add it or take it away. Tap All Libraries to see everything again. The rows sit in the sidebar on the Mac and the iPad, and at the top of the Library tab on the iPhone. With one library on the server there is nothing to choose, so the switch is not shown. How to change it. Open Settings. Tap Server & Library. Find Always Show Libraries and change it.
+
 ### Reset pairing
 URL: https://navibeat.app/wiki/reset-pairing
 Where: Settings > Server & Library > Reset pairing
@@ -582,7 +589,7 @@ Where: Settings > Playback & Audio > Equalizer & Effects > Equalizer > Auto prea
 Platforms: iPhone, iPad, Mac
 Status: In beta: in the TestFlight beta now, coming to the App Store with 1.5.13.
 Default: On
-Lowers the whole equalizer by its biggest boost, so the curve never goes above 0 dB and does not clip. What it does. A boost on any band can push loud passages over 0 dB, and that sounds like crackling or distortion. With Auto preamp on, NaviBeat measures the highest point of your curve and lowers everything by that much. The number next to the switch shows how many dB it takes off right now. Your own Preamp is added on top, so you can still nudge the level by hand. A curve that only cuts needs no headroom, so Auto preamp takes off 0 dB. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Tap Equalizer. Find Auto preamp and change it. Good to know. An AutoEQ profile that already carries its own preamp sounds quieter with Auto preamp on, because both are applied. Turn one of them off.
+Lowers the whole equalizer by part of its biggest boost; a limiter at the output catches the rest so it does not clip. What it does. A boost on any band can push loud passages over 0 dB, and that sounds like crackling or distortion. With Auto preamp on, NaviBeat lowers everything by half of the curve's highest point, and never leaves more than 6 dB above 0. A limiter after the equalizer catches what is left, so loud parts do not clip. The number next to the switch shows how many dB it takes off right now. Your own Preamp is added on top, so you can still nudge the level by hand. A curve that only cuts needs no headroom, so Auto preamp takes off 0 dB. How to change it. Open Settings. Tap Playback & Audio. Tap Equalizer & Effects. Tap Equalizer. Find Auto preamp and change it. Good to know. An AutoEQ profile that already carries its own preamp sounds quieter with Auto preamp on, because both are applied. Turn one of them off.
 
 ### Playback engine
 URL: https://navibeat.app/wiki/playback-engine
@@ -1004,12 +1011,12 @@ Platforms: iPhone, iPad, Mac
 Default: Off
 Adds the bit depth and sample rate to the badge for CD-quality lossless files too. What it does. Hi-Res files always show their numbers. With this on, CD-quality lossless files show them too, like 16/44.1. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Bit depth and sample rate for Lossless and change it.
 
-### Show "Download" on the badge
-URL: https://navibeat.app/wiki/show-download-on-the-badge
-Where: Settings > Appearance & Language > Now Playing > Show "Download" on the badge
+### Show status on the badge
+URL: https://navibeat.app/wiki/show-status-on-the-badge
+Where: Settings > Appearance & Language > Now Playing > Show status on the badge
 Platforms: iPhone, iPad, Mac
 Default: On
-Shows the word DOWNLOAD on the quality badge when a song plays from a download. What it does. When the song plays from a file on your device, the badge says DOWNLOAD. Off leaves the word out and shows only the quality. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Show "Download" on the badge and change it.
+Shows the status words (Download, Transcode, Offline) in front of the quality on the badge. What it does. When a song plays from a download, through a transcode, or while you are offline, the badge puts that word in front of the quality. Off leaves every status word out and shows only the quality. The colour of the badge stays the same. How to change it. Open Settings. Tap Appearance & Language. Tap Now Playing. Find Show status on the badge and change it. Good to know. This switch was called Show "Download" on the badge before 1.5.13. It keeps your setting.
 
 ### Show quality in song lists
 URL: https://navibeat.app/wiki/show-quality-in-song-lists
