@@ -12,7 +12,7 @@
    Windows (Lemon Squeezy discount 1263649, read back 2026-11-25): code
    BLACKFRIDAY50, 50 % off $9.99 -> $4.99, valid 2026-11-27T00:00Z to
    2026-12-02T08:00Z. During that window every checkout link on the site gets the
-   code prefilled (and loses ?discount=0, which hides the code field).
+   code prefilled (the links no longer carry ?discount=0 since 2026-11-26, so the code field always shows).
    Linux is free, nothing to discount.
 
    Surfaces:
@@ -196,8 +196,8 @@
       if (!buy.querySelector('.bf-price-note')) num.insertAdjacentElement('afterend', el('span', 'bf-price-note',
         (live ? 'Black Friday, was $9.99: code ' : 'Black Friday, Nov 27 to Dec 1: code ') + CODE + ', 50% off at checkout'));
     }
-    // Windows checkout links: prefill the code while it is valid. ?discount=0
-    // hides the code field, so it goes too.
+    // Windows checkout links: prefill the code while it is valid.
+    // (The field itself is visible without the sale too, since 2026-11-26.)
     if (Date.now() >= WIN_START) {
       Array.prototype.forEach.call(document.querySelectorAll('a[href*="lemonsqueezy.com/checkout/buy/f39cd7e9"]'), function (a) {
         a.href = WIN_CHECKOUT;
